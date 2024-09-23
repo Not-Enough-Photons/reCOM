@@ -88,7 +88,6 @@
   <ItemGroup>
     <ClInclude Include="src\reader\zrdr_local.h" />
     <ClInclude Include="src\zar\zar.h" />
-    <ClInclude Include="src\zdb\zdb.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ai\ai_map.cpp" />
@@ -110,9 +109,12 @@
     <ClCompile Include="src\reader\zrdr_parse.cpp" />
     <ClCompile Include="src\system\zsys_memory.cpp" />
     <ClCompile Include="src\system\zsys_sched.cpp" />
+    <ClCompile Include="src\ui\zui.cpp" />
+    <ClCompile Include="src\ui\zui_2d.cpp" />
+    <ClCompile Include="src\ui\zui_cleanup.cpp" />
+    <ClCompile Include="src\ui\zui_spec.cpp" />
     <ClCompile Include="src\zar\zar.cpp" />
     <ClCompile Include="src\zar\zar_search.cpp" />
-    <ClCompile Include="src\zdb\zdb.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
