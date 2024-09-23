@@ -1,9 +1,9 @@
 #include <istream>
 #include <cstddef>
 
-namespace zar
+namespace zdb
 {
-	class CZRdrFile : std::ios::basic_ios
+	class CZRdrFile
 	{
 	private:
 		float_t m_SoundDistanceClose;
