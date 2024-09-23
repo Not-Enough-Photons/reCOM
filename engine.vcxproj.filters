@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="reader">
+      <UniqueIdentifier>{F8AE2519-E450-50EF-CD0B-6443B94CD73F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zar">
+      <UniqueIdentifier>{D2C6880B-3ED0-887C-C74B-9F7C3354947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zdb">
+      <UniqueIdentifier>{25C7880B-91D0-887C-1A4C-9F7C8654947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\reader\zrdr_local.h">
+      <Filter>reader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\zar\zar.h">
+      <Filter>zar</Filter>
+    </ClInclude>
+    <ClInclude Include="src\zdb\zdb.h">
+      <Filter>zdb</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\reader\zrdr_edit.cpp">
+      <Filter>reader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\reader\zrdr_file.cpp">
+      <Filter>reader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\reader\zrdr_main.cpp">
+      <Filter>reader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\reader\zrdr_parse.cpp">
+      <Filter>reader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\zar\zar.cpp">
+      <Filter>zar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\zar\zar_search.cpp">
+      <Filter>zar</Filter>
+    </ClCompile>
+    <ClCompile Include="src\zdb\zdb.cpp">
+      <Filter>zdb</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
