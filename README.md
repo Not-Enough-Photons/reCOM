@@ -5,6 +5,14 @@ This repository houses the reverse engineered code of Zipper Interactive's engin
 
 It is a work in progress, and a lot needs to make sure the SOCOM experience is one-to-one with the PlayStation 2.
 
+# To-Do List (Not In Order)
+- Loaders for ZAR (Zipper Archive), ZDB (Zipper Database), and other proprietary formats
+- Support for level creation and editing
+- Rendering pipelines
+- Asset editor for the aforementioned data formats
+- ZAR property serialization/deserialization
+- Engine templates to port games over
+
 # Background
 Currently, I (adamdev) am the sole contributor to this project. A few weeks ago I got started on using Ghidra to reverse engineer the binaries of the games, to some luck.
 
