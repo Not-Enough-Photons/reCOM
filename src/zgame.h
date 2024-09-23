@@ -18,40 +18,48 @@ namespace zdb
 	{
 	public:
 		virtual void Start();
+		virtual void Exit();
 	};
 
 	class CMenuState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 
 	class CCinematicState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 
 	class CCoreState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 
 	class CExitState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 
 	class CMPExitState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 
 	class CRebootState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 
 	class CShutdownState : public CGameState
 	{
 		void Start();
+		void Exit();
 	};
 }

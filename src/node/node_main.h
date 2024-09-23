@@ -8,9 +8,10 @@ namespace zdb
 	public:
 		CNode();
 
-		static bool IS_PLAYER_NODE;
-		static bool NODE_ACTIVE;
-		static bool NODE_RENDERED;
+	private:
+		bool m_IsPlayerNode;
+		bool m_NodeActive;
+		bool m_NodeVisible;
 	};
 
 	/// <summary>
