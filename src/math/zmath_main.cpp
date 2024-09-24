@@ -19,6 +19,4 @@ namespace zdb
 		m_p1 = p1;
 		m_p2 = p2;
 	}
-
-	C2DLine::C2DLine
 }
