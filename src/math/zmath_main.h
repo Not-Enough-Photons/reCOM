@@ -11,20 +11,26 @@ namespace zdb
 
 		inline Vector2 operator=(const Vector2 rhs)
 		{
-			this->x = rhs.x;
-			this->y = rhs.y;
+			Vector2 o = *this;
+			o.x = rhs.x;
+			o.y = rhs.y;
+			return o;
 		}
 
 		inline Vector2 operator+(const Vector2 rhs)
 		{
-			this->x += rhs.x;
-			this->y += rhs.y;
+			Vector2 o = *this;
+			o.x += rhs.x;
+			o.y += rhs.y;
+			return o;
 		}
 
 		inline Vector2 operator-(const Vector2 rhs)
 		{
-			this->x -= rhs.x;
-			this->y -= rhs.y;
+			Vector2 o = *this;
+			o.x -= rhs.x;
+			o.y -= rhs.y;
+			return o;
 		}
 	};
 
@@ -39,23 +45,29 @@ namespace zdb
 
 		inline Vector3 operator=(const Vector3 rhs)
 		{
-			this->x = rhs.x;
-			this->y = rhs.y;
-			this->z = rhs.z;
+			Vector3 o = *this;
+			o.x = rhs.x;
+			o.y = rhs.y;
+			o.z = rhs.z;
+			return o;
 		}
 
 		inline Vector3 operator+(const Vector3 rhs)
 		{
-			this->x += rhs.x;
-			this->y += rhs.y;
-			this->z += rhs.z;
+			Vector3 o = *this;
+			o.x += rhs.x;
+			o.y += rhs.y;
+			o.z += rhs.z;
+			return o;
 		}
 
 		inline Vector3 operator-(const Vector3 rhs)
 		{
-			this->x -= rhs.x;
-			this->y -= rhs.y;
-			this->z -= rhs.z;
+			Vector3 o = *this;
+			o.x -= rhs.x;
+			o.y -= rhs.y;
+			o.z -= rhs.z;
+			return o;
 		}
 	};
 
@@ -71,26 +83,32 @@ namespace zdb
 
 		inline Vector4 operator=(const Vector4 rhs)
 		{
-			this->x = rhs.x;
-			this->y = rhs.y;
-			this->z = rhs.z;
-			this->w = rhs.w;
+			Vector4 o = *this;
+			o.x = rhs.x;
+			o.y = rhs.y;
+			o.z = rhs.z;
+			o.w = rhs.w;
+			return o;
 		}
 
 		inline Vector4 operator+(const Vector4 rhs)
 		{
-			this->x += rhs.x;
-			this->y += rhs.y;
-			this->z += rhs.z;
-			this->w += rhs.w;
+			Vector4 o = *this;
+			o.x += rhs.x;
+			o.y += rhs.y;
+			o.z += rhs.z;
+			o.w += rhs.w;
+			return o;
 		}
 
 		inline Vector4 operator-(const Vector4 rhs)
 		{
-			this->x -= rhs.x;
-			this->y -= rhs.y;
-			this->z -= rhs.z;
-			this->w -= rhs.w;
+			Vector4 o = *this;
+			o.x -= rhs.x;
+			o.y -= rhs.y;
+			o.z -= rhs.z;
+			o.w -= rhs.w;
+			return o;
 		}
 	};
 
@@ -104,7 +122,284 @@ namespace zdb
 			Vector4 r4;
 		};
 
-		float m[];
+		float m[4][4];
+
+		Matrix4x4 operator*(float rhs)
+		{
+			Matrix4x4 o = *this;
+			o.m[0][0] *= rhs;
+			o.m[0][1] *= rhs;
+			o.m[0][2] *= rhs;
+			o.m[0][3] *= rhs;
+
+			o.m[1][0] *= rhs;
+			o.m[1][1] *= rhs;
+			o.m[1][2] *= rhs;
+			o.m[1][3] *= rhs;
+
+			o.m[2][0] *= rhs;
+			o.m[2][1] *= rhs;
+			o.m[2][2] *= rhs;
+			o.m[2][3] *= rhs;
+
+			o.m[3][0] *= rhs;
+			o.m[3][1] *= rhs;
+			o.m[3][2] *= rhs;
+			o.m[3][3] *= rhs;
+			return o;
+		}
+
+		Matrix4x4 operator*(const Vector2 rhs)
+		{
+			Matrix4x4 o = *this;
+			o.m[0][0] *= rhs.x;
+			o.m[1][1] *= rhs.y;
+			return o;
+		}
+
+		Matrix4x4 operator*(const Vector3 rhs)
+		{
+			Matrix4x4 o = *this;
+			o.m[0][0] =
+				o.m[0][0] * rhs.x +
+				o.m[0][1] * rhs.y +
+				o.m[0][2] * rhs.z +
+				o.m[0][3] * 1.0f;
+
+			o.m[0][1] =
+				o.m[0][0] * rhs.x +
+				o.m[0][1] * rhs.y +
+				o.m[0][2] * rhs.z +
+				o.m[0][3] * 1.0f;
+
+			o.m[0][2] =
+				o.m[0][0] * rhs.x +
+				o.m[0][1] * rhs.y +
+				o.m[0][2] * rhs.z +
+				o.m[0][3] * 1.0f;
+
+			o.m[0][3] =
+				o.m[0][0] * rhs.x +
+				o.m[0][1] * rhs.y +
+				o.m[0][2] * rhs.z +
+				o.m[0][3] * 1.0f;
+
+			o.m[1][0] =
+				o.m[1][0] * rhs.x +
+				o.m[1][1] * rhs.y +
+				o.m[1][2] * rhs.z +
+				o.m[1][3] * 1.0f;
+
+			o.m[1][1] =
+				o.m[1][0] * rhs.x +
+				o.m[1][1] * rhs.y +
+				o.m[1][2] * rhs.z +
+				o.m[1][3] * 1.0f;
+
+			o.m[1][2] =
+				o.m[1][0] * rhs.x +
+				o.m[1][1] * rhs.y +
+				o.m[1][2] * rhs.z +
+				o.m[1][3] * 1.0f;
+
+			o.m[1][3] =
+				o.m[1][0] * rhs.x +
+				o.m[1][1] * rhs.y +
+				o.m[1][2] * rhs.z +
+				o.m[1][3] * 1.0f;
+
+			o.m[2][0] =
+				o.m[2][0] * rhs.x +
+				o.m[2][1] * rhs.y +
+				o.m[2][2] * rhs.z +
+				o.m[2][3] * 1.0f;
+
+			o.m[2][1] =
+				o.m[2][0] * rhs.x +
+				o.m[2][1] * rhs.y +
+				o.m[2][2] * rhs.z +
+				o.m[2][3] * 1.0f;
+
+			o.m[2][2] =
+				o.m[2][0] * rhs.x +
+				o.m[2][1] * rhs.y +
+				o.m[2][2] * rhs.z +
+				o.m[2][3] * 1.0f;
+
+			o.m[2][3] =
+				o.m[2][0] * rhs.x +
+				o.m[2][1] * rhs.y +
+				o.m[2][2] * rhs.z +
+				o.m[2][3] * 1.0f;
+
+			o.m[3][0] =
+				o.m[3][0] * rhs.x +
+				o.m[3][1] * rhs.y +
+				o.m[3][2] * rhs.z +
+				o.m[3][3] * 1.0f;
+
+			o.m[3][1] =
+				o.m[3][0] * rhs.x +
+				o.m[3][1] * rhs.y +
+				o.m[3][2] * rhs.z +
+				o.m[3][3] * 1.0f;
+
+			o.m[3][2] =
+				o.m[3][0] * rhs.x +
+				o.m[3][1] * rhs.y +
+				o.m[3][2] * rhs.z +
+				o.m[3][3] * 1.0f;
+
+			o.m[3][3] =
+				o.m[3][0] * rhs.x +
+				o.m[3][1] * rhs.y +
+				o.m[3][2] * rhs.z +
+				o.m[3][3] * 1.0f;
+			return o;
+		}
+
+		Matrix4x4 operator*(const Vector4 rhs)
+		{
+			Matrix4x4 o = *this;
+			o.m[0][0] *= rhs.x;
+			o.m[1][1] *= rhs.y;
+			o.m[2][2] *= rhs.z;
+			o.m[3][3] *= rhs.w;
+			return o;
+		}
+
+		Matrix4x4& operator=(const Matrix4x4 rhs)
+		{
+			m[0][0] = rhs.m[0][0];
+			m[0][1] = rhs.m[0][1];
+			m[0][2] = rhs.m[0][2];
+			m[0][3] = rhs.m[0][3];
+
+			m[1][0] = rhs.m[1][0];
+			m[1][1] = rhs.m[1][1];
+			m[1][2] = rhs.m[1][2];
+			m[1][3] = rhs.m[1][3];
+
+			m[2][0] = rhs.m[2][0];
+			m[2][1] = rhs.m[2][1];
+			m[2][2] = rhs.m[2][2];
+			m[2][3] = rhs.m[2][3];
+
+			m[3][0] = rhs.m[3][0];
+			m[3][1] = rhs.m[3][1];
+			m[3][2] = rhs.m[3][2];
+			m[3][3] = rhs.m[3][3];
+			return *this;
+		}
+
+		inline Matrix4x4 operator*(const Matrix4x4 rhs)
+		{
+			/*
+			* [ a0 a1 a2 a3 ]   [ a0 a1 a2 a3 ]
+			* [ b0 b1 b2 b3 ]   [ b0 b1 b2 b3 ]
+			* [ c0 c1 c2 c3 ] x [ c0 c1 c2 c3 ]
+			* [ d0 d1 d2 d3 ]   [ d0 d1 d2 d3 ]
+			*/
+
+			Matrix4x4 o = *this;
+			o.m[0][0] =
+				o.m[0][0] * rhs.m[0][0] +
+				o.m[0][1] * rhs.m[1][0] +
+				o.m[0][2] * rhs.m[2][0] +
+				o.m[0][3] * rhs.m[3][0];
+
+			o.m[0][1] =
+				o.m[0][0] * rhs.m[0][1] +
+				o.m[0][1] * rhs.m[1][1] +
+				o.m[0][2] * rhs.m[2][1] +
+				o.m[0][3] * rhs.m[3][1];
+
+			o.m[0][2] =
+				o.m[0][0] * rhs.m[0][2] +
+				o.m[0][1] * rhs.m[1][2] +
+				o.m[0][2] * rhs.m[2][2] +
+				o.m[0][3] * rhs.m[3][2];
+
+			o.m[0][3] =
+				o.m[0][0] * rhs.m[0][3] +
+				o.m[0][1] * rhs.m[1][3] +
+				o.m[0][2] * rhs.m[2][3] +
+				o.m[0][3] * rhs.m[3][3];
+
+			o.m[1][0] =
+				o.m[1][0] * rhs.m[0][0] +
+				o.m[1][1] * rhs.m[1][0] +
+				o.m[1][2] * rhs.m[2][0] +
+				o.m[1][3] * rhs.m[3][0];
+
+			o.m[1][1] =
+				o.m[1][0] * rhs.m[0][1] +
+				o.m[1][1] * rhs.m[1][1] +
+				o.m[1][2] * rhs.m[2][1] +
+				o.m[1][3] * rhs.m[3][1];
+
+			o.m[1][2] =
+				o.m[1][0] * rhs.m[0][2] +
+				o.m[1][1] * rhs.m[1][2] +
+				o.m[1][2] * rhs.m[2][2] +
+				o.m[1][3] * rhs.m[3][2];
+
+			o.m[1][3] =
+				o.m[1][0] * rhs.m[0][3] +
+				o.m[1][1] * rhs.m[1][3] +
+				o.m[1][2] * rhs.m[2][3] +
+				o.m[1][3] * rhs.m[3][3];
+
+			o.m[2][0] =
+				o.m[2][0] * rhs.m[0][0] +
+				o.m[2][1] * rhs.m[1][0] +
+				o.m[2][2] * rhs.m[2][0] +
+				o.m[2][3] * rhs.m[3][0];
+
+			o.m[2][1] =
+				o.m[2][0] * rhs.m[0][1] +
+				o.m[2][1] * rhs.m[1][1] +
+				o.m[2][2] * rhs.m[2][1] +
+				o.m[2][3] * rhs.m[3][1];
+
+			o.m[2][2] =
+				o.m[2][0] * rhs.m[0][2] +
+				o.m[2][1] * rhs.m[1][2] +
+				o.m[2][2] * rhs.m[2][2] +
+				o.m[2][3] * rhs.m[3][2];
+
+			o.m[2][3] =
+				o.m[2][0] * rhs.m[0][3] +
+				o.m[2][1] * rhs.m[1][3] +
+				o.m[2][2] * rhs.m[2][3] +
+				o.m[2][3] * rhs.m[3][3];
+
+			o.m[3][0] =
+				o.m[3][0] * rhs.m[0][0] +
+				o.m[3][1] * rhs.m[1][0] +
+				o.m[3][2] * rhs.m[2][0] +
+				o.m[3][3] * rhs.m[3][0];
+
+			o.m[3][1] =
+				o.m[3][0] * rhs.m[0][1] +
+				o.m[3][1] * rhs.m[1][1] +
+				o.m[3][2] * rhs.m[2][1] +
+				o.m[3][3] * rhs.m[3][1];
+
+			o.m[3][2] =
+				o.m[3][0] * rhs.m[0][2] +
+				o.m[3][1] * rhs.m[1][2] +
+				o.m[3][2] * rhs.m[2][2] +
+				o.m[3][3] * rhs.m[3][2];
+
+			o.m[3][3] =
+				o.m[3][0] * rhs.m[0][3] +
+				o.m[3][1] * rhs.m[1][3] +
+				o.m[3][2] * rhs.m[2][3] +
+				o.m[3][3] * rhs.m[3][3];
+
+			return o;
+		}
 	};
 
 	typedef union Ray2D
@@ -125,39 +420,48 @@ namespace zdb
 		};
 	};
 
-	template<typename T>
-	inline static T Lerp(T a, T b, float t)
+	static constexpr Matrix4x4& Identity()
+	{
+		Matrix4x4 mat =
+		{
+			1.0f, 0.0f, 0.0f, 0.0f,
+			0.0f, 1.0f, 0.0f, 0.0f,
+			0.0f, 0.0f, 1.0f, 0.0f,
+			0.0f, 0.0f, 0.0f, 1.0f,
+		};
+
+		return mat;
+	}
+
+	inline static float Lerp(float a, float b, float t)
 	{
 		return a + t * (b - a);
 	}
 
-	template<typename Vector2>
 	inline static Vector2 Lerp(Vector2 a, Vector2 b, float t)
 	{
 		Vector2 vector;
-		vector.x = Lerp<float>(a.x, b.x, t);
-		vector.y = Lerp<float>(a.y, b.y, t);
+		vector.x = Lerp(a.x, b.x, t);
+		vector.y = Lerp(a.y, b.y, t);
 		return vector;
 	}
 
-	template<typename Vector3>
 	inline static Vector3 Lerp(Vector3 a, Vector3 b, float t)
 	{
 		Vector3 vector;
-		vector.x = Lerp<float>(a.x, b.x, t);
-		vector.y = Lerp<float>(a.y, b.y, t);
-		vector.z = Lerp<float>(a.z, b.z, t);
+		vector.x = Lerp(a.x, b.x, t);
+		vector.y = Lerp(a.y, b.y, t);
+		vector.z = Lerp(a.z, b.z, t);
 		return vector;
 	}
 
-	template<typename Vector4>
 	inline static Vector4 Lerp(Vector4 a, Vector4 b, float t)
 	{
 		Vector4 vector;
-		vector.x = Lerp<float>(a.x, b.x, t);
-		vector.y = Lerp<float>(a.y, b.y, t);
-		vector.z = Lerp<float>(a.z, b.z, t);
-		vector.w = Lerp<float>(a.w, b.w, t);
+		vector.x = Lerp(a.x, b.x, t);
+		vector.y = Lerp(a.y, b.y, t);
+		vector.z = Lerp(a.z, b.z, t);
+		vector.w = Lerp(a.w, b.w, t);
 		return vector;
 	}
 
