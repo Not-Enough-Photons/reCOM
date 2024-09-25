@@ -8,6 +8,24 @@ namespace zdb
 			float x;
 			float y;
 		};
+
+		inline Vector2 operator=(const Vector2 rhs)
+		{
+			this->x = rhs.x;
+			this->y = rhs.y;
+		}
+
+		inline Vector2 operator+(const Vector2 rhs)
+		{
+			this->x += rhs.x;
+			this->y += rhs.y;
+		}
+
+		inline Vector2 operator-(const Vector2 rhs)
+		{
+			this->x -= rhs.x;
+			this->y -= rhs.y;
+		}
 	};
 
 	typedef union Vector3
@@ -18,6 +36,27 @@ namespace zdb
 			float y;
 			float z;
 		};
+
+		inline Vector3 operator=(const Vector3 rhs)
+		{
+			this->x = rhs.x;
+			this->y = rhs.y;
+			this->z = rhs.z;
+		}
+
+		inline Vector3 operator+(const Vector3 rhs)
+		{
+			this->x += rhs.x;
+			this->y += rhs.y;
+			this->z += rhs.z;
+		}
+
+		inline Vector3 operator-(const Vector3 rhs)
+		{
+			this->x -= rhs.x;
+			this->y -= rhs.y;
+			this->z -= rhs.z;
+		}
 	};
 
 	typedef union Vector4
@@ -29,6 +68,43 @@ namespace zdb
 			float z;
 			float w;
 		};
+
+		inline Vector4 operator=(const Vector4 rhs)
+		{
+			this->x = rhs.x;
+			this->y = rhs.y;
+			this->z = rhs.z;
+			this->w = rhs.w;
+		}
+
+		inline Vector4 operator+(const Vector4 rhs)
+		{
+			this->x += rhs.x;
+			this->y += rhs.y;
+			this->z += rhs.z;
+			this->w += rhs.w;
+		}
+
+		inline Vector4 operator-(const Vector4 rhs)
+		{
+			this->x -= rhs.x;
+			this->y -= rhs.y;
+			this->z -= rhs.z;
+			this->w -= rhs.w;
+		}
+	};
+
+	typedef union Matrix4x4
+	{
+		struct
+		{
+			Vector4 r1;
+			Vector4 r2;
+			Vector4 r3;
+			Vector4 r4;
+		};
+
+		float m[];
 	};
 
 	typedef union Ray2D
@@ -48,6 +124,42 @@ namespace zdb
 			Vector3 direction;
 		};
 	};
+
+	template<typename T>
+	inline static T Lerp(T a, T b, float t)
+	{
+		return a + t * (b - a);
+	}
+
+	template<typename Vector2>
+	inline static Vector2 Lerp(Vector2 a, Vector2 b, float t)
+	{
+		Vector2 vector;
+		vector.x = Lerp<float>(a.x, b.x, t);
+		vector.y = Lerp<float>(a.y, b.y, t);
+		return vector;
+	}
+
+	template<typename Vector3>
+	inline static Vector3 Lerp(Vector3 a, Vector3 b, float t)
+	{
+		Vector3 vector;
+		vector.x = Lerp<float>(a.x, b.x, t);
+		vector.y = Lerp<float>(a.y, b.y, t);
+		vector.z = Lerp<float>(a.z, b.z, t);
+		return vector;
+	}
+
+	template<typename Vector4>
+	inline static Vector4 Lerp(Vector4 a, Vector4 b, float t)
+	{
+		Vector4 vector;
+		vector.x = Lerp<float>(a.x, b.x, t);
+		vector.y = Lerp<float>(a.y, b.y, t);
+		vector.z = Lerp<float>(a.z, b.z, t);
+		vector.w = Lerp<float>(a.w, b.w, t);
+		return vector;
+	}
 
 	class C2D
 	{
