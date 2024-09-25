@@ -61,6 +61,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
+      <AdditionalIncludeDirectories>I:\Not Enough Photons - Projects\Other or Experimental\ZIEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -91,18 +92,19 @@
     <ClInclude Include="src\node\node_main.h" />
     <ClInclude Include="src\reader\zrdr_local.h" />
     <ClInclude Include="src\reader\zrdr_main.h" />
-    <ClInclude Include="src\system\zsys_main.h" />
-    <ClInclude Include="src\zar\zar.h" />
     <ClInclude Include="src\reader\zrdr_parse.h" />
+    <ClInclude Include="src\system\zsys_main.h" />
+    <ClInclude Include="src\util\util_stable.h" />
+    <ClInclude Include="src\zar\zar_main.h" />
     <ClInclude Include="src\zgame.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\entity\ent_main.cpp" />
     <ClCompile Include="src\ai\ai_map.cpp" />
     <ClCompile Include="src\ai\ai_mapio.cpp" />
     <ClCompile Include="src\audio\zsnd_csnd.cpp" />
     <ClCompile Include="src\audio\zsnd_csndgroup.cpp" />
     <ClCompile Include="src\audio\zsnd_csndsequence.cpp" />
+    <ClCompile Include="src\entity\ent_main.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\math\zmath_main.cpp" />
     <ClCompile Include="src\node\node_assetlib.cpp" />
@@ -121,7 +123,8 @@
     <ClCompile Include="src\ui\zui_2d.cpp" />
     <ClCompile Include="src\ui\zui_cleanup.cpp" />
     <ClCompile Include="src\ui\zui_spec.cpp" />
-    <ClCompile Include="src\zar\zar.cpp" />
+    <ClCompile Include="src\util\util_stable.cpp" />
+    <ClCompile Include="src\zar\zar_main.cpp" />
     <ClCompile Include="src\zar\zar_search.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

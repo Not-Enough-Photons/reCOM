@@ -1,32 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="ai">
+      <UniqueIdentifier>{2F775900-1B03-880B-84B1-880B705C880B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio">
+      <UniqueIdentifier>{B7281C0F-233D-44C0-ECBE-E71F589240F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entity">
+      <UniqueIdentifier>{C2FD7FFB-AE9F-AAD1-975A-BE25839B3122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{CF809A7C-BBB7-9B0D-64A4-811050BA170F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="node">
+      <UniqueIdentifier>{AB469B7C-977D-9C0D-406A-82102C80180F}</UniqueIdentifier>
+    </Filter>
     <Filter Include="reader">
       <UniqueIdentifier>{F8AE2519-E450-50EF-CD0B-6443B94CD73F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system">
+      <UniqueIdentifier>{8AE4EE1C-7686-19F3-5F41-2D474B82A043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{C3795900-AF05-880B-18B4-880B045F880B}</UniqueIdentifier>
     </Filter>
     <Filter Include="zar">
       <UniqueIdentifier>{D2C6880B-3ED0-887C-C74B-9F7C3354947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="zdb">
-      <UniqueIdentifier>{25C7880B-91D0-887C-1A4C-9F7C8654947C}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\entity\ent_main.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\zmath_main.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\node\node_main.h">
+      <Filter>node</Filter>
+    </ClInclude>
     <ClInclude Include="src\reader\zrdr_local.h">
       <Filter>reader</Filter>
     </ClInclude>
-    <ClInclude Include="src\zar\zar.h">
+    <ClInclude Include="src\reader\zrdr_main.h">
+      <Filter>reader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\reader\zrdr_parse.h">
+      <Filter>reader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\system\zsys_main.h">
+      <Filter>system</Filter>
+    </ClInclude>
+    <ClInclude Include="src\zar\zar_main.h">
       <Filter>zar</Filter>
     </ClInclude>
-    <ClInclude Include="src\node\node_main.h" />
-    <ClInclude Include="src\reader\zrdr_main.h" />
-    <ClInclude Include="src\reader\zrdr_parse.h" />
     <ClInclude Include="src\zgame.h" />
-    <ClInclude Include="src\system\zsys_main.h" />
-    <ClInclude Include="src\math\zmath_main.h" />
-    <ClInclude Include="src\entity\ent_main.h" />
+    <ClInclude Include="src\util\util_stable.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ai\ai_map.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ai\ai_mapio.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\zsnd_csnd.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\zsnd_csndgroup.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\audio\zsnd_csndsequence.cpp">
+      <Filter>audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entity\ent_main.cpp">
+      <Filter>entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\math\zmath_main.cpp">
+      <Filter>math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\node_assetlib.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\node_io.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\node_main.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\node_saveload.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\node_shadow.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\node\node_world.cpp">
+      <Filter>node</Filter>
+    </ClCompile>
     <ClCompile Include="src\reader\zrdr_edit.cpp">
       <Filter>reader</Filter>
     </ClCompile>
@@ -39,31 +110,30 @@
     <ClCompile Include="src\reader\zrdr_parse.cpp">
       <Filter>reader</Filter>
     </ClCompile>
-    <ClCompile Include="src\zar\zar.cpp">
+    <ClCompile Include="src\system\zsys_memory.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system\zsys_sched.cpp">
+      <Filter>system</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\zui.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\zui_2d.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\zui_cleanup.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\zui_spec.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\zar\zar_main.cpp">
       <Filter>zar</Filter>
     </ClCompile>
     <ClCompile Include="src\zar\zar_search.cpp">
       <Filter>zar</Filter>
     </ClCompile>
-    <ClCompile Include="src\ai\ai_map.cpp" />
-    <ClCompile Include="src\ai\ai_mapio.cpp" />
-    <ClCompile Include="src\audio\zsnd_csnd.cpp" />
-    <ClCompile Include="src\audio\zsnd_csndgroup.cpp" />
-    <ClCompile Include="src\audio\zsnd_csndsequence.cpp" />
-    <ClCompile Include="src\system\zsys_sched.cpp" />
-    <ClCompile Include="src\system\zsys_memory.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\math\zmath_main.cpp" />
-    <ClCompile Include="src\node\node_io.cpp" />
-    <ClCompile Include="src\node\node_main.cpp" />
-    <ClCompile Include="src\node\node_saveload.cpp" />
-    <ClCompile Include="src\node\node_shadow.cpp" />
-    <ClCompile Include="src\node\node_world.cpp" />
-    <ClCompile Include="src\node\node_assetlib.cpp" />
-    <ClCompile Include="src\ui\zui.cpp" />
-    <ClCompile Include="src\ui\zui_2d.cpp" />
-    <ClCompile Include="src\ui\zui_spec.cpp" />
-    <ClCompile Include="src\ui\zui_cleanup.cpp" />
-    <ClCompile Include="src\entity\ent_main.cpp" />
+    <ClCompile Include="src\util\util_stable.cpp" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,20 @@
 #include "zrdr_main.h"
 
+zdb::CFileIO::CFileIO()
+{
+	m_Data = 0xFFFFFFF;
+}
+
+int zdb::CRdrIO::FUN_0031f5f8(char* param_1, char* param_2)
+{
+	char* baseReaderName = param_1;
+
+	if (baseReaderName == '\0')
+	{
+		return 0;
+	}
+}
+
 int zdb::CRdrIO::UnknownFileIOFunction(int* ptr, char* label)
 {
 	// some of the worst code i have ever written
@@ -8,27 +23,30 @@ int zdb::CRdrIO::UnknownFileIOFunction(int* ptr, char* label)
 		return 0;
 	}
 
-	int* ptrIndex = nullptr;
-	int* ptrArray = ptrIndex + *(ptr + 4);
+	int* ptrTable = nullptr;
+	int* ptrTableEnd = ptrTable + *(ptr + 4);
 
-	for (; ptrIndex != ptrArray; ptrIndex++)
+	for (; ptrTable != ptrTableEnd; ptrTable++)
 	{
-		if (*(int*)(*ptrIndex + 16) == -1)
+		if (*(int*)(*ptrTable + 16) == -1)
 		{
 			break;
 		}
 
-		// FUN_0031f5f8(char* param_1, char* param_2);
+		if (FUN_0031f5f8((char*)ptr, *(char**)(*ptrTable + 12)))
+		{
+			break;
+		}
 	}
 
-	if (ptrIndex == nullptr)
+	if (ptrTable == nullptr)
 	{
 		return 0;
 	}
 
-	if (ptrIndex != (int*)(*(int*)ptr + 8) + *(int*)(ptr + 4) * 4)
+	if (ptrTable != (int*)(*(int*)ptr + 8) + *(int*)(ptr + 4) * 4)
 	{
-		return *ptrIndex;
+		return *ptrTable;
 	}
 
 	return 0;

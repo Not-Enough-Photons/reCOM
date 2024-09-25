@@ -1,8 +1,6 @@
 #pragma once
 namespace zdb
 {
-
-
 	static void FlipBytes(char* src, char* buffer, int offset)
 	{
 		int i;
