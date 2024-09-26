@@ -41,6 +41,16 @@ namespace zdb
 
 	};
 
+	class CWorld : public CNode
+	{
+
+	};
+
+	class CCell : public CNode
+	{
+
+	};
+
 	class CCamera : public CNode
 	{
 	public:

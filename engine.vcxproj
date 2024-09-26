@@ -88,6 +88,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ai\ai_main.h" />
     <ClInclude Include="src\entity\ent_main.h" />
     <ClInclude Include="src\math\zmath_main.h" />
     <ClInclude Include="src\node\node_main.h" />
@@ -96,10 +97,12 @@
     <ClInclude Include="src\reader\zrdr_parse.h" />
     <ClInclude Include="src\system\zsys_main.h" />
     <ClInclude Include="src\util\util_stable.h" />
+    <ClInclude Include="src\valve\valve_main.h" />
     <ClInclude Include="src\zar\zar_main.h" />
     <ClInclude Include="src\zgame.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ai\ai_main.cpp" />
     <ClCompile Include="src\ai\ai_map.cpp" />
     <ClCompile Include="src\ai\ai_mapio.cpp" />
     <ClCompile Include="src\audio\zsnd_csnd.cpp" />
@@ -127,6 +130,7 @@
     <ClCompile Include="src\util\util_stable.cpp" />
     <ClCompile Include="src\zar\zar_main.cpp" />
     <ClCompile Include="src\zar\zar_search.cpp" />
+    <ClCompile Include="src\valve\valve_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
