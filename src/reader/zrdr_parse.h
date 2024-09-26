@@ -1,6 +1,28 @@
 #pragma once
 namespace zdb
 {
+	static void Verify(char* first, char* second)
+	{
+		first++;
+		while (true)
+		{
+			second++;
+			char* ptr = first;
+
+			if (first == '\0')
+			{
+				break;
+			}
+
+			char* ptr2 = second;
+
+			if ((*(int*)ptr & *(int*)ptr2) == 0)
+			{
+
+			}
+		}
+	}
+
 	static void FlipBytes(char* src, char* buffer, int offset)
 	{
 		int i;

@@ -29,4 +29,9 @@ namespace zdb
 		int GetArchiveOffset(int* archivePtr);
 		void ReadString(void* archive, char* label, char* buf, size_t maxLength);
 	};
+
+	class CRdrArchive : public CRdrIO
+	{
+
+	};
 }

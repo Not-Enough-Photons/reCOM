@@ -446,7 +446,7 @@ namespace zdb
 		return vector;
 	}
 
-	inline static Vector3 Lerp(Vector3 a, Vector3 b, float t)
+	inline static Vector3 Lerp(Vector3& a, Vector3& b, float t)
 	{
 		Vector3 vector;
 		vector.x = Lerp(a.x, b.x, t);
