@@ -1,4 +1,7 @@
 #include "ent_main.h"
+#include "zwep_weapon.h"
+
+#include "ui/zui_main.h"
 
 namespace zdb
 {
@@ -87,6 +90,76 @@ namespace zdb
 		m_BoneRotation = { 0.0, 0.0, 0.0 };
 	}
 
+	const char* CZSealEx::GetRawCommandType(int command)
+	{
+		switch (command)
+		{
+		case 0:
+			return "CMD_UNKNOWN";
+		case 1:
+			return "CMD_ACTION";
+		case 2:
+			return "CMD_DEPLOY";
+		case 3:
+			return "CMD_FIREATWILL";
+		case 4:
+			return "CMD_FOLLOW";
+		case 5:
+			return "CMD_HOLDPOS";
+		case 6:
+			return "CMD_HOLDFIRE";
+		case 7:
+			return "CMD_REGROUP";
+		case 8:
+			return "CMD_ESCORT";
+		case 9:
+			return "CMD_RUNTO";
+		case 10:
+			return "CMD_MOVETO";
+		case 11:
+			return "CMD_STEALTHTO";
+		case 12:
+			return "CMD_ATTACKTO";
+		case 13:
+			return "CMD_LEADTO";
+		case 14:
+			return "CMD_COVERTARGET";
+		case 15:
+			return "CMD_LASETARGET";
+		case 16:
+			return "CMD_BREACH";
+		case 17:
+			return "CMD_GETDOWN";
+		case 18:
+			return "CMD_PULLOUT";
+		case 19:
+			return "CMD_OVERWATCH";
+		case 20:
+			return "CMD_SUPPORT";
+		case 21:
+			return "CMD_EXTRACT";
+		case 22:
+			return "CMD_CLEARAREA";
+		case 23:
+			return "CMD_RESTRAIN";
+		case 24:
+			return "CMD_REMOVEKILLS";
+		case 25:
+			return "CMD_AWAKE";
+		case 26:
+			return "CMD_SLEEP";
+		case 27:
+			return "CMD_AMBUSH";
+		default:
+			return "CMD_UNKNOWN";
+		}
+	}
+
+	void CZSealEx::SetLimbHealth()
+	{
+
+	}
+
 	float CZSealEx::DamagePlayer(float source, float param_2)
 	{
 		float difference = source - m_OldHealth * ((10.0f - param_2) / 10.0f);
@@ -113,5 +186,20 @@ namespace zdb
 		}
 
 		return m_Health;
+	}
+
+	void CZFTSWeapon::Fire()
+	{
+		// TODO: the rest of this fire function
+		// for now implement the things i know so far
+		int claymores = 0;
+		if (claymores < 4)
+		{
+
+		}
+		else
+		{
+			zdb::CZUI::SendUIMessage(0, (char*)0x583ad0, "Max Claymores Placed (4)", nullptr, 0, 0);
+		}
 	}
 }

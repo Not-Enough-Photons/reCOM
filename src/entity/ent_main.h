@@ -74,10 +74,26 @@ namespace zdb
 	class CZSealEx : public CNodeEx
 	{
 	public:
+		const char* GetRawCommandType(int command);
+		void SetLimbHealth();
 		void DamageSeal(float source, float param_2);
 		float DamagePlayer(float source, float param_2);
 	private:
 		float m_Health;
 		float m_OldHealth;
+
+		float m_HeadHealth;
+		float m_BodyHealth;
+		float m_LArmHealth;
+		float m_RArmHealth;
+		float m_LArmHealth;
+		float m_RArmHealth;
+
+		float m_HeadArmor;
+		float m_BodyArmor;
+		float m_LArmArmor;
+		float m_RArmArmor;
+		float m_LArmArmor;
+		float m_RArmArmor;
 	};
 }

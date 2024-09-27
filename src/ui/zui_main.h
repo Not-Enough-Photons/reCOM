@@ -19,6 +19,6 @@ namespace zdb
 	class CZUI
 	{
 	public:
-		void SendUIMessage(float time, const char* message, char* messagePtr, void* param_4, void* param_5, int param_6);
+		static void SendUIMessage(float param_1, const char* message, char* messagePtr, void* param_4, void* param_5, int param_6);
 	};
 }
