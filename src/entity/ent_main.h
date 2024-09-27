@@ -73,6 +73,11 @@ namespace zdb
 
 	class CZSealEx : public CNodeEx
 	{
-
+	public:
+		void DamageSeal(float source, float param_2);
+		float DamagePlayer(float source, float param_2);
+	private:
+		float m_Health;
+		float m_OldHealth;
 	};
 }

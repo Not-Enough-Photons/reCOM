@@ -86,4 +86,32 @@ namespace zdb
 		m_BoneLocalPosition = { 0.0, 0.0, 0.0 };
 		m_BoneRotation = { 0.0, 0.0, 0.0 };
 	}
+
+	float CZSealEx::DamagePlayer(float source, float param_2)
+	{
+		float difference = source - m_OldHealth * ((10.0f - param_2) / 10.0f);
+
+		if (difference <= 0.0f)
+		{
+			difference = 0.0f;
+		}
+
+		float dampenedDamage = m_OldHealth - (source - difference) / 4.0f;
+		m_OldHealth = dampenedDamage;
+
+		if (dampenedDamage <= 0.0f)
+		{
+			m_OldHealth = 0.0f;
+		}
+
+		dampenedDamage = m_Health;
+		m_Health = dampenedDamage - difference;
+		
+		if (m_Health <= 0.0f)
+		{
+			m_Health = 0.0f;
+		}
+
+		return m_Health;
+	}
 }
