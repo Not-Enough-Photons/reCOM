@@ -3,7 +3,9 @@ namespace zdb
 {
 	class CZWeapon
 	{
-
+	public:
+		virtual void Fire();
+		virtual void Reload();
 	};
 
 	class CZFTSWeapon : public CZWeapon
