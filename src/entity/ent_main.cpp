@@ -188,6 +188,94 @@ namespace zdb
 		return m_Health;
 	}
 
+	const char* CZFTSWeapon::GetWeaponType(int type) const
+	{
+		if ((type != -2) && (type != -1))
+		{
+			if (type == -26)
+			{
+				return "TURRETED_LAUNCHER";
+			}
+
+			if (type == -51)
+			{
+				return "TURRETED_WEAPON";
+			}
+
+			if (type == -55)
+			{
+				return "ARMOR";
+			}
+
+			if (type == -66)
+			{
+				return "MISC_EQUIP";
+			}
+
+			if (type == -71)
+			{
+				return "LAUNCHED_MISSILE";
+			}
+
+			if (type == -85)
+			{
+				return "LAUNCHED";
+			}
+
+			if (type == -105)
+			{
+				return "EXPLOSIVE";
+			}
+
+			if (type == -111)
+			{
+				return "LAUNCHER";
+			}
+
+			if (type == -115)
+			{
+				return "HEVY_WEAPON";
+			}
+
+			if (type == 121)
+			{
+				return "GRENADE";
+			}
+
+			if (type == 101)
+			{
+				return "SNIPER_RIFLE";
+			}
+
+			if (type == 91)
+			{
+				return "MACHINE_GUN";
+			}
+
+			if (type == 81)
+			{
+				return "SHOTGUN";
+			}
+
+			if (type == 51)
+			{
+				return "ASSLT_RIFLE";
+			}
+
+			if (type == 31)
+			{
+				return "SMG";
+			}
+
+			if (type == 4)
+			{
+				return "PISTOL";
+			}
+		}
+
+		return "UNKNOWN";
+	}
+
 	void CZFTSWeapon::Fire()
 	{
 		// TODO: the rest of this fire function

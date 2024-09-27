@@ -9,10 +9,14 @@ namespace zdb
 	class CZFTSWeapon : public CZWeapon
 	{
 	public:
+		const char* GetWeaponType(int type) const;
+
 		void Fire();
 		void FireProjectile();
 		void Reload();
 	private:
+		const char* m_WeaponType;
+
 		// magazines are put into CZAmmo instances, but for now i'll tack it in here
 		int m_RemainingAmmo;
 		int m_AmmoCount;
