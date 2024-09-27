@@ -21,7 +21,7 @@ typedef struct AISensors
 	int respawn;
 };
 
-int SetParameter(long param_2, char* paramName, uint32_t* ptr, int32_t param_4);
+int SetParameter(long param_2, char* paramName, uint32_t* ptr, int32_t param_4)
 {
 	return 1;
 }
@@ -63,7 +63,7 @@ void SetAIParameters(uint32_t* aiPtr, long param_2)
 
 		}
 
-		if (SetParameter(param_2, "target_discipline", aiPtr, 1)
+		if (SetParameter(param_2, "target_discipline", aiPtr, 1))
 		{
 
 		}

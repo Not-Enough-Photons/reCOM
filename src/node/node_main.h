@@ -80,4 +80,9 @@ namespace zdb
 		float m_Intensity;
 		float m_Range;
 	};
+
+	class CLightMap : public CNode
+	{
+
+	};
 }

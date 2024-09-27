@@ -90,14 +90,19 @@
   <ItemGroup>
     <ClInclude Include="src\ai\ai_main.h" />
     <ClInclude Include="src\entity\ent_main.h" />
+    <ClInclude Include="src\entity\zwep_ammo.h" />
+    <ClInclude Include="src\entity\zwep_weapon.h" />
+    <ClInclude Include="src\math\zmath_bits.h" />
     <ClInclude Include="src\math\zmath_main.h" />
     <ClInclude Include="src\node\node_main.h" />
     <ClInclude Include="src\reader\zrdr_local.h" />
     <ClInclude Include="src\reader\zrdr_main.h" />
     <ClInclude Include="src\reader\zrdr_parse.h" />
     <ClInclude Include="src\system\zsys_main.h" />
+    <ClInclude Include="src\ui\zui_main.h" />
     <ClInclude Include="src\util\util_stable.h" />
     <ClInclude Include="src\valve\valve_main.h" />
+    <ClInclude Include="src\world\zworld.h" />
     <ClInclude Include="src\zar\zar_main.h" />
     <ClInclude Include="src\zgame.h" />
   </ItemGroup>
@@ -128,6 +133,7 @@
     <ClCompile Include="src\ui\zui_cleanup.cpp" />
     <ClCompile Include="src\ui\zui_spec.cpp" />
     <ClCompile Include="src\util\util_stable.cpp" />
+    <ClCompile Include="src\world\zworld.cpp" />
     <ClCompile Include="src\zar\zar_main.cpp" />
     <ClCompile Include="src\zar\zar_search.cpp" />
     <ClCompile Include="src\valve\valve_main.cpp" />
