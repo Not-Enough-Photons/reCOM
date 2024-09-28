@@ -10,6 +10,18 @@ namespace zdb
 		CEntity();
 	};
 
+	class CZSealBodyBone : CNodeEx
+	{
+	public:
+		CZSealBodyBone();
+		CZSealBodyBone(const char* name);
+	private:
+		const char* m_BoneName;
+		zdb::Vector3 m_BoneWorldPosition;
+		zdb::Vector3 m_BoneLocalPosition;
+		zdb::Quaternion m_BoneRotation;
+	};
+
 	class CZSealBody : CEntity
 	{
 	public:
@@ -62,17 +74,7 @@ namespace zdb
 		CZSealBodyBone* m_AimNodes;
 	};
 
-	class CZSealBodyBone : CNodeEx
-	{
-	public:
-		CZSealBodyBone();
-		CZSealBodyBone(const char* name);
-	private:
-		const char* m_BoneName;
-		zdb::Vector3 m_BoneWorldPosition;
-		zdb::Vector3 m_BoneLocalPosition;
-		zdb::Vector3 m_BoneRotation;
-	};
+	
 
 	class CZSealEx : public CNodeEx
 	{
@@ -89,14 +91,14 @@ namespace zdb
 		float m_BodyHealth;
 		float m_LArmHealth;
 		float m_RArmHealth;
-		float m_LArmHealth;
-		float m_RArmHealth;
+		float m_LLegHealth;
+		float m_RLegHealth;
 
 		float m_HeadArmor;
 		float m_BodyArmor;
 		float m_LArmArmor;
 		float m_RArmArmor;
-		float m_LArmArmor;
-		float m_RArmArmor;
+		float m_LLegArmor;
+		float m_RLegArmor;
 	};
 }

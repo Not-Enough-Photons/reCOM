@@ -54,8 +54,6 @@ namespace zdb
 	class CCamera : public CNode
 	{
 	public:
-		// i'm not sure why the names are capitalized
-		// feels like i'm being yelled at
 		static float FOV;
 		static float CLIP;
 		static bool CLIP_ALL;

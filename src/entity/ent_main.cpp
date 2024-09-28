@@ -5,6 +5,22 @@
 
 namespace zdb
 {
+	CZSealBodyBone::CZSealBodyBone()
+	{
+		m_BoneName = "";
+		m_BoneWorldPosition = { 0.0, 0.0, 0.0 };
+		m_BoneLocalPosition = { 0.0, 0.0, 0.0 };
+		m_BoneRotation = { 0.0, 0.0, 0.0 };
+	}
+
+	CZSealBodyBone::CZSealBodyBone(const char* name)
+	{
+		m_BoneName = name;
+		m_BoneWorldPosition = { 0.0, 0.0, 0.0 };
+		m_BoneLocalPosition = { 0.0, 0.0, 0.0 };
+		m_BoneRotation = { 0.0, 0.0, 0.0 };
+	}
+
 	CZSealBody::CZSealBody()
 	{
 		m_Position = { 0.0f, 0.0f, 0.0f };
@@ -115,22 +131,6 @@ namespace zdb
 	float CZSealBody::GetYaw() const
 	{
 		return m_Yaw;
-	}
-
-	CZSealBodyBone::CZSealBodyBone()
-	{
-		m_BoneName = "";
-		m_BoneWorldPosition = { 0.0, 0.0, 0.0 };
-		m_BoneLocalPosition = { 0.0, 0.0, 0.0 };
-		m_BoneRotation = { 0.0, 0.0, 0.0 };
-	}
-
-	CZSealBodyBone::CZSealBodyBone(const char* name)
-	{
-		m_BoneName = name;
-		m_BoneWorldPosition = { 0.0, 0.0, 0.0 };
-		m_BoneLocalPosition = { 0.0, 0.0, 0.0 };
-		m_BoneRotation = { 0.0, 0.0, 0.0 };
 	}
 
 	const char* CZSealEx::GetRawCommandType(int command)
