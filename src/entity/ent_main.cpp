@@ -44,6 +44,49 @@ namespace zdb
 
 	}
 
+	int* CZSealBody::FUN_002e4d60(zdb::Vector3* vec, long param_3)
+	{
+		if (AggroLookAt(0, nullptr, zdb::Vector3()))
+		{
+			zdb::Vector3 vector;
+			vector.y *= 0.5f;
+			float len = vector.x * vector.x + vector.y * vector.y;
+
+			float fVar8 = 0.0f;
+			float fVar9 = 0.0f;
+			float fVar10 = 0.0f;
+			float fVar11 = 0.0f;
+
+			if (len < 10000.0f)
+			{
+				if (fVar8 > 40.0)
+				{
+					fVar9 = 900.0f;
+
+					if (fVar8 < 85.0)
+					{
+						fVar9 = (85.0 - fVar8) * 0.02222222 * 9100.0 + 900.0;
+					}
+
+					if (param_3 == 0)
+					{
+
+					}
+
+					if ((fVar8 <= fVar9) && (fVar10 < fVar11))
+					{
+						zdb::Vector3 other;
+						vec->x = other.x;
+						vec->y = other.y;
+						vec->z = other.z;
+					}
+				}
+			}
+		}
+
+		return nullptr;
+	}
+
 	void CZSealBody::SetPosition(float x, float y, float z)
 	{
 		m_WrittenPosition.x = x;

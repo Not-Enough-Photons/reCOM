@@ -32,6 +32,14 @@ namespace zdb
 			o.y -= rhs.y;
 			return o;
 		}
+
+		inline Vector2 operator*(const float rhs)
+		{
+			Vector2 o = *this;
+			o.x *= rhs;
+			o.y *= rhs;
+			return o;
+		}
 	};
 
 	typedef union Vector3
@@ -117,6 +125,16 @@ namespace zdb
 			o.y -= rhs.y;
 			o.z -= rhs.z;
 			o.w -= rhs.w;
+			return o;
+		}
+
+		inline Vector4 operator*(const float rhs)
+		{
+			Vector4 o = *this;
+			o.x *= rhs;
+			o.y *= rhs;
+			o.z *= rhs;
+			o.w *= rhs;
 			return o;
 		}
 	};
