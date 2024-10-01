@@ -15,6 +15,10 @@ namespace zdb
 
 		~CNode();
 
+		void SetNodeID(int id);
+		std::string SetNodeName(const char* name);
+		void SetParent(const CNode& node);
+
 		int GetNodeID() const;
 		std::string GetNodeName() const;
 		CNode& GetParent() const;
@@ -41,19 +45,11 @@ namespace zdb
 
 	};
 
-	class CWorld : public CNode
-	{
-
-	};
-
-	class CCell : public CNode
-	{
-
-	};
-
 	class CCamera : public CNode
 	{
 	public:
+		// i'm not sure why the names are capitalized
+		// feels like i'm being yelled at
 		static float FOV;
 		static float CLIP;
 		static bool CLIP_ALL;
@@ -77,10 +73,5 @@ namespace zdb
 		float m_Blue;
 		float m_Intensity;
 		float m_Range;
-	};
-
-	class CLightMap : public CNode
-	{
-
 	};
 }
