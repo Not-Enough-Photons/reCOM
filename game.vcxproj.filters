@@ -30,8 +30,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ai\ai_main.h">
+      <Filter>ai</Filter>
+    </ClInclude>
+    <ClInclude Include="src\audio\zsnd_csnd.h">
+      <Filter>audio</Filter>
+    </ClInclude>
     <ClInclude Include="src\entity\ent_main.h">
       <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\zwep_ammo.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entity\zwep_weapon.h">
+      <Filter>entity</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\zmath_bits.h">
+      <Filter>math</Filter>
     </ClInclude>
     <ClInclude Include="src\math\zmath_main.h">
       <Filter>math</Filter>
@@ -51,21 +66,18 @@
     <ClInclude Include="src\system\zsys_main.h">
       <Filter>system</Filter>
     </ClInclude>
+    <ClInclude Include="src\ui\zui_main.h">
+      <Filter>ui</Filter>
+    </ClInclude>
     <ClInclude Include="src\zar\zar_main.h">
       <Filter>zar</Filter>
     </ClInclude>
     <ClInclude Include="src\zgame.h" />
-    <ClInclude Include="src\util\util_stable.h" />
-    <ClInclude Include="src\ai\ai_main.h" />
-    <ClInclude Include="src\valve\valve_main.h" />
-    <ClInclude Include="src\math\zmath_bits.h" />
-    <ClInclude Include="src\world\zworld.h" />
-    <ClInclude Include="src\ui\zui_main.h" />
-    <ClInclude Include="src\entity\zwep_weapon.h" />
-    <ClInclude Include="src\entity\zwep_ammo.h" />
-    <ClInclude Include="src\audio\zsnd_csnd.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ai\ai_main.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
     <ClCompile Include="src\ai\ai_map.cpp">
       <Filter>ai</Filter>
     </ClCompile>
@@ -142,9 +154,5 @@
     <ClCompile Include="src\zar\zar_search.cpp">
       <Filter>zar</Filter>
     </ClCompile>
-    <ClCompile Include="src\util\util_stable.cpp" />
-    <ClCompile Include="src\ai\ai_main.cpp" />
-    <ClCompile Include="src\valve\valve_main.cpp" />
-    <ClCompile Include="src\world\zworld.cpp" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
-workspace "ZIEngine"
+workspace "reCOM"
     configurations { "Debug", "Release" }
 
-project "engine"
+project "game"
     kind "ConsoleApp"
     language "C++"
     files { 

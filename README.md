@@ -1,7 +1,7 @@
-![Isolated.png](https://github.com/Not-Enough-Photons/ZIEngine/blob/main/img/ziengine_banner.png?raw=true)
+![Isolated.png](https://github.com/Not-Enough-Photons/reCOM/blob/main/img/recom-logo.png?raw=true)
 
 # Intro
-This repository houses the reverse engineered code of Zipper Interactive's engine.
+This repository houses the reverse engineered code of SOCOM's engine.
 
 It is a work in progress, and a lot needs to make sure the SOCOM experience is one-to-one with the PlayStation 2.
 
