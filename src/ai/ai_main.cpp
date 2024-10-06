@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <iostream>
+#include "ai_main.h"
 
 enum AIState
 {
@@ -35,6 +36,56 @@ typedef struct AISensors
 	float thip_range;
 	int respawn;
 };
+
+const char* GetTeamName(char param_1)
+{
+	if (param_1 == 31)
+	{
+		return "ALLIES";
+	}
+	else if (param_1 == 30)
+	{
+		return "ENEMIES";
+	}
+	else if (param_1 == 28)
+	{
+		return "HOSTAGE";
+	}
+	else if (param_1 == 29)
+	{
+		return "SUPPORT";
+	}
+	else if (param_1 == 27)
+	{
+		return "TURRETS";
+	}
+	else if (param_1 == 26)
+	{
+		return "NEUTRAL";
+	}
+	else if (param_1 == 18)
+	{
+		return "FRIENDLY";
+	}
+	else if (param_1 == 17)
+	{
+		return "ESCORTEE";
+	}
+	else if (param_1 == 3)
+	{
+		return "BRAVO";
+	}
+	else if (param_1 == 2)
+	{
+		return "ABLE";
+	}
+	else if (param_1 == 1)
+	{
+		return "FIRETEAM";
+	}
+
+	return "FT_UNKNOWN";
+}
 
 int SetParameter(long param_2, char* paramName, uint32_t* ptr, int32_t param_4)
 {
