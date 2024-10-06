@@ -37,49 +37,49 @@ typedef struct AISensors
 	int respawn;
 };
 
-const char* GetTeamName(char param_1)
+const char* GetTeamName(char teamFlag)
 {
-	if (param_1 == 31)
+	if (teamFlag == 31)
 	{
 		return "ALLIES";
 	}
-	else if (param_1 == 30)
+	else if (teamFlag == 30)
 	{
 		return "ENEMIES";
 	}
-	else if (param_1 == 28)
+	else if (teamFlag == 28)
 	{
 		return "HOSTAGE";
 	}
-	else if (param_1 == 29)
+	else if (teamFlag == 29)
 	{
 		return "SUPPORT";
 	}
-	else if (param_1 == 27)
+	else if (teamFlag == 27)
 	{
 		return "TURRETS";
 	}
-	else if (param_1 == 26)
+	else if (teamFlag == 26)
 	{
 		return "NEUTRAL";
 	}
-	else if (param_1 == 18)
+	else if (teamFlag == 18)
 	{
 		return "FRIENDLY";
 	}
-	else if (param_1 == 17)
+	else if (teamFlag == 17)
 	{
 		return "ESCORTEE";
 	}
-	else if (param_1 == 3)
+	else if (teamFlag == 3)
 	{
 		return "BRAVO";
 	}
-	else if (param_1 == 2)
+	else if (teamFlag == 2)
 	{
 		return "ABLE";
 	}
-	else if (param_1 == 1)
+	else if (teamFlag == 1)
 	{
 		return "FIRETEAM";
 	}
