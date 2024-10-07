@@ -241,7 +241,7 @@ namespace zdb
 		// FUN_004f4ff0(commandType, fireTeam, commandDisplayName, regroup, commandDescription, 0);
 	}
 
-	void CZUI::SendUIMessage(float time, const char* message, char* messagePtr, void* param_4, void* param_5, int param_6)
+	void CZUI::SendUIMessage(int count, int* ptr, const char* message, TextColor color, TextAlignment alignment)
 	{
 		C2DMessageString str;
 	}

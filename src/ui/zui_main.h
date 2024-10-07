@@ -3,9 +3,38 @@
 
 namespace zdb
 {
+	enum TextColor
+	{
+		WHITE,
+		YELLOW,
+		BLUE,
+		ORANGE,
+		RED,
+		PURPLE
+	};
+
+	enum TextAlignment
+	{
+		LEFT,
+		CENTER,
+		RIGHT
+	};
+
 	class C2D
 	{
 
+	};
+
+	class C2DPoly : public C2D
+	{
+	public:
+		C2DPoly();
+	};
+
+	class C2DBitmap : public C2D
+	{
+	public:
+		C2DBitmap();
 	};
 
 	class CPlainBmp : public C2D
@@ -27,6 +56,6 @@ namespace zdb
 		static const char* GetCommandDisplayName(zdb::SealCommand command);
 		static const char* GetProperRegroupDisplay(zdb::SealCommand command);
 		static const char* GetCommandDescription(zdb::SealCommand command);
-		static void SendUIMessage(float param_1, const char* message, char* messagePtr, void* param_4, void* param_5, int param_6);
+		static void SendUIMessage(int count, int* ptr, const char* message, TextColor color, TextAlignment alignment);
 	};
 }
