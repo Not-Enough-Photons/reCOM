@@ -10,9 +10,6 @@ namespace zdb
 	const int FOUR_BYTES = 4;
 	const int EIGHT_BYTES = 8;
 
-    static uintptr_t dwEEMem = (uintptr_t)GetProcAddress(GetModuleHandle(TEXT("pcsx2-qt.exe")), "EEmem");
-    static uintptr_t BasePS2MemorySpace = *(uintptr_t*)dwEEMem;
-
     typedef struct ZAmmo
     {
         const char* internalName;
@@ -35,6 +32,12 @@ namespace zdb
         int32_t ignoreExplosionDI;
     } zammo_t;
 
+    static uintptr_t dwEEMem = (uintptr_t)GetProcAddress(GetModuleHandle(TEXT("pcsx2-qt.exe")), "EEmem");
+    static uintptr_t BasePS2MemorySpace = *(uintptr_t*)dwEEMem;
+
+    static zammo_t zAmmoValues;
+    
+
     // From https://www.unknowncheats.me/forum/general-programming-and-reversing/569991-pcsx2-guide-cheats-trainers.html
     uintptr_t GetPS2Address(unsigned int RAW_PS2_OFFSET);
     template<typename T> inline T PS2Read(uintptr_t Address);
@@ -48,6 +51,10 @@ namespace zdb
     int ReadString(int32_t pointer, const char* entry, std::string* output);
     int ReadInt(int32_t pointer, const char* entry, int* output, int param_4);
 	int ReadFloat(int32_t pointer, const char* entry, float* output, int param_4);
+
+    // Weapon parsing
+    void ParseZAmmo(int param_1, int32_t pointer);
+    void ReadWeaponArchive(int32_t pointer, const char* file);
 
 	static void FlipBytes(char* src, char* buffer, int offset);
     static char* TrimUpTowards(char* src, char* match);
