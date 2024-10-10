@@ -1,6 +1,10 @@
 #pragma once
 namespace zdb
 {
+	static void FUN_004b0dc0(long param_1, long param_2);
+	static bool FUN_004f8940(int param_1);
+	static void ZGameMain();
+
 	class CGame
 	{
 	public:
