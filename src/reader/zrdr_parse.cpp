@@ -1,6 +1,28 @@
 #include "zrdr_parse.h"
 namespace zdb
 {
+#define HASH_COMPARE(x) ZAR_HASH_TABLE[x] & 1;
+
+    const char ZAR_HASH_TABLE[128]
+    {
+        20,20,20,20,20,20,20,00,
+        20,28,28,28,28,28,20,20,
+        20,20,20,20,20,20,20,20,
+        20,20,20,20,20,20,20,20,
+        10,10,10,10,10,10,88,20,
+        10,10,10,10,10,10,10,10,
+        04,04,04,04,04,04,04,10,
+        10,10,10,10,10,04,04,04,
+        41,41,41,41,41,41,10,10,
+        01,01,01,01,01,01,01,01,
+        01,01,01,01,01,01,01,01,
+        10,10,10,10,01,01,01,01,
+        42,42,42,42,42,42,10,10,
+        02,02,02,02,02,02,02,02,
+        02,02,02,02,02,02,02,02,
+        10,10,10,10,02,02,02,02
+    };
+
     // From https://www.unknowncheats.me/forum/general-programming-and-reversing/569991-pcsx2-guide-cheats-trainers.html
     uintptr_t GetPS2Address(unsigned int RAW_PS2_OFFSET)
     {

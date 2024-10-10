@@ -4,6 +4,8 @@
 #include <cstring>
 #include <cstdint>
 
+#include "Windows.h"
+
 namespace zdb
 {
 	const int TWO_BYTES = 2;

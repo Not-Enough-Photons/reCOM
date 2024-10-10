@@ -330,7 +330,7 @@ namespace zdb
 		}
 		else
 		{
-			zdb::CZUI::SendUIMessage(0, (char*)0x583ad0, "Max Claymores Placed (4)", nullptr, 0, 0);
+			zdb::CZUI::SendUIMessage(0, (int*)0x583ad0, "Max Claymores Placed (4)", zdb::TextColor::RED, zdb::TextAlignment::CENTER);
 		}
 	}
 }
