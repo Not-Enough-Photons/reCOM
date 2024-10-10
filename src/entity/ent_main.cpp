@@ -5,6 +5,11 @@
 
 namespace zdb
 {
+	CEntity::CEntity()
+	{
+
+	}
+
 	CZSealBodyBone::CZSealBodyBone()
 	{
 		m_BoneName = "";
@@ -58,6 +63,11 @@ namespace zdb
 	CZSealBody::~CZSealBody()
 	{
 
+	}
+
+	bool CZSealBody::AggroLookAt(int param_1, void* param_2, zdb::Vector3 lookPosition)
+	{
+		return false;
 	}
 
 	int* CZSealBody::FUN_002e4d60(zdb::Vector3* vec, long param_3)

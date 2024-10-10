@@ -8,6 +8,26 @@
 
 namespace zdb
 {
+    const char ZAR_HASH_TABLE[128]
+    {
+        20,20,20,20,20,20,20,00,
+        20,28,28,28,28,28,20,20,
+        20,20,20,20,20,20,20,20,
+        20,20,20,20,20,20,20,20,
+        10,10,10,10,10,10,88,20,
+        10,10,10,10,10,10,10,10,
+        04,04,04,04,04,04,04,10,
+        10,10,10,10,10,04,04,04,
+        41,41,41,41,41,41,10,10,
+        01,01,01,01,01,01,01,01,
+        01,01,01,01,01,01,01,01,
+        10,10,10,10,01,01,01,01,
+        42,42,42,42,42,42,10,10,
+        02,02,02,02,02,02,02,02,
+        02,02,02,02,02,02,02,02,
+        10,10,10,10,02,02,02,02
+    };
+
 	const int TWO_BYTES = 2;
 	const int FOUR_BYTES = 4;
 	const int EIGHT_BYTES = 8;
@@ -34,8 +54,8 @@ namespace zdb
         int32_t ignoreExplosionDI;
     } zammo_t;
 
-    static uintptr_t dwEEMem = (uintptr_t)GetProcAddress(GetModuleHandle(TEXT("pcsx2-qt.exe")), "EEmem");
-    static uintptr_t BasePS2MemorySpace = *(uintptr_t*)dwEEMem;
+    static uintptr_t dwEEMem = 0;
+    static uintptr_t BasePS2MemorySpace = 0;
 
     static zammo_t zAmmoValues;
     
