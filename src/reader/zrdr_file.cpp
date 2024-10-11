@@ -19,7 +19,7 @@ int CRdrArchive::GetReaderHashDifference(unsigned char parentByte, unsigned char
     return childOffset = parentOffset - childOffset;
 }
 
-int CRdrArchive::GetNextReader(const char* parentReader, const char* childReader)
+int CRdrArchive::EntryLookup(const char* parentReader, const char* childReader)
 {
     char parentChar = *parentReader;
     char childChar = *childReader;

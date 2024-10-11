@@ -3,6 +3,6 @@
 
 static void test_ReaderHashing(const char* parentReader, const char* childReader)
 {
-	int rdr = CRdrArchive::GetNextReader(parentReader, childReader);
+	int rdr = CRdrArchive::EntryLookup(parentReader, childReader);
 	std::cout << rdr << std::endl;
 }

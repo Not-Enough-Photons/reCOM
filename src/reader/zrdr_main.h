@@ -32,5 +32,5 @@ class CRdrArchive : public CRdrIO
 {
 public:
 	static int GetReaderHashDifference(unsigned char parentByte, unsigned char childByte);
-	static int GetNextReader(const char* parentReader, const char* childReader);
+	static int EntryLookup(const char* parentReader, const char* childReader);
 };
