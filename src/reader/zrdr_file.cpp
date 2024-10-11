@@ -42,7 +42,7 @@ namespace zdb
 
             if (parentValue != childValue)
             {
-                return GetEntryHashDifference(*parentReader, *childReader);
+                return GetReaderHashDifference(*parentReader, *childReader);
             }
 
             parentReader++;
@@ -83,6 +83,6 @@ namespace zdb
             }
         }
 
-        return GetEntryHashDifference(*parentReader, *childReader);
+        return GetReaderHashDifference(*parentReader, *childReader);
     }
 }
