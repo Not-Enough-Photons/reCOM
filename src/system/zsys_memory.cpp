@@ -26,9 +26,9 @@ namespace zdb
 		zAllocateAssert(len != 0 || dest != 0, "zsys_memory.cpp");
 	}
 
-	static void* zAllocateArray(int param_1, int param_2, char* sourceFile, int line)
+	static void* zAllocateArray(int count, int size, char* sourceFile, int line)
 	{
-		size_t size = param_1 * param_2;
+		size_t size = count * size;
 		void* dst = malloc(size);
 		memset(dst, 0, size);
 		zAllocateAssert(size == 0 || dst != NULL, "zsys_memory.cpp");
