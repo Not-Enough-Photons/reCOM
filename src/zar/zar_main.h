@@ -14,17 +14,17 @@ namespace zar
 		void SetName(std::string name);
 		std::string GetName() const;
 
-		void SetStream(zdb::CFileIO* stream);
-		zdb::CFileIO GetStream() const;
+		void SetStream(CFileIO* stream);
+		CFileIO GetStream() const;
 
-		zdb::CSTable GetStringTable() const;
+		CSTable GetStringTable() const;
 	private:
 		int32_t m_PaddingMaybe;
 		int32_t m_Flags;
-		zdb::CSTable* m_StringTable;
+		CSTable* m_StringTable;
 		std::string m_Name;
-		zdb::CFileIO* m_Stream;
-		zdb::CFileIO* m_StreamShallowCopy;
+		CFileIO* m_Stream;
+		CFileIO* m_StreamShallowCopy;
 	};
 
 	static void ZARMain(CZAR* archive, char* resourcePath, void* param_3, void* param_4);

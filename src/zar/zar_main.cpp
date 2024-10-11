@@ -2,61 +2,61 @@
 
 namespace zar
 {
-	zar::CZAR::CZAR(const char* name, char* param_2)
+	CZAR::CZAR(const char* name, char* param_2)
 	{
 		m_Name = "";
 		m_Flags = 0x20002;
-		m_StringTable = new zdb::CSTable("ROOT");
+		m_StringTable = new CSTable("ROOT");
 
 		if (param_2 == nullptr || param_2 == "ROOT")
 		{
 			m_Name = "ROOT";
 		}
 
-		m_Stream = new zdb::CFileIO();
+		m_Stream = new CFileIO();
 		m_StreamShallowCopy = m_Stream;
 
 		m_PaddingMaybe = 16;
 	}
 
-	void zar::CZAR::SetName(std::string name)
+	void CZAR::SetName(std::string name)
 	{
 		m_Name = name;
 	}
 
-	std::string zar::CZAR::GetName() const
+	std::string CZAR::GetName() const
 	{
 		return m_Name;
 	}
 
-	void zar::CZAR::SetStream(zdb::CFileIO* stream)
+	void CZAR::SetStream(CFileIO* stream)
 	{
 		m_Stream = stream;
 		m_StreamShallowCopy = m_Stream;
 	}
 
-	zdb::CFileIO zar::CZAR::GetStream() const
+	CFileIO CZAR::GetStream() const
 	{
 		return *m_StreamShallowCopy;
 	}
 
-	zdb::CSTable zar::CZAR::GetStringTable() const
+	CSTable CZAR::GetStringTable() const
 	{
 		return *m_StringTable;
 	}
 
-	static void zar::ZARMain(zar::CZAR* archive, char* resourcePath, void* param_3, void* param_4)
+	static void ZARMain(CZAR* archive, char* resourcePath, void* param_3, void* param_4)
 	{
 		if (resourcePath == '\0')
 		{
 
 		}
 
-		zdb::CFileIO* stream = &archive->GetStream();
+		CFileIO* stream = &archive->GetStream();
 
 		if (stream == nullptr)
 		{
-			stream = new zdb::CFileIO();
+			stream = new CFileIO();
 			archive->SetStream(stream);
 		}
 

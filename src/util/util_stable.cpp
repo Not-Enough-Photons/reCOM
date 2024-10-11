@@ -1,64 +1,61 @@
 #include "util\util_stable.h"
 #include "system\zsys_main.h"
 
-namespace zdb
+CSTable::CSTable(const char* name)
 {
-	CSTable::CSTable(const char* name)
-	{
-		m_Name = name;
-	}
+	m_Name = name;
+}
 
-	static const char* TrimStr(char* src, char trimChar)
-	{
-		char c;
-		char* p;
+static const char* TrimStr(char* src, char trimChar)
+{
+	char c;
+	char* p;
 
-		p = 0;
+	p = 0;
+	c = *src;
+
+	while (c != '\0')
+	{
+		if (c == trimChar)
+		{
+			p = src;
+		}
+
+		src++;
 		c = *src;
-
-		while (c != '\0')
-		{
-			if (c == trimChar)
-			{
-				p = src;
-			}
-
-			src++;
-			c = *src;
-		}
-
-		if (trimChar != '\0')
-		{
-			src = p;
-		}
-
-		return src;
 	}
 
-	static void* CreateString(const char* str, const char* sourceFile, int line)
+	if (trimChar != '\0')
 	{
-		char* dst = NULL;
-		size_t size = strlen(str);
-		int pad = size + 4;
-
-		if (size < 1U < 25)
-		{
-			if (pad < 0)
-			{
-				pad = size + 7;
-			}
-
-			// dst = reinterpret_cast<char*>(GlobalAllocate((pad >> 2) << 2));
-			if (dst != 0)
-			{
-				strcpy(dst, str);
-			}
-		}
-		else
-		{
-			// dst = reinterpret_cast<char*>(zAllocateString(str, sourceFile, line));
-		}
-
-		return dst;
+		src = p;
 	}
+
+	return src;
+}
+
+static void* CreateString(const char* str, const char* sourceFile, int line)
+{
+	char* dst = NULL;
+	size_t size = strlen(str);
+	int pad = size + 4;
+
+	if (size < 1U < 25)
+	{
+		if (pad < 0)
+		{
+			pad = size + 7;
+		}
+
+		// dst = reinterpret_cast<char*>(GlobalAllocate((pad >> 2) << 2));
+		if (dst != 0)
+		{
+			strcpy(dst, str);
+		}
+	}
+	else
+	{
+		// dst = reinterpret_cast<char*>(zAllocateString(str, sourceFile, line));
+	}
+
+	return dst;
 }

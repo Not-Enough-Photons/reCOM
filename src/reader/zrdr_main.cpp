@@ -1,11 +1,11 @@
 #include "zrdr_main.h"
 
-zdb::CFileIO::CFileIO()
+CFileIO::CFileIO()
 {
 	m_Data = 0xFFFFFFF;
 }
 
-int zdb::CRdrIO::FUN_0031f5f8(char* param_1, char* param_2)
+int CRdrIO::FUN_0031f5f8(char* param_1, char* param_2)
 {
 	char* baseReaderName = param_1;
 
@@ -15,7 +15,7 @@ int zdb::CRdrIO::FUN_0031f5f8(char* param_1, char* param_2)
 	}
 }
 
-int zdb::CRdrIO::UnknownFileIOFunction(int* ptr, char* label)
+int CRdrIO::UnknownFileIOFunction(int* ptr, char* label)
 {
 	// some of the worst code i have ever written
 	if (*(ptr + 4) == 0)
@@ -52,7 +52,7 @@ int zdb::CRdrIO::UnknownFileIOFunction(int* ptr, char* label)
 	return 0;
 }
 
-int zdb::CRdrIO::GetArchiveOffset(int* archivePtr)
+int CRdrIO::GetArchiveOffset(int* archivePtr)
 {
 	int offset = 0;
 
@@ -69,7 +69,7 @@ int zdb::CRdrIO::GetArchiveOffset(int* archivePtr)
 	return offset;
 }
 
-void zdb::CRdrIO::ReadString(void* archive, char* label, char* buf, size_t maxLength)
+void CRdrIO::ReadString(void* archive, char* label, char* buf, size_t maxLength)
 {
 	int offset = GetArchiveOffset((int*)archive);
 	char* cVar = '\0';
