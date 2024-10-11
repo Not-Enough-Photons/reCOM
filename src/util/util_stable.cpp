@@ -8,7 +8,34 @@ namespace zdb
 		m_Name = name;
 	}
 
-	void* CreateString(const char* str, const char* sourceFile, int line)
+	static const char* TrimStr(char* src, char trimChar)
+	{
+		char c;
+		char* p;
+
+		p = 0;
+		c = *src;
+
+		while (c != '\0')
+		{
+			if (c == trimChar)
+			{
+				p = src;
+			}
+
+			src++;
+			c = *src;
+		}
+
+		if (trimChar != '\0')
+		{
+			src = p;
+		}
+
+		return src;
+	}
+
+	static void* CreateString(const char* str, const char* sourceFile, int line)
 	{
 		char* dst = NULL;
 		size_t size = strlen(str);
@@ -29,7 +56,7 @@ namespace zdb
 		}
 		else
 		{
-			dst = reinterpret_cast<char*>(zAllocateString(str, sourceFile, line));
+			// dst = reinterpret_cast<char*>(zAllocateString(str, sourceFile, line));
 		}
 
 		return dst;

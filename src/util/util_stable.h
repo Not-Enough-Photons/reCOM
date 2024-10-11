@@ -3,6 +3,7 @@
 
 namespace zdb
 {
+	static const char* TrimStr(char* src, char trimChar);
 	static void* CreateString(const char* str, const char* sourceFile, int line);
 
 	class CSTable

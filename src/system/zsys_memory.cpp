@@ -18,12 +18,13 @@ namespace zdb
 		return dst;
 	}
 
-	static void* zAllocateString(char* str, char* sourceFile, int line)
+	static void* zAllocateString(const char* str, const char* sourceFile, int line)
 	{
 		size_t len = strlen(str) + 1;
 		char* dest = reinterpret_cast<char*>(malloc(len));
 		strcpy(dest, str);
 		zAllocateAssert(len != 0 || dest != 0, "zsys_memory.cpp");
+		return dest;
 	}
 
 	static void* zAllocateArray(int size, int count, char* sourceFile, int line)
