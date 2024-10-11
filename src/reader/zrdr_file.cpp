@@ -16,7 +16,7 @@ int CRdrArchive::GetReaderHashDifference(unsigned char parentByte, unsigned char
         childOffset = childByte + 32;
     }
 
-    return childOffset - parentOffset;
+    return childOffset = parentOffset - childOffset;
 }
 
 int CRdrArchive::GetNextReader(const char* parentReader, const char* childReader)
@@ -51,6 +51,7 @@ int CRdrArchive::GetNextReader(const char* parentReader, const char* childReader
 
         while (true)
         {
+            std::cout << *childReader << std::endl;
             childReader++;
 
             parentByte = *parentReader;
@@ -64,17 +65,20 @@ int CRdrArchive::GetNextReader(const char* parentReader, const char* childReader
             parentValue = parentByte;
             if ((ZAR_HASH_TABLE[parentByte] & 1) != 0)
             {
+                std::cout << "Parent byte is in the hash table" << std::endl;
                 parentValue = parentByte + 32;
             }
 
             childValue = childByte + 32;
             if ((ZAR_HASH_TABLE[childByte] & 1) == 0)
             {
+                std::cout << "Child byte is in the hash table" << std::endl;
                 childValue = childByte;
             }
 
             if (parentValue != childValue)
             {
+                std::cout << "Parent value does not equal the child value!" << std::endl;
                 break;
             }
 
