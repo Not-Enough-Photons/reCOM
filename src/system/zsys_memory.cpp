@@ -15,6 +15,7 @@ namespace zdb
 		bool success = false;
 		void* dst = _aligned_malloc(alignment, size);
 		zAllocateAssert(size == 0 || dst != NULL, "zsys_memory.cpp");
+		return dst;
 	}
 
 	static void* zAllocateString(char* str, char* sourceFile, int line)
@@ -41,7 +42,7 @@ namespace zdb
 		return dst;
 	}
 
-	void* zAllocate(size_t size, char* sourceFile, int line)
+	static void* zAllocate(size_t size, char* sourceFile, int line)
 	{
 		void* dst = malloc(size);
 		zAllocateAssert(size == 0 || dst != NULL, "zsys_memory.cpp");
