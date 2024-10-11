@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <malloc.h>
+
 #include "zsys_main.h"
 
 namespace zdb
@@ -9,7 +12,9 @@ namespace zdb
 
 	static void* zAllocateAlign(size_t alignment, size_t size, char* sourceFile, int line)
 	{
-		return nullptr;
+		bool success = false;
+		void* dst = _aligned_malloc(alignment, size);
+		zAllocateAssert(size == 0 || dst != NULL, "zsys_memory.cpp");
 	}
 
 	static void* zAllocateString(char* str, char* sourceFile, int line)
