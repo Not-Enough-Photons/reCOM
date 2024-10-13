@@ -10,7 +10,7 @@ CSTable::CSTable(size_t size, int count)
 	}
 }
 
-static const char* TrimStr(char* src, char trimChar)
+const char* TrimStr(char* src, char trimChar)
 {
 	char c;
 	char* p;
@@ -37,7 +37,7 @@ static const char* TrimStr(char* src, char trimChar)
 	return src;
 }
 
-static char* TrimUpTowards(char* src, char* match)
+char* TrimUpTowards(char* src, char* match)
 {
     if (*src == '\0')
     {
@@ -94,7 +94,7 @@ static char* TrimUpTowards(char* src, char* match)
     return '\0';
 }
 
-static void* CreateString(const char* str, const char* sourceFile, int line)
+void* CreateString(const char* str, const char* sourceFile, int line)
 {
 	char* dst = NULL;
 	size_t size = strlen(str);

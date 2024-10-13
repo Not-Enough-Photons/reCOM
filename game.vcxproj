@@ -88,6 +88,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\ai\ai_main.h" />
+    <ClInclude Include="src\anim\anim_main.h" />
     <ClInclude Include="src\audio\zsnd_csnd.h" />
     <ClInclude Include="src\entity\ent_main.h" />
     <ClInclude Include="src\entity\seal.cpp" />
@@ -112,10 +113,15 @@
     <ClCompile Include="src\ai\ai_main.cpp" />
     <ClCompile Include="src\ai\ai_map.cpp" />
     <ClCompile Include="src\ai\ai_mapio.cpp" />
+    <ClCompile Include="src\anim\anim_main.cpp" />
     <ClCompile Include="src\audio\zsnd_csnd.cpp" />
     <ClCompile Include="src\audio\zsnd_csndgroup.cpp" />
     <ClCompile Include="src\audio\zsnd_csndsequence.cpp" />
     <ClCompile Include="src\entity\ent_main.cpp" />
+    <ClCompile Include="src\entity\seal_anim.cpp" />
+    <ClCompile Include="src\entity\seal_create.cpp" />
+    <ClCompile Include="src\entity\seal_env.cpp" />
+    <ClCompile Include="src\entity\seal_tasks.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\math\zmath_main.cpp" />
     <ClCompile Include="src\node\node_assetlib.cpp" />
@@ -141,7 +147,7 @@
     <ClCompile Include="src\world\zworld.cpp" />
     <ClCompile Include="src\zar\zar_main.cpp" />
     <ClCompile Include="src\zar\zar_search.cpp" />
-    <ClCompile Include="src\zgame.cpp" />
+    <ClCompile Include="src\game_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
