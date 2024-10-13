@@ -19,7 +19,6 @@ namespace zdb
 		std::string SetNodeName(const char* name);
 		void SetParent(const CNode& node);
 
-
 		int GetNodeID() const;
 		std::string GetNodeName() const;
 		CNode& GetParent() const;

@@ -105,6 +105,16 @@ namespace zdb
 			quat->z = 0.0f;
 			quat->w = 1.0f;
 		}
+
+		inline static void Normalize(Quaternion* quat)
+		{
+
+		}
+
+		inline static void ToEuler(Quaternion* quat, Vector3* vector)
+		{
+
+		}
 	};
 
 	typedef union Ray2D

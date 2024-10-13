@@ -103,6 +103,9 @@ void ParseAnimCodeKeyword(void* ptr, char* token, int param_3, void(*func), bool
 	char* src = 0;
 	char* trim = 0;
 
+	// Resolve namespace if there is one defined in the command token
+	// Example:
+	// ui::COMMAND will get shortened to COMMAND, and then a function is determined from there.
 	trim = TrimUpTowards(token, "::");
 	if (trim != 0)
 	{
@@ -111,6 +114,22 @@ void ParseAnimCodeKeyword(void* ptr, char* token, int param_3, void(*func), bool
 		*trim = '\0';
 		token = trim + 2;
 	}
+}
 
+bool CmdAddNode(zdb::CNode* node)
+{
+	zdb::Vector3 position;
+	zdb::Quaternion rotation;
+	zdb::Quaternion aQStack_50;
 
+	position.x = 0.0f;
+	position.y = 0.0f;
+	position.z = 0.0f;
+
+	zdb::Quaternion::Normalize(&rotation);
+	// FUN_00256080(lVar2, aQStack_50) - quaternion related
+	// FUN_00254c20(aQStack_50, &local_10, 1) - quaternion related
+	zdb::Quaternion::ToEuler(&aQStack_50, &position, 1);
+
+	return true;
 }
