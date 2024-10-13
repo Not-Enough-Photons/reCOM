@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 static const char* TrimStr(char* src, char trimChar);
 static void* CreateString(const char* str, const char* sourceFile, int line);
@@ -7,7 +8,7 @@ static void* CreateString(const char* str, const char* sourceFile, int line);
 class CSTable
 {
 public:
-	CSTable(const char* name);
+	CSTable(size_t size, int count);
 private:
-	std::string m_Name;
+	std::vector<const char*> m_StringTable;
 };

@@ -1,9 +1,13 @@
 #include "util\util_stable.h"
 #include "system\zsys_main.h"
 
-CSTable::CSTable(const char* name)
+CSTable::CSTable(size_t size, int count)
 {
-	m_Name = name;
+	if (size != 0)
+	{
+		zAllocate(size, "util_stable.cpp", 54);
+		m_StringTable.reserve(count);
+	}
 }
 
 static const char* TrimStr(char* src, char trimChar)
