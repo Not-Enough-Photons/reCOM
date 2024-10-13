@@ -4,6 +4,7 @@
 
 static const char* TrimStr(char* src, char trimChar);
 static void* CreateString(const char* str, const char* sourceFile, int line);
+static char* TrimUpTowards(char* src, char* match);
 
 class CSTable
 {

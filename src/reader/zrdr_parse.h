@@ -77,4 +77,3 @@ void ParseZAmmo(int param_1, int32_t pointer);
 void ReadWeaponArchive(int32_t pointer, const char* file);
 
 static void FlipBytes(char* src, char* buffer, int offset);
-static char* TrimUpTowards(char* src, char* match);
