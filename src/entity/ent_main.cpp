@@ -60,6 +60,12 @@ namespace zdb
 		m_RToe = new CZSealBodyBone("rtoe");
 	}
 
+	CZSealBody* CZSealBody::Create(long param_1, int param_2, int param_3)
+	{
+		char output[76];
+		sprintf(output, "CZSealBody::Create(%s) %d nodes END", "SEAL", 0);
+	}
+
 	CZSealBody::~CZSealBody()
 	{
 

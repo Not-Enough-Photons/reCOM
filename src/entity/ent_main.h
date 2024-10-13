@@ -29,6 +29,8 @@ namespace zdb
 		~CZSealBody();
 
 		// Tomb Of The Unknown Functions
+		static CZSealBody* Create(long param_1, int param_2, int param_3);
+
 		int* FUN_002e4d60(zdb::Vector3* param_2, long param_3);
 
 		void SetPosition(float x, float y, float z);

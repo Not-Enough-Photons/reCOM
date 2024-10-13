@@ -22,6 +22,7 @@ class CBufferIO : public CFileIO
 class CRdrIO : public CFileIO
 {
 public:
+	CRdrIO(const char* reader, int param_2, int param_3);
 	int FUN_0031f5f8(char* param_1, char* param_2);
 	int UnknownFileIOFunction(int* param_1, char* label);
 	int GetArchiveOffset(int* archivePtr);

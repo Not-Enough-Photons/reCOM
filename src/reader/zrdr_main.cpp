@@ -5,6 +5,11 @@ CFileIO::CFileIO()
 	m_Data = 0xFFFFFFF;
 }
 
+CRdrIO::CRdrIO(const char* reader, int param_2, int param_3)
+{
+
+}
+
 int CRdrIO::FUN_0031f5f8(char* param_1, char* param_2)
 {
 	char* baseReaderName = param_1;
