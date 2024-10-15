@@ -150,3 +150,89 @@ CZAREntry* CRdrIO::ReadRoot(CZAREntry* entry, const char* name)
 
 	return result;
 }
+
+int CRdrIO::ReadFloat(CZAREntry* entry, const char* name, float* output, int maxDepth)
+{
+	int ok = 0;
+	CZAREntry* root = GetRootEntry(entry, name, 0);
+	CZAREntry* next = NULL;
+
+	if (root != NULL && root->descriptor == ZEntryDescriptor::FOLDER && maxDepth <= root->entries)
+	{
+		ok = 1;
+		int i = 0;
+
+		if (0 < maxDepth)
+		{
+			do
+			{
+				float value = 0.0f;
+
+				int rootEntries = 0;
+				if (root->descriptor == ZEntryDescriptor::FOLDER)
+				{
+					rootEntries = root->entries;
+				}
+
+				next = NULL;
+				if (i < rootEntries)
+				{
+					next = root->next + i * EIGHT_BYTES;
+				}
+
+				if (next->descriptor == ZEntryDescriptor::VALUE)
+				{
+					value = *(float*)next->next;
+				}
+				else if (next->descriptor == ZEntryDescriptor::NONE)
+				{
+					value = *(float*)next->next;
+				}
+				else
+				{
+					value = 0.0f;
+				}
+
+				i++;
+				*output = value;
+				output++;
+			} while (i < maxDepth);
+		}
+	}
+
+	return ok;
+}
+
+const char* CRdrIO::ReadString(CZAREntry* entry, const char* name, int maxDepth)
+{
+	int status = 0;
+	CZAREntry* root = GetRootEntry(entry, name, 0);
+
+	if (root != NULL && maxDepth != 0)
+	{
+		if (root->descriptor == ZEntryDescriptor::FOLDER && root->entries != 0)
+		{
+			if (root->entries == 0)
+			{
+				root = NULL;
+			}
+			else
+			{
+				root = root->next;
+			}
+		}
+
+		if (root->descriptor == ZEntryDescriptor::NONE && root->next == NULL)
+		{
+			maxDepth = 0;
+			status = 1;
+		}
+		else if (root->descriptor == ZEntryDescriptor::STRING)
+		{
+			maxDepth = (int)root->next;
+			status = 1;
+		}
+	}
+
+	return status;
+}
