@@ -6,6 +6,27 @@ namespace zdb
 	public:
 		CZWeaponStance();
 		~CZWeaponStance();
+
+		void SetReticuleKnock(float knock);
+		void SetReticuleKnockReturn(float knockReturn);
+		void SetReticuleKnockMax(float knockMax);
+		void SetTargetDilateUponFire(float dilation);
+		void SetTargetDilateUponMovement(float dilation);
+		void SetTargetConstrict(float constriction);
+		void SetTargetMin(float min);
+		void SetTargetMax(float max);
+		void SetSniperDistPPFrameX(float frame);
+		void SetSniperDistPPFrameY(float frame);
+		void SetSniperDistLimitX(float limit);
+		void SetSniperDistLimitY(float limit);
+		void SetSniperDecayRate(float decay);
+		void SetFireRifleKickRate(float rate);
+		void SetFireRifleKickReturnRate(float returnRate);
+		void SetFireRifleKickBaseDist(float distance);
+		void SetFireRifleKickRandomDist(float randomDistance);
+		void SetKnockCount(int knocks);
+		void SetKnockEntryStrength(float strength);
+		void SetWiggleReport(float wiggleReport);
 	private:
 		float m_reticuleKnock;
 		float m_reticuleKnockReturn;
@@ -35,11 +56,17 @@ namespace zdb
 	public:
 		CZWeapon();
 		~CZWeapon();
+
+		void SetInternalName(const char* internalName);
+		void SetDisplayName(const char* displayName);
+		void SetDescription(const char* description);
 	private:
 		const char* m_internalName;
 		const char* m_displayName;
 		const char* m_description;
 
+		float m_soundRadius;
+		float m_soundRadiusSqrt;
 		float m_effectiveRange;
 		float m_maximumRange;
 		float m_muzzleVelocity;
@@ -52,6 +79,11 @@ namespace zdb
 	public:
 		CZFTSWeapon() : CZWeapon() { }
 		~CZFTSWeapon();
+
+		void SetAccuracyBurstCountMin(int min);
+		void SetAccuracyBurstCountMax(int max);
+		void SetAccuracyScalarMin(float min);
+		void SetAccuracyScalarMax(float max);
 	private:
 		int m_firstZoomLevel;
 		int m_secondZoomLevel;

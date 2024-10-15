@@ -9,3 +9,4 @@ void* zAllocateArray(int size, int count, const char* sourceFile, int line);
 void* zAllocateString(const char* str, const char* sourceFile, int line);
 void* zReAllocate(void* ptr, size_t size, const char* sourceFile, int line);
 void* zAllocate(size_t size, const char* sourceFile, int line);
+void* zAllocateInst(void* instance, const char* sourceFile, int line);
