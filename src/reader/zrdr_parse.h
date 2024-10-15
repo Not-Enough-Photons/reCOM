@@ -57,7 +57,6 @@ static uintptr_t BasePS2MemorySpace = 0;
 
 static zammo_t zAmmoValues;
 
-
 // From https://www.unknowncheats.me/forum/general-programming-and-reversing/569991-pcsx2-guide-cheats-trainers.html
 uintptr_t GetPS2Address(unsigned int RAW_PS2_OFFSET);
 template<typename T> inline T PS2Read(uintptr_t Address);
@@ -67,7 +66,7 @@ inline std::string PS2Read(uintptr_t address);
 inline std::string PS2Read(int32_t address);
 
 // Zipper Reader specific prototypes
-int32_t GetPathToLabel(int32_t pointer, const char* entry, int iterations);
+int32_t GetPathToEntry(int32_t pointer, const char* entry, int iterations);
 int ReadString(int32_t pointer, const char* entry, std::string* output);
 int ReadInt(int32_t pointer, const char* entry, int* output, int param_4);
 int ReadFloat(int32_t pointer, const char* entry, float* output, int param_4);

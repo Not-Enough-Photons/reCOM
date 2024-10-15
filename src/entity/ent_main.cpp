@@ -64,6 +64,8 @@ namespace zdb
 	{
 		char output[76];
 		sprintf(output, "CZSealBody::Create(%s) %d nodes END", "SEAL", 0);
+
+		return nullptr;
 	}
 
 	CZSealBody::~CZSealBody()

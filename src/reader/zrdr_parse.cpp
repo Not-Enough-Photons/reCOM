@@ -45,7 +45,7 @@ inline std::string PS2Read(int32_t address)
     return PS2Read(addr);
 }
 
-int32_t GetPathToLabel(int32_t pointer, const char* entry, int iterations)
+int32_t GetPathToEntry(int32_t pointer, const char* entry, int iterations)
 {
     if (pointer == 0)
     {
@@ -82,7 +82,7 @@ int32_t GetPathToLabel(int32_t pointer, const char* entry, int iterations)
 
         if (nextPathType == 4)
         {
-            path = GetPathToLabel(nextPath, entry, 0);
+            path = GetPathToEntry(nextPath, entry, 0);
         }
         else
         {
@@ -108,7 +108,7 @@ int32_t GetPathToLabel(int32_t pointer, const char* entry, int iterations)
 
 int ReadString(int32_t pointer, const char* entry, std::string* output)
 {
-    int32_t entryPath = GetPathToLabel(pointer, entry, 0);
+    int32_t entryPath = GetPathToEntry(pointer, entry, 0);
 
     if (entryPath != 0 && output != nullptr)
     {
@@ -149,7 +149,7 @@ int ReadString(int32_t pointer, const char* entry, std::string* output)
 int ReadInt(int32_t pointer, const char* entry, int* output, int param_4)
 {
     int var4 = 0;
-    int32_t entryPath = GetPathToLabel(pointer, entry, 0);
+    int32_t entryPath = GetPathToEntry(pointer, entry, 0);
 
     std::cout << "Entry pointer: " << entryPath << std::hex << std::endl;
 
@@ -221,7 +221,7 @@ int ReadInt(int32_t pointer, const char* entry, int* output, int param_4)
 int ReadFloat(int32_t pointer, const char* entry, float* output, int param_4)
 {
     int var4 = 0;
-    int32_t entryPath = GetPathToLabel(pointer, entry, 0);
+    int32_t entryPath = GetPathToEntry(pointer, entry, 0);
 
     std::cout << "Entry pointer: " << entryPath << std::hex << std::endl;
 
@@ -344,10 +344,10 @@ void ParseZAmmo(int param_1, int32_t pointer)
     result = ReadFloat(pointer, "AccelerationFactor", floatOut, 1);
     zAmmoValues.accelerationFactor = result != 0.0f ? *floatOut : 0.0f;
 
-    result = GetPathToLabel(pointer, "Volitile", 0);
+    result = GetPathToEntry(pointer, "Volitile", 0);
     zAmmoValues.volitile = result;
 
-    result = GetPathToLabel(pointer, "IgnoreExplosionDI", 0);
+    result = GetPathToEntry(pointer, "IgnoreExplosionDI", 0);
     zAmmoValues.ignoreExplosionDI = result;
 
     delete stringOut;
@@ -359,14 +359,14 @@ void ReadWeaponArchive(int32_t pointer, const char* file)
 {
     if (pointer != 0)
     {
-        int32_t weaponGlobal = GetPathToLabel(pointer, "WEAPON_GLOBAL", 0);
+        int32_t weaponGlobal = GetPathToEntry(pointer, "WEAPON_GLOBAL", 0);
         float output = 0.0f;
         int result = 0;
         result = ReadFloat(weaponGlobal, "SoundDistanceClose", &output, 1);
         result = ReadFloat(weaponGlobal, "SoundDistanceMed", &output, 1);
         result = ReadFloat(weaponGlobal, "SoundDistanceFar", &output, 1);
 
-        int32_t zAmmo = GetPathToLabel(pointer, "ZAMMO", 0);
+        int32_t zAmmo = GetPathToEntry(pointer, "ZAMMO", 0);
         char ammoEntryType = PS2Read<char>(zAmmo);
         int ammoEntryDepth = 0;
         if (ammoEntryType == 4)

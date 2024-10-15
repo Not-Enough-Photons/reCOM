@@ -6,13 +6,13 @@
 int InitAnimLang()
 {
 	// FUN_001e7b10(0x562120);
-	ParseAIKeywords();
-	ParseResetBodyKeyword();
-	ParseValveKeywords();
-	ParseCameraKeywords();
-	ParseThirdPersonCamKeyword();
-	ParsePlayerConditionKeywords();
-	ParseWindKeyword();
+	// ParseAIKeywords();
+	// ParseResetBodyKeyword();
+	// ParseValveKeywords();
+	// ParseCameraKeywords();
+	// ParseThirdPersonCamKeyword();
+	// ParsePlayerConditionKeywords();
+	// ParseWindKeyword();
 
 	ParseScriptKeyword((void*)0x562120, "HUD_ON", PLACEHOLDER_FUNCTION, 0, PLACEHOLDER_FUNCTION, 0);
 	ParseScriptKeyword((void*)0x562120, "HUD_OFF", PLACEHOLDER_FUNCTION, 0, PLACEHOLDER_FUNCTION, 0);
@@ -26,8 +26,8 @@ int InitAnimLang()
 	ParseScriptKeyword((void*)0x562120, "START_IMAGE_RECORDER", PLACEHOLDER_FUNCTION, 0, PLACEHOLDER_FUNCTION, 0);
 	ParseScriptKeyword((void*)0x562120, "STOP_IMAGE_RECORDER", PLACEHOLDER_FUNCTION, 0, PLACEHOLDER_FUNCTION, 0);
 
-	ParseExecuteActionKeyword();
-	ParseDecalRemovalKeyword();
+	// ParseExecuteActionKeyword();
+	// ParseDecalRemovalKeyword();
 }
 
 int ParseScriptKeywords()

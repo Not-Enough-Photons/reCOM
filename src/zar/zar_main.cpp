@@ -6,7 +6,7 @@ namespace zar
 	{
 		m_Name = "";
 		m_Flags = 0x20002;
-		m_StringTable = new CSTable("ROOT");
+		// m_StringTable = new CSTable("ROOT");
 
 		if (param_2 == nullptr || param_2 == "ROOT")
 		{
