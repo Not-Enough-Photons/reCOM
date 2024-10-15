@@ -1,58 +1,58 @@
 #pragma once
 namespace zdb
 {
-	class CZWeapon
+	class CZWeaponStance
 	{
 	public:
-		virtual void Fire();
-		virtual void Reload();
+		CZWeaponStance();
+		~CZWeaponStance();
+	private:
+		float m_reticuleKnock;
+		float m_reticuleKnockReturn;
+		float m_reticuleKnockMax;
+		float m_sniperDistPPFrameX;
+		float m_sniperDistPPFrameY;
+		float m_sniperDistLimitX;
+		float m_sniperDistLimitY;
+		float m_sniperDecayRate;
+		float m_targetDilateUponFire;
+		float m_targetDilateUponMovement;
+		float m_targetDilateUponMovementSqrt;
+		float m_targetConstrict;
+		float m_targetMin;
+		float m_targetMax;
+		float m_fireRifleKickRate;
+		float m_fireRifleKickReturnRate;
+		float m_fireRifleKickBaseDist;
+		float m_fireRifleKickRandomDist;
+		float m_wiggleReport;
+		int m_knockCount;
+		float m_knockEntryStrength;
+	};
+
+	class CZWeapon
+	{
+	private:
+		const char* m_internalName;
+		const char* m_displayName;
+		const char* m_description;
 	};
 
 	class CZFTSWeapon : public CZWeapon
 	{
 	public:
-		const char* GetWeaponType(int type) const;
-
-		void Fire();
-		void FireProjectile();
-		void Reload();
+		CZFTSWeapon() : CZWeapon() { }
+		~CZFTSWeapon();
 	private:
-		const char* m_InternalName;
-		const char* m_DisplayName;
-		const char* m_Description;
-
-		const char* m_WeaponType;
-		
-		// magazines are put into CZAmmo instances, but for now i'll tack it in here
-		int m_RemainingAmmo;
-		int m_AmmoCount;
-		int m_NumMags;
-
-		float m_MuzzleVelocity;
-		float m_AccScalarMin;
-		float m_AccScalarMax;
-		float m_GravityAcceleration;
-
-		const char* m_ModelName;
-		const char* m_FireAnimName;
-		const char* m_HitAnimName;
-
-		float m_Encumberance;
-
-		bool m_BurstMode;
-		bool m_SingleMode;
-		bool m_AutoMode;
-
-		float m_Timer1;
-		float m_Timer2;
-
-		float m_RecoilPct;
-
-		float m_MaximumRange;
-		float m_EffectiveRange;
-
-		int m_SlotCost;
-
-		bool m_HasBackblast;
+		bool m_rumbleHighExceeds;
+		float m_rumbleHighTime;
+		bool m_rumbleLowExceeds;
+		float m_rumbleLowTime;
+		float m_rumbleLowPower;
+		float m_accuracyBurstCountMin;
+		float m_accuracyBurstCountMax;
+		float m_accuracyScalarMin;
+		float m_accuracyScalarMax;
+		int m_slotCost;
 	};
 }

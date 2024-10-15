@@ -203,7 +203,7 @@ int CRdrIO::ReadFloat(CZAREntry* entry, const char* name, float* output, int max
 	return ok;
 }
 
-const char* CRdrIO::ReadString(CZAREntry* entry, const char* name, int maxDepth)
+int CRdrIO::ReadString(CZAREntry* entry, const char* name, int maxDepth)
 {
 	int status = 0;
 	CZAREntry* root = GetRootEntry(entry, name, 0);
