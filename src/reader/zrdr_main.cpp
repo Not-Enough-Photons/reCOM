@@ -1,81 +1,152 @@
 #include "zrdr_main.h"
+#include "zrdr_parse.h"
 
-CFileIO::CFileIO()
+CZAREntry* CRdrIO::GetRootEntry(CZAREntry* entry, const char* name)
 {
-	m_Data = 0xFFFFFFF;
-}
+	void* nextP = NULL;
+	CZAREntry* next = NULL;
 
-CRdrIO::CRdrIO(const char* reader, int param_2, int param_3)
-{
+	uint32_t baseEntries = 0;
+	uint32_t entryIdx = 0;
 
-}
-
-int CRdrIO::FUN_0031f5f8(char* param_1, char* param_2)
-{
-	char* baseReaderName = param_1;
-
-	if (baseReaderName == '\0')
+	if (entry != NULL && entry->descriptor == ZEntryDescriptor::FOLDER)
 	{
-		return 0;
-	}
-}
+		baseEntries = entry->entries;
 
-int CRdrIO::UnknownFileIOFunction(int* ptr, char* label)
-{
-	// some of the worst code i have ever written
-	if (*(ptr + 4) == 0)
-	{
-		return 0;
-	}
-
-	int* ptrTable = nullptr;
-	int* ptrTableEnd = ptrTable + *(ptr + 4);
-
-	for (; ptrTable != ptrTableEnd; ptrTable++)
-	{
-		if (*(int*)(*ptrTable + 16) == -1)
+		for (int it = 0; nextP == NULL && it < baseEntries; it++)
 		{
-			break;
-		}
+			entryIdx = 0;
+			if (entry->descriptor == ZEntryDescriptor::FOLDER)
+			{
+				entryIdx = entry->entries;
+			}
 
-		if (FUN_0031f5f8((char*)ptr, *(char**)(*ptrTable + 12)))
+			next = NULL;
+			if (it < baseEntries)
+			{
+				next = entry->next + it * EIGHT_BYTES;
+			}
+
+			if (next->descriptor == ZEntryDescriptor::FOLDER)
+			{
+				nextP = GetRootEntry(next, name, 0);
+			}
+			else
+			{
+				bool isRoot = false;
+				if (next->descriptor == ZEntryDescriptor::STRING)
+				{
+					isRoot = strcmp(name, (char*)next->next) == 0;
+				}
+
+				if (isRoot)
+				{
+					nextP = entry->next + (it + 1) * EIGHT_BYTES;
+				}
+			}
+		}
+	}
+}
+
+CZAREntry* CRdrIO::GetRootEntry(CZAREntry* entry, const char* name, int it)
+{
+	void* nextP = NULL;
+	CZAREntry* next = NULL;
+
+	uint32_t baseEntries = 0;
+	uint32_t entryIdx = 0;
+
+	if (entry != NULL && entry->descriptor == ZEntryDescriptor::FOLDER)
+	{
+		baseEntries = entry->entries;
+
+		for (; nextP == NULL && it < baseEntries; it++)
 		{
-			break;
+			entryIdx = 0;
+			if (entry->descriptor == ZEntryDescriptor::FOLDER)
+			{
+				entryIdx = entry->entries;
+			}
+
+			next = NULL;
+			if (it < baseEntries)
+			{
+				next = entry->next + it * EIGHT_BYTES;
+			}
+
+			if (next->descriptor == ZEntryDescriptor::FOLDER)
+			{
+				nextP = GetRootEntry(next, name, 0);
+			}
+			else
+			{
+				bool isRoot = false;
+				if (next->descriptor == ZEntryDescriptor::STRING)
+				{
+					isRoot = strcmp(name, (char*)next->next) == 0;
+				}
+
+				if (isRoot)
+				{
+					nextP = entry->next + (it + 1) * EIGHT_BYTES;
+				}
+			}
+		}
+	}
+}
+
+CZAREntry* CRdrIO::ReadRoot(CZAREntry* entry, const char* name)
+{
+	CZAREntry* result = NULL;
+	CZAREntry* root = GetRootEntry(entry, name, 0);
+	CZAREntry* available = NULL;
+	ZEntryDescriptor descriptor;
+
+	if (root != NULL)
+	{
+		if (root->descriptor == ZEntryDescriptor::STRING)
+		{
+			result = root->next;
+		}
+		else if (root->descriptor == ZEntryDescriptor::FOLDER)
+		{
+			if (root->entries == 0)
+			{
+				available = NULL;
+			}
+			else
+			{
+				available = root->next;
+			}
+
+			if (available != NULL)
+			{
+				if (root->entries == 0)
+				{
+					descriptor = ZEntryDescriptor::END;
+				}
+				else
+				{
+					descriptor = root->next->descriptor;
+				}
+
+				if (descriptor == ZEntryDescriptor::STRING)
+				{
+					descriptor = ZEntryDescriptor::END;
+					if (root->entries != 0)
+					{
+						descriptor = root->next->descriptor;
+					}
+
+					result = NULL;
+					if (descriptor == ZEntryDescriptor::STRING)
+					{
+						result = root->next->next;
+					}
+				}
+			}
 		}
 	}
 
-	if (ptrTable == nullptr)
-	{
-		return 0;
-	}
-
-	if (ptrTable != (int*)(*(int*)ptr + 8) + *(int*)(ptr + 4) * 4)
-	{
-		return *ptrTable;
-	}
-
-	return 0;
-}
-
-int CRdrIO::GetArchiveOffset(int* archivePtr)
-{
-	int offset = 0;
-
-	if (*(archivePtr + 8) != 0)
-	{
-		// will need to look at that mips asm for this...
-		// bottom is implemented though
-	}
-	else
-	{
-		offset = *(int*)(archivePtr + 12) - 4;
-	}
-
-	return offset;
-}
-
-void CRdrIO::ReadString(void* archive, char* label, char* buf, size_t maxLength)
-{
-	int offset = GetArchiveOffset((int*)archive);
-	char* cVar = '\0';
+	return result;
 }
