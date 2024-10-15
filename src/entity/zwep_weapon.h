@@ -32,10 +32,19 @@ namespace zdb
 
 	class CZWeapon
 	{
+	public:
+		CZWeapon();
+		~CZWeapon();
 	private:
 		const char* m_internalName;
 		const char* m_displayName;
 		const char* m_description;
+
+		float m_effectiveRange;
+		float m_maximumRange;
+		float m_muzzleVelocity;
+		float m_gravityAcceleration;
+		float m_impactRadius;
 	};
 
 	class CZFTSWeapon : public CZWeapon
@@ -44,6 +53,9 @@ namespace zdb
 		CZFTSWeapon() : CZWeapon() { }
 		~CZFTSWeapon();
 	private:
+		int m_firstZoomLevel;
+		int m_secondZoomLevel;
+		int m_thirdZoomLevel;
 		bool m_rumbleHighExceeds;
 		float m_rumbleHighTime;
 		bool m_rumbleLowExceeds;
@@ -53,6 +65,7 @@ namespace zdb
 		float m_accuracyBurstCountMax;
 		float m_accuracyScalarMin;
 		float m_accuracyScalarMax;
+		float m_normalizedRange;
 		int m_slotCost;
 	};
 }

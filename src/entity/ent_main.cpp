@@ -59,6 +59,18 @@ namespace zdb
 		return;
 	}
 
+	CZWeapon::CZWeapon()
+	{
+		m_internalName = 0;
+		m_displayName = 0;
+		m_description = 0;
+		m_effectiveRange = 0.0f;
+		m_maximumRange = 0.0f;
+		m_muzzleVelocity = 0.0f;
+		m_gravityAcceleration = -1.0f;
+		m_impactRadius = 0.0f;
+	}
+
 	CZFTSWeapon::CZFTSWeapon() : CZWeapon()
 	{
 		CZWeaponStance* weaponStance;
@@ -69,6 +81,9 @@ namespace zdb
 			weaponStance++;
 		} while (m_rumbleHighExceeds);
 
+		m_firstZoomLevel = 0;
+		m_secondZoomLevel = 0;
+		m_thirdZoomLevel = 0;
 		m_rumbleHighExceeds = false;
 		m_rumbleHighTime = 0.0f;
 		m_rumbleLowExceeds = false;
@@ -77,6 +92,7 @@ namespace zdb
 		m_accuracyBurstCountMin = 2.35099e-38f;
 		m_accuracyScalarMin = 1.0f;
 		m_accuracyScalarMax = 1.0f;
+		m_normalizedRange = 0.0f;
 		m_slotCost = 1;
 	}
 }
