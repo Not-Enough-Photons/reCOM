@@ -1,6 +1,8 @@
 #include "zrdr_main.h"
 #include "zrdr_parse.h"
 
+#include "entity/zwep_ammo.h"
+
 CZAREntry* CRdrIO::GetRootEntry(CZAREntry* entry, const char* name)
 {
 	void* nextP = NULL;
@@ -203,12 +205,12 @@ int CRdrIO::ReadFloat(CZAREntry* entry, const char* name, float* output, int max
 	return ok;
 }
 
-int CRdrIO::ReadString(CZAREntry* entry, const char* name, int maxDepth)
+int CRdrIO::ReadString(CZAREntry* entry, const char* name, void* buf)
 {
 	int status = 0;
 	CZAREntry* root = GetRootEntry(entry, name, 0);
 
-	if (root != NULL && maxDepth != 0)
+	if (root != NULL && buf != NULL)
 	{
 		if (root->descriptor == ZEntryDescriptor::FOLDER && root->entries != 0)
 		{
@@ -224,15 +226,70 @@ int CRdrIO::ReadString(CZAREntry* entry, const char* name, int maxDepth)
 
 		if (root->descriptor == ZEntryDescriptor::NONE && root->next == NULL)
 		{
-			maxDepth = 0;
+			buf = 0;
 			status = 1;
 		}
 		else if (root->descriptor == ZEntryDescriptor::STRING)
 		{
-			maxDepth = (int)root->next;
+			buf = (void*)root->next;
 			status = 1;
 		}
 	}
 
 	return status;
+}
+
+void CRdrIO::ReadZAmmo(void* param_1, CZAREntry* entry)
+{
+	const char* fileErr = "NOT FOUND";
+	char* outStr;
+	int outInt;
+	float outFloat;
+
+	zdb::CZAmmo* ammo = new zdb::CZAmmo();
+
+	if (ReadString(entry, "InternalName", &outStr)) { ammo->SetInternalName(outStr); }
+	else { ammo->SetInternalName(fileErr); }
+
+	if (ReadString(entry, "DisplayName", &outStr)) { ammo->SetDisplayName(outStr); }
+	else { ammo->SetDisplayName(fileErr); }
+
+	if (ReadString(entry, "Description", &outStr)) { ammo->SetDescription(outStr); }
+	else { ammo->SetDescription(fileErr); }
+
+	if (ReadInt(entry, "ID", &outInt, 1)) { ammo->SetID(outInt); }
+	else { ammo->SetID(0); }
+
+	if (ReadFloat(entry, "ImpactDamage", &outFloat, 1)) { ammo->SetImpactDamage(outFloat); }
+	else { ammo->SetImpactDamage(0.0f); }
+
+	if (ReadString(entry, "HitAnimName", &outStr)) { ammo->SetHitAnimName(outStr); }
+	else { ammo->SetHitAnimName(fileErr); }
+
+	if (ReadFloat(entry, "Stun", &outFloat, 1)) { ammo->SetStun(outFloat); }
+	else { ammo->SetStun(0.0f); }
+
+	if (ReadFloat(entry, "Piercing", &outFloat, 1)) { ammo->SetPiercing(outFloat); }
+	else { ammo->SetPiercing(0.0f); }
+
+	if (ReadFloat(entry, "Explosion_Damage", &outFloat, 1)) { ammo->SetExplosionDamage(outFloat); }
+	else { ammo->SetExplosionDamage(0.0f); }
+
+	if (ReadFloat(entry, "Explosion_Radius", &outFloat, 1)) { ammo->SetExplosionRadius(outFloat); }
+	else { ammo->SetExplosionRadius(0.0f); }
+
+	if (ReadInt(entry, "NumProjectilesFired", &outInt, 1)) { ammo->SetProjectilesFired(outInt); }
+	else { ammo->SetProjectilesFired(0); }
+
+	if (ReadFloat(entry, "Blowback_Falloff", &outFloat, 1)) { ammo->SetBlowbackFalloff(outFloat); }
+	else { ammo->SetBlowbackFalloff(0.0f); }
+
+	if (ReadFloat(entry, "Blowback_End", &outFloat, 1)) { ammo->SetBlowbackFalloff(outFloat); }
+	else { ammo->SetExplosionRadius(0.0f); }
+
+	if (ReadFloat(entry, "ProximityDistance", &outFloat, 1)) { ammo->SetProximitySquared(outFloat); }
+	else { ammo->SetProximitySquared(0.0f); }
+
+	if (ReadFloat(entry, "AccelerationFactor", &outFloat, 1)) { ammo->SetAccelerationFactor(outFloat); }
+	else { ammo->SetAccelerationFactor(1.0f); }
 }
