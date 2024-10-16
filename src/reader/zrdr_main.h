@@ -37,6 +37,12 @@ class CBufferIO : public CFileIO
 class CRdrIO : public CFileIO
 {
 public:
+	/// <summary>
+	/// Finds a ZAR tag inside a list.
+	/// </summary>
+	/// <param name="entry">The base.</param>
+	/// <param name="name">The name of the tag you want to find.</param>
+	/// <returns>The tag.</returns>
 	static CZAREntry*  zrdr_findtag(CZAREntry* entry, const char* name);
 	static CZAREntry*  zrdr_findtag_startidx(CZAREntry* entry, const char* name, int it);
 	static CZAREntry*  ReadRoot    (CZAREntry* entry, const char* name);
