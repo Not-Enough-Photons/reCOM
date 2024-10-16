@@ -4,6 +4,9 @@ namespace zdb
 	class CZAmmo
 	{
 	public:
+		CZAmmo();
+		~CZAmmo();
+
 		void SetInternalName(const char* internalName);
 		void SetDisplayName(const char* displayName);
 		void SetDescription(const char* description);

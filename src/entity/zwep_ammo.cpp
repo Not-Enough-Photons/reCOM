@@ -7,6 +7,20 @@
 
 namespace zdb
 {
+	CZAmmo::CZAmmo()
+	{
+		m_internalName = 0;
+		m_displayName = 0;
+		m_description = 0;
+		m_hitAnimName = 0;
+		m_ID = -1;
+		m_projectilesFired = 1;
+		m_blowbackFalloff = 0.0f;
+		m_proximitySquared = 0.0f;
+		m_accelerationFactor = 1.0f;
+		m_volatile = false;
+	}
+
 	void CZAmmo::SetInternalName(const char* internalName)
 	{
 		char* str;
