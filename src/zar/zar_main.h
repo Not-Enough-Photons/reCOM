@@ -6,18 +6,16 @@
 
 namespace zar
 {
+	const char* g_DefaultArchiveName = "ROOT";
+
 	class CZAR
 	{
 	public:
 		CZAR(const char* name, char* param_2);
 
-		void SetName(std::string name);
-		std::string GetName() const;
-
-		void SetStream(CFileIO* stream);
-		CFileIO GetStream() const;
-
-		CSTable GetStringTable() const;
+		void Open();
+		CKey* CreateKey();
+		void* ReadDirectory();
 	private:
 		int32_t m_PaddingMaybe;
 		int32_t m_Flags;
@@ -27,5 +25,8 @@ namespace zar
 		CFileIO* m_StreamShallowCopy;
 	};
 
-	static void ZARMain(CZAR* archive, char* resourcePath, void* param_3, void* param_4);
+	class CKey
+	{
+
+	};
 }
