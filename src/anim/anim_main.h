@@ -47,4 +47,5 @@ class CZAnimMain
 {
 public:
 	void GetAnimSet();
+	void GetAnimSetIndex();
 };

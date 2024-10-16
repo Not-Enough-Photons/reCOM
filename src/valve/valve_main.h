@@ -12,12 +12,21 @@ enum ValveType
 	PERSIST
 };
 
+class CValvePool
+{
+public:
+	void Acquire();
+};
+
 /// <summary>
 /// A class that acts as a "signal" for events to occur in the game.
 /// An example is the valve "mission_failure", that when fired, will run callbacks to handle mission failure.
 /// </summary>
 class CValve
 {
+public:
+	static void Create();
+	void SetName();
 private:
 	const char* m_Name;
 	int m_Value;
