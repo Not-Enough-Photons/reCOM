@@ -3,7 +3,7 @@
 
 #include "entity/zwep_ammo.h"
 
-CZAREntry* CRdrIO::GetRootEntry(CZAREntry* entry, const char* name)
+CZAREntry* CRdrIO::zrdr_findtag(CZAREntry* entry, const char* name)
 {
 	void* nextP = NULL;
 	CZAREntry* next = NULL;
@@ -50,7 +50,7 @@ CZAREntry* CRdrIO::GetRootEntry(CZAREntry* entry, const char* name)
 	}
 }
 
-CZAREntry* CRdrIO::GetRootEntry(CZAREntry* entry, const char* name, int it)
+CZAREntry* CRdrIO::zrdr_findtag_startidx(CZAREntry* entry, const char* name, int it)
 {
 	void* nextP = NULL;
 	CZAREntry* next = NULL;

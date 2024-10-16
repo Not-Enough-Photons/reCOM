@@ -17,3 +17,34 @@ static void ParseScriptKeyword(void* ptr, char* token, int param_3, void(*func),
 
 static bool CmdAddNode(zdb::CNode node);
 static bool CmdRemoveNode(zdb::CNode node);
+
+class CZAnim
+{
+public:
+	void AddNewNodeRef();
+	void OnWeaponHitInit();
+	void GetNode();
+};
+
+class CZAnimEx : public CZAnim
+{
+	void AddAnimEx();
+};
+
+class CZAnimSet
+{
+public:
+	void GetName();
+};
+
+class CZAnimNameIndexTable
+{
+public:
+	void GetName();
+};
+
+class CZAnimMain
+{
+public:
+	void GetAnimSet();
+};

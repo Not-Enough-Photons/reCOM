@@ -37,8 +37,8 @@ class CBufferIO : public CFileIO
 class CRdrIO : public CFileIO
 {
 public:
-	static CZAREntry*  GetRootEntry(CZAREntry* entry, const char* name);
-	static CZAREntry*  GetRootEntry(CZAREntry* entry, const char* name, int it);
+	static CZAREntry*  zrdr_findtag(CZAREntry* entry, const char* name);
+	static CZAREntry*  zrdr_findtag_startidx(CZAREntry* entry, const char* name, int it);
 	static CZAREntry*  ReadRoot    (CZAREntry* entry, const char* name);
 	static int         ReadString  (CZAREntry* entry, const char* name, void* buf);
 	static int         ReadFloat   (CZAREntry* entry, const char* name, float* output, int maxDepth);
