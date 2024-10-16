@@ -4,30 +4,19 @@
 
 namespace zdb
 {
+	const char* g_RootNodeTag = "ROOT";
+	const char* g_DeletedNodeTag = "DELETED_NODE";
+
 	class CNode
 	{
 	public:
 		CNode();
-		CNode(int id, std::string name);
-		CNode(int id, std::string name, const CNode& parent);
-
-		CNode(const CNode& other);
-
 		~CNode();
 
-		void SetNodeID(int id);
-		std::string SetNodeName(const char* name);
-		void SetParent(const CNode& node);
-
-		int GetNodeID() const;
-		std::string GetNodeName() const;
-		CNode& GetParent() const;
-		CNode&& GetChildren() const;
+		CNode* Create(const char* name);
+		void SetNodeName(const char* name);
 	private:
-		int m_NodeID;
-		std::string m_NodeName;
-		CNode* m_Parent;
-		CNode** m_Children;
+		const char* m_name;
 	};
 
 	class CNodeEx : public CNode
