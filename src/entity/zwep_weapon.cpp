@@ -58,6 +58,81 @@ namespace zdb
 		m_targetDilateUponMovementSqrt = sqrt(dilate);
 	}
 
+	void CZWeaponStance::SetTargetConstrict(float constriction)
+	{
+		m_targetConstrict = constriction;
+	}
+
+	void CZWeaponStance::SetTargetMin(float min)
+	{
+		m_targetMin = min;
+	}
+
+	void CZWeaponStance::SetTargetMax(float max)
+	{
+		m_targetMax = max;
+	}
+
+	void CZWeaponStance::SetSniperDistPPFrameX(float frame)
+	{
+		m_sniperDistPPFrameX = frame;
+	}
+
+	void CZWeaponStance::SetSniperDistPPFrameY(float frame)
+	{
+		m_sniperDistPPFrameY = frame;
+	}
+
+	void CZWeaponStance::SetSniperDistLimitX(float limit)
+	{
+		m_sniperDistLimitX = limit;
+	}
+
+	void CZWeaponStance::SetSniperDistLimitY(float limit)
+	{
+		m_sniperDistLimitY = limit;
+	}
+
+	void CZWeaponStance::SetSniperDecayRate(float decay)
+	{
+		m_sniperDecayRate = decay;
+	}
+
+	void CZWeaponStance::SetFireRifleKickRate(float rate)
+	{
+		m_fireRifleKickRate = rate;
+	}
+
+	void CZWeaponStance::SetFireRifleKickReturnRate(float returnRate)
+	{
+		m_fireRifleKickReturnRate = returnRate;
+	}
+
+	void CZWeaponStance::SetFireRifleKickBaseDist(float distance)
+	{
+		m_fireRifleKickBaseDist = distance;
+	}
+
+	void CZWeaponStance::SetFireRifleKickRandomDist(float randomDistance)
+	{
+		m_fireRifleKickRandomDist = randomDistance;
+	}
+
+	void CZWeaponStance::SetKnockCount(int knocks)
+	{
+		m_knockCount = knocks;
+	}
+
+	void CZWeaponStance::SetKnockEntryStrength(float strength)
+	{
+		m_knockEntryStrength = strength;
+	}
+
+	void CZWeaponStance::SetWiggleReport(float wiggleReport)
+	{
+		m_wiggleReport = wiggleReport;
+	}
+
 	CZWeapon::CZWeapon()
 	{
 		m_internalName = 0;

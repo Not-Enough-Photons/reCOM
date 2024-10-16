@@ -47,6 +47,11 @@ enum SealCommand
 	CMD_AMBUSH
 };
 
+class CAiParams
+{
+
+};
+
 class CAiState
 {
 

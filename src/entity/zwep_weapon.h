@@ -77,7 +77,7 @@ namespace zdb
 	class CZFTSWeapon : public CZWeapon
 	{
 	public:
-		CZFTSWeapon() : CZWeapon() { }
+		CZFTSWeapon() : CZWeapon() {}
 		~CZFTSWeapon();
 
 		void SetAccuracyBurstCountMin(int min);
