@@ -9,6 +9,8 @@ namespace zdb
 
 	class CWind
 	{
+	public:
+		static void RegisterAnimCommands();
 		void CmdParseWind();
 	};
 }

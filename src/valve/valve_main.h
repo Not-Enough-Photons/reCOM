@@ -27,7 +27,9 @@ class CValve
 public:
 	CValve();
 
+	static void RegisterCommands();
 	static void Create();
+
 	void AssignName();
 	void SetName();
 	void FreeName();

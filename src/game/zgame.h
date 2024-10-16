@@ -4,6 +4,7 @@ void game_main();
 class CGame
 {
 public:
+	static void StartEngine();
 	static void StartPlay();
 	static void Tick();
 };
@@ -11,9 +12,14 @@ public:
 class COurGame : public CGame
 {
 public:
-	static void StartEngine();
 	void InitializeTextChat();
 	void Unk001(void* param_1, int param_2);
+};
+
+class CMission
+{
+public:
+	void Init();
 };
 
 class CGameState

@@ -10,6 +10,12 @@ namespace zdb
 		CEntity();
 	};
 
+	class CftsPlayer
+	{
+	public:
+		static void RegisterAnimCommands();
+	};
+
 	class CZSealBodyBone : CNodeEx
 	{
 	public:
@@ -76,8 +82,6 @@ namespace zdb
 		CZSealBodyBone* m_AimNodes;
 	};
 
-	
-
 	class CZSealEx : public CNodeEx
 	{
 	public:
@@ -102,5 +106,16 @@ namespace zdb
 		float m_RArmArmor;
 		float m_LLegArmor;
 		float m_RLegArmor;
+	};
+
+	class CSealCtrl
+	{
+
+	};
+
+	class CSealCtrlAi : public CSealCtrl
+	{
+	public:
+		static void RegisterCommands();
 	};
 }

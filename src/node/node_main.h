@@ -37,6 +37,8 @@ namespace zdb
 	class CCamera : public CNode
 	{
 	public:
+		static void RegisterAnimCommands();
+
 		// i'm not sure why the names are capitalized
 		// feels like i'm being yelled at
 		static float FOV;
@@ -52,6 +54,12 @@ namespace zdb
 		static void SET_CAMERA_REGION_TEST(bool test);
 		static bool GET_CAMERA_REGION_TEST();
 		static void CAMERA_3RD_PERSON();
+	};
+
+	class CAppCamera : public CCamera
+	{
+	public:
+		static void RegisterAnimCommands();
 	};
 
 	class CLight : public CNode

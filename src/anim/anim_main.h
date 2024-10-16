@@ -46,6 +46,8 @@ public:
 class CZAnimMain
 {
 public:
+	static void Open(const char* name);
+	static void AddCmd();
 	void GetAnimSet();
 	void GetAnimSetIndex();
 };

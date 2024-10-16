@@ -184,10 +184,7 @@ class CAiSRush : public CAiState
 
 class CAiPlanner
 {
-public:
-	virtual void Act();
-	virtual void Stop();
-	virtual float GetPlanCost();
+
 };
 
 class CBasicPlanner : public CAiPlanner
