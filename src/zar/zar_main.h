@@ -4,6 +4,10 @@
 #include "reader/zrdr_main.h"
 #include "util/util_stable.h"
 
+typedef char undefined;
+typedef int undefined4;
+typedef long undefined8;
+
 namespace zar
 {
 	const char* g_DefaultArchiveName = "ROOT";
@@ -16,6 +20,14 @@ namespace zar
 		void Open();
 		CKey* CreateKey();
 		void* ReadDirectory();
+		void SetFileName();
+		size_t GetSize(const char* key);
+
+		void Fetch(const char* key, undefined4 param_3);
+		bool Fetch(const char* key, undefined8 param_3);
+		bool Fetch(const char* key, undefined param_3, undefined8 param_4);
+
+		CKey* GetOpenKey();
 	private:
 		int32_t m_PaddingMaybe;
 		int32_t m_Flags;
@@ -27,6 +39,7 @@ namespace zar
 
 	class CKey
 	{
-
+	public:
+		static CKey* FindKey(const char* key);
 	};
 }
