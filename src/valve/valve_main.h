@@ -25,8 +25,13 @@ public:
 class CValve
 {
 public:
+	CValve();
+
 	static void Create();
+	void AssignName();
 	void SetName();
+	void FreeName();
+	void MakeCallbacks();
 private:
 	const char* m_Name;
 	int m_Value;
