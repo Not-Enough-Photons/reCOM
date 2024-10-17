@@ -3,6 +3,17 @@
 
 namespace zdb
 {
+	static CNodeUniverse* NodeUniverse;
+	static CWorld* theWorld;
+	static CAppCamera* appCamera;
+
+	// What a weird naming scheme.
+	class CNodeUniverse
+	{
+	public:
+		void AddNode(const CNode& node);
+	};
+
 	class CWorld
 	{
 	public:
@@ -19,6 +30,8 @@ namespace zdb
 
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);
+
+		undefined4 DismemberWorldModel();
 
 		void ClearLightMapList();
 		void ClearShadowList();

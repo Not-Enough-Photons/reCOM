@@ -38,4 +38,28 @@ namespace zar
 
 		return ok != false;
 	}
+
+	undefined4 CZAR::ReleaseDataBuffer()
+	{
+		CBufferIO* buffer;
+		undefined4 uVar1 = 0;
+
+		if (field15_0x18 == 0)
+		{
+			uVar1 = 0;
+		}
+		else
+		{
+			buffer = dynamic_cast<CBufferIO*>(field14_0x14);
+			if (buffer != NULL)
+			{
+				buffer->Release();
+			}
+
+			uVar1 = field15_0x18;
+			field15_0x18 = 0;
+		}
+
+		return uVar1;
+	}
 }

@@ -25,13 +25,11 @@ namespace zar
 		bool Fetch(const char* key, undefined param_3, undefined8 param_4);
 
 		CKey* GetOpenKey();
+
+		undefined4 ReleaseDataBuffer();
 	private:
-		int32_t m_PaddingMaybe;
-		int32_t m_Flags;
-		CSTable* m_StringTable;
-		std::string m_Name;
-		CFileIO* m_Stream;
-		CFileIO* m_StreamShallowCopy;
+		int field15_0x18;
+		CIO* field14_0x14;
 	};
 
 	class CKey

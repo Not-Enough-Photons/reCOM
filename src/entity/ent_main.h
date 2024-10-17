@@ -39,6 +39,19 @@ namespace zdb
 		void SetController(CEntityCtrl* controller);
 	private:
 		zdb::CNode* m_node;
+
+		float m_x00;
+		float m_y00;
+		float m_z00;
+		float m_x01;
+		float m_y01;
+		float m_z01;
+		float m_x02;
+		float m_y02;
+		float m_z02;
+		float m_x03;
+		float m_y03;
+		float m_z03;
 	};
 
 	class CEntityCtrl

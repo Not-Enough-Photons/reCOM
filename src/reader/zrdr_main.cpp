@@ -153,7 +153,7 @@ CZAREntry* CRdrIO::ReadRoot(CZAREntry* entry, const char* name)
 	return result;
 }
 
-int CRdrIO::ReadFloat(CZAREntry* entry, const char* name, float* output, int maxDepth)
+int CRdrIO::zrdr_readreal(CZAREntry* entry, const char* name, float* output, int maxDepth)
 {
 	int ok = 0;
 	CZAREntry* root = GetRootEntry(entry, name, 0);
@@ -205,7 +205,7 @@ int CRdrIO::ReadFloat(CZAREntry* entry, const char* name, float* output, int max
 	return ok;
 }
 
-int CRdrIO::ReadString(CZAREntry* entry, const char* name, void* buf)
+int CRdrIO::zrdr_readstring(CZAREntry* entry, const char* name, void* buf)
 {
 	int status = 0;
 	CZAREntry* root = GetRootEntry(entry, name, 0);
@@ -292,4 +292,18 @@ void CRdrIO::ReadZAmmo(void* param_1, CZAREntry* entry)
 
 	if (ReadFloat(entry, "AccelerationFactor", &outFloat, 1)) { ammo->SetAccelerationFactor(outFloat); }
 	else { ammo->SetAccelerationFactor(1.0f); }
+}
+
+void CFileIO::Release()
+{
+	field4_0x4 = 0xffffffff;
+}
+
+void CBufferIO::Release()
+{
+	field14_0x14 = 0;
+	field15_0x18 = 0;
+	field16_0x1c = 0;
+	field13_0x10 = 0;
+	CFileIO::Release();
 }
