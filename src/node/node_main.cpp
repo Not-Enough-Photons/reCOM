@@ -47,7 +47,7 @@ namespace zdb
 		return node;
 	}
 
-	void CNode::SetNodeName(const char* name)
+	void CNode::SetName(const char* name)
 	{
 		const char* str;
 

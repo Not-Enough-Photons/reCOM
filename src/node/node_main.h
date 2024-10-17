@@ -2,6 +2,9 @@
 #include <vector>
 #include <string>
 
+#include "placeholder.h"
+#include "math/zmath_main.h"
+
 namespace zdb
 {
 	const char* g_RootNodeTag = "ROOT";
@@ -14,7 +17,34 @@ namespace zdb
 		~CNode();
 
 		CNode* Create(const char* name);
-		void SetNodeName(const char* name);
+
+		void AddChild(const CNode& child);
+		void DeleteChild(const CNode& child);
+		void DeleteChildren();
+
+		CNode* FindChild();
+
+		undefined8 BuildMTW(const CMatrix& mat);
+
+		void Release();
+		bool Rendered();
+
+		void FreeAtom();
+		undefined4 GetAtom();
+
+		float GetRadius() const;
+		float GetRadiusSq() const;
+
+		undefined8 GetRotation() const;
+		undefined8 GetScale() const;
+
+		undefined4 GetSubMesh() const;
+
+		void SetName(const char* name);
+		void SetModelname(const char* name);
+
+		void SetPosition(float x, float y, float z);
+		void SetScale(undefined8 param_2);
 	private:
 		const char* m_name;
 	};
