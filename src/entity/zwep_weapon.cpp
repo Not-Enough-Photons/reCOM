@@ -295,4 +295,29 @@ namespace zdb
 
 		m_normalizedRange = normalizedRange;
 	}
+
+	float CZProjectile::ResolveDamage(float target, float source, float* currentDamage, float* newDamage)
+	{
+		float oldDmg = target - *newDamage * ((10.0f - source) / 10.0f);
+		if (oldDmg <= 0.0f)
+		{
+			oldDmg = 0.0f;
+		}
+
+		float newDmg = *newDamage - (target - oldDmg) / 4.0f;
+		*newDamage = newDmg;
+		if (newDmg <= 0.0f)
+		{
+			*newDamage = 0.0f;
+		}
+
+		newDmg = *currentDamage;
+		*currentDamage = newDmg - oldDmg;
+		if (newDmg - oldDmg <= 0.0f)
+		{
+			*currentDamage = 0.0f;
+		}
+
+		return *currentDamage;
+	}
 }

@@ -5,7 +5,7 @@
 /// <para> ValveType::TEMP - Loads once then unloads when done. </para>
 /// <para> ValveType::PERSIST - Lasts the entire lifetime of the game, and will pool if the value reaches threshold.</para>
 /// </summary>
-enum ValveType
+enum VALVE_TYPE
 {
 	PERM,
 	TEMP,
@@ -28,7 +28,7 @@ public:
 	CValve();
 
 	static void RegisterCommands();
-	static void Create();
+	static void Create(const char* name, VALVE_TYPE type);
 
 	void AssignName();
 	void SetName();
@@ -37,5 +37,5 @@ public:
 private:
 	const char* m_Name;
 	int m_Value;
-	ValveType m_Type;
+	VALVE_TYPE m_Type;
 };

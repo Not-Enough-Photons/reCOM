@@ -100,4 +100,10 @@ namespace zdb
 		float m_normalizedRange;
 		int m_slotCost;
 	};
+
+	class CZProjectile
+	{
+	public:
+		float ResolveDamage(float target, float source, float* currentDamage, float* newDamage);
+	};
 }

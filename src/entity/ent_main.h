@@ -4,28 +4,30 @@
 
 namespace zdb
 {
+	static CftsPlayer* ftsPlayer;
+
 	class CEntity
 	{
 	public:
 		CEntity();
 	};
 
+	/// <summary>
+	/// Base FTS player class. FTS stands for "Fireteam Seal."
+	/// </summary>
 	class CftsPlayer
 	{
 	public:
-		static void RegisterAnimCommands();
-	};
+		/// <summary>
+		/// Gets the static player instance.
+		/// </summary>
+		/// <returns></returns>
+		static CftsPlayer* ftsGetPlayer()
+		{
+			return ftsPlayer;
+		}
 
-	class CZSealBodyBone : CNodeEx
-	{
-	public:
-		CZSealBodyBone();
-		CZSealBodyBone(const char* name);
-	private:
-		const char* m_BoneName;
-		zdb::Vector3 m_BoneWorldPosition;
-		zdb::Vector3 m_BoneLocalPosition;
-		zdb::Quaternion m_BoneRotation;
+		static void RegisterAnimCommands();
 	};
 
 	class CZSealBody : CEntity
@@ -38,6 +40,9 @@ namespace zdb
 		static CZSealBody* Create(long param_1, int param_2, int param_3);
 
 		int* FUN_002e4d60(zdb::Vector3* param_2, long param_3);
+
+		float SetHealth(float health);
+		void OnDeath(void* ftsPlayer);
 
 		void SetPosition(float x, float y, float z);
 		void SetPosition(zdb::Vector3 position);
@@ -54,32 +59,6 @@ namespace zdb
 
 		zdb::Vector3 m_WrittenPosition;
 		float m_WrittenYaw;
-
-		CZSealBodyBone* m_SkelRoot;
-		CZSealBodyBone* m_Hips;
-		CZSealBodyBone* m_SpineLo;
-		CZSealBodyBone* m_SpineHi;
-		CZSealBodyBone* m_Neck;
-		CZSealBodyBone* m_LBicep;
-		CZSealBodyBone* m_RBicep;
-		CZSealBodyBone* m_LThigh;
-		CZSealBodyBone* m_RThigh;
-		CZSealBodyBone* m_LCalf;
-		CZSealBodyBone* m_RCalf;
-		CZSealBodyBone* m_LFoot;
-		CZSealBodyBone* m_RFoot;
-		CZSealBodyBone* m_LToe;
-		CZSealBodyBone* m_RToe;
-		CZSealBodyBone* m_LHand;
-		CZSealBodyBone* m_RHand;
-		CZSealBodyBone* m_LForearm;
-		CZSealBodyBone* m_RForearm;
-		CZSealBodyBone* m_LSCap;
-		CZSealBodyBone* m_RSCap;
-		CZSealBodyBone* m_LShoulderWgt;
-		CZSealBodyBone* m_RShoulderWgt;
-		CZSealBodyBone* m_Head;
-		CZSealBodyBone* m_AimNodes;
 	};
 
 	class CZSealEx : public CNodeEx
