@@ -57,6 +57,22 @@ namespace zdb
 		CZWeapon();
 		~CZWeapon();
 
+		void Init();
+		void PreTick();
+		void PostTick();
+
+		const char* GetInternalName() const;
+		const char* GetDisplayName() const;
+		const char* GetDescription() const;
+
+		float GetSoundRadius() const;
+		float GetSoundRadiusSqrt() const;
+		float GetEffectiveRange() const;
+		float GetMaximumRange() const;
+		float GetMuzzleVelocity() const;
+		float GetGravityAcceleration() const;
+		float GetImpactRadius() const;
+
 		void SetInternalName(const char* internalName);
 		void SetDisplayName(const char* displayName);
 		void SetDescription(const char* description);

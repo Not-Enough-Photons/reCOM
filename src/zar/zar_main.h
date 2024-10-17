@@ -1,12 +1,9 @@
 #pragma once
 #include <string>
 
+#include "placeholder.h"
 #include "reader/zrdr_main.h"
 #include "util/util_stable.h"
-
-typedef char undefined;
-typedef int undefined4;
-typedef long undefined8;
 
 namespace zar
 {
