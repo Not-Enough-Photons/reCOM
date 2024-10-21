@@ -9,3 +9,9 @@ void zUtilInit(const char* outputLogPath)
 {
 	s_Output = new COutput(outputLogPath);
 }
+
+void zUtilUninit()
+{
+	delete s_Output;
+	s_Output = NULL;
+}

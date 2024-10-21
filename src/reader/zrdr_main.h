@@ -43,12 +43,26 @@ public:
 	CBufferIO();
 	~CBufferIO();
 
+	void Open();
+	// void Open(...);
 	void Release();
+	void LoadBuffer();
+	bool IsOpen();
+
+	void fflush();
+	void fread();
+	// void fread(...);
+	void freadchar();
+	void fseek();
+	void ftell();
+	void fwrite();
+	// void fwrite(...);
 private:
 	int field14_0x14;
 	int field15_0x18;
 	int field16_0x1c;
 	int field13_0x10;
+	bool is_open = false;
 };
 
 class CRdrIO : public CFileIO
@@ -57,6 +71,7 @@ public:
 	static CZAREntry*  zrdr_findtag           (CZAREntry* entry, const char* name);
 	static CZAREntry*  zrdr_findtag_startidx  (CZAREntry* entry, const char* name, int it);
 	static CZAREntry*  ReadRoot               (CZAREntry* entry, const char* name);
+	static void*       zrdr_findbool          (CZAREntry* entry, double param_2, int param_3`);
 	static int         zrdr_readstring        (CZAREntry* entry, const char* name, void* buf);
 	static int         zrdr_readreal          (CZAREntry* entry, const char* name, float* output, int maxDepth);
 	static int         zrdr_readint           (CZAREntry* entry, const char* name, int* output, int maxDepth);

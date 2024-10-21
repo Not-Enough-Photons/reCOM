@@ -140,11 +140,11 @@ CZAREntry* CRdrIO::ReadRoot(CZAREntry* entry, const char* name)
 						descriptor = root->next->descriptor;
 					}
 
-					result = NULL;
-					if (descriptor == ZEntryDescriptor::STRING)
-					{
-						result = root->next->next;
-					}
+result = NULL;
+if (descriptor == ZEntryDescriptor::STRING)
+{
+	result = root->next->next;
+}
 				}
 			}
 		}
@@ -237,6 +237,11 @@ int CRdrIO::zrdr_readstring(CZAREntry* entry, const char* name, void* buf)
 	}
 
 	return status;
+}
+
+void* CRdrIO::zrdr_findbool(CZAREntry* entry, double param_2, int param_3);
+{
+	auto tag = zrdr_findtag_startidx(entry, param_2, 1);
 }
 
 void CRdrIO::ReadZAmmo(void* param_1, CZAREntry* entry)

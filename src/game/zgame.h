@@ -4,7 +4,7 @@ void game_main();
 class CGame
 {
 public:
-	static void StartEngine();
+	static bool StartEngine();
 	static void StartPlay();
 	static void Tick();
 };
@@ -12,14 +12,13 @@ public:
 class COurGame : public CGame
 {
 public:
-	void InitializeTextChat();
-	void Unk001(void* param_1, int param_2);
+	static bool StartEngine();
 };
 
 class CMission
 {
 public:
-	void Init();
+	static void Init();
 };
 
 class CGameState
@@ -69,4 +68,10 @@ class CShutdownState : public CGameState
 {
 	void Start();
 	void Exit();
+};
+
+class CGameStateChangeCmd
+{
+public:
+	static void CreatePool(int size);
 };

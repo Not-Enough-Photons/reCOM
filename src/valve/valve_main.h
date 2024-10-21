@@ -30,8 +30,9 @@ public:
 	static void RegisterCommands();
 	static void Create(const char* name, VALVE_TYPE type);
 
-	int Init();
-	int Uninit();
+	static int Init();
+	static int Uninit();
+
 	void Reset();
 
 	void AssignName();

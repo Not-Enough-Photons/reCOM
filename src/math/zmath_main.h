@@ -1,4 +1,6 @@
 #pragma once
+void zMath_Init();
+
 typedef struct CPnt2D
 {
 	float x;
@@ -11,6 +13,8 @@ typedef struct CPnt3D
 	float y;
 	float z;
 
+	static void Normalize(CPnt3D& self);
+	static void Normalize(CPnt3D& lhs, CPnt3D& rhs);
 	static CPnt3D Add(CPnt3D& first, CPnt3D& second);
 	static CPnt3D Scale(float scaleFactor, CPnt3D& first, CPnt3D& second);
 };
@@ -35,6 +39,7 @@ typedef struct CQuat
 	static CQuat Mul(CQuat& left, CQuat& right);
 	static void ToMatrix(CQuat& quat, CMatrix& matrix);
 	static CQuat Exp(CQuat& quat, CPnt3D& point);
+	static void MakeYXZ(float x, float y, float z, CQuat& quat);
 };
 
 typedef union CMatrix

@@ -2,6 +2,11 @@
 #include "math/zmath_main.h"
 #include "node/node_main.h"
 
+enum AnimTypes
+{
+
+};
+
 static int InitAnimLang();
 static int ParseScriptKeywords();
 static int ParseAIKeywords();
@@ -50,4 +55,19 @@ public:
 	static void AddCmd();
 	void GetAnimSet();
 	void GetAnimSetIndex();
+};
+
+class CZBodyAnimBlend
+{
+public:
+	void SetFractionalTime(float time);
+private:
+	float m_time;
+};
+
+class CSealAnim
+{
+public:
+	CSealAnim();
+	~CSealAnim();
 };

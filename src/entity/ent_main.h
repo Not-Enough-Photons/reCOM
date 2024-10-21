@@ -1,4 +1,5 @@
 #pragma once
+#include "anim/anim_main.h"
 #include "node/node_main.h"
 #include "math/zmath_main.h"
 
@@ -87,6 +88,8 @@ namespace zdb
 
 		// Tomb Of The Unknown Functions
 		static CZSealBody* Create(long param_1, int param_2, int param_3);
+
+		static CSealAnim* m_sealanim;
 	private:
 	};
 

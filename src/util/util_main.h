@@ -13,3 +13,4 @@ private:
 static COutput* s_Output;
 
 void zUtilInit(const char* outputLogPath);
+void zUtilUninit();

@@ -24,6 +24,12 @@ private:
 	bool m_isDisabled;
 };
 
+class CSndInstance : CSnd
+{
+public:
+	static void InitInstancePool(int count);
+};
+
 class CSndJukebox
 {
 public:

@@ -72,14 +72,19 @@
     <ClInclude Include="src\zar\zar_main.h">
       <Filter>zar</Filter>
     </ClInclude>
-    <ClInclude Include="src\zgame.h" />
+    <ClInclude Include="src\game\zgame.h" />
     <ClInclude Include="src\util\util_stable.h" />
     <ClInclude Include="src\entity\seal.cpp" />
-    <ClInclude Include="src\world\zworld.h" />
     <ClInclude Include="src\valve\valve_main.h" />
     <ClInclude Include="src\tests\tests.h" />
     <ClInclude Include="src\anim\anim_main.h" />
     <ClInclude Include="src\node\node_world.h" />
+    <ClInclude Include="src\util\util_main.h" />
+    <ClInclude Include="src\placeholder.h" />
+    <ClInclude Include="src\texture\ztex_main.h" />
+    <ClInclude Include="src\video\zvid_main.h" />
+    <ClInclude Include="src\render\zrnd_main.h" />
+    <ClInclude Include="src\input\input_main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ai\ai_main.cpp">
@@ -163,10 +168,9 @@
     </ClCompile>
     <ClCompile Include="src\util\util_stable.cpp" />
     <ClCompile Include="src\ui\c2dstring.cpp" />
-    <ClCompile Include="src\world\zworld.cpp" />
     <ClCompile Include="src\valve\valve_main.cpp" />
     <ClCompile Include="src\tests\test_readerhash.cpp" />
-    <ClCompile Include="src\game_main.cpp" />
+    <ClCompile Include="src\game\game_main.cpp" />
     <ClCompile Include="src\anim\anim_main.cpp" />
     <ClCompile Include="src\entity\seal_create.cpp" />
     <ClCompile Include="src\entity\seal_anim.cpp" />
@@ -174,5 +178,10 @@
     <ClCompile Include="src\entity\seal_tasks.cpp" />
     <ClCompile Include="src\entity\zwep_weapon.cpp" />
     <ClCompile Include="src\entity\zwep_ammo.cpp" />
+    <ClCompile Include="src\util\util_main.cpp" />
+    <ClCompile Include="src\texture\ztex_main.cpp" />
+    <ClCompile Include="src\video\zvid_main.cpp" />
+    <ClCompile Include="src\render\zrnd_main.cpp" />
+    <ClCompile Include="src\input\input_main.cpp" />
   </ItemGroup>
 </Project>

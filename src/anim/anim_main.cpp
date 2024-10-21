@@ -142,20 +142,12 @@ void ParseScriptKeyword(void* ptr, char* token, int param_3, void(*func), bool(*
 	}
 }
 
-bool CmdAddNode(zdb::CNode* node)
+void CZBodyAnimBlend::SetFractionalTime(float time)
 {
-	zdb::Vector3 position;
-	zdb::Quaternion rotation;
-	zdb::Quaternion aQStack_50;
+	if (time < 0.0f || 1.0f < time)
+	{
+		time -= floorf(time);
+	}
 
-	position.x = 0.0f;
-	position.y = 0.0f;
-	position.z = 0.0f;
-
-	zdb::Quaternion::Normalize(&rotation);
-	// FUN_00256080(lVar2, aQStack_50) - quaternion related
-	// FUN_00254c20(aQStack_50, &local_10, 1) - quaternion related
-	zdb::Quaternion::ToEuler(&aQStack_50, &position);
-
-	return true;
+	m_time = time;
 }

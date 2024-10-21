@@ -2,6 +2,32 @@
 
 #include "zmath_main.h"
 
+void CPnt3D::Normalize(CPnt3D& self)
+{
+	float sqrMagnitude = sqrtf(self.z * self.z + self.x * self.x + self.y * self.y);
+
+	if (sqrMagnitude != 0.0f)
+	{
+		sqrMagnitude = 1.0f / sqrMagnitude;
+		self.x = self.x * sqrMagnitude;
+		self.y = self.y * sqrMagnitude;
+		self.z = self.z * sqrMagnitude;
+	}
+}
+
+void CPnt3D::Normalize(CPnt3D& lhs, CPnt3D& rhs)
+{
+	float sqrMagnitude = sqrtf(lhs.z * lhs.z + lhs.x * lhs.x + lhs.y * lhs.y);
+
+	if (sqrMagnitude != 0.0f)
+	{
+		sqrMagnitude = 1.0f / sqrMagnitude;
+		rhs.x = lhs.x * sqrMagnitude;
+		rhs.y = lhs.y * sqrMagnitude;
+		rhs.z = lhs.z * sqrMagnitude;
+	}
+}
+
 CPnt3D CPnt3D::Add(CPnt3D& first, CPnt3D& second)
 {
 	CPnt3D output;
@@ -67,4 +93,26 @@ CQuat CQuat::Exp(CQuat& quat, CPnt3D& point)
 	}
 
 	return quat;
+}
+
+void CQuat::MakeYXZ(float x, float y, float z, CQuat& out)
+{
+	float halfX = x * 0.5f;
+	float sinHalfX = sinf(halfX);
+	halfX = cosf(halfX);
+
+	float halfY = x * 0.5f;
+	float sinHalfY = sinf(halfY);
+	halfY = cosf(halfY);
+
+	float zMul = sinHalfX * sinHalfY;
+	sinHalfX *= halfY;
+
+	float zSin = sinf(z * 0.5f);
+	float zCos = cosf(z * 0.5f);
+
+	out.w = zMul * zSin + halfX * halfY * zCos;
+	out.x = sinHalfX * zSin + halfX * sinHalfY * zCos;
+	out.y = sinHalfX * zCos - halfX * sinHalfY * zSin;
+	out.z = halfX * halfY * zSin - zMul * zCos;
 }

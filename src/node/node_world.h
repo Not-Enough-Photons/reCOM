@@ -18,8 +18,8 @@ namespace zdb
 	{
 	public:
 		static int GetVersion();
+		static void Init();
 
-		void Init();
 		void Uninit();
 		void diTick();
 		void Update();
