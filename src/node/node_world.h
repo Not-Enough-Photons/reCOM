@@ -17,6 +17,9 @@ namespace zdb
 	class CWorld
 	{
 	public:
+		CWorld();
+		~CWorld();
+
 		static int GetVersion();
 		static void Init();
 

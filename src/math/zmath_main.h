@@ -16,6 +16,7 @@ typedef struct CPnt3D
 	static void Normalize(CPnt3D& self);
 	static void Normalize(CPnt3D& lhs, CPnt3D& rhs);
 	static CPnt3D Add(CPnt3D& first, CPnt3D& second);
+	static CPnt3D Sub(CPnt3D& first, CPnt3D& second);
 	static CPnt3D Scale(float scaleFactor, CPnt3D& first, CPnt3D& second);
 };
 

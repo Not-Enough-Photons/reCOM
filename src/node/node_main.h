@@ -68,22 +68,10 @@ namespace zdb
 	{
 	public:
 		static void RegisterAnimCommands();
-
-		// i'm not sure why the names are capitalized
-		// feels like i'm being yelled at
-		static float FOV;
-		static float CLIP;
-		static bool CLIP_ALL;
-		static float FOG_RANGE;
-		static float FOG_ALTITUDE;
-		static float LOD_MULTIPLIER;
-		static bool ON;
-		static void DYNAMICS_RELEASE_CAMERA();
-		static void DYNAMICS_ACQUIRE_CAMERA();
-		static bool CAMERA_INDOORS;
-		static void SET_CAMERA_REGION_TEST(bool test);
-		static bool GET_CAMERA_REGION_TEST();
-		static void CAMERA_3RD_PERSON();
+		float GetScaledRangeSquared(const CPnt3D& point);
+	private:
+		CPnt3D m_pos;
+		float m_scaledrange;
 	};
 
 	class CAppCamera : public CCamera

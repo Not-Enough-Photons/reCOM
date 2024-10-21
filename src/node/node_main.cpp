@@ -66,4 +66,18 @@ namespace zdb
 
 		m_name = str;
 	}
+
+	float CCamera::GetScaledRangeSquared(const CPnt3D& point)
+	{
+		float x = point.x;
+		float y = point.y;
+		float z = point.z;
+		CPnt3D pnt;
+		pnt.x = x;
+		pnt.y = y;
+		pnt.z = z;
+
+		CPnt3D::Sub(m_pos, pnt);
+		return m_scaledrange * (pnt.z * pnt.z + pnt.x * pnt.x + pnt.y * pnt.y);
+	}
 }

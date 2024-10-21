@@ -37,6 +37,15 @@ CPnt3D CPnt3D::Add(CPnt3D& first, CPnt3D& second)
 	return output;
 }
 
+CPnt3D CPnt3D::Add(CPnt3D& first, CPnt3D& second)
+{
+	CPnt3D output;
+	output.x = first.x - second.x;
+	output.y = first.y - second.y;
+	output.z = first.z - second.z;
+	return output;
+}
+
 CPnt3D CPnt3D::Scale(float scaleFactor, CPnt3D& first, CPnt3D& second)
 {
 	first.x = second.x * scaleFactor;
