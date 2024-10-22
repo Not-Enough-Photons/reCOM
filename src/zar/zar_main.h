@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <list>
 
 #include "placeholder.h"
 #include "reader/zrdr_main.h"
@@ -16,6 +17,7 @@ namespace zar
 
 		void Open();
 		CKey* CreateKey();
+		CKey* NewKey(const char* name);
 		void* ReadDirectory();
 		void SetFileName();
 		size_t GetSize(const char* key);
@@ -28,13 +30,17 @@ namespace zar
 
 		undefined4 ReleaseDataBuffer();
 	private:
+		int* field_0x4;
 		int field15_0x18;
 		CIO* field14_0x14;
+		CKey* mainkey;
 	};
 
 	class CKey
 	{
 	public:
-		static CKey* FindKey(const char* key);
+		CKey* FindKey(const char* key);
+	private:
+		std::list<CKey*> m_keys;
 	};
 }

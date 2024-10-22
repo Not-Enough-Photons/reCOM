@@ -15,7 +15,7 @@ enum FireTeam
 	ALLIES
 };
 
-enum SealCommand
+enum FT_COMMAND
 {
 	CMD_UNKNOWN,
 	CMD_ACTION,
@@ -47,12 +47,62 @@ enum SealCommand
 	CMD_AMBUSH
 };
 
+enum AI_STATE
+{
+	STATE_UNKNOWN,
+	STATE_SCRIPT,
+	STATE_HOLD,
+	STATE_AVOID,
+	STATE_DEPLOY,
+	STATE_LASING,
+	STATE_SURRENDER,
+	STATE_RESTRAINED,
+	STATE_GOTO,
+	STATE_FOLLOW,
+	STATE_BREACH,
+	STATE_ACTION,
+	STATE_PURSUE,
+	STATE_ANIMATE,
+	STATE_CQB,
+	STATE_FLEE,
+	STATE_PATHRECO,
+	STATE_RESCUED,
+	STATE_SUSPENDED,
+	STATE_SHOTAT,
+	STATE_RELOAD,
+	STATE_NOAMMO,
+	STATE_PICKUP,
+	STATE_HOSTAGE,
+	STATE_CORPSE,
+	STATE_EVENT,
+	STATE_TARGETING,
+	STATE_GRENADE,
+	STATE_STUNNED,
+	STATE_RUSH
+};
+
+namespace sealai
+{
+	const char* get_state(AI_STATE state);
+}
+
 class CAiParams
 {
 
 };
 
 class CAiState
+{
+public:
+	CAiState();
+	~CAiState();
+
+	static CAiState* Create(AI_STATE state);
+
+	void Reset(AI_STATE state);
+};
+
+class CAiSScript : public CAiState
 {
 
 };
@@ -73,6 +123,11 @@ class CAiSDeploy : public CAiState
 };
 
 class CAiSSurrender : public CAiState
+{
+
+};
+
+class CAiSRestrained : public CAiState
 {
 
 };

@@ -18,6 +18,16 @@ typedef struct CZAREntry
 	CZAREntry*			next;
 };
 
+struct zrdr
+{
+	char type;
+	zrdr* next;
+};
+
+zrdr* zrdr_findtag(zrdr* reader, const char* tag);
+zrdr* zrdr_findtag_startidx(zrdr* reader, const char* tag, int iterations);
+bool zrdr_findreal(zrdr* reader, const char* tag, float* output, int iterations);
+
 class CIO
 {
 public:
@@ -71,7 +81,7 @@ public:
 	static CZAREntry*  zrdr_findtag           (CZAREntry* entry, const char* name);
 	static CZAREntry*  zrdr_findtag_startidx  (CZAREntry* entry, const char* name, int it);
 	static CZAREntry*  ReadRoot               (CZAREntry* entry, const char* name);
-	static void*       zrdr_findbool          (CZAREntry* entry, double param_2, int param_3`);
+	static void*       zrdr_findbool          (CZAREntry* entry, const char* name, int param_3);
 	static int         zrdr_readstring        (CZAREntry* entry, const char* name, void* buf);
 	static int         zrdr_readreal          (CZAREntry* entry, const char* name, float* output, int maxDepth);
 	static int         zrdr_readint           (CZAREntry* entry, const char* name, int* output, int maxDepth);

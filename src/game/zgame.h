@@ -1,4 +1,6 @@
 #pragma once
+#include "reader/zrdr_main.h"
+
 void game_main();
 
 class CGame
@@ -19,6 +21,15 @@ class CMission
 {
 public:
 	static void Init();
+	void Read(zrdr* reader);
+private:
+	float weather_factor;
+	int seal_command;
+	float recycle_time;
+	float recycle_range;
+	float respawn_time;
+	float respawn_fade;
+	float satchel_timer;
 };
 
 class CGameState

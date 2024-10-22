@@ -2,6 +2,39 @@
 
 namespace zar
 {
+	CKey* CZAR::NewKey(const char* name)
+	{
+
+	}
+
+	size_t CZAR::GetSize(const char* name)
+	{
+		zar::CKey* key;
+
+		if (field_0x4 == 0)
+		{
+			key = mainkey;
+		}
+		else
+		{
+
+		}
+	}
+
+	CKey* CKey::FindKey(const char* name)
+	{
+		CKey* found;
+		std::list<CKey*>::iterator begin = m_keys.begin();
+		std::list<CKey*>::iterator end = m_keys.end();
+		
+		for (std::list<CKey*>::iterator it = begin; it != end; it++)
+		{
+			
+		}
+
+		return found;
+	}
+
 	void CZAR::Fetch(const char* key, undefined4 param_3)
 	{
 		bool ok = false;
@@ -12,7 +45,7 @@ namespace zar
 		}
 		else
 		{
-			CKey* zarKey = CKey::FindKey(key);
+			// CKey* zarKey = CKey::FindKey(key);
 			// ok = Fetch(...);
 		}
 
@@ -32,7 +65,7 @@ namespace zar
 		}
 		else
 		{
-			CKey* zarKey = CKey::FindKey(key);
+			// CKey* zarKey = CKey::FindKey(key);
 			// ok = Fetch(...);
 		}
 

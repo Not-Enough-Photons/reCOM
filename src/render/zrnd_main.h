@@ -1,4 +1,11 @@
 #pragma once
+// Copyright (c) Zipper Interactive, 1999 - 2002
+// Reverse engineered by Adam of Not Enough Photons
+
+// TODO:
+// - Connect with rendering APIs like OpenGL, DirectX, and Vulkan
+// - Figure what the whole point of the Z renderer is
+
 void zRndrInit();
 
 namespace zdb
