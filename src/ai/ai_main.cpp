@@ -155,40 +155,65 @@ CAiState* CAiState::Create(AI_STATE state)
 		aiState->Reset(STATE_ACTION);
 		break;
 	case STATE_PURSUE:
+		aiState = new CAiSPursue();
+		aiState->Reset(STATE_PURSUE);
 		break;
 	case STATE_ANIMATE:
+		aiState = new CAiSAnimate();
+		aiState->Reset(STATE_ANIMATE);
 		break;
 	case STATE_CQB:
+		aiState = new CAiSCQBAttack();
+		aiState->Reset(STATE_CQB);
 		break;
 	case STATE_FLEE:
+		aiState = new CAiSFlee();
+		aiState->Reset(STATE_FLEE);
 		break;
 	case STATE_PATHRECO:
+		aiState = new CAiSPathRecover();
+		aiState->Reset(STATE_PATHRECO);
 		break;
 	case STATE_RESCUED:
+		aiState = new CAiSRescued();
 		break;
 	case STATE_SUSPENDED:
+		aiState = new CAiSSuspended();
 		break;
 	case STATE_SHOTAT:
+		aiState = new CAiSShotAt();
 		break;
 	case STATE_RELOAD:
+		// aiState = new CAiSReload();
 		break;
 	case STATE_NOAMMO:
+		aiState = new CAiSNoAmmo();
 		break;
 	case STATE_PICKUP:
+		// aiState = new CAiSPickup();
+
 		break;
 	case STATE_HOSTAGE:
+		aiState = new CAiSHostage();
 		break;
 	case STATE_CORPSE:
+		// aiState = new CAiSCorpse();
+
 		break;
 	case STATE_EVENT:
+		aiState = new CAiSEvent();
 		break;
 	case STATE_TARGETING:
+		aiState = new CAiSTarget();
 		break;
 	case STATE_GRENADE:
+		aiState = new CAiSGrenade();
 		break;
 	case STATE_STUNNED:
+		// aiState = new CAiSStunned();
 		break;
 	case STATE_RUSH:
+		aiState = new CAiSRush();
 		break;
 	default:
 		break;

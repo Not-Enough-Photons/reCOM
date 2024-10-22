@@ -106,6 +106,6 @@ void CMission::Read(zrdr* reader)
 			recycle_range *= recycle_range;
 		}
 
-		
+		FireTeam command
 	}
 }

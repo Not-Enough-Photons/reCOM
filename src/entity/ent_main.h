@@ -5,8 +5,9 @@
 
 namespace zdb
 {
-	static int recycler_index = 0;
-	static CftsPlayer* ftsPlayer;
+	int recycler_index = 0;
+	CftsPlayer* ftsPlayer;
+	CSealAnim* m_sealanim;
 
 	class CEntity
 	{
@@ -89,8 +90,10 @@ namespace zdb
 		// Tomb Of The Unknown Functions
 		static CZSealBody* Create(long param_1, int param_2, int param_3);
 
-		static CSealAnim* m_sealanim;
+		void UpdateFollowParams(float heading);
 	private:
+		float velX;
+		float velY;
 	};
 
 	class CZSealEx : public CNodeEx

@@ -18,15 +18,15 @@ namespace zdb
 
 		CNode* Create(const char* name);
 
-		void AddChild(const CNode& child);
-		void DeleteChild(const CNode& child);
+		void AddChild(CNode* child);
+		void DeleteChild(const CNode* child);
 		void DeleteChildren();
 
 		CNode* FindChild();
 
 		undefined8 BuildMTW(const CMatrix& mat);
 
-		void Release();
+		virtual void Release();
 		bool Rendered();
 
 		void FreeAtom();
@@ -46,7 +46,13 @@ namespace zdb
 		void SetPosition(float x, float y, float z);
 		void SetScale(undefined8 param_2);
 	private:
-		const char* m_name;
+		const char* name;
+		short refCount;
+		int nodeType;
+		int size;
+
+		CNode* parent;
+		std::vector<CNode&> children;
 	};
 
 	class CNodeEx : public CNode
@@ -61,7 +67,8 @@ namespace zdb
 
 	class CModel : public CNodeEx
 	{
-
+	public:
+		void Release(CNode* node);
 	};
 
 	class CCamera : public CNode

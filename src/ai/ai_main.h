@@ -99,6 +99,9 @@ public:
 
 	static CAiState* Create(AI_STATE state);
 
+	virtual void Tick();
+	virtual void OnSignal();
+
 	void Reset(AI_STATE state);
 };
 

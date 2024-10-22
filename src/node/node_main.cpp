@@ -7,7 +7,7 @@ namespace zdb
 {
 	CNode::CNode()
 	{
-		m_name = g_DeletedNodeTag;
+		name = g_DeletedNodeTag;
 	}
 
 	CNode* CNode::Create(const char* name)
@@ -16,18 +16,18 @@ namespace zdb
 
 		if (name == 0)
 		{
-			const char* nodeName = node->m_name;
+			const char* nodeName = node->name;
 			if (name == 0 && nodeName != g_DeletedNodeTag)
 			{
 				zAllocateInst((void*)nodeName, "node_main.cpp", 1120);
 			}
 
 			nodeName = reinterpret_cast<char*>(CreateString("Node", "node_main.cpp", 1121));
-			node->m_name = nodeName;
+			node->name = nodeName;
 		}
 		else
 		{
-			const char* nodeName = node->m_name;
+			const char* nodeName = node->name;
 			if (name == 0 && nodeName != g_DeletedNodeTag)
 			{
 				zAllocateInst((void*)nodeName, "node_main.cpp", 1120);
@@ -35,12 +35,12 @@ namespace zdb
 
 			if (name == 0)
 			{
-				node->m_name = g_DeletedNodeTag;
+				node->name = g_DeletedNodeTag;
 			}
 			else
 			{
 				nodeName = reinterpret_cast<char*>(CreateString(name, "node_main.cpp", 1121));
-				node->m_name = nodeName;
+				node->name = nodeName;
 			}
 		}
 
@@ -51,7 +51,7 @@ namespace zdb
 	{
 		const char* str;
 
-		str = m_name;
+		str = name;
 
 		if (str != 0 && str != g_DeletedNodeTag)
 		{
@@ -64,7 +64,33 @@ namespace zdb
 			str = reinterpret_cast<char*>(CreateString(name, "node_main.cpp", 1121));
 		}
 
-		m_name = str;
+		name = str;
+	}
+
+	void CNode::AddChild(CNode* node)
+	{
+		CNode* parent = node->parent;
+		if (node != NULL && parent != this)
+		{
+			CNode* child = node;
+			if (nodeType != 3)
+			{
+				if (parent != NULL)
+				{
+
+				}
+
+				child->parent = this;
+				child->refCount++;
+			}
+
+			if (1000 < size)
+			{
+				children.reserve(size + 100);
+			}
+
+			children.insert(children.begin(), *child);
+		}
 	}
 
 	float CCamera::GetScaledRangeSquared(const CPnt3D& point)
