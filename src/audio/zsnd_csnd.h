@@ -1,5 +1,10 @@
 #pragma once
+#include <vector>
+
 #include "placeholder.h"
+
+#include "valve\valve_main.h"
+#include "zar\zar_main.h"
 
 enum MUSIC_MODE
 {
@@ -15,18 +20,45 @@ enum MUSIC_MODE
 	MODE_9
 };
 
+
 class CSnd
 {
 public:
+	CSnd();
 	void SetupJukebox();
-
 private:
-	bool m_isDisabled;
+	static bool m_isDisabled;
+	static zar::CZAR* m_bnkArchive;
+	static int m_bnkoffset;
+	static std::vector<CSnd*> m_bankloaded;
+	static std::vector<CSnd*> m_soundbank;
+
+	float volume;
+	char* field5_0x8;
+	float range;
+	float field7_0x10;
+	void* bank;
+	int curSndID;
+	int field_0x1c;
+	undefined4 field14_0x20;
+	undefined4 field15_0x24;
+	undefined4 field16_0x28;
+	undefined field_0x1e;
+	const char* subtitle;
+	float subtitleTime;
+	CValve* subtitleValve;
+	int offset1;
+	int offset2;
+	bool oneshot;
+	undefined field_0x40;
+	int type;
 };
 
-class CSndInstance : CSnd
+class CSndInstance : public CSnd
 {
 public:
+	static std::vector<CSnd*> m_sound_instance_pool;
+
 	static void InitInstancePool(int count);
 };
 

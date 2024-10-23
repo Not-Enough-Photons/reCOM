@@ -12,6 +12,8 @@ namespace zdb
 	{
 	public:
 		void AddNode(const CNode& node);
+
+	private:
 	};
 
 	class CWorld
@@ -30,6 +32,7 @@ namespace zdb
 		void AddChild(const CNode& child);
 		void AddLandmark(const CNode& landmark);
 		void AddTextureAssetCharacter(const CNode& textureAsset);
+		void ReserveChildren(int count);
 
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);
@@ -45,6 +48,9 @@ namespace zdb
 		void GetTexHandle() const;
 		undefined4 GetTextureByName(const char* name) const;
 		int GetModel() const;
+	private:
+		int expandSize;
+		std::vector<CNode*> children;
 	};
 
 	class CWind

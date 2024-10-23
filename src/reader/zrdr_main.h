@@ -2,20 +2,15 @@
 #include <iostream>
 #include <cstdint>
 
-enum ZEntryDescriptor
+enum OpenFlags
 {
-	END,
-	NONE,
-	VALUE,
-	STRING,
-	FOLDER
-};
-
-typedef struct CZAREntry
-{
-	ZEntryDescriptor descriptor;
-	uint16_t			entries;
-	CZAREntry*			next;
+	READ		= 0x0001,
+	WRITE		= 0x0002,
+	READWRITE	= 0x0003,
+	APPEND		= 0x0100,
+	CREATE		= 0x0200,
+	TRUNCATE	= 0x0400,
+	EXCLUDE
 };
 
 struct zrdr
@@ -23,6 +18,28 @@ struct zrdr
 	char type;
 	zrdr* next;
 };
+
+inline char* GetMode(OpenFlags mode)
+{
+	switch (mode)
+	{
+	case OpenFlags::READ:
+		return "r";
+	case OpenFlags::WRITE:
+		return "w";
+	case OpenFlags::READWRITE:
+		return "rw";
+	case OpenFlags::APPEND:
+		return "a";
+	case OpenFlags::CREATE:
+	case OpenFlags::TRUNCATE:
+		return "w+";
+	case OpenFlags::EXCLUDE:
+		return "w+x";
+	}
+
+	return 0;
+}
 
 zrdr* zrdr_findtag(zrdr* reader, const char* tag);
 zrdr* zrdr_findtag_startidx(zrdr* reader, const char* tag, int iterations);
@@ -42,9 +59,30 @@ class CFileIO : public CIO
 public:
 	CFileIO();
 	~CFileIO();
+
+	bool Open(char* file, OpenFlags flags);
+	// void Open(...);
+	void LoadBuffer();
 	virtual void Release();
+	bool IsOpen();
+	char* PS2FileName(char* file, char* directory, int param_3);
+
+	virtual void fflush();
+	virtual int fread();
+	// virtual void fread(...);
+	virtual void freadchar();
+	virtual void fseek();
+	virtual void ftell();
+	virtual int fwrite(const void* buf, int count);
+	// virtual void fwrite(...);
+
 private:
-	int field4_0x4;
+	const char* m_root_path = "host0:.\\";
+	static bool m_write_status;
+
+	FILE* file;
+	OpenFlags flags;
+	int position;
 };
 
 class CBufferIO : public CFileIO
@@ -53,41 +91,18 @@ public:
 	CBufferIO();
 	~CBufferIO();
 
-	void Open();
-	// void Open(...);
-	void Release();
-	void LoadBuffer();
-	bool IsOpen();
-
-	void fflush();
-	void fread();
-	// void fread(...);
-	void freadchar();
-	void fseek();
-	void ftell();
-	void fwrite();
-	// void fwrite(...);
+	int fwrite(const void* buf, int count);
 private:
 	int field14_0x14;
 	int field15_0x18;
 	int field16_0x1c;
 	int field13_0x10;
-	bool is_open = false;
+	int is_open;
 };
 
 class CRdrIO : public CFileIO
 {
-public:
-	static CZAREntry*  zrdr_findtag           (CZAREntry* entry, const char* name);
-	static CZAREntry*  zrdr_findtag_startidx  (CZAREntry* entry, const char* name, int it);
-	static CZAREntry*  ReadRoot               (CZAREntry* entry, const char* name);
-	static void*       zrdr_findbool          (CZAREntry* entry, const char* name, int param_3);
-	static int         zrdr_readstring        (CZAREntry* entry, const char* name, void* buf);
-	static int         zrdr_readreal          (CZAREntry* entry, const char* name, float* output, int maxDepth);
-	static int         zrdr_readint           (CZAREntry* entry, const char* name, int* output, int maxDepth);
 
-	static void        ReadZAmmo              (void* param_1, CZAREntry* entry);
-	static void        ReadZWeapon            (void* param_1, CZAREntry* entry);
 };
 
 class CRdrArchive : public CRdrIO
