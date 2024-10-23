@@ -5,6 +5,7 @@
 
 #define NULL 0 
 
+const float c_DefaultDelta = 0.03333334f;
 const int c_MaxPads = 2;
 
 void CInput::Init()
@@ -120,7 +121,7 @@ void CPad::Flush()
 	rightStickVelY = 0.0f;
 	leftStickVelX = 0.0f;
 	leftStickVelY = 0.0f;
-	Tick(0.03333334f);
+	Tick(c_DefaultDelta);
 }
 
 void CPad::Tick(float delta)
