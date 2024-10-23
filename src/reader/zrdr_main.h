@@ -2,6 +2,15 @@
 #include <iostream>
 #include <cstdint>
 
+enum ReaderType
+{
+	TYPE_NULL,
+	TYPE_REFERENCE,
+	TYPE_VALUE,
+	TYPE_TAG,
+	TYPE_ARRAY
+};
+
 enum OpenFlags
 {
 	READ		= 0x0001,
@@ -15,7 +24,7 @@ enum OpenFlags
 
 struct zrdr
 {
-	char type;
+	ReaderType type;
 	zrdr* next;
 };
 

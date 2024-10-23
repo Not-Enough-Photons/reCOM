@@ -1,4 +1,20 @@
 #pragma once
+#include "anim/anim_main.h"
+
+enum OP_TYPE
+{
+	OP_NONE,
+	OP_CMP_EQUAL,
+	OP_CMP_NOTEQUAL,
+	OP_CMP_GTHAN,
+	OP_CMP_LTHAN,
+	OP_CMP_GTHANEQ,
+	OP_CMP_LTHANEQ,
+	OP_EQUAL,
+	OP_INCREMENT,
+	OP_DECREMENT
+};
+
 /// <summary>
 /// Determines the pooling type for the valve.
 /// <para> ValveType::PERM - Lasts the entire lifetime of the level. Will pool if value reaches threshold. </para>
@@ -34,13 +50,16 @@ public:
 	static int Uninit();
 
 	static CValve* GetByName(const char* name);
+	static zanim_cmd_hdr* CmdParseCmp(zrdr* reader);
+	static bool CmdTickCmp(zanim_cmd_hdr* command, float* delta);
 
 	void Reset();
 
 	void AssignName();
-	void SetName();
+	void SetName(const char* name);
 	void FreeName();
 	void MakeCallbacks();
+	OP_TYPE ParseOperator(const char* op);
 
 	int count;
 private:

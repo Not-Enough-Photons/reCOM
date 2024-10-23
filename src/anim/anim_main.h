@@ -1,8 +1,14 @@
 #pragma once
 #include "math/zmath_main.h"
 #include "node/node_main.h"
+#include "reader/zrdr_main.h"
 
 enum AnimTypes
+{
+
+};
+
+struct zanim_cmd_hdr
 {
 
 };
@@ -52,10 +58,12 @@ class CZAnimMain
 {
 public:
 	static void Open(const char* name);
-	static void AddCmd();
+	void AddCmd(const char* name, zanim_cmd_hdr*(*)(zrdr*), void(*)(zanim_cmd_hdr*), bool(*)(zanim_cmd_hdr*, float*), void(*)(zanim_cmd_hdr*));
 	void GetAnimSet();
 	void GetAnimSetIndex();
 };
+
+static CZAnimMain ZAnim;
 
 class CZBodyAnimBlend
 {

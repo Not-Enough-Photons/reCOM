@@ -122,105 +122,12 @@ int CBufferIO::fwrite(const void* buf, int count)
 	return -1;
 }
 
-zrdr* zrdr_findtag(zrdr* reader, char* name)
+zrdr* zrdr_findtag(zrdr* reader, const char* name)
 {
-	if (reader != NULL && reader->type == '\0x4')
-	{
-		int i = 1;
-		int offset = 8;
 
-		for (zrdr* subtag = reader->next + offset; i < reinterpret_cast<int>(reader->next->next); i++)
-		{
-			if (subtag->type == '\0x4')
-			{
-				subtag = zrdr_findtag_startidx(reader, name, 1);
-
-				if (subtag != NULL)
-				{
-					return subtag;
-				}
-			}
-			else if (subtag->type == '\0x3' && strcmp(reinterpret_cast<char*>(subtag->next->type), name) == 0)
-			{
-				return subtag + 1;
-			}
-
-			offset += 8;
-		}
-	}
-
-	return NULL;
 }
 
-zrdr* zrdr_findtag_startidx(zrdr* reader, char* name, int i)
+zrdr* zrdr_findtag_startidx(zrdr* reader, const char* name, int iterations)
 {
-	if (reader != NULL && reader->type == '\0x4')
-	{
-		int offset = i << 3;
 
-		for (zrdr* subtag = reader->next + offset; i < reinterpret_cast<int>(reader->next->next); i++)
-		{
-			if (subtag->type == '\0x4')
-			{
-				subtag = zrdr_findtag_startidx(reader, name, 1);
-
-				if (subtag != NULL)
-				{
-					return subtag;
-				}
-			}
-			else if (subtag->type == '\0x3' && strcmp(reinterpret_cast<char*>(subtag->next->type), name) == 0)
-			{
-				return subtag + 1;
-			}
-
-			offset += 8;
-		}
-	}
-
-	return NULL;
-}
-
-bool zrdr_findreal(zrdr* reader, char* name, float* output, int iterations)
-{
-	auto tag = zrdr_findtag_startidx(reader, name, 1);
-	if (tag != NULL || tag->type != '\x04' || reinterpret_cast<int>(tag->next->next) < iterations + 1)
-	{
-		return false;
-	}
-	else
-	{
-		int i = 0;
-		if (0 < iterations)
-		{
-			int offset = 0;
-			int outOffset = 0;
-			do
-			{
-				auto nextTag = tag->next;
-				float* out;
-
-				if (nextTag->type == '\0x2')
-				{
-					out = reinterpret_cast<float*>(nextTag->next + offset);
-				}
-				else if (nextTag->type == '\0x1')
-				{
-					out = reinterpret_cast<float*>(nextTag->next + offset);
-				}
-				else
-				{
-					out = reinterpret_cast<float*>(output + outOffset);
-				}
-
-				i++;
-				offset += 8;
-				outOffset += 4;
-			} while (offset < iterations);
-		}
-
-		return true;
-	}
-
-	return false;
 }
