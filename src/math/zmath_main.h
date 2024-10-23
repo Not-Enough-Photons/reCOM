@@ -1,6 +1,23 @@
 #pragma once
 void zMath_Init();
 
+template<typename T>
+inline bool saturate(T& value, T min, T max)
+{
+	if (value > max)
+	{
+		value = max;
+		return true;
+	}
+	else if (value < min)
+	{
+		value = min;
+		return true;
+	}
+
+	return false;
+}
+
 typedef struct CPnt2D
 {
 	float x;

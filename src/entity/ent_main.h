@@ -9,6 +9,11 @@ namespace zdb
 	CftsPlayer* ftsPlayer;
 	CSealAnim* m_sealanim;
 
+	class CCharacterType
+	{
+
+	};
+
 	class CEntity
 	{
 	public:
@@ -34,6 +39,8 @@ namespace zdb
 		virtual void PostTick();
 
 		void SetDisplayName(const char* displayName);
+
+		virtual void TeleportTo(const CMatrix& mat);
 
 		zdb::CNode& GetNode() const;
 		bool IsValid() const;
@@ -85,15 +92,34 @@ namespace zdb
 	{
 	public:
 		CZSealBody();
+		CZSealBody(const zdb::CNode& node, const CCharacterType& character);
+
 		~CZSealBody();
 
 		// Tomb Of The Unknown Functions
 		static CZSealBody* Create(long param_1, int param_2, int param_3);
 
+		void OnDeath();
+
+		void TeleportTo(const CMatrix& mat);
+
+		CCharacterType* GetCharacter() const;
+		int GetHeadDamage(float headDmgOld, float headDmgNew);
+		int GetBodyDamage(float bodyDmgOld, float bodyDmgNew);
+		int GetArmDamage(float armDmgOld, float armDmgNew);
+		int GetLegDamage(float legDmgOld, float legDmgNew);
+
+		float SetHealth(float health);
+
 		void UpdateFollowParams(float heading);
+		void HandleKiller(const CZSealBody& killer);
 
 
 	private:
+		CCharacterType* character;
+		float health;
+		bool dead;
+
 		float velX;
 		float velY;
 	};
