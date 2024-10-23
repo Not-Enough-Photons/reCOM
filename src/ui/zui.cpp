@@ -1,5 +1,134 @@
 #include "zui_main.h"
 
+#include "entity/zwep_weapon.h"
+#include "valve/valve_main.h"
+
+bool CInGameWeaponSel::CanSelectWeapon(int index) const
+{
+	CZWeapon* weapon = CZWeapon::m_listWeapons.GetWeaponByIndex(index);
+	EQUIP_ITEM item = weapon->itemType;
+	CValve* valve;
+
+	switch (item)
+	{
+	case EQUIP_ITEM::ITEM_ILLUM:
+		valve = CValve::GetByName("Enable_203ILL");
+		break;
+	case EQUIP_ITEM::ITEM_SMOKE_2:
+		valve = CValve::GetByName("Enable_203SMK");
+		break;
+	case EQUIP_ITEM::ITEM_FRAG_2:
+		valve = CValve::GetByName("Enable_203HE");
+		break;
+	case EQUIP_ITEM::ITEM_C4:
+		valve = CValve::GetByName("Enable_c4");
+		break;
+	case EQUIP_ITEM::ITEM_CLAYMORE:
+		valve = CValve::GetByName("Enable_claymore");
+		break;
+	case EQUIP_ITEM::ITEM_SATCHEL:
+		valve = CValve::GetByName("Enable_satchel");
+		break;
+	case EQUIP_ITEM::ITEM_WILLIE_PETE:
+		valve = CValve::GetByName("Enable_phos");
+		break;
+	case EQUIP_ITEM::ITEM_FLASHBANG:
+		valve = CValve::GetByName("Enable_flash");
+		break;
+	case EQUIP_ITEM::ITEM_SMOKE:
+		valve = CValve::GetByName("Enable_smoke");
+		break;
+	case EQUIP_ITEM::ITEM_FRAG:
+		valve = CValve::GetByName("Enable_frag");
+		break;
+	case EQUIP_ITEM::ITEM_2X_AMMO:
+		valve = CValve::GetByName("Enable_2xammo");
+		break;
+	case EQUIP_ITEM::ITEM_DESERT_EAGLE:
+		valve = CValve::GetByName("Enable_desert_eagle");
+		break;
+	case EQUIP_ITEM::ITEM_BERETTA_M9:
+		valve = CValve::GetByName("Enable_beretta_m9");
+		break;
+	case EQUIP_ITEM::ITEM_FIVE_SEVEN:
+		valve = CValve::GetByName("Enable_fiveseven");
+		break;
+	case EQUIP_ITEM::ITEM_GLOCK_18:
+		valve = CValve::GetByName("Enable_glock18");
+		break;
+	case EQUIP_ITEM::ITEM_HKP9S:
+		valve = CValve::GetByName("Enable_HkP9s");
+		break;
+	case EQUIP_ITEM::ITEM_SIG226:
+		valve = CValve::GetByName("Enable_Sig226");
+		break;
+	case EQUIP_ITEM::ITEM_MARK23_SD:
+		valve = CValve::GetByName("Enable_mark23sd");
+		break;
+	case EQUIP_ITEM::ITEM_MARK23:
+		valve = CValve::GetByName("Enable_mark23");
+		break;
+	case EQUIP_ITEM::ITEM_M4A_CARBINE:
+		valve = CValve::GetByName("Enable_m4Acarbine");
+		break;
+	case EQUIP_ITEM::ITEM_M87:
+		valve = CValve::GetByName("Enable_EquipmcmillanM87");
+		break;
+	case EQUIP_ITEM::ITEM_REMINGTON_870:
+		valve = CValve::GetByName("Enable_remington870");
+		break;
+	case EQUIP_ITEM::ITEM_BARRET_M82A1:
+		valve = CValve::GetByName("Enable_barret_lightm82A1");
+		break;
+	case EQUIP_ITEM::ITEM_STONER_SR25:
+		valve = CValve::GetByName("Enable_stoner_sr25");
+		break;
+	case EQUIP_ITEM::ITEM_M63A:
+		valve = CValve::GetByName("Enable_m63a");
+		break;
+	case EQUIP_ITEM::ITEM_M60E:
+		valve = CValve::GetByName("Enable_m60e");
+		break;
+	case EQUIP_ITEM::ITEM_REMINGTON_700:
+		valve = CValve::GetByName("Enable_remington700");
+		break;
+	case EQUIP_ITEM::ITEM_UZI:
+		valve = CValve::GetByName("Enable_uzi");
+		break;
+	case EQUIP_ITEM::ITEM_SIG_COMMANDO:
+		valve = CValve::GetByName("Enablesig_commando");
+		break;
+	case EQUIP_ITEM::ITEM_M14_GUN:
+		valve = CValve::GetByName("Enable_m14_gun");
+		break;
+	case EQUIP_ITEM::ITEM_JACKHAMMER:
+		valve = CValve::GetByName("Enable_jackhammer");
+		break;
+	case EQUIP_ITEM::ITEM_AKS74:
+		valve = CValve::GetByName("Enable_aks74");
+		break;
+	case EQUIP_ITEM::ITEM_AK47:
+		valve = CValve::GetByName("Enable_ak47");
+		break;
+	case EQUIP_ITEM::ITEM_MP5:
+		valve = CValve::GetByName("Enable_mp5");
+		break;
+	case EQUIP_ITEM::ITEM_MP5_SD:
+		valve = CValve::GetByName("Enable_mp5sd");
+		break;
+	case EQUIP_ITEM::ITEM_M4A_CARBINE_203:
+		valve = CValve::GetByName("Enable_m4Acarbine_203");
+		break;
+	case EQUIP_ITEM::ITEM_M16:
+		valve = CValve::GetByName("Enable_M16");
+		break;
+	default:
+		valve = NULL;
+	}
+
+	return valve != 0;
+}
+
 const char* CZUI::GetTeamName(FIRE_TEAM team)
 {
 	switch (team)

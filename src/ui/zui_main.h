@@ -71,5 +71,5 @@ public:
 	void Init(zdb::CWorld* world);
 	void SelectWeapon();
 	void SelectEquipment();
-	bool CanSelectWeapon();
+	bool CanSelectWeapon(int index) const;
 };

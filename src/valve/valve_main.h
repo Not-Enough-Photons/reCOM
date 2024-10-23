@@ -33,12 +33,16 @@ public:
 	static int Init();
 	static int Uninit();
 
+	static CValve* GetByName(const char* name);
+
 	void Reset();
 
 	void AssignName();
 	void SetName();
 	void FreeName();
 	void MakeCallbacks();
+
+	int count;
 private:
 	const char* m_Name;
 	int m_Value;

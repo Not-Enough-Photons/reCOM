@@ -1,4 +1,6 @@
 #pragma once
+#include <list>
+
 enum EQUIP_ITEM
 {
 	ITEM_GLOCK_18,
@@ -118,6 +120,10 @@ public:
 	void SetInternalName(const char* internalName);
 	void SetDisplayName(const char* displayName);
 	void SetDescription(const char* description);
+
+	static CZWeaponList m_listWeapons;
+
+	EQUIP_ITEM itemType;
 private:
 	const char* m_internalName;
 	const char* m_displayName;
@@ -131,6 +137,8 @@ private:
 	float m_gravityAcceleration;
 	float m_impactRadius;
 };
+
+
 
 class CZFTSWeapon : public CZWeapon
 {
@@ -163,4 +171,15 @@ class CZProjectile
 {
 public:
 	float ResolveDamage(float target, float source, float* currentDamage, float* newDamage);
+};
+
+class CZWeaponList
+{
+public:
+	CZWeaponList();
+	~CZWeaponList();
+
+	CZWeapon* GetWeaponByIndex(int index) const;
+private:
+	std::list<CZWeapon*> weapons;
 };
