@@ -3,7 +3,9 @@
 #include <string>
 
 #include "placeholder.h"
+
 #include "math/zmath_main.h"
+#include "zar/zar_main.h"
 
 namespace zdb
 {
@@ -95,5 +97,24 @@ namespace zdb
 		float m_Blue;
 		float m_Intensity;
 		float m_Range;
+	};
+
+	class CVisual
+	{
+	public:
+		CVisual();
+		~CVisual();
+
+		static CVisual* Create(zar::CZAR* archive);
+	};
+
+	class CMesh : public CVisual
+	{
+
+	};
+
+	class CSubMesh : public CMesh
+	{
+
 	};
 }

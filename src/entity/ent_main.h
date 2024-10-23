@@ -91,6 +91,8 @@ namespace zdb
 		static CZSealBody* Create(long param_1, int param_2, int param_3);
 
 		void UpdateFollowParams(float heading);
+
+
 	private:
 		float velX;
 		float velY;
@@ -99,16 +101,5 @@ namespace zdb
 	class CZSealEx : public CNodeEx
 	{
 
-	};
-
-	class CSealCtrl
-	{
-
-	};
-
-	class CSealCtrlAi : public CSealCtrl
-	{
-	public:
-		static void RegisterCommands();
 	};
 }

@@ -1,4 +1,5 @@
 #pragma once
+
 enum FireTeam
 {
 	FT_UNKNOWN,
@@ -86,6 +87,19 @@ namespace sealai
 	const char* get_state(AI_STATE state);
 }
 
+class CSealCtrl
+{
+public:
+	CSealCtrl();
+	~CSealCtrl();
+};
+
+class CSealCtrlAi : public CSealCtrl
+{
+public:
+	static void RegisterCommands();
+};
+
 class CAiParams
 {
 
@@ -101,13 +115,15 @@ public:
 
 	virtual void Tick();
 	virtual void OnSignal();
+	virtual bool CanPursue(CSealCtrlAi* controller);
 
 	void Reset(AI_STATE state);
 };
 
 class CAiSScript : public CAiState
 {
-
+public:
+	bool CanPursue(CSealCtrlAi* controller);
 };
 
 class CAiSHold : public CAiState

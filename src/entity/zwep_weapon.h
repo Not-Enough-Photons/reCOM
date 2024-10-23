@@ -1,6 +1,12 @@
 #pragma once
 namespace zdb
 {
+	enum EQUIP_ITEM
+	{
+		ITEM_GLOCK_18,
+
+	};
+
 	class CZWeaponStance
 	{
 	public:
