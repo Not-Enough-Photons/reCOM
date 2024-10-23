@@ -32,11 +32,11 @@ namespace zdb
 		virtual void OnMissionEnd();
 
 		// Tick virtual functions
-		virtual void PreTick();
-		virtual void PostPreTick();
-		virtual void PrePostTick();
-		virtual void Tick();
-		virtual void PostTick();
+		virtual void PreTick() {};
+		virtual void PostPreTick() {};
+		virtual void PrePostTick() {};
+		virtual void Tick() {};
+		virtual void PostTick() {};
 
 		void SetDisplayName(const char* displayName);
 

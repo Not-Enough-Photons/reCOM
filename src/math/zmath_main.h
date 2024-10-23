@@ -1,6 +1,41 @@
 #pragma once
 void zMath_Init();
 
+template <typename T>
+inline float min(T& first, T& second)
+{
+	if (second < first)
+	{
+		first = second;
+	}
+
+	return first;
+}
+
+template <typename T>
+inline float max(T& first, T& second)
+{
+	if (first < second)
+	{
+		first = second;
+	}
+
+	return first;
+}
+
+template<typename T>
+inline float decay(T base, T power, T& result, const T& original)
+{
+	float exp = expf(base * power);
+	return result = original + (result - original) * exp;
+}
+
+template<typename T>
+inline bool close_enough(T& value, T& min, T& max)
+{
+	return -max <= value - min || max < value - min;
+}
+
 template<typename T>
 inline bool saturate(T& value, T min, T max)
 {
