@@ -1,6 +1,6 @@
 #pragma once
 
-enum FireTeam
+enum FIRE_TEAM
 {
 	FT_UNKNOWN,
 	FIRETEAM,

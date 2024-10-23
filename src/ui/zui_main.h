@@ -1,5 +1,6 @@
 #pragma once
 #include "ai/ai_main.h";
+#include "node/node_world.h"
 
 enum TextColor
 {
@@ -50,11 +51,25 @@ class C2DMessageString : public C2D
 class CZUI
 {
 public:
-	static void InitializeCommandEntry(zdb::SealCommand command);
-	static const char* GetTeamName(zdb::FireTeam team);
-	static const char* GetRawCommandType(zdb::SealCommand command);
-	static const char* GetCommandDisplayName(zdb::SealCommand command);
-	static const char* GetProperRegroupDisplay(zdb::SealCommand command);
-	static const char* GetCommandDescription(zdb::SealCommand command);
-	static void SendUIMessage(int count, int* ptr, const char* message, TextColor color, TextAlignment alignment);
+	static void InitializeCommandEntry(FT_COMMAND command);
+	static const char* GetTeamName(FIRE_TEAM team);
+	static const char* GetRawCommandType(FT_COMMAND command);
+	static const char* GetCommandDisplayName(FT_COMMAND command);
+	static const char* GetProperRegroupDisplay(FT_COMMAND command);
+	static const char* GetCommandDescription(FT_COMMAND command);
+};
+
+class CInGameWeaponSel : C2D
+{
+public:
+	CInGameWeaponSel();
+	~CInGameWeaponSel();
+
+	void HudTick(float delta);
+	void GetPrevItem(int param_1);
+	void Clear();
+	void Init(zdb::CWorld* world);
+	void SelectWeapon();
+	void SelectEquipment();
+	bool CanSelectWeapon();
 };
