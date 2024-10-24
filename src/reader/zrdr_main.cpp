@@ -122,12 +122,12 @@ int CBufferIO::fwrite(const void* buf, int count)
 	return -1;
 }
 
-zrdr* zrdr_findtag(zrdr* reader, const char* name)
+zrdr* zrdr::zrdr_findtag(const char* name)
 {
 
 }
 
-zrdr* zrdr_findtag_startidx(zrdr* reader, const char* name, int iterations)
+zrdr* zrdr::zrdr_findtag_startidx(const char* name, int iterations)
 {
 
 }

@@ -22,8 +22,20 @@ enum OpenFlags
 	EXCLUDE
 };
 
-struct zrdr
+class zrdr
 {
+public:
+	zrdr();
+	zrdr(const zrdr& other, const CSTable& table);
+
+	void Clone(const zrdr& other, const CSTable& table);
+
+	zrdr* zrdr_findtag(const char* tag);
+	zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
+
+	bool zrdr_findint(const char* tag, int* output, int i);
+	bool zrdr_findreal(const char* tag, float* output, int iterations);
+private:
 	ReaderType type;
 	zrdr* next;
 };
@@ -49,10 +61,6 @@ inline char* GetMode(OpenFlags mode)
 
 	return 0;
 }
-
-zrdr* zrdr_findtag(zrdr* reader, const char* tag);
-zrdr* zrdr_findtag_startidx(zrdr* reader, const char* tag, int iterations);
-bool zrdr_findreal(zrdr* reader, const char* tag, float* output, int iterations);
 
 class CIO
 {
