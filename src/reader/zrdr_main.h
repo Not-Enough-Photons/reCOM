@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cstdint>
 
+#include "util/util_stable.h"
+
 enum ReaderType
 {
 	TYPE_NULL,
@@ -26,9 +28,9 @@ class zrdr
 {
 public:
 	zrdr();
-	zrdr(const zrdr& other, const CSTable& table);
+	zrdr(const zrdr* other, const CSTable* table);
 
-	void Clone(const zrdr& other, const CSTable& table);
+	void Clone(const zrdr* other, const CSTable* table);
 
 	zrdr* zrdr_findtag(const char* tag);
 	zrdr* zrdr_findtag_startidx(const char* tag, int iterations);

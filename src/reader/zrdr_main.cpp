@@ -2,6 +2,9 @@
 #include "zrdr_parse.h"
 #include "entity/zwep_ammo.h"
 
+bool init = false;
+bool warnonce = false;
+
 char* CFileIO::PS2FileName(char* file, char* directory, int param_3)
 {
 	char nameBuf[512];
@@ -120,6 +123,31 @@ int CBufferIO::fwrite(const void* buf, int count)
 	}
 
 	return -1;
+}
+
+zrdr::zrdr(const zrdr* other, const CSTable* table)
+{
+	Clone(other, table);
+}
+
+void zrdr::Clone(const zrdr* other, const CSTable* table)
+{
+	if (!init)
+	{
+		warnonce = true;
+		init = true;
+	}
+
+	if (other == NULL)
+	{
+		return;
+	}
+
+	type = other->type;
+	if (type == TYPE_ARRAY)
+	{
+
+	}
 }
 
 zrdr* zrdr::zrdr_findtag(const char* name)
