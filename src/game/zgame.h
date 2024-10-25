@@ -1,5 +1,6 @@
 #pragma once
 #include "reader/zrdr_main.h"
+#include "network/znet_main.h"
 
 class CMission;
 
