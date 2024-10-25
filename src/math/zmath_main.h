@@ -1,6 +1,35 @@
 #pragma once
 void zMath_Init();
 
+bool tableInit;
+
+float* sintbl;
+float* costbl;
+float* exptbl;
+
+void init_trig_table()
+{
+	if (!tableInit)
+	{
+		int i = 0;
+		int j = 0;
+		do
+		{
+			float x = i * 0.02454369f;
+			float calc = sinf(x);
+			*(sintbl + j) = calc;
+			calc = cosf(x);
+			*(costbl + j) = calc;
+			i++;
+			calc = expf(i * 10.0f) / 256.0f;
+			*(exptbl + j) = calc;
+			j += 4;
+		} 
+		while (i < 257);
+		tableInit = true;
+	}
+}
+
 template <typename T>
 inline float min(T& first, T& second)
 {
