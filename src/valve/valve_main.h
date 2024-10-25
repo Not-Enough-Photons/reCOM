@@ -44,7 +44,7 @@ public:
 	CValve();
 
 	static void RegisterCommands();
-	static void Create(const char* name, VALVE_TYPE type);
+	static CValve* Create(const char* name, VALVE_TYPE type);
 
 	static int Init();
 	static int Uninit();

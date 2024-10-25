@@ -1,6 +1,20 @@
 #pragma once
 #include "ai/ai_main.h";
 #include "node/node_world.h"
+#include "reader/zrdr_main.h"
+
+class CUIVariable;
+class CUIVariableSpec;
+class CUIVarManager;
+
+static CUIVarManager theUIVarManager;
+
+enum UIVAR_LONGEVITY
+{
+	value_00,
+	value_01,
+	value_02
+};
 
 enum TextColor
 {
@@ -72,4 +86,16 @@ public:
 	void SelectWeapon();
 	void SelectEquipment();
 	bool CanSelectWeapon(int index) const;
+};
+
+class CUIVariable
+{
+public:
+	void Set(zrdr* reader);
+};
+
+class CUIVarManager
+{
+public:
+	CUIVariable* Add(const char* name, zrdr* reader, UIVAR_LONGEVITY longevity);
 };
