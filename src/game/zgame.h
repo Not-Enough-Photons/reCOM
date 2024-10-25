@@ -1,6 +1,10 @@
 #pragma once
 #include "reader/zrdr_main.h"
 
+class CMission;
+
+static CMission theMission;
+
 void game_main();
 
 class CGame
@@ -20,7 +24,10 @@ public:
 class CMission
 {
 public:
-	static void Init();
+	void Init();
+
+	void Open();
+	void PreOpen();
 	void Read(zrdr* reader);
 private:
 	float weather_factor;
