@@ -1,6 +1,11 @@
 #pragma once
 #include <list>
 
+#include "anim/anim_main.h"
+
+class CZProjectile;
+class CZProjectileList;
+
 enum EQUIP_ITEM
 {
 	ITEM_GLOCK_18,
@@ -101,6 +106,12 @@ public:
 	CZWeapon();
 	~CZWeapon();
 
+	static bool m_allowFireAnimations;
+	static bool m_allowImpactAnimations;
+	static bool m_allowWeaponIntersection;
+	static CZWeaponList m_listWeapons;
+	static CZProjectileList m_pProjectileList;
+
 	void Init();
 	void PreTick();
 	void PostTick();
@@ -120,8 +131,6 @@ public:
 	void SetInternalName(const char* internalName);
 	void SetDisplayName(const char* displayName);
 	void SetDescription(const char* description);
-
-	static CZWeaponList m_listWeapons;
 
 	EQUIP_ITEM itemType;
 private:
@@ -182,4 +191,13 @@ public:
 	CZWeapon* GetWeaponByIndex(int index) const;
 private:
 	std::list<CZWeapon*> weapons;
+};
+
+class CZProjectileList
+{
+public:
+	CZProjectileList();
+	~CZProjectileList();
+
+
 };

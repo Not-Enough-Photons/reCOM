@@ -3,15 +3,9 @@
 #include "node/node_main.h"
 #include "reader/zrdr_main.h"
 
-enum AnimTypes
-{
+class CZAnimMain;
 
-};
-
-struct zanim_cmd_hdr
-{
-
-};
+static CZAnimMain ZAnim;
 
 static int InitAnimLang();
 static int ParseScriptKeywords();
@@ -29,6 +23,15 @@ static void ParseScriptKeyword(void* ptr, char* token, int param_3, void(*func),
 static bool CmdAddNode(zdb::CNode node);
 static bool CmdRemoveNode(zdb::CNode node);
 
+enum AnimTypes
+{
+
+};
+
+struct _zanim_cmd_hdr
+{
+
+};
 class CZAnim
 {
 public:
@@ -57,10 +60,7 @@ public:
 class CZAnimMain
 {
 public:
-	static void Open(const char* name);
-	void AddCmd(const char* name, zanim_cmd_hdr*(*)(zrdr*), void(*)(zanim_cmd_hdr*), bool(*)(zanim_cmd_hdr*, float*), void(*)(zanim_cmd_hdr*));
-	void GetAnimSet();
-	void GetAnimSetIndex();
+	bool InitCommands();
 };
 
 static CZAnimMain ZAnim;

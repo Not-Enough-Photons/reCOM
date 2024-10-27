@@ -4,16 +4,11 @@
 #include "math/zmath_main.h"
 #include "reader/zrdr_main.h"
 
+class CEntity;
+class CCharacterType;
 class CharacterDynamics;
 class CZSealBody;
 class CZBodyPart;
-
-int recycler_index = 0;
-CftsPlayer* ftsPlayer;
-CSealAnim* m_sealanim;
-CharacterDynamics theDynamics;
-
-void SealInitCharacterDynamics();
 
 enum DAMAGE_LOCATION
 {
@@ -25,9 +20,30 @@ enum DAMAGE_LOCATION
 	RLEG
 };
 
+enum SEAL_CONTROL_TYPE
+{
+	NONE,
+	PLAYER,
+	AI,
+	SQUIRM,
+	MISC
+};
+
+int recycler_index = 0;
+CEntity* ftsPlayer;
+CSealAnim* m_sealanim;
+CharacterDynamics theDynamics;
+
+CEntity* ftsGetPlayer();
+
+void SealInitCharacterDynamics();
+
+
+
 class CCharacterType
 {
-
+public:
+	CCharacterType();
 };
 
 class CharacterDynamics
@@ -38,7 +54,15 @@ class CharacterDynamics
 class CEntity
 {
 public:
-	CEntity();
+	enum TYPE
+	{
+		type_00,
+		type_01,
+		type_02,
+		type_03
+	};
+
+	CEntity(TYPE type, const zdb::CNode& node);
 	~CEntity();
 
 	void IncrementAwareCounter();
@@ -46,6 +70,7 @@ public:
 
 	// Recycler functions
 	virtual void OnRecycleEntity();
+	CEntity* CreateRecycler;
 	void OpenRecycler();
 
 	// Mission callback functions
@@ -91,21 +116,9 @@ public:
 	virtual void Tick() = 0;
 };
 
-/// <summary>
-/// Base FTS player class. FTS stands for "Fireteam Seal."
-/// </summary>
-class CftsPlayer
+class CftsPlayer : public CEntity
 {
 public:
-	/// <summary>
-	/// Gets the static player instance.
-	/// </summary>
-	/// <returns></returns>
-	static CftsPlayer* ftsGetPlayer()
-	{
-		return ftsPlayer;
-	}
-
 	static void RegisterAnimCommands();
 };
 
@@ -123,11 +136,16 @@ public:
 private:
 };
 
+class CBody
+{
+public:
+	
+};
+
 class CZSealBody : CEntity
 {
 public:
-	CZSealBody();
-	CZSealBody(const zdb::CNode& node, const CCharacterType& character);
+	CZSealBody(const zdb::CNode& node, const CCharacterType& character) : CEntity(CEntity::type_02, node) { }
 
 	~CZSealBody();
 

@@ -16,8 +16,14 @@
 #include "valve/valve_main.h"
 #include "video/zvid_main.h"
 
-void game_main()
+void process_arguments(int argc, char** argv)
 {
+
+}
+
+void game_main(int argc, char** argv)
+{
+	process_arguments(argc, argv);
 	zUtilInit("ftslog.txt");
 	COurGame::StartEngine();
 	CGame::StartPlay();
@@ -51,7 +57,7 @@ bool CGame::StartEngine()
 	CPipe::Init();
 	CGameStateChangeCmd::CreatePool(16);
 	CSealAnim* sealAnim = new CSealAnim();
-    zdb::CZSealBody::m_sealanim = sealAnim;
+    CZSealBody::m_sealanim = sealAnim;
 	return true;
 }
 
@@ -63,7 +69,7 @@ bool COurGame::StartEngine()
 		CVideo::RestoreImage("RUN\\LOADING.RAW");
 		zVid_Swap(1);
 		zdb::CTexManager::doAddBuffer(0.0f, 1.0f, 0x4b9590, "default");
-		CMission::Init();
+		theMission.Init();
 		// int clock = sceCdReadClock(...)
 		// TODO:
 		// add more past CMission::Init();
@@ -75,11 +81,11 @@ bool COurGame::StartEngine()
 void CMission::Init()
 {
 	CZAnimMain::Open("ZAnim");
-	zdb::CSealCtrlAi::RegisterCommands();
+	CSealCtrlAi::RegisterCommands();
 	CValve::RegisterCommands();
 	zdb::CCamera::RegisterAnimCommands();
-	zdb::CAppCamera::RegisterAnimCommands();
-	zdb::CftsPlayer::RegisterAnimCommands();
+	// CAppCamera::RegisterAnimCommands();
+	CftsPlayer::RegisterAnimCommands();
 	zdb::CWind::RegisterAnimCommands();
 }
 
@@ -105,7 +111,5 @@ void CMission::Read(zrdr* reader)
 		{
 			recycle_range *= recycle_range;
 		}
-
-		FireTeam command
 	}
 }

@@ -16,11 +16,15 @@ namespace zdb
 	private:
 	};
 
-	class CWorld
+	class CWorld : public CNode
 	{
 	public:
-		CWorld();
+		CWorld() : CNode() {}
 		~CWorld();
+
+		static float m_scale;
+		static float m_invscale;
+		static CWorld& m_world;
 
 		static int GetVersion();
 		static void Init();

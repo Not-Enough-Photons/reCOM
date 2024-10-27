@@ -6,7 +6,8 @@ class CMission;
 
 static CMission theMission;
 
-void game_main();
+void game_main(int argc, char** argv);
+void process_arguments(int argc, char** argv);
 
 class CGame
 {

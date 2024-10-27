@@ -21,7 +21,7 @@ enum OpenFlags
 	APPEND		= 0x0100,
 	CREATE		= 0x0200,
 	TRUNCATE	= 0x0400,
-	EXCLUDE
+	EXCLUDE     = 0x1000
 };
 
 class zrdr
