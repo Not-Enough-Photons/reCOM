@@ -26,11 +26,13 @@ public:
 class CMission
 {
 public:
+	static float nextFrameDelta;
+
 	void Init();
 
 	void Open();
 	void PreOpen();
-	void Read(zrdr* reader);
+	void Read(_zrdr* reader);
 private:
 	float weather_factor;
 	int seal_command;

@@ -1,5 +1,7 @@
 #pragma once
-#include "ent_main.h"
+#include "entity/ent_main.h"
+#include "game/zgame.h"
+#include "seal.h"
 
 void CZSealBody::SetupDefaultArmor()
 {

@@ -10,6 +10,7 @@ void InitKeyreadStuff();
 class CInput
 {
 public:
+	// Disallow construction of a purely static class
 	CInput() = delete;
 
 	static void Init();

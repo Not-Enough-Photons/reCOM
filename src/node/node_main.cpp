@@ -107,3 +107,15 @@ namespace zdb
 		return m_scaledrange * (pnt.z * pnt.z + pnt.x * pnt.x + pnt.y * pnt.y);
 	}
 }
+
+CNodeAction::CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle)
+{
+	this->animations = NULL;
+	this->actionAnimation = NULL;
+	this->node = node;
+	this->actionValve = actionValve;
+	this->typeFlag = 6;
+	this->iconBitmapHandle = handle;
+	this->animVector.insert(animVector.begin(), animToPlay);
+	this->actionList = 0;
+}

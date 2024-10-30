@@ -40,6 +40,8 @@ namespace zar
 		CKey* FindKey(const char* name);
 		void CloseKey(CKey* key);
 
+		bool Insert(zar::CKey* key, void* buf, int size);
+
 		void* ReadDirectory();
 		void SetFileName();
 		size_t GetSize(const char* key);
@@ -57,7 +59,7 @@ namespace zar
 
 		int* field_0x4;
 		int field15_0x18;
-		CIO* io;
+		CBufferIO* bufferIO;
 		CFileIO* fileIO;
 
 		CSTable* stable;
@@ -66,5 +68,7 @@ namespace zar
 		std::list<CKey*> keys;
 		boost::compressed_pair<char, CKey*> keypairs;
 		int count;
+		int seekPosition;
+		int size;
 	};
 }

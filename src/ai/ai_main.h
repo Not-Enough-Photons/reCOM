@@ -1,4 +1,6 @@
 #pragma once
+#include "entity/ent_main.h"
+#include "entity/seal/seal.h"
 
 enum FIRE_TEAM
 {
@@ -48,6 +50,14 @@ enum FT_COMMAND
 	CMD_AMBUSH
 };
 
+enum AI_LOOK
+{
+	type_00,
+	type_01,
+	type_02,
+	type_03
+};
+
 enum AI_STATE
 {
 	STATE_UNKNOWN,
@@ -82,22 +92,53 @@ enum AI_STATE
 	STATE_RUSH
 };
 
+enum GOAL_TYPE
+{
+	type_00,
+	type_01,
+	type_02,
+	type_03,
+	type_04
+};
+
 namespace sealai
 {
 	const char* get_state(AI_STATE state);
 }
 
-class CSealCtrl
+class CAiEvent
 {
 public:
-	CSealCtrl();
-	~CSealCtrl();
-};
+	enum EVENT
+	{
+		type_00,
+		type_01,
+		type_02,
+		type_03,
+		type_04,
+		type_05,
+		type_06,
+		type_07,
+		type_08,
+		type_09,
+		type_10,
+		type_11,
+		type_12,
+		type_13,
+		type_14,
+	};
 
-class CSealCtrlAi : public CSealCtrl
-{
-public:
-	static void RegisterCommands();
+	static CAiEvent* Create(CAiEvent* other);
+	static CAiEvent* Acquire();
+
+	static float GetEventRate(EVENT event);
+
+	int aiBitMask;
+	float expiration;
+	float soundRadiusSqr;
+	CPnt3D* source;
+	CEntity* originator;
+	int dummy;
 };
 
 class CAiParams
@@ -105,173 +146,8 @@ class CAiParams
 
 };
 
-class CAiState
+class CAiTimer
 {
 public:
-	CAiState();
-	~CAiState();
-
-	static CAiState* Create(AI_STATE state);
-
-	virtual void Tick();
-	virtual void OnSignal();
-	virtual bool CanPursue(CSealCtrlAi* controller);
-
-	void Reset(AI_STATE state);
-};
-
-class CAiSScript : public CAiState
-{
-public:
-	bool CanPursue(CSealCtrlAi* controller);
-};
-
-class CAiSHold : public CAiState
-{
-
-};
-
-class CAiSAvoid : public CAiState
-{
-
-};
-
-class CAiSDeploy : public CAiState
-{
-
-};
-
-class CAiSSurrender : public CAiState
-{
-
-};
-
-class CAiSRestrained : public CAiState
-{
-
-};
-
-class CAiSUseVehicle : public CAiState
-{
-
-};
-
-class CAiSGoto : public CAiState
-{
-
-};
-
-class CAiSFollow : public CAiState
-{
-
-};
-
-class CAiSBreach : public CAiState
-{
-
-};
-
-class CAiSAction : public CAiState
-{
-
-};
-
-class CAiSPursue : public CAiState
-{
-
-};
-
-class CAiSAnimate : public CAiState
-{
-
-};
-
-class CAiSCQBAttack : public CAiState
-{
-
-};
-
-class CAiSFlee : public CAiState
-{
-
-};
-
-class CAiSPathRecover : public CAiState
-{
-
-};
-
-class CAiSRescued : public CAiState
-{
-
-};
-
-class CAiSSuspended : public CAiState
-{
-
-};
-
-class CAiSShotAt : public CAiState
-{
-
-};
-
-class CAiSNoAmmo : public CAiState
-{
-
-};
-
-class CAiSHostage : public CAiState
-{
-
-};
-
-class CAiSPlan : public CAiState
-{
-
-};
-
-class CAiSEvent : public CAiState
-{
-
-};
-
-class CAiSTarget : public CAiState
-{
-
-};
-
-class CAiSGrenade : public CAiState
-{
-
-};
-
-class CAiSStunResponse : public CAiState
-{
-
-};
-
-class CAiSRush : public CAiState
-{
-
-};
-
-class CAiPlanner
-{
-
-};
-
-class CBasicPlanner : public CAiPlanner
-{
-
-};
-
-class CStealthPlanner : public CAiPlanner
-{
-
-};
-
-class CRestrainedPlanner : public CAiPlanner
-{
-
+	const float infinite = 0xBF800000;
 };

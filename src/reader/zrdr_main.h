@@ -24,23 +24,27 @@ enum OpenFlags
 	EXCLUDE     = 0x1000
 };
 
-class zrdr
+class _zrdr
 {
 public:
-	zrdr();
-	zrdr(const zrdr* other, const CSTable* table);
+	_zrdr(); 
+	_zrdr(const _zrdr* other, const CSTable* table);
 
-	void Clone(const zrdr* other, const CSTable* table);
-
-	zrdr* zrdr_findtag(const char* tag);
-	zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
-
-	bool zrdr_findint(const char* tag, int* output, int i);
-	bool zrdr_findreal(const char* tag, float* output, int iterations);
+	void Clone(const _zrdr* other, const CSTable* table);
 private:
 	ReaderType type;
-	zrdr* next;
+	_zrdr* next;
 };
+
+_zrdr* zrdr_read(const char* reader, const char* path, int dummy);
+void zrdr_free(_zrdr* reader);
+
+_zrdr* zrdr_findtag(const char* tag);
+_zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
+
+bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
+bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
+bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
 
 inline char* GetMode(OpenFlags mode)
 {
@@ -111,6 +115,7 @@ public:
 	~CBufferIO();
 
 	int fwrite(const void* buf, int count);
+	int fseek(int offset, int origin);
 private:
 	int field14_0x14;
 	int field15_0x18;

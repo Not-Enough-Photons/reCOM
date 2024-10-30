@@ -15,6 +15,11 @@ namespace zdb
 	public:
 		static void Init();
 	};
+
+	class CTexHandle
+	{
+
+	};
 	
 	class CTextureFX
 	{

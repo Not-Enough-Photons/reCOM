@@ -125,12 +125,12 @@ int CBufferIO::fwrite(const void* buf, int count)
 	return -1;
 }
 
-zrdr::zrdr(const zrdr* other, const CSTable* table)
+_zrdr::_zrdr(const _zrdr* other, const CSTable* table)
 {
 	Clone(other, table);
 }
 
-void zrdr::Clone(const zrdr* other, const CSTable* table)
+void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 {
 	if (!init)
 	{
@@ -150,12 +150,12 @@ void zrdr::Clone(const zrdr* other, const CSTable* table)
 	}
 }
 
-zrdr* zrdr::zrdr_findtag(const char* name)
+_zrdr* zrdr_findtag(const char* name)
 {
 
 }
 
-zrdr* zrdr::zrdr_findtag_startidx(const char* name, int iterations)
+_zrdr* zrdr_findtag_startidx(const char* name, int iterations)
 {
 
 }

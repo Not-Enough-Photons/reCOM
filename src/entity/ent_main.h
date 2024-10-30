@@ -32,7 +32,7 @@ enum SEAL_CONTROL_TYPE
 int recycler_index = 0;
 CEntity* ftsPlayer;
 CSealAnim* m_sealanim;
-CharacterDynamics theDynamics;
+CharacterDynamics theCharacterDynamics;
 
 CEntity* ftsGetPlayer();
 
@@ -46,7 +46,62 @@ public:
 
 class CharacterDynamics
 {
+public:
+	void Load(_zrdr* reader);
 
+	bool loadedCD;
+
+	float gravity;
+	float newtonDamage;
+	float jumpFactor;
+	float landFallRate;
+	float landHardFallRate;
+	float groundTouchDistance;
+	float maxSlope;
+	float stepHeight;
+	float fallDamageLimit;
+	float fallDamageHeavy;
+	float fallDamageDeath;
+	float waterFactorSlope;
+	float minWaterFactor;
+	float fbAccel;
+	float lrAccel;
+	float throttleExp;
+	float standTurnFactor;
+	float turnMaxRate;
+	float initAimPitch;
+	float maxAimPitch;
+	float minAimPitch;
+	float maxAimYaw;
+	float proneMinAimPitch;
+	float proneMaxAimPitch;
+	float proneMaxAimYaw;
+	float proneZoomDeltaYaw;
+	float maxLookPitch;
+	float maxLookYaw;
+	float maxEyeLookPitch;
+	float minEyeLookPitch;
+	float maxEyeLookYaw;
+	float maxBlinkRate;
+	float maxBlinkAngle;
+	float pitchRate;
+	float turnThrottleA;
+	float turnThrottleB;
+	float pitchThrottleA;
+	float pitchThrottleB;
+	float cameraRoll;
+	float cameraWiggleAmplitude;
+	float cameraWiggleDuration;
+	float cameraWiggleRate;
+	float zoomFactor;
+	float zoomRate;
+	float minRunningReloadSpeed;
+	float minRunChangeWeaponSpeed;
+	float lowClimbHeight;
+	float medClimbHeight;
+	float highClimbHeight;
+	float minStandHeight;
+	float minJumpHeight;
 };
 
 class CEntity
@@ -110,8 +165,17 @@ private:
 class CEntityCtrl
 {
 public:
-	virtual void PreTick() = 0;
-	virtual void Tick() = 0;
+	CEntityCtrl();
+	~CEntityCtrl();
+
+	virtual void PreTick(float delta);
+	virtual void Tick(float delta);
+	virtual void PostMortemPreTick(float delta);
+	
+	virtual void SetThrottle(float throttle, int pad);
+	virtual void GetRemoteControl() const;
+protected:
+	float* throttles;
 };
 
 class CftsPlayer : public CEntity
@@ -119,7 +183,6 @@ class CftsPlayer : public CEntity
 public:
 	static void RegisterAnimCommands();
 };
-
 
 class CZBombState
 {

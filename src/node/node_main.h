@@ -4,7 +4,12 @@
 
 #include "placeholder.h"
 
+#include "node_world.h"
+
+#include "ai/ai_main.h"
 #include "math/zmath_main.h"
+#include "texture/ztex_main.h"
+#include "valve/valve_main.h"
 #include "zar/zar_main.h"
 
 namespace zdb
@@ -62,11 +67,6 @@ namespace zdb
 
 	};
 
-	class CNodeAction : public CNodeEx
-	{
-
-	};
-
 	class CModel : public CNodeEx
 	{
 	public:
@@ -118,3 +118,49 @@ namespace zdb
 
 	};
 }
+
+class CNodeAction : public zdb::CNodeEx
+{
+public:
+	enum ACTION_TYPE
+	{
+		DOOR,
+		WINDOW,
+		SWITCH,
+		DEFUSE,
+		MPBOMB,
+		BREACH,
+		UNKNOWN
+	};
+
+	CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle);
+	~CNodeAction();
+
+	static void Open(zdb::CWorld* world, const char* readerName);
+	static void Close();
+
+	CNodeAction* FindActionByValve(const CValve* valve) const;
+	CNodeAction* GetAction(bool isBase) const;
+	CNodeAction* GetActionById(int id) const;
+	const char* GetActionType(ACTION_TYPE type) const;
+	CNodeAction* GetClosestAction(const CPnt3D* position, float radius) const;
+
+	bool ExecuteAction(CZSealBody* seal, unsigned int actionFlags) const;
+
+	template<class T>
+	bool OnAction(zdb::CNode* node, T* type) const;
+private:
+	static std::vector<CNodeAction> m_actions;
+
+	CNodeAction** actionList;
+
+	zdb::CNode* node;
+	CZAnim** animations;
+	std::vector<CZAnim*> animVector;
+	CZAnim* actionAnimation;
+	CValve* actionValve;
+	zdb::CTexHandle* iconBitmapHandle;
+	
+	int typeFlag;
+	unsigned int actionFlags;
+};

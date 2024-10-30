@@ -59,17 +59,17 @@ namespace zar
 
 		if (io == NULL)
 		{
-			io = new CIO();
+			io = new CBufferIO();
 
 			if (dynamic_cast<CFileIO*>(io) != NULL)
 			{
-				io = reinterpret_cast<CIO*>(new CFileIO());
+				io = reinterpret_cast<CBufferIO*>(new CFileIO());
 			}
 
 			fileIO = reinterpret_cast<CFileIO*>(io);
 		}
 
-		this->io = io;
+		this->bufferIO = io;
 		count = 16;
 		root = new CKey(DEFAULT_ZAR_NAME);
 	}
@@ -103,7 +103,7 @@ namespace zar
 
 	CKey* CZAR::OpenKey(const char* key)
 	{
-		if (io == NULL)
+		if (bufferIO == NULL)
 		{
 
 		}
@@ -112,6 +112,50 @@ namespace zar
 	void CZAR::CloseKey(CKey* key)
 	{
 		CKey* target;
+	}
+
+	bool CZAR::Insert(zar::CKey* key, void* buf, int size)
+	{
+		bool valid = false;
+
+		if (buf != NULL && size > 0)
+		{
+			int seekPos = bufferIO->fseek(0, SEEK_SET);
+			valid = seekPos != -1;
+
+			if (valid)
+			{
+				int written = bufferIO->fwrite(buf, size);
+				valid = size == written;
+
+				if (valid)
+				{
+					seekPosition = seekPos;
+					size = size;
+					written = size % count;
+
+					int countOffset = 0;
+
+					if (written == 0)
+					{
+						countOffset = 0;
+					}
+					else
+					{
+						countOffset = count - written;
+					}
+
+					int* localBuf = new int;
+					*localBuf = 175;
+					for (int i = 0; i < countOffset; i++)
+					{
+						bufferIO->fwrite(&localBuf, 1);
+					}
+				}
+			}
+		}
+
+		return valid;
 	}
 
 	size_t CZAR::GetSize(const char* name)

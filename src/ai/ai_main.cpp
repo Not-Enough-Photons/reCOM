@@ -96,7 +96,7 @@ const char* sealai::get_state(AI_STATE state)
 		str = "stunned";
 		break;
 	case STATE_RUSH:
-		str = "hash";
+		str = "rush";
 		break;
 	default:
 		str = "undef";
@@ -218,4 +218,31 @@ CAiState* CAiState::Create(AI_STATE state)
 	default:
 		break;
 	}
+}
+
+float CAiEvent::GetEventRate(EVENT event)
+{
+	float rate = 0.0f;
+
+	switch (event)
+	{
+	case type_01:
+	case type_02:
+	case type_03:
+	case type_04:
+	case type_05:
+	case type_06:
+	case type_07:
+	case type_08:
+	case type_09:
+	case type_10:
+	case type_11:
+	case type_12:
+	case type_13:
+		break;
+	case type_14:
+		rate = 5.0f;
+	}
+
+	return rate;
 }
