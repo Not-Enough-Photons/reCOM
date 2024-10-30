@@ -30,17 +30,28 @@ namespace zar
 	{
 		fileIO = NULL;
 		root = NULL;
-		stable = NULL;
+		stringTable = NULL;
 		name = "";
+		memset(buffer, 0, 96);
 		version = 0x20001;
 		
-		stable = new CSTable(0, 1024);
+		stringTable = new CSTable(0, 1024);
 		const char* zarName = name;
 
 		if (zarName != 0 && zarName != DEFAULT_ZAR_NAME)
 		{
 			if (zarName == name)
 			{
+				if (io == NULL)
+				{
+					io = new CFileIO();
+					fileIO = reinterpret_cast<CFileIO*>(io);
+				}
+
+				bufferIO = reinterpret_cast<CBufferIO*>(io);
+				count = 16;
+				root = new CKey(DEFAULT_ZAR_NAME);
+
 				return;
 			}
 			
@@ -59,46 +70,41 @@ namespace zar
 
 		if (io == NULL)
 		{
-			io = new CBufferIO();
-
-			if (dynamic_cast<CFileIO*>(io) != NULL)
-			{
-				io = reinterpret_cast<CBufferIO*>(new CFileIO());
-			}
-
+			io = new CFileIO();
 			fileIO = reinterpret_cast<CFileIO*>(io);
 		}
 
-		this->bufferIO = io;
+		bufferIO = reinterpret_cast<CBufferIO*>(io);
 		count = 16;
 		root = new CKey(DEFAULT_ZAR_NAME);
 	}
 
 	CKey* CZAR::NewKey(const char* name)
 	{
+		CKey* newKey;
+		OpenFlags mode = fileIO->GetMode();
 
+		if ((mode & OpenFlags::READ) == 0)
+		{
+			const char* str = stringTable->CreateString(name);
+			newKey = new CKey(str);
+		}
+		else
+		{
+			if (name == 0)
+			{
+				CKey* insert = new CKey();
+			}
+			else
+			{
+
+			}
+		}
 	}
 
 	CKey* CZAR::FindKey(const char* name)
 	{
-		CKey* parent;
 
-		if (keys.empty())
-		{
-			parent = root;
-		}
-		else
-		{
-			parent = keypairs.second();
-		}
-
-		CKey* child;
-		if (parent != NULL)
-		{
-			child = parent->FindKey(name);
-		}
-
-		return child;
 	}
 
 	CKey* CZAR::OpenKey(const char* key)
@@ -160,16 +166,7 @@ namespace zar
 
 	size_t CZAR::GetSize(const char* name)
 	{
-		zar::CKey* key;
 
-		if (field_0x4 == 0)
-		{
-			key = root;
-		}
-		else
-		{
-
-		}
 	}
 
 	void CZAR::Fetch(const char* key, undefined4 param_3)
@@ -209,27 +206,27 @@ namespace zar
 		return ok != false;
 	}
 
-	undefined4 CZAR::ReleaseDataBuffer()
+	void* CZAR::ReleaseDataBuffer()
 	{
-		CBufferIO* buffer;
-		undefined4 uVar1 = 0;
+		CBufferIO* bufferIO;
+		void* buf = 0;
 
-		if (field15_0x18 == 0)
+		if (this->buffer == NULL)
 		{
-			uVar1 = 0;
+			buf = NULL;
 		}
 		else
 		{
-			// buffer = dynamic_cast<CBufferIO*>(field14_0x14);
-			if (buffer != NULL)
+			// bufferIO = dynamic_cast<CIO*>(bufferIO);
+			if (bufferIO != NULL)
 			{
-				buffer->Release();
+				bufferIO->Release();
 			}
 
-			uVar1 = field15_0x18;
-			field15_0x18 = 0;
+			buf = this->buffer;
+			this->buffer = NULL;
 		}
 
-		return uVar1;
+		return buf;
 	}
 }

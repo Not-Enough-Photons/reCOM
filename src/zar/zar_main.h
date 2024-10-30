@@ -15,7 +15,9 @@ namespace zar
 	class CKey
 	{
 	public:
+		CKey();
 		CKey(const char* name);
+		~CKey();
 
 		CKey* InsertKey(CKey* key);
 		CKey* FindKey(const char* key);
@@ -30,6 +32,7 @@ namespace zar
 	{
 	public:
 		CZAR(const char* name, CIO* io);
+		~CZAR();
 
 		void Open();
 
@@ -40,7 +43,7 @@ namespace zar
 		CKey* FindKey(const char* name);
 		void CloseKey(CKey* key);
 
-		bool Insert(zar::CKey* key, void* buf, int size);
+		bool Insert(CKey* key, void* buf, int size);
 
 		void* ReadDirectory();
 		void SetFileName();
@@ -52,23 +55,22 @@ namespace zar
 
 		CKey* GetOpenKey();
 
-		undefined4 ReleaseDataBuffer();
+		void* ReleaseDataBuffer();
 	private:
 		const char* name;
 		int version;
 
-		int* field_0x4;
-		int field15_0x18;
-		CBufferIO* bufferIO;
-		CFileIO* fileIO;
-
-		CSTable* stable;
-
-		CKey* root;
-		std::list<CKey*> keys;
-		boost::compressed_pair<char, CKey*> keypairs;
 		int count;
 		int seekPosition;
-		int size;
+
+		CKey* root;
+
+		CBufferIO* bufferIO;
+		CFileIO* fileIO;
+		void* buffer;
+
+		CSTable* stringTable;
+
+		std::list<CKey*> keys;
 	};
 }

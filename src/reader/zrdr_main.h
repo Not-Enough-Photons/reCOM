@@ -87,6 +87,7 @@ public:
 	// void Open(...);
 	void LoadBuffer();
 	virtual void Release();
+	OpenFlags GetMode() const;
 	bool IsOpen();
 	char* PS2FileName(char* file, char* directory, int param_3);
 
@@ -98,14 +99,14 @@ public:
 	virtual void ftell();
 	virtual int fwrite(const void* buf, int count);
 	// virtual void fwrite(...);
-
+protected:
+	OpenFlags flags;
+	int position;
 private:
 	const char* m_root_path = "host0:.\\";
 	static bool m_write_status;
 
 	FILE* file;
-	OpenFlags flags;
-	int position;
 };
 
 class CBufferIO : public CFileIO
