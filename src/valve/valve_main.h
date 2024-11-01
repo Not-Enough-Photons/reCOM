@@ -1,5 +1,4 @@
 #pragma once
-#include "anim/anim_main.h"
 
 enum OP_TYPE
 {
@@ -31,7 +30,7 @@ enum VALVE_TYPE
 class CValvePool
 {
 public:
-	void Acquire();
+	CValve* Acquire();
 };
 
 /// <summary>
@@ -41,29 +40,17 @@ public:
 class CValve
 {
 public:
-	CValve();
+	CValve(const char* name, unsigned int unknown, VALVE_TYPE type);
+	~CValve();
 
-	static void RegisterCommands();
-	static CValve* Create(const char* name, VALVE_TYPE type);
+	static void Init();
+	static bool Parse(CRdrFile* rFile, VALVE_TYPE type);
 
-	static int Init();
-	static int Uninit();
-
-	static CValve* GetByName(const char* name);
-	static zanim_cmd_hdr* CmdParseCmp(zrdr* reader);
-	static bool CmdTickCmp(zanim_cmd_hdr* command, float* delta);
-
-	void Reset();
-
-	void AssignName();
-	void SetName(const char* name);
-	void FreeName();
-	void MakeCallbacks();
 	OP_TYPE ParseOperator(const char* op);
 
 	int count;
 private:
-	const char* m_Name;
-	int m_Value;
+	const char* name;
+	int value;
 	VALVE_TYPE m_Type;
 };

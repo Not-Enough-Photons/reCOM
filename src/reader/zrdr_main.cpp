@@ -1,6 +1,6 @@
 #include "zrdr_main.h"
 #include "zrdr_parse.h"
-#include "entity/zwep_ammo.h"
+#include "entity/weapon/zwep_ammo.h"
 
 bool init = false;
 bool warnonce = false;
@@ -84,7 +84,7 @@ bool CFileIO::Open(char* file, OpenFlags flags)
 			flag = (OpenFlags)(flag | OpenFlags::CREATE);
 		}
 
-		FILE* file = std::fopen(directory, GetMode(flag));
+		FILE* file = std::fopen(directory, 0);
 		this->file = file;
 
 		if (m_write_status == 0)
@@ -158,4 +158,27 @@ _zrdr* zrdr_findtag(const char* name)
 _zrdr* zrdr_findtag_startidx(const char* name, int iterations)
 {
 
+}
+
+void zrdr_freearray(_zrdr* reader)
+{
+	int mem_line = 0;
+	int rdr_count = 0;
+
+	if (reader->type == TYPE_TAG)
+	{
+		reader->next = 0;
+	}
+	else if (reader->type == TYPE_ARRAY && reader->next != 0)
+	{
+		mem_line = 0;
+
+		_zrdr* arr = cast_rdr_array(reader->next);
+		_zrdr* cur = cast_rdr_array(arr + mem_line);
+
+		if (cast_rdr_int(arr->next) <= rdr_count)
+		{
+
+		}
+	}
 }

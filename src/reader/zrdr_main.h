@@ -3,6 +3,14 @@
 #include <cstdint>
 
 #include "util/util_stable.h"
+#include "zar/zar_main.h"
+
+class _zrdr;
+
+#define cast_rdr_array(type) reinterpret_cast<_zrdr*>(type)
+#define cast_rdr_int(type) static_cast<int>(type)
+#define cast_rdr_float(type) static_cast<float>(type)
+#define cast_rdr_double(type) static_cast<double>(type)
 
 enum ReaderType
 {
@@ -24,8 +32,24 @@ enum OpenFlags
 	EXCLUDE     = 0x1000
 };
 
+typedef void* zrdr_type;
+
+_zrdr* zrdr_read(const char* reader, const char* path, int dummy);
+_zrdr* zrdr_findtag(const char* tag);
+_zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
+
 class _zrdr
 {
+private:
+	friend void zrdr_free(_zrdr* reader);
+	friend void zrdr_freearray(_zrdr* array);
+	friend void _resolveA(_zrdr* reader, _zrdr* other, int count);
+	friend void _resolveB(_zrdr* reader, _zrdr* other, int count);
+
+	friend bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
+	friend bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
+	friend bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
+
 public:
 	_zrdr(); 
 	_zrdr(const _zrdr* other, const CSTable* table);
@@ -33,40 +57,25 @@ public:
 	void Clone(const _zrdr* other, const CSTable* table);
 private:
 	ReaderType type;
-	_zrdr* next;
+	zrdr_type value;
 };
 
-_zrdr* zrdr_read(const char* reader, const char* path, int dummy);
-void zrdr_free(_zrdr* reader);
-
-_zrdr* zrdr_findtag(const char* tag);
-_zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
-
-bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
-bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
-bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
-
-inline char* GetMode(OpenFlags mode)
+class CRdrFile : private _zrdr
 {
-	switch (mode)
-	{
-	case OpenFlags::READ:
-		return "r";
-	case OpenFlags::WRITE:
-		return "w";
-	case OpenFlags::READWRITE:
-		return "rw";
-	case OpenFlags::APPEND:
-		return "a";
-	case OpenFlags::CREATE:
-	case OpenFlags::TRUNCATE:
-		return "w+";
-	case OpenFlags::EXCLUDE:
-		return "w+x";
-	}
+public:
+	CRdrFile();
+	~CRdrFile();
 
-	return 0;
-}
+	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key);
+	static bool ValidateFormat();
+
+	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);
+	_zrdr* MakeUnion(const char* name, bool createString);
+	char ReadToken(_zrdr** readerArray, _zrdr** unionArray);
+private:
+	void* block;
+	size_t blockSize;
+};
 
 class CIO
 {
