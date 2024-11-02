@@ -1,20 +1,6 @@
 #include "zgame.h"
 
-#include "ai/ai_main.h"
-#include "anim/anim_main.h"
-#include "audio/zsnd_csnd.h"
-#include "entity/ent_main.h"
-#include "input/input_main.h"
-#include "node/node_main.h"
-#include "node/node_world.h"
-#include "render/zrnd_main.h"
-#include "reader/zrdr_main.h"
-#include "system/zsys_main.h"
-#include "texture/ztex_main.h"
-#include "ui/zui_main.h"
-#include "util/util_main.h"
-#include "valve/valve_main.h"
-#include "video/zvid_main.h"
+#include "zAnim/"
 
 void process_arguments(int argc, char** argv)
 {
