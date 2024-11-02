@@ -1,3 +1,3 @@
-#include "util/util_stable.h"
+#include "gamez/zUtil/util_stable.h"
 
-CSTable MultiplayerMessageStrings;
+static CSTable MultiplayerMessageStrings;

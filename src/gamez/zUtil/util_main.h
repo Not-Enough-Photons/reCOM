@@ -1,5 +1,7 @@
 #pragma once
-#include "reader/zrdr_main.h"
+#include "gamez/zReader/zrdr_main.h"
+
+#define string_exists(x) (x != (char*)0)
 
 class COutput
 {

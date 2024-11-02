@@ -82,26 +82,33 @@ inline bool saturate(T& value, T min, T max)
 	return false;
 }
 
-typedef struct CPnt2D
+class CPnt2D
 {
 	float x;
 	float y;
 };
 
-typedef struct CPnt3D
+class CPnt3D
 {
+public:
+	CPnt3D& operator+(const CPnt3D& vector);
+	CPnt3D& operator-(const CPnt3D& vector);
+	CPnt3D& operator*(float scalar);
+	CPnt3D& operator/(float scalar);
+public:
 	float x;
 	float y;
 	float z;
-
-	static void Normalize(CPnt3D& self);
-	static void Normalize(CPnt3D& lhs, CPnt3D& rhs);
-	static CPnt3D Add(CPnt3D& first, CPnt3D& second);
-	static CPnt3D Sub(CPnt3D& first, CPnt3D& second);
-	static CPnt3D Scale(float scaleFactor, CPnt3D& first, CPnt3D& second);
+public:
+	void Normalize();
+	void Normalize(CPnt3D* other);
+	CPnt3D* Add(CPnt3D* other);
+	CPnt3D* Sub(CPnt3D* other);
+	void Scale(CPnt3D* other, float scaleFactor);
+	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 
-typedef struct CPnt4D
+class CPnt4D
 {
 	float x;
 	float y;
@@ -109,7 +116,7 @@ typedef struct CPnt4D
 	float w;
 };
 
-typedef struct CQuat
+class CQuat
 {
 	float x;
 	float y;
@@ -136,3 +143,11 @@ typedef union CMatrix
 
 	float m[4][4];
 };
+
+namespace zdb
+{
+	typedef struct IntersectStruct
+	{
+
+	};
+}

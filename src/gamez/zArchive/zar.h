@@ -5,8 +5,8 @@
 #include "boost/compressed_pair.hpp"
 
 #include "placeholder.h"
-#include "reader/zrdr_main.h"
-#include "util/util_stable.h"
+#include "gamez/zReader/zrdr_main.h"
+#include "gamez/zUtil/util_stable.h"
 
 namespace zar
 {

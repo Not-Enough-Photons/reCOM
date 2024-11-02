@@ -2,56 +2,6 @@
 
 #include "zmath_main.h"
 
-void CPnt3D::Normalize(CPnt3D& self)
-{
-	float sqrMagnitude = sqrtf(self.z * self.z + self.x * self.x + self.y * self.y);
-
-	if (sqrMagnitude != 0.0f)
-	{
-		sqrMagnitude = 1.0f / sqrMagnitude;
-		self.x = self.x * sqrMagnitude;
-		self.y = self.y * sqrMagnitude;
-		self.z = self.z * sqrMagnitude;
-	}
-}
-
-void CPnt3D::Normalize(CPnt3D& lhs, CPnt3D& rhs)
-{
-	float sqrMagnitude = sqrtf(lhs.z * lhs.z + lhs.x * lhs.x + lhs.y * lhs.y);
-
-	if (sqrMagnitude != 0.0f)
-	{
-		sqrMagnitude = 1.0f / sqrMagnitude;
-		rhs.x = lhs.x * sqrMagnitude;
-		rhs.y = lhs.y * sqrMagnitude;
-		rhs.z = lhs.z * sqrMagnitude;
-	}
-}
-
-CPnt3D CPnt3D::Add(CPnt3D& first, CPnt3D& second)
-{
-	CPnt3D output;
-	output.x = first.x + second.x;
-	output.y = first.y + second.y;
-	output.z = first.z + second.z;
-	return output;
-}
-
-CPnt3D CPnt3D::Add(CPnt3D& first, CPnt3D& second)
-{
-	CPnt3D output;
-	output.x = first.x - second.x;
-	output.y = first.y - second.y;
-	output.z = first.z - second.z;
-	return output;
-}
-
-CPnt3D CPnt3D::Scale(float scaleFactor, CPnt3D& first, CPnt3D& second)
-{
-	first.x = second.x * scaleFactor;
-	first.y = second.y * scaleFactor;
-	first.z = second.z * scaleFactor;
-}
 
 CQuat CQuat::Apply(CQuat& quat, CPnt3D& point)
 {

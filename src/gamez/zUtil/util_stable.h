@@ -2,10 +2,6 @@
 #include <string>
 #include <vector>
 
-const char* TrimStr(char* src, char trimChar);
-char* TrimUpTowards(char* src, char* match);
-void* CreateString(const char* str, const char* sourceFile, int line);
-
 class CSTable
 {
 public:

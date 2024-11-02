@@ -1,19 +1,32 @@
 #pragma once
 #include "node_main.h"
 
+#include "gamez/zMath/zmath_main.h"
+
 namespace zdb
 {
+	class CNodeUniverse;
+	class CWorld;
+	class CAppCamera;
+
 	static CNodeUniverse* NodeUniverse;
 	static CWorld* theWorld;
 	static CAppCamera* appCamera;
 
-	// What a weird naming scheme.
+	// What an interesting naming scheme.
 	class CNodeUniverse
 	{
 	public:
-		void AddNode(const CNode& node);
-
+		bool AddNode(CNode* node);
+		void RemoveNode(CNode* node);
+		CNode* GetElement(int index) const;
+		int GetIndex(CNode* node) const;
 	private:
+		std::vector<CNode*> nodes;
+		bool requestAlloc;
+		int capacity;
+		CNode** head;
+		CNode** tail;
 	};
 
 	class CWorld : public CNode

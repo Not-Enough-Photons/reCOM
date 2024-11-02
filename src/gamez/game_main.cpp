@@ -1,6 +1,14 @@
 #include "zgame.h"
 
-#include "zAnim/"
+#include "zInput/zin_main.h"
+#include "zSound/zsnd_csnd.h"
+#include "zMath/zmath_main.h"
+#include "zRender/zrndr_main.h"
+#include "zSystem/zsys_main.h"
+#include "zTexture/ztex_main.h"
+#include "zVideo/zvid_main.h"
+#include "zUI/zui_main.h"
+#include "zUtil/util_main.h"
 
 void process_arguments(int argc, char** argv)
 {
