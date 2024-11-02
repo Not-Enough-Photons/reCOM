@@ -7,7 +7,6 @@ namespace zdb
 	static CWorld* theWorld;
 	static CAppCamera* appCamera;
 
-	// What a weird naming scheme.
 	class CNodeUniverse
 	{
 	public:

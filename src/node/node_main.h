@@ -17,6 +17,11 @@ namespace zdb
 	const char* g_RootNodeTag = "ROOT";
 	const char* g_DeletedNodeTag = "DELETED_NODE";
 
+	typedef struct IntersectStruct
+	{
+
+	};
+
 	class CNode
 	{
 	public:
@@ -64,7 +69,14 @@ namespace zdb
 
 	class CNodeEx : public CNode
 	{
-
+	public:
+		virtual void OnAction(CNode* node, void* action) = 0;
+		virtual void OnCopy(CNode* node, CNode* other) = 0;
+		virtual void OnDelete(CNode* node) = 0;
+		virtual void OnDoubleClick(CNode* node) = 0;
+		virtual void OnMove(CNode* node) = 0;
+		virtual void OnSelect(CNode* node, bool selected) = 0;
+		virtual void OnWeaponHit(CNode* node, IntersectStruct intersection, CZProjectile* projectile) = 0;
 	};
 
 	class CModel : public CNodeEx

@@ -167,16 +167,16 @@ void zrdr_freearray(_zrdr* reader)
 
 	if (reader->type == TYPE_TAG)
 	{
-		reader->next = 0;
+		reader->value = 0;
 	}
-	else if (reader->type == TYPE_ARRAY && reader->next != 0)
+	else if (reader->type == TYPE_ARRAY && reader->value != 0)
 	{
 		mem_line = 0;
 
-		_zrdr* arr = cast_rdr_array(reader->next);
+		_zrdr* arr = cast_rdr_array(reader->value);
 		_zrdr* cur = cast_rdr_array(arr + mem_line);
 
-		if (cast_rdr_int(arr->next) <= rdr_count)
+		if (cast_rdr_int(arr->value) <= rdr_count)
 		{
 
 		}
