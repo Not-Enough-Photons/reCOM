@@ -33,9 +33,6 @@
     <ClInclude Include="src\ai\ai_main.h">
       <Filter>ai</Filter>
     </ClInclude>
-    <ClInclude Include="src\audio\zsnd_csnd.h">
-      <Filter>audio</Filter>
-    </ClInclude>
     <ClInclude Include="src\entity\ent_main.h">
       <Filter>entity</Filter>
     </ClInclude>
@@ -45,51 +42,41 @@
     <ClInclude Include="src\entity\weapon\zwep_weapon.h">
       <Filter>entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\math\zmath_bits.h">
-      <Filter>math</Filter>
-    </ClInclude>
-    <ClInclude Include="src\math\zmath_main.h">
-      <Filter>math</Filter>
-    </ClInclude>
     <ClInclude Include="src\node\node_main.h">
       <Filter>node</Filter>
     </ClInclude>
-    <ClInclude Include="src\reader\zrdr_local.h">
-      <Filter>reader</Filter>
-    </ClInclude>
-    <ClInclude Include="src\reader\zrdr_main.h">
-      <Filter>reader</Filter>
-    </ClInclude>
-    <ClInclude Include="src\reader\zrdr_parse.h">
-      <Filter>reader</Filter>
-    </ClInclude>
-    <ClInclude Include="src\system\zsys_main.h">
-      <Filter>system</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ui\zui_main.h">
-      <Filter>ui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\zar\zar_main.h">
+    <ClInclude Include="src\gamez\zArchive\zar_main.h">
       <Filter>zar</Filter>
     </ClInclude>
     <ClInclude Include="src\game\zgame.h" />
     <ClInclude Include="src\util\util_stable.h" />
     <ClInclude Include="src\entity\seal\seal.cpp" />
     <ClInclude Include="src\valve\valve_main.h" />
-    <ClInclude Include="src\tests\tests.h" />
     <ClInclude Include="src\anim\anim_main.h" />
     <ClInclude Include="src\node\node_world.h" />
     <ClInclude Include="src\util\util_main.h" />
     <ClInclude Include="src\placeholder.h" />
-    <ClInclude Include="src\texture\ztex_main.h" />
-    <ClInclude Include="src\video\zvid_main.h" />
-    <ClInclude Include="src\render\zrndr_main.h" />
     <ClInclude Include="src\input\input_main.h" />
-    <ClInclude Include="src\network\znet_main.h" />
     <ClInclude Include="src\vehicle\vehicle_main.h" />
     <ClInclude Include="src\entity\body.cpp" />
     <ClInclude Include="src\entity\body.h" />
     <ClInclude Include="src\entity\seal\seal.h" />
+    <ClInclude Include="src\gamez\zSound\zsnd_csnd.h" />
+    <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
+    <ClInclude Include="src\gamez\zMath\zmath_main.h" />
+    <ClInclude Include="src\gamez\zNetwork\znet_main.h" />
+    <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
+    <ClInclude Include="src\gamez\zReader\zrdr_main.h" />
+    <ClInclude Include="src\gamez\zReader\zrdr_parse.h" />
+    <ClInclude Include="src\gamez\zRender\zrndr_main.h" />
+    <ClInclude Include="src\gamez\zSystem\zsys_main.h" />
+    <ClInclude Include="src\gamez\zTexture\ztex_main.h" />
+    <ClInclude Include="src\gamez\zUI\zui_main.h" />
+    <ClInclude Include="src\gamez\zVideo\zvid_main.h" />
+    <ClInclude Include="src\fts\fts.h" />
+    <ClInclude Include="src\gamez\zgame.h" />
+    <ClInclude Include="src\gamez\zWeapon\zwep_weapon.h" />
+    <ClInclude Include="src\gamez\zWeapon\zwep_ammo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ai\ai_main.cpp">
@@ -101,22 +88,10 @@
     <ClCompile Include="src\ai\ai_mapio.cpp">
       <Filter>ai</Filter>
     </ClCompile>
-    <ClCompile Include="src\audio\zsnd_csnd.cpp">
-      <Filter>audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\audio\zsnd_csndgroup.cpp">
-      <Filter>audio</Filter>
-    </ClCompile>
-    <ClCompile Include="src\audio\zsnd_csndsequence.cpp">
-      <Filter>audio</Filter>
-    </ClCompile>
     <ClCompile Include="src\entity\ent_main.cpp">
       <Filter>entity</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\math\zmath_main.cpp">
-      <Filter>math</Filter>
-    </ClCompile>
     <ClCompile Include="src\node\node_assetlib.cpp">
       <Filter>node</Filter>
     </ClCompile>
@@ -135,46 +110,15 @@
     <ClCompile Include="src\node\node_world.cpp">
       <Filter>node</Filter>
     </ClCompile>
-    <ClCompile Include="src\reader\zrdr_edit.cpp">
-      <Filter>reader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\reader\zrdr_file.cpp">
-      <Filter>reader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\reader\zrdr_main.cpp">
-      <Filter>reader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\reader\zrdr_parse.cpp">
-      <Filter>reader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\system\zsys_memory.cpp">
-      <Filter>system</Filter>
-    </ClCompile>
-    <ClCompile Include="src\system\zsys_sched.cpp">
-      <Filter>system</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\zui.cpp">
-      <Filter>ui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\zui_2d.cpp">
-      <Filter>ui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\zui_cleanup.cpp">
-      <Filter>ui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ui\zui_spec.cpp">
-      <Filter>ui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\zar\zar_main.cpp">
+    <ClCompile Include="src\gamez\zArchive\zar_main.cpp">
       <Filter>zar</Filter>
     </ClCompile>
-    <ClCompile Include="src\zar\zar_search.cpp">
+    <ClCompile Include="src\gamez\zArchive\zar_search.cpp">
       <Filter>zar</Filter>
     </ClCompile>
     <ClCompile Include="src\util\util_stable.cpp" />
     <ClCompile Include="src\ui\c2dstring.cpp" />
     <ClCompile Include="src\valve\valve_main.cpp" />
-    <ClCompile Include="src\tests\test_readerhash.cpp" />
     <ClCompile Include="src\game\game_main.cpp" />
     <ClCompile Include="src\anim\anim_main.cpp" />
     <ClCompile Include="src\entity\seal\seal_create.cpp" />
@@ -184,11 +128,7 @@
     <ClCompile Include="src\entity\weapon\zwep_weapon.cpp" />
     <ClCompile Include="src\entity\weapon\zwep_ammo.cpp" />
     <ClCompile Include="src\util\util_main.cpp" />
-    <ClCompile Include="src\texture\ztex_main.cpp" />
-    <ClCompile Include="src\video\zvid_main.cpp" />
-    <ClCompile Include="src\render\zrndr_main.cpp" />
     <ClCompile Include="src\input\input_main.cpp" />
-    <ClCompile Include="src\network\zNetMedius.cpp" />
     <ClCompile Include="src\ai\ai_astar.cpp" />
     <ClCompile Include="src\ai\ai_events.cpp" />
     <ClCompile Include="src\ai\ai_maps.cpp" />
@@ -220,27 +160,15 @@
     <ClCompile Include="src\entity\seal\seal_squirm.cpp" />
     <ClCompile Include="src\entity\seal\seal_uint.cpp" />
     <ClCompile Include="src\entity\seal\seal_weapon.cpp" />
-    <ClCompile Include="src\anim\zanim_anim.cpp" />
-    <ClCompile Include="src\anim\zanim_cmd_parse.cpp" />
-    <ClCompile Include="src\anim\zanim_cmd_tick.cpp" />
-    <ClCompile Include="src\anim\zanim_menu.cpp" />
-    <ClCompile Include="src\reader\zrdr_archive.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_anim.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_cmd_parse.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_cmd_tick.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_menu.cpp" />
     <ClCompile Include="src\entity\weapon\zwep_explosive.cpp" />
     <ClCompile Include="src\entity\weapon\zwep_global.cpp" />
     <ClCompile Include="src\entity\weapon\zwep_projectile.cpp" />
     <ClCompile Include="src\valve\valve_list.cpp" />
-    <ClCompile Include="src\render\vis\vis_decal.cpp" />
-    <ClCompile Include="src\render\vis\vis_main.cpp" />
-    <ClCompile Include="src\render\vis\vis_texfx.cpp" />
-    <ClCompile Include="src\math\zmath_pnt3d.cpp" />
-    <ClCompile Include="src\math\zmath_matrix.cpp" />
-    <ClCompile Include="src\math\zmath_pnt4d.cpp" />
-    <ClCompile Include="src\audio\zsnd_jukebox.cpp" />
-    <ClCompile Include="src\audio\zsnd_csndinstance.cpp" />
-    <ClCompile Include="src\network\zNetDme.cpp" />
-    <ClCompile Include="src\network\zNetVoice.cpp" />
     <ClCompile Include="src\input\zin_cheats.cpp" />
-    <ClCompile Include="src\texture\ztex_manager.cpp" />
     <ClCompile Include="src\ui\hud\hud_actionbitmap.cpp" />
     <ClCompile Include="src\ui\hud\hud_bitmapreticule.cpp" />
     <ClCompile Include="src\ui\hud\hud_bombmapitem.cpp" />
@@ -284,22 +212,61 @@
     <ClCompile Include="src\system\iostream.cpp" />
     <ClCompile Include="src\locale.cpp" />
     <ClCompile Include="src\node\node_wave.cpp" />
-    <ClCompile Include="src\game\orders.cpp" />
+    <ClCompile Include="src\fts\orders.cpp" />
     <ClCompile Include="src\input\remote_control.cpp" />
-    <ClCompile Include="src\network\reco.cpp" />
-    <ClCompile Include="src\render\zrndr_pipe.cpp" />
-    <ClCompile Include="src\render\particle\zparticle.cpp" />
-    <ClCompile Include="src\render\particle\zparticle_buf.cpp" />
-    <ClCompile Include="src\render\particle\zparticle_instance.cpp" />
-    <ClCompile Include="src\render\particle\zparticle_source.cpp" />
-    <ClCompile Include="src\system\zsav_manager.cpp" />
-    <ClCompile Include="src\game\thezoom.cpp" />
-    <ClCompile Include="src\game\st_load.cpp" />
-    <ClCompile Include="src\game\st_core.cpp" />
-    <ClCompile Include="src\game\st_exit.cpp" />
-    <ClCompile Include="src\game\st_menu.cpp" />
-    <ClCompile Include="src\game\st_mpexit.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\reco.cpp" />
+    <ClCompile Include="src\entity\thezoom.cpp" />
+    <ClCompile Include="src\gamez\st_load.cpp" />
+    <ClCompile Include="src\gamez\st_core.cpp" />
+    <ClCompile Include="src\gamez\st_exit.cpp" />
+    <ClCompile Include="src\gamez\st_menu.cpp" />
+    <ClCompile Include="src\gamez\st_mpexit.cpp" />
     <ClCompile Include="src\entity\pickup_main.cpp" />
     <ClCompile Include="src\entity\int_material.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csnd.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csndgroup.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csndinstance.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csndsequence.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_jukebox.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_main.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_matrix.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_pnt3d.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_pnt4d.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetDme.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetMedius.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetVoice.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_archive.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_edit.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_file.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_main.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_parse.cpp" />
+    <ClCompile Include="src\gamez\zRender\vis\vis_decal.cpp" />
+    <ClCompile Include="src\gamez\zRender\vis\vis_main.cpp" />
+    <ClCompile Include="src\gamez\zRender\vis\vis_texfx.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle_buf.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle_instance.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle_source.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_pipe.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_main.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsav_manager.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsys_memory.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsys_sched.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_main.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_manager.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui_2d.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui_cleanup.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui_spec.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zvid_main.cpp" />
+    <ClCompile Include="src\gamez\game_engine.cpp" />
+    <ClCompile Include="src\gamez\game_main.cpp" />
+    <ClCompile Include="src\gamez\game_state.cpp" />
+    <ClCompile Include="src\gamez\game_tree.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_ammo.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_explosive.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_global.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_projectile.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_weapon.cpp" />
   </ItemGroup>
 </Project>
