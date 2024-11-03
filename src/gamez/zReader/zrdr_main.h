@@ -14,11 +14,11 @@ class _zrdr;
 
 enum ReaderType
 {
-	TYPE_NULL,
-	TYPE_REFERENCE,
-	TYPE_VALUE,
-	TYPE_TAG,
-	TYPE_ARRAY
+	ZRDR_NULL,
+	ZRDR_INT,
+	ZRDR_FLOAT,
+	ZRDR_TAG,
+	ZRDR_ARRAY
 };
 
 enum OpenFlags
@@ -32,11 +32,20 @@ enum OpenFlags
 	EXCLUDE     = 0x1000
 };
 
-typedef void* zrdr_type;
+typedef char* zrdr_type;
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);
 _zrdr* zrdr_findtag(const char* tag);
 _zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
+
+class CFileCD
+{
+public:
+	static int BuildTOC();
+	static char* CreatePath(const char* dir, const char* path);
+	static int Find(const char* file);
+	static int* Read(void* buf, int count);
+};
 
 class _zrdr
 {
@@ -55,7 +64,7 @@ public:
 	_zrdr(const _zrdr* other, const CSTable* table);
 
 	void Clone(const _zrdr* other, const CSTable* table);
-private:
+public:
 	ReaderType type;
 	zrdr_type value;
 };
@@ -92,6 +101,10 @@ public:
 	CFileIO();
 	~CFileIO();
 
+	static void SetRootPath(const char* rootPath);
+
+	static const char* m_root_path;
+public:
 	bool Open(char* file, OpenFlags flags);
 	// void Open(...);
 	void LoadBuffer();
@@ -112,9 +125,7 @@ protected:
 	OpenFlags flags;
 	int position;
 private:
-	const char* m_root_path = "host0:.\\";
 	static bool m_write_status;
-
 	FILE* file;
 };
 

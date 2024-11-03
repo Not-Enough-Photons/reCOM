@@ -34,6 +34,7 @@ namespace zar
 	public:
 		void Open(char* name, int version, OpenFlags mode, int count);
 		void Close();
+		void CloseKeepDir();
 
 		CKey* CreateKey();
 		CKey* NewKey(const char* name);

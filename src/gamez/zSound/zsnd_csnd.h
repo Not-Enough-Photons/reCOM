@@ -1,10 +1,13 @@
 #pragma once
 #include <vector>
+#include <unordered_map>
 
 #include "placeholder.h"
 
 #include "valve\valve_main.h"
-#include "zar\zar_main.h"
+
+#include "gamez/zArchive/zar.h"
+#include "gamez/zReader/zrdr_main.h"
 
 enum MUSIC_MODE
 {
@@ -20,22 +23,42 @@ enum MUSIC_MODE
 	MODE_9
 };
 
+bool vagArchiveIsOpen = false;
+bool bnkArchiveIsOpen = false;
+_zrdr* sound_rdr;
+bool snd_system_initialized = false;
 
 class CSnd
 {
 public:
 	CSnd();
+
+	static void Init();
+	static void AddNewCSnd(CSnd* sound);
+	static CSnd* GetSoundByName(const char* name);
+	static bool GetSubtitles();
+public:
+	void LoadCSnd(_zrdr* reader);
+	float CalcVol(float volume, float masterVolume);
 	void SetupJukebox();
 private:
 	static bool m_isDisabled;
+	static bool m_bShowSubtitles;
+	static bool m_hasreverb;
+	static zar::CZAR* m_vagArchive;
 	static zar::CZAR* m_bnkArchive;
 	static int m_bnkoffset;
+	static int m_vagoffset;
+
+	static std::unordered_map<const char*, CSnd*> m_soundmap;
 	static std::vector<CSnd*> m_bankloaded;
 	static std::vector<CSnd*> m_soundbank;
+	static std::vector<CSnd*> m_soundlist;
 
 	float volume;
-	char* field5_0x8;
+	char* name;
 	float range;
+	float maxVol;
 	float field7_0x10;
 	void* bank;
 	int curSndID;
@@ -57,6 +80,7 @@ private:
 class CSndInstance : public CSnd
 {
 public:
+	static float m_mastervol;
 	static std::vector<CSnd*> m_sound_instance_pool;
 
 	static void InitInstancePool(int count);

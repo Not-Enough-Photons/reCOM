@@ -150,7 +150,7 @@ void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 	}
 
 	type = other->type;
-	if (type == TYPE_ARRAY)
+	if (type == ZRDR_ARRAY)
 	{
 
 	}
@@ -171,11 +171,11 @@ void zrdr_freearray(_zrdr* reader)
 	int mem_line = 0;
 	int rdr_count = 0;
 
-	if (reader->type == TYPE_TAG)
+	if (reader->type == ZRDR_TAG)
 	{
 		reader->value = 0;
 	}
-	else if (reader->type == TYPE_ARRAY && reader->value != 0)
+	else if (reader->type == ZRDR_ARRAY && reader->value != 0)
 	{
 		mem_line = 0;
 

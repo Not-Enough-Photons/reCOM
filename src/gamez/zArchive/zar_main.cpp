@@ -138,6 +138,7 @@ namespace zar
 		}
 
 		this->count = count;
+
 	}
 
 	void CZAR::CloseKey(CKey* key)
