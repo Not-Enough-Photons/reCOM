@@ -36,19 +36,12 @@
     <ClInclude Include="src\entity\ent_main.h">
       <Filter>entity</Filter>
     </ClInclude>
-    <ClInclude Include="src\entity\weapon\zwep_ammo.h">
-      <Filter>entity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\entity\weapon\zwep_weapon.h">
-      <Filter>entity</Filter>
-    </ClInclude>
     <ClInclude Include="src\node\node_main.h">
       <Filter>node</Filter>
     </ClInclude>
-    <ClInclude Include="src\gamez\zArchive\zar_main.h">
+    <ClInclude Include="src\gamez\zArchive\zar.h">
       <Filter>zar</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\zgame.h" />
     <ClInclude Include="src\util\util_stable.h" />
     <ClInclude Include="src\entity\seal\seal.cpp" />
     <ClInclude Include="src\valve\valve_main.h" />
@@ -56,7 +49,7 @@
     <ClInclude Include="src\node\node_world.h" />
     <ClInclude Include="src\util\util_main.h" />
     <ClInclude Include="src\placeholder.h" />
-    <ClInclude Include="src\input\input_main.h" />
+    <ClInclude Include="src\gamez\zInput\zin_main.h" />
     <ClInclude Include="src\vehicle\vehicle_main.h" />
     <ClInclude Include="src\entity\body.cpp" />
     <ClInclude Include="src\entity\body.h" />
@@ -77,6 +70,8 @@
     <ClInclude Include="src\gamez\zgame.h" />
     <ClInclude Include="src\gamez\zWeapon\zwep_weapon.h" />
     <ClInclude Include="src\gamez\zWeapon\zwep_ammo.h" />
+    <ClInclude Include="src\gamez\zUtil\util_main.h" />
+    <ClInclude Include="src\gamez\zUtil\util_stable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ai\ai_main.cpp">
@@ -117,28 +112,17 @@
       <Filter>zar</Filter>
     </ClCompile>
     <ClCompile Include="src\util\util_stable.cpp" />
-    <ClCompile Include="src\ui\c2dstring.cpp" />
+    <ClCompile Include="src\gamez\zUI\c2dstring.cpp" />
     <ClCompile Include="src\valve\valve_main.cpp" />
-    <ClCompile Include="src\game\game_main.cpp" />
     <ClCompile Include="src\anim\anim_main.cpp" />
     <ClCompile Include="src\entity\seal\seal_create.cpp" />
     <ClCompile Include="src\entity\seal\seal_anim.cpp" />
     <ClCompile Include="src\entity\seal\seal_env.cpp" />
     <ClCompile Include="src\entity\seal\seal_tasks.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_weapon.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_ammo.cpp" />
     <ClCompile Include="src\util\util_main.cpp" />
-    <ClCompile Include="src\input\input_main.cpp" />
-    <ClCompile Include="src\ai\ai_astar.cpp" />
-    <ClCompile Include="src\ai\ai_events.cpp" />
-    <ClCompile Include="src\ai\ai_maps.cpp" />
-    <ClCompile Include="src\ai\ai_path.cpp" />
-    <ClCompile Include="src\ai\ai_vismap.cpp" />
+    <ClCompile Include="src\gamez\zInput\zin_main.cpp" />
     <ClCompile Include="src\anim\anim.cpp" />
     <ClCompile Include="src\entity\camera.cpp" />
-    <ClCompile Include="src\game\game_engine.cpp" />
-    <ClCompile Include="src\game\game_state.cpp" />
-    <ClCompile Include="src\game\game_tree.cpp" />
     <ClCompile Include="src\entity\seal\seal_ai.cpp" />
     <ClCompile Include="src\entity\seal\seal_aievent.cpp" />
     <ClCompile Include="src\entity\seal\seal_aifollow.cpp" />
@@ -164,11 +148,8 @@
     <ClCompile Include="src\gamez\zAnim\zanim_cmd_parse.cpp" />
     <ClCompile Include="src\gamez\zAnim\zanim_cmd_tick.cpp" />
     <ClCompile Include="src\gamez\zAnim\zanim_menu.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_explosive.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_global.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_projectile.cpp" />
     <ClCompile Include="src\valve\valve_list.cpp" />
-    <ClCompile Include="src\input\zin_cheats.cpp" />
+    <ClCompile Include="src\gamez\zInput\zin_cheats.cpp" />
     <ClCompile Include="src\ui\hud\hud_actionbitmap.cpp" />
     <ClCompile Include="src\ui\hud\hud_bitmapreticule.cpp" />
     <ClCompile Include="src\ui\hud\hud_bombmapitem.cpp" />
@@ -205,15 +186,15 @@
     <ClCompile Include="src\fts\fts_player.cpp" />
     <ClCompile Include="src\fts\fts_remote.cpp" />
     <ClCompile Include="src\entity\char_type.cpp" />
-    <ClCompile Include="src\system\database.cpp" />
+    <ClCompile Include="src\gamez\zSystem\database.cpp" />
     <ClCompile Include="src\node\grid_clutter.cpp" />
     <ClCompile Include="src\node\grid_di.cpp" />
     <ClCompile Include="src\node\graph_tree.cpp" />
-    <ClCompile Include="src\system\iostream.cpp" />
+    <ClCompile Include="src\gamez\zSystem\iostream.cpp" />
     <ClCompile Include="src\locale.cpp" />
     <ClCompile Include="src\node\node_wave.cpp" />
     <ClCompile Include="src\fts\orders.cpp" />
-    <ClCompile Include="src\input\remote_control.cpp" />
+    <ClCompile Include="src\gamez\zInput\remote_control.cpp" />
     <ClCompile Include="src\gamez\zNetwork\reco.cpp" />
     <ClCompile Include="src\entity\thezoom.cpp" />
     <ClCompile Include="src\gamez\st_load.cpp" />
@@ -268,5 +249,23 @@
     <ClCompile Include="src\gamez\zWeapon\zwep_global.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_projectile.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_weapon.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_main.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_stable.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_intersect.cpp" />
+    <ClCompile Include="src\ai\ai_astar.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ai\ai_events.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ai\ai_maps.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ai\ai_path.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ai\ai_vismap.cpp">
+      <Filter>ai</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

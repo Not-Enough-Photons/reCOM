@@ -2,8 +2,6 @@
 #include <string>
 #include <list>
 
-#include "boost/compressed_pair.hpp"
-
 #include "placeholder.h"
 #include "gamez/zReader/zrdr_main.h"
 #include "gamez/zUtil/util_stable.h"
@@ -33,11 +31,13 @@ namespace zar
 	public:
 		CZAR(const char* name, CIO* io);
 		~CZAR();
-
-		void Open();
+	public:
+		void Open(char* name, int version, OpenFlags mode, int count);
+		void Close();
 
 		CKey* CreateKey();
 		CKey* NewKey(const char* name);
+		bool ReOpen(int count, int mode);
 
 		CKey* OpenKey(const char* name);
 		CKey* FindKey(const char* name);
@@ -56,17 +56,18 @@ namespace zar
 		CKey* GetOpenKey();
 
 		void* ReleaseDataBuffer();
-	private:
+
 		const char* name;
 		int version;
+
+		CBufferIO* bufferIO;
+		CFileIO* fileIO;
 
 		int count;
 		int seekPosition;
 
 		CKey* root;
 
-		CBufferIO* bufferIO;
-		CFileIO* fileIO;
 		void* buffer;
 
 		CSTable* stringTable;

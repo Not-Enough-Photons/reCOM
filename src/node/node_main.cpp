@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "node_main.h"
 
 #include "gamez/zSystem/zsys_main.h"
@@ -189,7 +191,7 @@ namespace zdb
 
 		if (nodeEx != NULL)
 		{
-			nodeEx->
+
 		}
 	}
 
@@ -282,8 +284,6 @@ namespace zdb
 		pnt.x = x;
 		pnt.y = y;
 		pnt.z = z;
-
-		CPnt3D::Sub(m_pos, pnt);
 		return m_scaledrange * (pnt.z * pnt.z + pnt.x * pnt.x + pnt.y * pnt.y);
 	}
 }

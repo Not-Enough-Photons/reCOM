@@ -1,4 +1,6 @@
-#include "zar_main.h"
+#include "zar.h"
+
+#include "gamez/zUtil/util_main.h"
 
 namespace zar
 {
@@ -113,6 +115,29 @@ namespace zar
 		{
 
 		}
+	}
+
+	void CZAR::Open(char* name, int version, OpenFlags mode, int count)
+	{
+		if (!string_exists(name))
+		{
+			return;
+		}
+
+		if (bufferIO == NULL)
+		{
+			fileIO = new CFileIO();
+			bufferIO = new CBufferIO();
+		}
+
+		int fd = bufferIO->Open(name, mode);
+
+		if (fd == 0)
+		{
+			return;
+		}
+
+		this->count = count;
 	}
 
 	void CZAR::CloseKey(CKey* key)

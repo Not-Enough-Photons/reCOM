@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cstdint>
 
-#include "util/util_stable.h"
-#include "zar/zar_main.h"
+#include "gamez/zUtil/util_stable.h"
+#include "gamez/zArchive/zar.h"
 
 class _zrdr;
 
@@ -40,7 +40,7 @@ _zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
 
 class _zrdr
 {
-private:
+public:
 	friend void zrdr_free(_zrdr* reader);
 	friend void zrdr_freearray(_zrdr* array);
 	friend void _resolveA(_zrdr* reader, _zrdr* other, int count);
@@ -139,9 +139,16 @@ class CRdrIO : public CFileIO
 
 };
 
-class CRdrArchive : public CRdrIO
+class CRdrArchive : public zar::CZAR
 {
 public:
-	static int GetReaderHashDifference(unsigned char parentByte, unsigned char childByte);
-	static int EntryLookup(const char* parentReader, const char* childReader);
+	static std::list<zar::CZAR*> m_list;
+
+	static zar::CZAR* AddArchive(const char* name, const char* path);
+	static bool RemoveArchive(const char* name, const char* path);
+
+	static CRdrFile* FindRdr(const char* reader);
+
+	static void OpenAll();
+	static void CloseAll();
 };

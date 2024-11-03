@@ -101,4 +101,54 @@ namespace zdb
 	{
 		children.reserve(count + expandSize);
 	}
+
+	void CWorld::AddChild(CNode* child)
+	{
+		// Ass.
+		CWorld* parent = reinterpret_cast<CWorld*>(child->parent);
+
+		if (parent != this)
+		{
+			CNode* node = child;
+
+			if (parent != NULL && parent != this)
+			{
+				parent->DeleteChildren();
+			}
+
+			grid->Insert(node);
+
+			// Ass.
+			node->parent = reinterpret_cast<CNode*>(this);
+
+			if (expandSize == children.size())
+			{
+				children.reserve(expandSize + 100);
+			}
+
+			children.insert(children.begin(), node);
+
+			CNode* temp = node;
+			if (node->nodeType != 2)
+			{
+				temp = NULL;
+			}
+
+			if (temp != NULL)
+			{
+
+			}
+
+			// TODO:
+			// Finish the part of this function that inserts "render maps", so the world can
+			// dispatch them to the zRenderer.
+		}
+	}
+
+	void CWorld::AddLandmark(CNode* landmark)
+	{
+		if (landmark->renderFlags)
+
+		landmark->RemoveFromParent();
+	}
 }

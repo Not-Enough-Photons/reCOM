@@ -40,6 +40,7 @@ namespace zdb
 		void AddChild(CNode* child);
 		int DeleteChild(CNode* child);
 		void DeleteChildren();
+		void RemoveFromParent();
 
 		bool UpdateGrid() const;
 
@@ -69,18 +70,19 @@ namespace zdb
 		void SetPosition(float x, float y, float z);
 		void SetScale(undefined8 param_2);
 
-	public:
+	protected:
 		const char* name;
-
-	private:
-		short refCount;
+		CNode* parent;
 		int nodeType;
+
+		short renderFlags;
+		short stateFlags;
+
+		short refCount;
 		int childCount;
 
-		short stateFlags;
 		short field82_0x9a;
 
-		CNode* parent;
 		std::vector<CNode*> children;
 		CNodeVector nodeVector;
 		
@@ -130,6 +132,12 @@ namespace zdb
 	class CModel : public CNodeEx
 	{
 	public:
+		CModel(const char* name);
+		~CModel();
+
+		static CModel* Create(CSaveLoad& saver, CAssetLib* library);
+	public:
+		void Read(CSaveLoad& saver);
 		void Release(CNode* node);
 	};
 

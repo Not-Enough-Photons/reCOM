@@ -62,6 +62,7 @@
       <Optimization>Disabled</Optimization>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <AdditionalIncludeDirectories>$(ProjectDir)/src;C:\Users\Adam\Desktop\Boost C++\</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -97,11 +98,11 @@
     <ClInclude Include="src\entity\ent_main.h" />
     <ClInclude Include="src\entity\seal\seal.cpp" />
     <ClInclude Include="src\entity\seal\seal.h" />
-    <ClInclude Include="src\entity\weapon\zwep_ammo.h" />
-    <ClInclude Include="src\entity\weapon\zwep_weapon.h" />
+    <ClInclude Include="src\gamez\zUtil\util_main.h" />
+    <ClInclude Include="src\gamez\zUtil\util_stable.h" />
     <ClInclude Include="src\gamez\zWeapon\zwep_ammo.h" />
     <ClInclude Include="src\gamez\zWeapon\zwep_weapon.h" />
-    <ClInclude Include="src\input\input_main.h" />
+    <ClInclude Include="src\gamez\zInput\zin_main.h" />
     <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
     <ClInclude Include="src\gamez\zMath\zmath_main.h" />
     <ClInclude Include="src\gamez\zNetwork\znet_main.h" />
@@ -120,8 +121,7 @@
     <ClInclude Include="src\valve\valve_main.h" />
     <ClInclude Include="src\vehicle\vehicle_main.h" />
     <ClInclude Include="src\gamez\zVideo\zvid_main.h" />
-    <ClInclude Include="src\gamez\zArchive\zar_main.h" />
-    <ClInclude Include="src\game\zgame.h" />
+    <ClInclude Include="src\gamez\zArchive\zar.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ai\ai_astar.cpp" />
@@ -142,6 +142,7 @@
     <ClCompile Include="src\gamez\game_main.cpp" />
     <ClCompile Include="src\gamez\game_state.cpp" />
     <ClCompile Include="src\gamez\game_tree.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_intersect.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_csnd.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_csndgroup.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_csndinstance.cpp" />
@@ -190,19 +191,13 @@
     <ClCompile Include="src\entity\seal\seal_tasks.cpp" />
     <ClCompile Include="src\entity\seal\seal_uint.cpp" />
     <ClCompile Include="src\entity\seal\seal_weapon.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_ammo.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_explosive.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_global.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_projectile.cpp" />
-    <ClCompile Include="src\entity\weapon\zwep_weapon.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_main.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_stable.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_ammo.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_explosive.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_global.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_projectile.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_weapon.cpp" />
-    <ClCompile Include="src\game\game_engine.cpp" />
-    <ClCompile Include="src\game\game_state.cpp" />
-    <ClCompile Include="src\game\game_tree.cpp" />
     <ClCompile Include="src\fts\orders.cpp" />
     <ClCompile Include="src\gamez\st_core.cpp" />
     <ClCompile Include="src\gamez\st_exit.cpp" />
@@ -210,9 +205,9 @@
     <ClCompile Include="src\gamez\st_menu.cpp" />
     <ClCompile Include="src\gamez\st_mpexit.cpp" />
     <ClCompile Include="src\entity\thezoom.cpp" />
-    <ClCompile Include="src\input\input_main.cpp" />
-    <ClCompile Include="src\input\remote_control.cpp" />
-    <ClCompile Include="src\input\zin_cheats.cpp" />
+    <ClCompile Include="src\gamez\zInput\zin_main.cpp" />
+    <ClCompile Include="src\gamez\zInput\remote_control.cpp" />
+    <ClCompile Include="src\gamez\zInput\zin_cheats.cpp" />
     <ClCompile Include="src\locale.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\gamez\zMath\zmath_main.cpp" />
@@ -247,14 +242,14 @@
     <ClCompile Include="src\gamez\zRender\particle\zparticle_source.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_pipe.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_main.cpp" />
-    <ClCompile Include="src\system\database.cpp" />
-    <ClCompile Include="src\system\iostream.cpp" />
+    <ClCompile Include="src\gamez\zSystem\database.cpp" />
+    <ClCompile Include="src\gamez\zSystem\iostream.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsav_manager.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsys_memory.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsys_sched.cpp" />
     <ClCompile Include="src\gamez\zTexture\ztex_main.cpp" />
     <ClCompile Include="src\gamez\zTexture\ztex_manager.cpp" />
-    <ClCompile Include="src\ui\c2dstring.cpp" />
+    <ClCompile Include="src\gamez\zUI\c2dstring.cpp" />
     <ClCompile Include="src\ui\hud\hud_actionbitmap.cpp" />
     <ClCompile Include="src\ui\hud\hud_bitmapreticule.cpp" />
     <ClCompile Include="src\ui\hud\hud_bombmapitem.cpp" />
@@ -288,7 +283,6 @@
     <ClCompile Include="src\gamez\zVideo\zvid_main.cpp" />
     <ClCompile Include="src\gamez\zArchive\zar_main.cpp" />
     <ClCompile Include="src\gamez\zArchive\zar_search.cpp" />
-    <ClCompile Include="src\game\game_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

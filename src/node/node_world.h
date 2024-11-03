@@ -8,6 +8,7 @@ namespace zdb
 	class CNodeUniverse;
 	class CWorld;
 	class CAppCamera;
+	class CGrid;
 
 	static CNodeUniverse* NodeUniverse;
 	static CWorld* theWorld;
@@ -41,13 +42,13 @@ namespace zdb
 
 		static int GetVersion();
 		static void Init();
-
+	public:
 		void Uninit();
 		void diTick();
 		void Update();
 
-		void AddChild(const CNode& child);
-		void AddLandmark(const CNode& landmark);
+		void AddChild(CNode* child);
+		void AddLandmark(CNode* landmark);
 		void AddTextureAssetCharacter(const CNode& textureAsset);
 		void ReserveChildren(int count);
 
@@ -68,6 +69,17 @@ namespace zdb
 	private:
 		int expandSize;
 		std::vector<CNode*> children;
+		std::vector<CNode*> landmarks;
+		CGrid* grid;
+	};
+
+	class CGrid
+	{
+	public:
+		CGrid();
+		~CGrid();
+	public:
+		void Insert(CNode* node);
 	};
 
 	class CWind
