@@ -1,8 +1,10 @@
 #pragma once
 #include "ai/ai_main.h";
 #include "node/node_world.h"
-#include "reader/zrdr_main.h"
 
+#include "zAnim/anim_main.h"
+#include "zReader/zrdr_main.h"
+	
 class CUIVariable;
 class CUIVariableSpec;
 class CUIVarManager;
@@ -36,20 +38,61 @@ enum TextAlignment
 class C2D
 {
 public:
+	C2D();
+	~C2D();
+
+	static zdb::CCamera* m_p2dcamera;
+
 	static void Init();
 	static void Open();
+public:
+	static float m_topx;
+	static float m_botx;
+	static float m_topy;
+	static float m_boty;
+	static float m_fXPixel;
+	static float m_fYPixel;
+public:
+	virtual int HandlePad(const CPad* pad, int index) = 0;
+	virtual void Draw(const CMatrix& mat, zdb::CTextureRelocMgr* manager) = 0;
+	virtual void Reset() = 0;
+	virtual void SetActive() = 0;
+	virtual void SetNormal() = 0;
+	virtual void SetTrans(float translation) = 0;
+	virtual void Tick(float delta) = 0;
+	virtual void TickZAnimCmd(_zanim_cmd_hdr* header, float* delta, bool* enable) = 0;
+
+	void Enable(bool enable);
+	void Off();
+
+	bool CanHandleInput();
+	void SetCanHandleInput(bool enable);
+private:
+	short visFlags;
+	bool handleInput;
+};
+
+class C2DBitmap : public C2D
+{
+public:
+	~C2DBitmap();
+public:
+	void Load(float x, float y, float width, float height, zdb::CTexHandle* handle);
+	void Load(float x, float y, zdb::CTexHandle* handle);
+
+	void Draw(const CMatrix& mat, zdb::CTextureRelocMgr* manager);
+	void Draw(zdb::CCamera* camera);
+
+	float GetTrans() const;
+	void SetTrans(float translation);
+private:
+	float translation;
 };
 
 class C2DPoly : public C2D
 {
 public:
 	C2DPoly();
-};
-
-class C2DBitmap : public C2D
-{
-public:
-	C2DBitmap();
 };
 
 class CPlainBmp : public C2D
@@ -91,11 +134,11 @@ public:
 class CUIVariable
 {
 public:
-	void Set(zrdr* reader);
+	void Set(_zrdr* reader);
 };
 
 class CUIVarManager
 {
 public:
-	CUIVariable* Add(const char* name, zrdr* reader, UIVAR_LONGEVITY longevity);
+	CUIVariable* Add(const char* name, _zrdr* reader, UIVAR_LONGEVITY longevity);
 };

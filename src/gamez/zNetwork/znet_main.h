@@ -22,6 +22,9 @@ class CZNetGame
 public:
 	void ResetScores();
 	bool OnSealTeam();
+public:
+	int field_0x93;
+	int field55_0x70;
 private:
 	CValve* mpGameOverValve;
 };

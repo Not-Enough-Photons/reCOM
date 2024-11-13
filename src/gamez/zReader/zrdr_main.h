@@ -8,9 +8,9 @@
 class _zrdr;
 
 #define cast_rdr_array(type) reinterpret_cast<_zrdr*>(type)
-#define cast_rdr_int(type) static_cast<int>(type)
-#define cast_rdr_float(type) static_cast<float>(type)
-#define cast_rdr_double(type) static_cast<double>(type)
+#define cast_rdr_int(type) reinterpret_cast<int>(type)
+#define cast_rdr_float(type) reinterpret_cast<float>(type)
+#define cast_rdr_double(type) reinterpret_cast<double>(type)
 
 enum ReaderType
 {
@@ -35,8 +35,6 @@ enum OpenFlags
 typedef char* zrdr_type;
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);
-_zrdr* zrdr_findtag(const char* tag);
-_zrdr* zrdr_findtag_startidx(const char* tag, int iterations);
 
 class CFileCD
 {
@@ -58,6 +56,8 @@ public:
 	friend bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
 	friend bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
 	friend bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
+	friend _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
+	friend _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, int iterations);
 
 public:
 	_zrdr(); 
@@ -66,10 +66,10 @@ public:
 	void Clone(const _zrdr* other, const CSTable* table);
 public:
 	ReaderType type;
-	zrdr_type value;
+	_zrdr* value;
 };
 
-class CRdrFile : private _zrdr
+class CRdrFile : public _zrdr
 {
 public:
 	CRdrFile();
@@ -84,6 +84,20 @@ public:
 private:
 	void* block;
 	size_t blockSize;
+};
+
+class CRdrEditor
+{
+public:
+	CRdrEditor();
+	~CRdrEditor();
+public:
+	int push(const char* str);
+	int pop();
+
+	int addint(const char* tag, int value);
+	int addSTRING(const char* tag, const char* value);
+
 };
 
 class CIO

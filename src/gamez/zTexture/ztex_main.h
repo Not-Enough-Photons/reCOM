@@ -10,6 +10,11 @@ namespace zdb
 		static void doAddBuffer(float param_1, float param_2, undefined8 param_3, const char* img);
 	};
 
+	class CTextureRelocMgr
+	{
+
+	};
+
 	class CTexture
 	{
 	public:

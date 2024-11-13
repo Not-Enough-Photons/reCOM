@@ -3,6 +3,8 @@
 #include <cstring>
 #include <cassert>
 
+#include "placeholder.h"
+
 void InitSystemTuners();
 void zSysMain();
 void zSysReset();
@@ -19,4 +21,19 @@ class CSched_Manager
 {
 public:
 	static void Clear(const char* sched);
+};
+
+class CSaveManager
+{
+
+};
+
+class CSaveModule
+{
+public:
+	CSaveModule(const char* module, CSaveManager* mcSaveManager);
+	~CSaveModule();
+
+
+public:
 };

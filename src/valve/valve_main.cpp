@@ -1,25 +1,58 @@
 #include "valve_main.h"
 
-#include "anim/anim_main.h"
+#include "gamez/zAnim/anim_main.h"
 
-zanim_cmd_hdr* CValve::CmdParseCmp(zrdr* reader)
+CValve* CValve::Create(const char* name, VALVE_TYPE type)
 {
+	CValve* valve;
 
+	if (name == NULL)
+	{
+		return NULL;
+	}
+	else
+	{
+		for (auto it = m_list.begin(); it != m_list.end(); it++)
+		{
+			CValve* curValve = *it;
+			const char* valveName = curValve->name;
+
+			if (valveName != NULL && strcmp(valveName, name) == 0)
+			{
+				valve = curValve;
+			}
+		}
+	}
+
+	if (valve == NULL)
+	{
+		valve = valvePool.Acquire(name, type);
+		m_list.insert(m_list.begin(), valve);
+	}
+	else
+	{
+		if (type == PERM && valve->type != PERSIST)
+		{
+			valve->type = PERM;
+		}
+
+		if (type == PERSIST)
+		{
+			valve->type = PERSIST;
+		}
+	}
+
+	return valve;
 }
 
-void CValve::RegisterCommands()
+bool CValve::Parse(CRdrFile* file, VALVE_TYPE type)
 {
-	ZAnim.AddCmd("VALVE", CmdParseCmp, NULL, CmdTickCmp, NULL);
-}
+	_zrdr* rootTag = zrdr_findtag(file, "valves");
 
-CValve* CValve::GetByName(const char* name)
-{
-
-}
-
-void CValve::SetName(const char* name)
-{
-
+	if (rootTag != NULL)
+	{
+		int count = cast_rdr_int(rootTag->value->value);
+	}
 }
 
 OP_TYPE CValve::ParseOperator(const char* op)

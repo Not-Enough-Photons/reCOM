@@ -27,11 +27,23 @@ enum VALVE_TYPE
 	PERSIST
 };
 
+enum VALVE_STATE
+{
+	NONE,
+	IDLE,
+	ACTIVE,
+	UNKNOWN
+};
+
+class CValve;
+
 class CValvePool
 {
 public:
-	CValve* Acquire();
+	CValve* Acquire(const char* name, VALVE_TYPE type);
 };
+
+static CValvePool valvePool;
 
 /// <summary>
 /// A class that acts as a "signal" for events to occur in the game.
@@ -44,13 +56,24 @@ public:
 	~CValve();
 
 	static void Init();
+	static int Open(const char* reader, VALVE_TYPE type);
+	static bool Parse(CRdrFile* file, VALVE_TYPE type);
+	static CValve* Create(const char* name, VALVE_TYPE type);
+	static CValve* Create(const char* name, int count, VALVE_TYPE type);
+	static void Destroy(CValve* valve);
 	static bool Parse(CRdrFile* rFile, VALVE_TYPE type);
 
+	static CValve* GetByName(const char* name);
+	
+	static std::list<CValve*> m_list;
+public:
+	void FreeName();
+	void MakeCallbacks(VALVE_STATE state);
 	OP_TYPE ParseOperator(const char* op);
 
 	int count;
 private:
 	const char* name;
 	int value;
-	VALVE_TYPE m_Type;
+	VALVE_TYPE type;
 };

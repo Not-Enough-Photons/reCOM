@@ -1,7 +1,8 @@
 #pragma once
 #include "ai/ai_main.h"
 #include "entity/ent_main.h"
-#include "entity/weapon/zwep_weapon.h"
+
+#include "gamez/zWeapon/zwep_weapon.h"
 
 float noTurnThreshold = 0.0f;
 float fineTuneThreshold = 0.0f;
@@ -50,12 +51,18 @@ public:
 	void OnDeath();
 
 	void TeleportTo(const CMatrix& mat);
+	bool CanClimbWall();
+	bool CanTraverse(unsigned int moveType);
+
+	void AttemptBombDefuse() const;
 
 	CCharacterType* GetCharacter() const;
 	int GetHeadDamage(float headDmgOld, float headDmgNew);
 	int GetBodyDamage(float bodyDmgOld, float bodyDmgNew);
 	int GetArmDamage(float armDmgOld, float armDmgNew);
 	int GetLegDamage(float legDmgOld, float legDmgNew);
+
+	void AdrenalineIncr(float increase);
 
 	float SetHealth(float health);
 	void SetArmor(float armor, DAMAGE_LOCATION location);
@@ -71,6 +78,7 @@ public:
 private:
 	float health;
 	bool dead;
+	float adrenaline;
 
 	float velX;
 	float velY;

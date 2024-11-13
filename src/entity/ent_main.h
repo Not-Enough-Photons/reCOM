@@ -1,8 +1,6 @@
 #pragma once
 #include "anim/anim_main.h"
 #include "node/node_main.h"
-#include "math/zmath_main.h"
-#include "reader/zrdr_main.h"
 
 class CEntity;
 class CCharacterType;
@@ -182,18 +180,4 @@ class CftsPlayer : public CEntity
 {
 public:
 	static void RegisterAnimCommands();
-};
-
-class CZBombState
-{
-public:
-	enum EnumBombState
-	{
-		value_00,
-		value_01,
-		value_02,
-		value_03
-	};
-
-	static EnumBombState m_FutureBombState;
 };
