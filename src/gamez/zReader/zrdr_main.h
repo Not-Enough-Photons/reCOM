@@ -12,7 +12,7 @@ class _zrdr;
 #define cast_rdr_float(type) reinterpret_cast<float>(type)
 #define cast_rdr_double(type) reinterpret_cast<double>(type)
 
-enum ReaderType
+enum ZRDR_TYPE
 {
 	ZRDR_NULL,
 	ZRDR_INT,
@@ -31,8 +31,6 @@ enum OpenFlags
 	TRUNCATE	= 0x0400,
 	EXCLUDE     = 0x1000
 };
-
-typedef char* zrdr_type;
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);
 
@@ -65,8 +63,8 @@ public:
 
 	void Clone(const _zrdr* other, const CSTable* table);
 public:
-	ReaderType type;
-	_zrdr* value;
+	ZRDR_TYPE type;
+	int* value;
 };
 
 class CRdrFile : public _zrdr

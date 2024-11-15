@@ -1,7 +1,8 @@
 #pragma once
-#include "math/zmath_main.h"
 #include "node/node_main.h"
-#include "reader/zrdr_main.h"
+
+#include "gamez/zMath/zmath_main.h"
+#include "gamez/zReader/zrdr_main.h"
 
 class CZAnimMain;
 

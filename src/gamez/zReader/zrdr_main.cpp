@@ -156,12 +156,12 @@ void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 	}
 }
 
-_zrdr* zrdr_findtag(const char* name)
+_zrdr* zrdr_findtag(_zrdr* reader, const char* name)
 {
 
 }
 
-_zrdr* zrdr_findtag_startidx(const char* name, int iterations)
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, int iterations)
 {
 
 }

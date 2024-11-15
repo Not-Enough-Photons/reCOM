@@ -9,6 +9,7 @@
 #include "ai/ai_main.h"
 #include "valve/valve_main.h"
 
+#include "gamez/zAnim/anim_main.h"
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath_main.h"
 #include "gamez/zTexture/ztex_main.h"
