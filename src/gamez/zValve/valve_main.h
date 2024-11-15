@@ -43,6 +43,11 @@ public:
 	CValve* Acquire(const char* name, VALVE_TYPE type);
 };
 
+class CValveCBList
+{
+
+};
+
 static CValvePool valvePool;
 
 /// <summary>
@@ -79,5 +84,5 @@ private:
 	const char* m_name_pooled;
 	int m_pooled;
 	int m_unused;
-	void(*)** m_callbacks;
+	CValveCBList m_callbacks;
 };

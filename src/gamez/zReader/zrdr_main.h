@@ -64,7 +64,14 @@ public:
 	void Clone(const _zrdr* other, const CSTable* table);
 public:
 	ZRDR_TYPE type;
-	int* value;
+	bool isclone;
+	bool packed;
+	int unused;
+	int length;
+	float real;
+	int integer;
+	const char* string;
+	_zrdr* array;
 };
 
 class CRdrFile : public _zrdr
