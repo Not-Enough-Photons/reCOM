@@ -73,7 +73,11 @@ public:
 
 	int count;
 private:
-	const char* name;
-	int value;
-	VALVE_TYPE type;
+	const char* m_name;
+	int m_value;
+	VALVE_TYPE m_type;
+	const char* m_name_pooled;
+	int m_pooled;
+	int m_unused;
+	void(*)** m_callbacks;
 };
