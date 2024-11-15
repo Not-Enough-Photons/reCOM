@@ -1,6 +1,6 @@
 #pragma once
-#include "entity/ent_main.h"
-#include "entity/seal/seal.h"
+#include "gamez/zEntity/ent_main.h"
+#include "gamez/zSeal/seal.h"
 
 enum FIRE_TEAM
 {
@@ -99,6 +99,19 @@ enum GOAL_TYPE
 	type_02,
 	type_03,
 	type_04
+};
+
+struct AI_PARAMS
+{
+	float weather_factor;
+	FT_COMMAND fireteam_command;
+	float recycle_range;
+	float recycle_time;
+	float respawn_time;
+	float respawn_fade;
+	float respawn_range;
+	float player_grid_spacing;
+	int player_grid_count;
 };
 
 namespace sealai

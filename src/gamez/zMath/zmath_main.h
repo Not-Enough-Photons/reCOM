@@ -82,6 +82,27 @@ inline bool saturate(T& value, T min, T max)
 	return false;
 }
 
+struct PNT2D
+{
+	float x;
+	float y;
+};
+
+struct PNT3D
+{
+	float x;
+	float y;
+	float z;
+};
+
+struct PNT4D
+{
+	float x;
+	float y;
+	float z;
+	float w;
+};
+
 class CPnt2D
 {
 	float x;
@@ -96,9 +117,7 @@ public:
 	CPnt3D& operator*(float scalar);
 	CPnt3D& operator/(float scalar);
 public:
-	float x;
-	float y;
-	float z;
+	PNT3D point;
 public:
 	void Normalize();
 	void Normalize(CPnt3D* other);
@@ -110,44 +129,29 @@ public:
 
 class CPnt4D
 {
-	float x;
-	float y;
-	float z;
-	float w;
+public:
+
+public:
+	PNT4D point;
 };
 
 class CQuat
 {
-	float x;
-	float y;
-	float z;
-	float w;
-
+public:
 	static CQuat Apply(CQuat& quat, CPnt3D& point);
 	static CQuat Normalize(CQuat& quat, CQuat& rhs);
 	static CQuat Mul(CQuat& left, CQuat& right);
 	static void ToMatrix(CQuat& quat, CMatrix& matrix);
 	static CQuat Exp(CQuat& quat, CPnt3D& point);
 	static void MakeYXZ(float x, float y, float z, CQuat& quat);
+public:
+	CPnt3D vec;
+	float w;
 };
 
-typedef union CMatrix
+class CMatrix
 {
-	struct
-	{
-		CPnt4D r0;
-		CPnt4D r1;
-		CPnt4D r2;
-		CPnt4D r3;
-	};
-
-	float m[4][4];
+public:
+	float m_matrix[4][4];
 };
 
-namespace zdb
-{
-	typedef struct IntersectStruct
-	{
-
-	};
-}

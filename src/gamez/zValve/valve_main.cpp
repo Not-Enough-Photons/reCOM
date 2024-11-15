@@ -15,7 +15,7 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 		for (auto it = m_list.begin(); it != m_list.end(); it++)
 		{
 			CValve* curValve = *it;
-			const char* valveName = curValve->name;
+			const char* valveName = curValve->m_name;
 
 			if (valveName != NULL && strcmp(valveName, name) == 0)
 			{
@@ -31,28 +31,56 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	}
 	else
 	{
-		if (type == PERM && valve->type != PERSIST)
+		if (type == PERM && valve->m_type != PERSIST)
 		{
-			valve->type = PERM;
+			valve->m_type = PERM;
 		}
 
 		if (type == PERSIST)
 		{
-			valve->type = PERSIST;
+			valve->m_type = PERSIST;
 		}
 	}
 
 	return valve;
 }
 
-bool CValve::Parse(CRdrFile* file, VALVE_TYPE type)
+void CValve::AssignName(const char* name)
 {
-	_zrdr* rootTag = zrdr_findtag(file, "valves");
 
-	if (rootTag != NULL)
+}
+
+void* CValve::AddCallback(int size, void(*callback)(CValve*, void*), void* buffer)
+{
+	m_callbacks.m_list.insert(m_callbacks.m_list.begin(), callback);
+}
+
+void CValve::DeleteCallbacks()
+{
+	for (auto it = m_callbacks.m_list.begin(); it != m_callbacks.m_list.end(); it++)
 	{
-		int count = cast_rdr_int(rootTag->value->value);
+		// TODO:
+		// can't delete function pointers....
 	}
+}
+
+bool CValve::Set(int value)
+{
+	VALVE_STATE state;
+
+	if (m_value != value && value != 0)
+	{
+		state = VALVE_STATE::IDLE;
+	}
+
+	m_value = value;
+
+	if (state != VALVE_STATE::NONE)
+	{
+		MakeCallbacks(state);
+	}
+
+	return state != VALVE_STATE::NONE;
 }
 
 OP_TYPE CValve::ParseOperator(const char* op)

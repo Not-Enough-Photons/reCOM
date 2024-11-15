@@ -6,17 +6,19 @@
 
 #include "node_world.h"
 
-#include "ai/ai_main.h"
-#include "valve/valve_main.h"
+#include "Apps/FTS/ai_main.h"
 
 #include "gamez/zAnim/anim_main.h"
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath_main.h"
 #include "gamez/zTexture/ztex_main.h"
+#include "gamez/zSeal/seal.h"
+#include "gamez/zValve/valve_main.h"
 #include "gamez/zWeapon/zwep_weapon.h"
 
 namespace zdb
 {
+	class tag_NODE_PARAMS;
 	class CNodeVector;
 	class CNodeEx;
 	class CSaveLoad;
@@ -25,6 +27,43 @@ namespace zdb
 
 	const char* g_RootNodeTag = "ROOT";
 	const char* g_DeletedNodeTag = "DELETED_NODE";
+
+	struct tag_NODE_PARAMS
+	{
+		CMatrix m_matrix;
+		// TODO:
+		// Implement the bounding box class
+		// CBBox m_bbox;
+		char m_type;
+		bool m_active;
+		bool m_dynamic_motion;
+		bool m_dynamic_light;
+		bool m_landmark;
+		bool m_light;
+		bool m_prelight;
+		bool m_fog;
+		bool m_transparent;
+		// imposters/billboards
+		int m_facade;
+		bool m_reflective;
+		bool m_bumpmap;
+		bool m_hasDI;
+		int m_region_shift;
+		bool m_has_visuals_prior_to_export;
+		bool m_shadow;
+		bool m_worldchild;
+		bool m_char_common;
+		bool m_NOTUSED;
+		bool m_hasVisuals;
+		bool m_hasMesh;
+		bool m_scrolling_texture;
+		bool m_light_dynamic;
+		bool m_light_static;
+		bool m_clutter;
+		bool m_mtx_is_identity;
+		bool m_use_parent_bbox;
+		bool m_apply_clip;
+	};
 
 	class CNode
 	{
@@ -72,37 +111,35 @@ namespace zdb
 		void SetScale(undefined8 param_2);
 
 	protected:
-		const char* name;
-		CNode* parent;
-		int nodeType;
-
-		short renderFlags;
-		short stateFlags;
-
-		short refCount;
-		int childCount;
-
-		short field82_0x9a;
-
-		std::vector<CNode*> children;
-		CNodeVector nodeVector;
+		tag_NODE_PARAMS tag_NODE_PARAMS;
+		CNode* m_parent;
+		CNodeVector m_child;
+		// TODO:
+		// Implement the CDIVector class and CDI
+		// CDIVector m_di;
+		// TODO:
+		// Implement the CVisualVector class
+		// CVisualVector m_visual;
 		
-		CNodeEx* nodeEx;
-
-		float posX;
-		float posY;
-		float posZ;
-
-		float scaleX;
-		float scaleY;
-		float scaleZ;
-
-		float radiusX;
-		float radiusY;
-		float radiusZ;
-		float radiusMaxX;
-		float radiusMaxY;
-		float radiusMaxZ;
+		const char* m_name;
+		CNodeEx* m_nodeEx;
+		char m_customGlobalLight;
+		bool m_frameRendered;
+		bool m_flatten;
+		bool m_modified;
+		bool m_character;
+		bool m_character_infov;
+		int m_unused;
+		float m_Opacity;
+		// CGridAtom** m_Atom;
+		int m_TickNum;
+		short m_AtomCnt;
+		short m_AtomAlloc;
+		short m_count;
+		short m_vid;
+		CModel* m_model;
+		const char* m_modelname;
+		unsigned int m_region_mask;
 	};
 
 	class CNodeVector
@@ -161,11 +198,15 @@ namespace zdb
 	class CLight : public CNode
 	{
 	private:
-		float m_Red;
-		float m_Green;
-		float m_Blue;
-		float m_Intensity;
-		float m_Range;
+		float m_maxRangeSq;
+		float m_maxRange;
+		float m_minRange;
+		float m_invMaxRange;
+		float m_invDeltaRange;
+		float m_opacity;
+		CPnt3D m_diffuse;
+		bool m_appliedToNode;
+		CPnt3D m_WorldPosition;
 	};
 
 	class CVisual

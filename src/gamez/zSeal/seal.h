@@ -1,8 +1,16 @@
 #pragma once
-#include "ai/ai_main.h"
-#include "entity/ent_main.h"
+#include "Apps/FTS/ai_main.h"
 
+#include "gamez/zEntity/ent_main.h"
+#include "gamez/zEntity/intersect.h"
 #include "gamez/zWeapon/zwep_weapon.h"
+
+enum ZOOMSTATE
+{
+	SHORT,
+	MEDIUM,
+	LONG
+};
 
 float noTurnThreshold = 0.0f;
 float fineTuneThreshold = 0.0f;
@@ -76,49 +84,90 @@ public:
 
 	CZBodyPart* GetRootPart() const;
 private:
-	float health;
-	bool dead;
-	float adrenaline;
+	CBody m_body;
 
-	float velX;
-	float velY;
+	int m_MaxFollowerDistance;
+	int m_MaxFollowerDistanceNext;
 
-	float armorHead;
-	float armorBody;
-	float armorLArm;
-	float armorRArm;
-	float armorLLeg;
-	float armorRLeg;
+	ZOOMSTATE m_zoomstate;
+	ZOOMSTATE m_zoomstate_prev;
+	ZOOMSTATE m_zoomstate_echo;
+	float m_zoomrange;
 
-	bool hasFollower;
+	int m_onMaterial;
+	bool m_didrstep;
+	bool m_didlstep;
+
+	float m_bloodriptimer;
+
+	CZSealBody* m_cachedReticuleSeal;
+	bool m_useCachedReticuleSeal;
+	
+	int m_unused;
+
+	bool m_TriggerCount;
+	int m_RemoteRoundCount;
+	float m_RemoteFireElevation;
+
+	// Throttle
+	float pre_thr_l;
+	float pre_thr_fb;
+	float pre_thr_state;
+
+	float m_prev_thr_x;
+	float m_prev_thr_z;
+
+	CPnt3D p0_pos0_w;
+	CPnt3D p0_pos1_w;
+	float p0_d;
+	bool p0_run;
+
+	zdb::DiIntersect pa_di;
+	zdb::DiIntersect pa_diIntersect[1]; // ...what?
+	CPnt3D pi_diTail;
+	int pi_diIntersectHandle[1]; // ...why?
+	int pa_diIntersectHandle;
+
+	// Don't know what type goes into the vector, so we'll assume a float for now
+	std::vector<float> m_volumetricAltitudes;
 
 	CCharacterType* character;
-	CZBodyPart* skel_root;
-	CZBodyPart* lfoot;
-	CZBodyPart* rfoot;
-	CZBodyPart* lhand;
-	CZBodyPart* spinelo;
-	CZBodyPart* rhand;
-	CZBodyPart* hips;
-	CZBodyPart* head;
-	CZBodyPart* neck;
-	CZBodyPart* neck;
-	CZBodyPart* spinehi;
-	CZBodyPart* lthigh;
-	CZBodyPart* rthigh;
-	CZBodyPart* rcalf;
-	CZBodyPart* rbicep;
-	CZBodyPart* rforearm;
-	CZBodyPart* lbicep;
-	CZBodyPart* lforearm;
-	CZBodyPart* lscap;
-	CZBodyPart* rscap;
-	CZBodyPart* lshoulder_wgt;
-	CZBodyPart* rshoulder_wgt;
-	CZBodyPart* lcalf;
-	CZBodyPart* aimnodes;
-	CZBodyPart* ltoe;
-	CZBodyPart* rtoe;
+	CZBodyPart* m_root;
+	CZBodyPart* m_lfoot;
+	CZBodyPart* m_rfoot;
+	CZBodyPart* m_lhand;
+	CZBodyPart* m_spinelo;
+	CZBodyPart* m_rhand;
+	CZBodyPart* m_hips;
+	CZBodyPart* m_head;
+	CZBodyPart* m_neck;
+	CZBodyPart* m_neck;
+	CZBodyPart* m_spinehi;
+	CZBodyPart* m_lthigh;
+	CZBodyPart* m_rthigh;
+	CZBodyPart* m_rcalf;
+	CZBodyPart* m_rbicep;
+	CZBodyPart* m_rforearm;
+	CZBodyPart* m_lbicep;
+	CZBodyPart* m_lforearm;
+	CZBodyPart* m_lscap;
+	CZBodyPart* m_rscap;
+	CZBodyPart* m_lshoulder_wgt;
+	CZBodyPart* m_rshoulder_wgt;
+	CZBodyPart* m_lcalf;
+	CZBodyPart* m_aimnodes;
+	CZBodyPart* m_ltoe;
+	CZBodyPart* m_rtoe;
+	CZBodyPart* m_weapon;
+	CZBodyPart* m_rifle;
+	CZBodyPart* m_pistol;
+	CZBodyPart* m_grenade;
+	CZBodyPart* m_reyeball;
+	CZBodyPart* m_leyeball;
+	CZBodyPart* m_reyelid;
+	CZBodyPart* m_leyelid;
+
+	// std::vector<void> m_deallocList;
 };
 
 class CZSealEx : public zdb::CNodeEx

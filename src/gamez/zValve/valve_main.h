@@ -1,4 +1,8 @@
 #pragma once
+#include <list>
+
+class CValve;
+class CValvePool;
 
 enum OP_TYPE
 {
@@ -35,20 +39,13 @@ enum VALVE_STATE
 	UNKNOWN
 };
 
-class CValve;
-
-class CValvePool
-{
-public:
-	CValve* Acquire(const char* name, VALVE_TYPE type);
-};
+static CValvePool valvePool;
 
 class CValveCBList
 {
-
+public:
+	std::list<void(*)(CValve*, void*)> m_list;
 };
-
-static CValvePool valvePool;
 
 /// <summary>
 /// A class that acts as a "signal" for events to occur in the game.
@@ -61,22 +58,33 @@ public:
 	~CValve();
 
 	static void Init();
+
 	static int Open(const char* reader, VALVE_TYPE type);
+	static void Close();
+	static void Reset();
+
 	static bool Parse(CRdrFile* file, VALVE_TYPE type);
+
 	static CValve* Create(const char* name, VALVE_TYPE type);
 	static CValve* Create(const char* name, int count, VALVE_TYPE type);
 	static void Destroy(CValve* valve);
+
 	static bool Parse(CRdrFile* rFile, VALVE_TYPE type);
 
 	static CValve* GetByName(const char* name);
 	
 	static std::list<CValve*> m_list;
 public:
+	void AssignName(const char* name);
 	void FreeName();
-	void MakeCallbacks(VALVE_STATE state);
-	OP_TYPE ParseOperator(const char* op);
 
-	int count;
+	void* AddCallback(int size, void(*callback)(CValve*, void*), void* buffer);
+	void MakeCallbacks(VALVE_STATE state);
+	void DeleteCallbacks();
+
+	bool Set(int value);
+
+	OP_TYPE ParseOperator(const char* op);
 private:
 	const char* m_name;
 	int m_value;
@@ -86,3 +94,10 @@ private:
 	int m_unused;
 	CValveCBList m_callbacks;
 };
+
+class CValvePool
+{
+public:
+	CValve* Acquire(const char* name, VALVE_TYPE type);
+};
+

@@ -6,11 +6,7 @@
 #include "gamez/zArchive/zar.h"
 
 class _zrdr;
-
-#define cast_rdr_array(type) reinterpret_cast<_zrdr*>(type)
-#define cast_rdr_int(type) reinterpret_cast<int>(type)
-#define cast_rdr_float(type) reinterpret_cast<float>(type)
-#define cast_rdr_double(type) reinterpret_cast<double>(type)
+class CRdrFile;
 
 enum ZRDR_TYPE
 {
@@ -21,32 +17,15 @@ enum ZRDR_TYPE
 	ZRDR_ARRAY
 };
 
-enum OpenFlags
-{
-	READ		= 0x0001,
-	WRITE		= 0x0002,
-	READWRITE	= 0x0003,
-	APPEND		= 0x0100,
-	CREATE		= 0x0200,
-	TRUNCATE	= 0x0400,
-	EXCLUDE     = 0x1000
-};
+int cur_zrdr_flags = 0;
+char* cur_zrdr_path = '\0';
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);
-
-class CFileCD
-{
-public:
-	static int BuildTOC();
-	static char* CreatePath(const char* dir, const char* path);
-	static int Find(const char* file);
-	static int* Read(void* buf, int count);
-};
+char* zrdr_findfile(const char* file, const char* path);
 
 class _zrdr
 {
 public:
-	friend void zrdr_free(_zrdr* reader);
 	friend void zrdr_freearray(_zrdr* array);
 	friend void _resolveA(_zrdr* reader, _zrdr* other, int count);
 	friend void _resolveB(_zrdr* reader, _zrdr* other, int count);
@@ -60,14 +39,18 @@ public:
 public:
 	_zrdr(); 
 	_zrdr(const _zrdr* other, const CSTable* table);
+	~_zrdr();
 
 	void Clone(const _zrdr* other, const CSTable* table);
 public:
 	ZRDR_TYPE type;
 	bool isclone;
 	bool packed;
+
 	int unused;
+
 	int length;
+
 	float real;
 	int integer;
 	const char* string;
@@ -76,6 +59,7 @@ public:
 
 class CRdrFile : public _zrdr
 {
+	friend int zrdr_free(CRdrFile* reader);
 public:
 	CRdrFile();
 	~CRdrFile();
@@ -87,8 +71,9 @@ public:
 	_zrdr* MakeUnion(const char* name, bool createString);
 	char ReadToken(_zrdr** readerArray, _zrdr** unionArray);
 private:
-	void* block;
-	size_t blockSize;
+	CSTable m_strings;
+	void* m_buffer;
+	size_t m_size;
 };
 
 class CRdrEditor
@@ -102,70 +87,6 @@ public:
 
 	int addint(const char* tag, int value);
 	int addSTRING(const char* tag, const char* value);
-
-};
-
-class CIO
-{
-public:
-	CIO();
-	~CIO();
-
-	virtual void Init() { }
-};
-
-class CFileIO : public CIO
-{
-public:
-	CFileIO();
-	~CFileIO();
-
-	static void SetRootPath(const char* rootPath);
-
-	static const char* m_root_path;
-public:
-	bool Open(char* file, OpenFlags flags);
-	// void Open(...);
-	void LoadBuffer();
-	virtual void Release();
-	OpenFlags GetMode() const;
-	bool IsOpen();
-	char* PS2FileName(char* file, char* directory, int param_3);
-
-	virtual void fflush();
-	virtual int fread();
-	// virtual void fread(...);
-	virtual void freadchar();
-	virtual void fseek();
-	virtual void ftell();
-	virtual int fwrite(const void* buf, int count);
-	// virtual void fwrite(...);
-protected:
-	OpenFlags flags;
-	int position;
-private:
-	static bool m_write_status;
-	FILE* file;
-};
-
-class CBufferIO : public CFileIO
-{
-public:
-	CBufferIO();
-	~CBufferIO();
-
-	int fwrite(const void* buf, int count);
-	int fseek(int offset, int origin);
-private:
-	int field14_0x14;
-	int field15_0x18;
-	int field16_0x1c;
-	int field13_0x10;
-	int is_open;
-};
-
-class CRdrIO : public CFileIO
-{
 
 };
 

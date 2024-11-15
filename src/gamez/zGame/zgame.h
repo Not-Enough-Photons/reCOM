@@ -2,10 +2,6 @@
 #include "GameZ/zReader/zrdr_main.h"
 #include "GameZ/zNetwork/znet_main.h"
 
-class CMission;
-
-static CMission theMission;
-
 void game_main(int argc, char** argv);
 void process_arguments(int argc, char** argv);
 
@@ -23,8 +19,6 @@ public:
 	static bool StartEngine();
 };
 
-
-
 class CGameState
 {
 public:
@@ -40,8 +34,18 @@ class CMenuState : public CGameState
 
 class CCinematicState : public CGameState
 {
+public:
 	void Start();
 	void Exit();
+
+	void SetMovie(const char* moviename);
+	void UnInit();
+private:
+	bool m_movierunning;
+	char* m_moviename;
+	int m_savedFrameRate;
+	int m_videoSave[2];
+	float m_fadeTime;
 };
 
 class CCoreState : public CGameState

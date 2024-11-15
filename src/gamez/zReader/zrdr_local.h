@@ -1,1 +1,27 @@
 #pragma once
+#include "zrdr_main.h"
+
+class CRdrEditor
+{
+public:
+	CRdrEditor();
+	~CRdrEditor();
+public:
+	int push(const char* str);
+	int pop();
+
+	int addint(const char* tag, int value);
+	int addintnode(const char* tag, int value);
+	int addPNT3D(const char* tag, )
+	int addSTRING(const char* tag, const char* value);
+};
+
+int CRdrEditor::addint(const char* tag, int value)
+{
+
+}
+
+int CRdrEditor::addSTRING(const char* tag, const char* value)
+{
+
+}
