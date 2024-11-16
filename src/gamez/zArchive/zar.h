@@ -87,6 +87,9 @@ namespace zar
 		CKey* GetOpenKey();
 
 		void* ReleaseDataBuffer();
+
+		void Securify(void* buf, size_t size);
+		void Unsecurify(void* buf, size_t size);
 	private:
 		CKeyRing m_keys;
 

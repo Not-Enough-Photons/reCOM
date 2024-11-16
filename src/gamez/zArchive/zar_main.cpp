@@ -255,4 +255,77 @@ namespace zar
 
 		return buf;
 	}
+
+	/// <summary>
+	/// Encrypts/secures the entire ZAR memory region.
+	/// Performs a pass where all eight bytes per memory line are inverted.
+	/// Basic encryption, but not secure.
+	/// </summary>
+	void CZAR::Securify(void* buf, size_t size)
+	{
+		int line = 0;
+
+		if (m_bSecure && 0 < size)
+		{
+			if (8 < size)
+			{
+				do
+				{
+					// Yes, I know this fucking sucks.
+					unsigned char* byte = reinterpret_cast<unsigned char*>((int)buf + line);
+					line += 8;
+					byte[0] = ~byte[0];
+					byte[1] = ~byte[1];
+					byte[2] = ~byte[2];
+					byte[3] = ~byte[3];
+					byte[4] = ~byte[4];
+					byte[5] = ~byte[5];
+					byte[6] = ~byte[6];
+					byte[7] = ~byte[7];
+				} while (line < size - 8);
+			}
+
+			for (; line < size; line++)
+			{
+				unsigned char* byte = reinterpret_cast<unsigned char*>((int)buf + line);
+				byte[line] = ~byte[line];
+			}
+		}
+	}
+
+	/// <summary>
+	/// Similar to CZAR::Securify, but inverts all bytes belonging to a ZAR memory region,
+	/// exposing its contents.
+	/// </summary>
+	void CZAR::Unsecurify(void* buf, size_t size)
+	{
+		int line = 0;
+
+		if (m_bSecure && 0 < size)
+		{
+			if (8 < size)
+			{
+				do
+				{
+					// Yes, I know this fucking sucks.
+					unsigned char* byte = reinterpret_cast<unsigned char*>((int)buf + line);
+					line += 8;
+					byte[0] = ~byte[0];
+					byte[1] = ~byte[1];
+					byte[2] = ~byte[2];
+					byte[3] = ~byte[3];
+					byte[4] = ~byte[4];
+					byte[5] = ~byte[5];
+					byte[6] = ~byte[6];
+					byte[7] = ~byte[7];
+				} while (line < size - 8);
+			}
+
+			for (; line < size; line++)
+			{
+				unsigned char* byte = reinterpret_cast<unsigned char*>((int)buf + line);
+				byte[line] = ~byte[line];
+			}
+		}
+	}
 }
