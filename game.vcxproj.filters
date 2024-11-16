@@ -60,7 +60,6 @@
     <ClInclude Include="src\gamez\zNetwork\znet_main.h" />
     <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
     <ClInclude Include="src\gamez\zReader\zrdr_main.h" />
-    <ClInclude Include="src\gamez\zReader\zrdr_parse.h" />
     <ClInclude Include="src\gamez\zRender\zrndr_main.h" />
     <ClInclude Include="src\gamez\zSystem\zsys_main.h" />
     <ClInclude Include="src\gamez\zTexture\ztex_main.h" />
@@ -79,6 +78,8 @@
     <ClInclude Include="src\gamez\zFTS\fts_state.h" />
     <ClInclude Include="src\gamez\zEntity\zentity.h" />
     <ClInclude Include="src\gamez\zFTS\zfts.h" />
+    <ClInclude Include="src\gamez\zUtil\util_systemio.h" />
+    <ClInclude Include="src\gamez\zEntity\intersect.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Apps\FTS\ai_main.cpp">
@@ -278,5 +279,8 @@
     <ClCompile Include="src\Apps\FTS\options.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_state.cpp" />
     <ClCompile Include="src\gamez\zCamera\zcam_update.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_systemio.cpp" />
+    <ClCompile Include="src\gamez\zEntity\int_main.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zmpeg.cpp" />
   </ItemGroup>
 </Project>

@@ -11,9 +11,9 @@ class CRdrFile;
 enum ZRDR_TYPE
 {
 	ZRDR_NULL,
-	ZRDR_INT,
-	ZRDR_FLOAT,
-	ZRDR_TAG,
+	ZRDR_INTEGER,
+	ZRDR_REAL,
+	ZRDR_STRING,
 	ZRDR_ARRAY
 };
 
@@ -51,10 +51,13 @@ public:
 
 	int length;
 
-	float real;
-	int integer;
-	const char* string;
-	_zrdr* array;
+	union
+	{
+		float real;
+		int integer;
+		char* string;
+		_zrdr* array;
+	};
 };
 
 class CRdrFile : public _zrdr
@@ -76,19 +79,7 @@ private:
 	size_t m_size;
 };
 
-class CRdrEditor
-{
-public:
-	CRdrEditor();
-	~CRdrEditor();
-public:
-	int push(const char* str);
-	int pop();
 
-	int addint(const char* tag, int value);
-	int addSTRING(const char* tag, const char* value);
-
-};
 
 class CRdrArchive : public zar::CZAR
 {

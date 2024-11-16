@@ -3,12 +3,30 @@
 #include <list>
 
 #include "placeholder.h"
+
 #include "gamez/zReader/zrdr_main.h"
 #include "gamez/zUtil/util_stable.h"
+#include "gamez/zUtil/util_systemio.h"
 
 namespace zar
 {
+	class CKey;
+	class CKeyRing;
+
 	const char* DEFAULT_ZAR_NAME = "ROOT";
+
+	struct TAIL
+	{
+		int flags;
+		int key_count;
+		size_t stable_size;
+		int stable_ofs;
+		int reserved[16];
+		int offset;
+		int crc;
+		int appversion;
+		int version;
+	};
 
 	class CKey
 	{
@@ -20,10 +38,22 @@ namespace zar
 		CKey* InsertKey(CKey* key);
 		CKey* FindKey(const char* key);
 	private:
-		std::list<CKey*> keys;
-		const char* name;
-		int size;
-		int field14_0x14;
+		CKeyRing CKeyRing;
+		const char* m_name;
+		int m_size;
+		int m_offset;
+	};
+
+	class CKeyRing
+	{
+	public:
+		std::list<CKey> m_list;
+	};
+
+	class CKeyVec
+	{
+	public:
+		std::vector<CKey> m_vec;
 	};
 
 	class CZAR
@@ -57,22 +87,27 @@ namespace zar
 		CKey* GetOpenKey();
 
 		void* ReleaseDataBuffer();
+	private:
+		CKeyRing m_keys;
 
-		const char* name;
-		int version;
+		void* m_pFileAlloc;
+		void* m_pFile;
 
-		CBufferIO* bufferIO;
-		CFileIO* fileIO;
+		void* m_databuffer;
+		size_t m_databuffer_size;
 
-		int count;
-		int seekPosition;
+		bool m_modified;
+		bool m_data_padded;
 
-		CKey* root;
+		TAIL m_tail;
 
-		void* buffer;
+		CKey* m_root;
+		CSTable* m_stable;
+		const char* m_filename;
 
-		CSTable* stringTable;
+		CKeyVec m_key_buffer;
 
-		std::list<CKey*> keys;
+		bool m_bCompress;
+		bool m_bSecure;
 	};
 }
