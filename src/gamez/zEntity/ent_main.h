@@ -140,7 +140,7 @@ public:
 	cam_wiggle m_cam_wiggle;
 	throw_params m_throw_params;
 	bool m_loaded;
-	// std::vector<tag_CAMERA_PARAMS> m_cam_params;
+	std::vector<CCameraParams> m_cam_params;
 };
 
 class CEntity

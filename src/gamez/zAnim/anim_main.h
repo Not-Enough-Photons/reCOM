@@ -3,23 +3,12 @@
 #include "gamez/zNode/node_main.h"
 #include "gamez/zMath/zmath_main.h"
 #include "gamez/zReader/zrdr_main.h"
+#include "gamez/zValve/valve_main.h"
+#include "gamez/zSound/zsnd_csnd.h"
 
 class CZAnimMain;
 
 static CZAnimMain ZAnim;
-
-static int InitAnimLang();
-static int ParseScriptKeywords();
-static int ParseAIKeywords();
-static int ParseResetBodyKeyword();
-static int ParseValveKeywords();
-static int ParseCameraKeywords();
-static int ParseThirdPersonCamKeyword();
-static int ParsePlayerConditionKeywords();
-static int ParseWindKeyword();
-static int ParseExecuteActionKeyword();
-static int ParseDecalRemovalKeyword();
-static void ParseScriptKeyword(void* ptr, char* token, int param_3, void(*func), bool(*condition), int param_6);
 
 static bool CmdAddNode(zdb::CNode node);
 static bool CmdRemoveNode(zdb::CNode node);
@@ -45,12 +34,24 @@ struct ANIM_CALLBACK
 
 struct zanim_cmd
 {
-
+	const char* name;
+	zanim_cmd_val cmd_val;
+	void*(*parser)();
+	void*(*begin)();
+	void*(*tick)();
+	void*(*end)();
 };
 
 struct zanim_cmd_val
 {
+	zanim_cmd_index index;
+	unsigned short val;
+};
 
+struct zanim_cmd_index
+{
+	unsigned char cmd;
+	unsigned char set;
 };
 
 struct _zanim_cmd_hdr
@@ -68,29 +69,98 @@ struct _zanim_cmd_set
 	zanim_cmd* cmd_list;
 };
 
-struct _zanim_cmd_params
+struct _zanim_main_params
 {
-	int m_name_index;
-	int m_root_node_index;
+	int m_version;
+	float m_gravity;
+	bool m_search_external_nodes;
+	unsigned int m_unused : 31;
+	int m_UserActionAnimIndex;
+};
+
+struct _zanim_anim_params
+{
+	unsigned char m_name_index;
+	unsigned char m_root_node_index;
+
 	bool m_paused;
 	char m_state;
 	char m_activation;
 	bool m_network_anim;
 	char node_search_scope;
+
 	bool m_auto_copy_anim;
 	bool m_auto_add_to_world;
 	bool m_create_instance;
 	bool m_copy_instance;
 	bool m_clone_anim;
 	bool m_create_root;
+
 	int m_max_anim_copies;
 	int m_unused;
+
 	float m_timer;
 	float m_priority;
+
 	int m_damage_seq_offset;
 	int m_activation_seq_offset;
 	int m_execution_seq_offset;
 	int m_cleanup_seq_offset;
+};
+
+struct _zanim_si_script
+{
+	unsigned short script_pathname_index;
+	unsigned short script_object_name_index;
+	bool spline_interp;
+	int total_frame_count;
+	int script_data_size;
+	char* script_data;
+};
+
+struct _zanim_call_anim_ref
+{
+	unsigned char name_index;
+	unsigned char local_name_index;
+
+	bool stop_on_exit;
+
+	CZAnim* base_anim;
+	CZAnim* executing_anim;
+};
+
+struct _zanim_node_ref
+{
+	unsigned int parent_index : 8;
+	unsigned int name_index : 11;
+	unsigned int node_search : 3;
+
+	bool is_light;
+	bool created_here;
+	bool stop_on_exit;
+	bool on_world_lightlist;
+	bool save_translation;
+	bool save_rotation;
+	bool save_active;
+	bool save_parent;
+	bool is_local_light;
+	bool set_inactive;
+
+	zdb::CNode* node_ptr;
+};
+
+struct _zanim_valve_ref
+{
+	int name_index;
+	CValve* valve;
+};
+
+struct _zanim_sound
+{
+	short name_index;
+	bool stop_on_exit;
+	CSnd* sound_handle;
+	CSndInstance* sound_instance;
 };
 
 struct _zsequence
@@ -115,7 +185,9 @@ struct _zsequence
 
 struct ZAnimNetworkPacket
 {
-
+	int packet_size;
+	unsigned short anim_set_index;
+	unsigned short anim_index;
 };
 
 class CActiveAnimList
@@ -154,20 +226,11 @@ public:
 	void GetName();
 };
 
-typedef _zanim_cmd_hdr* (*rdr_delegate)  (_zrdr*);
-typedef void            (*begin_delegate)(_zanim_cmd_hdr*);
-typedef bool            (*tick_delegate) (_zanim_cmd_hdr*, float*);
-typedef void            (*end_delegate)  (_zanim_cmd_hdr*);
-
 class CZAnimMain
 {
 public:
 	bool InitCommands();
-	void AddCmd(const char* name, 
-		        rdr_delegate   rdr_delegate, 
-		        begin_delegate begin_delegate, 
-		        tick_delegate  tick_delegate, 
-		        end_delegate   end_delegate);
+	void AddCmd(zanim_cmd cmd);
 private:
 	bool m_IsOpen;
 	bool m_IsStarted;
