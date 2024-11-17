@@ -12,7 +12,6 @@ public:
 
 	int addint(const char* tag, int value);
 	int addintnode(const char* tag, int value);
-	int addPNT3D(const char* tag, )
 	int addSTRING(const char* tag, const char* value);
 };
 

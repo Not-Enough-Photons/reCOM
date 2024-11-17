@@ -45,6 +45,11 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	return valve;
 }
 
+void CValve::RegisterCommands()
+{
+	ZAnim.AddCmd("VALVE", CmdParseCmp, NULL, CmdTickCmp, NULL);
+}
+
 void CValve::AssignName(const char* name)
 {
 
@@ -59,8 +64,7 @@ void CValve::DeleteCallbacks()
 {
 	for (auto it = m_callbacks.m_list.begin(); it != m_callbacks.m_list.end(); it++)
 	{
-		// TODO:
-		// can't delete function pointers....
+		m_callbacks.m_list.erase(m_callbacks.m_list.begin());
 	}
 }
 

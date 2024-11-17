@@ -24,7 +24,7 @@ namespace zdb
 		int GetIndex(CNode* node) const;
 	private:
 		std::vector<CNode*> nodes;
-		bool requestAlloc;
+		bool m_locked;
 		int capacity;
 		CNode** head;
 		CNode** tail;

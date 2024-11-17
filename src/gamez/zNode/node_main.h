@@ -24,47 +24,10 @@ namespace zdb
 	class CSaveLoad;
 	class CModel;
 	class CAssetLib;
+	class CGridAtom;
 
 	const char* g_RootNodeTag = "ROOT";
 	const char* g_DeletedNodeTag = "DELETED_NODE";
-
-	struct tag_NODE_PARAMS
-	{
-		CMatrix m_matrix;
-		// TODO:
-		// Implement the bounding box class
-		// CBBox m_bbox;
-		char m_type;
-		bool m_active;
-		bool m_dynamic_motion;
-		bool m_dynamic_light;
-		bool m_landmark;
-		bool m_light;
-		bool m_prelight;
-		bool m_fog;
-		bool m_transparent;
-		// imposters/billboards
-		int m_facade;
-		bool m_reflective;
-		bool m_bumpmap;
-		bool m_hasDI;
-		int m_region_shift;
-		bool m_has_visuals_prior_to_export;
-		bool m_shadow;
-		bool m_worldchild;
-		bool m_char_common;
-		bool m_NOTUSED;
-		bool m_hasVisuals;
-		bool m_hasMesh;
-		bool m_scrolling_texture;
-		bool m_light_dynamic;
-		bool m_light_static;
-		bool m_clutter;
-		bool m_mtx_is_identity;
-		bool m_use_parent_bbox;
-		bool m_apply_clip;
-	};
-
 	class CNode
 	{
 	public:
@@ -91,8 +54,9 @@ namespace zdb
 		virtual void Release();
 		bool Rendered();
 
+		void InsertAtom(CGridAtom* atom);
+		CGridAtom* GetAtom(int index);
 		void FreeAtom();
-		undefined4 GetAtom();
 
 		float GetRadius() const;
 		float GetRadiusSq() const;
@@ -111,7 +75,42 @@ namespace zdb
 		void SetScale(undefined8 param_2);
 
 	protected:
-		tag_NODE_PARAMS tag_NODE_PARAMS;
+		struct tag_NODE_PARAMS
+		{
+			CMatrix m_matrix;
+			// TODO:
+			// Implement the bounding box class
+			// CBBox m_bbox;
+			char m_type;
+			bool m_active;
+			bool m_dynamic_motion;
+			bool m_dynamic_light;
+			bool m_landmark;
+			bool m_light;
+			bool m_prelight;
+			bool m_fog;
+			bool m_transparent;
+			// imposters/billboards
+			int m_facade;
+			bool m_reflective;
+			bool m_bumpmap;
+			bool m_hasDI;
+			int m_region_shift;
+			bool m_has_visuals_prior_to_export;
+			bool m_shadow;
+			bool m_worldchild;
+			bool m_char_common;
+			bool m_NOTUSED;
+			bool m_hasVisuals;
+			bool m_hasMesh;
+			bool m_scrolling_texture;
+			bool m_light_dynamic;
+			bool m_light_static;
+			bool m_clutter;
+			bool m_mtx_is_identity;
+			bool m_use_parent_bbox;
+			bool m_apply_clip;
+		} params;
 		CNode* m_parent;
 		CNodeVector m_child;
 		// TODO:
@@ -131,7 +130,7 @@ namespace zdb
 		bool m_character_infov;
 		int m_unused;
 		float m_Opacity;
-		// CGridAtom** m_Atom;
+		CGridAtom** m_Atom;
 		int m_TickNum;
 		short m_AtomCnt;
 		short m_AtomAlloc;
@@ -142,6 +141,17 @@ namespace zdb
 		unsigned int m_region_mask;
 	};
 
+	/// <summary>
+	/// Doubly linked list of atoms that occupy a single cell.
+	/// </summary>
+	class CGridAtom
+	{
+	public:
+		CNode* Ent;
+		CGridAtom* Next;
+		CGridAtom* Prev;
+	};
+
 	class CNodeVector
 	{
 	public:
@@ -150,9 +160,9 @@ namespace zdb
 		bool Exists(const CNode* node) const;
 		bool Remove(const CNode* node);
 		CNode* GetNode(const char* name) const;
-	private:
-		std::vector<CNode*> nodes;
-		int size;
+
+		std::vector<CNode*> m_nodes;
+		int m_size;
 	};
 
 	class CNodeEx : public CNode

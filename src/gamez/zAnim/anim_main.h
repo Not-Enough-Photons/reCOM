@@ -154,10 +154,20 @@ public:
 	void GetName();
 };
 
+typedef _zanim_cmd_hdr* (*rdr_delegate)  (_zrdr*);
+typedef void            (*begin_delegate)(_zanim_cmd_hdr*);
+typedef bool            (*tick_delegate) (_zanim_cmd_hdr*, float*);
+typedef void            (*end_delegate)  (_zanim_cmd_hdr*);
+
 class CZAnimMain
 {
 public:
 	bool InitCommands();
+	void AddCmd(const char* name, 
+		        rdr_delegate   rdr_delegate, 
+		        begin_delegate begin_delegate, 
+		        tick_delegate  tick_delegate, 
+		        end_delegate   end_delegate);
 private:
 	bool m_IsOpen;
 	bool m_IsStarted;

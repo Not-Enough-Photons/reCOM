@@ -103,6 +103,27 @@ struct PNT4D
 	float w;
 };
 
+struct IPNT2D
+{
+	int x;
+	int y;
+};
+
+struct IPNT3D
+{
+	int x;
+	int y;
+	int z;
+};
+
+struct IPNT4D
+{
+	int x;
+	int y;
+	int z;
+	int w;
+};
+
 class CPnt2D
 {
 	float x;

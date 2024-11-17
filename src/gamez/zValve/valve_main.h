@@ -64,14 +64,16 @@ public:
 	static void Reset();
 
 	static bool Parse(CRdrFile* file, VALVE_TYPE type);
+	static void* CmdParseCmp(_zrdr* reader);
+	static bool CmdTickCmp(_zanim_cmd_hdr* header, float* buffer);
 
 	static CValve* Create(const char* name, VALVE_TYPE type);
 	static CValve* Create(const char* name, int count, VALVE_TYPE type);
 	static void Destroy(CValve* valve);
 
-	static bool Parse(CRdrFile* rFile, VALVE_TYPE type);
-
 	static CValve* GetByName(const char* name);
+
+	static void RegisterCommands();
 	
 	static std::list<CValve*> m_list;
 public:

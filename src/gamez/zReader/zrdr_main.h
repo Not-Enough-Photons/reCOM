@@ -41,7 +41,10 @@ public:
 	_zrdr(const _zrdr* other, const CSTable* table);
 	~_zrdr();
 
+	bool IsArray() const;
 	void Clone(const _zrdr* other, const CSTable* table);
+	int GetInt() const;
+	char* Get(int offset) const;
 public:
 	ZRDR_TYPE type;
 	bool isclone;

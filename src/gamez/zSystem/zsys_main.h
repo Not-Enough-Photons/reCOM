@@ -3,8 +3,6 @@
 #include <cstring>
 #include <cassert>
 
-#include "placeholder.h"
-
 void InitSystemTuners();
 void zSysMain();
 void zSysReset();
@@ -16,6 +14,26 @@ void* zAllocateString(const char* str, const char* sourceFile, int line);
 void* zReAllocate(void* ptr, size_t size, const char* sourceFile, int line);
 void* zAllocate(size_t size, const char* sourceFile, int line);
 void* zAllocateInst(void* instance, const char* sourceFile, int line);
+
+class _zsys_public
+{
+public:
+	// dmaChan* DmaToVif0;
+	// dmaChan* DmaToVif1;
+	// dmaChan* DmaToGif;
+// 
+	// dmaChan* DmaFromSPR;
+	// long long* sprPacketEnd[2];
+	int sprPx;
+
+	bool isT10K;
+	bool isCdBoot;
+	bool cdSounds;
+	bool memIrxLoaded;
+
+	unsigned int timerTicksPerSecond;
+	float timerScale;
+};
 
 class CSched_Manager
 {

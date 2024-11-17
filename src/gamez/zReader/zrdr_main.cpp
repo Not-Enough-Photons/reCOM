@@ -16,6 +16,11 @@ _zrdr::_zrdr(const _zrdr* other, const CSTable* table)
 	Clone(other, table);
 }
 
+bool _zrdr::IsArray() const
+{
+	return type == ZRDR_ARRAY;
+}
+
 void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 {
 	if (!init)
@@ -35,6 +40,37 @@ void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 	{
 
 	}
+}
+
+int _zrdr::GetInt() const
+{
+	if (type == ZRDR_INTEGER)
+	{
+		return integer;
+	}
+	else if (type == ZRDR_REAL)
+	{
+		return static_cast<int>(real);
+	}
+
+	return 0;
+}
+
+char* _zrdr::Get(int offset) const
+{
+	int length = 0;
+
+	if (type == ZRDR_ARRAY)
+	{
+		length = array->integer - 1;
+	}
+
+	if (offset < length)
+	{
+		return string + (offset + 1) * 8;
+	}
+
+	return NULL;
 }
 
 _zrdr* zrdr_findtag(_zrdr* reader, const char* name)

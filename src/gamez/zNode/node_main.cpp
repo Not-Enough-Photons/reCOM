@@ -36,18 +36,18 @@ namespace zdb
 
 		if (!string_exists(name))
 		{
-			str = node->name;
+			str = node->m_name;
 			if (string_exists(str) && str != "UNNAMED_NODE")
 			{
 				// free(str);
 			}
 
 			str = strdup("Node");
-			node->name = str;
+			node->m_name = str;
 		}
 		else
 		{
-			str = node->name;
+			str = node->m_name;
 
 			if (string_exists(str) && str != "UNNAMED_NODE")
 			{
@@ -56,12 +56,12 @@ namespace zdb
 
 			if (!string_exists(str))
 			{
-				node->name = "UNNAMED_NODE";
+				node->m_name = "UNNAMED_NODE";
 			}
 			else
 			{
 				str = strdup(name);
-				node->name = str;
+				node->m_name = str;
 			}
 		}
 
@@ -70,52 +70,52 @@ namespace zdb
 
 	void CNode::AddChild(CNode* node)
 	{
-		CNode* parent = node->parent;
+		CNode* parent = node->m_parent;
 		if (node != NULL && parent != this)
 		{
 			CNode* child = node;
-			if (nodeType != 3)
+			if (tag_NODE_PARAMS.m_type != 3)
 			{
 				if (parent != NULL)
 				{
 					parent->DeleteChild(node);
 				}
 
-				child->parent = this;
-				child->refCount++;
+				child->m_parent = this;
+				child->m_count++;
 			}
 
-			if (childCount == children.size() && 1000 < childCount)
+			if (m_count == m_child.m_nodes.size() && 1000 < m_count)
 			{
-				children.reserve(childCount + 100);
+				m_child.m_nodes.reserve(m_count + 100);
 			}
 
-			children.insert(children.begin(), child);
+			m_child.m_nodes.insert(m_child.m_nodes.begin(), child);
 		}
 	}
 
 	int CNode::DeleteChild(CNode* child)
 	{
-		int count = child->refCount;
+		int count = child->m_count;
 
-		if (nodeVector.Exists(child))
+		if (m_child.Exists(child))
 		{
-			if (nodeType == 3)
+			if (p.m_type == 3)
 			{
-				nodeVector.Remove(child);
+				m_child.Remove(child);
 				count = -1;
 			}
 			else
 			{
-				child->refCount--;
-				if (child->refCount <= 0)
+				child->m_count--;
+				if (child->m_count <= 0)
 				{
-					child->refCount = 0;
+					child->m_count = 0;
 				}
 
-				count = child->refCount;
-				nodeVector.Remove(child);
-				child->parent = NULL;
+				count = child->m_count;
+				m_child.Remove(child);
+				child->m_parent = NULL;
 				// some flag BS
 				// hierarchyFlags = hierarchyFlags & 0xfd | 2;
 			}

@@ -2,8 +2,6 @@
 #include <string>
 #include <list>
 
-#include "placeholder.h"
-
 #include "gamez/zReader/zrdr_main.h"
 #include "gamez/zUtil/util_stable.h"
 #include "gamez/zUtil/util_systemio.h"
