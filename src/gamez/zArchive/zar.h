@@ -78,9 +78,17 @@ namespace zar
 		void SetFileName();
 		size_t GetSize(const char* key);
 
-		void Fetch(const char* key, undefined4 param_3);
-		bool Fetch(const char* key, undefined8 param_3);
-		bool Fetch(const char* key, undefined param_3, undefined8 param_4);
+		bool Fetch(CKey* key, void* buf, int count, unsigned int flags);
+		bool Fetch(const char* key, int(*callback)(CZAR*, int, void*), void* buf);
+		bool Fetch(const char* key, void* buf, int count);
+		bool Fetch(const char* key, const char** buf);
+		bool Fetch(const char* key, float* value);
+		bool Fetch(const char* key, unsigned int* value);
+		bool Fetch(const char* key, int* value);
+		bool Fetch(const char* key, bool* value);
+		bool FetchAll(int(*callback)(CZAR*, char*, void*, int, void*), void* buf);
+		bool FetchLIP(CKey* key, void** buf);
+		int FetchString(const char* key, const char* str, int length);
 
 		CKey* GetOpenKey();
 
