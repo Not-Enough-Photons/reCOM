@@ -203,9 +203,21 @@ public:
 	void GetNode();
 };
 
-class CZAnimEx : public CZAnim
+class CZAnimEx : public zdb::CNodeEx
 {
+public:
 	void AddAnimEx();
+private:
+	CZAnim* m_anim;
+
+	zdb::CNode* m_nodeEx;
+	zdb::CNode* m_root_node;
+
+	float m_shield;
+	float m_armor;
+	float m_armor_max;
+	float m_health;
+	float m_health_max;
 };
 
 class CZAnimSet

@@ -146,6 +146,31 @@ class C2DFont : public C2D
 {
 public:
 	C2DFont();
+private:
+	std::vector<C2DFontEntry> m_charlist;
+	zdb::CTexHandle* m_pTexHandle;
+	zdb::CTexHandle* m_pGlowTexHandle;
+	int m_displaytop;
+	int m_displaybottom;
+	int XPadding;
+	float m_avgWidth;
+	float m_opacity;
+	float m_scale_factor;
+};
+
+class C2DFontEntry
+{
+private:
+	char m_char;
+	int m_offset;
+	int m_width;
+	int m_displaywidth;
+	int m_xspacing;
+	int m_top;
+	int m_bottom;
+	int m_baseline;
+	int m_lKerning;
+	int m_rKerning;
 };
 
 class C2DMessage_Q : public C2D

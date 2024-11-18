@@ -15,6 +15,26 @@ void* zReAllocate(void* ptr, size_t size, const char* sourceFile, int line);
 void* zAllocate(size_t size, const char* sourceFile, int line);
 void* zAllocateInst(void* instance, const char* sourceFile, int line);
 
+struct twelve
+{
+	twelve* next;
+	unsigned int dummy[2];
+};
+
+class _zmalloc
+{
+private:
+	twelve* m_page;
+	twelve* m_head;
+	twelve* m_tail;
+
+	unsigned int m_bytes;
+	unsigned int m_size;
+	unsigned int m_count;
+	unsigned int m_peak;
+	unsigned int m_overflow;
+};
+
 class _zsys_public
 {
 public:
@@ -51,7 +71,5 @@ class CSaveModule
 public:
 	CSaveModule(const char* module, CSaveManager* mcSaveManager);
 	~CSaveModule();
-
-
 public:
 };

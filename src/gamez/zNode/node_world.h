@@ -55,7 +55,7 @@ namespace zdb
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);
 
-		undefined4 DismemberWorldModel();
+		// undefined4 DismemberWorldModel();
 
 		void ClearLightMapList();
 		void ClearShadowList();
@@ -64,7 +64,7 @@ namespace zdb
 		void ComputeLightIntensity(float intensity, const CPnt3D& point, float* lightRef);
 
 		void GetTexHandle() const;
-		undefined4 GetTextureByName(const char* name) const;
+		// undefined4 GetTextureByName(const char* name) const;
 		int GetModel() const;
 	private:
 		int expandSize;
@@ -80,6 +80,12 @@ namespace zdb
 		~CGrid();
 	public:
 		void Insert(CNode* node);
+	};
+
+	class CCell
+	{
+	public:
+
 	};
 
 	class CWind

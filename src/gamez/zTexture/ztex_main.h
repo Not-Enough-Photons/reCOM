@@ -68,6 +68,21 @@ namespace zdb
 		CLoadImage* m_loadimage;
 	};
 
+	class CDynTexList
+	{
+
+	};
+
+	class CTexList
+	{
+
+	};
+
+	class CTexPalList
+	{
+
+	};
+
 	class CTexPalette
 	{
 	public:
