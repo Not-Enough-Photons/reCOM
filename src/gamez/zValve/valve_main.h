@@ -64,8 +64,8 @@ public:
 	static void Reset();
 
 	static bool Parse(CRdrFile* file, VALVE_TYPE type);
-	static void* CmdParseCmp(_zrdr* reader);
-	static bool CmdTickCmp(_zanim_cmd_hdr* header, float* buffer);
+	static _zanim_cmd_hdr* CmdParseCmp(_zrdr* reader);
+	static bool CmdTickCmp(_zanim_cmd_hdr* header, float* delta);
 
 	static CValve* Create(const char* name, VALVE_TYPE type);
 	static CValve* Create(const char* name, int count, VALVE_TYPE type);

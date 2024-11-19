@@ -3,6 +3,7 @@
 // - Connect with rendering APIs like OpenGL, DirectX, and Vulkan
 // - Figure what the whole point of the Z renderer is
 
+#include "gamez/zMath/zmath_main.h"
 #include "gamez/zNode/node_main.h"
 #include "gamez/zNode/node_world.h"
 #include "gamez/zTexture/ztex_main.h"
@@ -14,6 +15,29 @@ namespace zdb
 	typedef struct tag_ZVIS_FOV
 	{
 
+	};
+
+	class CVisBase
+	{
+
+	};
+
+	class CVisual : public CVisBase
+	{
+	public:
+		static void* localLightBuf;
+		static CLight* localLightPtr;
+
+		static PNT3D m_addColor;
+		static bool m_applyDetailTexture;
+		static bool m_applyLocalLights;
+		static bool m_applyMultipass;
+		static bool m_applyShadow;
+
+		static PNT3D m_basefog_color;
+		static CCamera* m_camera;
+		static int custom
+	public:
 	};
 }
 

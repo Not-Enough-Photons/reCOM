@@ -2,8 +2,6 @@
 #include <vector>
 #include <string>
 
-#include "placeholder.h"
-
 #include "node_world.h"
 
 #include "Apps/FTS/ai_main.h"
@@ -187,22 +185,6 @@ namespace zdb
 	public:
 		void Read(CSaveLoad& saver);
 		void Release(CNode* node);
-	};
-
-	class CCamera : public CNode
-	{
-	public:
-		static void RegisterAnimCommands();
-		float GetScaledRangeSquared(const CPnt3D& point);
-	private:
-		CPnt3D m_pos;
-		float m_scaledrange;
-	};
-
-	class CAppCamera : public CCamera
-	{
-	public:
-		static void RegisterAnimCommands();
 	};
 
 	class CLight : public CNode

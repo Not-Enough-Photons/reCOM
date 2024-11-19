@@ -275,17 +275,7 @@ namespace zdb
 		return first != last;
 	}
 
-	float CCamera::GetScaledRangeSquared(const CPnt3D& point)
-	{
-		float x = point.x;
-		float y = point.y;
-		float z = point.z;
-		CPnt3D pnt;
-		pnt.x = x;
-		pnt.y = y;
-		pnt.z = z;
-		return m_scaledrange * (pnt.z * pnt.z + pnt.x * pnt.x + pnt.y * pnt.y);
-	}
+	
 }
 
 CNodeAction::CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle)

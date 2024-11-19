@@ -30,12 +30,17 @@ public:
 	friend void _resolveA(_zrdr* reader, _zrdr* other, int count);
 	friend void _resolveB(_zrdr* reader, _zrdr* other, int count);
 
+	friend char* zrdr_findstring(_zrdr* reader, const char* tag);
 	friend bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
+	friend bool zrdr_finduint(_zrdr* reader, const char* tag, unsigned int* output, int iterations);
 	friend bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
 	friend bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
 	friend _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
 	friend _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, int iterations);
 
+	friend bool zrdr_tobool(_zrdr* reader, bool* output);
+
+	friend _zrdr* _zrdr_nexttag(_zrdr* reader, const char* tag, size_t size, _zrdr* other);
 public:
 	_zrdr(); 
 	_zrdr(const _zrdr* other, const CSTable* table);
@@ -81,8 +86,6 @@ private:
 	void* m_buffer;
 	size_t m_size;
 };
-
-
 
 class CRdrArchive : public zar::CZAR
 {

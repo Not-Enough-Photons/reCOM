@@ -12,6 +12,16 @@ enum ZOOMSTATE
 	LONG
 };
 
+enum AiSig
+{
+	AISIG_UNKNOWN,
+	AISIG_ANIMCOMPLETE,
+	AISIG_BEGINCRITICAL,
+	AISIG_ENDCRITICAL,
+	AISIG_SUSPEND,
+	AISIG_RELEASE
+};
+
 float noTurnThreshold = 0.0f;
 float fineTuneThreshold = 0.0f;
 float throttleFudge = 0.0f;
@@ -197,7 +207,8 @@ private:
 
 class CSealCtrlAi : CSealCtrl
 {
-
+public:
+	static bool RegisterCommands();
 };
 
 class CSealCtrlSquirm : CSealCtrl
@@ -374,4 +385,263 @@ class CStealthPlanner : public CAiPlanner
 class CRestrainedPlanner : public CAiPlanner
 {
 
+};
+
+class CTAction
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTComm
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTDebug
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTDoor
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTEvent
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTFireMode
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTFireWeapon
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTGoto
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTHold
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTInState
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTInView
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTLookAt
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTMacro
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTMap
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTMove
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTPaint
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTParam
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTPlay
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void Create(int count, unsigned int*, float, float);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTPursue
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTRange
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTRegion
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTSelect
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTSetAnimSet
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTSetMode
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTSignal
+{
+public:
+	static AiSig GetSignalByName(const char* signal);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTSound
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTSpecial
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTStance
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static void End(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTState
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTStopAll
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTTeam
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTValve
+{
+public:
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+};
+
+class CTWait
+{
+public:
+	static void Begin(_zanim_cmd_hdr* header);
+	static _zanim_cmd_hdr* Parse(_zrdr* reader);
+	static bool Tick(_zanim_cmd_hdr* header, float* delta);
 };

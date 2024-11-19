@@ -242,7 +242,11 @@ class CZAnimMain
 {
 public:
 	bool InitCommands();
-	void AddCmd(zanim_cmd cmd);
+	unsigned int AddCmd(const char* name, 
+		_zanim_cmd_hdr*(*parser)(_zrdr*), 
+		void(*begin)(_zanim_cmd_hdr*),
+		bool(*tick)(_zanim_cmd_hdr*, float*),
+		void(*end)(_zanim_cmd_hdr*));
 private:
 	bool m_IsOpen;
 	bool m_IsStarted;

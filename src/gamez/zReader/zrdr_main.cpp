@@ -132,6 +132,93 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, int iterations)
 	return NULL;
 }
 
+bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
+{
+	_zrdr* rdr = zrdr_findtag_startidx(reader, tag, 1);
+	return zrdr_tobool(rdr, output);
+}
+
+bool zrdr_tobool(_zrdr* reader, bool* output)
+{
+	if (output == NULL)
+	{
+		output = false;
+	}
+
+	if (reader != NULL)
+	{
+		if (reader->type == ZRDR_ARRAY && 1 < reader->array->integer)
+		{
+			reader = reader->array;
+		}
+
+		if (reader->type == ZRDR_INTEGER)
+		{
+			if (reader->integer == 0)
+			{
+				*output = false;
+				return true;
+			}
+			else
+			{
+				*output = true;
+				return true;
+			}
+		}
+		else
+		{
+			if (reader->type == ZRDR_STRING)
+			{
+				if (strcasecmp(reader->string, "true") == 0 || strcasecmp(reader->string, "on"))
+				{
+					*output = true;
+					return true;
+				}
+				else if (strcasecmp(reader->string, "false") == 0 || strcasecmp(reader->string, "off"))
+				{
+					*output = false;
+					return true;
+				}
+			}
+		}
+
+	}
+	
+	return false;
+}
+
+_zrdr* _zrdr_nexttag(_zrdr* reader, const char* name, size_t size, _zrdr* other)
+{
+	int i = 8;
+	int count = 1;
+
+	while (true)
+	{
+		_zrdr* subreader = reader->array;
+
+		if (subreader->integer <= count)
+		{
+			return NULL;
+		}
+
+		if (subreader == other)
+		{
+			other = NULL;
+		}
+		else if (subreader->type == ZRDR_ARRAY)
+		{
+			return _zrdr_nexttag(subreader, name, size, other);
+		}
+		else if (subreader->type == ZRDR_STRING && other == NULL && strncmp(subreader->string, name, size) == 0)
+		{
+			return subreader + 1;
+		}
+
+		i += 8;
+		count++;
+	}
+}
+
 void zrdr_freearray(_zrdr* reader)
 {
 	_zrdr* array = NULL;
