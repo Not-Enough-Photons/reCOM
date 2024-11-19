@@ -105,9 +105,28 @@ bool CFileIO::Open(char* file, OpenFlags flags)
 	return true;
 }
 
+void CFileIO::Close()
+{
+
+}
+
 int CFileIO::fwrite(const void* buf, int count)
 {
 	return std::fwrite(buf, 4, count, m_file);
+}
+
+void CBufferIO::Close()
+{
+	if (m_cd != NULL)
+	{
+		free(m_cd);
+	}
+
+	m_cd = NULL;
+	m_filesize = 0;
+	m_file = 0;
+	m_mode = OpenFlags::NONE;
+	CFileIO::Close();
 }
 
 int CBufferIO::fwrite(const void* buf, int count)

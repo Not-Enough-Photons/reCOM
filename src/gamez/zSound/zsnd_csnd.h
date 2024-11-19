@@ -2,12 +2,10 @@
 #include <vector>
 #include <unordered_map>
 
-#include "placeholder.h"
-
-#include "valve\valve_main.h"
-
 #include "gamez/zArchive/zar.h"
+#include "gamez/zMath/zmath_main.h"
 #include "gamez/zReader/zrdr_main.h"
+#include "gamez/zValve/valve_main.h"
 
 enum MUSIC_MODE
 {
@@ -28,6 +26,8 @@ bool bnkArchiveIsOpen = false;
 _zrdr* sound_rdr;
 bool snd_system_initialized = false;
 
+std::unordered_map<const char*, CSnd*> sound_map;
+
 class CSnd
 {
 public:
@@ -41,7 +41,7 @@ public:
 	void LoadCSnd(_zrdr* reader);
 	float CalcVol(float volume, float masterVolume);
 	void SetupJukebox();
-private:
+
 	static bool m_isDisabled;
 	static bool m_bShowSubtitles;
 	static bool m_hasreverb;
@@ -54,27 +54,32 @@ private:
 	static std::vector<CSnd*> m_bankloaded;
 	static std::vector<CSnd*> m_soundbank;
 	static std::vector<CSnd*> m_soundlist;
+protected:
+	float m_vol;
 
-	float volume;
-	char* name;
-	float range;
-	float maxVol;
-	float field7_0x10;
-	void* bank;
-	int curSndID;
-	int field_0x1c;
-	undefined4 field14_0x20;
-	undefined4 field15_0x24;
-	undefined4 field16_0x28;
-	undefined field_0x1e;
-	const char* subtitle;
-	float subtitleTime;
-	CValve* subtitleValve;
-	int offset1;
-	int offset2;
-	bool oneshot;
-	undefined field_0x40;
-	int type;
+	const char* m_name;
+
+	PNT2D m_range;
+
+	int m_bank;
+	int m_ID;
+
+	bool m_isStreamed;
+	bool m_isOneShot;
+	bool m_isHeadsetStream;
+
+	unsigned int m_soundmode;
+	unsigned int m_type;
+
+	const char* m_stream1name;
+	const char* m_stream2name;
+
+	const char* m_subtitle;
+	CValve* m_subtitle_translator;
+	float m_subtitle_time;
+
+	int m_offset1;
+	int m_offset2;
 };
 
 class CSndInstance : public CSnd
@@ -89,20 +94,23 @@ public:
 class CSndJukebox
 {
 public:
-	void Cleanup();
-	void LoadPlaylists();
-	void LoadMusicLists();
+	// Disallow construction of a static class
+	CSndJukebox() = delete;
+public:
+	static void Cleanup();
+	CRdrFile* LoadPlaylists();
+	static void LoadMusicLists();
 
-	void Start();
-	void Tick(MUSIC_MODE mode);
-	void Stop();
+	static void Start();
+	static void Tick(float delta);
+	static void Stop();
 
-	void Play(MUSIC_MODE mode, undefined8 param_2);
-	void PlayRandom();
+	static void Play(MUSIC_MODE mode, CSnd* sound);
+	static void PlayRandom(MUSIC_MODE mode);
 	
-	void NormalizeWeights();
+	static void NormalizeWeights();
 
-	bool IsInFight(bool inFight);
+	static bool IsInFight(bool inFight);
 private:
 	float m_weights;
 	MUSIC_MODE m_currentmode;

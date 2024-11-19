@@ -3,6 +3,7 @@
 
 enum OpenFlags
 {
+	NONE = 0,
 	READ = 0x0001,
 	WRITE = 0x0002,
 	READWRITE = 0x0003,
@@ -42,6 +43,7 @@ public:
 	static bool m_write_status;
 public:
 	bool Open(char* file, OpenFlags flags);
+	void Close();
 	// void Open(...);
 	void LoadBuffer();
 	virtual void Release();
@@ -58,7 +60,7 @@ public:
 	virtual int fwrite(const void* buf, int count);
 	// virtual void fwrite(...);
 protected:
-	FILE* m_file;
+	int m_file;
 	CFileCD* m_cd;
 	int m_filesize;
 	OpenFlags m_mode;
@@ -67,15 +69,11 @@ protected:
 class CBufferIO : public CFileIO
 {
 public:
-	CBufferIO();
+	CBufferIO() : CFileIO() { }
 	~CBufferIO();
+
+	void Close();
 
 	int fwrite(const void* buf, int count);
 	int fseek(int offset, int origin);
-private:
-	int field14_0x14;
-	int field15_0x18;
-	int field16_0x1c;
-	int field13_0x10;
-	int is_open;
 };

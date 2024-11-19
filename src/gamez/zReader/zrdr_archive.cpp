@@ -3,6 +3,7 @@
 #include "zrdr_main.h"
 
 #include "gamez/zUtil/util_main.h"
+#include "gamez/zUtil/util_stable.h"
 #include "gamez/zUtil/util_systemio.h"
 
 zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
@@ -48,7 +49,7 @@ bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 	{
 		zar::CZAR* archive = *it;
 
-		if (!string_exists(strstr(archive->name, fullPath)))
+		if (!string_exists(strstr(archive->m_name, fullPath)))
 		{
 			continue;
 		}

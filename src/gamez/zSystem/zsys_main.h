@@ -15,6 +15,8 @@ void* zReAllocate(void* ptr, size_t size, const char* sourceFile, int line);
 void* zAllocate(size_t size, const char* sourceFile, int line);
 void* zAllocateInst(void* instance, const char* sourceFile, int line);
 
+_zsys_public zSys;
+
 struct twelve
 {
 	twelve* next;
@@ -38,12 +40,13 @@ private:
 class _zsys_public
 {
 public:
-	// dmaChan* DmaToVif0;
-	// dmaChan* DmaToVif1;
-	// dmaChan* DmaToGif;
-// 
-	// dmaChan* DmaFromSPR;
-	// long long* sprPacketEnd[2];
+	void* DmaToVif0;
+	void* DmaToVif1;
+	void* DmaToGif;
+	void* DmaFromSPR;
+
+	long sprPacketEnd[2];
+
 	int sprPx;
 
 	bool isT10K;

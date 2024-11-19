@@ -47,7 +47,7 @@ namespace zdb
 
 		CNode* FindChild();
 
-		undefined8 BuildMTW(const CMatrix& mat);
+		CMatrix& BuildMTW(const CMatrix& mat);
 
 		virtual void Release();
 		bool Rendered();
@@ -185,6 +185,12 @@ namespace zdb
 	public:
 		void Read(CSaveLoad& saver);
 		void Release(CNode* node);
+	private:
+		int m_variant;
+		bool m_bForceExport;
+		bool m_bbox_valid;
+		CRefList m_list;
+		CAssetLib* m_AssetLib;
 	};
 
 	class CLight : public CNode

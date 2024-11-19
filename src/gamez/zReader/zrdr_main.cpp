@@ -132,10 +132,44 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, int iterations)
 	return NULL;
 }
 
+char* zrdr_findstring(_zrdr* reader, const char* name)
+{
+	auto tag = zrdr_findtag_startidx(reader, name, 1);
+
+	if (tag == NULL)
+	{
+		return NULL;
+	}
+	else if (tag->type == ZRDR_TYPE::ZRDR_STRING)
+	{
+		return tag->string;
+	}
+	else if (tag->type == ZRDR_TYPE::ZRDR_ARRAY && tag->array->type == ZRDR_STRING)
+	{
+		return tag->array->string;
+	}
+	else
+	{
+		return NULL;
+	}
+
+	return NULL;
+}
+
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
 {
 	_zrdr* rdr = zrdr_findtag_startidx(reader, tag, 1);
 	return zrdr_tobool(rdr, output);
+}
+
+bool zrdr_toINT(_zrdr* reader, int* value, int index)
+{
+	if (reader == NULL || reader->type != ZRDR_TYPE::ZRDR_ARRAY || reader->array->integer < index + 1)
+	{
+		return false;
+	}
+
+
 }
 
 bool zrdr_tobool(_zrdr* reader, bool* output)
@@ -145,43 +179,42 @@ bool zrdr_tobool(_zrdr* reader, bool* output)
 		output = false;
 	}
 
-	if (reader != NULL)
+	if (reader == NULL)
 	{
-		if (reader->type == ZRDR_ARRAY && 1 < reader->array->integer)
-		{
-			reader = reader->array;
-		}
+		return false;
+	}
 
-		if (reader->type == ZRDR_INTEGER)
+	if (reader->type == ZRDR_ARRAY && 1 < reader->array->integer)
+	{
+		reader = reader->array;
+	}
+
+	if (reader->type == ZRDR_INTEGER)
+	{
+		if (reader->integer == 0)
 		{
-			if (reader->integer == 0)
-			{
-				*output = false;
-				return true;
-			}
-			else
-			{
-				*output = true;
-				return true;
-			}
+			*output = false;
+			return true;
 		}
 		else
 		{
-			if (reader->type == ZRDR_STRING)
-			{
-				if (strcasecmp(reader->string, "true") == 0 || strcasecmp(reader->string, "on"))
-				{
-					*output = true;
-					return true;
-				}
-				else if (strcasecmp(reader->string, "false") == 0 || strcasecmp(reader->string, "off"))
-				{
-					*output = false;
-					return true;
-				}
-			}
+			*output = true;
+			return true;
 		}
+	}
 
+	if (reader->type == ZRDR_STRING)
+	{
+		if (strcasecmp(reader->string, "true") == 0 || strcasecmp(reader->string, "on"))
+		{
+			*output = true;
+			return true;
+		}
+		else if (strcasecmp(reader->string, "false") == 0 || strcasecmp(reader->string, "off"))
+		{
+			*output = false;
+			return true;
+		}
 	}
 	
 	return false;

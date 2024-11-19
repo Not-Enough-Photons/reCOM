@@ -1,0 +1,160 @@
+; Character dynamics.
+
+(
+	gravity (98.1)
+
+	DamageToNewtons (120)
+
+	jump_factor (1)
+	land_fall_rate (0)
+	land_hard_fall_rate (90)
+	ground_touch_distance(3) 
+	max_slope (0.64278)
+	step_height (4)
+	vertical_blast_boost (1)
+
+	FALLING_DAMAGE_LIGHT (1.3)
+	FALLING_DAMAGE_HEAVY (2.6)
+	FALLING_DAMAGE_DEATH (8)
+
+	water_factor_slope (0.066)
+	min_water_factor (0.6)
+
+	fb_accel (0.9)
+	lr_accel (0.9)
+
+	throt_exp (1)
+
+	stand_turn_factor (0)
+	turn_maxrate (2)
+
+	lower_x_accel (2)
+	lower_z_accel (2)
+	upper_z_accel (5)
+
+	init_aim_pitch (2.3)
+	max_aim_pitch (-9.167)
+	min_aim_pitch (60)
+	max_aim_yaw (-70)
+	prone_max_aim_pitch (82)
+	prone_min_aim_pitch (25)
+	prone_max_aim_yaw (-60)
+	prone_zoom_delta_yaw (45)
+	max_zoom_aim_pitch (60)
+	min_zoom_aim_pitch (65)
+	max_zoom_aim_yaw (-70)
+	prone_max_zoom_aim_pitch (85)
+	prone_min_zoom_aim_pitch (25)
+	prone_max_zoom_aim_yaw (-60)
+
+	max_look_pitch (45)
+	min_look_pitch (80)
+	max_look_yaw (-60)
+	max_eye_look_pitch (89)
+	min_eye_look_pitch (8)
+	max_eye_look_yaw (-14)
+	max_blink_rate (17)
+	max_blink_angle (1.5)
+
+	pitch_rate (-34)
+
+	turn_throttle_a (0.85)
+	turn_throttle_b (0.9)
+
+	pitch_throttle_a (0.4)
+	pitch_throttle_b (0.9)
+
+	camera_roll (0.4)
+
+	CAMERA_WIGGLE (
+		Amplitude (22)
+		Duration (0.6)
+		Rate (0.1)
+	)
+
+	BOBBING_FIRSTPERSON (
+		Walk_Amplitude (0)
+		Walk_Rate (6)
+		Crawl_Amplitude (15)
+		Crawl_Rate (4)
+	)
+
+	THROW_PARAMS (
+		abort_threshold (0.0001)
+		max_distance_stand ()
+		max_distance_crouch ()
+		toss_power_threshold ()
+		toss_aim_threshold ()
+	)
+
+	zoom_factor (5500)
+	zoom_rate (14000)
+
+	; Camera back.
+	cam_back_side ()
+	cam_back_height (0)
+	cam_back_dist (20.5)
+	cam_back_aim ( ; PNT3D
+		()
+		()
+		()
+	)
+
+	; Camera side.
+	cam_side_side ()
+	cam_side_height ()
+	cam_side_dist ()
+	cam_side_aim ( ; PNT3D
+		()
+		()
+		()
+	)
+
+	; Camera front.
+	cam_first_side ()
+	cam_first_height ()
+	cam_first_dist ()
+	cam_first_aim ( ; PNT3D
+		()
+		()
+		()
+	)
+
+	; Camera peek.
+	; Values for when the seal is peeking left.
+	cam_peekl_side ()
+	cam_peekl_height ()
+	cam_peekl_dist ()
+	cam_peekl_aim ( ; PNT3D
+		()
+		()
+		()
+	)
+
+	; Camera peek.
+	; Values for when the seal is peeking right.
+	cam_peekr_side ()
+	cam_peekr_height ()
+	cam_peekr_dist ()
+	cam_peekr_aim ( ; PNT3D
+		()
+		()
+		()
+	)
+
+	cam_tether_stiff ()
+	cam_look_dwell ()
+	cam_net_pos_smooth ()
+	cam_net_release_rad ()
+	cam_peek_decay_rate ()
+
+	min_running_reload_speed ()
+	min_running_chgweapon_speed ()
+
+	low_climb_height ()
+	med_climb_height ()
+	high_climb_height ()
+
+	min_stand_height ()
+	min_jump_height ()
+)

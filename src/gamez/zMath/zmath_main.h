@@ -1,4 +1,6 @@
 #pragma once
+#include <cmath>
+
 void zMath_Init();
 
 bool tableInit;
@@ -124,22 +126,20 @@ struct IPNT4D
 	int w;
 };
 
-class CPnt2D
+typedef struct CPnt2D
 {
-	float x;
-	float y;
+	PNT2D p;
 };
 
-class CPnt3D
+typedef struct CPnt3D
 {
-public:
 	CPnt3D& operator+(const CPnt3D& vector);
 	CPnt3D& operator-(const CPnt3D& vector);
 	CPnt3D& operator*(float scalar);
 	CPnt3D& operator/(float scalar);
-public:
-	PNT3D point;
-public:
+
+	PNT3D p;
+
 	void Normalize();
 	void Normalize(CPnt3D* other);
 	CPnt3D* Add(CPnt3D* other);
@@ -148,31 +148,39 @@ public:
 	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 
-class CPnt4D
+typedef struct CPnt4D
 {
-public:
-
-public:
-	PNT4D point;
+	PNT4D p;
 };
 
-class CQuat
+typedef struct CQuat
 {
-public:
+	CPnt3D vec;
+	float w;
+
 	static CQuat Apply(CQuat& quat, CPnt3D& point);
 	static CQuat Normalize(CQuat& quat, CQuat& rhs);
 	static CQuat Mul(CQuat& left, CQuat& right);
 	static void ToMatrix(CQuat& quat, CMatrix& matrix);
 	static CQuat Exp(CQuat& quat, CPnt3D& point);
 	static void MakeYXZ(float x, float y, float z, CQuat& quat);
-public:
-	CPnt3D vec;
-	float w;
 };
 
-class CMatrix
+typedef struct CMatrix
 {
-public:
+	const float* operator[](const int row);
+
 	float m_matrix[4][4];
+
+	const float* GetTranslate() const;
+
+	void Multiply(const CMatrix* first, const CMatrix* second);
+
+	void SetRotation(const CPnt3D* rotation);
+	void SetRows(const CPnt3D* first, const CPnt3D* second, const CPnt3D* third, const CPnt3D* fourth);
+	void SetZero();
+
+	void ToEuler(CPnt3D* p);
+	CQuat* ToQuat(CQuat* q);
 };
 

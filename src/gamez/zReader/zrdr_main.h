@@ -22,26 +22,26 @@ char* cur_zrdr_path = '\0';
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);
 char* zrdr_findfile(const char* file, const char* path);
+int zrdr_free(CRdrFile* reader);
+void zrdr_freearray(_zrdr* array);
+void _resolveA(_zrdr* reader, _zrdr* other, int count);
+void _resolveB(_zrdr* reader, _zrdr* other, int count);
 
-class _zrdr
+char* zrdr_findstring(_zrdr* reader, const char* tag);
+bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
+bool zrdr_finduint(_zrdr* reader, const char* tag, unsigned int* output, int iterations);
+bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
+bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
+_zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, int iterations);
+
+bool zrdr_toINT(_zrdr* reader, int* output, int size);
+bool zrdr_tobool(_zrdr* reader, bool* output);
+
+_zrdr* _zrdr_nexttag(_zrdr* reader, const char* tag, size_t size, _zrdr* other);
+
+typedef struct _zrdr
 {
-public:
-	friend void zrdr_freearray(_zrdr* array);
-	friend void _resolveA(_zrdr* reader, _zrdr* other, int count);
-	friend void _resolveB(_zrdr* reader, _zrdr* other, int count);
-
-	friend char* zrdr_findstring(_zrdr* reader, const char* tag);
-	friend bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
-	friend bool zrdr_finduint(_zrdr* reader, const char* tag, unsigned int* output, int iterations);
-	friend bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
-	friend bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
-	friend _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
-	friend _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, int iterations);
-
-	friend bool zrdr_tobool(_zrdr* reader, bool* output);
-
-	friend _zrdr* _zrdr_nexttag(_zrdr* reader, const char* tag, size_t size, _zrdr* other);
-public:
 	_zrdr(); 
 	_zrdr(const _zrdr* other, const CSTable* table);
 	~_zrdr();
@@ -50,7 +50,7 @@ public:
 	void Clone(const _zrdr* other, const CSTable* table);
 	int GetInt() const;
 	char* Get(int offset) const;
-public:
+
 	ZRDR_TYPE type;
 	bool isclone;
 	bool packed;
@@ -68,10 +68,8 @@ public:
 	};
 };
 
-class CRdrFile : public _zrdr
+typedef struct CRdrFile : public _zrdr
 {
-	friend int zrdr_free(CRdrFile* reader);
-public:
 	CRdrFile();
 	~CRdrFile();
 
@@ -81,7 +79,7 @@ public:
 	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);
 	_zrdr* MakeUnion(const char* name, bool createString);
 	char ReadToken(_zrdr** readerArray, _zrdr** unionArray);
-private:
+
 	CSTable m_strings;
 	void* m_buffer;
 	size_t m_size;

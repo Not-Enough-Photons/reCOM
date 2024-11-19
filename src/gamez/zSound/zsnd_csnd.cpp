@@ -2,29 +2,31 @@
 
 #include "gamez/zReader/zrdr_main.h"
 
+int g_iReverbTime = 0;
+
 CSnd::CSnd()
 {
 	if (!m_isDisabled)
 	{
-		name = 0;
-		volume = 1.0f;
-		range = 160.0f;
-		field7_0x10 = 430.0f;
-		bank = NULL;
-		curSndID = -1;
-		field_0x1c = 0;
-		field14_0x20 = NULL;
-		field15_0x24 = NULL;
-		field16_0x28 = NULL;
-		field_0x1e = 0;
-		subtitle = 0;
-		subtitleTime = 0.0f;
-		subtitleValve = NULL;
-		offset1 = 0;
-		offset2 = 0;
-		oneshot = false;
-		field_0x40 = 0;
-		type = 1;
+		m_name = 0;
+		m_volume = 1.0f;
+		m_range = 160.0f;
+		m_field7_0x10 = 430.0f;
+		m_bank = NULL;
+		m_curSndID = -1;
+		m_field_0x1c = 0;
+		m_field14_0x20 = NULL;
+		m_field15_0x24 = NULL;
+		m_field16_0x28 = NULL;
+		m_field_0x1e = 0;
+		m_subtitle = 0;
+		m_subtitleTime = 0.0f;
+		m_subtitleValve = NULL;
+		m_offset1 = 0;
+		m_offset2 = 0;
+		m_oneshot = false;
+		m_field_0x40 = 0;
+		m_type = 1;
 		CSndInstance::m_sound_instance_pool.reserve(48);
 	}
 }
@@ -93,7 +95,7 @@ void CSnd::AddNewCSnd(CSnd* sound)
 {
 	if (!m_isDisabled)
 	{
-		m_soundmap[sound->name] = sound;
+		m_soundmap[sound->m_name] = sound;
 		m_soundlist.insert(m_soundlist.begin(), sound);
 	}
 }
@@ -126,7 +128,7 @@ bool CSnd::GetSubtitles()
 
 float CSnd::CalcVol(float volume, float masterVolume)
 {
-	float range = this->range;
+	float range = this->m_range;
 	float output = 1.0f;
 
 	if (range <= volume)
@@ -147,25 +149,5 @@ float CSnd::CalcVol(float volume, float masterVolume)
 
 void CSnd::LoadCSnd(_zrdr* reader)
 {
-	_zrdr* next;
-	_zrdr* array;
 
-	if (!m_isDisabled)
-	{
-		oneshot = false;
-
-		if (reader->type == ZRDR_ARRAY)
-		{
-			next = cast_rdr_array(reader->value + 4) - 1;
-		}
-		else
-		{
-			next = NULL;
-		}
-
-		if (next != NULL)
-		{
-
-		}
-	}
 }
