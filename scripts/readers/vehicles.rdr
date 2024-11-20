@@ -1,0 +1,37 @@
+(
+	(
+		name ("player")
+		display ("Kahuna")
+		team (arctic_A8)
+
+		debug (off)
+		disabled (false)
+		nofade (off)
+		noshoot (off)
+		recycle (on)
+		nosnooze (off)
+
+		character ()
+
+		ai_params
+		(
+			accuracy ()
+			courage ()
+			surrender ()
+			stealth ()
+			training ()
+			target_delay ()
+			target_discipline ()
+
+			sensors
+			(
+				visual_range ()
+				visual_fov ()
+				visual_sens ()
+				aware_decay ()
+				thip_range ()
+				respawn (false)
+			)
+		)
+	)
+)
