@@ -26,6 +26,7 @@ enum OP_TYPE
 /// </summary>
 enum VALVE_TYPE
 {
+	NONE,
 	PERM,
 	TEMP,
 	PERSIST
