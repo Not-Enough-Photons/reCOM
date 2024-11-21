@@ -205,3 +205,10 @@ class CAiVismap
 {
 
 };
+
+class CAiMapLoc
+{
+	unsigned int m_mapid : 6;
+	unsigned int m_x : 13;
+	unsigned int m_y : 13;
+};

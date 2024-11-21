@@ -220,8 +220,8 @@ protected:
 	bool m_include_in_targetlist;
 	bool m_isAlive;
 
-	// CAiMapLoc m_mapLoc;
-	// CAiMapLoc m_mapLocValid;
+	CAiMapLoc m_mapLoc;
+	CAiMapLoc m_mapLocValid;
 };
 
 class CEntityCtrl
