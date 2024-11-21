@@ -237,7 +237,8 @@ public:
 	virtual void SetThrottle(float throttle, int pad);
 	virtual void GetRemoteControl() const;
 protected:
-	float* throttles;
+	CEntity* m_entity;
+	float m_throttle[3];
 };
 
 class CftsPlayer : public CEntity
