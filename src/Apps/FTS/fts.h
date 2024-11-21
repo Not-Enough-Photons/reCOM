@@ -2,12 +2,12 @@
 #include "ai_main.h"
 #include "vehicle_main.h"
 
-#include "gamez/zNode/node_main.h"
-#include "gamez/zReader/zrdr_main.h"
-#include "gamez/zNetwork/znet_main.h"
-#include "gamez/zSystem/zsys_main.h"
-#include "gamez/zValve/valve_main.h"
-#include "gamez/zUI/zui.h"
+#include "zNode/node_main.h"
+#include "zReader/zrdr_main.h"
+#include "zNetwork/znet_main.h"
+#include "zSystem/zsys_main.h"
+#include "zValve/valve_main.h"
+#include "zUI/zui.h"
 
 enum MISSION_STATE
 {

@@ -126,19 +126,14 @@ struct IPNT4D
 	int w;
 };
 
-typedef struct CPnt2D
-{
-	PNT2D p;
-};
+class CPnt2D : PNT2D { };
 
-typedef struct CPnt3D
+class CPnt3D : PNT3D
 {
 	CPnt3D& operator+(const CPnt3D& vector);
 	CPnt3D& operator-(const CPnt3D& vector);
 	CPnt3D& operator*(float scalar);
 	CPnt3D& operator/(float scalar);
-
-	PNT3D p;
 
 	void Normalize();
 	void Normalize(CPnt3D* other);
@@ -148,14 +143,10 @@ typedef struct CPnt3D
 	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 
-typedef struct CPnt4D
-{
-	PNT4D p;
-};
+class CPnt4D : PNT4D { };
 
-typedef struct CQuat
+class CQuat : CPnt3D
 {
-	CPnt3D vec;
 	float w;
 
 	static CQuat Apply(CQuat& quat, CPnt3D& point);
@@ -166,7 +157,7 @@ typedef struct CQuat
 	static void MakeYXZ(float x, float y, float z, CQuat& quat);
 };
 
-typedef struct CMatrix
+class CMatrix
 {
 	const float* operator[](const int row);
 

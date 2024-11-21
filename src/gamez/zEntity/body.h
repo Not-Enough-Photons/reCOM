@@ -1,5 +1,5 @@
 #pragma once
-#include "node/node_main.h"
+#include "gamez/zNode/node_main.h"
 
 class CZBodyPart;
 

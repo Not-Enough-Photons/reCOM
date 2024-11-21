@@ -7,6 +7,8 @@ void InitSystemTuners();
 void zSysMain();
 void zSysReset();
 
+size_t zsys_FullAllocAndFree();
+
 void zAllocateAssert(bool condition, const char* sourceFile, int line);
 void* zAllocateAlign(size_t alignment, size_t size, const char* sourceFile, int line);
 void* zAllocateArray(int size, int count, const char* sourceFile, int line);
@@ -17,18 +19,27 @@ void* zAllocateInst(void* instance, const char* sourceFile, int line);
 
 _zsys_public zSys;
 
+struct four
+{
+	four* next;
+};
+
 struct twelve
 {
 	twelve* next;
 	unsigned int dummy[2];
 };
 
+template<typename T>
 class _zmalloc
 {
+public:
+	_zmalloc(size_t count);
+	~_zmalloc();
 private:
-	twelve* m_page;
-	twelve* m_head;
-	twelve* m_tail;
+	T* m_page;
+	T* m_head;
+	T* m_tail;
 
 	unsigned int m_bytes;
 	unsigned int m_size;

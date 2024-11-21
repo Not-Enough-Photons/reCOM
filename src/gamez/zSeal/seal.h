@@ -51,7 +51,7 @@ private:
 	int numItems;
 };
 
-class CZSealBody : CEntity
+class CZSealBody : CEntity, CBody
 {
 	// Tomb Of The Unknown Functions
 public:
@@ -59,9 +59,6 @@ public:
 	~CZSealBody();
 
 	static CZSealBody* Create(long param_1, int param_2, int param_3);
-
-	CEntity* baseEntity;
-	CEntity* entity;
 
 	void Destroy();
 	bool DestroyAimAnims();
@@ -93,6 +90,11 @@ public:
 	void HandleKiller(const CZSealBody& killer);
 
 	CZBodyPart* GetRootPart() const;
+public:
+	static CSealAnim* m_sealanim;
+
+	CEntity* baseEntity;
+	CEntity* entity;
 private:
 	CBody m_body;
 
