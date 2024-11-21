@@ -184,21 +184,44 @@ public:
 	bool IsValid() const;
 
 	void SetController(CEntityCtrl* controller);
-private:
+protected:
+	unsigned int m_id;
+	unsigned int m_index;
+	unsigned int m_vehicle_index;
+	TYPE m_type;
+
+	const char* m_display_name;
+	unsigned int m_UnitsSeenBy;
+
 	zdb::CNode* m_node;
 
-	float m_x00;
-	float m_y00;
-	float m_z00;
-	float m_x01;
-	float m_y01;
-	float m_z01;
-	float m_x02;
-	float m_y02;
-	float m_z02;
-	float m_x03;
-	float m_y03;
-	float m_z03;
+	CPnt3D m_velM; // Model-relative velocity
+	CPnt3D m_velW; // World-relative velocity
+	CPnt3D m_velR; // Angular-relative velocity?
+	CQuat m_quat; // Rotation
+	CPnt3D m_next_velw; // Model-relative wish velocity
+	CQuat m_next_quat; // Next wish rotation
+	CMatrix m_next_matrix; // Next wish transformation
+
+	CEntityCtrl* m_control;
+
+	unsigned int m_aware_counter;
+
+	bool m_blink_eyes;
+	bool m_drip_blood;
+	bool m_animate_footsteps;
+	bool m_interpolate_animations;
+	bool m_lean_into_turns;
+	bool m_do_weapon_recoil;
+	bool m_check_player_collision;
+	bool m_get_new_altitude;
+	bool m_noshoot;
+	bool m_update_targetlist;
+	bool m_include_in_targetlist;
+	bool m_isAlive;
+
+	// CAiMapLoc m_mapLoc;
+	// CAiMapLoc m_mapLocValid;
 };
 
 class CEntityCtrl
