@@ -3,6 +3,7 @@
 
 #include "gamez/zEntity/ent_main.h"
 #include "gamez/zEntity/intersect.h"
+#include "gamez/zMath/zmath_main.h"
 #include "gamez/zWeapon/zwep_weapon.h"
 
 enum ZOOMSTATE
@@ -10,6 +11,24 @@ enum ZOOMSTATE
 	SHORT,
 	MEDIUM,
 	LONG
+};
+
+enum TRIGGER
+{
+	type_00,
+	type_01
+};
+
+enum PLAYER_CAM_STATE
+{
+	type_00,
+	type_01
+};
+
+enum MENU_STATE
+{
+	type_00,
+	type_01
 };
 
 enum AiSig
@@ -187,6 +206,11 @@ class CZSealEx : public zdb::CNodeEx
 
 };
 
+class CSealUnit
+{
+
+};
+
 class CSealCtrl : CEntityCtrl
 {
 public:
@@ -203,8 +227,103 @@ public:
 	// virtual float ComputeVisibility(zdb::DiIntersection* intersection, CTarget* target);
 	bool CreateAiEvent(CAiEvent::EVENT event, float expiration, float radius, bool flag, CPnt3D* position, int dummy);
 private:
-	float* timerMap;
-	CZSealBody* body;
+	float m_look_timer;
+	Rfloat m_look_rate;
+	AI_LOOK m_look_mode;
+	LOOK_DATA_TYPE m_look_type;
+	CPnt3D m_look_data;
+	CPnt3D m_look_data_mdir;
+	CPnt3D m_look_bias;
+	unsigned int m_look_flags;
+
+	Rfloat m_scan_angle;
+	CAiTimer m_scan_timer;
+	float m_scan_limits;
+
+	float m_fov;
+	float m_fovtan;
+	float m_fovcos;
+
+	CAiCone m_view_cone;
+	CAiDecay m_visrange;
+	CAiDecay m_aware;
+
+	unsigned int m_targetSum;
+	CAiDecay m_targetThreat;
+	CSealUnit m_unit;
+
+	unsigned int m_ai_net_state;
+	unsigned int m_padid;
+	TRIGGER m_trigger;
+	float m_trigger_power;
+	int m_throwwait;
+	float m_buttonreading[10];
+	int m_firstreading;
+	int m_lastreading;
+
+	float m_zoomlevel;
+	float m_zoomincrement;
+	float m_aimPitch;
+	float m_aimYaw;
+	float m_highrumbletime;
+	float m_rumbletime;
+	float m_rumblestr;
+
+	int m_HudDoPickup;
+	int m_curpickup_ID;
+	int m_curpickup_secondary_ID;
+
+	zdb::CNode* m_bomb_defusal_node;
+	zdb::CNode* m_mpbomb_node;
+	float m_mpbomb_timer;
+
+	CZSealBody* m_victimbody;
+	CZSealBody* m_corpsebody;
+
+	bool m_goal_pos_valid;
+	bool m_goal_dir_valid;
+	bool m_wasthrowing;
+	bool m_HudUpdateWeapon;
+	bool m_HudUpdateViewCone;
+	bool m_throwing;
+	bool m_justthrew;
+	bool m_update_zoom;
+	bool m_zoomin;
+	bool m_zoomout;
+	bool m_input_enabled;
+	bool m_mpbomb_bTimerAvailable;
+	bool m_mpbomb_bTimerEngaged;
+	bool m_has_respawned;
+	bool m_do_aimap_collide;
+
+	unsigned int m_unused : 16;
+
+	CPnt3D m_goal_dir;
+	CPnt3D m_goal_pos;
+	CPnt3D m_fudge_velR;
+	CPnt3D m_fudge_velM;
+	CPnt3D m_fudge_velW;
+
+	GOAL_TYPE m_goal_type;
+	float m_goal_pos_tolerance;
+	CAiTimer m_goal_timer;
+
+	float m_speed;
+
+	float m_event_time[15];
+	CPnt3D m_remote_goal_pos;
+	CQuat m_remote_goal_quat;
+
+	PLAYER_CAM_STATE m_camState;
+	MENU_STATE m_menustate;
+	
+	float m_hotswapL1;
+	float m_hotswapL2;
+
+	CAiTimer m_wep_state;
+
+	float m_bombpickuptimer;
+	float m_weapon_pickup_timer;
 };
 
 class CSealCtrlAi : CSealCtrl

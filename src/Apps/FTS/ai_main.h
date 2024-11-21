@@ -1,6 +1,9 @@
 #pragma once
 #include "gamez/zEntity/ent_main.h"
+#include "gamez/zMath/zmath_main.h"
 #include "gamez/zSeal/seal.h"
+
+typedef unsigned char TYPE;
 
 enum FIRE_TEAM
 {
@@ -56,6 +59,17 @@ enum AI_LOOK
 	type_01,
 	type_02,
 	type_03
+};
+
+enum LOOK_DATA_TYPE
+{
+	type_00,
+	type_01,
+	type_02,
+	type_03,
+	type_04,
+	type_05,
+	type_06,
 };
 
 enum AI_STATE
@@ -154,6 +168,13 @@ public:
 	int dummy;
 };
 
+class CAiDecay
+{
+	float m_value;
+	float m_goal;
+	TYPE m_type;
+};
+
 class CAiParams
 {
 
@@ -163,4 +184,24 @@ class CAiTimer
 {
 public:
 	const float infinite = 0xBF800000;
+private:
+	Rfloat m_period;
+	float m_timer;
+};
+
+class CAiCone
+{
+	float m_dot;
+	CPnt3D m_vec;
+	float m_height;
+	float m_radius;
+	float m_point_radius;
+	float m_inv_height;
+	CPnt3D m_cone_pos;
+	CPnt3D m_cone_dir;
+};
+
+class CAiVismap
+{
+
 };

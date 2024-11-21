@@ -84,6 +84,12 @@ inline bool saturate(T& value, T min, T max)
 	return false;
 }
 
+struct Rfloat
+{
+	float m_min;
+	float m_range;
+};
+
 struct PNT2D
 {
 	float x;
