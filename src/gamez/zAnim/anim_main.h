@@ -280,6 +280,11 @@ private:
 	int m_CurrentFrame;
 };
 
+class CActiveAnimPool
+{
+
+};
+
 static CZAnimMain ZAnim;
 
 class CZBodyAnimBlend
