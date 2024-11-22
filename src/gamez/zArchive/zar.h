@@ -9,7 +9,8 @@
 namespace zar
 {
 	class CKey;
-	class CKeyRing;
+	class CKeyVec : std::vector<CKey> {};
+	class CKeyRing : std::list<CKey> {};
 
 	const char* DEFAULT_ZAR_NAME = "ROOT";
 
@@ -40,18 +41,6 @@ namespace zar
 		const char* m_name;
 		int m_size;
 		int m_offset;
-	};
-
-	class CKeyRing
-	{
-	public:
-		std::list<CKey> m_list;
-	};
-
-	class CKeyVec
-	{
-	public:
-		std::vector<CKey> m_vec;
 	};
 
 	class CZAR
