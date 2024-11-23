@@ -4,27 +4,60 @@
 
 namespace zar
 {
-	CKey::CKey(const char* name)
+	CKey::CKey(char* name)
 	{
-		this->name = name;
-		size = 0;
-		field14_0x14 = 0;
+		m_name = name;
+		m_size = 0;
+		m_offset = 0;
 	}
 
 	CKey* CKey::InsertKey(CKey* key)
 	{
-		keys.insert(keys.begin(), key);
+		insert(begin(), key);
 		return key;
 	}
 
-	CKey* CKey::FindKey(const char* name)
+	CKey* CKey::FindKey(char* name)
 	{
-		auto begin = keys.begin();
-		auto end = keys.end();
+		auto begin = this->begin();
+		auto end = this->end();
 
 		for (auto it = begin; it != end; it++)
 		{
 			CKey* current = *it;
+		}
+	}
+
+	bool CKey::Read(CZAR* file, CIO* fileBuffer, int offset)
+	{
+
+	}
+
+	bool CKey::Write(CZAR* file)
+	{
+		file->Securify(m_name, 4);
+		file->m_pFileAlloc->fwrite(m_name, 4);
+		file->Unsecurify(m_name, 4);
+
+		file->Securify(&m_offset, 4);
+		file->m_pFileAlloc->fwrite(&m_offset, 4);
+		file->Unsecurify(&m_offset, 4);
+
+		file->Securify(&m_size, 4);
+		file->m_pFileAlloc->fwrite(&m_size, 4);
+		file->Unsecurify(&m_size, 4);
+
+		file->Securify(this, 4);
+		file->m_pFileAlloc->fwrite(this, 4);
+		file->Unsecurify(this, 4);
+
+		auto begin = this->begin();
+		auto end = this->end();
+
+		for (auto it = begin; it != end; it++)
+		{
+			CKey* key = *it;
+			key->Write(file);
 		}
 	}
 

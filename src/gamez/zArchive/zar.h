@@ -8,9 +8,10 @@
 
 namespace zar
 {
+	class CZAR;
 	class CKey;
-	class CKeyVec : std::vector<CKey> {};
-	class CKeyRing : std::list<CKey> {};
+	class CKeyVec : public std::vector<CKey> {};
+	class CKeyRing : public std::list<CKey*> {};
 
 	const char* DEFAULT_ZAR_NAME = "ROOT";
 
@@ -27,18 +28,20 @@ namespace zar
 		int version;
 	};
 
-	class CKey
+	class CKey : public CKeyRing
 	{
 	public:
 		CKey();
-		CKey(const char* name);
+		CKey(char* name);
 		~CKey();
 
 		CKey* InsertKey(CKey* key);
-		CKey* FindKey(const char* key);
+		CKey* FindKey(char* name);
+
+		bool Read(CZAR* file, CIO* fileBuffer, int offset);
+		bool Write(CZAR* file);
 	private:
-		CKeyRing CKeyRing;
-		const char* m_name;
+		char* m_name;
 		int m_size;
 		int m_offset;
 	};
@@ -85,11 +88,11 @@ namespace zar
 
 		void Securify(void* buf, size_t size);
 		void Unsecurify(void* buf, size_t size);
+	public:
+		CFileIO* m_pFile;
+		CIO* m_pFileAlloc;
 	private:
 		CKeyRing m_keys;
-
-		void* m_pFileAlloc;
-		void* m_pFile;
 
 		void* m_databuffer;
 		size_t m_databuffer_size;

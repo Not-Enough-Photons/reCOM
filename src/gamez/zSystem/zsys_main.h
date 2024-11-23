@@ -26,6 +26,9 @@ void* realloc(void* ptr, size_t new_size);
 void* memalign(size_t alignment, size_t size);
 char* strdup(const char* str1);
 
+struct _zsys_public;
+class CTTY;
+
 _zsys_public zSys;
 CTTY theTerminal;
 
