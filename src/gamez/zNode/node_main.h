@@ -45,7 +45,8 @@ namespace zdb
 
 		bool UpdateGrid() const;
 
-		CNode* FindChild();
+		CNode* FindChild(CNode* child, bool isCell);
+		CNode* FindChild(const char* child, bool isCell);
 
 		CMatrix& BuildMTW(const CMatrix& mat);
 

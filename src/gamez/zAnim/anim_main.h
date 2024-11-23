@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 #include "gamez/zEntity/body.h"
 #include "gamez/zNode/node_main.h"
 #include "gamez/zMath/zmath_main.h"
@@ -13,9 +15,13 @@ static CZAnimMain ZAnim;
 static bool CmdAddNode(zdb::CNode node);
 static bool CmdRemoveNode(zdb::CNode node);
 
-enum AnimTypes
+enum AnimType
 {
-
+	type_00,
+	type_01,
+	type_02,
+	type_03,
+	type_04,
 };
 
 struct REFPT_INFO
@@ -30,6 +36,41 @@ struct ANIM_CALLBACK
 	float m_tfrac;
 	void(*m_func)();
 	void(*m_userdata)();
+};
+
+struct ANIMSET_PARAMS
+{
+	float m_stand_max_fwd;
+	float m_stand_max_back;
+	float m_stand_max_rt;
+	float m_stand_max_left;
+
+	float m_crouch_max_fwd;
+	float m_crouch_max_back;
+	float m_crouch_max_rt;
+	float m_crouch_max_left;
+
+	float m_prone_max_fwd;
+	float m_prone_max_back;
+	float m_prone_max_rt;
+	float m_prone_max_left;
+
+	float m_ladder_updn;
+};
+
+struct ANIMTYPE_GROUP
+{
+	AnimType m_rifle_type;
+	AnimType m_pistol_type;
+	AnimType m_rifle_fp_type;
+	AnimType m_pistol_fp_type;
+};
+
+struct BLENDABLE_ANIM
+{
+	float m_trans0;
+	float m_trans1;
+	AnimType m_animtype;
 };
 
 struct zanim_cmd
@@ -190,6 +231,35 @@ struct ZAnimNetworkPacket
 	unsigned short anim_index;
 };
 
+struct AnimSet
+{
+	ANIMSET_PARAMS m_aparams;
+
+	bool m_ready;
+	std::string m_name;
+
+	std::vector<unsigned int> m_animIDs;
+	std::vector<AnimType> m_basetypes;
+	std::vector<CZAnim> m_included;
+
+	CAnimsByFP* m_animgps;
+
+	CBlendable* m_move_anims;
+	CBlendable* m_moveback_anims;
+	CBlendable* m_strafeL_anims;
+	CBlendable* m_strafeR_anims;
+	CBlendable* m_crouchmove_anims;
+	CBlendable* m_crouchmoveback_anims;
+	CBlendable* m_crouchstrafeL_anims;
+	CBlendable* m_crouchstrafeR_anims;
+};
+
+class CAnimsByFP
+{
+private:
+	ANIMTYPE_GROUP m_animgroups;
+};
+
 class CActiveAnimList
 {
 
@@ -287,6 +357,11 @@ class CActiveAnimPool
 
 static CZAnimMain ZAnim;
 
+class CBlendable
+{
+	BLENDABLE_ANIM m_blendable[4];
+};
+
 class CZBodyAnimBlend
 {
 public:
@@ -296,13 +371,18 @@ private:
 	float m_quitT;
 	CPnt3D m_drot;
 	float m_tfrac;
+
 	REFPT_INFO* m_refpt_info;
+
 	CZBodyPart* m_action_node;
 	CZBodyPart* m_result_parent;
+
 	char m_flags;
 	char m_ctrl;
 	char m_state;
-	AnimTypes m_animType;
+
+	AnimType m_animType;
+
 	CActiveAnimList* m_anims;
 	ANIM_CALLBACK m_callback;
 	// CHoming m_homing;

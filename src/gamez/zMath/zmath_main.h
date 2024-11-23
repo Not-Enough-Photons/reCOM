@@ -5,6 +5,8 @@ void zMath_Init();
 
 bool tableInit;
 
+const float PI = 3.141593;
+
 float* sintbl;
 float* costbl;
 float* exptbl;
@@ -29,6 +31,14 @@ void init_trig_table()
 		} 
 		while (i < 257);
 		tableInit = true;
+	}
+}
+
+void uninit_trig_table()
+{
+	if (tableInit)
+	{
+		tableInit = false;
 	}
 }
 
@@ -132,9 +142,9 @@ struct IPNT4D
 	int w;
 };
 
-class CPnt2D : PNT2D { };
+class CPnt2D : public PNT2D { };
 
-class CPnt3D : PNT3D
+class CPnt3D : public PNT3D
 {
 	CPnt3D& operator+(const CPnt3D& vector);
 	CPnt3D& operator-(const CPnt3D& vector);
@@ -149,9 +159,9 @@ class CPnt3D : PNT3D
 	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 
-class CPnt4D : PNT4D { };
+class CPnt4D : public PNT4D { };
 
-class CQuat : CPnt3D
+class CQuat : public CPnt3D
 {
 	float w;
 

@@ -255,3 +255,8 @@ class CUIVarManager
 public:
 	CUIVariable* Add(const char* name, _zrdr* reader, UIVAR_LONGEVITY longevity);
 };
+
+class CHUD
+{
+
+};

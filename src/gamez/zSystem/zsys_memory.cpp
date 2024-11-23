@@ -1,54 +1,68 @@
-#include <stdlib.h>
-#include <malloc.h>
 #include <stdio.h>
 
 #include "zsys_main.h"
 
-void zAllocateAssert(bool condition, const char* sourceFile, int line)
+void zSysPostInit()
 {
-	if (!condition)
+	if (!postinited)
 	{
-		printf("Assertion failed in %s at line %d - Memory allocation failed", sourceFile, line);
-		abort();
+		postinited = true;
 	}
 }
 
-void* zAllocateAlign(size_t alignment, size_t size, const char* sourceFile, int line)
+void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)
 {
-	bool success = false;
-	void* dst = _aligned_malloc(alignment, size);
-	zAllocateAssert(size == 0 || dst != NULL, sourceFile, line);
-	return dst;
+	if (!condition)
+	{
+		zSysFifoEnd();
+		char buffer[256];
+		sprintf(buffer, "A S S E R T: %s : %d", file, line);
+		theTerminal.Print(buffer);
+		theTerminal.Render();
+	}
 }
 
-void* zAllocateString(const char* str, const char* sourceFile, int line)
+void* operator new(size_t size)
 {
-	size_t len = strlen(str) + 1;
-	char* dest = reinterpret_cast<char*>(malloc(len));
-	strcpy(dest, str);
-	zAllocateAssert(len == 0 || dest != 0, sourceFile, line);
-	return dest;
+	void* p = malloc(size);
+	zVid_Assert(size == 0 || p != NULL, 0x800000ff, "zsys_memory.cpp", 20);
+	return p;
 }
 
-void* zAllocateArray(int size, int count, const char* sourceFile, int line)
+void* malloc(size_t size)
 {
-	size_t _size = size * count;
-	void* dst = malloc(_size);
-	memset(dst, 0, _size);
-	zAllocateAssert(_size == 0 || dst != NULL, sourceFile, line);
-	return dst;
+	void* p = malloc(size);
+	zVid_Assert(size == 0 || p != NULL, 0x800000ff, "zsys_memory.cpp", 27);
 }
 
-void* zReAllocate(void* ptr, size_t size, const char* sourceFile, int line)
+void* calloc(size_t num, size_t size)
 {
-	void* dst = realloc(ptr, size);
-	zAllocateAssert(size == 0 || dst != NULL, sourceFile, line);
-	return dst;
+	size_t calc_size = num * size;
+	void* p = malloc(calc_size);
+	memset(p, 0, calc_size);
+	zVid_Assert(calc_size == 0 || p != NULL, 0x800000ff, "zsys_memory.cpp", 35);
 }
 
-void* zAllocate(size_t size, const char* sourceFile, int line)
+void* realloc(void* ptr, size_t new_size)
 {
-	void* dst = malloc(size);
-	zAllocateAssert(size == 0 || dst != NULL, sourceFile, line);
-	return dst;
+	void* p = realloc(ptr, new_size);
+	zVid_Assert(new_size == 0 || p != NULL, 0x800000ff, "zsys_memory.cpp", 41);
+	return p;
+}
+
+void* memalign(size_t alignment, size_t size)
+{
+	void* p = _aligned_malloc(size, alignment);
+	zVid_Assert(alignment == 0 || p != NULL, 0x800000ff, "zsys_memory.cpp", 48);
+	return p;
+}
+
+char* strdup(const char* str1)
+{
+	size_t len = strlen(str1);
+	len++;
+	char* p = (char*)malloc(len);
+	strcpy(p, str1);
+	zVid_Assert(len == 0 || p != NULL, 0x800000ff, "zsys_memory.cpp", 51);
+	return p;
 }

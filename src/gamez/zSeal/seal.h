@@ -46,6 +46,30 @@ float fineTuneThreshold = 0.0f;
 float throttleFudge = 0.0f;
 bool init = false;
 
+struct HEALTH_PARAMS
+{
+	void Parse(_zrdr* reader);
+
+	float m_head_health;
+	float m_head_healthMax;
+	float m_body_health;
+	float m_body_healthMax;
+	float m_larm_health;
+	float m_larm_healthMax;
+	float m_rarm_health;
+	float m_rarm_healthMax;
+	float m_lleg_health;
+	float m_lleg_healthMax;
+	float m_rleg_health;
+	float m_rleg_healthMax;
+	float m_armor_head;
+	float m_armor_body;
+	float m_armor_rarm;
+	float m_armor_larm;
+	float m_armor_rleg;
+	float m_armor_lleg;
+};
+
 class CZKit
 {
 public:
@@ -70,7 +94,7 @@ private:
 	int numItems;
 };
 
-class CZSealBody : CEntity, CBody
+class CZSealBody : public CEntity, CBody
 {
 	// Tomb Of The Unknown Functions
 public:
@@ -112,8 +136,7 @@ public:
 public:
 	static CSealAnim* m_sealanim;
 
-	CEntity* baseEntity;
-	CEntity* entity;
+	CSealCtrl* m_control;
 private:
 	CBody m_body;
 
@@ -211,6 +234,32 @@ class CSealUnit
 
 };
 
+class CSealStats
+{
+public:
+	int m_headshots;
+	int m_headhits;
+	int m_hits;
+	int m_shots;
+	int m_kills;
+	int m_washit;
+	int m_deaths;
+	int m_hostages;
+	int m_bases_blown;
+	int m_hostages_rescued;
+	float m_hit_percent;
+	int m_num_times_seen;
+	int m_num_stealthkills;
+	int m_num_restrained;
+	int m_num_grenades_used;
+	int m_num_cqb_used;
+	int m_primary_rounds_fired;
+	int m_secondary_rounds_fired;
+	short m_sMvpScore;
+	int m_iRoundsWon;
+	int m_iRoundsTied;
+};
+
 class CSealCtrl : CEntityCtrl
 {
 public:
@@ -225,7 +274,14 @@ public:
 	virtual void ClearLook(AI_LOOK look);
 	virtual bool ComputeTurnThrottle(const CPnt3D& velWorld, const CPnt3D& velLocal, float& throttle);
 	// virtual float ComputeVisibility(zdb::DiIntersection* intersection, CTarget* target);
+
+	virtual bool IsAi() const;
+	virtual bool IsPlayer() const;
+	virtual bool IsRemote() const;
+
 	bool CreateAiEvent(CAiEvent::EVENT event, float expiration, float radius, bool flag, CPnt3D* position, int dummy);
+public:
+	unsigned int m_padid;
 private:
 	float m_look_timer;
 	Rfloat m_look_rate;
@@ -249,11 +305,10 @@ private:
 	CAiDecay m_aware;
 
 	unsigned int m_targetSum;
-	CAiDecay m_targetThreat;
+	CAiDecay m_targetThreat;	
 	CSealUnit m_unit;
 
 	unsigned int m_ai_net_state;
-	unsigned int m_padid;
 	TRIGGER m_trigger;
 	float m_trigger_power;
 	int m_throwwait;

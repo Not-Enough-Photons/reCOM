@@ -156,13 +156,13 @@ public:
 
 	CEntity(TYPE type, const zdb::CNode& node);
 	~CEntity();
-
+public:
 	void IncrementAwareCounter();
 	void DecrementAwareCounter();
 
 	// Recycler functions
 	virtual void OnRecycleEntity();
-	CEntity* CreateRecycler;
+	CEntity* CreateRecycler();
 	void OpenRecycler();
 
 	// Mission callback functions
@@ -180,14 +180,17 @@ public:
 
 	virtual void TeleportTo(const CMatrix& mat);
 
-	zdb::CNode& GetNode() const;
+	zdb::CNode* GetNode() const;
 	bool IsValid() const;
 
 	void SetController(CEntityCtrl* controller);
+public:
+	CEntityCtrl* m_control;
 protected:
 	unsigned int m_id;
 	unsigned int m_index;
 	unsigned int m_vehicle_index;
+
 	TYPE m_type;
 
 	const char* m_display_name;
@@ -202,8 +205,6 @@ protected:
 	CPnt3D m_next_velw; // Model-relative wish velocity
 	CQuat m_next_quat; // Next wish rotation
 	CMatrix m_next_matrix; // Next wish transformation
-
-	CEntityCtrl* m_control;
 
 	unsigned int m_aware_counter;
 
@@ -236,6 +237,8 @@ public:
 	
 	virtual void SetThrottle(float throttle, int pad);
 	virtual void GetRemoteControl() const;
+
+	virtual void OnDeath();
 protected:
 	CEntity* m_entity;
 	float m_throttle[3];

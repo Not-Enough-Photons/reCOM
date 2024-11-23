@@ -4,6 +4,9 @@
 #include "gamez/zSeal/seal.h"
 
 typedef unsigned char TYPE;
+typedef unsigned char PATH_TYPE;
+typedef unsigned char PATH_STATE;
+typedef unsigned char ASTAR_STATUS;
 
 enum FIRE_TEAM
 {
@@ -166,6 +169,79 @@ public:
 	CPnt3D* source;
 	CEntity* originator;
 	int dummy;
+};
+
+class CAiMapVec : std::vector<CAiMap> { };
+class CAiMapLocVec : std::vector<CAiMapLoc> { };
+class points : std::vector<CPnt3D> { };
+
+class CAiMap
+{
+
+};
+
+class CAiPath
+{
+private:
+	CAiAStar* m_astar;
+	CAiPlanner* m_planner;
+
+	bool m_custom;
+
+	PATH_TYPE m_type;
+	float m_type_bias;
+
+	CAiPath* m_template;
+	void* m_overlay;
+
+	unsigned int m_flags;
+	unsigned int m_app_flags;
+	unsigned int m_legcount;
+	unsigned int m_planleg;
+	unsigned int m_curleg;
+
+	CAiMapLocVec m_waypts;
+	CAiMapVec m_maps;
+	CAiPathStats m_stats;
+
+	PATH_STATE m_state;
+	ASTAR_STATUS m_status;
+
+	float m_length;
+	unsigned int m_tolerance;
+	unsigned int m_search_limit;
+	unsigned int m_snake_len;
+
+	points m_points;
+	unsigned int m_pathId;
+};
+
+class CAiPathStats
+{
+public:
+	int nodes_searched;
+	int nodes_added;
+	int nodes_removed;
+	int nodes_visited;
+	int nodes_left;
+
+	int path_length;
+	int path_cost;
+
+	int m_ticks;
+	float m_time;
+	CAiMapLoc m_current;
+	CAiMapLocVec m_visited;
+};
+
+class CAiAStar
+{
+
+};
+
+class CAiPlanner
+{
+
 };
 
 class CAiDecay

@@ -2,8 +2,18 @@
 #include "gamez/zMath/zmath_main.h"
 
 void zVid_Init();
+void zVid_Uninit();
 void zVid_Open();
 void zVid_Swap(int buffer);
+void zVid_FrameRestore();
+void zVid_ClearColor(unsigned int* bit);
+void zVid_Sync0();
+void zVid_ZTestOn();
+void zVid_ZTestOff();
+void zVid_ZTestOnWriteSet(bool set);
+
+void zvid_MpegReset();
+void zvid_SetVideoMode(_zvid_mode mode);
 
 void uninitPssAudio();
 
@@ -17,7 +27,6 @@ enum _zvid_mode
 
 class _zvid_public
 {
-public:
 	unsigned int wideFrameFlag;
 
 	bool showTextureBuffer;
@@ -55,6 +64,8 @@ public:
 
 	long dmaFrameRestore;
 };
+
+_zvid_public zVid;
 
 class CVideo
 {
