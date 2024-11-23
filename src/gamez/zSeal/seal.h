@@ -103,6 +103,8 @@ public:
 
 	static CZSealBody* Create(long param_1, int param_2, int param_3);
 
+	CZBodyPart* FindPart(const char* part);
+
 	void Destroy();
 	bool DestroyAimAnims();
 

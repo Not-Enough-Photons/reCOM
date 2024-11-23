@@ -49,7 +49,7 @@ CAppCamera::CAppCamera(zdb::CWorld* world, zdb::CCamera* camera)
 	float goalSqr = (goalZ * goalZ) + (goalX * goalX) + (goalY * goalY);
 	m_goal_t_len = goalSqr;
 
-	CZSealBody* player = reinterpret_cast<CZSealBody*>(ftsGetPlayer());
+	CZSealBody* player = static_cast<CZSealBody*>(ftsGetPlayer());
 
 	if (player != NULL)
 	{
@@ -75,10 +75,10 @@ CAppCamera::CAppCamera(zdb::CWorld* world, zdb::CCamera* camera)
 	}
 	else
 	{ 
-		zdb::CNode* playerNode = reinterpret_cast<CEntity*>(m_entity)->GetNode();
+		zdb::CNode* playerNode = m_entity->GetNode();
 		zdb::CNode* cameraEffects = playerNode->FindChild("camera_effects", true);
 		m_camera_effects = cameraEffects;
-		m_skel_root = reinterpret_cast<CBody*>(m_entity)->FindPart("skel_root");
+		m_skel_root = m_entity->FindPart("skel_root");
 	}
 
 	m_wiggle_amp = theCharacterDynamics.m_cam_wiggle.amplitude;
