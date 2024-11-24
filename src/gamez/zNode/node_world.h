@@ -5,6 +5,7 @@
 
 namespace zdb
 {
+	class CNode;
 	class CNodeUniverse;
 	class CWorld;
 	class CAppCamera;

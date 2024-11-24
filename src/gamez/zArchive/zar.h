@@ -6,11 +6,14 @@
 #include "gamez/zUtil/util_stable.h"
 #include "gamez/zUtil/util_systemio.h"
 
+char* hackStr;
+bool m_memalign = false;
+
 namespace zar
 {
 	class CZAR;
 	class CKey;
-	class CKeyVec : public std::vector<CKey> {};
+	class CKeyVec : public std::vector<CKey*> {};
 	class CKeyRing : public std::list<CKey*> {};
 
 	const char* DEFAULT_ZAR_NAME = "ROOT";
@@ -30,13 +33,14 @@ namespace zar
 
 	class CKey : public CKeyRing
 	{
+		friend class CZAR;
 	public:
 		CKey();
 		CKey(char* name);
 		~CKey();
 
 		CKey* InsertKey(CKey* key);
-		CKey* FindKey(char* name);
+		CKey* FindKey(const char* name);
 
 		bool Read(CZAR* file, CIO* fileBuffer, int offset);
 		bool Write(CZAR* file);
@@ -52,35 +56,41 @@ namespace zar
 		CZAR(const char* name, CIO* io);
 		~CZAR();
 	public:
-		void Open(char* name, int version, OpenFlags mode, int count);
+		bool Open(const char* name, int version, unsigned int mode, size_t padded_size);
 		void Close();
 		void CloseKeepDir();
 
-		CKey* CreateKey();
+		CKey* CreateKey(const char* name);
 		CKey* NewKey(const char* name);
 		bool ReOpen(int count, int mode);
 
 		CKey* OpenKey(const char* name);
+		CKey* OpenKey(CKey* key);
 		CKey* FindKey(const char* name);
 		void CloseKey(CKey* key);
 
-		bool Insert(CKey* key, void* buf, int size);
+		bool Insert(CKey* key, void* buf, size_t size);
+		CKey* Insert(const char* name, void* buf, size_t size);
+		CKey* Insert(const char* name, unsigned int value);
+		CKey* Insert(const char* name, int value);
 
-		void* ReadDirectory();
+		bool ReadDirectory(int appver, unsigned int mode);
+		bool WriteDirectory();
+
 		void SetFileName();
 		size_t GetSize(const char* key);
 
-		bool Fetch(CKey* key, void* buf, int count, unsigned int flags);
-		bool Fetch(const char* key, int(*callback)(CZAR*, int, void*), void* buf);
-		bool Fetch(const char* key, void* buf, int count);
-		bool Fetch(const char* key, const char** buf);
-		bool Fetch(const char* key, float* value);
-		bool Fetch(const char* key, unsigned int* value);
-		bool Fetch(const char* key, int* value);
-		bool Fetch(const char* key, bool* value);
+		bool Fetch(CKey* key, void* buf, int size);
+		bool Fetch(const char* name, int(*callback)(CZAR*, int, void*), void* buf);
+		bool Fetch(const char* name, void* buf, int count);
+		bool Fetch(const char* name, char** buf);
+		bool Fetch(const char* name, float* buf);
+		bool Fetch(const char* name, unsigned int* buf);
+		bool Fetch(const char* name, int* buf);
+		bool Fetch(const char* name, bool* buf);
 		bool FetchAll(int(*callback)(CZAR*, char*, void*, int, void*), void* buf);
 		bool FetchLIP(CKey* key, void** buf);
-		int FetchString(const char* key, const char* str, int length);
+		int FetchString(const char* name, const char* buf, int length);
 
 		CKey* GetOpenKey();
 
@@ -89,7 +99,7 @@ namespace zar
 		void Securify(void* buf, size_t size);
 		void Unsecurify(void* buf, size_t size);
 	public:
-		CFileIO* m_pFile;
+		CIO* m_pFile;
 		CIO* m_pFileAlloc;
 	private:
 		CKeyRing m_keys;
@@ -104,7 +114,7 @@ namespace zar
 
 		CKey* m_root;
 		CSTable* m_stable;
-		const char* m_filename;
+		char* m_filename;
 
 		CKeyVec m_key_buffer;
 

@@ -18,6 +18,6 @@ void game_main(int argc, char** argv)
 
 	while (true)
 	{
-		theGame.Tick(zVid.);
+		theGame.Tick(zVid.frameTime);
 	}
 }

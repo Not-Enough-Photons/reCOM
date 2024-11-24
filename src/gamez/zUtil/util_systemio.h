@@ -1,6 +1,19 @@
 #pragma once
 #include <iostream>
 
+#define S_IXOTH 0x0001
+#define S_IWOTH 0x0002
+#define S_IROTH 0x0004
+#define S_IRWXO 0x0007
+#define S_IXGRP 0x0010
+#define S_IWGRP 0x0020
+#define S_IRGRP 0x0040
+#define S_IRWXG 0x0070
+#define S_IXUSR 0x0100
+#define S_IWUSR 0x0200
+#define S_IRUSR 0x0400
+#define S_IRWXU 0x0700
+
 enum OpenFlags
 {
 	NONE = 0,
@@ -44,7 +57,14 @@ public:
 	CIO();
 	~CIO();
 
-	virtual void Init() {}
+	virtual void Init();
+	virtual bool Open(const void* buf, unsigned int mode);
+	virtual bool Open(const char* buf, unsigned int mode);
+	virtual void Close();
+
+	virtual bool IsOpen();
+	virtual unsigned int GetMode() const;
+	virtual size_t GetSize() const;
 
 	virtual size_t fread(int offset, void** buf);
 	virtual size_t fread(void* buf, size_t size);
@@ -55,6 +75,10 @@ public:
 	virtual int ftell(int* fd);
 
 	virtual void fflush();
+protected:
+	int m_file;
+	size_t m_filesize;
+	unsigned int m_mode;
 };
 
 class CFileIO : public CIO
@@ -69,9 +93,10 @@ public:
 	static const char* m_root_path;
 	static bool m_write_status;
 public:
-	bool Open(const char* file, unsigned int mode);
-	void Close();
 	char* PS2FileName(const char* file, char* directory, int depth);
+
+	virtual bool Open(const char* file, unsigned int mode);
+	virtual void Close();
 
 	virtual bool IsOpen();
 	virtual void Release();
@@ -86,13 +111,10 @@ public:
 
 	virtual void fflush();
 
-	unsigned int GetMode() const;
-	int GetSize() const;
+	virtual unsigned int GetMode() const;
+	virtual size_t GetSize() const;
 protected:
-	int m_file;
 	CFileCD* m_cd;
-	int m_filesize;
-	unsigned int m_mode;
 };
 
 class CBufferIO : public CFileIO
@@ -104,7 +126,8 @@ public:
 
 	bool LoadBuffer();
 
-	virtual bool Open(void* buf, unsigned int mode);
+	virtual bool Open(const void* buf, unsigned int mode);
+	virtual bool Open(const char* buf, unsigned int mode);
 	virtual void Close();
 	virtual void Release();
 

@@ -27,6 +27,7 @@ enum _zvid_mode
 
 class _zvid_public
 {
+public:
 	unsigned int wideFrameFlag;
 
 	bool showTextureBuffer;
