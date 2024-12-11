@@ -1,6 +1,6 @@
-#include "seal.h"
+#include "zseal.h"
 
-CZBodyPart* CZSealBody::FindPart(const char* part)
+bool CZSealBody::DamageBody(float damage, float maxDamage)
 {
-	CBody::FindPart(part);
+
 }

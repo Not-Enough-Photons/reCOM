@@ -1,7 +1,7 @@
 #pragma once
-#include "node_main.h"
+#include "znode.h"
 
-#include "gamez/zMath/zmath_main.h"
+#include "gamez/zMath/zmath.h"
 
 namespace zdb
 {
@@ -37,9 +37,10 @@ namespace zdb
 		CWorld() : CNode() {}
 		~CWorld();
 
+		static CWorld* m_world;
+
 		static float m_scale;
 		static float m_invscale;
-		static CWorld& m_world;
 
 		static int GetVersion();
 		static void Init();

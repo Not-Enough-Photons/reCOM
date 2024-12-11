@@ -1,5 +1,5 @@
-#include "seal.h"
-#include "game/zgame.h"
+#include "zseal.h"
+#include "gamez/zgame.h"
 
 bool CSealCtrl::CreateAiEvent(CAiEvent::EVENT event, float expiration, float radius, bool flag, CPnt3D* position, int dummy)
 {

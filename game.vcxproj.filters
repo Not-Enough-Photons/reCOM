@@ -28,47 +28,43 @@
     <Filter Include="zar">
       <UniqueIdentifier>{D2C6880B-3ED0-887C-C74B-9F7C3354947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="texture">
+      <UniqueIdentifier>{8f3c502b-1473-4a58-baec-b6fd823eb593}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Apps\FTS\ai_main.h">
       <Filter>ai</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zEntity\ent_main.h">
-      <Filter>entity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zNode\node_main.h">
-      <Filter>node</Filter>
     </ClInclude>
     <ClInclude Include="src\gamez\zArchive\zar.h">
       <Filter>zar</Filter>
     </ClInclude>
     <ClInclude Include="src\util\util_stable.h" />
     <ClInclude Include="src\gamez\zSeal\seal.cpp" />
-    <ClInclude Include="src\gamez\zValve\valve_main.h" />
-    <ClInclude Include="src\gamez\zAnim\anim_main.h" />
+    <ClInclude Include="src\gamez\zValve\zvalve.h" />
+    <ClInclude Include="src\gamez\zAnim\zanim.h" />
     <ClInclude Include="src\gamez\zNode\node_world.h" />
     <ClInclude Include="src\util\util_main.h" />
-    <ClInclude Include="src\gamez\zInput\zin_main.h" />
+    <ClInclude Include="src\gamez\zInput\zinput.h" />
     <ClInclude Include="src\Apps\FTS\vehicle_main.h" />
     <ClInclude Include="src\gamez\zEntity\body.cpp" />
     <ClInclude Include="src\gamez\zEntity\body.h" />
-    <ClInclude Include="src\gamez\zSeal\seal.h" />
-    <ClInclude Include="src\gamez\zSound\zsnd_csnd.h" />
+    <ClInclude Include="src\gamez\zSound\zsnd.h" />
     <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
-    <ClInclude Include="src\gamez\zMath\zmath_main.h" />
-    <ClInclude Include="src\gamez\zNetwork\znet_main.h" />
+    <ClInclude Include="src\gamez\zMath\zmath.h" />
+    <ClInclude Include="src\gamez\zNetwork\znet.h" />
     <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
-    <ClInclude Include="src\gamez\zReader\zrdr_main.h" />
+    <ClInclude Include="src\gamez\zReader\zrdr.h" />
     <ClInclude Include="src\gamez\zRender\zrndr_main.h" />
-    <ClInclude Include="src\gamez\zSystem\zsys_main.h" />
-    <ClInclude Include="src\gamez\zTexture\ztex_main.h" />
+    <ClInclude Include="src\gamez\zSystem\zsys.h" />
+    <ClInclude Include="src\gamez\zTexture\ztex.h" />
     <ClInclude Include="src\gamez\zUI\zui.h" />
-    <ClInclude Include="src\gamez\zVideo\zvid_main.h" />
+    <ClInclude Include="src\gamez\zVideo\zvid.h" />
     <ClInclude Include="src\Apps\FTS\fts.h" />
     <ClInclude Include="src\gamez\zGame\zgame.h" />
     <ClInclude Include="src\gamez\zWeapon\zwep_weapon.h" />
     <ClInclude Include="src\gamez\zWeapon\zwep_ammo.h" />
-    <ClInclude Include="src\gamez\zUtil\util_main.h" />
+    <ClInclude Include="src\gamez\zUtil\zutil.h" />
     <ClInclude Include="src\gamez\zUtil\util_stable.h" />
     <ClInclude Include="src\bsd\strcasecmp.h" />
     <ClInclude Include="src\Apps\FTS\hud.h" />
@@ -81,6 +77,10 @@
     <ClInclude Include="src\gamez\zEntity\intersect.h" />
     <ClInclude Include="src\gamez\zCamera\zcam.h" />
     <ClInclude Include="src\rt\rtarray.h" />
+    <ClInclude Include="src\gamez\zRender\vis\zvis.h" />
+    <ClInclude Include="src\gamez\zRender\zrender.h" />
+    <ClInclude Include="src\gamez\zRender\particle\zparticle.h" />
+    <ClInclude Include="src\gamez\zAssetLib\zassetlib.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Apps\FTS\ai_main.cpp">
@@ -283,6 +283,7 @@
     <ClCompile Include="src\gamez\zUtil\util_systemio.cpp" />
     <ClCompile Include="src\gamez\zEntity\int_main.cpp" />
     <ClCompile Include="src\gamez\zVideo\zmpeg.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zvid_draw.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="scripts\readers\dynamics.rdr" />

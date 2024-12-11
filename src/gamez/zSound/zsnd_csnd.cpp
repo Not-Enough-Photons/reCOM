@@ -1,6 +1,6 @@
-#include "zsnd_csnd.h"
+#include "zsnd.h"
 
-#include "gamez/zReader/zrdr_main.h"
+#include "gamez/zReader/zrdr.h"
 
 int g_iReverbTime = 0;
 

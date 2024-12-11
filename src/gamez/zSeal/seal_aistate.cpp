@@ -1,6 +1,6 @@
-#include "seal.h"
+#include "zseal.h"
 
-#include "gamez/zAnim/anim_main.h"
+#include "gamez/zAnim/zanim.h"
 
 bool CSealCtrlAi::RegisterCommands()
 {

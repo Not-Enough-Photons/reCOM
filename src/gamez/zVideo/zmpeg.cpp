@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "gamez/zVideo/zvid_main.h"
+#include "gamez/zVideo/zvid.h"
 
 bool mpegBuffAlloc = false;
 bool rgb32Alloc = false;

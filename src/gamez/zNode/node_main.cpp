@@ -1,22 +1,22 @@
 #include <algorithm>
 
-#include "node_main.h"
+#include "znode.h"
 
-#include "gamez/zSystem/zsys_main.h"
-#include "gamez/zTexture/ztex_main.h"
+#include "gamez/zSystem/zsys.h"
+#include "gamez/zTexture/ztex.h"
 #include "gamez/zUtil/util_stable.h"
-#include "gamez/zUtil/util_main.h"
+#include "gamez/zUtil/zutil.h"
 
 namespace zdb
 {
 	CNode::CNode()
 	{
-		name = g_DeletedNodeTag;
+		m_name = g_DeletedNodeTag;
 	}
 
 	CNode* CNode::CreateInstance(CSaveLoad& save)
 	{
-		CWorld world = CWorld::m_world;
+
 	}
 
 	CNode* CNode::CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation)
@@ -74,7 +74,7 @@ namespace zdb
 		if (node != NULL && parent != this)
 		{
 			CNode* child = node;
-			if (tag_NODE_PARAMS.m_type != 3)
+			if (m_type != 3)
 			{
 				if (parent != NULL)
 				{
@@ -85,12 +85,12 @@ namespace zdb
 				child->m_count++;
 			}
 
-			if (m_count == m_child.m_nodes.size() && 1000 < m_count)
+			if (m_count == m_child.size() && 1000 < m_count)
 			{
-				m_child.m_nodes.reserve(m_count + 100);
+				m_child.reserve(m_count + 100);
 			}
 
-			m_child.m_nodes.insert(m_child.m_nodes.begin(), child);
+			m_child.insert(m_child.begin(), child);
 		}
 	}
 
@@ -100,34 +100,40 @@ namespace zdb
 
 		if (m_child.Exists(child))
 		{
-			if (p.m_type == 3)
+			if (m_type == 3)
 			{
 				m_child.Remove(child);
 				count = -1;
+				m_flatten = true;
 			}
 			else
 			{
 				child->m_count--;
-				if (child->m_count <= 0)
+
+				if (child->m_count < 0)
 				{
 					child->m_count = 0;
 				}
 
 				count = child->m_count;
+
 				m_child.Remove(child);
+
 				child->m_parent = NULL;
-				// some flag BS
-				// hierarchyFlags = hierarchyFlags & 0xfd | 2;
+
+				m_flatten = true;
 			}
 		}
 	}
 
 	void CNode::DeleteChildren()
 	{
-		while (childCount != 0)
+		while (m_child.size() != 0)
 		{
-			CNode* current = *children.begin();
+			CNode* current = m_child[0];
+
 			int count = DeleteChild(current);
+
 			if (count == 0 && current != NULL)
 			{
 				current->~CNode();
@@ -137,26 +143,46 @@ namespace zdb
 
 	float CNode::GetRadius() const
 	{
-		float radius = (radiusX + radiusX) * (radiusY + radiusY) * (radiusZ + radiusZ);
-		float maxRadius = (radiusMaxX + radiusMaxX) * (radiusMaxY + radiusMaxY) * (radiusMaxZ + radiusMaxZ);
+		float radius = 0.0f;
 
-		if (radius <= maxRadius)
+		float minX = m_bbox.m_min.x;
+		float minY = m_bbox.m_min.y;
+		float minZ = m_bbox.m_min.z;
+
+		float maxX = m_bbox.m_max.x;
+		float maxY = m_bbox.m_max.y;
+		float maxZ = m_bbox.m_max.z;
+
+		float min = minZ * minZ + minX * minX + minY * minY;
+		float max = maxZ * maxZ + maxX * maxX + maxY * maxY;
+
+		if (min <= max)
 		{
-			radius = maxRadius;
+			radius = max;
 		}
 
-		radius = sqrtf(radius);
+		radius = sqrtf(min);
 		return radius;
 	}
 
 	float CNode::GetRadiusSq() const
 	{
-		float radius = (radiusX + radiusX) * (radiusY + radiusY) * (radiusZ + radiusZ);
-		float maxRadius = (radiusMaxX + radiusMaxX) * (radiusMaxY + radiusMaxY) * (radiusMaxZ + radiusMaxZ);
+		float radius = 0.0f;
 
-		if (radius <= maxRadius)
+		float minX = m_bbox.m_min.x;
+		float minY = m_bbox.m_min.y;
+		float minZ = m_bbox.m_min.z;
+
+		float maxX = m_bbox.m_max.x;
+		float maxY = m_bbox.m_max.y;
+		float maxZ = m_bbox.m_max.z;
+
+		float min = minZ * minZ + minX * minX + minY * minY;
+		float max = maxZ * maxZ + maxX * maxX + maxY * maxY;
+
+		if (min <= max)
 		{
-			radius = maxRadius;
+			radius = max;
 		}
 
 		return radius;
@@ -164,53 +190,75 @@ namespace zdb
 
 	CPnt3D* CNode::GetScale(CPnt3D* scale) const
 	{
-		scale->x = scaleX;
-		scale->y = scaleY;
-		scale->z = scaleZ;
+		scale->x = m_matrix.m_matrix[0][0];
+		scale->y = m_matrix.m_matrix[1][1];
+		scale->z = m_matrix.m_matrix[2][2];
 		return scale;
+	}
+
+	CPnt3D* CNode::GetRotation(const CPnt3D* rotation) const
+	{
+		return m_matrix.
 	}
 
 	bool CNode::SetActive(bool active)
 	{
-		char flags = stateFlags;
-		stateFlags = flags & 0xfe | active;
+		m_active = active;
+		return m_active;
+	}
 
-		// The first bit might be the bit that determines if its active?
-		return (flags & 1) != 0;
+	CMatrix& CNode::BuildMTW(CMatrix& mat)
+	{
+		if (m_type == 6)
+		{
+			// set identity matrix
+		}
+	}
+
+	short CNode::Release()
+	{
+		m_count--;
+
+		if (m_count < 0)
+		{
+			m_count = 0;
+		}
+
+		return m_count;
 	}
 
 	void CNode::SetPosition(float x, float y, float z)
 	{
-		posX = x;
-		posY = y;
-		posZ = z;
+		m_matrix.m_matrix[3][0] = x;
+		m_matrix.m_matrix[3][1] = y;
+		m_matrix.m_matrix[3][2] = z;
 
 		UpdateGrid();
-		field82_0x9a = field82_0x9a & 0xfd | 2;
-		CNodeEx* nodeEx = this->nodeEx;
+		m_modified = true;
+		CNodeEx* nodeEx = this->m_nodeEx;
 
 		if (nodeEx != NULL)
 		{
-
+			m_nodeEx->OnMove(this);
 		}
 	}
 
 	bool CNodeVector::Exists(const CNode* node) const
 	{
-		std::vector<CNode*>::const_iterator first = this->nodes.begin();
-		std::vector<CNode*>::const_iterator last = this->nodes.end();
+		auto it = begin();
+		auto last = end();
 
-		while (first != last)
+		while (it != last)
 		{
-			if (*first == node)
+			if (*it == node)
 			{
 				break;
 			}
 
-			first++;
+			it++;
 		}
 
-		return first != last;
+		return it != last;
 	}
 
 	CNode* CNodeVector::GetNode(const char* name) const
@@ -223,16 +271,17 @@ namespace zdb
 		}
 		else
 		{
-			std::vector<CNode*>::const_iterator first = this->nodes.begin();
-			std::vector<CNode*>::const_iterator last = this->nodes.end();
+			auto it = begin();
+			auto last = end();
 
-			while (first != last)
+			while (it != last)
 			{
+				CNode* node = *it;
 				bool found = false;
 
-				if (*first != NULL && (*first)->name != 0)
+				if (node != NULL && node->m_name != 0)
 				{
-					found = strcmp(name, (*first)->name);
+					found = strcmp(name, node->m_name);
 				}
 
 				if (found)
@@ -241,9 +290,9 @@ namespace zdb
 				}
 			}
 
-			if (first != last)
+			if (it != last)
 			{
-				node = *first;
+				node = *it;
 			}
 		}
 
@@ -252,12 +301,12 @@ namespace zdb
 
 	bool CNodeVector::Remove(const CNode* node)
 	{
-		std::vector<CNode*>::const_iterator first = this->nodes.begin();
-		std::vector<CNode*>::const_iterator last = this->nodes.end();
+		auto it = begin();
+		auto last = end();
 
-		for (; first != last; first++)
+		for (; it != last; it++)
 		{
-			if (*first == node)
+			if (*it == node)
 			{
 				break;
 			}
@@ -265,17 +314,15 @@ namespace zdb
 
 		const CNode* found = node;
 
-		if (first != last)
+		if (it != last)
 		{
-			first = std::remove_copy(first + 1, last, first, found);
+			it = std::remove_copy(it + 1, last, it, found);
 		}
 
-		nodes.erase(first, last);
+		erase(it, last);
 
-		return first != last;
+		return it != last;
 	}
-
-	
 }
 
 CNodeAction::CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle)

@@ -1,10 +1,19 @@
 #include "zar.h"
 
+#include "bsd/strcasecmp.h"
+
 #include "gamez/zUtil/util_main.h"
 #include "gamez/zSystem/zsys_main.h"
 
 namespace zar
 {
+	CKey::CKey()
+	{
+		m_name = NULL;
+		m_size = 0;
+		m_offset = 0;
+	}
+
 	CKey::CKey(char* name)
 	{
 		m_name = name;
@@ -20,18 +29,44 @@ namespace zar
 
 	CKey* CKey::FindKey(const char* name)
 	{
-		auto begin = this->begin();
-		auto end = this->end();
+		CKey* key = NULL;
 
-		for (auto it = begin; it != end; it++)
+		for (auto it = begin(); it != end(); it++)
 		{
-			CKey* current = *it;
+			key = *it;
+
+			if (key->m_offset != -1 && strcasecmp(name, key->m_name) == 0)
+			{
+				break;
+			}
 		}
+
+		return key;
 	}
 
 	bool CKey::Read(CZAR* file, CIO* fileBuffer, int offset)
 	{
+		int i = 0;
+		size_t keyOffset = 0;
+		size_t keySize = 0;
 
+		char* name = NULL;
+		fileBuffer->fread(&name, 16);
+
+		if (file->m_root != this)
+		{
+			m_name = name + offset;
+			m_offset = keyOffset;
+			m_size = keySize;
+		}
+
+		while (i != 0)
+		{
+			CKey* key = file->NewKey(NULL);
+			key->Read(file, fileBuffer, offset);
+			insert(begin(), key);
+			i--;
+		}
 	}
 
 	bool CKey::Write(CZAR* file)
@@ -331,9 +366,133 @@ namespace zar
 		return readDirectory;
 	}
 
+	void CZAR::Close()
+	{
+		unsigned int mode = 0;
+		bool isOpen = false;
+		bool isBufferOpen = false;
+
+		if (m_pFile == NULL)
+		{
+			isOpen = false;
+		}
+		else
+		{
+			isOpen = m_pFile->IsOpen();
+		}
+
+		mode = m_pFile->GetMode();
+		if (isOpen && (mode & 6) != 0)
+		{
+			isBufferOpen = false;
+
+			if (m_pFile != NULL)
+			{
+				isBufferOpen = m_pFile->IsOpen();
+			}
+
+			if (isBufferOpen && m_modified)
+			{
+				WriteDirectory();
+				m_modified = false;
+			}
+		}
+
+		if (m_pFileAlloc == NULL && m_pFile != NULL)
+		{
+			m_pFile->Close();
+		}
+		else
+		{
+			m_pFileAlloc->Close();
+			delete m_pFileAlloc;
+			m_pFileAlloc = NULL;
+			m_pFile = NULL;
+		}
+
+		m_key_buffer.clear();
+
+		CKey* root = m_root;
+
+		root->erase(root->begin(), root->end());
+	}
+
+	void CZAR::Close(bool clearBuffer)
+	{
+		if (m_pFileAlloc == NULL)
+		{
+			if (m_pFile != NULL)
+			{
+				m_pFile->Close();
+			}
+		}
+		else
+		{
+			m_pFileAlloc->Close();
+			delete m_pFileAlloc;
+			m_pFileAlloc = NULL;
+			m_pFile = NULL;
+		}
+
+		m_key_buffer.clear();
+
+		CKey* key = m_root;
+
+		key->erase(key->begin(), key->end());
+
+		m_stable->Destroy();
+	}
+
+	void CZAR::CloseKeepDir()
+	{
+		m_pFile->Close();
+	}
+
+	CKey* CZAR::CreateKey(const char* name)
+	{
+		CKey* key = NULL;
+		bool isOpen = false;
+
+		if (m_pFile == NULL)
+		{
+			isOpen = false;
+		}
+		else
+		{
+			isOpen = m_pFile->IsOpen();
+		}
+
+		if (isOpen)
+		{
+			unsigned int mode = m_pFile->GetMode();
+
+			if ((mode & 1) == 0)
+			{
+				char* keyName = m_stable->CreateString(name);
+				key = new CKey(keyName);
+			}
+			else
+			{
+				if (name == NULL)
+				{
+
+				}
+			}
+		}
+
+		return key;
+	}
+
 	void CZAR::CloseKey(CKey* key)
 	{
-		CKey* target;
+		if (key == NULL && !m_keys.empty())
+		{
+			m_keys.erase(m_keys.begin());
+		}
+		else if (!m_keys.empty())
+		{
+			m_keys.erase(m_keys.begin());
+		}
 	}
 
 	bool CZAR::Insert(zar::CKey* key, void* buf, size_t size)

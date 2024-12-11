@@ -1,4 +1,4 @@
-#include "node_main.h"
+#include "znode.h"
 #include "node_world.h"
 
 #define MIN_POOL_SIZE 3000
@@ -10,7 +10,7 @@ namespace zdb
 	{
 		bool success = false;
 
-		if (!requestAlloc)
+		if (!m_locked)
 		{
 			CNode* addNode = node;
 			int capacity = this->capacity;

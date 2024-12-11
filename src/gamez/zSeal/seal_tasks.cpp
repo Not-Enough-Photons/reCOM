@@ -1,6 +1,6 @@
-#include "seal.h"
+#include "zseal.h"
 
-void* CTAction::Parse(_zrdr* reader)
+_zanim_cmd_hdr* CTAction::Parse(_zrdr* reader)
 {
 	// Look inside the "action" tag to find a string value
 	/*
@@ -16,6 +16,6 @@ void* CTAction::Parse(_zrdr* reader)
 
 	if (action != NULL)
 	{
-		void* block = calloc(16, 1);
+
 	}
 }

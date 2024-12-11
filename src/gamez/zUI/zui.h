@@ -1,12 +1,13 @@
 #pragma once
-#include "Apps/FTS/ai_main.h";
+#include "gamez/zAI/zai.h";
 
-#include "gamez/zNode/node_world.h"
-#include "gamez/zAnim/anim_main.h"
-#include "gamez/zReader/zrdr_main.h"
-#include "gamez/zInput/zin_main.h"
-#include "gamez/zTexture/ztex_main.h"
+#include "gamez/zNode/znode.h"
+#include "gamez/zAnim/zanim.h"
+#include "gamez/zReader/zrdr.h"
+#include "gamez/zInput/zinput.h"
+#include "gamez/zTexture/ztex.h"
 
+class C2D;
 class CUIVariable;
 class CUIVariableSpec;
 class CUIVarManager;
@@ -37,7 +38,9 @@ enum TextAlignment
 	RIGHT
 };
 
-class C2D
+class C2Dlist : public std::list<C2D> {};
+
+class C2D : public C2Dlist
 {
 public:
 	C2D();
@@ -48,13 +51,6 @@ public:
 	static void Init();
 	static void Open();
 public:
-	static float m_topx;
-	static float m_botx;
-	static float m_topy;
-	static float m_boty;
-	static float m_fXPixel;
-	static float m_fYPixel;
-public:
 	virtual int HandlePad(const CPad* pad, int index);
 	virtual void Draw(const CMatrix& mat, zdb::CTextureRelocMgr* manager);
 	virtual void Reset();
@@ -63,7 +59,14 @@ public:
 	virtual void SetTrans(float translation);
 	virtual void Tick(float delta);
 	virtual void TickZAnimCmd(_zanim_cmd_hdr* header, float* delta, bool* enable);
-
+public:
+	static float m_topx;
+	static float m_botx;
+	static float m_topy;
+	static float m_boty;
+	static float m_fXPixel;
+	static float m_fYPixel;
+public:
 	void Enable(bool enable);
 	void Off();
 
@@ -74,31 +77,25 @@ protected:
 
 	bool m_active_and_handling_input;
 
-	bool first;
+	bool first : 1;
 
-	bool m_isAA;
-	bool m_isTrans;
-	bool m_hasTexture;
-	bool m_isFrameAlpha;
-	bool m_on;
-	int m_unused;
-};
-
-class C2Dlist
-{
-public:
-	std::list<C2D> m_list;
+	bool m_isAA : 1;
+	bool m_isTrans : 1;
+	bool m_hasTexture : 1;
+	bool m_isFrameAlpha : 1;
+	bool m_on : 1;
+	int m_unused : 26;
 };
 
 class C2DFade
 {
-public:
+protected:
 	bool m_fade_enable;
 	float m_fade_dx;
 	float m_fade_limit;
 };
 
-class C2DBitmap : public C2D
+class C2DBitmap : public C2D, protected C2DFade
 {
 public:
 	C2DBitmap();
@@ -113,8 +110,6 @@ public:
 	float GetTrans() const;
 	void SetTrans(float translation);
 private:
-	C2DFade m_fade;
-	
 	int m_x;
 	int m_y;
 
@@ -122,6 +117,7 @@ private:
 	float m_NewUV[2][4];
 
 	zdb::CTexHandle* m_pTexHandle;
+
 	int m_iWidth;
 	int m_iHeight;
 };
@@ -257,6 +253,11 @@ public:
 };
 
 class CHUD
+{
+
+};
+
+class CCompassAnchor
 {
 
 };

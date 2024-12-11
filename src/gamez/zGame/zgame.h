@@ -2,12 +2,12 @@
 #include <deque>
 #include <string>
 
-#include "gamez/zReader/zrdr_main.h"
-#include "gamez/zNetwork/znet_main.h"
-#include "gamez/zNode/node_main.h"
+#include "gamez/zReader/zrdr.h"
+#include "gamez/zNetwork/znet.h"
+#include "gamez/zNode/znode.h"
 #include "gamez/zUI/zui.h"
 
-void game_main(int argc, char** argv);
+static void game_main(int argc, char** argv);
 void process_arguments(int argc, char** argv);
 
 class CGame

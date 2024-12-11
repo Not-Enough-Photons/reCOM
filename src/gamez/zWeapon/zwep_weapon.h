@@ -1,7 +1,7 @@
 #pragma once
 #include <list>
 
-#include "anim/anim_main.h"
+#include "gamez/zAnim/zanim.h"
 
 class CZProjectile;
 class CZProjectileList;
@@ -147,8 +147,6 @@ private:
 	float m_impactRadius;
 };
 
-
-
 class CZFTSWeapon : public CZWeapon
 {
 public:
@@ -182,22 +180,18 @@ public:
 	float ResolveDamage(float target, float source, float* currentDamage, float* newDamage);
 };
 
-class CZWeaponList
+class CZWeaponList : public std::list<CZWeapon*>
 {
 public:
-	CZWeaponList();
-	~CZWeaponList();
-
 	CZWeapon* GetWeaponByIndex(int index) const;
-private:
-	std::list<CZWeapon*> weapons;
 };
 
-class CZProjectileList
+class CZProjectileList : public std::list<CZProjectile*> {};
+
+class CAccuracy
 {
 public:
-	CZProjectileList();
-	~CZProjectileList();
-
-
+	float FactorX;
+	float FactorY;
+	float Factor;
 };

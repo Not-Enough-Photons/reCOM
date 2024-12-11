@@ -1,6 +1,15 @@
 #pragma once
-#include "gamez/zNode/node_main.h"
-#include "gamez/zMath/zmath_main.h"
+#include "gamez/zNode/znode.h"
+#include "gamez/zMath/zmath.h"
+
+enum CDIType
+{
+	type_00,
+	type_01,
+	type_02,
+	type_03,
+	type_04
+};
 
 namespace zdb
 {
@@ -71,5 +80,12 @@ namespace zdb
 		CPnt3D m_pos;
 		CPnt3D m_norm;
 		CNode* m_node;
+	};
+
+	class CHit : public IntersectStruct
+	{
+	public:
+		CPnt3D m_hit0;
+		CPnt3D m_hit1;
 	};
 }

@@ -1,9 +1,9 @@
 #pragma once
-#include "gamez/zAnim/anim_main.h"
-#include "gamez/zMath/zmath_main.h"
-#include "gamez/zEntity/ent_main.h"
-#include "gamez/zNode/node_main.h"
-#include "gamez/zSystem/zsys_main.h"
+#include "gamez/zAnim/zanim.h"
+#include "gamez/zMath/zmath.h"
+#include "gamez/zEntity/zentity.h"
+#include "gamez/zNode/znode.h"
+#include "gamez/zSystem/zsys.h"
 
 CAppCamera appCamera;
 

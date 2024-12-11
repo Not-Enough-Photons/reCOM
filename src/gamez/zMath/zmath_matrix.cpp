@@ -1,4 +1,4 @@
-#include "zmath_main.h"
+#include "zmath.h"
 
 const float* CMatrix::operator[](const int row)
 {
@@ -88,4 +88,9 @@ void CMatrix::Multiply(const CMatrix* first, const CMatrix* second)
 		(first->m_matrix[2][1] * second->m_matrix[1][3]) +
 		(first->m_matrix[2][2] * second->m_matrix[2][3]) +
 		(first->m_matrix[2][3] * second->m_matrix[3][3]);
+}
+
+void CMatrix::ToEuler(CPnt3D* p)
+{
+
 }

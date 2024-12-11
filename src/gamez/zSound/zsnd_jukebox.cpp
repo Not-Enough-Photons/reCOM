@@ -1,4 +1,4 @@
-#include "zsnd_csnd.h"
+#include "zsnd.h"
 
 void CSndJukebox::Tick(float delta)
 {

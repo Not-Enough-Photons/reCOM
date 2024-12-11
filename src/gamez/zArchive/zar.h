@@ -2,7 +2,7 @@
 #include <string>
 #include <list>
 
-#include "gamez/zReader/zrdr_main.h"
+#include "gamez/zReader/zrdr.h"
 #include "gamez/zUtil/util_stable.h"
 #include "gamez/zUtil/util_systemio.h"
 
@@ -37,7 +37,6 @@ namespace zar
 	public:
 		CKey();
 		CKey(char* name);
-		~CKey();
 
 		CKey* InsertKey(CKey* key);
 		CKey* FindKey(const char* name);
@@ -52,12 +51,14 @@ namespace zar
 
 	class CZAR
 	{
+		friend class CKey;
 	public:
 		CZAR(const char* name, CIO* io);
 		~CZAR();
 	public:
 		bool Open(const char* name, int version, unsigned int mode, size_t padded_size);
 		void Close();
+		void Close(bool clearBuffer);
 		void CloseKeepDir();
 
 		CKey* CreateKey(const char* name);
@@ -101,7 +102,7 @@ namespace zar
 	public:
 		CIO* m_pFile;
 		CIO* m_pFileAlloc;
-	private:
+
 		CKeyRing m_keys;
 
 		void* m_databuffer;
