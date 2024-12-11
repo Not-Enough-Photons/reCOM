@@ -8,6 +8,7 @@
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUI/zui.h"
 #include "gamez/zWeapon/zwep_weapon.h"
+#include "gamez/zWeapon/zwep_ammo.h"
 
 enum ZOOMSTATE
 {
@@ -134,10 +135,98 @@ public:
 
 	void SetBody(const CZSealBody& body);
 private:
-	CZSealBody* seal;
-	int curWeaponIdx;
-	CZWeapon** arsenal;
-	int numItems;
+	BITFIELD_UINT(m_first, 1);
+	BITFIELD_UINT(m_reticuletypeChanged, 1);
+	BITFIELD_UINT(m_weaponinfoChanged, 1);
+	BITFIELD_UINT(m_retblocked, 1);
+	BITFIELD_UINT(m_nvg_enabled, 1);
+	BITFIELD_UINT(m_binocs_enabled, 1);
+	BITFIELD_UINT(m_lase_echo, 1);
+	BITFIELD_UINT(m_lase_deploy_echo, 1);
+	BITFIELD_UINT(m_lensfx_enable, 1);
+	BITFIELD_UINT(m_waiting_to_fire, 1);
+	BITFIELD_UINT(m_waiting_to_raise, 1);
+	BITFIELD_UINT(m_changeToRifle, 1);
+	BITFIELD_UINT(m_requested_item, 1);
+	BITFIELD_UINT(m_current_requested_ammo, 1);
+	BITFIELD_UINT(m_heartbeat_enabled, 1);
+	BITFIELD_UINT(m_unused, 17);
+
+	float m_retposx;
+	float m_retposy;
+	float m_retoffsetx;
+	float m_retoffsety;
+
+	float m_sniper_posx;
+	float m_sniper_posy;
+	float m_sniper_prev_posx;
+	float m_sniper_prev_posy;
+
+	float m_firerifle_kick_baseline;
+	float m_firerifle_kick_movedist;
+	float m_firerifle_kick_accum;
+	int m_firerifle_kick_state;
+
+	unsigned int m_heartbeat_state;
+	float m_heartbeat_accum;
+	float m_chill_parabola;
+
+	int m_curitemreticule;
+	
+	float m_screenoffset_x;
+	float m_screenoffset_y;
+
+	float m_lase_timer;
+	CZAnim* m_lase_anim;
+	// name* m_lase_mapname // TODO: Create the name struct. I don't know why they named it that.
+
+	unsigned int m_itemstate[30];
+	CZFTSWeapon* m_item[30];
+	CZAmmo* m_ammo[30];
+	int m_reloads[30][10];
+	int m_currentmag[30];
+	int m_firemode[30];
+	CCharacterGear* m_associatedgear[30];
+	unsigned char m_iteminuse[30];
+
+	int m_cur_zoom;
+	int m_restore_zoom;
+	int m_burst_count;
+	int m_fire_delay;
+	int m_selected_item;
+	int m_last_selected;
+	int m_num_items;
+	
+	CZSealBody* m_body;
+	
+	std::vector<unsigned char> m_items_avail;
+
+	zdb::CNode* m_detonator_model;
+	zdb::CNode* m_flashlight_model;
+	zdb::CTexture* m_detonator_icon;
+
+	float m_retsize;
+	float m_prev_retsize;
+	float m_prev_factor;
+	float m_prev_axis_a;
+	float m_prev_axis_b;
+	float m_retblockedsize;
+	float m_retblockedX;
+	float m_retblockedY;
+	float m_retsizegoal;
+	float m_retmax;
+	float m_retmin;
+
+	int m_tracercount;
+	float m_firetime;
+	
+	// zdb::CLightMap* m_lightMap; // TODO: Create the CLightMap class
+	CSnd* m_rldsnd;
+	CSnd* m_clicksnd;
+	CSnd* m_lasersnd_start;
+	CSnd* m_lasersnd_fin;
+
+	float m_pickupRequestWait;
 };
 
 class CZSealBody : public CEntity, CBody
