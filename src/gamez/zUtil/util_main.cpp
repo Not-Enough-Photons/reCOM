@@ -1,4 +1,5 @@
-#include "util_main.h"
+#include "zutil.h"
+#include "util_systemio.h"
 
 COutput::COutput(const char* outputLogPath)
 {

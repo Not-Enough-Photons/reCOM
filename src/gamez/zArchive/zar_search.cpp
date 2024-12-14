@@ -1,7 +1,11 @@
 #include "zar.h"
+
+#include "gamez/zutil/util_stable.h"
+#include "gamez/zutil/util_systemio.h"
+
 namespace zar
 {
-	bool CZAR::Fetch(CKey* key, void* buf, int size)
+	bool CZAR::Fetch(CKey* key, void* buf, size_t size)
 	{
 		bool isOpen = false;
 		bool success = false;
@@ -18,41 +22,20 @@ namespace zar
 		CKey* openKey = OpenKey(key);
 		if (isOpen && openKey != NULL)
 		{
-			if (openKey->m_size != 0)
+			if (key->m_size != 0)
 			{
 				int offset = key->m_offset;
-				int keyFilePos = m_pFile->fseek(offset, SEEK_SET);
+				size_t position = m_pFile->fseek(offset, SEEK_SET);
 
-				if (offset == keyFilePos && size <= key->m_size)
+				success = offset == position;
+
+				if (success && size <= key->m_size)
 				{
 					offset = m_pFile->fread(buf, size);
 
-					if (m_bSecure && 0 < size)
-					{
-						if (8 < size)
-						{
-							do
-							{
-								// Yes, I know this fucking sucks.
-								unsigned char* byte = (unsigned char*)((int)buf + offset);
-								offset += 8;
-								byte[0] = ~byte[0];
-								byte[1] = ~byte[1];
-								byte[2] = ~byte[2];
-								byte[3] = ~byte[3];
-								byte[4] = ~byte[4];
-								byte[5] = ~byte[5];
-								byte[6] = ~byte[6];
-								byte[7] = ~byte[7];
-							} while (offset < size - 8);
-						}
+					success = size == offset;
 
-						for (; offset < size; offset++)
-						{
-							unsigned char* byte = (unsigned char*)((int)buf + offset);
-							byte[offset] = ~byte[offset];
-						}
-					}
+					ZAR_SECURE(m_bSecure, buf, size);
 				}
 			}
 
@@ -108,7 +91,7 @@ namespace zar
 		return success;
 	}
 
-	bool CZAR::Fetch(const char* name, void* buf, int size)
+	bool CZAR::Fetch(const char* name, void* buf, size_t size)
 	{
 		bool isOpen = false;
 		bool success = false;
@@ -351,7 +334,7 @@ namespace zar
 			if (key->m_size != 0)
 			{
 				int offset = key->m_offset;
-				int position = m_pFile->fseek(offset, SEEK_CUR);
+				int position = m_pFile->fseek(offset, SEEK_SET);
 
 				if (offset == position)
 				{
@@ -364,5 +347,64 @@ namespace zar
 		}
 
 		return success;
+	}
+
+	size_t CZAR::FetchString(const char* name, char* buf, size_t size)
+	{
+		int zero = 0;
+		int keyOffset = 0;
+
+		bool success = false;
+
+		CKey* key = GetOpenKey();
+		CKey* stringKey = NULL;
+
+		key = key->FindKey(name);
+
+		if (key != NULL)
+		{
+			bool isOpen = false;
+			size_t keySize = key->m_size;
+
+			if (keySize <= size)
+			{
+				if (m_pFile == NULL)
+				{
+					isOpen = false;
+				}
+				else
+				{
+					isOpen = m_pFile->IsOpen();
+				}
+
+				stringKey = OpenKey(key);
+				if (isOpen && stringKey != NULL)
+				{
+					if (key->m_size != 0)
+					{
+						keyOffset = key->m_offset;
+						int position = m_pFile->fseek(keyOffset, SEEK_SET);
+
+						if (keyOffset == position && keySize <= key->m_size)
+						{
+							keyOffset = m_pFile->fread(buf, keySize);
+							success = keySize == keyOffset;
+							Unsecurify(buf, keySize);
+						}
+					}
+
+					CloseKey(key);
+				}
+
+				keyOffset = zero;
+
+				if (success)
+				{
+					keyOffset = key->m_size;
+				}
+			}
+		}
+
+		return keyOffset;
 	}
 }

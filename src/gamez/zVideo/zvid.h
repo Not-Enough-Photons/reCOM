@@ -1,5 +1,5 @@
 #pragma once
-#include "gamez/zMath/zmath_main.h"
+#include "gamez/zMath/zmath.h"
 
 void zVid_Init();
 void zVid_Uninit();

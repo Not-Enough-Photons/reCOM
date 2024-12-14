@@ -54,27 +54,24 @@ public:
 class CIO
 {
 public:
-	CIO();
-	~CIO();
+	virtual void Init() { }
+	virtual bool Open(void* buf) { return false; }
+	virtual bool Open(const char* buf) { return false; }
+	virtual void Close() { }
 
-	virtual void Init();
-	virtual bool Open(const void* buf, unsigned int mode);
-	virtual bool Open(const char* buf, unsigned int mode);
-	virtual void Close();
+	virtual bool IsOpen() const { return false; }
+	virtual unsigned int GetMode() const { return m_mode; }
+	virtual size_t GetSize() const { return m_filesize; }
 
-	virtual bool IsOpen();
-	virtual unsigned int GetMode() const;
-	virtual size_t GetSize() const;
+	virtual size_t fread(int offset, void** buf) { return 0; }
+	virtual size_t fread(void* buf, size_t size) { return 0; }
+	virtual size_t fwrite(const char* buf);
+	virtual size_t fwrite(const void* buf, size_t size) { return 0; }
 
-	virtual size_t fread(int offset, void** buf);
-	virtual size_t fread(void* buf, size_t size);
-	virtual size_t fwrite(char* buf);
-	virtual size_t fwrite(void* buf, size_t size);
+	virtual size_t fseek(int offset, int origin) { return 0; }
+	virtual size_t ftell() { return 0; }
 
-	virtual int fseek(int offset, int origin);
-	virtual int ftell(int* fd);
-
-	virtual void fflush();
+	virtual void fflush() { }
 protected:
 	int m_file;
 	size_t m_filesize;
@@ -86,33 +83,32 @@ class CFileIO : public CIO
 public:
 	CFileIO();
 	CFileIO(const CFileIO& other);
-	~CFileIO();
 
 	static void SetRootPath(const char* rootPath);
 
 	static const char* m_root_path;
 	static bool m_write_status;
 public:
-	char* PS2FileName(const char* file, char* directory, int depth);
-
-	virtual bool Open(const char* file, unsigned int mode);
+	virtual void Init() { }
+	virtual bool Open(void* buf) { return false; }
+	virtual bool Open(const char* file);
 	virtual void Close();
-
-	virtual bool IsOpen();
 	virtual void Release();
+
+	virtual bool IsOpen() const;
+	virtual unsigned int GetMode() const;
+	virtual size_t GetSize() const;
 
 	virtual size_t fread(int offset, void** buf);
 	virtual size_t fread(void* buf, size_t size);
-	virtual size_t fwrite(char* buf);
+	virtual size_t fwrite(const char* buf);
 	virtual size_t fwrite(const void* buf, size_t size);
 
-	virtual int fseek(int offset, int origin);
-	virtual int ftell(int* fd);
+	virtual size_t fseek(int offset, int origin);
+	virtual size_t ftell();
 
 	virtual void fflush();
 
-	virtual unsigned int GetMode() const;
-	virtual size_t GetSize() const;
 protected:
 	CFileCD* m_cd;
 };
@@ -120,25 +116,28 @@ protected:
 class CBufferIO : public CFileIO
 {
 public:
-	CBufferIO() : CFileIO() { }
+	CBufferIO();
 	CBufferIO(const CBufferIO& other);
-	~CBufferIO();
 
+	void CopyFileIO(const CFileIO* io);
 	bool LoadBuffer();
 
-	virtual bool Open(const void* buf, unsigned int mode);
-	virtual bool Open(const char* buf, unsigned int mode);
+	virtual bool Open(void* buf, size_t size);
+	virtual bool Open(const char* buf);
 	virtual void Close();
 	virtual void Release();
 
-	virtual bool IsOpen();
+	virtual bool IsOpen() const { return m_buffer != NULL; }
 
 	virtual size_t fread(int offset, void** buf);
 	virtual size_t fread(void* buf, size_t size);
-	virtual char freadchar(char* buf);
-	virtual size_t fwrite(char* buf);
-	virtual size_t fwrite(void* buf, size_t size);
+	virtual char freadchar(char* buf) { return 0; }
+	virtual size_t fwrite(const char* buf) { return 0; }
+	virtual size_t fwrite(const void* buf, size_t size) { return 0; }
 
-	virtual int fseek(int offset, int origin);
-	virtual int ftell(int* fd);
+	virtual size_t fseek(int offset, int origin);
+	virtual size_t ftell();
+private:
+	void* m_buffer;
+	size_t m_bufsize;
 };

@@ -1,9 +1,9 @@
-#include "zar.h"
-
 #include "bsd/strcasecmp.h"
 
-#include "gamez/zUtil/util_main.h"
-#include "gamez/zSystem/zsys_main.h"
+#include "zar.h"
+
+#include "gamez/zutil/util_stable.h"
+#include "gamez/zutil/util_systemio.h"
 
 namespace zar
 {
@@ -21,6 +21,11 @@ namespace zar
 		m_offset = 0;
 	}
 
+	CKey::~CKey()
+	{
+		clear();
+	}
+
 	CKey* CKey::InsertKey(CKey* key)
 	{
 		insert(begin(), key);
@@ -29,44 +34,56 @@ namespace zar
 
 	CKey* CKey::FindKey(const char* name)
 	{
-		CKey* key = NULL;
+		auto begin = this->begin();
+		auto end = this->end();
+		std::list<CKey*>::iterator it;
 
-		for (auto it = begin(); it != end(); it++)
+		for (it = begin; it != end; it++)
 		{
-			key = *it;
+			CKey* current = *it;
 
-			if (key->m_offset != -1 && strcasecmp(name, key->m_name) == 0)
+			if (current->m_size != -1 && strcasecmp(current->m_name, name) == 0)
 			{
 				break;
 			}
 		}
 
-		return key;
+		if (it != end)
+		{
+			return *it;
+		}
+
+		return NULL;
 	}
 
-	bool CKey::Read(CZAR* file, CIO* fileBuffer, int offset)
+	bool CKey::Read(CZAR* archive, CBufferIO* buffer, unsigned int stableOffset)
 	{
-		int i = 0;
-		size_t keyOffset = 0;
-		size_t keySize = 0;
-
-		char* name = NULL;
-		fileBuffer->fread(&name, 16);
-
-		if (file->m_root != this)
+		struct KEY
 		{
-			m_name = name + offset;
-			m_offset = keyOffset;
-			m_size = keySize;
+			char* m_name;
+			int m_offset;
+			int m_size;
+			int m_count;
+		} key_t;
+
+		buffer->fread(&key_t, sizeof(KEY));
+
+		if (archive->m_root != this)
+		{
+			m_name = key_t.m_name + stableOffset;
+			m_size = key_t.m_size;
+			m_offset = key_t.m_offset;
 		}
 
-		while (i != 0)
+		while (key_t.m_count != 0)
 		{
-			CKey* key = file->NewKey(NULL);
-			key->Read(file, fileBuffer, offset);
-			insert(begin(), key);
-			i--;
+			CKey* archiveKey = archive->NewKey(NULL);
+			archiveKey->Read(archive, buffer, stableOffset);
+			insert(end(), archiveKey);
+			key_t.m_count--;
 		}
+
+		return true;
 	}
 
 	bool CKey::Write(CZAR* file)
@@ -95,6 +112,8 @@ namespace zar
 			CKey* key = *it;
 			key->Write(file);
 		}
+
+		return true;
 	}
 
 	CZAR::CZAR(const char* name, CIO* io)
@@ -128,11 +147,10 @@ namespace zar
 
 				if (io == NULL)
 				{
-					io = new CFileIO();
-					m_pFileAlloc = io;
+					m_pFileAlloc = new CFileIO();
 				}
 
-				m_pFile = io;
+				m_pFile = new CBufferIO();
 
 				m_data_padded = 16;
 
@@ -156,214 +174,25 @@ namespace zar
 
 		if (io == NULL)
 		{
-			io = new CFileIO();
-			m_pFileAlloc = io;
+			m_pFileAlloc = new CFileIO();
 		}
 
-		m_pFile = io;
+		m_pFile = new CBufferIO();
 
 		m_data_padded = 16;
-		
+
 		m_root = new CKey("DEFAULT_ZAR_NAME");
 	}
 
-	CKey* CZAR::NewKey(const char* name)
+	CZAR::~CZAR()
 	{
-		CKey* key;
-
-		unsigned int mode = m_pFile->GetMode();
-
-		if ((mode & S_IXOTH) == 0)
+		if (m_pFile != NULL)
 		{
-			char* keyName = m_stable->CreateString(name);
-			key = new CKey(keyName);
-		}
-		else
-		{
-			if (name == NULL)
+			if (m_pFile->IsOpen() && (m_pFile->GetMode() & 6) != 0)
 			{
-				CKey* bufferedKey = new CKey();
-				m_key_buffer.insert(m_key_buffer.begin(), bufferedKey);
+
 			}
-			else
-			{
-				char* keyName = m_stable->CreateString(name);
-				key = new CKey(keyName);
-				m_key_buffer.insert(m_key_buffer.begin(), key);
-			}
-
-			key = m_key_buffer.front();
 		}
-
-		return key;
-	}
-
-	CKey* CZAR::FindKey(const char* name)
-	{
-		CKey* key = NULL;
-
-		if (m_keys.empty())
-		{
-			key = m_root;
-		}
-		else
-		{
-			key = m_keys.front();
-		}
-
-		if (key != NULL)
-		{
-			return key->FindKey(name);
-		}
-
-		return key;
-	}
-
-	CKey* CZAR::OpenKey(const char* keyName)
-	{
-		CKey* key = NULL;
-		bool open = false;
-
-		if (m_pFile == NULL)
-		{
-			open = false;
-		}
-		else
-		{
-			open = m_pFile->IsOpen();
-		}
-
-		if (!open)
-		{
-			key = NULL;
-		}
-		else
-		{
-			if (m_keys.empty())
-			{
-				key = m_root;
-			}
-			else
-			{
-				key = m_keys.front();
-			}
-
-			key = key->FindKey(keyName);
-		}
-
-		if (key != NULL)
-		{
-			m_keys.insert(m_keys.begin(), key);
-		}
-
-		return key;
-	}
-
-	CKey* CZAR::OpenKey(CKey* key)
-	{
-		if (key != NULL)
-		{
-			m_keys.insert(m_keys.begin(), key);
-		}
-
-		return key;
-	}
-
-	bool CZAR::Open(const char* name, int version, unsigned int mode, size_t padded_size)
-	{
-		bool readDirectory = false;
-
-		if (name == NULL)
-		{
-			return false;
-		}
-
-		if (m_pFile == NULL)
-		{
-			m_pFileAlloc = new CFileIO();
-			m_pFile = m_pFileAlloc;
-		}
-
-		bool openSuccessful = m_pFile->Open(name, mode);
-
-		if (!openSuccessful)
-		{
-			return false;
-		}
-
-		char* filename = m_filename;
-		
-		if (filename != NULL && filename != "DEFAULT_ZAR_NAME")
-		{
-			if (filename == name)
-			{
-				// some goto crap
-			}
-
-			free(filename);
-			m_filename = NULL;
-		}
-
-		if (name == NULL || name == "DEFAULT_ZAR_NAME")
-		{
-			m_filename = "DEFAULT_ZAR_NAME";
-		}
-		else
-		{
-			m_filename = strdup(name);
-		}
-
-		m_data_padded = padded_size;
-		readDirectory = ReadDirectory(version, mode);
-		
-		if (readDirectory)
-		{
-			m_tail.appversion = version;
-		}
-		else
-		{
-			openSuccessful = false;
-			if (m_pFile != NULL)
-			{
-				openSuccessful = m_pFile->IsOpen();
-			}
-
-			if (openSuccessful && (m_pFile->GetMode() & 6) != 0)
-			{
-				openSuccessful = false;
-
-				if (m_pFile != NULL)
-				{
-					openSuccessful = m_pFile->IsOpen();
-				}
-
-				if (openSuccessful && m_modified)
-				{
-					WriteDirectory();
-					m_modified = false;
-				}
-			}
-
-			if (m_pFileAlloc == NULL && m_pFile != NULL)
-			{
-				m_pFile->Close();
-			}
-			else
-			{
-				m_pFileAlloc->Close();
-				delete m_pFileAlloc;
-				m_pFileAlloc = NULL;
-				m_pFile = NULL;
-			}
-
-			m_key_buffer.clear();
-
-			m_root->erase(m_root->begin(), m_root->begin());
-
-			m_stable->Destroy();
-		}
-
-		return readDirectory;
 	}
 
 	void CZAR::Close()
@@ -451,45 +280,272 @@ namespace zar
 	CKey* CZAR::CreateKey(const char* name)
 	{
 		CKey* key = NULL;
-		bool isOpen = false;
 
-		if (m_pFile == NULL)
+		// TODO:
+		// Redo this function definition
+
+		return key;
+	}
+
+	CKey* CZAR::NewKey(const char* name)
+	{
+		CKey* key;
+
+		if (name == NULL)
 		{
-			isOpen = false;
+			CKey* bufferedKey = new CKey();
+			m_key_buffer.insert(m_key_buffer.begin(), bufferedKey);
 		}
 		else
 		{
-			isOpen = m_pFile->IsOpen();
+			char* keyName = m_stable->CreateString(name);
+			key = new CKey(keyName);
+			m_key_buffer.insert(m_key_buffer.begin(), key);
 		}
 
-		if (isOpen)
+		key = m_key_buffer.front();
+
+		return key;
+	}
+
+	CKey* CZAR::FindKey(const char* name)
+	{
+		CKey* key = NULL;
+
+		if (m_keys.empty())
 		{
-			unsigned int mode = m_pFile->GetMode();
+			key = m_root;
+		}
+		else
+		{
+			key = m_keys.front();
+		}
 
-			if ((mode & 1) == 0)
-			{
-				char* keyName = m_stable->CreateString(name);
-				key = new CKey(keyName);
-			}
-			else
-			{
-				if (name == NULL)
-				{
-
-				}
-			}
+		if (key != NULL)
+		{
+			return key->FindKey(name);
 		}
 
 		return key;
 	}
 
+	CKey* CZAR::OpenKey(const char* keyName)
+	{
+		CKey* key = NULL;
+		bool open = false;
+
+		if (m_pFile == NULL)
+		{
+			open = false;
+		}
+		else
+		{
+			open = m_pFile->IsOpen();
+		}
+
+		if (!open)
+		{
+			key = NULL;
+		}
+		else
+		{
+			if (m_keys.empty())
+			{
+				key = m_root;
+			}
+			else
+			{
+				key = m_keys.front();
+			}
+
+			key = key->FindKey(keyName);
+		}
+
+		if (key != NULL)
+		{
+			m_keys.insert(m_keys.begin(), key);
+		}
+
+		return key;
+	}
+
+	CKey* CZAR::OpenKey(CKey* key)
+	{
+		if (key == NULL)
+		{
+			return NULL;
+		}
+
+		m_keys.insert(m_keys.begin(), key);
+		return key;
+	}
+
+	CKey* CZAR::GetOpenKey() const
+	{
+		CKey* key;
+
+		if (m_keys.empty())
+		{
+			key = m_root;
+		}
+		else
+		{
+			key = m_keys.front();
+		}
+
+		return key;
+	}
+
+	bool CZAR::Open(const char* name, int version, unsigned int mode, size_t padded_size)
+	{
+		if (name == NULL)
+		{
+			return false;
+		}
+
+		if (m_pFile == NULL)
+		{
+			m_pFileAlloc = new CFileIO();
+			m_pFile = new CBufferIO();
+		}
+
+		bool isOpen = m_pFileAlloc->Open(name);
+
+		if (!isOpen)
+		{
+			return false;
+		}
+
+		if (m_filename != NULL && m_filename != "DEFAULT_ZAR_NAME")
+		{
+			if (m_filename == name)
+			{
+				m_data_padded = padded_size;
+
+				bool success = ReadDirectory(version, mode);
+
+				if (success)
+				{
+					m_tail.appversion = version;
+				}
+				else
+				{
+					isOpen = false;
+
+					if (m_pFile != NULL)
+					{
+						isOpen = m_pFile->IsOpen();
+					}
+
+					if (isOpen)
+					{
+						isOpen = false;
+
+						if (m_pFile == NULL)
+						{
+							isOpen = m_pFile->IsOpen();
+						}
+
+						if (isOpen && m_modified)
+						{
+							WriteDirectory();
+							m_modified = false;
+						}
+					}
+
+					if (m_pFileAlloc == NULL)
+					{
+						if (m_pFile != NULL)
+						{
+							m_pFile->Close();
+						}
+					}
+					else
+					{
+						m_pFileAlloc->Close();
+						delete m_pFileAlloc;
+						m_pFileAlloc = NULL;
+						m_pFile = NULL;
+					}
+
+					m_key_buffer.clear();
+					m_root->erase(m_root->begin(), m_root->end());
+					m_stable->Destroy();
+				}
+			}
+
+			free(&m_filename);
+			m_filename = NULL;
+		}
+
+		if (name == NULL && name == "DEFAULT_ZAR_NAME")
+		{
+			m_filename = "DEFAULT_ZAR_NAME";
+		}
+		else
+		{
+			m_filename = strdup(name);
+		}
+
+		m_data_padded = padded_size;
+
+		bool success = ReadDirectory(version, mode);
+
+		if (success)
+		{
+			m_tail.appversion = version;
+		}
+		else
+		{
+			isOpen = false;
+
+			if (m_pFile != NULL)
+			{
+				isOpen = m_pFile->IsOpen();
+			}
+
+			if (isOpen)
+			{
+				isOpen = false;
+
+				if (m_pFile == NULL)
+				{
+					isOpen = m_pFile->IsOpen();
+				}
+
+				if (isOpen && m_modified)
+				{
+					WriteDirectory();
+					m_modified = false;
+				}
+			}
+
+			if (m_pFileAlloc == NULL)
+			{
+				if (m_pFile != NULL)
+				{
+					m_pFile->Close();
+				}
+			}
+			else
+			{
+				m_pFileAlloc->Close();
+				delete m_pFileAlloc;
+				m_pFileAlloc = NULL;
+				m_pFile = NULL;
+			}
+
+			m_key_buffer.clear();
+			m_root->erase(m_root->begin(), m_root->end());
+			m_stable->Destroy();
+		}
+
+		return success;
+	}
+
 	void CZAR::CloseKey(CKey* key)
 	{
-		if (key == NULL && !m_keys.empty())
-		{
-			m_keys.erase(m_keys.begin());
-		}
-		else if (!m_keys.empty())
+		if (key != NULL && !m_keys.empty())
 		{
 			m_keys.erase(m_keys.begin());
 		}
@@ -581,6 +637,8 @@ namespace zar
 				}
 			}
 		}
+
+		return success;
 	}
 
 	CKey* CZAR::Insert(const char* name, void* buf, size_t size)
@@ -645,225 +703,100 @@ namespace zar
 
 	bool CZAR::ReadDirectory(int appver, unsigned int mode)
 	{
-		int index = 0;
-		int res = 0;
-		int frontReserved = 0;
-		size_t tailstableSize = 0;
-		void* stablePtr = NULL;
-		void* stableDest = NULL;
-		CKey* rootKey;
-
-		int flags;
-		int key_count;
-		size_t stable_size;
-		int stable_ofs;
-		int reserved[16];
-		int tailReserved[16];
-		int offset;
-		int crc;
-		int appversion;
-		int version;
-
-		size_t fileSize = 0;
-		bool isOpen = false;
 		bool success = false;
 
-		if (m_pFile == NULL)
+		if (m_pFileAlloc == NULL)
 		{
-			isOpen = false;
+			return false;
+		}
+
+		if (!m_pFileAlloc->IsOpen())
+		{
+			return false;
+		}
+
+		int position = m_pFileAlloc->fseek(0xffffffffffffffa0, SEEK_END);
+		size_t size = 0;
+
+		if (position != -1)
+		{
+			size = m_pFileAlloc->fread(&m_tail, sizeof(TAIL));
+		}
+		else if (position == -1)
+		{
+			return false;
+		}
+
+		if (size == sizeof(TAIL) && m_tail.version == 0x20001)
+		{
+			position = m_pFileAlloc->fseek(m_tail.offset, SEEK_SET);
+
+			if (position != -1)
+			{
+				int stable_size = m_tail.stable_size;
+				void* stable_ptr = malloc(stable_size);
+
+				m_pFileAlloc->fread(stable_ptr, stable_size);
+
+				m_stable->Destroy();
+				m_stable->LoadTable(stable_ptr, stable_size, true);
+
+				int ofs = m_tail.stable_ofs;
+				m_key_buffer.clear();
+				m_key_buffer.reserve(m_tail.key_count);
+
+				CKey* root_key = m_root;
+				root_key->erase(root_key->begin(), root_key->end());
+
+				CBufferIO bufferIO;
+
+				size_t key_size = m_tail.key_count << 4;
+				void* key_ptr = malloc(key_size);
+
+				m_pFileAlloc->fread(key_ptr, key_size);
+				Unsecurify(key_ptr, key_size);
+
+				bufferIO.Open(key_ptr, key_size);
+
+				m_root->Read(this, &bufferIO, (unsigned int)stable_ptr - ofs);
+				bufferIO.Close();
+
+				m_databuffer_size = m_tail.offset;
+				size = m_databuffer_size;
+
+				if (size != 0)
+				{
+					m_databuffer = malloc(size);
+
+					m_pFileAlloc->fseek(0, SEEK_SET);
+					m_pFileAlloc->fread(m_databuffer, m_databuffer_size);
+					Unsecurify(m_databuffer, m_databuffer_size);
+
+					if (m_pFileAlloc != NULL)
+					{
+						m_pFileAlloc->Close();
+						delete m_pFileAlloc;
+
+						m_pFile = NULL;
+						m_pFileAlloc = NULL;
+
+						m_pFileAlloc = new CFileIO();
+						m_pFile = new CBufferIO();
+
+						m_pFile->Open(m_databuffer, m_databuffer_size);
+					}
+				}
+
+				success = true;
+			}
 		}
 		else
 		{
-			isOpen = m_pFile->IsOpen();
+			success = false;
 		}
 
-		if (isOpen)
-		{
-			flags = 0;
-			key_count = 0;
-			stable_size = 0;
-			stable_ofs = 0;
-			reserved[0] = 0;
-			reserved[1] = 0;
-			reserved[2] = 0;
-			reserved[3] = 0;
-			reserved[4] = 0;
-			reserved[5] = 0;
-			reserved[6] = 0;
-			reserved[7] = 0;
-			reserved[8] = 0;
-			reserved[9] = 0;
-			reserved[10] = 0;
-			reserved[11] = 0;
-			reserved[12] = 0;
-			reserved[13] = 0;
-			reserved[14] = 0;
-			reserved[15] = 0;
-			offset = 0;
-			crc = 0;
-			appversion = 0;
-			version = 0;
-
-			fileSize = m_pFile->GetSize();
-
-			if (fileSize == 0)
-			{
-				m_tail.flags = flags;
-				m_tail.key_count = key_count;
-				m_tail.stable_size = stable_size;
-				m_tail.stable_ofs = stable_ofs;
-
-				index = 8;
-
-				do
-				{
-					index--;
-					frontReserved = reserved[1];
-					// reserved = reserved + 2;
-					tailReserved[1] = frontReserved;
-					// tailReserved = tailReserved + 2;
-				} while (0 < index);
-
-				m_tail.offset = offset;
-				m_tail.crc = crc;
-				m_tail.appversion = appversion;
-				m_tail.version = version;
-				m_tail.version = 0x20001;
-				m_tail.appversion = appver;
-				m_modified = true;
-				m_pFile->fseek(0, SEEK_CUR);
-				success = true;
-			}
-			else
-			{
-				fileSize = m_pFile->fseek(0xffffffffffffffa0, SEEK_END);
-
-				success = fileSize != -1;
-
-				if (success)
-				{
-					fileSize = m_pFile->fread(&flags, sizeof(TAIL));
-					success = fileSize == sizeof(TAIL);
-				}
-
-				Unsecurify(&flags, sizeof(TAIL));
-
-				if (success && version == 0x20001)
-				{
-					// reserved = reservedArr
-					// tailReserved = m_tail.reserved;
-
-					index = 8;
-
-					m_tail.flags = flags;
-					m_tail.key_count = key_count;
-					m_tail.stable_size = stable_size;
-					m_tail.stable_ofs = stable_ofs;
-
-					do
-					{
-						index--;
-						// frontReserved = reserved[1];
-						// *tailReserved = *reserved;
-						// reserved = reserved + 2;
-						// tailReserved[1] = frontReserved;
-						// tailReserved = tailReserved + 2;
-					} while (0 < index);
-
-					m_tail.offset = offset;
-					m_tail.crc = crc;
-					m_tail.appversion = appversion;
-					m_tail.version = 0x20001;
-
-					fileSize = m_pFile->fseek(offset, SEEK_CUR);
-					success = fileSize != -1;
-
-					if (success)
-					{
-						tailstableSize = m_tail.stable_size;
-						stablePtr = malloc(tailstableSize);
-						m_pFile->fread(stablePtr, tailstableSize);
-						stableDest = stablePtr;
-
-						Unsecurify(stableDest, tailstableSize);
-						m_stable->Destroy();
-						m_stable->LoadTable(stableDest, tailstableSize, true);
-
-						index = m_tail.stable_ofs;
-						m_key_buffer.clear();
-						m_key_buffer.reserve(m_tail.key_count);
-						rootKey = m_root;
-
-						m_key_buffer.erase(m_key_buffer.begin(), m_key_buffer.end());
-
-						CBufferIO* bufferIO = new CBufferIO();
-
-						if (!m_memalign)
-						{
-							stablePtr = malloc(tailstableSize);
-						}
-						else
-						{
-							stablePtr = memalign(64, tailstableSize);
-						}
-
-						m_pFile->fread(stablePtr, tailstableSize);
-
-						Unsecurify(stablePtr, tailstableSize);
-
-						bufferIO->Open(stablePtr, tailstableSize);
-						success = m_root->Read(this, bufferIO, (int)stableDest - index);
-
-						bufferIO->Close();
-
-						if ((mode & 0x20) == 0)
-						{
-							m_databuffer_size = m_tail.offset;
-							tailstableSize = m_databuffer_size;
-
-							if (tailstableSize != 0)
-							{
-								if (!m_memalign)
-								{
-									stableDest = malloc(tailstableSize);
-									m_databuffer = stableDest;
-								}
-								else
-								{
-									stableDest = memalign(64, tailstableSize);
-									m_databuffer = stableDest;
-								}
-
-								m_pFile->fseek(0, SEEK_CUR);
-								m_pFile->fread(m_databuffer, m_databuffer_size);
-
-								Unsecurify(m_databuffer, m_databuffer_size);
-
-								if (m_pFileAlloc != NULL)
-								{
-									m_pFileAlloc->Close();
-									delete m_pFileAlloc;
-
-									m_pFile = NULL;
-									m_pFileAlloc = NULL;
-
-									CBufferIO* b = new CBufferIO();
-									m_pFileAlloc = b;
-									m_pFile = b;
-
-									b->Open(m_databuffer, m_databuffer_size);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		
 		return success;
 	}
-
-	
 
 	size_t CZAR::GetSize(const char* name)
 	{
@@ -916,76 +849,13 @@ namespace zar
 		return buffer;
 	}
 
-	/// <summary>
-	/// Encrypts/secures the entire ZAR memory region.
-	/// Performs a pass where all eight bytes per memory line are inverted.
-	/// Basic encryption, but not secure.
-	/// </summary>
 	void CZAR::Securify(void* buf, size_t size)
 	{
-		int line = 0;
-
-		if (m_bSecure && 0 < size)
-		{
-			if (8 < size)
-			{
-				do
-				{
-					// Yes, I know this fucking sucks.
-					unsigned char* byte = (unsigned char*)((int)buf + line);
-					line += 8;
-					byte[0] = ~byte[0];
-					byte[1] = ~byte[1];
-					byte[2] = ~byte[2];
-					byte[3] = ~byte[3];
-					byte[4] = ~byte[4];
-					byte[5] = ~byte[5];
-					byte[6] = ~byte[6];
-					byte[7] = ~byte[7];
-				} while (line < size - 8);
-			}
-
-			for (; line < size; line++)
-			{
-				unsigned char* byte = (unsigned char*)((int)buf + line);
-				byte[line] = ~byte[line];
-			}
-		}
+		ZAR_SECURE(m_bSecure, buf, size)
 	}
 
-	/// <summary>
-	/// Similar to CZAR::Securify, but inverts all bytes belonging to a ZAR memory region,
-	/// exposing its contents.
-	/// </summary>
 	void CZAR::Unsecurify(void* buf, size_t size)
 	{
-		int line = 0;
-
-		if (m_bSecure && 0 < size)
-		{
-			if (8 < size)
-			{
-				do
-				{
-					// Yes, I know this fucking sucks.
-					unsigned char* byte = (unsigned char*)((int)buf + line);
-					line += 8;
-					byte[0] = ~byte[0];
-					byte[1] = ~byte[1];
-					byte[2] = ~byte[2];
-					byte[3] = ~byte[3];
-					byte[4] = ~byte[4];
-					byte[5] = ~byte[5];
-					byte[6] = ~byte[6];
-					byte[7] = ~byte[7];
-				} while (line < size - 8);
-			}
-
-			for (; line < size; line++)
-			{
-				unsigned char* byte = (unsigned char*)((int)buf + line);
-				byte[line] = ~byte[line];
-			}
-		}
+		ZAR_SECURE(m_bSecure, buf, size)
 	}
 }

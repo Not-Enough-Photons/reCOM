@@ -12,14 +12,14 @@ namespace zdb
 		unsigned int m_texelBitSize : 8;
 		unsigned int m_selectQwc : 8;
 		unsigned int m_pal_offset : 8;
-		bool m_transparent;
-		bool m_palettized;
-		bool m_is_mip_child;
-		bool m_bumpmap;
-		bool m_bilinear;
-		bool m_transp_1bit;
-		bool m_dynamic;
-		bool m_context;
+		unsigned int m_transparent : 1;
+		unsigned int m_palettized : 1;
+		unsigned int m_is_mip_child : 1;
+		unsigned int m_bumpmap : 1;
+		unsigned int m_bilinear : 1;
+		unsigned int m_transp_1bit : 1;
+		unsigned int m_dynamic : 1;
+		unsigned int m_context : 1;
 	};
 
 	struct PALETTE_PARAMS
@@ -47,6 +47,7 @@ namespace zdb
 	{
 	public:
 		static void Init();
+		CTexture* Read(CSaveLoad& saveload);
 	private:
 		TEXTURE_PARAMS TEXTURE_PARAMS;
 		CAssetLib* m_AssetLib;
