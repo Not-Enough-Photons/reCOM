@@ -1,7 +1,7 @@
-#include "znet_main.h"
+#include "znet.h"
 
-#include "valve/valve_main.h"
-#include "ui/zui_main.h"
+#include "gamez/zValve/zvalve.h"
+#include "gamez/zUI/zui.h"
 
 bool g_bJoiningRandomGame;
 int myConnectionIndex;

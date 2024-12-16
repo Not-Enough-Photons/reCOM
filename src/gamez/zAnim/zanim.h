@@ -8,6 +8,7 @@
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSound/zsnd.h"
 
+class CZAnim;
 class CZAnimMain;
 
 static CZAnimMain ZAnim;

@@ -1,10 +1,10 @@
 #include <cstring>
 
-#include "bsd/strcasecmp.h"
+#include "freebsd/strcasecmp.h"
 
-#include "zrdr_main.h"
+#include "zrdr.h"
 
-#include "gamez/zUtil/util_main.h"
+#include "gamez/zUtil/zutil.h"
 #include "gamez/zUtil/util_systemio.h"
 #include "gamez/zWeapon/zwep_weapon.h"
 

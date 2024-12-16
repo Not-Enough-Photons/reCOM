@@ -1,6 +1,6 @@
 #include "zcam.h"
 
-#include "gamez/zMath/zmath_main.h"
+#include "gamez/zMath/zmath.h"
 
 namespace zdb
 {

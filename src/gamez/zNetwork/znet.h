@@ -14,7 +14,7 @@ class CZNetwork
 public:
 	float zNetGetTime();
 	void zNetUpdate();
-	void zNetRequestObjectPrivateOwnership()
+	void zNetRequestObjectPrivateOwnership();
 };
 
 class CZNetGame

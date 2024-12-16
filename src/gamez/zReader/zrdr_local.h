@@ -1,5 +1,5 @@
 #pragma once
-#include "zrdr_main.h"
+#include "zrdr.h"
 
 class CRdrEditor
 {

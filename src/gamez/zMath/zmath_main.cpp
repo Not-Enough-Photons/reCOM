@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include "zmath_main.h"
+#include "zmath.h"
 
 
 CQuat CQuat::Apply(CQuat& quat, CPnt3D& point)
@@ -37,9 +37,9 @@ CQuat CQuat::Exp(CQuat& quat, CPnt3D& point)
 	if (pointLengthSqr == 0.0f)
 	{
 		quat.w = 1.0f;
-		quat.x = 0.0f;
-		quat.y = 0.0f;
-		quat.z = 0.0f;
+		quat.vec.x = 0.0f;
+		quat.vec.y = 0.0f;
+		quat.vec.z = 0.0f;
 	}
 	else
 	{
@@ -47,8 +47,6 @@ CQuat CQuat::Exp(CQuat& quat, CPnt3D& point)
 		float sin = sinf(pointLengthSqr);
 		float cos = cosf(pointLengthSqr);
 		quat.w = cos;
-		// what a bunch of fucking bull fuck
-		CPnt3D::Scale(sin / pointLengthSqr, point, reinterpret_cast<CPnt3D&>(quat));
 	}
 
 	return quat;
@@ -71,7 +69,7 @@ void CQuat::MakeYXZ(float x, float y, float z, CQuat& out)
 	float zCos = cosf(z * 0.5f);
 
 	out.w = zMul * zSin + halfX * halfY * zCos;
-	out.x = sinHalfX * zSin + halfX * sinHalfY * zCos;
-	out.y = sinHalfX * zCos - halfX * sinHalfY * zSin;
-	out.z = halfX * halfY * zSin - zMul * zCos;
+	out.vec.x = sinHalfX * zSin + halfX * sinHalfY * zCos;
+	out.vec.y = sinHalfX * zCos - halfX * sinHalfY * zSin;
+	out.vec.z = halfX * halfY * zSin - zMul * zCos;
 }

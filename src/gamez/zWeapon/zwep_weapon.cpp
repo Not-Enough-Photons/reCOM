@@ -2,8 +2,8 @@
 
 #include "zwep_weapon.h"
 
-#include "system/zsys_main.h"
-#include "util/util_stable.h"
+#include "gamez/zSystem/zsys.h"
+#include "gamez/zUtil/util_stable.h"
 
 CZWeaponStance::CZWeaponStance()
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "gamez/zReader/zrdr_main.h"
+#include "gamez/zReader/zrdr.h"
 
 #define string_exists(x) (x != (char*)0)
 

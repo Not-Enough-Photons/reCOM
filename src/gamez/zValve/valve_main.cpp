@@ -1,6 +1,6 @@
-#include "valve_main.h"
+#include "zvalve.h"
 
-#include "gamez/zAnim/anim_main.h"
+#include "gamez/zAnim/zanim.h"
 
 CValve* CValve::Create(const char* name, VALVE_TYPE type)
 {

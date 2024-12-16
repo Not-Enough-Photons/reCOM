@@ -5,7 +5,7 @@
 #include "gamez/zNode/znode.h"
 #include "gamez/zSystem/zsys.h"
 
-CAppCamera appCamera;
+class CAppCamera appCamera;
 
 bool camera_tether_intersects_something = false;
 float save_short_tether_length = 10000.0f;
@@ -323,3 +323,4 @@ private:
 	float m_rumble_power;
 	float m_rumble_power_scaler;
 };
+

@@ -1,8 +1,8 @@
 #pragma once
-#pragma once
-#include "ai_main.h"
-#include "vehicle_main.h"
 
+#include "gamez/zEntity/vehicle.h"
+
+#include "gamez/zAI/zai.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zNetwork/znet.h"

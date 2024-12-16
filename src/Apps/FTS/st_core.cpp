@@ -1,4 +1,4 @@
-#include "fts.h"
+#include "gamez/zFTS/zfts.h"
 #include "gamez/zGame/zgame.h"
 
 void CCinematicState::SetMovie(const char* moviename)

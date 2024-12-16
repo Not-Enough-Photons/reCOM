@@ -1,6 +1,6 @@
 #include <math.h>
 
-#include "zmath_main.h"
+#include "zmath.h"
 
 CPnt3D& CPnt3D::operator+(const CPnt3D& other)
 {

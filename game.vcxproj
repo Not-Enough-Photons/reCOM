@@ -61,7 +61,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
-      <AdditionalIncludeDirectories>$(SolutionDir)/src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)vendor;$(SolutionDir)src</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -116,14 +116,14 @@
     <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
     <ClInclude Include="src\gamez\zMath\zmath.h" />
     <ClInclude Include="src\gamez\zNetwork\znet.h" />
-    <ClInclude Include="src\bsd\strcasecmp.h" />
+    <ClInclude Include="vendor\freebsd\strcasecmp.h" />
     <ClInclude Include="src\gamez\zNode\node_world.h" />
     <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
     <ClInclude Include="src\gamez\zReader\zrdr.h" />
     <ClInclude Include="src\gamez\zSystem\zsys.h" />
     <ClInclude Include="src\gamez\zTexture\ztex.h" />
     <ClInclude Include="src\gamez\zUI\zui.h" />
-    <ClInclude Include="src\rt\rtarray.h" />
+    <ClInclude Include="vendor\rt\rtarray.h" />
     <ClInclude Include="src\util\util_main.h" />
     <ClInclude Include="src\util\util_stable.h" />
     <ClInclude Include="src\gamez\zValve\zvalve.h" />

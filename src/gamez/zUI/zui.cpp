@@ -1,7 +1,7 @@
-#include "zui_main.h"
+#include "zui.h"
 
-#include "entity/zwep_weapon.h"
-#include "valve/valve_main.h"
+#include "gamez/zWeapon/zwep_weapon.h"
+#include "gamez/zValve/zvalve.h"
 
 bool CInGameWeaponSel::CanSelectWeapon(int index) const
 {

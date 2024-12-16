@@ -3,6 +3,7 @@
 #include "gamez/zNode/znode.h"
 
 class CZBodyPart;
+class CBlendOverlay;
 
 class CBody
 {

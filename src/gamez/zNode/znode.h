@@ -5,8 +5,7 @@
 
 #include "node_world.h"
 
-#include "Apps/FTS/ai_main.h"
-
+#include "gamez/zAI/zai.h"
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"

@@ -12,8 +12,6 @@ class CUIVariable;
 class CUIVariableSpec;
 class CUIVarManager;
 
-static CUIVarManager theUIVarManager;
-
 enum UIVAR_LONGEVITY
 {
 	value_00,
@@ -251,6 +249,8 @@ class CUIVarManager
 public:
 	CUIVariable* Add(const char* name, _zrdr* reader, UIVAR_LONGEVITY longevity);
 };
+
+static CUIVarManager theUIVarManager;
 
 class CHUD
 {

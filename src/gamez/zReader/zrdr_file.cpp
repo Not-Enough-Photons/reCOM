@@ -1,4 +1,4 @@
-#include "zrdr_main.h"
+#include "zrdr.h"
 
 int zrdr_free(CRdrFile* file)
 {

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "zsys_main.h"
+#include "zsys.h"
 
 void zSysPostInit()
 {
@@ -17,7 +17,7 @@ void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)
 		zSysFifoEnd();
 		char buffer[256];
 		sprintf(buffer, "A S S E R T: %s : %d", file, line);
-		theTerminal.Print(buffer);
+		theTerminal.Print(buffer, 256);
 		theTerminal.Render();
 	}
 }

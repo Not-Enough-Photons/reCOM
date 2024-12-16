@@ -1,7 +1,7 @@
 #include <cstdint>
 #include <iostream>
 
-#include "ai_main.h"
+#include "zai.h"
 
 const char* sealai::get_state(AI_STATE state)
 {

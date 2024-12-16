@@ -1,6 +1,4 @@
 #pragma once
-#include "vehicle_main.h"
-
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zSeal/zseal.h"
@@ -136,7 +134,7 @@ struct AI_PARAMS
 	unsigned int respawn;
 	float target_delay;
 	float target_discipline;
-	CVehicleRdrEntry* m_veh;
+	// CVehicleRdrEntry* m_veh;
 };
 
 namespace sealai

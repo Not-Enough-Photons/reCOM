@@ -1,5 +1,5 @@
-#include "fts.h"
-#include "entity/seal/seal.h"
+#include "zfts.h"
+#include "gamez/zSeal/zseal.h"
 
 void CZSealBody::AttemptBombDefuse() const
 {

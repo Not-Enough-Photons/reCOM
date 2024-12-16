@@ -1,4 +1,4 @@
-#include "bsd/strcasecmp.h"
+#include "freebsd/strcasecmp.h"
 
 #include "zrdr.h"
 

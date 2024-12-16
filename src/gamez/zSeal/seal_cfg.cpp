@@ -1,6 +1,6 @@
-#include "seal.h"
+#include "zseal.h"
 
-#include "gamez/zReader/zrdr_main.h"
+#include "gamez/zReader/zrdr.h"
 
 void HEALTH_PARAMS::Parse(_zrdr* reader)
 {

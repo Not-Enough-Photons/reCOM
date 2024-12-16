@@ -1,9 +1,5 @@
-#include "input/input_main.h"
-#include "math/zmath_main.h"
-
-#include "Xinput.h"
-
-#define NULL 0 
+#include "gamez/zInput/zinput.h"
+#include "gamez/zMath/zmath.h"
 
 const float c_DefaultDelta = 0.03333334f;
 const int c_MaxPads = 2;
@@ -20,7 +16,7 @@ void CInput::Init()
 
 int CInput::OpenPadIO()
 {
-	XInputEnable(true);
+	return -1;
 }
 
 void CInput::ClosePadIO()

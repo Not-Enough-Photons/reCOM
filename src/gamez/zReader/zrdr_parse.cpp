@@ -1,4 +1,4 @@
-#include "zrdr_main.h"
+#include "zrdr.h"
 
 _zrdr* zrdr_read(const char* name, const char* path, int flags)
 {

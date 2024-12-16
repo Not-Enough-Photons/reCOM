@@ -1,6 +1,8 @@
 #pragma once
 #include <list>
 
+#include "gamez/zAnim/zanim.h"
+
 class CValve;
 class CValvePool;
 
