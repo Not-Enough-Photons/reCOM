@@ -21,8 +21,10 @@ bool doAudio = false;
 
 enum _zvid_mode
 {
-	NTSC,
-	PAL
+	ZVID_MODE_NTSC,
+	ZVID_MODE_PAL,
+	ZVID_MODE_DTV480P,
+	ZVID_MODE_NUM
 };
 
 class _zvid_public

@@ -1,5 +1,4 @@
 #pragma once
-#pragma once
 #include <vector>
 #include <string>
 
@@ -255,13 +254,14 @@ class CNodeAction : public zdb::CNodeEx
 public:
 	enum ACTION_TYPE
 	{
-		DOOR,
-		WINDOW,
-		SWITCH,
-		DEFUSE,
-		MPBOMB,
-		BREACH,
-		UNKNOWN
+		ACT_DOOR,
+		ACT_WINDOW,
+		ACT_SWITCH,
+		ACT_DEFUSE,
+		ACT_MPBOMB,
+		ACT_BREACH,
+		ACT_SATCHEL_CHARGE,
+		ACT_UNKNOWN
 	};
 
 	CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle);

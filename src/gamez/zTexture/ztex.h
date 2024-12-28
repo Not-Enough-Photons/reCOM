@@ -92,7 +92,12 @@ namespace zdb
 
 	class CTexHandle
 	{
-
+	private:
+		char* m_name;
+		int m_count;
+		unsigned int m_gsAddr;
+		CTexture* m_texture;
+		bool m_libref;
 	};
 	
 	class CTextureFX

@@ -18,32 +18,36 @@ float DeltaAim = 0.0f;
 
 enum CAMVIEW
 {
-	FIRSTPERSON,
-	THIRDPERSON
-};
-
-enum SEAL_PEEK
-{
-	PEEK_LEFT,
-	PEEK_RIGHT
+	cam_view_third,
+	cam_view_side,
+	cam_view_first,
+	cam_view_peek_left,
+	cam_view_peek_right,
+	cam_view_first,
+	cam_view_peek_left,
+	cam_view_peek_right,
+	cam_view_last
 };
 
 enum PLAYER_CAM_STATE
 {
-	type_00,
-	type_01,
-	type_02,
-	type_03,
-	type_04
+	cam_mode_unk,
+	cam_mode_tether,
+	cam_mode_FP,
+	cam_mode_apLook,
+	cam_mode_net
 };
 
 enum CAM_DEATH_STATE
 {
-	type_00,
-	type_01,
-	type_02,
-	type_03,
-	type_04
+	none,
+	init_dying,
+	tether_initial_dying,
+	view_killer,
+	tether_killer,
+	tether_body,
+	auto_rotate_body,
+	user_rotate_body
 };
 
 struct cam_wiggle
@@ -138,9 +142,9 @@ namespace zdb
 
 	enum tag_ZCAM_TYPE
 	{
-		type_00,
-		type_01,
-		type_02
+		ZCAM_NORMAL,
+		ZCAM_LANDMARK,
+		ZCAM_NUM_TYPES
 	};
 
 	struct _tag_SAVE_CAMERA_PARAMS

@@ -16,13 +16,36 @@ static CZAnimMain ZAnim;
 static bool CmdAddNode(zdb::CNode node);
 static bool CmdRemoveNode(zdb::CNode node);
 
+// TODO: implement the rest of this.
+//       i'm lazy.
 enum AnimType
 {
-	type_00,
-	type_01,
-	type_02,
-	type_03,
-	type_04,
+	animTypeUndefined,
+	animTypeRef,
+	animTypeStand,
+	animTypeSneak,
+	animTypeSkitter,
+	animTypeRun,
+	animTypeSneakBack,
+	animTypeSkitterBack,
+	animTypeDie,
+	animTypeJumpLaunch,
+	animTypeJumpFall,
+	animTypeJumpLand,
+	animTypeJumpLandHard,
+	animTypeStrafeRight,
+	animTypeStrafeLeft,
+	animTypeStrafeRightFast,
+	animTypeStrafeLeftFast,
+	animTypeStep,
+	animTypeStand2Crouch,
+	animTypeCrouch,
+	animTypeCrouch2Prone,
+	animTypeCrouchWalk,
+	animTypeCrouchStep,
+	animTypeCrouchStrafeR,
+	animTypeCrouchStrafeRFast,
+	animTypeCrouchWalkBack
 };
 
 struct REFPT_INFO

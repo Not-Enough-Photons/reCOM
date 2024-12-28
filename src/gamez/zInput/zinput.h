@@ -5,6 +5,14 @@ class CKeyboard;
 
 float pad_dt;
 
+enum KEY_STATE
+{
+	KEY_UP,
+	KEY_FALLING,
+	KEY_DOWN,
+	KEY_RISING
+};
+
 void InitKeyreadStuff();
 
 class CInput

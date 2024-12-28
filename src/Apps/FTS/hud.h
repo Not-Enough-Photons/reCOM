@@ -1,13 +1,20 @@
 #pragma once
 #include "gamez/zUI/zui.h"
 
+enum HUD_MODE
+{
+	ZOOMIN,
+	ZOOMOUT
+};
+
 class CLetterBox : C2D
 {
 public:
 	enum SLIDE_DIRECTION
 	{
-		UP,
-		DOWN
+		SLIDE_NONE,
+		SLIDE_IN,
+		SLIDE_OUT
 	};
 private:
 	C2DBitmap m_bitmap[2];
@@ -21,7 +28,8 @@ public:
 	enum FADE_DIRECTION
 	{
 		IN,
-		OUT
+		OUT,
+		FADE
 	};
 private:
 	FADE_DIRECTION m_fadedir;

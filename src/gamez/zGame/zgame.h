@@ -7,6 +7,24 @@
 #include "gamez/zNode/znode.h"
 #include "gamez/zUI/zui.h"
 
+enum MENU_STATE
+{
+	stateNone,
+	stateWeaponSel,
+	stateOrders,
+	statePauseTestMenu,
+	stateFullScreenMapMenu,
+	stateFullScreenMapAnim,
+	stateLast
+};
+
+enum GAME_NAME
+{
+	nameUnknown,
+	nameFTS,
+	nameAP
+};
+
 static void game_main(int argc, char** argv);
 void process_arguments(int argc, char** argv);
 

@@ -10,21 +10,22 @@
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zUI/zui.h"
 
-enum MISSION_STATE
-{
-	COMPLETE,
-	FAILED,
-	ABORT,
-	TIMEOUT,
-	NOFADE
-};
-
 class CMission;
 class CMissionObjectiveCam;
 class CObjAnchor;
 class CObjAnchorVec;
 
-static CMission theMission;
+extern CMission theMission;
+
+enum MISSION_STATE
+{
+	MISSION_UNLOADED,
+	MISSION_RUNNING,
+	MISSION_SUCCESS,
+	MISSION_FAILURE,
+	MISSION_ABORTED,
+	MISSION_TIMEOUT
+};
 
 class CMission : CSaveModule
 {

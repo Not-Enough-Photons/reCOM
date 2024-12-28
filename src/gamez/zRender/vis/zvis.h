@@ -2,13 +2,16 @@
 #include "gamez/zMath/zmath.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zNode/znode.h"
-#include "gamez/zTexture/ztexture.h"
+#include "gamez/zTexture/ztex.h"
 
 namespace zdb
 {
-	typedef struct tag_ZVIS_FOV
+	enum tag_ZVIS_FOV
 	{
-
+		ZVIS_FOV_CLIP,
+		ZVIS_FOV_ALL_IN,
+		ZVIS_FOV_ALL_OUT,
+		ZVIS_FOV_NUM
 	};
 
 	class CVisBase

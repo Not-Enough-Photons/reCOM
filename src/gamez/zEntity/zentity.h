@@ -161,10 +161,10 @@ class CEntity
 public:
 	enum TYPE
 	{
-		type_00,
-		type_01,
-		type_02,
-		type_03
+		ENT_TYPE_UNKNOWN,
+		ENT_TYPE_RECYCLE,
+		ENT_TYPE_SEAL,
+		ENT_TYPE_TURRET
 	};
 
 	CEntity(TYPE type, const zdb::CNode& node);
@@ -261,4 +261,18 @@ class CftsPlayer : public CEntity
 {
 public:
 	static void RegisterAnimCommands();
+};
+
+class CPickup
+{
+private:
+	zdb::CNode* m_node;
+	void* m_data;
+	unsigned char m_type;
+	bool m_locked;
+	bool m_secondary;
+	unsigned char m_unused;
+	short m_id;
+	short m_netid;
+	bool m_visible_by_units;
 };

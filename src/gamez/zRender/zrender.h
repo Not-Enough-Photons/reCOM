@@ -13,6 +13,31 @@
 #include "gamez/zNode/node_world.h"
 #include "gamez/zTexture/ztex.h"
 
+class Sequence : std::vector<void*> {};
+
+enum _RenderPhase
+{
+	WORLD,
+	HUD_OBSOLETE,
+	CHARSET,
+	COMMON,
+	CHARSET1,
+	CHARSET2,
+	CHARSET3,
+	CHARSET4,
+	CHARSET5,
+	CHARSET6,
+	CHARSET7,
+	CHARSET8,
+	ALPHA,
+	HUDSET1,
+	HUDSET2,
+	HUDSETSMALL,
+	SHADOW,
+	CHARSETCUSTOM,
+	NUM_RENDER_PHASES
+};
+
 void zRndrInit();
 
 class CDynTexList : public std::vector<void*> {};
@@ -109,4 +134,27 @@ private:
 
 	std::vector<zdb::CNode*> m_DelayedNodes;
 	unsigned int m_delayedNodeNum;
+};
+
+struct Props
+{
+	int m_refCount;
+	Sequence m_textureSeq;
+	Sequence m_colorSeq;
+	Sequence m_scaleSeq;
+
+	zdb::CModel* m_model;
+	float m_friction;
+	CPnt4D m_accelW;
+	float m_windFactor;
+	float m_priority;
+	float m_nearFade1;
+	float m_nearFade2;
+	float m_nearFade2;
+	float m_farFade1;
+	float m_farFade2;
+	float m_invNearFade;
+	float m_invFarFade;
+	float m_visualDensity;
+	bool m_checkFade;
 };

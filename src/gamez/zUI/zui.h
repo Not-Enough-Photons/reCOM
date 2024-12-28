@@ -14,26 +14,17 @@ class CUIVarManager;
 
 enum UIVAR_LONGEVITY
 {
-	value_00,
-	value_01,
-	value_02
+	UIVL_DORMANT,
+	UIVL_TEMPORARY,
+	UIVL_PERMANENT,
+	UIVL_PERSISTENT
 };
 
-enum TextColor
+enum tag_string_type
 {
-	WHITE,
-	YELLOW,
-	BLUE,
-	ORANGE,
-	RED,
-	PURPLE
-};
-
-enum TextAlignment
-{
-	LEFT,
-	CENTER,
-	RIGHT
+	STRING_PLAIN,
+	STRING_GLOWY,
+	STRING_NUM_TYPES
 };
 
 class C2Dlist : public std::list<C2D> {};

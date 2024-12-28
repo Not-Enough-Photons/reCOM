@@ -7,6 +7,24 @@
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zValve/zvalve.h"
 
+enum SOUND_TYPE
+{
+	SND_NONE,
+	SND_CONVERSATIONAL,
+	SND_SITREP,
+	SND_DEATH_DAMAGE,
+	SND_NUM_TYPES
+};
+
+enum SOUND_MODE
+{
+	SND_MODE_UNKNOWN,
+	SND_MODE_EFX,
+	SND_MODE_MUSIC,
+	SND_MODE_DIALOG,
+	SND_MODE_BANK_DEFINED
+};
+
 enum MUSIC_MODE
 {
 	MODE_0,
