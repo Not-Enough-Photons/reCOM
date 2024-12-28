@@ -37,18 +37,6 @@ enum TRIGGER
 	TRIGGER_FINISH
 };
 
-enum PLAYER_CAM_STATE
-{
-	type_00,
-	type_01
-};
-
-enum MENU_STATE
-{
-	type_00,
-	type_01
-};
-
 enum SEAL_STATE
 {
 	stateStand,
