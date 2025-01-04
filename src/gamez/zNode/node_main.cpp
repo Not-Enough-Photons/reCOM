@@ -11,22 +11,17 @@ namespace zdb
 {
 	CNode::CNode()
 	{
-		m_name = g_DeletedNodeTag;
-	}
-
-	CNode* CNode::CreateInstance(CSaveLoad& save)
-	{
 
 	}
 
 	CNode* CNode::CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation)
 	{
-
+		return NULL;
 	}
 
 	CNode* CNode::CreateInstance(CModel* model, const CPnt3D& position, const CPnt3D& rotation)
 	{
-
+		return NULL;
 	}
 
 	CNode* CNode::Create(const char* name)
@@ -34,10 +29,10 @@ namespace zdb
 		CNode* node = new CNode();
 		const char* str;
 
-		if (!string_exists(name))
+		if (name != 0)
 		{
 			str = node->m_name;
-			if (string_exists(str) && str != "UNNAMED_NODE")
+			if (str != 0 && str != "UNNAMED_NODE")
 			{
 				// free(str);
 			}
@@ -49,12 +44,12 @@ namespace zdb
 		{
 			str = node->m_name;
 
-			if (string_exists(str) && str != "UNNAMED_NODE")
+			if (str != 0 && str != "UNNAMED_NODE")
 			{
 				// free(str);
 			}
 
-			if (!string_exists(str))
+			if (str == 0)
 			{
 				node->m_name = "UNNAMED_NODE";
 			}
@@ -124,19 +119,85 @@ namespace zdb
 				m_flatten = true;
 			}
 		}
+		
+		return 0;
+	}
+
+	CNode* CNode::FindChild(CNode* child, bool nested)
+	{
+		if (child == NULL)
+		{
+			return NULL;
+		}
+		else
+		{
+			for (auto it = m_child.begin(); it != m_child.end(); it++)
+			{
+				if (*it == child)
+				{
+					return *it;
+				}
+			}
+
+			if (nested)
+			{
+				for (auto it = m_child.begin(); it != m_child.end(); it++)
+				{
+					(*it)->FindChild(child, nested);
+				}
+			}
+		}
+	}
+
+	CNode* CNode::FindChild(const char* name, bool nested)
+	{
+		if (name == 0)
+		{
+			return NULL;
+		}
+		else
+		{
+			zdb::CNode* child = NULL;
+			size_t length = strlen(name);
+
+			for (auto it = m_child.begin(); it != m_child.end(); it++)
+			{
+				child = *it;
+				size_t childStringLength = strlen(child->m_name);
+
+				if (length == childStringLength && strcmp(child->m_name, name) == 0)
+				{
+					child = *it;
+				}
+			}
+
+			if (child == NULL && nested)
+			{
+				for (auto it = m_child.begin(); it != m_child.end(); it++)
+				{
+					child = *it;
+					size_t childStringLength = strlen(child->m_name);
+
+					if (length == childStringLength && strcmp(child->m_name, name) == 0)
+					{
+						child = *it;
+					}
+				}
+			}
+		}
 	}
 
 	void CNode::DeleteChildren()
 	{
 		while (m_child.size() != 0)
 		{
-			CNode* current = m_child[0];
+			CNode* current = m_child.front();
 
 			int count = DeleteChild(current);
 
 			if (count == 0 && current != NULL)
 			{
-				current->~CNode();
+				// current->~CNode();
 			}
 		}
 	}
@@ -198,7 +259,7 @@ namespace zdb
 
 	CPnt3D* CNode::GetRotation(const CPnt3D* rotation) const
 	{
-		return m_matrix.
+		return NULL;
 	}
 
 	bool CNode::SetActive(bool active)
@@ -213,6 +274,8 @@ namespace zdb
 		{
 			// set identity matrix
 		}
+
+		return CMatrix();
 	}
 
 	short CNode::Release()
@@ -325,14 +388,14 @@ namespace zdb
 	}
 }
 
-CNodeAction::CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle)
-{
-	this->animations = NULL;
-	this->actionAnimation = NULL;
-	this->node = node;
-	this->actionValve = actionValve;
-	this->typeFlag = 6;
-	this->iconBitmapHandle = handle;
-	this->animVector.insert(animVector.begin(), animToPlay);
-	this->actionList = 0;
-}
+//CNodeAction::CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle)
+//{
+//	this->animations = NULL;
+//	this->actionAnimation = NULL;
+//	this->node = node;
+//	this->actionValve = actionValve;
+//	this->typeFlag = 6;
+//	this->iconBitmapHandle = handle;
+//	this->animVector.insert(animVector.begin(), animToPlay);
+//	this->actionList = 0;
+//}

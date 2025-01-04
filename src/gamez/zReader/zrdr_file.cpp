@@ -16,6 +16,10 @@ int zrdr_free(CRdrFile* file)
 		}
 
 		file->m_strings.~CSTable();
-		delete file;
+
+		// TODO: Implement destructor for CRdrFile
+		// delete file;
 	}
+
+	return 0;
 }

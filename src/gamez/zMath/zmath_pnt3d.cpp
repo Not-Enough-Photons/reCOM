@@ -2,26 +2,6 @@
 
 #include "zmath.h"
 
-CPnt3D& CPnt3D::operator+(const CPnt3D& other)
-{
-
-}
-
-CPnt3D& CPnt3D::operator-(const CPnt3D& other)
-{
-
-}
-
-CPnt3D& CPnt3D::operator*(float scalar)
-{
-
-}
-
-CPnt3D& CPnt3D::operator/(float scalar)
-{
-
-}
-
 void CPnt3D::Normalize()
 {
 	float sqrMagnitude = sqrtf(z * z + x * x + y * y);

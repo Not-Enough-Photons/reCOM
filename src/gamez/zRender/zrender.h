@@ -8,12 +8,19 @@
 #include "vis/zvis.h"
 
 #include "gamez/zArchive/zar.h"
+#include "gamez/zCamera/zcam.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zNode/znode.h"
-#include "gamez/zNode/node_world.h"
 #include "gamez/zTexture/ztex.h"
 
 class Sequence : std::vector<void*> {};
+
+enum LOD
+{
+	LOW,
+	MEDIUM,
+	HIGH
+};
 
 enum _RenderPhase
 {

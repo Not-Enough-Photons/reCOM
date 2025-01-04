@@ -2,12 +2,52 @@
 
 #include "zmath.h"
 
+float* sintbl = NULL;
+float* costbl = NULL;
+float* exptbl = NULL;
+
+bool tableInit = false;
+
+const CPnt3D CPnt3D::zero = { 0.0f, 0.0f, 0.0f };
+const CQuat CQuat::identity = { CPnt3D(1.0f, 0.0f, 0.0f), 0.0f };
+const CMatrix CMatrix::identity = {  };
+
+void init_trig_table()
+{
+	if (!tableInit)
+	{
+		int i = 0;
+		int j = 0;
+		do
+		{
+			float x = i * 0.02454369f;
+			float calc = sinf(x);
+			*(sintbl + j) = calc;
+			calc = cosf(x);
+			*(costbl + j) = calc;
+			i++;
+			calc = expf(i * 10.0f) / 256.0f;
+			*(exptbl + j) = calc;
+			j += 4;
+		} while (i < 257);
+		tableInit = true;
+	}
+}
+
+void uninit_trig_table()
+{
+	if (tableInit)
+	{
+		tableInit = false;
+	}
+}
 
 CQuat CQuat::Apply(CQuat& quat, CPnt3D& point)
 {
 	// TODO:
 	// what does THIS do?
 	// the RE source has a bunch of inserted assembly instructions
+	return CQuat();
 }
 
 CQuat CQuat::Normalize(CQuat& quat, CQuat& rhs)
@@ -16,12 +56,14 @@ CQuat CQuat::Normalize(CQuat& quat, CQuat& rhs)
 	// float innerProduct = Vector3::Product(this, rhs);
 	placeholder = sqrtf(quat.w * quat.w + placeholder);
 	// Vector3::Scale(1.0 / placeholder, rhs, this);
+	return CQuat();
 }
 
 CQuat CQuat::Mul(CQuat& left, CQuat& right)
 {
 	// TODO:
 	// This will remain empty until I replace the proprietary VU calls with my own
+	return CQuat();
 }
 
 void CQuat::ToMatrix(CQuat& quat, CMatrix& matrix)

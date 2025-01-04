@@ -17,8 +17,8 @@ enum ZRDR_TYPE
 	ZRDR_ARRAY
 };
 
-int cur_zrdr_flags = 0;
-char* cur_zrdr_path = '\0';
+extern int cur_zrdr_flags;
+extern char* cur_zrdr_path;
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);
 char* zrdr_findfile(const char* file, const char* path);
@@ -40,7 +40,7 @@ bool zrdr_tobool(_zrdr* reader, bool* output);
 
 _zrdr* _zrdr_nexttag(_zrdr* reader, const char* tag, size_t size, _zrdr* other);
 
-typedef struct _zrdr
+struct _zrdr
 {
 	_zrdr(); 
 	_zrdr(const _zrdr* other, const CSTable* table);
@@ -68,12 +68,13 @@ typedef struct _zrdr
 	};
 };
 
-typedef struct CRdrFile : public _zrdr
+class CRdrFile : public _zrdr
 {
+public:
 	CRdrFile();
 	~CRdrFile();
 
-	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key);
+	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key) { return NULL; }
 	static bool ValidateFormat();
 
 	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);

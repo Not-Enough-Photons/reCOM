@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-#include "gamez/zEntity/body.h"
+// #include "gamez/zEntity/body.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zReader/zrdr.h"
@@ -10,15 +10,15 @@
 
 class CZAnim;
 class CZAnimMain;
+class CBlendable;
+class CAnimsByFP;
 
-static CZAnimMain ZAnim;
+extern CZAnimMain ZAnim;
 
 static bool CmdAddNode(zdb::CNode node);
 static bool CmdRemoveNode(zdb::CNode node);
 
-// TODO: implement the rest of this.
-//       i'm lazy.
-enum AnimType
+enum class AnimType
 {
 	animTypeUndefined,
 	animTypeRef,
@@ -90,7 +90,7 @@ enum AnimType
 	animTypeOpenDoor,
 	animTypeGetFromGround,
 	animTypeGetFromSurface,
-	animTypeRun,
+	animTypeRunR,
 	animTypeRunL,
 	animType_OnWall,
 	animType_OnWallSmoke,
@@ -156,8 +156,6 @@ enum AnimType
 	animTypeStand2Binocular_P,
 	animTypeCrouch2Binocular_P,
 	animTypeProne2Binocular_P,
-	animTypeCrouch2Binocular_P,
-	animTypeProne2Binocular_P,
 	animTypeRestraintsApply_P,
 	animTypePutOnGround_P,
 	animTypePutOnWall_P,
@@ -177,29 +175,29 @@ struct REFPT_INFO
 
 struct ANIM_CALLBACK
 {
-	float m_tfrac;
+	f32 m_tfrac;
 	void(*m_func)();
 	void(*m_userdata)();
 };
 
 struct ANIMSET_PARAMS
 {
-	float m_stand_max_fwd;
-	float m_stand_max_back;
-	float m_stand_max_rt;
-	float m_stand_max_left;
+	f32 m_stand_max_fwd;
+	f32 m_stand_max_back;
+	f32 m_stand_max_rt;
+	f32 m_stand_max_left;
 
-	float m_crouch_max_fwd;
-	float m_crouch_max_back;
-	float m_crouch_max_rt;
-	float m_crouch_max_left;
+	f32 m_crouch_max_fwd;
+	f32 m_crouch_max_back;
+	f32 m_crouch_max_rt;
+	f32 m_crouch_max_left;
 
-	float m_prone_max_fwd;
-	float m_prone_max_back;
-	float m_prone_max_rt;
-	float m_prone_max_left;
+	f32 m_prone_max_fwd;
+	f32 m_prone_max_back;
+	f32 m_prone_max_rt;
+	f32 m_prone_max_left;
 
-	float m_ladder_updn;
+	f32 m_ladder_updn;
 };
 
 struct ANIMTYPE_GROUP
@@ -212,9 +210,22 @@ struct ANIMTYPE_GROUP
 
 struct BLENDABLE_ANIM
 {
-	float m_trans0;
-	float m_trans1;
+	f32 m_trans0;
+	f32 m_trans1;
 	AnimType m_animtype;
+};
+
+
+struct zanim_cmd_index
+{
+	u8 cmd;
+	u8 set;
+};
+
+struct zanim_cmd_val
+{
+	zanim_cmd_index index;
+	u16 val;
 };
 
 struct zanim_cmd
@@ -227,52 +238,40 @@ struct zanim_cmd
 	void*(*end)();
 };
 
-struct zanim_cmd_val
-{
-	zanim_cmd_index index;
-	unsigned short val;
-};
-
-struct zanim_cmd_index
-{
-	unsigned char cmd;
-	unsigned char set;
-};
-
 struct _zanim_cmd_hdr
 {
-	unsigned int data_type;
-	bool quad_align;
-	bool timeless;
-	size_t data_size;
+	u32 data_type : 16;
+	u32 quad_align : 1;
+	u32 timeless : 1;
+	u32 data_size : 14;
 };
 
 struct _zanim_cmd_set
 {
 	const char* name;
-	int count;
+	s32 count;
 	zanim_cmd* cmd_list;
 };
 
 struct _zanim_main_params
 {
-	int m_version;
-	float m_gravity;
+	s32 m_version;
+	f32 m_gravity;
 	bool m_search_external_nodes;
-	unsigned int m_unused : 31;
-	int m_UserActionAnimIndex;
+	u32 m_unused : 31;
+	s32 m_UserActionAnimIndex;
 };
 
 struct _zanim_anim_params
 {
-	unsigned char m_name_index;
-	unsigned char m_root_node_index;
+	u8 m_name_index;
+	u8 m_root_node_index;
 
 	bool m_paused;
-	char m_state;
-	char m_activation;
+	s8 m_state;
+	s8 m_activation;
 	bool m_network_anim;
-	char node_search_scope;
+	s8 node_search_scope;
 
 	bool m_auto_copy_anim;
 	bool m_auto_add_to_world;
@@ -281,32 +280,32 @@ struct _zanim_anim_params
 	bool m_clone_anim;
 	bool m_create_root;
 
-	int m_max_anim_copies;
-	int m_unused;
+	s32 m_max_anim_copies;
+	s32 m_unused;
 
-	float m_timer;
-	float m_priority;
+	f32 m_timer;
+	f32 m_priority;
 
-	int m_damage_seq_offset;
-	int m_activation_seq_offset;
-	int m_execution_seq_offset;
-	int m_cleanup_seq_offset;
+	s32 m_damage_seq_offset;
+	s32 m_activation_seq_offset;
+	s32 m_execution_seq_offset;
+	s32 m_cleanup_seq_offset;
 };
 
 struct _zanim_si_script
 {
-	unsigned short script_pathname_index;
-	unsigned short script_object_name_index;
+	u16 script_pathname_index;
+	u16 script_object_name_index;
 	bool spline_interp;
-	int total_frame_count;
-	int script_data_size;
+	s32 total_frame_count;
+	s32 script_data_size;
 	char* script_data;
 };
 
 struct _zanim_call_anim_ref
 {
-	unsigned char name_index;
-	unsigned char local_name_index;
+	u8 name_index;
+	u8 local_name_index;
 
 	bool stop_on_exit;
 
@@ -316,9 +315,9 @@ struct _zanim_call_anim_ref
 
 struct _zanim_node_ref
 {
-	unsigned int parent_index : 8;
-	unsigned int name_index : 11;
-	unsigned int node_search : 3;
+	u32 parent_index : 8;
+	u32 name_index : 11;
+	u32 node_search : 3;
 
 	bool is_light;
 	bool created_here;
@@ -336,7 +335,7 @@ struct _zanim_node_ref
 
 struct _zanim_valve_ref
 {
-	int name_index;
+	s32 name_index;
 	CValve* valve;
 };
 
@@ -350,29 +349,29 @@ struct _zanim_sound
 
 struct _zsequence
 {
-	int name_index;
-	int loop_counter;
+	s32 name_index;
+	s32 loop_counter;
 	bool paused;
 	
-	char activation;
-	char state;
-	char cmd_state;
+	s8 activation;
+	s8 state;
+	s8 cmd_state;
 
-	int m_IF_NestLevel;
+	s32 m_IF_NestLevel;
 
-	char* cmd_pc;
-	int seq_data_size;
+	s8* cmd_pc;
+	s32 seq_data_size;
 
-	float seq_timer;
-	float cmd_timer;
-	float loop_timer;
+	f32 seq_timer;
+	f32 cmd_timer;
+	f32 loop_timer;
 };
 
 struct ZAnimNetworkPacket
 {
-	int packet_size;
-	unsigned short anim_set_index;
-	unsigned short anim_index;
+	s32 packet_size;
+	u16 anim_set_index;
+	u16 anim_index;
 };
 
 struct AnimSet
@@ -404,6 +403,11 @@ private:
 	ANIMTYPE_GROUP m_animgroups;
 };
 
+class CBlendable
+{
+	BLENDABLE_ANIM m_blendable[4];
+};
+
 class CActiveAnimList
 {
 
@@ -427,11 +431,11 @@ private:
 	zdb::CNode* m_nodeEx;
 	zdb::CNode* m_root_node;
 
-	float m_shield;
-	float m_armor;
-	float m_armor_max;
-	float m_health;
-	float m_health_max;
+	f32 m_shield;
+	f32 m_armor;
+	f32 m_armor_max;
+	f32 m_health;
+	f32 m_health_max;
 };
 
 class CZAnimSet
@@ -468,10 +472,10 @@ private:
 	CZAnimNameTable m_name_table;
 	CZAnimSet* m_animset_list;
 
-	int m_animset_count;
-	int m_cmdset_count;
-	int m_cmdset_index;
-	int m_cmdset_index;
+	s32 m_animset_count;
+	s32 m_cmdset_count;
+	s32 m_cmdset_index;
+	s32 m_cmdlist_index;
 
 	_zanim_cmd_set* m_cmdset_list;
 
@@ -495,14 +499,14 @@ private:
 	_zanim_cmd_hdr m_cmd_endwhile;
 	_zanim_cmd_hdr m_cmd_ExprOperator;
 
-	float m_exp[41];
-	float m_inv_exp[41];
+	f32 m_exp[41];
+	f32 m_inv_exp[41];
 
 	ZAnimNetworkPacket m_NetworkPacket;
-	int m_NetworkPacketMaxSize;
+	s32 m_NetworkPacketMaxSize;
 
-	int m_RunningAnimCount;
-	int m_CurrentFrame;
+	s32 m_RunningAnimCount;
+	s32 m_CurrentFrame;
 };
 
 class CActiveAnimPool
@@ -511,11 +515,6 @@ class CActiveAnimPool
 };
 
 static CZAnimMain ZAnim;
-
-class CBlendable
-{
-	BLENDABLE_ANIM m_blendable[4];
-};
 
 class CZBodyAnimBlend
 {
@@ -529,8 +528,8 @@ private:
 
 	REFPT_INFO* m_refpt_info;
 
-	CZBodyPart* m_action_node;
-	CZBodyPart* m_result_parent;
+	// CZBodyPart* m_action_node;
+	// CZBodyPart* m_result_parent;
 
 	char m_flags;
 	char m_ctrl;
@@ -546,13 +545,13 @@ private:
 class CZSIObject
 {
 private:
-	float* m_positionData;
+	f32* m_positionData;
 	CQuat* m_rotations;
-	unsigned int m_inUse : 1;
-	unsigned int m_constPos : 1;
-	unsigned int m_constRot : 1;
-	unsigned int m_padding : 21;
-	unsigned int m_body_part_id : 8;
+	u32 m_inUse : 1;
+	u32 m_constPos : 1;
+	u32 m_constRot : 1;
+	u32 m_padding : 21;
+	u32 m_body_part_id : 8;
 	char* m_pName;
 };
 
@@ -560,11 +559,11 @@ class CZSIScript
 {
 	friend class CZSIScriptCommon;
 protected:
-	int m_isLoaded : 1;
-	int m_looped : 1;
-	float m_tf;
-	float m_tScale;
-	float m_multiplier;
+	s32 m_isLoaded : 1;
+	s32 m_looped : 1;
+	f32 m_tf;
+	f32 m_tScale;
+	f32 m_multiplier;
 	CZSIScriptCommon* m_pCommon;
 };
 
@@ -573,18 +572,18 @@ class CZSIScriptCommon
 	friend class CZSIObject;
 private:
 	char* m_name;
-	short m_nFrames;
-	short m_nObjects;
+	s16 m_nFrames;
+	s16 m_nObjects;
 	CZSIObject* m_pObjects;
-	short m_refCount;
-	short m_objects_ready;
-	float m_distance;
-	float m_thr_scale;
-	float m_blendtime;
-	float m_terrnorm0;
-	float m_terrnorm1;
-	float m_fire_val;
-	float m_interrupt_val;
+	s16 m_refCount;
+	s16 m_objects_ready;
+	f32 m_distance;
+	f32 m_thr_scale;
+	f32 m_blendtime;
+	f32 m_terrnorm0;
+	f32 m_terrnorm1;
+	f32 m_fire_val;
+	f32 m_interrupt_val;
 	std::vector<CZSIObject*> m_objects_for_body;
 };
 
@@ -598,8 +597,8 @@ public:
 class CSequence
 {
 private:
-	float m_upT;
-	float m_holdT;
-	float m_downT;
-	float m_currT;
+	f32 m_upT;
+	f32 m_holdT;
+	f32 m_downT;
+	f32 m_currT;
 };

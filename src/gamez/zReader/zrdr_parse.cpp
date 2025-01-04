@@ -18,4 +18,6 @@ _zrdr* zrdr_read(const char* name, const char* path, int flags)
 
 		}
 	}
+
+	return NULL;
 }

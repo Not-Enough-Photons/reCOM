@@ -5,6 +5,20 @@
 #include <cassert>
 
 /// -------------------------------------------
+/// PRIMITIVE TYPES
+/// -------------------------------------------
+
+typedef uint8_t    u8;  // unsigned char
+typedef uint16_t   u16; // unsigned short
+typedef uint32_t   u32; // unsigned int
+typedef uint64_t   u64; // unsigned long
+typedef int8_t     s8;  // char
+typedef int16_t    s16; // short
+typedef int32_t    s32; // int
+typedef int64_t    s64; // long
+typedef float_t    f32; // float
+
+/// -------------------------------------------
 /// USEFUL MACROS
 /// -------------------------------------------
 
@@ -13,8 +27,6 @@
 
 typedef unsigned long long long128;
 typedef bool(*ScheduledTask)(float, void*);
-
-bool postinited = false;
 
 void InitSystemTuners();
 void zSysInit();
@@ -27,27 +39,27 @@ size_t zsys_FullAllocAndFree();
 void zVid_Assert(bool condition, unsigned int mask, const char* source, int line);
 
 void* operator new(size_t size);
-void* malloc(size_t size);
-void* calloc(size_t num, size_t size);
-void* realloc(void* ptr, size_t new_size);
-void* memalign(size_t alignment, size_t size);
-char* strdup(const char* str1);
-void _free();
+void* __malloc(size_t size);
+void* __calloc(size_t num, size_t size);
+void* __realloc(void* ptr, size_t new_size);
+void* __memalign(size_t alignment, size_t size);
+char* __strdup(const char* str);
+void __free(void* block);
 
 struct _zsys_public;
 class CTTY;
 
-_zsys_public zSys;
-CTTY theTerminal;
+extern _zsys_public zSys;
+extern CTTY theTerminal;
 
 struct _word128
 {
 	long128 u128;
 	float f32[4];
-	unsigned long u64[2];
-	unsigned int u32[4];
-	unsigned short u16[8];
-	unsigned char u8[16];
+	u64 u64[2];
+	u32 u32[4];
+	u16 u16[8];
+	u8 u8[16];
 };
 
 struct four
@@ -76,11 +88,11 @@ private:
 	T* m_head;
 	T* m_tail;
 
-	unsigned int m_bytes;
-	unsigned int m_size;
-	unsigned int m_count;
-	unsigned int m_peak;
-	unsigned int m_overflow;
+	u32 m_bytes;
+	u32 m_size;
+	u32 m_count;
+	u32 m_peak;
+	u32 m_overflow;
 };
 
 class _zsys_public

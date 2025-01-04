@@ -13,7 +13,7 @@
 		{\
 			do\
 			{\
-				unsigned char* byte = (unsigned char*)((int)buf + line);\
+				unsigned char* byte = (unsigned char*)((int64_t)buf + line);\
 				line += 8;\
 				byte[0] = ~byte[0];\
 				byte[1] = ~byte[1];\
@@ -27,12 +27,15 @@
 		}\
 			for (; line < size; line++)\
 			{\
-				* (unsigned char*)((int)buf + line) = ~*(unsigned char*)((int)buf + line); \
+				* (unsigned char*)((int64_t)buf + line) = ~*(unsigned char*)((int64_t)buf + line); \
 			}\
 		}\
 
 static char* hackStr;
 static bool m_memalign = false;
+
+static char g_gamePath[1024] = "D:/";
+static char* g_filePath;
 
 namespace zar
 {
@@ -43,15 +46,15 @@ namespace zar
 
 	struct TAIL
 	{
-		int flags;
-		int key_count;
-		int stable_size;
-		int stable_ofs;
-		int reserved[16];
-		int offset;
-		int crc;
-		int appversion;
-		int version;
+		int32_t flags;
+		int32_t key_count;
+		int32_t stable_size;
+		int32_t stable_ofs;
+		int32_t reserved[16];
+		int32_t offset;
+		int32_t crc;
+		int32_t appversion;
+		int32_t version;
 	};
 
 	class CKey : public CKeyRing
@@ -66,7 +69,7 @@ namespace zar
 		CKey* InsertKey(CKey* key);
 		CKey* FindKey(const char* name);
 
-		bool Read(CZAR* file, CBufferIO* io, unsigned int offset);
+		bool Read(CZAR* file, CBufferIO* io, int64_t offset);
 		bool Write(CZAR* file);
 
 		char* GetName() const
@@ -92,7 +95,7 @@ namespace zar
 	class CZAR
 	{
 		friend class CKey;
-		friend class CZAREditor;
+		friend class CRdrArchive;
 	public:
 		CZAR(const char* name, CIO* io);
 		~CZAR();
@@ -257,10 +260,11 @@ namespace zar
 
 		void Securify(void* buf, size_t size);
 		void Unsecurify(void* buf, size_t size);
-	private:
+	public:
+		char* m_filename;
 		CFileIO* m_pFileAlloc;
 		CBufferIO* m_pFile;
-
+	protected:
 		CKeyRing m_keys;
 
 		void* m_databuffer;
@@ -273,7 +277,6 @@ namespace zar
 
 		CKey* m_root;
 		CSTable* m_stable;
-		char* m_filename;
 
 		CKeyVec m_key_buffer;
 

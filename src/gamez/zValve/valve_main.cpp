@@ -1,6 +1,8 @@
 #include "zvalve.h"
 
-#include "gamez/zAnim/zanim.h"
+// #include "gamez/zAnim/zanim.h"
+
+CValvePool valvePool;
 
 CValve* CValve::Create(const char* name, VALVE_TYPE type)
 {
@@ -31,14 +33,14 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	}
 	else
 	{
-		if (type == PERM && valve->m_type != PERSIST)
+		if (type == VALVE_TYPE::PERM && valve->m_type != VALVE_TYPE::PERSIST)
 		{
-			valve->m_type = PERM;
+			valve->m_type = VALVE_TYPE::PERM;
 		}
 
-		if (type == PERSIST)
+		if (type == VALVE_TYPE::PERSIST)
 		{
-			valve->m_type = PERSIST;
+			valve->m_type = VALVE_TYPE::PERSIST;
 		}
 	}
 
@@ -47,7 +49,7 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 
 void CValve::RegisterCommands()
 {
-	ZAnim.AddCmd("VALVE", CmdParseCmp, NULL, CmdTickCmp, NULL);
+	// ZAnim.AddCmd("VALVE", CmdParseCmp, NULL, CmdTickCmp, NULL);
 }
 
 void CValve::AssignName(const char* name)
@@ -58,6 +60,7 @@ void CValve::AssignName(const char* name)
 void* CValve::AddCallback(int size, void(*callback)(CValve*, void*), void* buffer)
 {
 	m_callbacks.m_list.insert(m_callbacks.m_list.begin(), callback);
+	return callback;
 }
 
 void CValve::DeleteCallbacks()
@@ -79,12 +82,12 @@ bool CValve::Set(int value)
 
 	m_value = value;
 
-	if (state != VALVE_STATE::NONE)
+	if (state != VALVE_STATE::IDLE)
 	{
 		MakeCallbacks(state);
 	}
 
-	return state != VALVE_STATE::NONE;
+	return state != VALVE_STATE::IDLE;
 }
 
 OP_TYPE CValve::ParseOperator(const char* op)

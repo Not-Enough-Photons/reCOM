@@ -6,6 +6,9 @@
 #include "gamez/zMath/zmath.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zValve/zvalve.h"
+#include "gamez/zSystem/zsys.h"
+
+class CSnd;
 
 enum SOUND_TYPE
 {
@@ -39,12 +42,11 @@ enum MUSIC_MODE
 	MODE_9
 };
 
-bool vagArchiveIsOpen = false;
-bool bnkArchiveIsOpen = false;
-_zrdr* sound_rdr;
-bool snd_system_initialized = false;
-
-std::unordered_map<const char*, CSnd*> sound_map;
+extern bool vagArchiveIsOpen;
+extern bool bnkArchiveIsOpen;
+extern bool snd_system_initialized;
+extern _zrdr* sound_rdr;
+extern std::unordered_map<const char*, CSnd*> sound_map;
 
 class CSnd
 {
@@ -79,25 +81,25 @@ protected:
 
 	PNT2D m_range;
 
-	int m_bank;
-	int m_ID;
+	s32 m_bank;
+	s32 m_ID;
 
 	bool m_isStreamed;
 	bool m_isOneShot;
 	bool m_isHeadsetStream;
 
-	unsigned int m_soundmode;
-	unsigned int m_type;
+	u32 m_soundmode;
+	u32 m_type;
 
 	const char* m_stream1name;
 	const char* m_stream2name;
 
 	const char* m_subtitle;
 	CValve* m_subtitle_translator;
-	float m_subtitle_time;
+	f32 m_subtitle_time;
 
-	int m_offset1;
-	int m_offset2;
+	s32 m_offset1;
+	s32 m_offset2;
 };
 
 class CSndInstance : public CSnd

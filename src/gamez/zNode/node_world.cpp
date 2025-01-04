@@ -1,33 +1,34 @@
 #include "znode.h"
-#include "node_world.h"
 
 #define MIN_POOL_SIZE 3000
 #define POOL_INCREMENT 100
 
 namespace zdb
 {
+	CWorld* CWorld::m_world;
+
 	bool CNodeUniverse::AddNode(CNode* node)
 	{
 		bool success = false;
 
 		if (!m_locked)
 		{
-			CNode* addNode = node;
-			int capacity = this->capacity;
+			CNode* universeNode = node;
+			int universeSize = size();
 
-			if (capacity == nodes.capacity())
+			if (universeSize == capacity())
 			{
-				if (capacity < MIN_POOL_SIZE)
+				if (capacity() < MIN_POOL_SIZE)
 				{
-					nodes.reserve(MIN_POOL_SIZE);
+					reserve(MIN_POOL_SIZE);
 				}
 				else
 				{
-					nodes.reserve(capacity + POOL_INCREMENT);
+					reserve(capacity() + POOL_INCREMENT);
 				}
 			}
 
-			nodes.insert(nodes.begin(), addNode);
+			insert(begin(), universeNode);
 			success = true;
 		}
 		else
@@ -40,20 +41,18 @@ namespace zdb
 
 	void CNodeUniverse::RemoveNode(CNode* node)
 	{
-		CNode** cur = this->head;
-		CNode** tail = this->tail;
-
-		while (cur != tail)
+		auto it = begin();
+		while (it != end())
 		{
-			if (*cur == node)
+			if (*it == node)
 			{
 				break;
 			}
 
-			cur++;
+			it++;
 		}
 
-		*cur = NULL;
+		*it = NULL;
 	}
 
 	CNode* CNodeUniverse::GetElement(int index) const
@@ -68,9 +67,9 @@ namespace zdb
 		{
 			node = NULL;
 
-			if (index <= nodes.size())
+			if (index <= size())
 			{
-				node = nodes.at(index);
+				node = at(index);
 			}
 		}
 
@@ -80,17 +79,15 @@ namespace zdb
 	int CNodeUniverse::GetIndex(CNode* node) const
 	{
 		int index = 0;
-		CNode** cur = this->head;
-		CNode** tail = this->tail;
-
-		while (cur != tail)
+		auto it = begin();
+		while (it != end())
 		{
-			if (*cur == node)
+			if (*it == node)
 			{
 				break;
 			}
 
-			cur++;
+			it++;
 			index++;
 		}
 
@@ -99,13 +96,12 @@ namespace zdb
 
 	void CWorld::ReserveChildren(int count)
 	{
-		children.reserve(count + expandSize);
+		m_child.reserve(count + m_child.capacity());
 	}
 
 	void CWorld::AddChild(CNode* child)
 	{
-		// Ass.
-		CWorld* parent = reinterpret_cast<CWorld*>(child->parent);
+		CWorld* parent = static_cast<CWorld*>(child->m_parent);
 
 		if (parent != this)
 		{
@@ -113,23 +109,22 @@ namespace zdb
 
 			if (parent != NULL && parent != this)
 			{
-				parent->DeleteChildren();
+				parent->DeleteChild(node);
 			}
 
-			grid->Insert(node);
+			// m_grid->Insert(node);
 
-			// Ass.
-			node->parent = reinterpret_cast<CNode*>(this);
+			node->m_parent = static_cast<CNode*>(this);
 
-			if (expandSize == children.size())
+			if (m_child.capacity() == m_child.size())
 			{
-				children.reserve(expandSize + 100);
+				m_child.reserve(m_child.capacity() + 100);
 			}
 
-			children.insert(children.begin(), node);
+			m_child.insert(m_child.begin(), node);
 
 			CNode* temp = node;
-			if (node->nodeType != 2)
+			if (node->m_type != 2)
 			{
 				temp = NULL;
 			}
@@ -147,8 +142,11 @@ namespace zdb
 
 	void CWorld::AddLandmark(CNode* landmark)
 	{
-		if (landmark->renderFlags)
+		if (landmark->m_landmark)
+		{
 
-		landmark->RemoveFromParent();
+		}
+
+		// landmark->RemoveFromParent();
 	}
 }

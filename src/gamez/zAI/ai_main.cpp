@@ -3,108 +3,6 @@
 
 #include "zai.h"
 
-const char* sealai::get_state(AI_STATE state)
-{
-	const char* str;
-
-	switch (state)
-	{
-	case STATE_UNKNOWN:
-		str = "unknown";
-		break;
-	case STATE_SCRIPT:
-		str = "script";
-		break;
-	case STATE_HOLD:
-		str = "hold";
-		break;
-	case STATE_AVOID:
-		str = "avoid";
-		break;
-	case STATE_DEPLOY:
-		str = "deploy";
-		break;
-	case STATE_LASING:
-		str = "lasing";
-		break;
-	case STATE_SURRENDER:
-		str = "surrender";
-		break;
-	case STATE_RESTRAINED:
-		str = "restrained";
-		break;
-	case STATE_GOTO:
-		str = "goto";
-		break;
-	case STATE_FOLLOW:
-		str = "follow";
-		break;
-	case STATE_BREACH:
-		str = "breach";
-		break;
-	case STATE_ACTION:
-		str = "action";
-		break;
-	case STATE_PURSUE:
-		str = "pursue";
-		break;
-	case STATE_ANIMATE:
-		str = "animate";
-		break;
-	case STATE_CQB:
-		str = "cqb";
-		break;
-	case STATE_FLEE:
-		str = "flee";
-		break;
-	case STATE_PATHRECO:
-		str = "pathreco";
-		break;
-	case STATE_RESCUED:
-		str = "rescued";
-		break;
-	case STATE_SUSPENDED:
-		str = "suspended";
-		break;
-	case STATE_SHOTAT:
-		str = "shotat";
-		break;
-	case STATE_RELOAD:
-		str = "reload";
-		break;
-	case STATE_NOAMMO:
-		str = "noammo";
-		break;
-	case STATE_PICKUP:
-		str = "pickup";
-		break;
-	case STATE_HOSTAGE:
-		str = "hostage";
-		break;
-	case STATE_CORPSE:
-		str = "corpse";
-		break;
-	case STATE_EVENT:
-		str = "event";
-		break;
-	case STATE_TARGETING:
-		str = "targeting";
-		break;
-	case STATE_GRENADE:
-		str = "grenade";
-		break;
-	case STATE_STUNNED:
-		str = "stunned";
-		break;
-	case STATE_RUSH:
-		str = "rush";
-		break;
-	default:
-		str = "undef";
-	}
-	return str;
-}
-
 CAiState* CAiState::Create(AI_STATE state)
 {
 	CAiState* aiState;
@@ -219,31 +117,18 @@ CAiState* CAiState::Create(AI_STATE state)
 	default:
 		break;
 	}
+
+	return NULL;
 }
 
-float CAiEvent::GetEventRate(EVENT event)
+void CAiState::Reset(AI_STATE state)
 {
-	float rate = 0.0f;
-
-	switch (event)
-	{
-	case type_01:
-	case type_02:
-	case type_03:
-	case type_04:
-	case type_05:
-	case type_06:
-	case type_07:
-	case type_08:
-	case type_09:
-	case type_10:
-	case type_11:
-	case type_12:
-	case type_13:
-		break;
-	case type_14:
-		rate = 5.0f;
-	}
-
-	return rate;
+	m_bitfield = m_bitfield & 0b11111101;
+	m_state = state;
+	m_field8_0x14 = 0;
+	m_bitfield = m_bitfield & 0b11111110;
+	m_field2_0x8 = 0;
+	m_field1_0x4 = 0;
+	m_bitfield = m_bitfield & 0b11111011;
+	m_bitfield = m_bitfield & 0b00000111;
 }

@@ -1,5 +1,13 @@
 #include "util_stable.h"
 
+CSTable::CSTable()
+{
+	m_owner = true;
+	m_buffer = NULL;
+	m_bytes = 0;
+	m_reserve = 0;
+}
+
 CSTable::CSTable(size_t size, size_t count)
 {
 	m_owner = true;
@@ -39,6 +47,11 @@ CSTable::~CSTable()
 
 	m_reserve = 0;
 	clear();
+}
+
+void CSTable::Destroy()
+{
+
 }
 
 char* CSTable::CreateString(const char* str)

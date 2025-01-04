@@ -1,7 +1,9 @@
 #pragma once
 #include <list>
 
-#include "gamez/zAnim/zanim.h"
+// #include "gamez/zAnim/zanim.h"
+#include "gamez/zReader/zrdr.h"
+#include "gamez/zUtil/zutil.h"
 
 class CValve;
 class CValvePool;
@@ -26,7 +28,7 @@ enum OP_TYPE
 /// <para> ValveType::TEMP - Loads once then unloads when done. </para>
 /// <para> ValveType::PERSIST - Lasts the entire lifetime of the game, and will pool if the value reaches threshold.</para>
 /// </summary>
-enum VALVE_TYPE
+enum class VALVE_TYPE
 {
 	NONE,
 	PERM,
@@ -34,7 +36,7 @@ enum VALVE_TYPE
 	PERSIST
 };
 
-enum VALVE_STATE
+enum class VALVE_STATE
 {
 	NONE,
 	IDLE,
@@ -42,7 +44,9 @@ enum VALVE_STATE
 	UNKNOWN
 };
 
-static CValvePool valvePool;
+class CValvePool;
+
+extern CValvePool valvePool;
 
 class CValveCBList
 {
@@ -67,8 +71,8 @@ public:
 	static void Reset();
 
 	static bool Parse(CRdrFile* file, VALVE_TYPE type);
-	static _zanim_cmd_hdr* CmdParseCmp(_zrdr* reader);
-	static bool CmdTickCmp(_zanim_cmd_hdr* header, float* delta);
+	// static _zanim_cmd_hdr* CmdParseCmp(_zrdr* reader);
+	// static bool CmdTickCmp(_zanim_cmd_hdr* header, float* delta);
 
 	static CValve* Create(const char* name, VALVE_TYPE type);
 	static CValve* Create(const char* name, int count, VALVE_TYPE type);
@@ -84,7 +88,7 @@ public:
 	void FreeName();
 
 	void* AddCallback(int size, void(*callback)(CValve*, void*), void* buffer);
-	void MakeCallbacks(VALVE_STATE state);
+	void MakeCallbacks(VALVE_STATE state) {}
 	void DeleteCallbacks();
 
 	bool Set(int value);
@@ -103,6 +107,6 @@ private:
 class CValvePool
 {
 public:
-	CValve* Acquire(const char* name, VALVE_TYPE type);
+	CValve* Acquire(const char* name, VALVE_TYPE type) { return NULL; }
 };
 

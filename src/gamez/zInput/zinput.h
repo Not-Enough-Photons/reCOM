@@ -3,7 +3,7 @@ class CInput;
 class CPad;
 class CKeyboard;
 
-float pad_dt;
+extern float pad_dt;
 
 enum KEY_STATE
 {
@@ -11,6 +11,27 @@ enum KEY_STATE
 	KEY_FALLING,
 	KEY_DOWN,
 	KEY_RISING
+};
+
+enum class PAD_BUTTON
+{
+	PAD_START,
+	PAD_SELECT,
+	PAD_RIGHT,
+	PAD_LEFT,
+	PAD_UP,
+	PAD_DOWN,
+	PAD_TRIANGLE,
+	PAD_CIRCLE,
+	PAD_SQUARE,
+	PAD_CROSS,
+	PAD_TRIGGER_R1,
+	PAD_TRIGGER_R2,
+	PAD_TRIGGER_L1,
+	PAD_TRIGGER_L2,
+	PAD_RIGHT_STICK,
+	PAD_LEFT_STICK,
+	PAD_MAX_BUTTONS
 };
 
 void InitKeyreadStuff();

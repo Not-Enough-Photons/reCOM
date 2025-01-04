@@ -4,13 +4,19 @@
 const float c_DefaultDelta = 0.03333334f;
 const int c_MaxPads = 2;
 
+float pad_dt = 0.0f;
+
+bool CInput::m_init = false;
+CPad** CInput::m_pads = NULL;
+CKeyboard* CInput::m_keyboard = NULL;
+
 void CInput::Init()
 {
 	OpenPadIO();
 	// TODO:
 	// Add replacement IOP function for Windows/Linux
-	InitKeyreadStuff();
-	CInput::m_keyboard = new CKeyboard();
+	// InitKeyreadStuff();
+	// CInput::m_keyboard = new CKeyboard();
 	m_init = true;
 }
 
@@ -31,7 +37,7 @@ void CInput::Tick(float delta)
 {
 	if (m_keyboard != NULL)
 	{
-		m_keyboard->Tick(delta);
+		// m_keyboard->Tick(delta);
 	}
 
 	for (int pad = 0; pad < c_MaxPads; pad++)
@@ -60,7 +66,7 @@ CPad* CInput::CreatePad(int slot)
 		
 		if (!pad->IsOpen() && m_pads[slot] != NULL)
 		{
-			delete pad;
+			// delete pad;
 			m_pads = NULL;
 		}
 	}
@@ -78,7 +84,7 @@ void CInput::DeletePad(int slot)
 
 	if (slot < 2 && pad != NULL)
 	{
-		delete pad;
+		// delete pad;
 		m_pads[slot] = NULL;
 	}
 }

@@ -5,6 +5,7 @@
 class CSTable : public std::vector<char*>
 {
 public:
+	CSTable();
 	CSTable(size_t size, size_t count);
 	~CSTable();
 

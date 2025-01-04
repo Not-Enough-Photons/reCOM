@@ -1,6 +1,14 @@
 #pragma once
 #include "gamez/zMath/zmath.h"
 
+enum _zvid_mode
+{
+	ZVID_MODE_NTSC,
+	ZVID_MODE_PAL,
+	ZVID_MODE_DTV480P,
+	ZVID_MODE_NUM
+};
+
 void zVid_Init();
 void zVid_Uninit();
 void zVid_Open();
@@ -17,15 +25,7 @@ void zvid_SetVideoMode(_zvid_mode mode);
 
 void uninitPssAudio();
 
-bool doAudio = false;
-
-enum _zvid_mode
-{
-	ZVID_MODE_NTSC,
-	ZVID_MODE_PAL,
-	ZVID_MODE_DTV480P,
-	ZVID_MODE_NUM
-};
+extern bool doAudio = false;
 
 class _zvid_public
 {

@@ -1,8 +1,18 @@
 #include "zsnd.h"
 
 #include "gamez/zReader/zrdr.h"
+#include "gamez/zSystem/zsys.h"
 
-int g_iReverbTime = 0;
+s32 g_iReverbTime = 0;
+
+bool vagArchiveIsOpen = false;
+bool bnkArchiveIsOpen = false;
+bool snd_system_initialized = false;
+
+bool CSnd::m_isDisabled = false;
+bool CSnd::m_bShowSubtitles = false;
+std::vector<CSnd*> CSnd::m_soundlist;
+std::unordered_map<const char*, CSnd*> CSnd::m_soundmap;
 
 CSnd::CSnd()
 {

@@ -317,7 +317,6 @@ namespace zar
 	{
 		bool success = false;
 		bool isOpen = false;
-		CBufferIO* bufferIO = dynamic_cast<CBufferIO*>(m_pFile);
 
 		if (m_pFile == NULL)
 		{
@@ -335,10 +334,11 @@ namespace zar
 			{
 				int offset = key->m_offset;
 				int position = m_pFile->fseek(offset, SEEK_SET);
+				success = offset == position;
 
-				if (offset == position)
+				if (success)
 				{
-					size_t size = bufferIO->fread(key->m_size, buf);
+					size_t size = m_pFile->fread(key->m_size, buf);
 					success = size != 0;
 				}
 			}

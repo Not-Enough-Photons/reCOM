@@ -2,68 +2,95 @@
 #include <vector>
 #include <string>
 
-#include "node_world.h"
-
-#include "gamez/zAI/zai.h"
-#include "gamez/zAnim/zanim.h"
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
+#include "gamez/zRender/vis/zvis.h"
 #include "gamez/zTexture/ztex.h"
-#include "gamez/zSeal/zseal.h"
 #include "gamez/zValve/zvalve.h"
-#include "gamez/zWeapon/zwep_weapon.h"
+#include "gamez/zSystem/zsys.h"
 
 namespace zdb
 {
 	class tag_NODE_PARAMS;
-	class CNodeVector;
+	class CNode;
 	class CNodeEx;
+
+	class CGridAtom;
+	class CCell;
+	class COrderedCell;
+
 	class CSaveLoad;
 	class CModel;
 	class CAssetLib;
-	class CGridAtom;
 
-	const char* g_RootNodeTag = "ROOT";
-	const char* g_DeletedNodeTag = "DELETED_NODE";
+	class CNodeUniverse;
+	class CWorld;
+	class CAppCamera;
+	class CGrid;
+
+	extern CNodeUniverse* NodeUniverse;
+	extern CWorld* theWorld;
 
 	struct tag_NODE_PARAMS
 	{
 		CMatrix m_matrix;
 		CBBox m_bbox;
-		char m_type;
-		bool m_active : 1;
-		bool m_dynamic_motion : 1;
-		bool m_dynamic_light : 1;
-		bool m_landmark : 1;
-		bool m_light : 1;
-		bool m_prelight : 1;
-		bool m_fog : 1;
-		bool m_transparent : 1;
-		// imposters/billboards
-		int m_facade : 2;
-		bool m_reflective : 1;
-		bool m_bumpmap : 1;
-		bool m_hasDI : 1;
-		int m_region_shift : 5;
-		bool m_has_visuals_prior_to_export : 1;
-		bool m_shadow : 1;
-		bool m_worldchild : 1;
-		bool m_char_common : 1;
-		bool m_NOTUSED : 1;
-		bool m_hasVisuals : 1;
-		bool m_hasMesh : 1;
-		bool m_scrolling_texture : 1;
-		bool m_light_dynamic : 1;
-		bool m_light_static : 1;
-		bool m_clutter : 1;
-		bool m_mtx_is_identity : 1;
-		bool m_use_parent_bbox : 1;
-		bool m_apply_clip : 1;
+		u32 m_type;
+		u32 m_active : 1;
+		u32 m_dynamic_motion : 1;
+		u32 m_dynamic_light : 1;
+		u32 m_landmark : 1;
+		u32 m_light : 1;
+		u32 m_prelight : 1;
+		u32 m_fog : 1;
+		u32 m_transparent : 1;
+		u32 m_facade : 2;
+		u32 m_reflective : 1;
+		u32 m_bumpmap : 1;
+		u32 m_hasDI : 1;
+		u32 m_region_shift : 5;
+		u32 m_has_visuals_prior_to_export : 1;
+		u32 m_shadow : 1;
+		u32 m_worldchild : 1;
+		u32 m_char_common : 1;
+		u32 m_NOTUSED : 1;
+		u32 m_hasVisuals : 1;
+		u32 m_hasMesh : 1;
+		u32 m_scrolling_texture : 1;
+		u32 m_light_dynamic : 1;
+		u32 m_light_static : 1;
+		u32 m_clutter : 1;
+		u32 m_mtx_is_identity : 1;
+		u32 m_use_parent_bbox : 1;
+		u32 m_apply_clip : 1;
+	};
+
+	struct tag_GRID_PARAMS
+	{
+		struct tag_SIZE
+		{
+			s32 cx;
+			s32 cy;
+		};
+
+		s32 m_AtomCnt;
+		s32 m_posts;
+		f32 m_CellDim;
+		tag_SIZE m_CellCount;
+	};
+
+	class CNodeVector : public std::vector<CNode*>
+	{
+	public:
+		bool Exists(const CNode* node) const;
+		bool Remove(const CNode* node);
+		CNode* GetNode(const char* name) const;
 	};
 
 	class CNode : public tag_NODE_PARAMS
 	{
 		friend class CNodeVector;
+		friend class CWorld;
 	public:
 		CNode();
 		~CNode();
@@ -79,10 +106,10 @@ namespace zdb
 		void DeleteChildren();
 		void RemoveFromParent();
 
-		bool UpdateGrid() const;
+		bool UpdateGrid() const { return false; }
 
-		CNode* FindChild(CNode* child, bool isCell);
-		CNode* FindChild(const char* child, bool isCell);
+		CNode* FindChild(CNode* child, bool nested);
+		CNode* FindChild(const char* child, bool nested);
 
 		CMatrix& BuildMTW(CMatrix& mat);
 
@@ -103,14 +130,16 @@ namespace zdb
 		CSubMesh* GetSubMesh() const;
 
 		void SetName(const char* name);
+		void SetModel(CModel* model);
 		void SetModelname(const char* name);
 		bool SetActive(bool active);
 
 		void SetPosition(float x, float y, float z);
-		void SetRotation(const CQuat& rotation);
+		void SetRotation(const CQuat& rotation) {};
 		void SetScale(float scaleFactor);
 		void SetScale(CPnt3D* scale);
-
+	public:
+		const char* m_name;
 	protected:
 		CNode* m_parent;
 		CNodeVector m_child;
@@ -121,25 +150,86 @@ namespace zdb
 		// Implement the CVisualVector class
 		// CVisualVector m_visual;
 
-		const char* m_name;
 		CNodeEx* m_nodeEx;
-		char m_customGlobalLight;
+		bool m_customGlobalLight;
 		bool m_frameRendered;
 		bool m_flatten;
 		bool m_modified;
 		bool m_character;
 		bool m_character_infov;
-		int m_unused;
-		float m_Opacity;
+		s32 m_unused;
+		f32 m_Opacity;
 		CGridAtom** m_Atom;
-		int m_TickNum;
-		short m_AtomCnt;
-		short m_AtomAlloc;
-		short m_count;
-		short m_vid;
+		s32 m_TickNum;
+		s16 m_AtomCnt;
+		s16 m_AtomAlloc;
+		s16 m_count;
+		s16 m_vid;
 		CModel* m_model;
 		const char* m_modelname;
-		unsigned int m_region_mask;
+		u32 m_region_mask;
+	};
+
+	class CNodeUniverse : public std::vector<CNode*>
+	{
+	public:
+		bool AddNode(CNode* node);
+		void RemoveNode(CNode* node);
+		CNode* GetElement(int index) const;
+		int GetIndex(CNode* node) const;
+	private:
+		bool m_locked;
+	};
+
+	class CWorld : public CNode
+	{
+		friend class CCamera;
+	public:
+		CWorld() : CNode() {}
+		~CWorld();
+
+		static CWorld* m_world;
+
+		static float m_scale;
+		static float m_invscale;
+
+		static int GetVersion();
+		static void Init();
+	public:
+		void Uninit();
+		void diTick();
+		void Update();
+
+		void AddChild(CNode* child);
+		void AddLandmark(CNode* landmark);
+		void AddTextureAssetCharacter(const CNode& textureAsset);
+		void ReserveChildren(int count);
+
+		void DeleteChildren();
+		void DeleteLandmark(const CNode& landmark);
+
+		// undefined4 DismemberWorldModel();
+
+		void ClearLightMapList();
+		void ClearShadowList();
+		void WipeoutTextureAssetCharacters();
+
+		void ComputeLightIntensity(float intensity, const CPnt3D& point, float* lightRef);
+
+		void GetTexHandle() const;
+		// undefined4 GetTextureByName(const char* name) const;
+		int GetModel() const;
+	private:
+		CCamera* m_camera;
+
+		u32 m_default_soiltype;
+		char* m_default_soiltype_name;
+
+		s32 m_maxOverlap;
+
+		CGrid* m_grid;
+		CNodeVector m_landmarks;
+		u32 m_numNoFarClipNodes;
 	};
 
 	/// <summary>
@@ -153,12 +243,85 @@ namespace zdb
 		CGridAtom* Prev;
 	};
 
-	class CNodeVector : public std::vector<CNode*>
+	class CCell
+	{
+
+	public:
+		struct GRIDCELLATOM
+		{
+			CGridAtom* cellAtom;
+			s32 ring;
+			s32 x;
+			s32 z;
+		};
+	};
+
+	class COrderedCell
+	{
+	private:
+		s32 m_gridCellAtomCnt;
+		s32 m_rt_gridCellAtomCnt;
+		s32 m_viewX;
+		s32 m_viewZ;
+	};
+
+	class CGrid : tag_GRID_PARAMS
 	{
 	public:
-		bool Exists(const CNode* node) const;
-		bool Remove(const CNode* node);
-		CNode* GetNode(const char* name) const;
+		CGrid();
+		~CGrid();
+	public:
+		void Insert(CNode* node);
+	private:
+		CFRect m_extents;
+		CWorld* m_world;
+
+		bool m_ClutterCreated;
+
+		CGridAtom** m_Atoms;
+		CGridAtom** m_AtomBuf;
+		CGridAtom** m_FreeAtoms;
+		s32 m_AtomFreeCnt;
+		s32 m_AtomFreePtr;
+
+		f32 m_InvCellDim;
+		f32 m_GridCellToI;
+		f32 m_ClutterToI;
+		s32 m_TickNum;
+
+		bool m_LineWalk;
+		u8 m_RowCellIn;
+		u8 m_CurCellOut;
+
+		CPnt3D m_Pnts[5];
+		CPnt3D m_Edge[5];
+
+		s32 m_PntCnt;
+
+		s32 m_ix;
+		s32 m_ixb;
+
+		s32 m_xx;
+		s32 m_iz;
+
+		s32 m_izb;
+		s32 m_zz;
+		s32 m_iz_start;
+		s32 m_iz_next_row;
+		s32 m_iz_dir;
+		CGridAtom* m_NextAtom;
+		
+		CPnt3D m_origin;
+		s32 m_ring;
+
+		COrderedCell m_orderedCells;
+	};
+
+	class CWind
+	{
+	public:
+		static void RegisterAnimCommands();
+		void CmdParseWind();
 	};
 
 	class CNodeEx : public CNode
@@ -170,7 +333,7 @@ namespace zdb
 		virtual void OnDoubleClick(CNode* node) = 0;
 		virtual void OnMove(CNode* node) = 0;
 		virtual void OnSelect(CNode* node, bool selected) = 0;
-		virtual void* OnWeaponHit(CNode* node, IntersectStruct* intersection, CZProjectile* projectile) = 0;
+		// virtual void* OnWeaponHit(CNode* node, IntersectStruct* intersection, CZProjectile* projectile) = 0;
 	};
 
 	class CModel : public CNode
@@ -184,7 +347,7 @@ namespace zdb
 		void Read(CSaveLoad& saver);
 		void Release(CNode* node);
 	private:
-		int m_variant;
+		s32 m_variant;
 		bool m_bForceExport;
 		bool m_bbox_valid;
 		// CRefList m_list;
@@ -194,34 +357,15 @@ namespace zdb
 	class CLight : public CNode
 	{
 	private:
-		float m_maxRangeSq;
-		float m_maxRange;
-		float m_minRange;
-		float m_invMaxRange;
-		float m_invDeltaRange;
-		float m_opacity;
+		f32 m_maxRangeSq;
+		f32 m_maxRange;
+		f32 m_minRange;
+		f32 m_invMaxRange;
+		f32 m_invDeltaRange;
+		f32 m_opacity;
 		CPnt3D m_diffuse;
 		bool m_appliedToNode;
 		CPnt3D m_WorldPosition;
-	};
-
-	class CVisual
-	{
-	public:
-		CVisual();
-		~CVisual();
-
-		static CVisual* Create(zar::CZAR* archive);
-	};
-
-	class CMesh : public CVisual
-	{
-
-	};
-
-	class CSubMesh : public CMesh
-	{
-
 	};
 
 	class CSaveLoad
@@ -240,12 +384,7 @@ namespace zdb
 		CWorld* m_world;
 		zar::CZAR m_zfile;
 		char m_zed_filename[1024];
-		int m_version;
-	};
-
-	class CAssetLib
-	{
-
+		s32 m_version;
 	};
 }
 
@@ -264,19 +403,19 @@ public:
 		ACT_UNKNOWN
 	};
 
-	CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle);
-	~CNodeAction();
+	// CNodeAction(zdb::CNode* node, CZAnim* animToPlay, CValve* actionValve, zdb::CTexHandle* handle);
+	// ~CNodeAction();
 
 	static void Open(zdb::CWorld* world, const char* readerName);
 	static void Close();
 
-	CNodeAction* FindActionByValve(const CValve* valve) const;
+	// CNodeAction* FindActionByValve(const CValve* valve) const;
 	CNodeAction* GetAction(bool isBase) const;
 	CNodeAction* GetActionById(int id) const;
 	const char* GetActionType(ACTION_TYPE type) const;
 	CNodeAction* GetClosestAction(const CPnt3D* position, float radius) const;
 
-	bool ExecuteAction(CZSealBody* seal, unsigned int actionFlags) const;
+	// bool ExecuteAction(CZSealBody* seal, unsigned int actionFlags) const;
 
 	template<class T>
 	bool OnAction(zdb::CNode* node, T* type) const;
@@ -286,12 +425,12 @@ private:
 	CNodeAction** actionList;
 
 	zdb::CNode* node;
-	CZAnim** animations;
-	std::vector<CZAnim*> animVector;
-	CZAnim* actionAnimation;
-	CValve* actionValve;
-	zdb::CTexHandle* iconBitmapHandle;
+	// CZAnim** animations;
+	// std::vector<CZAnim*> animVector;
+	// CZAnim* actionAnimation;
+	CValve* m_valve;
+	zdb::CTexHandle* m_actionBitmap;
 
-	int typeFlag;
-	unsigned int actionFlags;
+	s32 m_type;
+	u32 m_flags;
 };

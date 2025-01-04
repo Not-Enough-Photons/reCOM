@@ -1,4 +1,4 @@
-#include "freebsd/strcasecmp.h"
+#include <freebsd/strcasecmp.h>
 
 #include "zar.h"
 
@@ -56,21 +56,21 @@ namespace zar
 		return NULL;
 	}
 
-	bool CKey::Read(CZAR* archive, CBufferIO* buffer, unsigned int stableOffset)
+	bool CKey::Read(CZAR* archive, CBufferIO* buffer, int64_t stableOffset)
 	{
 		struct KEY
 		{
-			char* m_name;
-			int m_offset;
-			int m_size;
-			int m_count;
+			int32_t m_name;
+			uint32_t m_offset;
+			uint32_t m_size;
+			uint32_t m_count;
 		} key_t;
 
 		buffer->fread(&key_t, sizeof(KEY));
 
 		if (archive->m_root != this)
 		{
-			m_name = key_t.m_name + stableOffset;
+			m_name = (char*)key_t.m_name + stableOffset;
 			m_size = key_t.m_size;
 			m_offset = key_t.m_offset;
 		}
@@ -204,6 +204,7 @@ namespace zar
 		if (m_pFile == NULL)
 		{
 			isOpen = false;
+			return;
 		}
 		else
 		{
@@ -584,7 +585,7 @@ namespace zar
 							do
 							{
 								// Yes, I know this fucking sucks.
-								unsigned char* byte = (unsigned char*)((int)buf + offset);
+								unsigned char* byte = (unsigned char*)((int64_t)buf + offset);
 								offset += 8;
 								byte[0] = ~byte[0];
 								byte[1] = ~byte[1];
@@ -599,7 +600,7 @@ namespace zar
 
 						for (; offset < size; offset++)
 						{
-							unsigned char* byte = (unsigned char*)((int)buf + offset);
+							unsigned char* byte = (unsigned char*)((int64_t)buf + offset);
 							byte[offset] = ~byte[offset];
 						}
 					}
@@ -750,7 +751,7 @@ namespace zar
 
 				CBufferIO bufferIO;
 
-				size_t key_size = m_tail.key_count << 4;
+				size_t key_size = (int64_t)m_tail.key_count << 4;
 				void* key_ptr = malloc(key_size);
 
 				m_pFileAlloc->fread(key_ptr, key_size);
@@ -758,7 +759,7 @@ namespace zar
 
 				bufferIO.Open(key_ptr, key_size);
 
-				m_root->Read(this, &bufferIO, (unsigned int)stable_ptr - ofs);
+				m_root->Read(this, &bufferIO, (int64_t)stable_ptr - ofs);
 				bufferIO.Close();
 
 				m_databuffer_size = m_tail.offset;

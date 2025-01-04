@@ -3,12 +3,15 @@
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zEntity/body.h"
 #include "gamez/zEntity/zentity.h"
-#include "gamez/zEntity/intersect.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUI/zui.h"
-#include "gamez/zWeapon/zwep_weapon.h"
-#include "gamez/zWeapon/zwep_ammo.h"
+#include "gamez/zWeapon/zweapon.h"
+
+/// -------------------------------------------
+/// FORWARD DECLARATIONS
+/// -------------------------------------------
+class CSealCtrl;
 
 enum ZOOMSTATE
 {
@@ -101,16 +104,6 @@ enum SEAL_DEATH_TYPE
 	DEATH_MAX
 };
 
-enum ENCUMBERANCE
-{
-	LIGHTLY_ENCUMBERED,
-	MEDIUM_ENCUMBERED,
-	HEAVY_ENCUMBERED,
-	VERY_HEAVILY_ENCUMBERED,
-	NOT_ENCUMBERED,
-	NUM_ECUMBTYPES
-};
-
 enum AiSig
 {
 	AISIG_UNKNOWN,
@@ -121,17 +114,25 @@ enum AiSig
 	AISIG_RELEASE
 };
 
-/// -------------------------------------------
-/// FORWARD DECLARATIONS
-/// -------------------------------------------
+namespace sealai
+{
+	const char* get_aiseq(AI_SEQUENCE sequence);
+
+	AI_MODE get_mode(const char* name);
+
+	const char* get_stance(SEAL_STANCE stance);
+	SEAL_STANCE get_stance(const char* name);
+
+	AI_STATE get_state(const char* name);
+	const char* get_state(AI_STATE state);
+}
 
 // TODO: Unknown type in std::vector
 class CObjAnims : public std::vector<void*> {};
 
-float noTurnThreshold = 0.0f;
-float fineTuneThreshold = 0.0f;
-float throttleFudge = 0.0f;
-bool init = false;
+extern float noTurnThreshold;
+extern float fineTuneThreshold;
+extern float throttleFudge;
 
 struct HEALTH_PARAMS
 {
@@ -199,73 +200,73 @@ private:
 	BITFIELD_UINT(m_heartbeat_enabled, 1);
 	BITFIELD_UINT(m_unused, 17);
 
-	float m_retposx;
-	float m_retposy;
-	float m_retoffsetx;
-	float m_retoffsety;
+	f32 m_retposx;
+	f32 m_retposy;
+	f32 m_retoffsetx;
+	f32 m_retoffsety;
 
-	float m_sniper_posx;
-	float m_sniper_posy;
-	float m_sniper_prev_posx;
-	float m_sniper_prev_posy;
+	f32 m_sniper_posx;
+	f32 m_sniper_posy;
+	f32 m_sniper_prev_posx;
+	f32 m_sniper_prev_posy;
 
-	float m_firerifle_kick_baseline;
-	float m_firerifle_kick_movedist;
-	float m_firerifle_kick_accum;
-	int m_firerifle_kick_state;
+	f32 m_firerifle_kick_baseline;
+	f32 m_firerifle_kick_movedist;
+	f32 m_firerifle_kick_accum;
+	s32 m_firerifle_kick_state;
 
-	unsigned int m_heartbeat_state;
-	float m_heartbeat_accum;
-	float m_chill_parabola;
+	u32 m_heartbeat_state;
+	f32 m_heartbeat_accum;
+	f32 m_chill_parabola;
 
-	int m_curitemreticule;
+	s32 m_curitemreticule;
 	
-	float m_screenoffset_x;
-	float m_screenoffset_y;
+	f32 m_screenoffset_x;
+	f32 m_screenoffset_y;
 
-	float m_lase_timer;
+	f32 m_lase_timer;
 	CZAnim* m_lase_anim;
 	// name* m_lase_mapname // TODO: Create the name struct. I don't know why they named it that.
 
-	unsigned int m_itemstate[30];
+	u32 m_itemstate[30];
 	CZFTSWeapon* m_item[30];
 	CZAmmo* m_ammo[30];
-	int m_reloads[30][10];
-	int m_currentmag[30];
-	int m_firemode[30];
+	s32 m_reloads[30][10];
+	s32 m_currentmag[30];
+	s32 m_firemode[30];
 	CCharacterGear* m_associatedgear[30];
-	unsigned char m_iteminuse[30];
+	u8 m_iteminuse[30];
 
-	int m_cur_zoom;
-	int m_restore_zoom;
-	int m_burst_count;
-	int m_fire_delay;
-	int m_selected_item;
-	int m_last_selected;
-	int m_num_items;
+	s32 m_cur_zoom;
+	s32 m_restore_zoom;
+	s32 m_burst_count;
+	s32 m_fire_delay;
+	s32 m_selected_item;
+	s32 m_last_selected;
+	s32 m_num_items;
 	
 	CZSealBody* m_body;
 	
-	std::vector<unsigned char> m_items_avail;
+	std::vector<u8> m_items_avail;
 
 	zdb::CNode* m_detonator_model;
 	zdb::CNode* m_flashlight_model;
 	zdb::CTexture* m_detonator_icon;
 
-	float m_retsize;
-	float m_prev_retsize;
-	float m_prev_factor;
-	float m_prev_axis_a;
-	float m_prev_axis_b;
-	float m_retblockedsize;
-	float m_retblockedX;
-	float m_retblockedY;
-	float m_retsizegoal;
-	float m_retmax;
-	float m_retmin;
+	f32 m_retsize;
+	f32 m_prev_retsize;
+	f32 m_prev_factor;
+	f32 m_prev_axis_a;
+	f32 m_prev_axis_b;
+	f32 m_retblockedsize;
+	f32 m_retblockedX;
+	f32 m_retblockedY;
+	f32 m_retsizegoal;
+	f32 m_retmax;
+	f32 m_retmin;
 
 	int m_tracercount;
-	float m_firetime;
+	f32 m_firetime;
 	
 	// zdb::CLightMap* m_lightMap; // TODO: Create the CLightMap class
 	CSnd* m_rldsnd;
@@ -273,10 +274,48 @@ private:
 	CSnd* m_lasersnd_start;
 	CSnd* m_lasersnd_fin;
 
-	float m_pickupRequestWait;
+	f32 m_pickupRequestWait;
 };
 
-class CZSealBody : public CEntity, CBody
+class CSealStats
+{
+public:
+	s32 m_headshots;
+	s32 m_headhits;
+	s32 m_hits;
+	s32 m_shots;
+	s32 m_kills;
+	s32 m_washit;
+	s32 m_deaths;
+	s32 m_hostages;
+	s32 m_bases_blown;
+	s32 m_hostages_rescued;
+	f32 m_hit_percent;
+	s32 m_num_times_seen;
+	s32 m_num_stealthkills;
+	s32 m_num_restrained;
+	s32 m_num_grenades_used;
+	s32 m_num_cqb_used;
+	s32 m_primary_rounds_fired;
+	s32 m_secondary_rounds_fired;
+	s16 m_sMvpScore;
+	s32 m_iRoundsWon;
+	s32 m_iRoundsTied;
+};
+
+class CSealEx : public zdb::CNodeEx
+{
+public:
+	virtual void OnAction(CNode* node, void* action);
+	virtual void OnCopy(CNode* node, CNode* other);
+	virtual void OnDelete(CNode* node);
+	virtual void OnDoubleClick(CNode* node);
+	virtual void OnMove(CNode* node);
+	virtual void OnSelect(CNode* node, bool selected);
+	virtual void* OnWeaponHit(CNode* node, zdb::IntersectStruct* intersection, CZProjectile* projectile);
+};
+
+class CZSealBody : public CEntity, public CBody
 {
 	// Tomb Of The Unknown Functions
 	friend class CCharacterGear;
@@ -285,7 +324,7 @@ public:
 	/// CREATION/DELETION
 	/// -------------------------------------------
 
-	CZSealBody(const zdb::CNode& node, const CCharacterType& character) : CEntity(CEntity::type_02, node) {}
+	CZSealBody(const zdb::CNode& node, const CCharacterType& character) : CEntity(CEntity::ENT_TYPE_SEAL, node) {}
 	~CZSealBody();
 
 	static CCharacterType* PreCreateSeal(CCharacterType* charType, const char* name, zdb::CNode** nodes);
@@ -358,10 +397,6 @@ public:
 	bool DamageRLeg(CZProjectile* projectile);
 
 	void AdrenalineIncr(float increase);
-
-	void SetupDefaultArmor();
-	void SetupKevlarArmor();
-	void SetupKevlarInsertArmor();
 
 	/// -------------------------------------------
 	/// STATE CONDITIONS
@@ -485,7 +520,6 @@ private:
 	CZBodyPart* m_rhand;
 	CZBodyPart* m_hips;
 	CZBodyPart* m_head;
-	CZBodyPart* m_neck;
 	CZBodyPart* m_neck;
 	CZBodyPart* m_spinehi;
 	CZBodyPart* m_lthigh;
@@ -748,51 +782,14 @@ private:
 	int m_NumDeathAnimsPlayed;
 };
 
-class CSealEx : public zdb::CNodeEx
-{
-public:
-	virtual void OnAction(CNode* node, void* action);
-	virtual void OnCopy(CNode* node, CNode* other);
-	virtual void OnDelete(CNode* node);
-	virtual void OnDoubleClick(CNode* node);
-	virtual void OnMove(CNode* node);
-	virtual void OnSelect(CNode* node, bool selected);
-	virtual void* OnWeaponHit(CNode* node, zdb::IntersectStruct* intersection, CZProjectile* projectile);
-};
-
 class CSealUnit
 {
 
 };
 
-class CSealStats
-{
-public:
-	int m_headshots;
-	int m_headhits;
-	int m_hits;
-	int m_shots;
-	int m_kills;
-	int m_washit;
-	int m_deaths;
-	int m_hostages;
-	int m_bases_blown;
-	int m_hostages_rescued;
-	float m_hit_percent;
-	int m_num_times_seen;
-	int m_num_stealthkills;
-	int m_num_restrained;
-	int m_num_grenades_used;
-	int m_num_cqb_used;
-	int m_primary_rounds_fired;
-	int m_secondary_rounds_fired;
-	short m_sMvpScore;
-	int m_iRoundsWon;
-	int m_iRoundsTied;
-};
-
 class CSealCtrl : CEntityCtrl
 {
+	friend class CAppCamera;
 public:
 	CSealCtrl() : CEntityCtrl() {}
 	~CSealCtrl();
@@ -901,7 +898,7 @@ private:
 	CQuat m_remote_goal_quat;
 
 	PLAYER_CAM_STATE m_camState;
-	MENU_STATE m_menustate;
+	// MENU_STATE m_menustate;
 
 	float m_hotswapL1;
 	float m_hotswapL2;
@@ -919,177 +916,6 @@ public:
 };
 
 class CSealCtrlSquirm : CSealCtrl
-{
-
-};
-
-class CAiState
-{
-public:
-	CAiState();
-	~CAiState();
-
-	static CAiState* Create(AI_STATE state);
-
-	virtual void Tick();
-	virtual void OnSignal();
-	virtual bool CanPursue(CSealCtrlAi* controller);
-
-	void Reset(AI_STATE state);
-};
-
-class CAiSScript : public CAiState
-{
-public:
-	bool CanPursue(CSealCtrlAi* controller);
-};
-
-class CAiSHold : public CAiState
-{
-
-};
-
-class CAiSAvoid : public CAiState
-{
-
-};
-
-class CAiSDeploy : public CAiState
-{
-
-};
-
-class CAiSSurrender : public CAiState
-{
-
-};
-
-class CAiSRestrained : public CAiState
-{
-
-};
-
-class CAiSUseVehicle : public CAiState
-{
-
-};
-
-class CAiSGoto : public CAiState
-{
-
-};
-
-class CAiSFollow : public CAiState
-{
-
-};
-
-class CAiSBreach : public CAiState
-{
-
-};
-
-class CAiSAction : public CAiState
-{
-
-};
-
-class CAiSPursue : public CAiState
-{
-
-};
-
-class CAiSAnimate : public CAiState
-{
-
-};
-
-class CAiSCQBAttack : public CAiState
-{
-
-};
-
-class CAiSFlee : public CAiState
-{
-
-};
-
-class CAiSPathRecover : public CAiState
-{
-
-};
-
-class CAiSRescued : public CAiState
-{
-
-};
-
-class CAiSSuspended : public CAiState
-{
-
-};
-
-class CAiSShotAt : public CAiState
-{
-
-};
-
-class CAiSNoAmmo : public CAiState
-{
-
-};
-
-class CAiSHostage : public CAiState
-{
-
-};
-
-class CAiSPlan : public CAiState
-{
-
-};
-
-class CAiSEvent : public CAiState
-{
-
-};
-
-class CAiSTarget : public CAiState
-{
-
-};
-
-class CAiSGrenade : public CAiState
-{
-
-};
-
-class CAiSStunResponse : public CAiState
-{
-
-};
-
-class CAiSRush : public CAiState
-{
-
-};
-
-class CAiPlanner
-{
-
-};
-
-class CBasicPlanner : public CAiPlanner
-{
-
-};
-
-class CStealthPlanner : public CAiPlanner
-{
-
-};
-
-class CRestrainedPlanner : public CAiPlanner
 {
 
 };

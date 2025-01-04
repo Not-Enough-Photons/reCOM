@@ -1,7 +1,18 @@
 #pragma once
-#include "gamez/zEntity/zentity.h"
+#include <vector>
+
 #include "gamez/zMath/zmath.h"
-#include "gamez/zSeal/zseal.h"
+#include "gamez/zSystem/zsys.h"
+
+class CAiMap;
+class CAiAStar;
+class CAiPlanner;
+class CAiPathStats;
+class CAiMapLoc;
+
+class CEntity;
+
+class CSealCtrlAi;
 
 enum ASTAR_STATUS
 {
@@ -39,7 +50,7 @@ enum PATH_STATE
 	FAILED
 };
 
-enum FIRE_TEAM
+enum FIRETEAM
 {
 	FT_MP_PLAYER,
 	FT_FIRETEAM,
@@ -199,6 +210,15 @@ enum AI_STATE
 	STATE_RUSH
 };
 
+enum AI_SEQUENCE
+{
+	AIS_AWARE0,
+	AIS_AWARE1,
+	AIS_AWARE2,
+	AIS_AWARE3,
+	AIS_AWAREX
+};
+
 enum GOAL_TYPE
 {
 	GOAL_NONE,
@@ -228,11 +248,6 @@ struct AI_PARAMS
 	float target_discipline;
 	// CVehicleRdrEntry* m_veh;
 };
-
-namespace sealai
-{
-	const char* get_state(AI_STATE state);
-}
 
 class CAiEvent
 {
@@ -280,6 +295,31 @@ class CAiMap
 
 };
 
+class CAiMapLoc
+{
+	unsigned int m_mapid : 6;
+	unsigned int m_x : 13;
+	unsigned int m_y : 13;
+};
+
+class CAiPathStats
+{
+public:
+	int nodes_searched;
+	int nodes_added;
+	int nodes_removed;
+	int nodes_visited;
+	int nodes_left;
+
+	int path_length;
+	int path_cost;
+
+	int m_ticks;
+	float m_time;
+	CAiMapLoc m_current;
+	CAiMapLocVec m_visited;
+};
+
 class CAiPath
 {
 private:
@@ -316,30 +356,196 @@ private:
 	unsigned int m_pathId;
 };
 
-class CAiPathStats
-{
-public:
-	int nodes_searched;
-	int nodes_added;
-	int nodes_removed;
-	int nodes_visited;
-	int nodes_left;
-
-	int path_length;
-	int path_cost;
-
-	int m_ticks;
-	float m_time;
-	CAiMapLoc m_current;
-	CAiMapLocVec m_visited;
-};
-
 class CAiAStar
 {
 
 };
 
+class CAiState
+{
+public:
+	enum class SIGNAL
+	{
+		AISIG_UNKNOWN,
+		AISIG_BEGINCRITICAL,
+		AISIG_ENDCRITICAL,
+		AISIG_SUSPEND,
+		AISIG_RELEASE,
+		AISIG_ANIMCOMPLETE
+	};
+
+	static CAiState* Create(AI_STATE state);
+
+	virtual bool Tick(float dT, CSealCtrlAi* controller) { return true; }
+	virtual void OnSignal(SIGNAL signal, CSealCtrlAi* controller) { }
+
+	virtual bool CanAttack() const { return true; }
+	virtual bool CanPursue(CSealCtrlAi* controller) const { return true; }
+	virtual bool CanPushAiState(AI_STATE state, CSealCtrlAi* controller) { return true; }
+	virtual bool CanScan() const { return true; }
+	virtual bool CanSwitchAiState(AI_STATE state, CSealCtrlAi* controller) { return true; }
+
+	void Reset(AI_STATE state);
+protected:
+	u32 m_bitfield;
+	AI_STATE m_state;
+	s32 m_field1_0x4;
+	s32 m_field2_0x8;
+	s32 m_field8_0x14;
+};
+
+class CAiSScript : public CAiState
+{
+public:
+	bool CanPursue(CSealCtrlAi* controller);
+};
+
+class CAiSHold : public CAiState
+{
+
+};
+
+class CAiSAvoid : public CAiState
+{
+
+};
+
+class CAiSDeploy : public CAiState
+{
+
+};
+
+class CAiSSurrender : public CAiState
+{
+
+};
+
+class CAiSRestrained : public CAiState
+{
+
+};
+
+class CAiSUseVehicle : public CAiState
+{
+
+};
+
+class CAiSGoto : public CAiState
+{
+
+};
+
+class CAiSFollow : public CAiState
+{
+
+};
+
+class CAiSBreach : public CAiState
+{
+
+};
+
+class CAiSAction : public CAiState
+{
+
+};
+
+class CAiSPursue : public CAiState
+{
+
+};
+
+class CAiSAnimate : public CAiState
+{
+
+};
+
+class CAiSCQBAttack : public CAiState
+{
+
+};
+
+class CAiSFlee : public CAiState
+{
+
+};
+
+class CAiSPathRecover : public CAiState
+{
+
+};
+
+class CAiSRescued : public CAiState
+{
+
+};
+
+class CAiSSuspended : public CAiState
+{
+
+};
+
+class CAiSShotAt : public CAiState
+{
+
+};
+
+class CAiSNoAmmo : public CAiState
+{
+
+};
+
+class CAiSHostage : public CAiState
+{
+
+};
+
+class CAiSPlan : public CAiState
+{
+
+};
+
+class CAiSEvent : public CAiState
+{
+
+};
+
+class CAiSTarget : public CAiState
+{
+
+};
+
+class CAiSGrenade : public CAiState
+{
+
+};
+
+class CAiSStunResponse : public CAiState
+{
+
+};
+
+class CAiSRush : public CAiState
+{
+
+};
+
 class CAiPlanner
+{
+
+};
+
+class CBasicPlanner : public CAiPlanner
+{
+
+};
+
+class CStealthPlanner : public CAiPlanner
+{
+
+};
+
+class CRestrainedPlanner : public CAiPlanner
 {
 
 };
@@ -380,11 +586,4 @@ class CAiCone
 class CAiVismap
 {
 
-};
-
-class CAiMapLoc
-{
-	unsigned int m_mapid : 6;
-	unsigned int m_x : 13;
-	unsigned int m_y : 13;
 };

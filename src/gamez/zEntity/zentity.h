@@ -1,15 +1,18 @@
 #pragma once
+#include "gamez/zAI/zai.h"
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zCamera/zcam.h"
+#include "gamez/zSystem/zsys.h"
 
 class CEntity;
+class CEntityCtrl;
 class CCharacterType;
 class CharacterDynamics;
 class CZSealBody;
 class CZBodyPart;
 
-enum DAMAGE_LOCATION
+enum class DAMAGE_LOCATION
 {
 	HEAD,
 	BODY,
@@ -19,7 +22,7 @@ enum DAMAGE_LOCATION
 	RLEG
 };
 
-enum SEAL_CONTROL_TYPE
+enum class SEAL_CONTROL_TYPE
 {
 	NONE,
 	PLAYER,
@@ -28,12 +31,15 @@ enum SEAL_CONTROL_TYPE
 	MISC
 };
 
-int recycler_index = 0;
-CEntity* ftsPlayer;
-CSealAnim* m_sealanim;
-CharacterDynamics theCharacterDynamics;
+extern int recycler_index;
+extern CEntity* ftsPlayer;
+extern CSealAnim* m_sealanim;
+extern CharacterDynamics theCharacterDynamics;
 
-CEntity* ftsGetPlayer();
+static CEntity* ftsGetPlayer()
+{
+	return static_cast<CEntity*>(ftsPlayer);
+}
 
 void SealInitCharacterDynamics();
 
@@ -61,95 +67,95 @@ class CharacterDynamics
 public:
 	void Load(_zrdr* reader);
 
-	float m_gravity;
-	float m_DamageToNewtons;
-	float m_jumpFactor;
-	float m_landFallRate;
-	float m_landHardFallRate;
-	float m_groundTouchDistance;
-	float m_maxSlopeCos;
-	float m_stepHeight;
-	float m_blastBoostY;
-	float m_fallDist[3];
-	float m_landSpeed[3];
-	float m_standTurnFactor;
-	float m_turn_maxRate;
-	float m_accelXMin;
-	float m_accelXMax;
-	float m_accelZMin;
-	float m_accelZMax;
-	float m_initAimPitch;
-	float m_maxAimPitch;
-	float m_minAimPitch;
-	float m_maxAimYaw;
-	float m_proneMaxAimPitch;
-	float m_proneMinAimPitch;
-	float m_proneMaxAimYaw;
-	float m_proneZoomDeltaYaw;
-	float m_maxLookPitch;
-	float m_minLookPitch;
-	float m_maxLookYaw;
-	float m_maxEyelookPitch;
-	float m_minEyelookPitch;
-	float m_maxEyelookYaw;
-	float m_maxBlinkRate;
-	float m_maxBlinkAngle;
-	float m_cosMaxAimPitch;
-	float m_cosMinAimPitch;
-	float m_cosMaxAimYaw;
-	float m_cosMaxEyelookPitch;
-	float m_cosMinEyelookPitch;
-	float m_cosMaxEyelookYaw;
-	float m_maxZoomAimPitch;
-	float m_minZoomAimPitch;
-	float m_maxZoomAimYaw;
-	float m_proneMaxZoomAimPitch;
-	float m_proneMinZoomAimPitch;
-	float m_proneMaxZoomAimYaw;
-	float m_cosMaxZoomAimPitch;
-	float m_cosMinZoomAimPitch;
-	float m_cosMaxZoomAimYaw;
-	float m_cosProneMaxZoomAimPitch;
-	float m_cosProneMinZoomAimPitch;
-	float m_cosProneMaxZoomAimYaw;
-	float m_pitchRate;
-	float m_turnThrottleA;
-	float m_turnThrottleB;
-	float m_pitchThrottleA;
-	float m_pitchThrottleB;
-	float m_minWaterFactor;
-	float m_waterFactorSlope;
-	float m_fbStiffness;
-	float m_lrStiffness;
-	float m_throtExp;
-	float m_throtScale;
-	float m_cameraRoll;
-	float m_zoomFactor;
-	float m_zoomRate;
-	float m_cameraSideHeight;
-	float m_cameraSideDist;
-	float m_cameraSidePitch;
-	float m_cameraFrontHeight;
-	float m_cameraFrontDist;
-	float m_cameraFrontPitch;
-	float m_cameraBackHeight;
-	float m_cameraBackDist;
-	float m_cameraBackPitch;
-	float m_cameraDownHeight;
-	float m_cameraDownDist;
-	float m_cameraDownPitch;
-	float m_cameraTetherStiffness;
-	float m_cameraLookDwell;
-	float m_cameraNetPosSmooth;
-	float m_cameraReleaseRad;
-	float m_cameraPeekDecayRate;
-	float m_running_reload_speed;
-	float m_running_chgweapon_speed;
-	float m_lowHeight;
-	float m_medHeight;
-	float m_highHeight;
-	float m_minStandHeight;
-	float m_minJumpHeight;
+	f32 m_gravity;
+	f32 m_DamageToNewtons;
+	f32 m_jumpFactor;
+	f32 m_landFallRate;
+	f32 m_landHardFallRate;
+	f32 m_groundTouchDistance;
+	f32 m_maxSlopeCos;
+	f32 m_stepHeight;
+	f32 m_blastBoostY;
+	f32 m_fallDist[3];
+	f32 m_landSpeed[3];
+	f32 m_standTurnFactor;
+	f32 m_turn_maxRate;
+	f32 m_accelXMin;
+	f32 m_accelXMax;
+	f32 m_accelZMin;
+	f32 m_accelZMax;
+	f32 m_initAimPitch;
+	f32 m_maxAimPitch;
+	f32 m_minAimPitch;
+	f32 m_maxAimYaw;
+	f32 m_proneMaxAimPitch;
+	f32 m_proneMinAimPitch;
+	f32 m_proneMaxAimYaw;
+	f32 m_proneZoomDeltaYaw;
+	f32 m_maxLookPitch;
+	f32 m_minLookPitch;
+	f32 m_maxLookYaw;
+	f32 m_maxEyelookPitch;
+	f32 m_minEyelookPitch;
+	f32 m_maxEyelookYaw;
+	f32 m_maxBlinkRate;
+	f32 m_maxBlinkAngle;
+	f32 m_cosMaxAimPitch;
+	f32 m_cosMinAimPitch;
+	f32 m_cosMaxAimYaw;
+	f32 m_cosMaxEyelookPitch;
+	f32 m_cosMinEyelookPitch;
+	f32 m_cosMaxEyelookYaw;
+	f32 m_maxZoomAimPitch;
+	f32 m_minZoomAimPitch;
+	f32 m_maxZoomAimYaw;
+	f32 m_proneMaxZoomAimPitch;
+	f32 m_proneMinZoomAimPitch;
+	f32 m_proneMaxZoomAimYaw;
+	f32 m_cosMaxZoomAimPitch;
+	f32 m_cosMinZoomAimPitch;
+	f32 m_cosMaxZoomAimYaw;
+	f32 m_cosProneMaxZoomAimPitch;
+	f32 m_cosProneMinZoomAimPitch;
+	f32 m_cosProneMaxZoomAimYaw;
+	f32 m_pitchRate;
+	f32 m_turnThrottleA;
+	f32 m_turnThrottleB;
+	f32 m_pitchThrottleA;
+	f32 m_pitchThrottleB;
+	f32 m_minWaterFactor;
+	f32 m_waterFactorSlope;
+	f32 m_fbStiffness;
+	f32 m_lrStiffness;
+	f32 m_throtExp;
+	f32 m_throtScale;
+	f32 m_cameraRoll;
+	f32 m_zoomFactor;
+	f32 m_zoomRate;
+	f32 m_cameraSideHeight;
+	f32 m_cameraSideDist;
+	f32 m_cameraSidePitch;
+	f32 m_cameraFrontHeight;
+	f32 m_cameraFrontDist;
+	f32 m_cameraFrontPitch;
+	f32 m_cameraBackHeight;
+	f32 m_cameraBackDist;
+	f32 m_cameraBackPitch;
+	f32 m_cameraDownHeight;
+	f32 m_cameraDownDist;
+	f32 m_cameraDownPitch;
+	f32 m_cameraTetherStiffness;
+	f32 m_cameraLookDwell;
+	f32 m_cameraNetPosSmooth;
+	f32 m_cameraReleaseRad;
+	f32 m_cameraPeekDecayRate;
+	f32 m_running_reload_speed;
+	f32 m_running_chgweapon_speed;
+	f32 m_lowHeight;
+	f32 m_medHeight;
+	f32 m_highHeight;
+	f32 m_minStandHeight;
+	f32 m_minJumpHeight;
 	cam_wiggle m_cam_wiggle;
 	throw_params m_throw_params;
 	bool m_loaded;
@@ -200,14 +206,14 @@ public:
 public:
 	CEntityCtrl* m_control;
 protected:
-	unsigned int m_id;
-	unsigned int m_index;
-	unsigned int m_vehicle_index;
+	u32 m_id;
+	u32 m_index;
+	u32 m_vehicle_index;
 
 	TYPE m_type;
 
 	const char* m_display_name;
-	unsigned int m_UnitsSeenBy;
+	u32 m_UnitsSeenBy;
 
 	zdb::CNode* m_node;
 
@@ -219,7 +225,7 @@ protected:
 	CQuat m_next_quat; // Next wish rotation
 	CMatrix m_next_matrix; // Next wish transformation
 
-	unsigned int m_aware_counter;
+	u32 m_aware_counter;
 
 	bool m_blink_eyes;
 	bool m_drip_blood;
@@ -234,8 +240,8 @@ protected:
 	bool m_include_in_targetlist;
 	bool m_isAlive;
 
-	CAiMapLoc m_mapLoc;
-	CAiMapLoc m_mapLocValid;
+	// CAiMapLoc m_mapLoc;
+	// CAiMapLoc m_mapLocValid;
 };
 
 class CEntityCtrl
@@ -254,7 +260,7 @@ public:
 	virtual void OnDeath();
 protected:
 	CEntity* m_entity;
-	float m_throttle[3];
+	f32 m_throttle[3];
 };
 
 class CftsPlayer : public CEntity
@@ -265,14 +271,52 @@ public:
 
 class CPickup
 {
+public:
+	void Destroy();
 private:
 	zdb::CNode* m_node;
 	void* m_data;
-	unsigned char m_type;
+	u8 m_type;
 	bool m_locked;
 	bool m_secondary;
-	unsigned char m_unused;
-	short m_id;
-	short m_netid;
+	u8 m_unused;
+	s16 m_id;
+	s16 m_netid;
 	bool m_visible_by_units;
+};
+
+struct start
+{
+	char m_name[16];
+	s32 m_dir;
+};
+
+struct startvec
+{
+	u32 m_count;
+	start m_start[4];
+};
+
+class CVehicleRdr
+{
+
+};
+
+class CVehicleRdrEntry
+{
+private:
+	char m_name[32];
+	char m_character[48];
+	char m_display_name[32];
+	startvec m_start;
+	int m_teamMask;
+	AI_PARAMS m_aiParams;
+	u32 m_debug : 1;
+	u32 m_disabled : 1;
+	u32 m_nofade : 1;
+	u32 m_noshoot : 1;
+	u32 m_recycle : 1;
+	u32 m_nosnooze : 1;
+	u32 m_unused : 26;
+	s32 m_startIndex;
 };

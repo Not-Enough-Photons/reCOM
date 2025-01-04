@@ -1,6 +1,8 @@
 #pragma once
 #include <cmath>
 
+#include "gamez/zSystem/zsys.h"
+
 class CPnt2D;
 class CPnt3D;
 class CPnt4D;
@@ -9,44 +11,16 @@ class CMatrix;
 
 void zMath_Init();
 
-bool tableInit;
+extern bool tableInit;
 
-const float PI = 3.141593;
+const f32 PI = 3.141593;
 
-float* sintbl;
-float* costbl;
-float* exptbl;
+extern f32* sintbl;
+extern f32* costbl;
+extern f32* exptbl;
 
-void init_trig_table()
-{
-	if (!tableInit)
-	{
-		int i = 0;
-		int j = 0;
-		do
-		{
-			float x = i * 0.02454369f;
-			float calc = sinf(x);
-			*(sintbl + j) = calc;
-			calc = cosf(x);
-			*(costbl + j) = calc;
-			i++;
-			calc = expf(i * 10.0f) / 256.0f;
-			*(exptbl + j) = calc;
-			j += 4;
-		} 
-		while (i < 257);
-		tableInit = true;
-	}
-}
-
-void uninit_trig_table()
-{
-	if (tableInit)
-	{
-		tableInit = false;
-	}
-}
+void init_trig_table();
+void uninit_trig_table();
 
 template <typename T>
 inline float min(T& first, T& second)
@@ -102,50 +76,50 @@ inline bool saturate(T& value, T min, T max)
 
 struct Rfloat
 {
-	float m_min;
-	float m_range;
+	f32 m_min;
+	f32 m_range;
 };
 
 struct PNT2D
 {
-	float x;
-	float y;
+	f32 x;
+	f32 y;
 };
 
 struct PNT3D
 {
-	float x;
-	float y;
-	float z;
+	f32 x;
+	f32 y;
+	f32 z;
 };
 
 struct PNT4D
 {
-	float x;
-	float y;
-	float z;
-	float w;
+	f32 x;
+	f32 y;
+	f32 z;
+	f32 w;
 };
 
 struct IPNT2D
 {
-	int x;
-	int y;
+	s32 x;
+	s32 y;
 };
 
 struct IPNT3D
 {
-	int x;
-	int y;
-	int z;
+	s32 x;
+	s32 y;
+	s32 z;
 };
 
 struct IPNT4D
 {
-	int x;
-	int y;
-	int z;
-	int w;
+	s32 x;
+	s32 y;
+	s32 z;
+	s32 w;
 };
 
 class CPnt2D : public PNT2D { };
@@ -153,9 +127,26 @@ class CPnt2D : public PNT2D { };
 class CPnt3D : public PNT3D
 {
 public:
-	CPnt3D();
-	CPnt3D(const CPnt3D& other);
-	CPnt3D(float x, float y, float z);
+	CPnt3D()
+	{
+		x = 0.0f;
+		y = 0.0f;
+		z = 0.0f;
+	}
+
+	CPnt3D(const CPnt3D& other)
+	{
+		x = other.x;
+		y = other.y;
+		z = other.z;
+	}
+
+	CPnt3D(float x, float y, float z)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
 
 	CPnt3D& operator+(const CPnt3D& vector);
 	CPnt3D& operator-(const CPnt3D& vector);
@@ -187,7 +178,7 @@ public:
 	static void MakeYXZ(float x, float y, float z, CQuat& quat);
 public:
 	CPnt3D vec;
-	float w;
+	f32 w;
 };
 
 class CMatrix
@@ -208,7 +199,7 @@ public:
 	void ToEuler(CPnt3D* p);
 	CQuat* ToQuat(CQuat* q);
 public:
-	float m_matrix[4][4];
+	f32 m_matrix[4][4];
 };
 
 class CBBox
@@ -218,6 +209,102 @@ public:
 	CPnt3D m_max;
 };
 
-const CPnt3D CPnt3D::zero = { 0.0f, 0.0f, 0.0f };
-const CQuat CQuat::identity = { CPnt3D(1.0f, 0.0f, 0.0f), 0.0f };
-const CMatrix CMatrix::identity = {  };
+class CFRect
+{
+public:
+	f32 top;
+	f32 bottom;
+	f32 left;
+	f32 right;
+};
+
+enum CDIType
+{
+	type_00,
+	type_01,
+	type_02,
+	type_03,
+	type_04
+};
+
+namespace zdb
+{
+	class CNode;
+	class CSaveLoad;
+
+	struct DI_PARAMS
+	{
+		CPnt4D m_nrm;
+
+		s32 m_region;
+		s32 m_refcount;
+
+		s8 m_ditype;
+		s32 m_ptcount;
+		s32 m_material;
+
+		s8 m_cameratype;
+
+		s8 m_appflags;
+
+		bool m_inside;
+		bool m_shadow;
+
+		s32 m_reserved;
+	};
+
+	class CDI
+	{
+	public:
+		CDI();
+		~CDI();
+
+		static void* Create(CSaveLoad& saveload);
+	public:
+		void Allocate(size_t size);
+		void Free();
+
+		s32 GetEdgeIntersects(CPnt3D* firstPoint, CPnt3D* secondPoint, CPnt3D* edge) const;
+		s32 GetEdgeIntersectsY(CPnt3D* firstPoint, CPnt3D* secondPoint) const;
+	private:
+		DI_PARAMS DI_PARAMS;
+		CPnt4D* m_pts;
+	};
+
+	struct IntersectStruct
+	{
+		CPnt3D m_pos;
+		CPnt3D m_norm;
+		CNode* m_node;
+	};
+
+	struct DiIntersect
+	{
+		s32 m_Type;
+
+		bool m_IntersectCharacters;
+		bool m_AltitudeCharacters;
+		bool m_ProximityCharacters;
+
+		s32 m_Unused;
+
+		CPnt3D m_Tail;
+		CPnt3D m_Tip;
+		CPnt3D m_MTail;
+		CPnt3D m_MTip;
+
+		s32 m_Cnt;
+		s32 m_BufCnt;
+
+		CNode* m_Node;
+		CNode* m_TreeDoneNode;
+		IntersectStruct* m_Intersects;
+	};
+
+	class CHit : public IntersectStruct
+	{
+	public:
+		CPnt3D m_hit0;
+		CPnt3D m_hit1;
+	};
+}

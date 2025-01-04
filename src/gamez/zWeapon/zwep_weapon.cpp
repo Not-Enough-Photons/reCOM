@@ -1,349 +1,114 @@
-#include <cmath>
-
-#include "zwep_weapon.h"
-
-#include "gamez/zSystem/zsys.h"
-#include "gamez/zUtil/util_stable.h"
-
-CZWeaponStance::CZWeaponStance()
-{
-	m_reticuleKnock = 0.0f;
-	m_reticuleKnockReturn = 0.0f;
-	m_reticuleKnockMax = 0.0f;
-	m_sniperDistPPFrameX = 0.0f;
-	m_sniperDistPPFrameY = 0.0f;
-	m_sniperDistLimitX = 0.0f;
-	m_sniperDistLimitY = 0.0f;
-	m_sniperDecayRate = 0.0f;
-	m_targetDilateUponFire = 0.0f;
-	m_targetDilateUponMovement = 0.0f;
-	m_targetDilateUponMovementSqrt = 0.0f;
-	m_targetConstrict = 0.0f;
-	m_targetMin = 0.0f;
-	m_targetMax = 0.0f;
-	m_fireRifleKickRate = 0.0f;
-	m_fireRifleKickBaseDist = 0.0f;
-	m_fireRifleKickRandomDist = 0.0f;
-	m_wiggleReport = 0.03f;
-	m_knockCount = 3;
-	m_knockEntryStrength = 1.0f;
-	return;
-}
-
-void CZWeaponStance::SetReticuleKnock(float knock)
-{
-	m_reticuleKnockMax = knock;
-}
-
-void CZWeaponStance::SetReticuleKnockReturn(float knockReturn)
-{
-	m_reticuleKnockMax = knockReturn;
-}
-
-void CZWeaponStance::SetReticuleKnockMax(float max)
-{
-	m_reticuleKnockMax = max;
-}
-
-void CZWeaponStance::SetTargetDilateUponFire(float dilate)
-{
-	m_targetDilateUponFire = dilate;
-}
-
-void CZWeaponStance::SetTargetDilateUponMovement(float dilate)
-{
-	m_targetDilateUponMovement = dilate;
-	m_targetDilateUponMovementSqrt = sqrt(dilate);
-}
-
-void CZWeaponStance::SetTargetConstrict(float constriction)
-{
-	m_targetConstrict = constriction;
-}
-
-void CZWeaponStance::SetTargetMin(float min)
-{
-	m_targetMin = min;
-}
-
-void CZWeaponStance::SetTargetMax(float max)
-{
-	m_targetMax = max;
-}
-
-void CZWeaponStance::SetSniperDistPPFrameX(float frame)
-{
-	m_sniperDistPPFrameX = frame;
-}
-
-void CZWeaponStance::SetSniperDistPPFrameY(float frame)
-{
-	m_sniperDistPPFrameY = frame;
-}
-
-void CZWeaponStance::SetSniperDistLimitX(float limit)
-{
-	m_sniperDistLimitX = limit;
-}
-
-void CZWeaponStance::SetSniperDistLimitY(float limit)
-{
-	m_sniperDistLimitY = limit;
-}
-
-void CZWeaponStance::SetSniperDecayRate(float decay)
-{
-	m_sniperDecayRate = decay;
-}
-
-void CZWeaponStance::SetFireRifleKickRate(float rate)
-{
-	m_fireRifleKickRate = rate;
-}
-
-void CZWeaponStance::SetFireRifleKickReturnRate(float returnRate)
-{
-	m_fireRifleKickReturnRate = returnRate;
-}
-
-void CZWeaponStance::SetFireRifleKickBaseDist(float distance)
-{
-	m_fireRifleKickBaseDist = distance;
-}
-
-void CZWeaponStance::SetFireRifleKickRandomDist(float randomDistance)
-{
-	m_fireRifleKickRandomDist = randomDistance;
-}
-
-void CZWeaponStance::SetKnockCount(int knocks)
-{
-	m_knockCount = knocks;
-}
-
-void CZWeaponStance::SetKnockEntryStrength(float strength)
-{
-	m_knockEntryStrength = strength;
-}
-
-void CZWeaponStance::SetWiggleReport(float wiggleReport)
-{
-	m_wiggleReport = wiggleReport;
-}
+#include "zweapon.h"
 
 CZWeapon::CZWeapon()
 {
-	m_internalName = 0;
-	m_displayName = 0;
+	// AI parameter setup
+	m_ai_params.m_min_range = 50.0f;
+	m_ai_params.m_max_range = 1000.0f;
+	m_ai_params.m_version = CZWeapon::AI_PARAMS::version;
+	m_ai_params.m_custom = false;
+	m_ai_params.m_hard_min = false;
+
+	m_name = 0;
 	m_description = 0;
-	m_effectiveRange = 0.0f;
-	m_maximumRange = 0.0f;
-	m_muzzleVelocity = 0.0f;
-	m_gravityAcceleration = -1.0f;
-	m_impactRadius = 0.0f;
+
+	m_maxfiremode = FIREMODE::SAFETY;
+
+	m_ammocap = 0;
+
+	m_soundradius = 0.0f;
+	m_soundradiusSq = 0.0f;
+
+	m_encumb = ENCUMBRANCE::LIGHTLY_ENCUMBERED;
+
+	m_effectiverange = 0.0f;
+	m_maxrange = 0.0f;
+	
+	m_texname = 0;
+	m_icontexname = 0;
+	m_associatedgearname = 0;
+	m_modelname = 0;
+	
+	m_icontex = NULL;
+
+	m_ID = EQUIP_ITEM::EQUIP_NONE;
+
+	m_nummags = 0;
+
+	m_specialmaterialanimname = 0;
+	m_defaultspecialanimname = 0;
+	m_fireanimname = 0;
+	m_hitanimname = 0;
+
+	m_hitanim = NULL;
+	m_specialmaterialanim = NULL;
+	m_defaultspecialanim = NULL;
+	m_zoomedfireanim = NULL;
+	m_fireanim = NULL;
+
+	m_texture = NULL;
+
+	m_firewait = 0.1f;
+
+	m_decalsetname = 0;
+	// TODO: Implement CZDecalSet
+	// m_decalset = NULL;
+
+	m_muzzlevel = 0.0f;
+	m_impactradius = 0.0f;
+
+	m_reloadsoundname = 0;
+	m_reloadsound = NULL;
+	m_reloadtime = 0.0f;
+
+	m_reloadAfterShot = false;
+
+	m_hasFiremodes[0] = true;
+	m_hasFiremodes[1] = false;
+	m_hasFiremodes[2] = false;
+	m_hasFiremodes[3] = false;
+	m_hasFiremodes[4] = false;
 }
 
-void CZWeapon::SetInternalName(const char* internalName)
+void CZWeapon::AddLegalAmmo(CZAmmo* ammo)
 {
-	char* str;
 
-	if (m_internalName != 0)
-	{
-		zAllocateInst((void*)m_internalName, "zwep_weapon.cpp", 551);
-	}
-
-	m_internalName = 0;
-	if (internalName == 0)
-	{
-		str = 0;
-	}
-	else
-	{
-		str = reinterpret_cast<char*>(CreateString(internalName, "zwep_weapon.cpp", 552));
-	}
-
-	m_internalName = str;
 }
 
-void CZWeapon::SetDisplayName(const char* displayName)
+void CZWeapon::ClearAnims()
 {
-	char* str;
-
-	if (m_displayName != 0)
+	if (m_hitanim != NULL)
 	{
-		zAllocateInst((void*)m_displayName, "zwep_weapon.cpp", 551);
+		__free(m_hitanim);
+		m_hitanim = NULL;
 	}
 
-	m_displayName = 0;
-	if (displayName == 0)
+	m_fireanim = NULL;
+	m_zoomedfireanim = NULL;
+	m_defaultspecialanim = NULL;
+	
+	if (m_specialmaterialanim != NULL)
 	{
-		str = 0;
+		__free(m_specialmaterialanim);
+		m_specialmaterialanim = NULL;
 	}
-	else
-	{
-		str = reinterpret_cast<char*>(CreateString(displayName, "zwep_weapon.cpp", 552));
-	}
-
-	m_displayName = str;
 }
 
-void CZWeapon::SetDescription(const char* description)
+void CZWeapon::ClearTimer()
 {
-	char* str;
-
-	if (m_description != 0)
-	{
-		zAllocateInst((void*)m_description, "zwep_weapon.cpp", 551);
-	}
-
-	m_description = 0;
-	if (description == 0)
-	{
-		str = 0;
-	}
-	else
-	{
-		str = reinterpret_cast<char*>(CreateString(description, "zwep_weapon.cpp", 552));
-	}
-
-	m_description = str;
+	m_timer_pCurval = 0;
+	m_timer_bTimerRegistered = false;
+	m_timer_bTimerCleared = true;
+	m_timer_maxval = -1.0f;
+	m_timer_bIncrTimer = 1;
 }
 
-CZFTSWeapon::CZFTSWeapon() : CZWeapon()
+void CZWeapon::Close()
 {
-	CZWeaponStance* weaponStance;
 
-	do
-	{
-		weaponStance = new CZWeaponStance();
-		weaponStance++;
-	} while (m_rumbleHighExceeds);
-
-	m_firstZoomLevel = 0;
-	m_secondZoomLevel = 0;
-	m_thirdZoomLevel = 0;
-	m_rumbleHighExceeds = false;
-	m_rumbleHighTime = 0.0f;
-	m_rumbleLowExceeds = false;
-	m_rumbleLowTime = 0.0f;
-	m_rumbleLowPower = 2.35099e-38f;
-	m_accuracyBurstCountMin = 2.35099e-38f;
-	m_accuracyScalarMin = 1.0f;
-	m_accuracyScalarMax = 1.0f;
-	m_normalizedRange = 0.0f;
-	m_slotCost = 1;
 }
 
-void CZFTSWeapon::SetAccuracyBurstCountMin(int min)
+void CZWeapon::Fire(CZProjectile& projectile)
 {
-	float range = 0.0f;
-	float normalizedRange = 0.0f;
 
-	m_accuracyBurstCountMin = min;
-	range = (m_accuracyBurstCountMax - m_accuracyBurstCountMin);
-	if (range >= 0.0f)
-	{
-		normalizedRange = (m_accuracyScalarMax - m_accuracyScalarMin) / range;
-	}
-
-	m_normalizedRange = normalizedRange;
-}
-
-void CZFTSWeapon::SetAccuracyBurstCountMax(int max)
-{
-	float range = 0.0f;
-	float normalizedRange = 0.0f;
-
-	m_accuracyBurstCountMax = max;
-	range = (m_accuracyBurstCountMax - m_accuracyBurstCountMin);
-	if (range >= 0.0f)
-	{
-		normalizedRange = (m_accuracyScalarMax - m_accuracyScalarMin) / range;
-	}
-
-	m_normalizedRange = normalizedRange;
-}
-
-void CZFTSWeapon::SetAccuracyScalarMin(float min)
-{
-	float range = 0.0f;
-	float normalizedRange = 0.0f;
-
-	m_accuracyScalarMin = min;
-	range = (m_accuracyBurstCountMax - m_accuracyBurstCountMin);
-	if (range >= 0.0f)
-	{
-		normalizedRange = (m_accuracyScalarMax - m_accuracyScalarMin) / range;
-	}
-
-	m_normalizedRange = normalizedRange;
-}
-
-void CZFTSWeapon::SetAccuracyScalarMax(float max)
-{
-	float range = 0.0f;
-	float normalizedRange = 0.0f;
-
-	m_accuracyScalarMin = max;
-	range = (m_accuracyBurstCountMax - m_accuracyBurstCountMin);
-	if (range >= 0.0f)
-	{
-		normalizedRange = (m_accuracyScalarMax - m_accuracyScalarMin) / range;
-	}
-
-	m_normalizedRange = normalizedRange;
-}
-
-float CZProjectile::ResolveDamage(float target, float source, float* currentDamage, float* newDamage)
-{
-	float oldDmg = target - *newDamage * ((10.0f - source) / 10.0f);
-	if (oldDmg <= 0.0f)
-	{
-		oldDmg = 0.0f;
-	}
-
-	float newDmg = *newDamage - (target - oldDmg) / 4.0f;
-	*newDamage = newDmg;
-	if (newDmg <= 0.0f)
-	{
-		*newDamage = 0.0f;
-	}
-
-	newDmg = *currentDamage;
-	*currentDamage = newDmg - oldDmg;
-	if (newDmg - oldDmg <= 0.0f)
-	{
-		*currentDamage = 0.0f;
-	}
-
-	return *currentDamage;
-}
-
-CZWeapon* CZWeaponList::GetWeaponByIndex(int index) const
-{
-	int i = 0;
-	CZWeapon* weapon;
-
-	auto begin = weapons.begin();
-	auto tail = weapons.end();
-	auto current = tail;
-	while (true)
-	{
-		current--;
-
-		if (current == begin)
-		{
-			return NULL;
-		}
-
-		if (i == index)
-		{
-			break;
-		}
-
-		weapon = *current;
-		i++;
-	}
-
-	return weapon;
 }

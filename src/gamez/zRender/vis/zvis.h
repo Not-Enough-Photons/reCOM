@@ -2,10 +2,14 @@
 #include "gamez/zMath/zmath.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zNode/znode.h"
-#include "gamez/zTexture/ztex.h"
 
 namespace zdb
 {
+	class CVisual;
+	class CMesh;
+	class CLight;
+	class CTexHandle;
+
 	enum tag_ZVIS_FOV
 	{
 		ZVIS_FOV_CLIP,
@@ -21,7 +25,7 @@ namespace zdb
 		~CVisBase();
 	};
 
-	typedef struct CVisData
+	class CVisData
 	{
 		CVisData();
 		~CVisData();
@@ -54,7 +58,7 @@ namespace zdb
 		static CMatrix m_modelToWorld;
 		static CMatrix m_WorldToModel;
 
-		static CCamera* m_camera;
+		// static CCamera* m_camera;
 		static int custom;
 
 		static float m_opacity;

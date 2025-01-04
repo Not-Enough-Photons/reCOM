@@ -1,15 +1,19 @@
 #include <cstring>
 
-#include "freebsd/strcasecmp.h"
+#include <freebsd/strcasecmp.h>
 
 #include "zrdr.h"
 
+#include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/zutil.h"
 #include "gamez/zUtil/util_systemio.h"
-#include "gamez/zWeapon/zwep_weapon.h"
+// #include "gamez/zWeapon/zwep_weapon.h"
 
-bool init = false;
+bool zrdr_init = false;
 bool warnonce = false;
+
+char* cur_zrdr_path = 0;
+int cur_zrdr_flags = 0;
 
 _zrdr::_zrdr(const _zrdr* other, const CSTable* table)
 {
@@ -23,10 +27,10 @@ bool _zrdr::IsArray() const
 
 void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 {
-	if (!init)
+	if (!zrdr_init)
 	{
 		warnonce = true;
-		init = true;
+		zrdr_init = true;
 	}
 
 	if (other == NULL)
@@ -156,6 +160,16 @@ char* zrdr_findstring(_zrdr* reader, const char* name)
 	return NULL;
 }
 
+bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations)
+{
+	return false;
+}
+
+bool zrdr_finduint(_zrdr* reader, const char* tag, unsigned int* output, int iterations)
+{
+	return false;
+}
+
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
 {
 	_zrdr* rdr = zrdr_findtag_startidx(reader, tag, 1);
@@ -176,7 +190,7 @@ bool zrdr_tobool(_zrdr* reader, bool* output)
 {
 	if (output == NULL)
 	{
-		output = false;
+		return false;
 	}
 
 	if (reader == NULL)

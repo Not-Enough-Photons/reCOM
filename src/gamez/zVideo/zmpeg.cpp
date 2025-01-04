@@ -11,7 +11,7 @@ void* rsrcs = 0;
 
 void CMPEG::Uninit()
 {
-	uninitPssAudio();
+	// uninitPssAudio();
 
 	if (mpegBuffAlloc)
 	{

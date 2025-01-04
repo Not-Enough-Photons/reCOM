@@ -6,12 +6,14 @@
 #include "gamez/zUtil/util_stable.h"
 #include "gamez/zUtil/util_systemio.h"
 
+std::list<zar::CZAR*> CRdrArchive::m_list;
+
 zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 {
 	char* archiveName = 0;
 	zar::CZAR* output;
 
-	if (!string_exists(path))
+	if (path != 0)
 	{
 		strcpy(archiveName, path);
 	}
@@ -24,7 +26,7 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 	{
 		zar::CZAR* archive = *it;
 
-		if (strcasecmp(archive->name, archiveName) == 0)
+		if (strcasecmp(archive->m_filename, archiveName) == 0)
 		{
 			output = archive;
 			break;
@@ -49,7 +51,7 @@ bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 	{
 		zar::CZAR* archive = *it;
 
-		if (!string_exists(strstr(archive->m_name, fullPath)))
+		if (strstr(archive->m_filename, fullPath) != 0)
 		{
 			continue;
 		}
@@ -64,6 +66,8 @@ bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 			}
 		}
 	}
+
+	return false;
 }
 
 CRdrFile* CRdrArchive::FindRdr(const char* reader)
@@ -72,11 +76,11 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 	char* readerName;
 	const char* lastSlash = strrchr(reader, '/');
 
-	if (!string_exists(lastSlash) && string_exists(reader))
+	if (lastSlash != 0 && reader != 0)
 	{
 		strcpy(readerName, reader);
 	}
-	else if (lastSlash[1] != 0 && string_exists(reader))
+	else if (lastSlash[1] != 0 && reader != 0)
 	{
 		strcpy(readerName, lastSlash + 1);
 	}
@@ -92,13 +96,13 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 
 		zar::CZAR* archive = *it;
 
-		if (archive->bufferIO == NULL)
+		if (archive->m_pFileAlloc == NULL)
 		{
 			open = false;
 		}
 		else
 		{
-			open = archive->bufferIO->IsOpen();
+			open = archive->m_pFileAlloc->IsOpen();
 		}
 
 		if (!open)

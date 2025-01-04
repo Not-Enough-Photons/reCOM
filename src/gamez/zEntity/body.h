@@ -4,12 +4,13 @@
 
 class CZBodyPart;
 class CBlendOverlay;
+class CZBodyAnim;
 
 class CBody
 {
 public:
 	void SmoothAnims(float scale);
-	CZBodyPart* FindPart(const char* part);
+	CZBodyPart* FindPart(const char* name);
 	void* NewBodyPart(zdb::CNode* node, CZBodyPart* part);
 	zdb::CNode& NullNode() const;
 protected:
@@ -17,11 +18,11 @@ protected:
 
 	CBlendOverlay* m_overlay;
 
-	char m_maxid;
-	char m_state;
+	s8 m_maxid;
+	s8 m_state;
 
-	float m_interp1;
-	float m_interp2;
+	f32 m_interp1;
+	f32 m_interp2;
 
 	CActiveAnimPool* m_active_anim_pool;
 
@@ -38,19 +39,20 @@ class CBlendOverlay
 class CZBodyAnim : protected CZSIScript
 {
 private:
-	short m_id;
-	short m_animType;
-	short m_basepart;
-	unsigned short m_flags;
+	s16 m_id;
+	s16 m_animType;
+	s16 m_basepart;
+	u16 m_flags;
 
-	unsigned int m_callback0_index : 8;
-	unsigned int m_callback1_index : 8;
-	unsigned int m_callback2_index : 8;
-	unsigned int m_callback3_index : 8;
+	u32 m_callback0_index : 8;
+	u32 m_callback1_index : 8;
+	u32 m_callback2_index : 8;
+	u32 m_callback3_index : 8;
 };
 
 class CZBodyPart
 {
+	friend class CBody;
 public:
 	CZBodyPart(zdb::CNode* node);
 	~CZBodyPart();

@@ -54,10 +54,10 @@ public:
 class CIO
 {
 public:
-	virtual void Init() { }
+	virtual void Init() {}
 	virtual bool Open(void* buf) { return false; }
 	virtual bool Open(const char* buf) { return false; }
-	virtual void Close() { }
+	virtual void Close() {}
 
 	virtual bool IsOpen() const { return false; }
 	virtual unsigned int GetMode() const { return m_mode; }
@@ -71,9 +71,9 @@ public:
 	virtual size_t fseek(int offset, int origin) { return 0; }
 	virtual size_t ftell() { return 0; }
 
-	virtual void fflush() { }
-protected:
-	int m_file;
+	virtual void fflush() {}
+public:
+	int64_t m_file;
 	size_t m_filesize;
 	unsigned int m_mode;
 };
@@ -89,7 +89,7 @@ public:
 	static const char* m_root_path;
 	static bool m_write_status;
 public:
-	virtual void Init() { }
+	virtual void Init() {}
 	virtual bool Open(void* buf) { return false; }
 	virtual bool Open(const char* file);
 	virtual void Close();

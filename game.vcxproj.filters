@@ -84,641 +84,153 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\gamez\zArchive\zar.h">
-      <Filter>gamez\zarchive</Filter>
-    </ClInclude>
     <ClInclude Include="vendor\freebsd\strcasecmp.h" />
     <ClInclude Include="vendor\rt\rtarray.h" />
-    <ClInclude Include="src\gamez\zSound\zsnd.h">
-      <Filter>gamez\zsound</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zSeal\seal.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zVideo\zvid.h">
-      <Filter>gamez\zvideo</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zAI\zai.h">
-      <Filter>gamez\zai</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zReader\zrdr_local.h">
-      <Filter>gamez\zreader</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zReader\zrdr.h">
-      <Filter>gamez\zreader</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zWeapon\zwep_weapon.h">
-      <Filter>gamez\zweapon</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zWeapon\zwep_ammo.h">
-      <Filter>gamez\zweapon</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\util_main.h">
-      <Filter>gamez\zutil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\util_stable.h">
-      <Filter>gamez\zutil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zUtil\util_stable.h">
-      <Filter>gamez\zutil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zUtil\util_systemio.h">
-      <Filter>gamez\zutil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zMath\zmath.h">
-      <Filter>gamez\zmath</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zMath\zmath_bits.h">
-      <Filter>gamez\zmath</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zAnim\zanim.h">
-      <Filter>gamez\zanim</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zNode\znode.h">
-      <Filter>gamez\znode</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zNetwork\znet.h">
-      <Filter>gamez\znetwork</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zRender\particle\zparticle.h">
-      <Filter>gamez\zrender</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zRender\zrender.h">
-      <Filter>gamez\zrender</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zCamera\zcam.h">
-      <Filter>gamez\zcamera</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zFTS\fts_state.h">
-      <Filter>gamez\zfts</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zTexture\ztex.h">
-      <Filter>gamez\ztexture</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zInput\zinput.h">
-      <Filter>gamez\zinput</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Apps\FTS\hud.h">
-      <Filter>fts</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zNode\node_world.h">
-      <Filter>gamez\znode</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zAssetLib\zassetlib.h">
-      <Filter>gamez\zassetlib</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zEntity\zentity.h">
-      <Filter>gamez\zentity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zSeal\zseal.h">
-      <Filter>gamez\zseal</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zUI\zui.h">
-      <Filter>gamez\zui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zUtil\zutil.h">
-      <Filter>gamez\zutil</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zValve\zvalve.h">
-      <Filter>gamez\zvalve</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zRender\vis\zvis.h">
-      <Filter>gamez\zrender</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zSystem\zsys.h">
-      <Filter>gamez\zsystem</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zGame\zgame.h">
-      <Filter>gamez\zgame</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zFTS\zfts.h">
-      <Filter>gamez\zfts</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zEntity\intersect.h">
-      <Filter>gamez\znode</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zEntity\body.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zEntity\body.h">
-      <Filter>gamez\zentity</Filter>
-    </ClInclude>
-    <ClInclude Include="src\gamez\zEntity\vehicle.h">
-      <Filter>gamez\zentity</Filter>
-    </ClInclude>
+    <ClInclude Include="src\gamez\zAI\zai.h" />
+    <ClInclude Include="src\gamez\zArchive\zar.h" />
+    <ClInclude Include="src\gamez\zAssetLib\zassetlib.h" />
+    <ClInclude Include="src\gamez\zInput\zinput.h" />
+    <ClInclude Include="src\gamez\zMath\zmath.h" />
+    <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
+    <ClInclude Include="src\gamez\zNode\znode.h" />
+    <ClInclude Include="src\gamez\zReader\zrdr.h" />
+    <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
+    <ClInclude Include="src\gamez\zRender\vis\zvis.h" />
+    <ClInclude Include="src\gamez\zRender\zrender.h" />
+    <ClInclude Include="src\gamez\zSound\zsnd.h" />
+    <ClInclude Include="src\gamez\zSystem\zsys.h" />
+    <ClInclude Include="src\gamez\zTexture\ztex.h" />
+    <ClInclude Include="src\gamez\zUI\zui.h" />
+    <ClInclude Include="src\gamez\zUtil\util_stable.h" />
+    <ClInclude Include="src\gamez\zUtil\util_systemio.h" />
+    <ClInclude Include="src\gamez\zUtil\zutil.h" />
+    <ClInclude Include="src\gamez\zValve\zvalve.h" />
+    <ClInclude Include="src\gamez\zVideo\zvid.h" />
+    <ClInclude Include="src\gamez\zAnim\zanim.h" />
+    <ClInclude Include="src\gamez\zCamera\zcam.h" />
+    <ClInclude Include="src\gamez\zEntity\zentity.h" />
+    <ClInclude Include="src\gamez\zEntity\body.h" />
+    <ClInclude Include="src\gamez\zSeal\zseal.h" />
+    <ClInclude Include="src\gamez\zTwoD\ztwod.h" />
+    <ClInclude Include="src\gamez\zRender\particle\zparticle.h" />
+    <ClInclude Include="src\gamez\zWeapon\zweapon.h" />
+    <ClInclude Include="src\gamez\zNetwork\znet.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\gamez\zEntity\ent_main.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_assetlib.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_io.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_main.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_saveload.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_shadow.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_world.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zArchive\zar_main.cpp">
-      <Filter>gamez\zarchive</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zArchive\zar_search.cpp">
-      <Filter>gamez\zarchive</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAnim\anim.cpp">
-      <Filter>gamez\zanim</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAnim\anim_main.cpp">
-      <Filter>gamez\zanim</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zGame\game_engine.cpp">
-      <Filter>gamez</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zGame\game_main.cpp">
-      <Filter>gamez</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zGame\game_state.cpp">
-      <Filter>gamez</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zGame\game_tree.cpp">
-      <Filter>gamez</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zCamera\camera.cpp">
-      <Filter>gamez\zcamera</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSound\zsnd_csnd.cpp">
-      <Filter>gamez\zsound</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSound\zsnd_csndgroup.cpp">
-      <Filter>gamez\zsound</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSound\zsnd_csndinstance.cpp">
-      <Filter>gamez\zsound</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSound\zsnd_csndsequence.cpp">
-      <Filter>gamez\zsound</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSound\zsnd_jukebox.cpp">
-      <Filter>gamez\zsound</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_ai.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_aievent.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_aifollow.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_ailines.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_aimoves.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_airesponse.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_aiscan.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_aistate.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_anim.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_body.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_cfg.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_command.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_control.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_create.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_dyn.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_env.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_ex.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_handsig.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_ik.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_kit.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_sensors.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_squirm.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_tasks.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_uint.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_weapon.cpp">
-      <Filter>gamez\zseal</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zVideo\zvid_draw.cpp">
-      <Filter>gamez\zvideo</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zVideo\zvid_main.cpp">
-      <Filter>gamez\zvideo</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\st_core.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\st_exit.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\st_load.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\st_menu.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\st_mpexit.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_astar.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_events.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_main.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_map.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_mapio.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_maps.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_path.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAI\ai_vismap.cpp">
-      <Filter>gamez\zai</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zReader\zrdr_parse.cpp">
-      <Filter>gamez\zreader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zReader\zrdr_archive.cpp">
-      <Filter>gamez\zreader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zReader\zrdr_edit.cpp">
-      <Filter>gamez\zreader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zReader\zrdr_file.cpp">
-      <Filter>gamez\zreader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zReader\zrdr_main.cpp">
-      <Filter>gamez\zreader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zWeapon\zwep_ammo.cpp">
-      <Filter>gamez\zweapon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zWeapon\zwep_explosive.cpp">
-      <Filter>gamez\zweapon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zWeapon\zwep_global.cpp">
-      <Filter>gamez\zweapon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zWeapon\zwep_projectile.cpp">
-      <Filter>gamez\zweapon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zWeapon\zwep_weapon.cpp">
-      <Filter>gamez\zweapon</Filter>
-    </ClCompile>
-    <ClCompile Include="src\util\util_main.cpp">
-      <Filter>gamez\zutil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUtil\util_main.cpp">
-      <Filter>gamez\zutil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\util\util_stable.cpp">
-      <Filter>gamez\zutil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUtil\util_stable.cpp">
-      <Filter>gamez\zutil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUtil\util_systemio.cpp">
-      <Filter>gamez\zutil</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zMath\zmath_pnt4d.cpp">
-      <Filter>gamez\zmath</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zMath\zmath_intersect.cpp">
-      <Filter>gamez\zmath</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zMath\zmath_main.cpp">
-      <Filter>gamez\zmath</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zMath\zmath_matrix.cpp">
-      <Filter>gamez\zmath</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zMath\zmath_pnt3d.cpp">
-      <Filter>gamez\zmath</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAnim\zanim_anim.cpp">
-      <Filter>gamez\zanim</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAnim\zanim_cmd_parse.cpp">
-      <Filter>gamez\zanim</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAnim\zanim_cmd_tick.cpp">
-      <Filter>gamez\zanim</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zAnim\zanim_menu.cpp">
-      <Filter>gamez\zanim</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNetwork\zNetVoice.cpp">
-      <Filter>gamez\znetwork</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNetwork\zNetDme.cpp">
-      <Filter>gamez\znetwork</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNetwork\zNetMedius.cpp">
-      <Filter>gamez\znetwork</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zVideo\zmpeg.cpp">
-      <Filter>gamez\zvideo</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle_buf.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle_instance.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle_source.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\zrndr_main.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\zrndr_pipe.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zCamera\zcam_main.cpp">
-      <Filter>gamez\zcamera</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zCamera\zcam_update.cpp">
-      <Filter>gamez\zcamera</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_action.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_controller.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_main.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_mission.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_missioncam.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_net_bomb.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_net_game.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_net_grenade.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_net_persona.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_net_seal.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_objectivecam.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_player.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_remote.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zFTS\fts_state.cpp">
-      <Filter>gamez\zfts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zValve\valve_list.cpp">
-      <Filter>gamez\zvalve</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zValve\valve_main.cpp">
-      <Filter>gamez\zvalve</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zTexture\ztex_main.cpp">
-      <Filter>gamez\ztexture</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zTexture\ztex_manager.cpp">
-      <Filter>gamez\ztexture</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zInput\zin_cheats.cpp">
-      <Filter>gamez\zinput</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zInput\zin_main.cpp">
-      <Filter>gamez\zinput</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_decal.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_main.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_texfx.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_actionbitmap.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_bitmapreticule.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_bombmapitem.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_claymoremapitem.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_devtext.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_fader.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_ingame_weaponsel.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_lensflare.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_letterbox.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_linemap.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_main.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_mapcompass.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_missioncams.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_newhudmap.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_objectives.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_pausemenu.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_playermapitem.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_posebitmap.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_scorepopup.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_teammatenames.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_teamnames.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\hud_weaponsel.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\main.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\node_wave.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\database.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\thezoom.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUI\zui_2d.cpp">
-      <Filter>gamez\zui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUI\zui_cleanup.cpp">
-      <Filter>gamez\zui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUI\zui_spec.cpp">
-      <Filter>gamez\zui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUI\zui.cpp">
-      <Filter>gamez\zui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\getopt.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zCamera\fov.cpp">
-      <Filter>gamez\zcamera</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSystem\zsys_memory.cpp">
-      <Filter>gamez\zsystem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSystem\zsys_sched.cpp">
-      <Filter>gamez\zsystem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zEntity\int_main.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zEntity\int_material.cpp">
-      <Filter>gamez\znode</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zUI\c2dstring.cpp">
-      <Filter>gamez\zui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\orders.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\options.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Apps\FTS\reco.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zInput\remote_control.cpp">
-      <Filter>fts</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zSystem\zsav_manager.cpp">
-      <Filter>gamez\zsystem</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zEntity\pickup_main.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zEntity\char_type.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\graph_tree.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\grid_clutter.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zNode\grid_di.cpp">
-      <Filter>gamez\zentity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\zrndr_opengl.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\zrndr_directx.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gamez\zRender\zrndr_vulkan.cpp">
-      <Filter>gamez\zrender</Filter>
-    </ClCompile>
+    <ClCompile Include="src\Apps\FTS\main.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_astar.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_events.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_map.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_mapio.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_maps.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_path.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_vismap.cpp" />
+    <ClCompile Include="src\gamez\zArchive\zar_main.cpp" />
+    <ClCompile Include="src\gamez\zArchive\zar_search.cpp" />
+    <ClCompile Include="src\gamez\zInput\remote_control.cpp" />
+    <ClCompile Include="src\gamez\zInput\zin_cheats.cpp" />
+    <ClCompile Include="src\gamez\zInput\zin_main.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_intersect.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_main.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_matrix.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_pnt3d.cpp" />
+    <ClCompile Include="src\gamez\zMath\zmath_pnt4d.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_main.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_archive.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_edit.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_file.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_main.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_parse.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csnd.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csndgroup.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csndinstance.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_csndsequence.cpp" />
+    <ClCompile Include="src\gamez\zSound\zsnd_jukebox.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsav_manager.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsys_memory.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsys_sched.cpp" />
+    <ClCompile Include="src\gamez\zUI\c2dstring.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui_cleanup.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui_spec.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_stable.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_systemio.cpp" />
+    <ClCompile Include="src\gamez\zValve\valve_list.cpp" />
+    <ClCompile Include="src\gamez\zValve\valve_main.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zmpeg.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_world.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_io.cpp" />
+    <ClCompile Include="src\gamez\zNode\graph_tree.cpp" />
+    <ClCompile Include="src\gamez\zNode\grid_clutter.cpp" />
+    <ClCompile Include="src\gamez\zNode\grid_di.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_assetlib.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_wave.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_shadow.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_saveload.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui.cpp" />
+    <ClCompile Include="src\gamez\zAnim\anim.cpp" />
+    <ClCompile Include="src\gamez\zAnim\anim_main.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_anim.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_cmd_parse.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_cmd_tick.cpp" />
+    <ClCompile Include="src\gamez\zAnim\zanim_menu.cpp" />
+    <ClCompile Include="src\gamez\zCamera\camera.cpp" />
+    <ClCompile Include="src\gamez\zEntity\ent_main.cpp" />
+    <ClCompile Include="src\gamez\zEntity\body.cpp" />
+    <ClCompile Include="src\gamez\zEntity\char_type.cpp" />
+    <ClCompile Include="src\gamez\zEntity\int_main.cpp" />
+    <ClCompile Include="src\gamez\zEntity\int_material.cpp" />
+    <ClCompile Include="src\gamez\zEntity\pickup_main.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_body.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_weapon.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_uint.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_tasks.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_squirm.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_sensors.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_kit.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_ik.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_handsig.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_ex.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_env.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_dyn.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_create.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_control.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_command.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_cfg.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_anim.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_aistate.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_aiscan.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_airesponse.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_aimoves.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_ailines.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_aifollow.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_aievent.cpp" />
+    <ClCompile Include="src\gamez\zSeal\seal_ai.cpp" />
+    <ClCompile Include="src\gamez\zUI\zui_2d.cpp" />
+    <ClCompile Include="src\gamez\zTwoD\ztwod_main.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_main.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_manager.cpp" />
+    <ClCompile Include="src\gamez\zAI\ai_main.cpp" />
+    <ClCompile Include="src\gamez\zCamera\zcam_main.cpp" />
+    <ClCompile Include="src\gamez\zRender\vis\vis_texfx.cpp" />
+    <ClCompile Include="src\gamez\zRender\vis\vis_decal.cpp" />
+    <ClCompile Include="src\gamez\zRender\vis\vis_main.cpp" />
     <ClCompile Include="src\gamez\zRender\vis\vis_mesh.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_vulkan.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_directx.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_main.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_opengl.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_pipe.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle_buf.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle_instance.cpp" />
+    <ClCompile Include="src\gamez\zRender\particle\zparticle_source.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_weapon.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_explosive.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_global.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_projectile.cpp" />
+    <ClCompile Include="src\gamez\zWeapon\zwep_ammo.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_bufio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\zrdr\global_valves.rdr">

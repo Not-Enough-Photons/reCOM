@@ -1,5 +1,4 @@
 #include "znode.h"
-#include "node_world.h"
 
 namespace zdb
 {
@@ -16,7 +15,7 @@ namespace zdb
 		}
 		else
 		{
-			InitNodeParams(NULL);
+			// InitNodeParams(NULL);
 
 			if (&saver.m_zfile == NULL)
 			{
