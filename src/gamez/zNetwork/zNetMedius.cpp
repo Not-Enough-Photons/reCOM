@@ -24,10 +24,10 @@ void CZOnlineLobby::Init()
 		myConnectionIndex = 0xffffffff;
 		g_bJoiningRandomGame = false;
 
-		uiv_LobbyWorldNameVar = theUIVarManager.Add("MEDIUS_LOBBY_NAME", NULL, UIVAR_LONGEVITY::value_02);
-		uiv_GameNameVar = theUIVarManager.Add("GAMENAMEVAR", NULL, UIVAR_LONGEVITY::value_02);
-		uiv_ClanNameVar = theUIVarManager.Add("CLANNAMEVAR", NULL, UIVAR_LONGEVITY::value_02);
-		uiv_ClanDescription = theUIVarManager.Add("Clan_Description", NULL, UIVAR_LONGEVITY::value_02);
+		// uiv_LobbyWorldNameVar = theUIVarManager.Add("MEDIUS_LOBBY_NAME", NULL, UIVAR_LONGEVITY::UIVL_PERMANENT);
+		// uiv_GameNameVar = theUIVarManager.Add("GAMENAMEVAR", NULL, UIVAR_LONGEVITY::UIVL_PERMANENT);
+		// uiv_ClanNameVar = theUIVarManager.Add("CLANNAMEVAR", NULL, UIVAR_LONGEVITY::UIVL_PERMANENT);
+		// uiv_ClanDescription = theUIVarManager.Add("Clan_Description", NULL, UIVAR_LONGEVITY::UIVL_PERMANENT);
 
 		dme_joined_count = 0;
 		accum_dme_joined_count = 0;

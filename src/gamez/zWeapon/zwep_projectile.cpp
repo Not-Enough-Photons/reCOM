@@ -39,7 +39,7 @@ void CZProjectile::Reset()
 
 	if (m_weapon != NULL)
 	{
-		m_currange = m_weapon->GetMaxRange();
+		// m_currange = m_weapon->GetMaxRange();
 
 		if (m_currange == 0.0f)
 		{

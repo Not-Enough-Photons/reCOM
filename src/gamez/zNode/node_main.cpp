@@ -268,6 +268,11 @@ namespace zdb
 		return m_active;
 	}
 
+	void CNode::SetModel(CModel* model)
+	{
+
+	}
+
 	CMatrix& CNode::BuildMTW(CMatrix& mat)
 	{
 		if (m_type == 6)

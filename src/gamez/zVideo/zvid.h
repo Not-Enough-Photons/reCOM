@@ -1,6 +1,8 @@
 #pragma once
 #include "gamez/zMath/zmath.h"
 
+class _zvid_public;
+
 enum _zvid_mode
 {
 	ZVID_MODE_NTSC,
@@ -25,7 +27,8 @@ void zvid_SetVideoMode(_zvid_mode mode);
 
 void uninitPssAudio();
 
-extern bool doAudio = false;
+extern bool doAudio;
+extern _zvid_public zVid;
 
 class _zvid_public
 {
@@ -67,8 +70,6 @@ public:
 
 	long dmaFrameRestore;
 };
-
-_zvid_public zVid;
 
 class CVideo
 {

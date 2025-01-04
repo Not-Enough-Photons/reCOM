@@ -114,6 +114,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Apps\FTS\hud.h" />
     <ClInclude Include="src\gamez\zAI\zai.h" />
     <ClInclude Include="src\gamez\zAnim\zanim.h" />
     <ClInclude Include="src\gamez\zArchive\zar.h" />
@@ -121,6 +122,9 @@
     <ClInclude Include="src\gamez\zCamera\zcam.h" />
     <ClInclude Include="src\gamez\zEntity\body.h" />
     <ClInclude Include="src\gamez\zEntity\zentity.h" />
+    <ClInclude Include="src\gamez\zFTS\fts_state.h" />
+    <ClInclude Include="src\gamez\zFTS\zfts.h" />
+    <ClInclude Include="src\gamez\zGame\zgame.h" />
     <ClInclude Include="src\gamez\zInput\zinput.h" />
     <ClInclude Include="src\gamez\zMath\zmath.h" />
     <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
@@ -147,7 +151,40 @@
     <ClInclude Include="vendor\rt\rtarray.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Apps\FTS\database.cpp" />
+    <ClCompile Include="src\Apps\FTS\getopt.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_actionbitmap.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_bitmapreticule.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_bombmapitem.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_claymoremapitem.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_devtext.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_fader.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_ingame_weaponsel.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_lensflare.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_letterbox.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_linemap.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_main.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_mapcompass.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_missioncams.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_newhudmap.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_objectives.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_pausemenu.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_playermapitem.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_posebitmap.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_scorepopup.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_teammatenames.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_teamnames.cpp" />
+    <ClCompile Include="src\Apps\FTS\hud_weaponsel.cpp" />
     <ClCompile Include="src\Apps\FTS\main.cpp" />
+    <ClCompile Include="src\Apps\FTS\options.cpp" />
+    <ClCompile Include="src\Apps\FTS\orders.cpp" />
+    <ClCompile Include="src\Apps\FTS\reco.cpp" />
+    <ClCompile Include="src\Apps\FTS\st_core.cpp" />
+    <ClCompile Include="src\Apps\FTS\st_exit.cpp" />
+    <ClCompile Include="src\Apps\FTS\st_load.cpp" />
+    <ClCompile Include="src\Apps\FTS\st_menu.cpp" />
+    <ClCompile Include="src\Apps\FTS\st_mpexit.cpp" />
+    <ClCompile Include="src\Apps\FTS\thezoom.cpp" />
     <ClCompile Include="src\gamez\zAI\ai_astar.cpp" />
     <ClCompile Include="src\gamez\zAI\ai_events.cpp" />
     <ClCompile Include="src\gamez\zAI\ai_main.cpp" />
@@ -165,13 +202,33 @@
     <ClCompile Include="src\gamez\zArchive\zar_main.cpp" />
     <ClCompile Include="src\gamez\zArchive\zar_search.cpp" />
     <ClCompile Include="src\gamez\zCamera\camera.cpp" />
+    <ClCompile Include="src\gamez\zCamera\fov.cpp" />
     <ClCompile Include="src\gamez\zCamera\zcam_main.cpp" />
+    <ClCompile Include="src\gamez\zCamera\zcam_update.cpp" />
     <ClCompile Include="src\gamez\zEntity\body.cpp" />
     <ClCompile Include="src\gamez\zEntity\char_type.cpp" />
     <ClCompile Include="src\gamez\zEntity\ent_main.cpp" />
     <ClCompile Include="src\gamez\zEntity\int_main.cpp" />
     <ClCompile Include="src\gamez\zEntity\int_material.cpp" />
     <ClCompile Include="src\gamez\zEntity\pickup_main.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_action.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_controller.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_main.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_mission.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_missioncam.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_net_bomb.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_net_game.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_net_grenade.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_net_persona.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_net_seal.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_objectivecam.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_player.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_remote.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_state.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_engine.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_main.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_state.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_tree.cpp" />
     <ClCompile Include="src\gamez\zInput\remote_control.cpp" />
     <ClCompile Include="src\gamez\zInput\zin_cheats.cpp" />
     <ClCompile Include="src\gamez\zInput\zin_main.cpp" />
@@ -180,6 +237,9 @@
     <ClCompile Include="src\gamez\zMath\zmath_matrix.cpp" />
     <ClCompile Include="src\gamez\zMath\zmath_pnt3d.cpp" />
     <ClCompile Include="src\gamez\zMath\zmath_pnt4d.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetDme.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetMedius.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetVoice.cpp" />
     <ClCompile Include="src\gamez\zNode\graph_tree.cpp" />
     <ClCompile Include="src\gamez\zNode\grid_clutter.cpp" />
     <ClCompile Include="src\gamez\zNode\grid_di.cpp" />

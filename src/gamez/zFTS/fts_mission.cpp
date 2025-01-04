@@ -3,13 +3,15 @@
 
 void CMission::Init()
 {
-	CZAnimMain::Open("ZAnim");
-	CSealCtrlAi::RegisterCommands();
-	CValve::RegisterCommands();
-	zdb::CCamera::RegisterAnimCommands();
+	// TODO:
+	// Implement all these
+	// CZAnimMain::Open("ZAnim");
+	// CSealCtrlAi::RegisterCommands();
+	// CValve::RegisterCommands();
+	// zdb::CCamera::RegisterAnimCommands();
 	// CAppCamera::RegisterAnimCommands();
-	CftsPlayer::RegisterAnimCommands();
-	zdb::CWind::RegisterAnimCommands();
+	// CftsPlayer::RegisterAnimCommands();
+	// zdb::CWind::RegisterAnimCommands();
 }
 
 void CMission::Read(_zrdr* reader)

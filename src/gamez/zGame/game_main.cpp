@@ -12,13 +12,13 @@ void game_main(int argc, char** argv)
 {
 	process_arguments(argc, argv);
 
-	zUtilInit("ftslog.txt");
+	// zUtilInit("ftslog.txt");
 
-	theGame.StartEngine();
-	theGame.StartPlay();
+	// theGame.StartEngine();
+	// theGame.StartPlay();
 
 	while (true)
 	{
-		theGame.Tick(zVid.frameTime);
+		// theGame.Tick(zVid.frameTime);
 	}
 }

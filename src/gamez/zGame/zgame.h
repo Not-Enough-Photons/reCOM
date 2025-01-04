@@ -7,6 +7,9 @@
 #include "gamez/zNode/znode.h"
 #include "gamez/zUI/zui.h"
 
+class CGame;
+class CGameStateChangeCmd;
+
 enum MENU_STATE
 {
 	stateNone,
@@ -26,43 +29,9 @@ enum GAME_NAME
 };
 
 static void game_main(int argc, char** argv);
-void process_arguments(int argc, char** argv);
+static void process_arguments(int argc, char** argv);
 
-class CGame
-{
-public:
-	bool StartEngine();
-	void StartPlay();
-	void Tick(float delta);
-public:
-	float m_maxtick;
-protected:
-	bool m_Active;
-
-	CGameState* m_InitialState;
-	CGameState* m_CurrentState;
-	CGameState* m_TestVariable;
-	CGameState* m_Stack[16];
-
-	int m_MinIdlePeriod;
-
-	unsigned int m_pad;
-};
-
-CGame theGame;
-
-class COurGame : public CGame
-{
-public:
-	static bool StartEngine();
-protected:
-	CMenuState m_menuState;
-	CLoadState m_loadState;
-	CCoreState m_coreState;
-	CExitState m_exitState;
-	CMPExitState m_MPexitState;
-	CCinematicState m_cinematicSubState;
-};
+extern CGame theGame;
 
 class CGameState
 {
@@ -85,12 +54,12 @@ protected:
 	const char* m_name;
 };
 
-class CStateCmdQueue : public std::deque<CGameStateChangeCmd> { };
+class CStateCmdQueue : public std::deque<CGameStateChangeCmd*> { };
 
 class CCoreState : public CGameState
 {
 public:
-	CCoreState() : CGameState() { }
+	CCoreState() : CGameState() {}
 	~CCoreState();
 
 	void auxUnload();
@@ -191,4 +160,38 @@ class CGameStateChangeCmd
 {
 public:
 	static void CreatePool(int size);
+};
+
+class CGame
+{
+public:
+	bool StartEngine();
+	void StartPlay();
+	void Tick(float delta);
+public:
+	float m_maxtick;
+protected:
+	bool m_Active;
+
+	CGameState* m_InitialState;
+	CGameState* m_CurrentState;
+	CGameState* m_TestVariable;
+	CGameState* m_Stack[16];
+
+	int m_MinIdlePeriod;
+
+	unsigned int m_pad;
+};
+
+class COurGame : public CGame
+{
+public:
+	static bool StartEngine();
+protected:
+	CMenuState m_menuState;
+	CLoadState m_loadState;
+	CCoreState m_coreState;
+	CExitState m_exitState;
+	CMPExitState m_MPexitState;
+	CCinematicState m_cinematicSubState;
 };

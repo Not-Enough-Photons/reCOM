@@ -315,9 +315,9 @@ public:
 
 	static bool          IsPrimary(EQUIP_ITEM item);
 	static bool          IsSecondary(EQUIP_ITEM item);
-	static EQUIP_ITEM    GetIDType();
-	static EQUIP_ITEM    GetIDType(EQUIP_ITEM id);
-	static EQUIP_ITEM    GetWeaponId(const char* name);
+	static EQUIP_ITEM    GetIDType() { return EQUIP_ITEM::EQUIP_NONE; } // TODO: Implement this
+	static EQUIP_ITEM    GetIDType(EQUIP_ITEM id) { return EQUIP_ITEM::EQUIP_NONE; } // TODO: Implement this
+	static EQUIP_ITEM    GetWeaponId(const char* name) { return EQUIP_ITEM::EQUIP_NONE; } // TODO: Implement this
 
 	void Open();
 	void Close();

@@ -1,11 +1,9 @@
 #pragma once
 
-#include "gamez/zEntity/vehicle.h"
-
 #include "gamez/zAI/zai.h"
+#include "gamez/zEntity/zentity.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zReader/zrdr.h"
-#include "gamez/zNetwork/znet.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zUI/zui.h"
@@ -14,6 +12,8 @@ class CMission;
 class CMissionObjectiveCam;
 class CObjAnchor;
 class CObjAnchorVec;
+
+class CZNetGame;
 
 extern CMission theMission;
 
@@ -72,7 +72,7 @@ private:
 	float m_next_fade_time;
 	float m_wait_before_falling;
 
-	std::vector<CObjAnchor> m_anchor_extraction;
+	std::vector<CObjAnchor*> m_anchor_extraction;
 	// std::vector<CNavPoint> m_navpoints;
 	// CObjAnchorVec m_objanchor_vec;
 	CMissionObjectiveCam* m_prev_selected_objcam;
