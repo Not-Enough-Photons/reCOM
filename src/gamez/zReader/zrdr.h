@@ -3,6 +3,7 @@
 #include <cstdint>
 
 #include "gamez/zArchive/zar.h"
+#include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stable.h"
 
 class _zrdr;
@@ -17,7 +18,7 @@ enum ZRDR_TYPE
 	ZRDR_ARRAY
 };
 
-extern int cur_zrdr_flags;
+extern s32 cur_zrdr_flags;
 extern char* cur_zrdr_path;
 
 _zrdr* zrdr_read(const char* reader, const char* path, int dummy);

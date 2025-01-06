@@ -1,5 +1,7 @@
 #include "zanim.h"
 
+bool CZAnimMain::m_LoadFromZAR = false;
+
 unsigned int CZAnimMain::AddCmd(const char* name,
 	_zanim_cmd_hdr* (*parser)(_zrdr*),
 	void(*begin)(_zanim_cmd_hdr*),

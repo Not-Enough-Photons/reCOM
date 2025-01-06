@@ -28,10 +28,41 @@ enum GAME_NAME
 	nameAP
 };
 
-static void game_main(int argc, char** argv);
-static void process_arguments(int argc, char** argv);
+void game_main(int argc, char** argv);
+void process_arguments(int argc, char** argv);
 
 extern CGame theGame;
+
+struct _options
+{
+	bool doHud;
+	bool doStatusLine;
+	bool doStatusLineSmall;
+	bool doFPS;
+	bool doAssetReport;
+	bool loadAi;
+	bool enableAi;
+	bool doDyn;
+	bool doWep;
+	bool doConsole;
+	bool doIntersections;
+	bool doAltitudes;
+	bool LoadZAnimFromZAR;
+	bool doShadow;
+	bool noDie;
+	bool noSee;
+	bool noEnemy;
+	bool noAlpha;
+	bool noBravo;
+	bool infiniteAmmo;
+	bool noObjectives;
+	bool doLog;
+	bool doTaskReport;
+	bool doRenderReport;
+	bool dumpLog;
+	bool doRadar;
+	bool doEntityReport;
+};
 
 class CGameState
 {

@@ -3,6 +3,40 @@
 #include "zsys.h"
 
 bool postinited = false;
+size_t _HeapSize = 0;
+
+void zSysInit()
+{
+	size_t allocsize = zsys_FullAllocAndFree();
+	zSys.isCdBoot = false;
+}
+
+size_t zsys_FullAllocAndFree()
+{
+	void* ptr = NULL;
+	size_t size = 0;
+
+	size = 4096;
+
+	do
+	{
+		ptr = malloc(size);
+
+		if (ptr == NULL)
+		{
+			break;
+		}
+
+		free(ptr);
+
+		size += 4096;
+
+	} while (size < 0x2000001);
+
+	_HeapSize = size - 16;
+
+	return _HeapSize;
+}
 
 void zSysPostInit()
 {

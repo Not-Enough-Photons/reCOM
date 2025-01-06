@@ -465,6 +465,8 @@ public:
 		void(*begin)(_zanim_cmd_hdr*),
 		bool(*tick)(_zanim_cmd_hdr*, float*),
 		void(*end)(_zanim_cmd_hdr*));
+public:
+	static bool m_LoadFromZAR;
 private:
 	bool m_IsOpen;
 	bool m_IsStarted;

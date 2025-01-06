@@ -69,7 +69,7 @@
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetName>fts</TargetName>
+    <TargetName>fts64</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -300,6 +300,7 @@
     <ClCompile Include="src\gamez\zSound\zsnd_csndsequence.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_jukebox.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsav_manager.cpp" />
+    <ClCompile Include="src\gamez\zSystem\zsys_main.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsys_memory.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsys_sched.cpp" />
     <ClCompile Include="src\gamez\zTexture\ztex_main.cpp" />
@@ -316,6 +317,8 @@
     <ClCompile Include="src\gamez\zValve\valve_list.cpp" />
     <ClCompile Include="src\gamez\zValve\valve_main.cpp" />
     <ClCompile Include="src\gamez\zVideo\zmpeg.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zvid_draw.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zvid_main.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_ammo.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_explosive.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_global.cpp" />
@@ -328,6 +331,9 @@
     <None Include="data\zrdr\mission.rdr" />
     <None Include="data\zrdr\sndjukeboxm.rdr" />
     <None Include="data\zrdr\vehicles.rdr" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

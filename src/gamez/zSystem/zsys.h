@@ -49,13 +49,15 @@ void __free(void* block);
 struct _zsys_public;
 class CTTY;
 
+extern size_t _HeapSize;
+
 extern _zsys_public zSys;
 extern CTTY theTerminal;
 
 struct _word128
 {
 	long128 u128;
-	float f32[4];
+	f32 f32[4];
 	u64 u64[2];
 	u32 u32[4];
 	u16 u16[8];
@@ -70,7 +72,7 @@ struct four
 struct twelve
 {
 	twelve* next;
-	unsigned int dummy[2];
+	u32 dummy[2];
 };
 
 template<typename T>
@@ -133,7 +135,7 @@ public:
 	bool Tick(float delta);
 private:
 	bool m_inTick;
-	float m_priority;
+	f32 m_priority;
 	std::list<ScheduledTask> m_FreeList;
 };
 
