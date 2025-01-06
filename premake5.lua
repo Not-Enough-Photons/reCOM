@@ -1,33 +1,28 @@
 workspace "reCOM"
     configurations { "Debug", "Release" }
+    platforms { "x86", "x86_64", "PS2" }
 
 project "game"
     kind "ConsoleApp"
     language "C++"
+
+    includedirs {
+		"vendor",
+		"src"
+	}
+	
+    libdirs { "lib" }
+
     files { 
-        "src/*.cpp",
-        "src/*.h",
-		"src/ai/**.cpp",
-		"src/ai/**.h",
-		"src/audio/**.cpp",
-		"src/audio/**.h",
-		"src/editor/**.cpp",
-		"src/editor/**.h",
-		"src/entity/**.cpp",
-		"src/entity/**.h",
-		"src/math/**.cpp",
-		"src/math/**.h",
-		"src/node/**.cpp",
-		"src/node/**.h",
-		"src/reader/**.cpp",
-		"src/reader/**.h",
-		"src/system/**.cpp",
-		"src/system/**.h",
-		"src/ui/**.cpp",
-		"src/ui/**.h",
-		"src/zar/**.cpp",
-		"src/zar/**.h"
+        "src/Apps/FTS/**.cpp",
+		"src/Apps/FTS/**.h",
+        "src/gamez/**.cpp",
+		"src/gamez/**.h",
+        "vendor/**.cpp",
+		"vendor/**.h",
     }
+	
+	
 
     filter { "configurations:Debug" }
         defines { "DEBUG" }
@@ -36,3 +31,15 @@ project "game"
     filter { "configurations:Release" }
         defines { "NDEBUG" }
         optimize "On"
+
+    filter { "platforms:x86" }
+        system "Windows"
+        architecture "x86"
+
+    filter { "platforms:x86_64" }
+        system "Windows"
+        architecture "x86_64"
+
+    filter { "platforms:PS2" }
+        system "bsd"
+        architecture "mips"
