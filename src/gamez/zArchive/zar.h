@@ -2,6 +2,7 @@
 #include <list>
 #include <vector>
 
+#include "gamez/zSystem/zsys.h"
 #include "gamez/zutil/util_stable.h"
 #include "gamez/zutil/util_systemio.h"
 

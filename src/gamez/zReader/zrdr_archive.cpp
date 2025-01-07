@@ -10,16 +10,16 @@ std::list<zar::CZAR*> CRdrArchive::m_list;
 
 zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 {
-	char* archiveName = 0;
-	zar::CZAR* output;
+	char archiveName[1024];
+	zar::CZAR* output = NULL;
 
-	if (path != 0)
+	if (path == NULL)
 	{
-		strcpy(archiveName, path);
+		strcpy(archiveName, name);
 	}
 	else
 	{
-		sprintf(archiveName, "%s/%s");
+		sprintf(archiveName, "%s/%s", path, name);
 	}
 
 	for (auto it = m_list.begin(); it != m_list.end(); it++)
@@ -72,20 +72,26 @@ bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 
 CRdrFile* CRdrArchive::FindRdr(const char* reader)
 {
-	CRdrFile* rdr;
-	char* readerName;
-	const char* lastSlash = strrchr(reader, '/');
+	CRdrFile* rdr = NULL;
+	char keyName[1024];
+	const char* subpath = strrchr(reader, '/');
 
-	if (lastSlash != 0 && reader != 0)
+	if (subpath == NULL)
 	{
-		strcpy(readerName, reader);
+		if (keyName != NULL)
+		{
+			strcpy(keyName, reader);
+		}
 	}
-	else if (lastSlash[1] != 0 && reader != 0)
+	else if (subpath[1] != '\0')
 	{
-		strcpy(readerName, lastSlash + 1);
+		if (keyName != NULL)
+		{
+			strcpy(keyName, subpath + 1);
+		}
 	}
 
-	for (auto it = m_list.begin(); it != m_list.end() && lastSlash != NULL; it++)
+	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{
 		if (rdr != NULL)
 		{
@@ -111,7 +117,7 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 		}
 
 		rdr = NULL;
-		zar::CKey* key = archive->OpenKey(readerName);
+		zar::CKey* key = archive->OpenKey(keyName);
 		if (key != NULL)
 		{
 			rdr = CRdrFile::Load(archive, key);

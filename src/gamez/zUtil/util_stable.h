@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <vector>
 
 class CSTable : public std::vector<char*>

@@ -5,6 +5,16 @@
 #include <cassert>
 
 /// -------------------------------------------
+/// ALLOCATION MACROS
+/// -------------------------------------------
+#define zmalloc(size) __malloc(size, __FILE__, __LINE__)
+#define zcalloc(num, size) __calloc(num, size, __FILE__, __LINE__)
+#define zrealloc(ptr, new_size) __realloc(ptr, new_size, __FILE__, __LINE__)
+#define zmemalign(alignment, size) __memalign(alignment, size, __FILE__, __LINE__)
+#define zstrdup(str) __strdup(str, __FILE__, __LINE__)
+#define zfree(block) __free(block, __FILE__, __LINE__)
+
+/// -------------------------------------------
 /// PRIMITIVE TYPES
 /// -------------------------------------------
 
@@ -39,12 +49,12 @@ size_t zsys_FullAllocAndFree();
 void zVid_Assert(bool condition, unsigned int mask, const char* source, int line);
 
 void* operator new(size_t size);
-void* __malloc(size_t size);
-void* __calloc(size_t num, size_t size);
-void* __realloc(void* ptr, size_t new_size);
-void* __memalign(size_t alignment, size_t size);
-char* __strdup(const char* str);
-void __free(void* block);
+void* __malloc(size_t size, const char* file, int line);
+void* __calloc(size_t num, size_t size, const char* file, int line);
+void* __realloc(void* ptr, size_t new_size, const char* file, int line);
+void* __memalign(size_t alignment, size_t size, const char* file, int line);
+char* __strdup(const char* str, const char* file, int line);
+void __free(void* block, const char* file, int line);
 
 struct _zsys_public;
 class CTTY;

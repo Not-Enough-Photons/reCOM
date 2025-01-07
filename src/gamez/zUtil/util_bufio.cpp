@@ -22,7 +22,7 @@ bool CBufferIO::Open(void* buf, size_t size)
 	m_filesize = size;
 	m_bufsize = size;
 	m_buffer = buf;
-	m_file = (int)m_buffer;
+	m_file = (s64)m_buffer;
 	return true;
 }
 
@@ -70,7 +70,7 @@ bool CBufferIO::LoadBuffer()
 		{
 			if (m_bufsize < size)
 			{
-				m_file = (int)realloc((FILE*)m_file, size);
+				m_file = (s64)realloc((FILE*)m_file, size);
 				m_bufsize = size;
 			}
 
@@ -83,7 +83,7 @@ bool CBufferIO::LoadBuffer()
 
 				if (size == position)
 				{
-					m_file = (int)m_buffer;
+					m_file = (s64)m_buffer;
 					success = m_buffer != NULL;
 				}
 				else
@@ -203,7 +203,7 @@ size_t CBufferIO::fseek(int offset, int mode)
 		}
 		else
 		{
-			m_file = (int)m_buffer + pos;
+			m_file = (s64)m_buffer + pos;
 		}
 	}
 
@@ -220,7 +220,7 @@ size_t CBufferIO::ftell()
 	}
 	else
 	{
-		position = (int)m_file - (int)m_buffer;
+		position = (s64)m_file - (s64)m_buffer;
 	}
 
 	return position;

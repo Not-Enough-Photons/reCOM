@@ -60,17 +60,17 @@ void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)
 
 void* operator new(size_t size)
 {
-	return __malloc(size);
+	return __malloc(size, __FILE__, __LINE__);
 }
 
-void* __malloc(size_t size)
+void* __malloc(size_t size, const char* file, int line)
 {
 	void* p = malloc(size);
 	zVid_Assert(size == 0 || p != NULL, INT_MAX, __FILE__, __LINE__);
 	return p;
 }
 
-void* __calloc(size_t num, size_t size)
+void* __calloc(size_t num, size_t size, const char* file, int line)
 {
 	size_t calc_size = num * size;
 	void* p = malloc(calc_size);
@@ -86,21 +86,21 @@ void* __calloc(size_t num, size_t size)
 	return p;
 }
 
-void* __realloc(void* ptr, size_t new_size)
+void* __realloc(void* ptr, size_t new_size, const char* file, int line)
 {
 	void* p = realloc(ptr, new_size);
 	zVid_Assert(new_size == 0 || p != NULL, INT_MAX, __FILE__, __LINE__);
 	return p;
 }
 
-void* __memalign(size_t alignment, size_t size)
+void* __memalign(size_t alignment, size_t size, const char* file, int line)
 {
 	void* p = _aligned_malloc(size, alignment);
 	zVid_Assert(alignment == 0 || p != NULL, INT_MAX, __FILE__, __LINE__);
 	return p;
 }
 
-char* __strdup(const char* str)
+char* __strdup(const char* str, const char* file, int line)
 {
 	size_t len = strlen(str);
 	len++;
@@ -117,7 +117,7 @@ char* __strdup(const char* str)
 	return p;
 }
 
-void __free(void* block)
+void __free(void* block, const char* file, int line)
 {
 	free(block);
 }

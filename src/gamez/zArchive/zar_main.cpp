@@ -2,10 +2,6 @@
 
 #include "zar.h"
 
-#include "gamez/zSystem/zsys.h"
-#include "gamez/zutil/util_stable.h"
-#include "gamez/zutil/util_systemio.h"
-
 namespace zar
 {
 	CKey::CKey()
@@ -61,10 +57,10 @@ namespace zar
 	{
 		struct KEY
 		{
-			int32_t m_name;
-			uint32_t m_offset;
-			uint32_t m_size;
-			uint32_t m_count;
+			s32 m_name;
+			u32 m_offset;
+			u32 m_size;
+			u32 m_count;
 		} key_t;
 
 		buffer->fread(&key_t, sizeof(KEY));
@@ -160,7 +156,7 @@ namespace zar
 				return;
 			}
 
-			free(&m_filename);
+			free(m_filename);
 			m_filename = NULL;
 		}
 
@@ -547,24 +543,24 @@ namespace zar
 
 	bool CZAR::ReOpen(s32 appver, s32 mode)
 	{
-		if (m_pFile == NULL)
+		if (m_pFileAlloc == NULL)
 		{
 			return false;
 		}
 		
-		if (!m_pFile->IsOpen())
+		if (m_pFileAlloc->IsOpen())
 		{
 			char* name = m_filename;
 
 			if (name != NULL)
 			{
-				if (m_pFile == NULL)
+				if (m_pFileAlloc == NULL)
 				{
 					m_pFileAlloc = new CFileIO();
 					m_pFile = new CBufferIO();
 				}
 
-				if (m_pFile->Open(name, mode))
+				if (m_pFileAlloc->Open(name))
 				{
 					SetFilename(name);
 					m_data_padded = 16;
@@ -903,7 +899,7 @@ namespace zar
 				return;
 			}
 
-			__free(m_filename);
+			zfree(m_filename);
 			m_filename = NULL;
 		}
 
@@ -913,7 +909,7 @@ namespace zar
 		}
 		else
 		{
-			m_filename = __strdup(name);
+			m_filename = zstrdup(name);
 		}
 	}
 

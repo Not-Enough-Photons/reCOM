@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+#include "gamez/zSystem/zsys.h"
+
 #define S_IXOTH 0x0001
 #define S_IWOTH 0x0002
 #define S_IROTH 0x0004
@@ -73,7 +75,7 @@ public:
 
 	virtual void fflush() {}
 public:
-	int64_t m_file;
+	s64 m_file;
 	size_t m_filesize;
 	unsigned int m_mode;
 };

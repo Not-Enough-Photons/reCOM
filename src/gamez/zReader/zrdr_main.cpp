@@ -15,9 +15,12 @@ bool warnonce = false;
 char* cur_zrdr_path = 0;
 int cur_zrdr_flags = 0;
 
-_zrdr::_zrdr(const _zrdr* other, const CSTable* table)
+_zrdr::_zrdr()
 {
-	Clone(other, table);
+	type = ZRDR_NULL;
+	isclone = false;
+	packed = false;
+	length = 0;
 }
 
 bool _zrdr::IsArray() const

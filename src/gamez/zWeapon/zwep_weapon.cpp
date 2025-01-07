@@ -79,7 +79,7 @@ void CZWeapon::ClearAnims()
 {
 	if (m_hitanim != NULL)
 	{
-		__free(m_hitanim);
+		zfree(m_hitanim);
 		m_hitanim = NULL;
 	}
 
@@ -89,7 +89,7 @@ void CZWeapon::ClearAnims()
 	
 	if (m_specialmaterialanim != NULL)
 	{
-		__free(m_specialmaterialanim);
+		zfree(m_specialmaterialanim);
 		m_specialmaterialanim = NULL;
 	}
 }

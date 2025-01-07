@@ -115,7 +115,7 @@ _zanim_cmd_hdr* CAppCamera::CmdParse3rdPersonTest(_zrdr* reader)
 	}
 	else
 	{
-		_zanim_cmd_hdr* cmd = static_cast<_zanim_cmd_hdr*>(__calloc(1, sizeof(_zanim_cmd_hdr)));
+		_zanim_cmd_hdr* cmd = static_cast<_zanim_cmd_hdr*>(zcalloc(1, sizeof(_zanim_cmd_hdr)));
 		cmd->quad_align = false;
 		cmd->timeless = false;
 	}

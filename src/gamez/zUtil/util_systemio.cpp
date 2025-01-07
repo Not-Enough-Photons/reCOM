@@ -45,7 +45,7 @@ CFileIO::CFileIO(const CFileIO& other)
 
 bool CFileIO::Open(const char* file)
 {
-	m_file = (int)std::fopen(file, "rb");;
+	m_file = (s64)std::fopen(file, "rb");;
 
 	if (m_file != NULL)
 	{

@@ -2,10 +2,7 @@
 
 CSTable::CSTable()
 {
-	m_owner = true;
-	m_buffer = NULL;
-	m_bytes = 0;
-	m_reserve = 0;
+
 }
 
 CSTable::CSTable(size_t size, size_t count)
@@ -131,23 +128,25 @@ char* CSTable::FindString(const char* str)
 
 void CSTable::LoadTable(void* buffer, size_t bytes, bool owner)
 {
-	int idx = 0;
-	int length = 0;
+	int idx;
+	size_t length;
 	char* ptr;
 	int table_length;
-	unsigned int byte = 0;
+	unsigned int byte;
 
+	byte = 0;
 	m_buffer = static_cast<char*>(buffer);
-	ptr = m_buffer;
 	m_bytes = bytes;
 	m_owner = owner;
+	ptr = m_buffer;
+	idx = 0;
 
 	if (bytes != 0)
 	{
 		do
 		{
 			idx++;
-			length = strlen(m_buffer);
+			length = strlen(ptr);
 			table_length = length + 1;
 			ptr += table_length;
 			byte += table_length;
@@ -155,17 +154,20 @@ void CSTable::LoadTable(void* buffer, size_t bytes, bool owner)
 	}
 
 	resize(idx);
+	ptr = m_buffer;
+	byte = 0;
+	idx = 0;
 
-	// why twice?
 	if (bytes != 0)
 	{
 		do
 		{
-			idx++;
-			length = strlen(m_buffer);
+			this->data()[idx] = ptr;
+			length = strlen(ptr);
 			table_length = length + 1;
 			ptr += table_length;
 			byte += table_length;
+			idx++;
 		} while (byte < bytes);
 	}
 }
