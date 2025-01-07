@@ -132,7 +132,7 @@ namespace zar
 		/// <param name="count"> - The size of the archive.</param>
 		/// <param name="mode"> - The read mode.</param>
 		/// <returns>Whether or not the operation was successful.</returns>
-		bool ReOpen(int count, int mode) { return false; }
+		bool ReOpen(s32 appver, s32 mode);
 
 		CKey* CreateKey(const char* name);
 
@@ -178,7 +178,7 @@ namespace zar
 		bool ReadDirectory(int appver, unsigned int mode);
 		bool WriteDirectory() { return false; }
 
-		void SetFileName();
+		void SetFilename(const char* name);
 		size_t GetSize(const char* key);
 
 		/// <summary>

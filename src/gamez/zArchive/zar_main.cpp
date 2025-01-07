@@ -2,6 +2,7 @@
 
 #include "zar.h"
 
+#include "gamez/zSystem/zsys.h"
 #include "gamez/zutil/util_stable.h"
 #include "gamez/zutil/util_systemio.h"
 
@@ -544,6 +545,49 @@ namespace zar
 		return success;
 	}
 
+	bool CZAR::ReOpen(s32 appver, s32 mode)
+	{
+		if (m_pFile == NULL)
+		{
+			return false;
+		}
+		
+		if (!m_pFile->IsOpen())
+		{
+			char* name = m_filename;
+
+			if (name != NULL)
+			{
+				if (m_pFile == NULL)
+				{
+					m_pFileAlloc = new CFileIO();
+					m_pFile = new CBufferIO();
+				}
+
+				if (m_pFile->Open(name, mode))
+				{
+					SetFilename(name);
+					m_data_padded = 16;
+
+					if (ReadDirectory(appver, mode))
+					{
+						m_tail.appversion = appver;
+					}
+					else
+					{
+						Close();
+					}
+				}
+			}
+		}
+		else
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	void CZAR::CloseKey(CKey* key)
 	{
 		if (key != NULL && !m_keys.empty())
@@ -848,6 +892,29 @@ namespace zar
 		}
 
 		return buffer;
+	}
+
+	void CZAR::SetFilename(const char* name)
+	{
+		if (m_filename != NULL && m_filename != "DEFAULT_ZAR_NAME")
+		{
+			if (name == m_filename)
+			{
+				return;
+			}
+
+			__free(m_filename);
+			m_filename = NULL;
+		}
+
+		if (name == NULL || name == "DEFAULT_ZAR_NAME")
+		{
+			m_filename = "DEFAULT_ZAR_NAME";
+		}
+		else
+		{
+			m_filename = __strdup(name);
+		}
 	}
 
 	void CZAR::Securify(void* buf, size_t size)
