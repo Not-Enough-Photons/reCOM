@@ -24,22 +24,16 @@ enum class DAMAGE_LOCATION
 
 enum class SEAL_CONTROL_TYPE
 {
-	NONE,
-	PLAYER,
-	AI,
-	SQUIRM,
-	MISC
+	CTRL_NONE,
+	CTRL_PLAYER,
+	CTRL_AI,
+	CTRL_SQUIRM,
+	CTRL_MISC
 };
 
 extern int recycler_index;
-extern CEntity* ftsPlayer;
 extern CSealAnim* m_sealanim;
 extern CharacterDynamics theCharacterDynamics;
-
-static CEntity* ftsGetPlayer()
-{
-	return static_cast<CEntity*>(ftsPlayer);
-}
 
 void SealInitCharacterDynamics();
 

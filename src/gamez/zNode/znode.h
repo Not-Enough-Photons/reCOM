@@ -93,7 +93,6 @@ namespace zdb
 		friend class CWorld;
 	public:
 		CNode();
-		~CNode();
 
 		static CNode* CreateInstance(CSaveLoad& save);
 		static CNode* CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation);

@@ -1,6 +1,7 @@
 #include "zcam.h"
 
 #include "gamez/zEntity/zentity.h"
+#include "gamez/zFTS/zfts.h"
 #include "gamez/zSeal/zseal.h"
 #include "gamez/zSystem/zsys.h"
 

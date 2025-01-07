@@ -1,6 +1,8 @@
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zFTS/zfts.h"
 
+CMission theMission;
+
 void CMission::Init()
 {
 	// TODO:

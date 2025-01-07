@@ -74,6 +74,13 @@ void* __calloc(size_t num, size_t size)
 {
 	size_t calc_size = num * size;
 	void* p = malloc(calc_size);
+
+	if (p == NULL)
+	{
+		zVid_Assert(false, INT_MAX, __FILE__, __LINE__);
+		return NULL;
+	}
+
 	memset(p, 0, calc_size);
 	zVid_Assert(calc_size == 0 || p != NULL, INT_MAX, __FILE__, __LINE__);
 	return p;
@@ -98,6 +105,13 @@ char* __strdup(const char* str)
 	size_t len = strlen(str);
 	len++;
 	char* p = (char*)malloc(len);
+
+	if (p == NULL)
+	{
+		zVid_Assert(false, INT_MAX, __FILE__, __LINE__);
+		return NULL;
+	}
+
 	strcpy(p, str);
 	zVid_Assert(len == 0 || p != NULL, INT_MAX, __FILE__, __LINE__);
 	return p;

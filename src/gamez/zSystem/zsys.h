@@ -147,8 +147,7 @@ class CSaveManager
 class CSaveModule
 {
 public:
-	CSaveModule(const char* module, CSaveManager* mcSaveManager);
-	~CSaveModule();
+	CSaveModule(const char* module, CSaveManager* mcSaveManager) {}
 public:
 };
 

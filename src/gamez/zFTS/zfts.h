@@ -16,6 +16,18 @@ class CObjAnchorVec;
 class CZNetGame;
 
 extern CMission theMission;
+extern CZSealBody* ftsPlayer;
+
+CZSealBody* ftsGetPlayer();
+void ftsSetPlayer(CZSealBody* player);
+
+bool ftsGetSquirm();
+void ftsSetSquirm(bool squirm);
+
+void ftsNetworkGameInit();
+void ftsNetworkGameUninit();
+void ftsNetworkPlayerInit();
+void ftsNetworkSealInit();
 
 enum MISSION_STATE
 {
@@ -44,7 +56,6 @@ class CMission : CSaveModule
 
 public:
 	CMission() : CSaveModule("CMission", NULL) {}
-	~CMission();
 
 	static float nextFrameDelta;
 public:
