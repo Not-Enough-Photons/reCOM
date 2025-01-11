@@ -54,6 +54,11 @@ public:
 	CSnd();
 
 	static void Init();
+
+	static void Close();
+
+	static void UIOpen();
+
 	static void AddNewCSnd(CSnd* sound);
 	static CSnd* GetSoundByName(const char* name);
 	static bool GetSubtitles();
@@ -62,20 +67,23 @@ public:
 	float CalcVol(float volume, float masterVolume);
 	void SetupJukebox();
 
+	static s32 m_max_num_vags;
+
 	static bool m_isDisabled;
 	static bool m_bShowSubtitles;
 	static bool m_hasreverb;
+	static bool m_vagEnabled;
 	static zar::CZAR* m_vagArchive;
 	static zar::CZAR* m_bnkArchive;
-	static int m_bnkoffset;
-	static int m_vagoffset;
+	static s32 m_bnkoffset;
+	static s32 m_vagoffset;
 
 	static std::unordered_map<const char*, CSnd*> m_soundmap;
 	static std::vector<CSnd*> m_bankloaded;
 	static std::vector<CSnd*> m_soundbank;
 	static std::vector<CSnd*> m_soundlist;
 protected:
-	float m_vol;
+	f32 m_vol;
 
 	const char* m_name;
 

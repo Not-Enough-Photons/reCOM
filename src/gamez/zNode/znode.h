@@ -4,7 +4,7 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
-#include "gamez/zRender/vis/zvis.h"
+#include "gamez/zRender/zVisual/zvis.h"
 #include "gamez/zTexture/ztex.h"
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSystem/zsys.h"
@@ -187,6 +187,7 @@ namespace zdb
 		CWorld() : CNode() {}
 		~CWorld();
 
+		static CCamera* m_camera;
 		static CWorld* m_world;
 
 		static float m_scale;
@@ -219,8 +220,6 @@ namespace zdb
 		// undefined4 GetTextureByName(const char* name) const;
 		int GetModel() const;
 	private:
-		CCamera* m_camera;
-
 		u32 m_default_soiltype;
 		char* m_default_soiltype_name;
 

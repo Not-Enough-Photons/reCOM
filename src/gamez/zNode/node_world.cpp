@@ -5,7 +5,8 @@
 
 namespace zdb
 {
-	CWorld* CWorld::m_world;
+	CWorld* CWorld::m_world = NULL;
+	CCamera* CWorld::m_camera = NULL;
 
 	bool CNodeUniverse::AddNode(CNode* node)
 	{

@@ -1,1 +1,45 @@
+#include "gamez/zFTS/zfts.h"
 #include "gamez/zGame/zgame.h"
+#include "gamez/zSeal/zseal.h"
+#include "gamez/zRender/zrender.h"
+
+CCoreState::CCoreState()
+{
+	m_name = zstrdup("CoreState");
+	m_loading = false;
+	m_loadstarted = false;
+	// objMtx1 = CMatrix::identity;
+	// objMtx2 = CMatrix::identity;
+	m_skip_swap = 0;
+}
+
+bool CCoreState::Init()
+{
+	CZSealBody* seal = NULL;
+
+	m_world = zdb::CWorld::m_world;
+
+	zdb::CVisual::m_camera = m_world->m_camera;
+	thePipe.m_camera = zdb::CVisual::m_camera;
+
+	m_hud = new CHUD();
+	theHUD = m_hud;
+
+	if (gopt.doHud != false)
+	{
+		m_hud->Init(m_world);
+		CameraZoom::AttachHud(m_hud);
+	}
+
+	seal = ftsGetPlayer();
+	CameraZoom::AttachSeal(seal);
+	CRdrArchive::CloseAll();
+	CRdrArchive::RemoveArchive("readerm.zar", "database");
+
+	return true;
+}
+
+void CCoreState::Tick(float dT)
+{
+
+}

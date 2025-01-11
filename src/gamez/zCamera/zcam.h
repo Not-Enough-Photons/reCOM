@@ -4,6 +4,8 @@
 #include "gamez/zNode/znode.h"
 #include "gamez/zSystem/zsys.h"
 
+class CHUD;
+
 class CEntity;
 class CAppCamera;
 class CZSealBody;
@@ -330,3 +332,12 @@ private:
 	f32 m_rumble_power_scaler;
 };
 
+class CameraZoom
+{
+public:
+	static void AttachHud(CHUD* hud);
+	static void AttachSeal(CZSealBody* seal);
+public:
+	static CHUD* m_hud;
+	static CZSealBody* m_seal;
+};

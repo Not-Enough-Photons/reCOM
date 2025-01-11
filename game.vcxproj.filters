@@ -156,10 +156,10 @@
     <ClInclude Include="src\gamez\zReader\zrdr_local.h">
       <Filter>src\gamez\zReader</Filter>
     </ClInclude>
-    <ClInclude Include="src\gamez\zRender\particle\zparticle.h">
+    <ClInclude Include="src\gamez\zRender\zParticle\zparticle.h">
       <Filter>src\gamez\zRender\particle</Filter>
     </ClInclude>
-    <ClInclude Include="src\gamez\zRender\vis\zvis.h">
+    <ClInclude Include="src\gamez\zRender\zVisual\zvis.h">
       <Filter>src\gamez\zRender\vis</Filter>
     </ClInclude>
     <ClInclude Include="src\gamez\zRender\zrender.h">
@@ -816,28 +816,28 @@
     <ClCompile Include="src\gamez\zReader\zrdr_parse.cpp">
       <Filter>src\gamez\zReader</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle.cpp">
+    <ClCompile Include="src\gamez\zRender\zParticle\zparticle.cpp">
       <Filter>src\gamez\zRender\particle</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle_buf.cpp">
+    <ClCompile Include="src\gamez\zRender\zParticle\zparticle_buf.cpp">
       <Filter>src\gamez\zRender\particle</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle_instance.cpp">
+    <ClCompile Include="src\gamez\zRender\zParticle\zparticle_instance.cpp">
       <Filter>src\gamez\zRender\particle</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\particle\zparticle_source.cpp">
+    <ClCompile Include="src\gamez\zRender\zParticle\zparticle_source.cpp">
       <Filter>src\gamez\zRender\particle</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_decal.cpp">
+    <ClCompile Include="src\gamez\zRender\zVisual\vis_decal.cpp">
       <Filter>src\gamez\zRender\vis</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_main.cpp">
+    <ClCompile Include="src\gamez\zRender\zVisual\vis_main.cpp">
       <Filter>src\gamez\zRender\vis</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_mesh.cpp">
+    <ClCompile Include="src\gamez\zRender\zVisual\vis_mesh.cpp">
       <Filter>src\gamez\zRender\vis</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zRender\vis\vis_texfx.cpp">
+    <ClCompile Include="src\gamez\zRender\zVisual\vis_texfx.cpp">
       <Filter>src\gamez\zRender\vis</Filter>
     </ClCompile>
     <ClCompile Include="src\gamez\zRender\zrndr_directx.cpp">
@@ -927,7 +927,7 @@
     <ClCompile Include="src\gamez\zSeal\seal_tasks.cpp">
       <Filter>src\gamez\zSeal</Filter>
     </ClCompile>
-    <ClCompile Include="src\gamez\zSeal\seal_uint.cpp">
+    <ClCompile Include="src\gamez\zSeal\seal_unit.cpp">
       <Filter>src\gamez\zSeal</Filter>
     </ClCompile>
     <ClCompile Include="src\gamez\zSeal\seal_weapon.cpp">
@@ -1024,6 +1024,8 @@
       <Filter>src\gamez\zWeapon</Filter>
     </ClCompile>
     <ClCompile Include="vendor\glm\detail\glm.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_output.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\glm\detail\func_common.inl" />

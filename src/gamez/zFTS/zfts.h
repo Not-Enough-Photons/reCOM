@@ -29,6 +29,13 @@ void ftsNetworkGameUninit();
 void ftsNetworkPlayerInit();
 void ftsNetworkSealInit();
 
+class Headset
+{
+public:
+	static void ftsDeleteHeadset() {}
+	static void* ftsGetHeadset() { return NULL; }
+};
+
 enum MISSION_STATE
 {
 	MISSION_UNLOADED,
@@ -137,6 +144,17 @@ private:
 	zdb::CNode* m_terroristbombshack;
 
 	// E3_TEAMS_ENUM m_e3_team;
+};
+
+class CMissionCam
+{
+private:
+	char* m_identifier;
+	char* m_name;
+	char* m_description[3];
+
+	CZAnim* m_anim;
+	CSnd* m_music;
 };
 
 class CZBombState

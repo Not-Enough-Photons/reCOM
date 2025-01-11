@@ -1,4 +1,6 @@
 #pragma once
+#include "Apps/FTS/hud.h"
+
 #include "gamez/zAI/zai.h"
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zEntity/body.h"
@@ -13,7 +15,10 @@
 /// -------------------------------------------
 class CSealCtrl;
 
-enum ZOOMSTATE
+/// -------------------------------------------
+/// ENUMS
+/// -------------------------------------------
+enum class ZOOMSTATE
 {
 	ZOOMSTATE_UNKNOWN,
 	ZOOMSTATE_3RDPERSON,
@@ -31,7 +36,7 @@ enum ZOOMSTATE
 	NUM_ZOOMSTATES
 };
 
-enum TRIGGER
+enum class TRIGGER
 {
 	TRIGGER_UP,
 	TRIGGER_DOWN,
@@ -40,7 +45,7 @@ enum TRIGGER
 	TRIGGER_FINISH
 };
 
-enum SEAL_STATE
+enum class SEAL_STATE
 {
 	stateStand,
 	stateCrouch,
@@ -56,7 +61,7 @@ enum SEAL_STATE
 	stateDone
 };
 
-enum SEAL_PEEK
+enum class SEAL_PEEK
 {
 	PEEK_LEFT,
 	PEEK_UP,
@@ -64,7 +69,7 @@ enum SEAL_PEEK
 	PEEK_NONE
 };
 
-enum SEAL_STANCE
+enum class SEAL_STANCE
 {
 	STANCE_NONE,
 	STANCE_STAND,
@@ -74,7 +79,7 @@ enum SEAL_STANCE
 	STANCE_MAX
 };
 
-enum SEAL_ITEM
+enum class SEAL_ITEM
 {
 	itemNone,
 	itemRifle,
@@ -83,7 +88,7 @@ enum SEAL_ITEM
 	itemDone
 };
 
-enum SEAL_HANDLE
+enum class SEAL_HANDLE
 {
 	H_UNKNOWN,
 	H_HUTCHINS,
@@ -91,7 +96,7 @@ enum SEAL_HANDLE
 	H_DIMONE
 };
 
-enum SEAL_DEATH_TYPE
+enum class SEAL_DEATH_TYPE
 {
 	DEATH_NONE,
 	DEATH_KNIFE_KILL,
@@ -104,7 +109,7 @@ enum SEAL_DEATH_TYPE
 	DEATH_MAX
 };
 
-enum AiSig
+enum class AiSig
 {
 	AISIG_UNKNOWN,
 	AISIG_ANIMCOMPLETE,
@@ -466,48 +471,48 @@ public:
 	static CSealAnim* m_sealanim;
 	static CRdrFile* m_motionRdrFile;
 private:
-	int m_MaxFollowerDistance;
-	int m_MaxFollowerDistanceNext;
+	s32 m_MaxFollowerDistance;
+	s32 m_MaxFollowerDistanceNext;
 
 	ZOOMSTATE m_zoomstate;
 	ZOOMSTATE m_zoomstate_prev;
 	bool m_zoomstate_echo;
 
-	float m_zoomrange;
+	f32 m_zoomrange;
 
-	int m_onMaterial;
+	s32 m_onMaterial;
 
 	bool m_didrstep;
 	bool m_didlstep;
 
-	float m_blooddriptimer;
+	f32 m_blooddriptimer;
 
 	CZSealBody* m_cachedReticuleSeal;
 	BITFIELD_INT(m_useCachedReticuleSeal, 1);
 	BITFIELD_INT(m_unused, 31);
 
 	bool m_TriggerCount;
-	int m_RemoteRoundCount;
-	float m_RemoteFireElevation;
+	s32 m_RemoteRoundCount;
+	f32 m_RemoteFireElevation;
 
 	// Throttle
-	float pre_thr_l;
-	float pre_thr_fb;
-	float pre_thr_strafe;
+	f32 pre_thr_l;
+	f32 pre_thr_fb;
+	f32 pre_thr_strafe;
 
-	float m_prev_thr_x;
-	float m_prev_thr_z;
+	f32 m_prev_thr_x;
+	f32 m_prev_thr_z;
 
 	CPnt3D p0_pos0_w;
 	CPnt3D p0_pos1_w;
-	float p0_d;
+	f32 p0_d;
 	bool p0_run;
 
 	zdb::DiIntersect pa_di;
 	zdb::DiIntersect pa_diIntersect[1]; // ...what?
 	CPnt3D pi_diTail;
-	int pi_diIntersectHandle[1]; // ...why?
-	int pa_diIntersectHandle;
+	s32 pi_diIntersectHandle[1]; // ...why?
+	s32 pa_diIntersectHandle;
 
 	// Don't know what type goes into the vector, so we'll assume a float for now
 	std::vector<float> m_volumetricAltitudes;
@@ -554,7 +559,7 @@ private:
 	SEAL_STATE m_desiredState;
 	SEAL_PEEK m_desiredPeek;
 
-	float m_recoilParam;
+	f32 m_recoilParam;
 
 	CObjAnims m_obj_anims;
 	void* m_select; // TODO: Unknown void* type
@@ -572,7 +577,7 @@ private:
 
 	CAiMapLoc m_last_valid_maploc;
 	CPnt3D m_last_valid_CPnt;
-	int m_formation_clock;
+	s32 m_formation_clock;
 
 	bool m_follow_params_are_current;
 	bool m_saved_formation_dir_is_valid;
@@ -599,32 +604,32 @@ private:
 	CCompassAnchor* m_mpbase_anchor;
 	CCompassAnchor* m_hostage_anchor;
 
-	unsigned int m_action_available_mask;
-	unsigned int m_action_selection_mask;
+	u32 m_action_available_mask;
+	u32 m_action_selection_mask;
 	bool m_action_display_on;
-	unsigned int m_action_command;
+	u32 m_action_command;
 
-	float m_wep_upT;
-	float m_wep_waitT;
-	float m_wep_downT;
-	float m_wep_sumT;
+	f32 m_wep_upT;
+	f32 m_wep_waitT;
+	f32 m_wep_downT;
+	f32 m_wep_sumT;
 
-	int chordStart;
-	int numChords;
+	s32 chordStart;
+	s32 numChords;
 
-	unsigned int m_QueryCharacterAltitude : 1;
-	unsigned char m_threatdir[4];
-	float m_threatscale[8];
-	float m_threatangle[8];
+	u32 m_QueryCharacterAltitude : 1;
+	u8 m_threatdir[4];
+	f32 m_threatscale[8];
+	f32 m_threatangle[8];
 
 	bool m_doCZSealBodyPostTick;
 
 	CPnt3D dpos;
-	float m_my;
+	f32 m_my;
 	CPnt3D next_posw;
 
 	bool m_anim_handled;
-	unsigned int m_weapon_state;
+	u32 m_weapon_state;
 
 	SEAL_ITEM m_item;
 
@@ -632,25 +637,25 @@ private:
 
 	std::vector<CPnt3D*> m_refpoints;
 
-	float m_mass;
-	float m_waterdepth;
+	f32 m_mass;
+	f32 m_waterdepth;
 	CPnt3D m_footL;
-	float m_twist_back;
+	f32 m_twist_back;
 	CPnt3D m_footR;
-	float m_local_drot;
-	float m_dT;
-	float m_alt;
-	float m_skel_y_w;
+	f32 m_local_drot;
+	f32 m_dT;
+	f32 m_alt;
+	f32 m_skel_y_w;
 
-	float m_health;
+	f32 m_health;
 	SEAL_DEATH_TYPE m_deathType;
-	float m_time_of_death;
-	int m_killer_index;
-	int m_killer_weapon_index;
-	int m_lastkiller_id;
+	f32 m_time_of_death;
+	s32 m_killer_index;
+	s32 m_killer_weapon_index;
+	s32 m_lastkiller_id;
 
-	int m_ClientIndex;
-	int m_vote_tally;
+	s32 m_ClientIndex;
+	s32 m_vote_tally;
 	bool m_new_stats;
 	bool m_voted_against;
 	bool m_local_voted_against;
@@ -660,35 +665,35 @@ private:
 	bool m_stunned;
 	bool m_left_game;
 
-	unsigned int m_full_update_time;
+	u32 m_full_update_time;
 
-	float m_movespeedmod;
-	float m_encumbmod;
-	float m_damagemod;
-	float m_retmods;
-	float m_stunval[7];
+	f32 m_movespeedmod;
+	f32 m_encumbmod;
+	f32 m_damagemod;
+	f32 m_retmods;
+	f32 m_stunval[7];
 
-	float m_head_health;
-	float m_head_healthMax;
-	float m_body_health;
-	float m_body_healthMax;
-	float m_larm_health;
-	float m_larm_healthMax;
-	float m_rarm_health;
-	float m_rarm_healthMax;
-	float m_lleg_health;
-	float m_lleg_healthMax;
-	float m_rleg_health;
-	float m_rleg_healthMax;
-	float m_armor[6];
+	f32 m_head_health;
+	f32 m_head_healthMax;
+	f32 m_body_health;
+	f32 m_body_healthMax;
+	f32 m_larm_health;
+	f32 m_larm_healthMax;
+	f32 m_rarm_health;
+	f32 m_rarm_healthMax;
+	f32 m_lleg_health;
+	f32 m_lleg_healthMax;
+	f32 m_rleg_health;
+	f32 m_rleg_healthMax;
+	f32 m_armor[6];
 
 	bool m_neworder;
 
 	CZProjectile* m_lastprojectile;
 	CZProjectile* m_tempprojectile;
-	int m_projectileinserecthandle;
+	s32 m_projectileinserecthandle;
 	zdb::DiIntersect m_projectiledi;
-	unsigned int m_lastregion;
+	u32 m_lastregion;
 
 	BITFIELD_UINT(m_HudUpdateViewCone, 1);
 	BITFIELD_UINT(m_hudwashit, 1);
@@ -731,7 +736,7 @@ private:
 	BITFIELD_UINT(m_unused_bits, 26);
 
 	CQuat m_fwdlook;
-	float m_zoomval;
+	f32 m_zoomval;
 	zdb::CHit* m_fwdhit;
 
 	std::vector<CZWeapon*> m_weapons;
@@ -747,15 +752,15 @@ private:
 
 	AnimType idlehack;
 
-	short m_throttleQuadrant;
-	short m_prev_throttleQuadrant;
-	float m_descent;
-	float m_slide_descent;
+	s16 m_throttleQuadrant;
+	s16 m_prev_throttleQuadrant;
+	f32 m_descent;
+	f32 m_slide_descent;
 	CPnt3D m_ground_normal;
 	CPnt3D m_inAirHorizVel;
-	float m_nextJumpTimer;
-	float m_jumpTimer;
-	float m_jumpImpulse;
+	f32 m_nextJumpTimer;
+	f32 m_jumpTimer;
+	f32 m_jumpImpulse;
 
 	CZAnim* m_belowwateranim;
 	CZAnim* m_inwateranim;
@@ -775,16 +780,17 @@ private:
 	zdb::CNode* m_curr_firept;
 
 	CPnt3D m_skel_root;
-	short m_last_foot;
-	short m_fixed_foot;
+	s16 m_last_foot;
+	s16 m_fixed_foot;
 
-	float m_TimeSpentDead;
-	int m_NumDeathAnimsPlayed;
+	f32 m_TimeSpentDead;
+	s32 m_NumDeathAnimsPlayed;
 };
 
 class CSealUnit
 {
-
+public:
+	static bool TickAll(float dT, void* buf);
 };
 
 class CSealCtrl : CEntityCtrl

@@ -5,9 +5,17 @@
 bool postinited = false;
 size_t _HeapSize = 0;
 
+int InterruptDmacBusError()
+{
+	printf("DMAC Bus Error Interrupt (dma chain error)\n");
+	printf("Please contact you neighborhood friendly software expert\n");
+	abort();
+}
+
 void zSysInit()
 {
 	size_t allocsize = zsys_FullAllocAndFree();
+	zSys.isT10K = 0x1ffffff < allocsize;
 	zSys.isCdBoot = false;
 }
 
@@ -53,8 +61,10 @@ void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)
 		// zSysFifoEnd();
 		char buffer[256];
 		sprintf(buffer, "A S S E R T: %s : %d", file, line);
+		printf(buffer);
 		// theTerminal.Print(buffer, 256);
 		// theTerminal.Render();
+		abort();
 	}
 }
 

@@ -5,15 +5,13 @@
 // - Experiment with deferred rendering
 // - Implement mesh abstractions defined in the game renderer
 
-#include "vis/zvis.h"
+#include "zVisual/zvis.h"
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zTexture/ztex.h"
-
-class Sequence : std::vector<void*> {};
 
 enum LOD
 {
@@ -45,7 +43,11 @@ enum _RenderPhase
 	NUM_RENDER_PHASES
 };
 
+class CPipe;
+
 void zRndrInit();
+
+extern CPipe thePipe;
 
 class CDynTexList : public std::vector<void*> {};
 
@@ -56,13 +58,13 @@ public:
 
 	bool m_checkForOverflow;
 
-	unsigned int m_startAddress;
-	unsigned int m_nextAddress;
-	unsigned int m_endAddress;
+	u32 m_startAddress;
+	u32 m_nextAddress;
+	u32 m_endAddress;
 
 	zdb::CAssetLib* m_assetLib;
 
-	long* m_chainp;
+	s64* m_chainp;
 
 	std::vector<void*> m_pktbuf;
 
@@ -81,6 +83,7 @@ struct tag_TexLoadCmds
 /// </summary>
 class CAlpha
 {
+	friend class CPipe;
 private:
 	zdb::CCamera* m_camera;
 	void* m_visualList;
@@ -95,15 +98,19 @@ private:
 class CPipe
 {
 public:
+	CPipe();
+
 	static void Init();
 
 	void RenderNode(zdb::CNode* node, zdb::tag_ZVIS_FOV* fovTag);
 	void RenderUINode(zdb::CNode* node);
 	void RenderUINodeRecursive(zdb::CNode* node);
 	void RenderWorld(zdb::CWorld* world);
+public:
+	zdb::CCamera* m_camera;
 private:
-	unsigned int m_texIntIdx;
-	unsigned int m_texLoadIdx;
+	u32 m_texIntIdx;
+	u32 m_texLoadIdx;
 
 	tag_TexLoadCmds m_texLoadChain[128];
 
@@ -115,7 +122,6 @@ private:
 	CGSTexBuffer* m_assetHUDX;
 
 	zdb::CWorld* m_world;
-	zdb::CCamera* m_camera;
 	zdb::CCell* m_cell;
 	zdb::CNode* m_node;
 	zdb::CTexture* m_lightmap;
@@ -133,35 +139,12 @@ private:
 	bool m_LODFilter;
 	bool m_reticuleDraw;
 
-	float* m_opacity_stack;
-	int m_opacity_stack_size;
-	int m_opacity_stack_index;
+	f32* m_opacity_stack;
+	s32 m_opacity_stack_size;
+	s32 m_opacity_stack_index;
 
 	CAlpha m_alpha;
 
 	std::vector<zdb::CNode*> m_DelayedNodes;
-	unsigned int m_delayedNodeNum;
-};
-
-struct Props
-{
-	int m_refCount;
-	Sequence m_textureSeq;
-	Sequence m_colorSeq;
-	Sequence m_scaleSeq;
-
-	zdb::CModel* m_model;
-	float m_friction;
-	CPnt4D m_accelW;
-	float m_windFactor;
-	float m_priority;
-	float m_nearFade1;
-	float m_nearFade2;
-	float m_nearFade2;
-	float m_farFade1;
-	float m_farFade2;
-	float m_invNearFade;
-	float m_invFarFade;
-	float m_visualDensity;
-	bool m_checkFade;
+	u32 m_delayedNodeNum;
 };

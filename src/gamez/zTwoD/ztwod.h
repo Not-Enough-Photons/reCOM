@@ -5,7 +5,15 @@
 #include "gamez/zSystem/zsys.h"
 
 class C2D;
+class C2DFont;
 class CUIVariable;
+
+enum tag_string_type
+{
+	STRING_PLAIN,
+	STRING_GLOWY,
+	STRING_NUM_TYPES
+};
 
 class C2Dlist : public std::list<C2D*> {};
 
@@ -114,14 +122,118 @@ public:
 	C2DPoly();
 };
 
+class C2DBitmapPoly : public C2D, protected C2DFade
+{
+private:
+	s32 x1;
+	s32 x2;
+	s32 y1;
+	s32 y2;
+
+	C2DPoly m_tris[2];
+	zdb::CTexture* m_texture;
+};
+
 class CPlainBmp : public C2D
 {
 
 };
 
+class C2DString : public C2D
+{
+private:
+	C2DFont* m_font;
+
+	char* m_string;
+	s32 m_stringlen_max;
+	s32 m_numChars;
+
+	char* m_Ustring;
+	s32 m_Ustringlen_max;
+	s32 m_numUChars;
+
+	f32 m_charwidth;
+	f32 m_charheight;
+	f32 m_length;
+	f32 m_height;
+	f32 m_scale;
+	
+	s32 m_numLines;
+
+	CPnt4D m_color;
+
+	s32 m_revnum;
+
+	f32 m_fadeTime;
+	f32 m_fadeMax;
+	f32 m_fadeMin;
+
+	tag_string_type m_Type;
+
+	bool m_isCentered;
+	
+	u32 m_firstCharPos;
+	s32 m_shortLength;
+
+	f32 m_elapsedTime;
+
+	IPNT2D m_pos;
+};
+
 class C2DMessageString : public C2D
 {
 
+};
+
+class C2DOrderItem : public C2DBitmap
+{
+private:
+	f32 m_width;
+	f32 m_height;
+	f32 m_speed;
+
+	IPNT3D m_text_offset;
+
+	s32 m_target_x;
+	s32 m_target_y;
+	s32 m_target_x2;
+	s32 m_target_y2;
+	s32 m_state2;
+	s32 m_state;
+	f32 m_time;
+
+	C2DString m_text;
+	C2DBitmap m_glowing_background;
+	C2DBitmap m_arrow;
+
+	zdb::CTexHandle* m_active_tex;
+	zdb::CTexHandle* m_inactive_tex;
+	zdb::CTexHandle* m_arrow_tex;
+
+	bool m_glow;
+	f32 m_trans_step;
+	f32 m_blinkTime;
+	char* m_Explanation;
+	bool m_bArrow;
+};
+
+class PoseBitmap : public C2DBitmap
+{
+private:
+	s32 m_curpose;
+
+	zdb::CTexture* m_posetex[3];
+
+	f32 m_posx;
+	f32 m_posy;
+	bool m_error;
+
+	C2DString m_text;
+	f32 m_textposx;
+	f32 m_textposy;
+
+	C2DFont* m_myfont;
+	f32 m_trans;
 };
 
 class C2DFontEntry
@@ -145,8 +257,8 @@ public:
 	C2DFont();
 private:
 	std::vector<C2DFontEntry> m_charlist;
-	// zdb::CTexHandle* m_pTexHandle;
-	// zdb::CTexHandle* m_pGlowTexHandle;
+	zdb::CTexHandle* m_pTexHandle;
+	zdb::CTexHandle* m_pGlowTexHandle;
 	s32 m_displaytop;
 	s32 m_displaybottom;
 	s32 XPadding;

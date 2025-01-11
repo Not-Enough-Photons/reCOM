@@ -93,6 +93,11 @@ C2DFade::C2DFade()
 	m_fade_limit = 128.0f;
 }
 
+C2DPoly::C2DPoly()
+{
+
+}
+
 C2DBitmap::C2DBitmap() : C2D(), C2DFade()
 {
 	m_pTexHandle = NULL;

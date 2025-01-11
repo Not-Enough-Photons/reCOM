@@ -1,7 +1,6 @@
 #pragma once
+#include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
-#include "gamez/zNode/znode.h"
-#include "gamez/zNode/znode.h"
 
 namespace zdb
 {
@@ -9,6 +8,8 @@ namespace zdb
 	class CMesh;
 	class CLight;
 	class CTexHandle;
+
+	class CCamera;
 
 	enum tag_ZVIS_FOV
 	{
@@ -39,9 +40,6 @@ namespace zdb
 	class CVisual : public CVisBase
 	{
 	public:
-		CVisual() : CVisBase() {}
-		~CVisual();
-
 		static void* localLightBuf;
 		static CLight* localLightPtr;
 
@@ -58,8 +56,8 @@ namespace zdb
 		static CMatrix m_modelToWorld;
 		static CMatrix m_WorldToModel;
 
-		// static CCamera* m_camera;
-		static int custom;
+		static CCamera* m_camera;
+		static s32 custom;
 
 		static float m_opacity;
 
@@ -69,6 +67,8 @@ namespace zdb
 		static CMesh* Create(zar::CZAR& archive);
 		static void Init();
 		static void LandmarkEnable(bool enableLandmarks);
+	protected:
+
 	};
 
 	class CMesh : public CVisual

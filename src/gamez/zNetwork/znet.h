@@ -2,24 +2,38 @@
 
 #include <rsa/rsadef.h>
 
-#include "gamez/zValve/zvalve.h"
-#include "gamez/zUI/zui.h"
+#include "gamez/zMath/zmath.h"
+#include "gamez/zSystem/zsys.h"
 
+// #include "gamez/zMath/zmath.h"
+// #include "gamez/zValve/zvalve.h"
+
+class CZAnim;
 class CZNetwork;
 class CZOnlineLobby;
 class CZNetGame;
+class CZNetVoice;
+
+class CValve;
+
+class CUIVariable;
+
+extern bool g_status;
 
 extern CZNetwork theNetwork;
+extern CZNetVoice theVoice;
 extern CZOnlineLobby theLobby;
 
-enum MP_MINOR_GAME_STATE
+void PTT_HeartbeatPrepare();
+
+enum class MP_MINOR_GAME_STATE
 {
 	MP_MINOR_UNKNOWN,
 	MP_MINOR_NOTREADY,
 	MP_MINOR_READY
 };
 
-enum MP_MAJOR_GAME_STATE
+enum class MP_MAJOR_GAME_STATE
 {
 	MP_MAJOR_UNKNOWN,
 	MP_MAJOR_MENUS,
@@ -33,7 +47,7 @@ enum MP_MAJOR_GAME_STATE
 	MP_MAJOR_GHOST
 };
 
-enum MP_GAME_TYPE
+enum class MP_GAME_TYPE
 {
 	MP_GAME_UNKNOWN,
 	MP_GAME_DEFUSE,
@@ -45,7 +59,7 @@ enum MP_GAME_TYPE
 	MP_GAME_FOOTBOMB
 };
 
-enum MP_NET_READY
+enum class MP_NET_READY
 {
 	NET_READY_UNKNOWN,
 	NET_READY_WAITING,
@@ -53,7 +67,7 @@ enum MP_NET_READY
 	NET_READY_MENUS
 };
 
-enum MP_CONNECTION
+enum class MP_CONNECTION
 {
 	USB_MODEM,
 	USB_ETHERNET,
@@ -61,7 +75,7 @@ enum MP_CONNECTION
 	NA_ETHERNET
 };
 
-enum LOBBY_STATE
+enum class LOBBY_STATE
 {
 	ROOT_LOBBY_STATE,
 	CONNECT_SUCCESS,
@@ -96,8 +110,6 @@ enum class LOBBY_STATE_FLAG
 	EXIT,
 	UNREGISTER
 };
-
-void PTT_HeartbeatPrepare();
 
 class CZNetwork
 {
@@ -139,8 +151,8 @@ public:
 		MP_CLAN_DISBANDED
 	};
 public:
-	float zNetGetTime();
-	void zNetUpdate();
+	f32 zNetGetTime();
+	bool zNetUpdate();
 	void zNetRequestObjectPrivateOwnership();
 public:
 	s32 m_SealIndex;
@@ -289,7 +301,35 @@ public:
 class CZNetVoice
 {
 public:
-	void PreTick();
+	bool PreTick();
+	bool Tick(float dT);
+private:
+	s32 m_channel;
+	s32 m_timeTaken;
+	s32 m_whosTalking;
+
+	bool m_do_voice;
+	bool m_isOn;
+	bool m_isOn_save;
+	bool m_isNetDown;
+	bool m_isPushed;
+	bool m_block_talk;
+	bool m_isServer;
+	bool m_isTalking;
+	bool m_isReceiving;
+	bool m_isDebug;
+	bool m_server_started;
+	bool m_new_session_master;
+	bool m_ptt_inited;
+	bool m_thread_going;
+
+	u32 m_SMIPExt;
+	u32 m_SMIPInt;
+	u16 m_SMPortExt;
+	u16 m_SMPortInt;
+
+	u32 m_PortBuf[4];
+	u32 m_ServerPortBuf[4];
 };
 
 class CZOnlineLobby

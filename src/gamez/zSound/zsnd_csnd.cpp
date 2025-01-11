@@ -1,5 +1,6 @@
 #include "zsnd.h"
 
+#include "gamez/zFTS/zfts.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zSystem/zsys.h"
 
@@ -9,10 +10,14 @@ bool vagArchiveIsOpen = false;
 bool bnkArchiveIsOpen = false;
 bool snd_system_initialized = false;
 
+s32 CSnd::m_max_num_vags = 0;
 bool CSnd::m_isDisabled = false;
 bool CSnd::m_bShowSubtitles = false;
+bool CSnd::m_vagEnabled = false;
 std::vector<CSnd*> CSnd::m_soundlist;
 std::unordered_map<const char*, CSnd*> CSnd::m_soundmap;
+
+_zrdr* sound_rdr = NULL;
 
 CSnd::CSnd()
 {
@@ -25,6 +30,25 @@ CSnd::CSnd()
 void CSnd::Init()
 {
 	
+}
+
+void CSnd::UIOpen()
+{
+	if (sound_rdr == NULL)
+	{
+		sound_rdr = zrdr_read("sounds.rdr", NULL, 0);
+	}
+
+	if (m_vagEnabled)
+	{
+		m_max_num_vags = 4;
+	}
+}
+
+void CSnd::Close()
+{
+	m_max_num_vags = 0;
+	Headset::ftsDeleteHeadset();
 }
 
 void CSnd::AddNewCSnd(CSnd* sound)

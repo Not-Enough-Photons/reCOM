@@ -4,6 +4,8 @@
 #include <cstring>
 #include <cassert>
 
+#include <GLFW/glfw3.h>
+
 /// -------------------------------------------
 /// ALLOCATION MACROS
 /// -------------------------------------------
@@ -57,12 +59,16 @@ char* __strdup(const char* str, const char* file, int line);
 void __free(void* block, const char* file, int line);
 
 struct _zsys_public;
+
 class CTTY;
+class CSched_Manager;
 
+extern CSched_Manager zTaskScheduler;
 extern size_t _HeapSize;
-
 extern _zsys_public zSys;
 extern CTTY theTerminal;
+extern bool postinit;
+extern bool postinited;
 
 struct _word128
 {
@@ -128,13 +134,25 @@ public:
 	float timerScale;
 };
 
+class CWindow
+{
+public:
+	CWindow();
+	CWindow(const char* name, u32 width, u32 height);
+
+	GLFWwindow* GetWindow() const;
+private:
+	char* m_name;
+	u32 m_width;
+	u32 m_height;
+
+	GLFWwindow* m_window;
+};
+
 class CSched_Manager : public std::list<ScheduledTask>
 {
 public:
-	CSched_Manager();
-	~CSched_Manager();
-public:
-	void AddTask(const char* name, ScheduledTask task, float delta, void* buf);
+	void AddTask(const char* name, bool(*task)(float, void*), float delta, void* buf);
 	ScheduledTask GetTask(int index);
 	bool RemoveTask(void* buf, bool child);
 	bool RemoveTask(const char* taskName, bool child);

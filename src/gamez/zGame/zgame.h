@@ -3,12 +3,15 @@
 #include <string>
 
 #include "gamez/zReader/zrdr.h"
-#include "gamez/zNetwork/znet.h"
+// #include "gamez/zNetwork/znet.h"
 #include "gamez/zNode/znode.h"
-#include "gamez/zUI/zui.h"
 
 class CGame;
 class CGameStateChangeCmd;
+
+class CHUD;
+
+class CSnd;
 
 enum MENU_STATE
 {
@@ -32,6 +35,7 @@ void game_main(int argc, char** argv);
 void process_arguments(int argc, char** argv);
 
 extern CGame theGame;
+extern std::vector<CGameStateChangeCmd*> m_pool;
 
 struct _options
 {
@@ -64,36 +68,40 @@ struct _options
 	bool doEntityReport;
 };
 
+extern _options gopt;
+
 class CGameState
 {
 public:
-	CGameState();
-	~CGameState();
-public:
-	virtual void PreInit();
-	virtual bool Init();
-	virtual void PreUnInit();
-	virtual void UnInit();
+	virtual void PreInit() = 0;
+	virtual bool Init() = 0;
+	virtual void PreUnInit() = 0;
+	virtual void UnInit() = 0;
 
-	virtual void Tick();
+	virtual void Tick(float dT) = 0;
 
-	virtual void OnPop();
-	virtual void OnPush();
+	virtual void OnPop() = 0;
+	virtual void OnPush() = 0;
 public:
 	void SetName(const char* name);
 protected:
-	const char* m_name;
+	char* m_name;
 };
-
-class CStateCmdQueue : public std::deque<CGameStateChangeCmd*> { };
 
 class CCoreState : public CGameState
 {
 public:
-	CCoreState() : CGameState() {}
-	~CCoreState();
+	CCoreState();
 
-	void auxUnload();
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 protected:
 	float m_agl;
 	float m_posScale;
@@ -115,6 +123,16 @@ protected:
 
 class CMenuState : public CGameState
 {
+public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 private:
 	void* m_menu;
 	int m_skip;
@@ -132,6 +150,16 @@ private:
 
 class CLoadState : public CGameState
 {
+public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 private:
 	void* m_menu;
 	void* m_e3config;
@@ -150,9 +178,17 @@ private:
 class CCinematicState : public CGameState
 {
 public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 
 	void SetMovie(const char* moviename);
-	void UnInit();
 private:
 	bool m_movierunning;
 	char* m_moviename;
@@ -163,6 +199,16 @@ private:
 
 class CExitState : public CGameState
 {
+public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 private:
 	std::string m_libname;
 	std::string m_texname;
@@ -172,6 +218,16 @@ private:
 
 class CMPExitState : public CGameState
 {
+public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 private:
 	std::string m_libname;
 	std::string m_texname;
@@ -181,37 +237,68 @@ private:
 
 class CRebootState : public CGameState
 {
+public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 };
 
 class CShutdownState : public CGameState
 {
+public:
+	void PreInit() {}
+	bool Init();
+	void PreUnInit() {}
+	void UnInit() {}
+
+	void Tick(float dT);
+
+	void OnPop() {}
+	void OnPush() {}
 };
 
 class CGameStateChangeCmd
 {
+	friend class CGame;
 public:
 	static void CreatePool(int size);
+private:
+	bool m_active;
+	u32 m_type;
+	CGameState* m_toState;
+	u32 m_toStateIdx;
 };
+
+class CStateCmdQueue : public std::deque<CGameStateChangeCmd*> {};
 
 class CGame
 {
 public:
 	bool StartEngine();
 	void StartPlay();
-	void Tick(float delta);
+	bool Tick(f32 dT);
+	CGameState* Switch(CGameState* state, u32 index);
 public:
-	float m_maxtick;
+	f32 m_maxtick;
 protected:
 	bool m_Active;
 
 	CGameState* m_InitialState;
-	CGameState* m_CurrentState;
 	CGameState* m_TestVariable;
 	CGameState* m_Stack[16];
+	u32 m_CurrentState;
 
-	int m_MinIdlePeriod;
+	s32 m_MinIdlePeriod;
 
-	unsigned int m_pad;
+	CStateCmdQueue m_StateChangeQueue;
+
+	u32 m_pad;
 };
 
 class COurGame : public CGame

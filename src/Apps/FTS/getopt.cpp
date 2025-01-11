@@ -1,3 +1,4 @@
+#include "gamez/zAnim/zanim.h"
 #include "gamez/zGame/zgame.h"
 
 _options gopt;
