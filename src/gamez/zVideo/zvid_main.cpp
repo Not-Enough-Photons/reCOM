@@ -1,6 +1,8 @@
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 #include "zvid.h"
 
-#include <GLFW/glfw3.h>
 
 #include "gamez/zValve/zvalve.h"
 
@@ -31,6 +33,8 @@ void zVid_Init(_zvid_mode mode)
 	{
 		lodLevel = CValve::Create("lodLevel", VALVE_TYPE::PERM);
 	}
+
+	zVid_Assert(glewInit() == GLEW_OK, LONG_MAX, __FILE__, __LINE__);
 }
 
 void zVid_Open()

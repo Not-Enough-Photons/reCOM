@@ -19,7 +19,7 @@ void zVid_Uninit();
 void zVid_Open();
 void zVid_Swap(bool doSwap);
 void zVid_FrameRestore();
-void zVid_ClearColor(unsigned int* bit);
+void zVid_ClearColor(f32 red, f32 green, f32 blue);
 void zVid_Sync0();
 void zVid_ZTestOn();
 void zVid_ZTestOff();

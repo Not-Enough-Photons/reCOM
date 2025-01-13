@@ -187,6 +187,8 @@ namespace zdb
 		static bool CmdTickGetRegions(_zanim_cmd_hdr* header, f32* delta);
 		static bool CmdTickParams(_zanim_cmd_hdr* header, f32* delta);
 	public:
+		void Update(tag_ZCAM_TYPE type);
+
 		f32 GetScaledRangeSquared(const CPnt3D& point);
 	public:
 		f32 m_Zmin;

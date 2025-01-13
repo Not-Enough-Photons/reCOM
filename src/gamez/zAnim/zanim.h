@@ -13,6 +13,11 @@ class CZAnimMain;
 class CBlendable;
 class CAnimsByFP;
 
+namespace zar
+{
+	class CZAR;
+}
+
 extern CZAnimMain ZAnim;
 
 static bool CmdAddNode(zdb::CNode node);
@@ -474,6 +479,8 @@ class CZAnimSet
 public:
 	void GetName();
 };
+
+class CZAnimZAR : public zar::CZAR {};
 
 class CZAnimNameTable
 {

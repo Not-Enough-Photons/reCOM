@@ -1,5 +1,7 @@
+#include "gamez/zCamera/zcam.h"
 #include "gamez/zGame/zgame.h"
 #include "gamez/zInput/zinput.h"
+#include "gamez/zRender/zrender.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zVideo/zvid.h"
 
@@ -37,5 +39,14 @@ bool CMenuState::Init()
 
 void CMenuState::Tick(f32 dT)
 {
+	if (zdb::CWorld::m_world != NULL)
+	{
+		if (zdb::CWorld::m_world->m_camera != NULL)
+		{
+			zdb::CWorld::m_world->m_camera->Update(zdb::tag_ZCAM_TYPE::ZCAM_NORMAL);
+		}
+
+	}
+
 	zVid_Swap(false);
 }

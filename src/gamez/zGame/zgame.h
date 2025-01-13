@@ -12,6 +12,8 @@ class CHUD;
 
 class CSnd;
 
+class CZAnimZAR;
+
 enum MENU_STATE
 {
 	stateNone,
@@ -133,6 +135,8 @@ public:
 
 	void OnPop() {}
 	void OnPush() {}
+
+	void DrawForeplane();
 private:
 	void* m_menu;
 	s32 m_skip;
@@ -314,4 +318,17 @@ protected:
 	CExitState m_exitState;
 	CMPExitState m_MPexitState;
 	CCinematicState m_cinematicSubState;
+};
+
+class CGameMenu
+{
+public:
+	void DrawForeplane();
+public:
+	zdb::CNode m_nodeTop;
+
+	CZAnimZAR* animfile;
+
+	zdb::CNode* m_pBackplaneNode;
+	zdb::CNode* m_pForeplaneNode;
 };

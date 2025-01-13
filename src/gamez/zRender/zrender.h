@@ -57,6 +57,14 @@ struct BLENDMODE
 	u32 mode2;
 };
 
+/// <summary>
+/// Matrix transform stack.
+/// </summary>
+class CStack
+{
+
+};
+
 class LODVec : public std::vector<LOD*> {};
 
 class CDynTexList : public std::vector<void*> {};
@@ -115,10 +123,10 @@ public:
 	void RenderNode(zdb::CNode* node, zdb::tag_ZVIS_FOV* fovTag);
 	void RenderUINode(zdb::CNode* node);
 	void RenderUINodeRecursive(zdb::CNode* node);
-	void RenderWorld(zdb::CWorld* world);
+	u32 RenderWorld(zdb::CWorld* world);
 public:
 	zdb::CCamera* m_camera;
-private:
+
 	u32 m_texIntIdx;
 	u32 m_texLoadIdx;
 
@@ -141,6 +149,8 @@ private:
 	bool m_polys;
 	bool m_drawShadows;
 	bool m_drawReflections;
+	bool m_simpletrans;
+	bool m_drawCharacters;
 	bool m_doFog;
 	bool m_doUI;
 	bool m_drawDI;
