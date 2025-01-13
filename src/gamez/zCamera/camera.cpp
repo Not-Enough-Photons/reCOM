@@ -40,10 +40,10 @@ CAppCamera::CAppCamera(zdb::CWorld* world, zdb::CCamera* camera)
 
 	m_death_state_timer = 0;
 
-	float goalX = m_camGoalPos.x;
-	float goalY = m_camGoalPos.y;
-	float goalZ = m_camGoalPos.z;
-	float goalSqr = (goalZ * goalZ) + (goalX * goalX) + (goalY * goalY);
+	f32 goalX = m_camGoalPos.x;
+	f32 goalY = m_camGoalPos.y;
+	f32 goalZ = m_camGoalPos.z;
+	f32 goalSqr = (goalZ * goalZ) + (goalX * goalX) + (goalY * goalY);
 	m_goal_t_len = goalSqr;
 
 	CZSealBody* player = static_cast<CZSealBody*>(ftsGetPlayer());
@@ -128,12 +128,12 @@ void CAppCamera::RegisterAnimCommands()
 	ZAnim.AddCmd("CAMERA_3RD_PERSON", CmdParse3rdPersonTest, NULL, CmdTick3rdPersonTest, NULL);
 }
 
-bool CAppCamera::CmdTick3rdPersonTest(_zanim_cmd_hdr* header, float* delta)
+bool CAppCamera::CmdTick3rdPersonTest(_zanim_cmd_hdr* header, f32* delta)
 {
 	return appCamera->m_camera_mode != PLAYER_CAM_STATE::cam_mode_FP;
 }
 
-void CAppCamera::SetZoom(float zoom)
+void CAppCamera::SetZoom(f32 zoom)
 {
 	m_camera->m_Zmin = zoom;
 	m_camera->m_Zmax = zoom;
@@ -149,10 +149,10 @@ void CAppCamera::ResetDeathCam()
 	DeltaAim = 0.0f;
 }
 
-void CAppCamera::TickCameraWiggle(float delta, zdb::CCamera* camera)
+void CAppCamera::TickCameraWiggle(f32 delta, zdb::CCamera* camera)
 {
-	float wiggle = 0.0f;
-	float wiggle_cur_time = m_wiggle_cur_time;
+	f32 wiggle = 0.0f;
+	f32 wiggle_cur_time = m_wiggle_cur_time;
 
 	if (m_wiggle_duration < wiggle_cur_time)
 	{
@@ -162,7 +162,7 @@ void CAppCamera::TickCameraWiggle(float delta, zdb::CCamera* camera)
 	}
 	else
 	{
-		float wiggle_inv_duration = wiggle_cur_time * m_wiggle_inv_duration;
+		f32 wiggle_inv_duration = wiggle_cur_time * m_wiggle_inv_duration;
 		wiggle_cur_time *= 2.0f * PI * m_wiggle_inv_rate;
 
 		if (wiggle_inv_duration < 0.0f)
@@ -195,7 +195,7 @@ void CAppCamera::WiggleEcho(bool echo)
 	}
 }
 
-void CAppCamera::WiggleScalar(float wiggle)
+void CAppCamera::WiggleScalar(f32 wiggle)
 {
 	if (!m_wiggle_echo)
 	{

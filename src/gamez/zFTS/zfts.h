@@ -29,6 +29,8 @@ void ftsNetworkGameUninit();
 void ftsNetworkPlayerInit();
 void ftsNetworkSealInit();
 
+s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postfix, char* output);
+
 class Headset
 {
 public:
@@ -50,21 +52,21 @@ class CMission : CSaveModule
 {
 	struct AI_PARAMS
 	{
-		float weather_factor;
+		f32 weather_factor;
 		FT_COMMAND fireteam_command;
-		float recycle_range;
-		float recycle_time;
-		float respawn_time;
-		float respawn_fade;
-		float respawn_range;
-		float player_grid_spacing;
-		int player_grid_count;
+		f32 recycle_range;
+		f32 recycle_time;
+		f32 respawn_time;
+		f32 respawn_fade;
+		f32 respawn_range;
+		f32 player_grid_spacing;
+		s32 player_grid_count;
 	};
 
 public:
 	CMission() : CSaveModule("CMission", NULL) {}
 
-	static float nextFrameDelta;
+	static f32 nextFrameDelta;
 public:
 	void Init();
 
@@ -79,29 +81,29 @@ private:
 	char* m_database;
 	char m_db_string[64];
 
-	float m_timer;
-	float m_delay;
-	float m_winlosstimer;
-	float m_winlossinc;
+	f32 m_timer;
+	f32 m_delay;
+	f32 m_winlosstimer;
+	f32 m_winlossinc;
 
 	bool m_DelayEndMission;
 	bool m_FadingToEndMission;
-	int m_fade_counter;
-	float m_next_fade_time;
-	float m_wait_before_falling;
+	s32 m_fade_counter;
+	f32 m_next_fade_time;
+	f32 m_wait_before_falling;
 
 	std::vector<CObjAnchor*> m_anchor_extraction;
 	// std::vector<CNavPoint> m_navpoints;
 	// CObjAnchorVec m_objanchor_vec;
 	CMissionObjectiveCam* m_prev_selected_objcam;
-	float m_objectives_timer;
+	f32 m_objectives_timer;
 	bool m_ignore_objectives;
 
 	bool m_load_ai;
 	AI_PARAMS m_ai_params;
 
-	float m_seefarther_binocs;
-	float m_seefarther_weapzoom;
+	f32 m_seefarther_binocs;
+	f32 m_seefarther_weapzoom;
 
 	CValve* m_valve_complete;
 	CValve* m_valve_failure;
@@ -118,7 +120,7 @@ private:
 	CZNetGame* m_pNetGame;
 
 	bool m_chars_loaded;
-	int m_CharLoadSem; // Likely a semaphore
+	s32 m_CharLoadSem; // Likely a semaphore
 
 	CVehicleRdr* m_vehicleRdr;
 	CRdrFile* m_ordersRdr;
@@ -129,13 +131,13 @@ private:
 	CRdrFile* m_subtitlesRdr;
 	CRdrFile* m_smallmessagesRdr;
 
-	// CSaferStr m_m_strLoadedScrLib;
+	CSaferStr m_m_strLoadedScrLib;
 	// 
 	// CMissionCamList m_missioncams;
 	// CMissionObjectiveCamList m_objectivecams;
 
-	float m_fighttimer;
-	float m_satcheltimer;
+	f32 m_fighttimer;
+	f32 m_satcheltimer;
 
 	CValve* m_teamValve[32];
 	CValve* m_player_valve;
@@ -160,5 +162,5 @@ private:
 class CZBombState
 {
 public:
-	static int m_FutureBombState;
+	static s32 m_FutureBombState;
 };

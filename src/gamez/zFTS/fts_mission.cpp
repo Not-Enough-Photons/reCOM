@@ -1,7 +1,38 @@
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zFTS/zfts.h"
+#include "gamez/zSystem/zsys.h"
 
 CMission theMission;
+
+s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postfix, char* output)
+{
+	int result = 0;
+
+	if (infix == NULL)
+	{
+		infix = "/";
+	}
+
+	// Multiplayer map?
+	if (strncmp(prefix, "mp", 2) == 0)
+	{
+		result = sprintf(output, "%s/mp/%s", infix, postfix);
+	}
+	else
+	{
+		// Singleplayer map?
+		if (strncmp(prefix, "m", 1) == 0)
+		{
+			result = sprintf(output, "%s/sp/%s", infix, postfix);
+		}
+		else
+		{
+			result = sprintf(output, "%s/%s", infix, postfix);
+		}
+	}
+
+	return result;
+}
 
 void CMission::Init()
 {

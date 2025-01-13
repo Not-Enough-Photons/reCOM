@@ -4,7 +4,7 @@
 
 void CPnt3D::Normalize()
 {
-	float sqrMagnitude = sqrtf(z * z + x * x + y * y);
+	f32 sqrMagnitude = sqrtf(z * z + x * x + y * y);
 
 	if (sqrMagnitude != 0.0f)
 	{
@@ -17,7 +17,7 @@ void CPnt3D::Normalize()
 
 void CPnt3D::Normalize(CPnt3D* other)
 {
-	float sqrMagnitude = sqrtf(z * z + x * x + y * y);
+	f32 sqrMagnitude = sqrtf(z * z + x * x + y * y);
 
 	if (sqrMagnitude != 0.0f)
 	{
@@ -46,7 +46,7 @@ CPnt3D* CPnt3D::Sub(CPnt3D* other)
 	return output;
 }
 
-void CPnt3D::Scale(CPnt3D* other, float scaleFactor)
+void CPnt3D::Scale(CPnt3D* other, f32 scaleFactor)
 {
 	other->x = x * scaleFactor;
 	other->y = y * scaleFactor;

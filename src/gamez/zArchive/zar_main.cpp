@@ -53,7 +53,7 @@ namespace zar
 		return NULL;
 	}
 
-	bool CKey::Read(CZAR* archive, CBufferIO* buffer, int64_t stableOffset)
+	bool CKey::Read(CZAR* archive, CBufferIO* buffer, s64 stableOffset)
 	{
 		struct KEY
 		{
@@ -194,7 +194,7 @@ namespace zar
 
 	void CZAR::Close()
 	{
-		unsigned int mode = 0;
+		u32 mode = 0;
 		bool isOpen = false;
 		bool isBufferOpen = false;
 
@@ -394,7 +394,7 @@ namespace zar
 		return key;
 	}
 
-	bool CZAR::Open(const char* name, int version, unsigned int mode, size_t padded_size)
+	bool CZAR::Open(const char* name, s32 version, u32 mode, size_t padded_size)
 	{
 		if (name == NULL)
 		{
@@ -594,18 +594,18 @@ namespace zar
 
 	bool CZAR::Insert(zar::CKey* key, void* buf, size_t size)
 	{
-		int writeOffset = 0;
-		unsigned char archiveCapacity = 0;
+		s32 writeOffset = 0;
+		char padChar = 0;
 		bool success = false;
 
 		if (buf != NULL && 0 < size)
 		{
-			int position = m_pFile->fseek(0, SEEK_END);
+			s32 position = m_pFile->fseek(0, SEEK_END);
 			success = position != -1;
 
 			if (success)
 			{
-				int keySize = size;
+				s32 keySize = size;
 
 				if (!m_bSecure)
 				{
@@ -617,36 +617,7 @@ namespace zar
 					void* dest = arrBuf;
 					memcpy(dest, buf, size);
 
-					int offset = 0;
-					if (m_bSecure && 0 < size)
-					{
-						if (8 < size)
-						{
-							do
-							{
-								// Yes, I know this fucking sucks.
-								unsigned char* byte = (unsigned char*)((int64_t)buf + offset);
-								offset += 8;
-								byte[0] = ~byte[0];
-								byte[1] = ~byte[1];
-								byte[2] = ~byte[2];
-								byte[3] = ~byte[3];
-								byte[4] = ~byte[4];
-								byte[5] = ~byte[5];
-								byte[6] = ~byte[6];
-								byte[7] = ~byte[7];
-							} while (offset < size - 8);
-						}
-
-						for (; offset < size; offset++)
-						{
-							unsigned char* byte = (unsigned char*)((int64_t)buf + offset);
-							byte[offset] = ~byte[offset];
-						}
-					}
-
-					writeOffset = m_pFile->fwrite(arrBuf, size);
-					free(dest);
+					ZAR_SECURE(m_bSecure, buf, size)
 				}
 
 				success = size == writeOffset;
@@ -656,7 +627,7 @@ namespace zar
 					key->m_offset = position;
 					key->m_size = size;
 
-					int keysPerLine = size % m_data_padded;
+					s32 keysPerLine = size % m_data_padded;
 					keySize = 0;
 
 					if (keysPerLine != 0)
@@ -664,16 +635,16 @@ namespace zar
 						keySize = m_data_padded - keysPerLine;
 					}
 
-					archiveCapacity = 175;
+					padChar = '¯';
 
 					if (!m_bSecure)
 					{
-						archiveCapacity = 80;
+						padChar = 'P';
 					}
 
-					for (int i = 0; i < keySize; i++)
+					for (s32 i = 0; i < keySize; i++)
 					{
-						m_pFile->fwrite(&archiveCapacity, 1);
+						m_pFile->fwrite(&padChar, 1);
 					}
 				}
 			}
@@ -702,7 +673,7 @@ namespace zar
 		return newKey;
 	}
 
-	CKey* CZAR::Insert(const char* name, unsigned int value)
+	CKey* CZAR::Insert(const char* name, u32 value)
 	{
 		CKey* newKey = NewKey(name);
 		CKey* openKey = GetOpenKey();
@@ -722,7 +693,7 @@ namespace zar
 		return newKey;
 	}
 
-	CKey* CZAR::Insert(const char* name, int value)
+	CKey* CZAR::Insert(const char* name, s32 value)
 	{
 		CKey* newKey = NewKey(name);
 		CKey* openKey = GetOpenKey();
@@ -742,7 +713,7 @@ namespace zar
 		return newKey;
 	}
 
-	bool CZAR::ReadDirectory(int appver, unsigned int mode)
+	bool CZAR::ReadDirectory(s32 appver, u32 mode)
 	{
 		bool success = false;
 
@@ -756,7 +727,7 @@ namespace zar
 			return false;
 		}
 
-		int position = m_pFileAlloc->fseek(0xffffffffffffffa0, SEEK_END);
+		s32 position = m_pFileAlloc->fseek(0xffffffffffffffa0, SEEK_END);
 		size_t size = 0;
 
 		if (position != -1)
@@ -791,7 +762,7 @@ namespace zar
 
 				CBufferIO bufferIO;
 
-				size_t key_size = (int64_t)m_tail.key_count << 4;
+				size_t key_size = (s64)m_tail.key_count << 4;
 				void* key_ptr = malloc(key_size);
 
 				m_pFileAlloc->fread(key_ptr, key_size);
@@ -799,7 +770,7 @@ namespace zar
 
 				bufferIO.Open(key_ptr, key_size);
 
-				m_root->Read(this, &bufferIO, (int64_t)stable_ptr - ofs);
+				m_root->Read(this, &bufferIO, (s64)stable_ptr - ofs);
 				bufferIO.Close();
 
 				m_databuffer_size = m_tail.offset;

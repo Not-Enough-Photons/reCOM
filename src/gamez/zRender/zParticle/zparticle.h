@@ -6,3 +6,8 @@ enum PARTICLE_TYPE
 	PARTICLE_STREAKED,
 	NUM_PARTICLE_TYPES
 };
+
+class Particle
+{
+
+};

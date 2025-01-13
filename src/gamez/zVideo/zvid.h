@@ -3,6 +3,9 @@
 
 class _zvid_public;
 
+class CValve;
+class CWindow;
+
 enum _zvid_mode
 {
 	ZVID_MODE_NTSC,
@@ -11,10 +14,10 @@ enum _zvid_mode
 	ZVID_MODE_NUM
 };
 
-void zVid_Init();
+void zVid_Init(_zvid_mode mode);
 void zVid_Uninit();
 void zVid_Open();
-void zVid_Swap(int buffer);
+void zVid_Swap(bool doSwap);
 void zVid_FrameRestore();
 void zVid_ClearColor(unsigned int* bit);
 void zVid_Sync0();
@@ -29,46 +32,64 @@ void uninitPssAudio();
 
 extern bool doAudio;
 extern _zvid_public zVid;
+extern CWindow* theWindow;
+
+extern CValve* lodLevel;
 
 class _zvid_public
 {
 public:
-	unsigned int wideFrameFlag;
+	u32 wideFrameFlag;
 
 	bool showTextureBuffer;
 	bool showTextureBufferFormat;
 
-	long frameNumber;
-	unsigned int frameRate;
-	float frameTime;
-	float runTime;
-	float procTime;
+	s64 frameNumber;
+	u32 frameRate;
+	f32 frameTime;
+	f32 runTime;
+	f32 procTime;
 
-	float aspect[2];
+	f32 aspect[2];
 	void* displayBuf;
 	void* renderBuf;
-	unsigned int renderWidth;
-	unsigned int renderHeight;
-	float minZ;
-	float maxZ;
+	u32 renderWidth;
+	u32 renderHeight;
+	f32 minZ;
+	f32 maxZ;
 
-	unsigned int textureBaseAddr;
-	unsigned int textureEndAddr;
+	u32 textureBaseAddr;
+	u32 textureEndAddr;
 
 	_zvid_mode videoMode;
 	_zvid_mode vidMode;
 
-	float hblnkRate;
+	f32 hblnkRate;
 
 	bool doMpeg224;
 
 	bool pcrtcDo;
 	IPNT2D pcrtcOffset;
 
-	long ztest_on;
-	long ztest_off;
+	s64 ztest_on;
+	s64 ztest_off;
 
-	long dmaFrameRestore;
+	s64 dmaFrameRestore;
+};
+
+class CWindow
+{
+public:
+	CWindow();
+	CWindow(const char* name, u32 width, u32 height);
+
+	GLFWwindow* GetWindow() const;
+private:
+	char* m_name;
+	u32 m_width;
+	u32 m_height;
+
+	GLFWwindow* m_window;
 };
 
 class CVideo

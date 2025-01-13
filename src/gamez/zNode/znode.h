@@ -4,14 +4,15 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
-#include "gamez/zRender/zVisual/zvis.h"
-#include "gamez/zTexture/ztex.h"
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSystem/zsys.h"
 
+class CLOD_Object;
+class CMaterial_Object;
+
 namespace zdb
 {
-	class tag_NODE_PARAMS;
+	struct tag_NODE_PARAMS;
 	class CNode;
 	class CNodeEx;
 
@@ -28,8 +29,26 @@ namespace zdb
 	class CAppCamera;
 	class CGrid;
 
+	class CVisual;
+	class CSubMesh;
+
+	class CTexture;
+	class CTexHandle;
+}
+
+namespace zdb
+{
+	extern u32 numNodes;
+
 	extern CNodeUniverse* NodeUniverse;
 	extern CWorld* theWorld;
+
+	struct _globalLight
+	{
+		CPnt4D dir[3];
+		CPnt4D col[3];
+		CPnt4D ambient;
+	};
 
 	struct tag_NODE_PARAMS
 	{
@@ -98,10 +117,12 @@ namespace zdb
 		static CNode* CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation);
 		static CNode* CreateInstance(CModel* model, const CPnt3D& position, const CPnt3D& rotation);
 	public:
+		void InitNodeParams(tag_NODE_PARAMS* other = NULL);
+
 		CNode* Create(const char* name);
 
 		void AddChild(CNode* child);
-		int DeleteChild(CNode* child);
+		s32 DeleteChild(CNode* child);
 		void DeleteChildren();
 		void RemoveFromParent();
 
@@ -112,19 +133,19 @@ namespace zdb
 
 		CMatrix& BuildMTW(CMatrix& mat);
 
-		virtual short Release();
+		virtual s16 Release();
 		bool Rendered();
 
 		void InsertAtom(CGridAtom* atom);
-		CGridAtom* GetAtom(int index);
+		CGridAtom* GetAtom(s32 index);
 		void FreeAtom();
 
-		float GetRadius() const;
-		float GetRadiusSq() const;
+		f32 GetRadius() const;
+		f32 GetRadiusSq() const;
 
 		CPnt3D* GetRotation(const CPnt3D* rotation) const;
 		CPnt3D* GetScale(CPnt3D* scale) const;
-		float GetScale() const;
+		f32 GetScale() const;
 
 		CSubMesh* GetSubMesh() const;
 
@@ -133,12 +154,12 @@ namespace zdb
 		void SetModelname(const char* name);
 		bool SetActive(bool active);
 
-		void SetPosition(float x, float y, float z);
+		void SetPosition(f32 x, f32 y, f32 z);
 		void SetRotation(const CQuat& rotation) {};
-		void SetScale(float scaleFactor);
+		void SetScale(f32 scaleFactor);
 		void SetScale(CPnt3D* scale);
 	public:
-		const char* m_name;
+		char* m_name;
 	protected:
 		CNode* m_parent;
 		CNodeVector m_child;
@@ -165,7 +186,7 @@ namespace zdb
 		s16 m_count;
 		s16 m_vid;
 		CModel* m_model;
-		const char* m_modelname;
+		char* m_modelname;
 		u32 m_region_mask;
 	};
 
@@ -174,9 +195,9 @@ namespace zdb
 	public:
 		bool AddNode(CNode* node);
 		void RemoveNode(CNode* node);
-		CNode* GetElement(int index) const;
-		int GetIndex(CNode* node) const;
-	private:
+		CNode* GetElement(s32 index) const;
+		s32 GetIndex(CNode* node) const;
+	public:
 		bool m_locked;
 	};
 
@@ -190,20 +211,23 @@ namespace zdb
 		static CCamera* m_camera;
 		static CWorld* m_world;
 
-		static float m_scale;
-		static float m_invscale;
+		static f32 m_scale;
+		static f32 m_invscale;
 
-		static int GetVersion();
-		static void Init();
+		static s32 GetVersion();
 	public:
-		void Uninit();
+		void Init() {}
+		void Uninit() {}
+
 		void diTick();
 		void Update();
+
+		s32 Initalize();
 
 		void AddChild(CNode* child);
 		void AddLandmark(CNode* landmark);
 		void AddTextureAssetCharacter(const CNode& textureAsset);
-		void ReserveChildren(int count);
+		void ReserveChildren(s32 count);
 
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);
@@ -214,7 +238,7 @@ namespace zdb
 		void ClearShadowList();
 		void WipeoutTextureAssetCharacters();
 
-		void ComputeLightIntensity(float intensity, const CPnt3D& point, float* lightRef);
+		void ComputeLightIntensity(f32 intensity, const CPnt3D& point, f32* lightRef);
 
 		void GetTexHandle() const;
 		// undefined4 GetTextureByName(const char* name) const;
@@ -225,9 +249,40 @@ namespace zdb
 
 		s32 m_maxOverlap;
 
+		// TODO:
+		// implement these two container types
+		// CRenderMapVector m_shadows;
+		// CLightMapVector m_lightMaps;
+
+		// CLOD_Object m_LOD_Object;
+		// CMaterial_Object m_Material_Object;
+		// CSubSurf_Object m_SubSurf_Object;
+		// CPreLight_Object m_PreLight_Object;
+		// CProjectedMap_Object m_ProjectedMap_Object;
+		// CScrollingTexture_Object m_ScrollingTexture_Object;
+
+		bool m_night_mission;
+
+		CPnt3D m_lensfx_nvg;
+		CPnt3D m_lensfx_starlightscope;
+
+		_globalLight m_gLight;
+
+		bool m_gLightDirUpdate;
+		bool m_gLightColUpdate;
+		CPnt3D m_shadow_vector;
+
 		CGrid* m_grid;
 		CNodeVector m_landmarks;
 		u32 m_numNoFarClipNodes;
+
+		// TODO:
+		// implement this type
+		// CTextureAssetCharacterList m_TextureAssetCharacters;
+		// CTexList m_TextureCharacterCommon;
+		// CTexList m_TextureDecals;
+		CTexture* m_shadowTex[4];
+		CTexHandle* m_shadowTexH;
 	};
 
 	/// <summary>
@@ -243,7 +298,6 @@ namespace zdb
 
 	class CCell
 	{
-
 	public:
 		struct GRIDCELLATOM
 		{
@@ -371,11 +425,10 @@ namespace zdb
 		friend class CNode;
 	public:
 		CSaveLoad();
-		~CSaveLoad();
 
 		CWorld* Load(const char* path);
-		bool LoadAssetLib(CWorld* world, CAssetLib* library, int size);
-		bool LoadAssetLib_PS2(CWorld* world, CAssetLib* library, int size);
+		bool LoadAssetLib(CWorld* world, CAssetLib* library, size_t size);
+		bool LoadAssetLib_PS2(CWorld* world, CAssetLib* library, size_t size);
 		bool LoadPalettes_PS2(CAssetLib* library);
 		bool LoadTextures_PS2(CAssetLib* library);
 	private:
@@ -409,7 +462,7 @@ public:
 
 	// CNodeAction* FindActionByValve(const CValve* valve) const;
 	CNodeAction* GetAction(bool isBase) const;
-	CNodeAction* GetActionById(int id) const;
+	CNodeAction* GetActionById(s32 id) const;
 	const char* GetActionType(ACTION_TYPE type) const;
 	CNodeAction* GetClosestAction(const CPnt3D* position, float radius) const;
 

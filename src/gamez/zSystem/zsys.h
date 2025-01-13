@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <cstring>
 #include <cassert>
+#include <string>
 
 #include <GLFW/glfw3.h>
 
@@ -37,6 +38,11 @@ typedef float_t    f32; // float
 #define BITFIELD_INT(x, cnt) int x : cnt
 #define BITFIELD_UINT(x, cnt) unsigned int x : cnt
 
+class _zsys_public;
+
+class CTTY;
+class CSched_Manager;
+
 typedef unsigned long long long128;
 typedef bool(*ScheduledTask)(float, void*);
 
@@ -57,11 +63,6 @@ void* __realloc(void* ptr, size_t new_size, const char* file, int line);
 void* __memalign(size_t alignment, size_t size, const char* file, int line);
 char* __strdup(const char* str, const char* file, int line);
 void __free(void* block, const char* file, int line);
-
-struct _zsys_public;
-
-class CTTY;
-class CSched_Manager;
 
 extern CSched_Manager zTaskScheduler;
 extern size_t _HeapSize;
@@ -121,50 +122,52 @@ public:
 	void* DmaToGif;
 	void* DmaFromSPR;
 
-	long sprPacketEnd[2];
+	s64 sprPacketEnd[2];
 
-	int sprPx;
+	s32 sprPx;
 
 	bool isT10K;
 	bool isCdBoot;
 	bool cdSounds;
 	bool memIrxLoaded;
 
-	unsigned int timerTicksPerSecond;
-	float timerScale;
-};
-
-class CWindow
-{
-public:
-	CWindow();
-	CWindow(const char* name, u32 width, u32 height);
-
-	GLFWwindow* GetWindow() const;
-private:
-	char* m_name;
-	u32 m_width;
-	u32 m_height;
-
-	GLFWwindow* m_window;
+	u32 timerTicksPerSecond;
+	f32 timerScale;
 };
 
 class CSched_Manager : public std::list<ScheduledTask>
 {
 public:
-	void AddTask(const char* name, bool(*task)(float, void*), float delta, void* buf);
-	ScheduledTask GetTask(int index);
+	void AddTask(const char* name, bool(*task)(f32, void*), f32 delta, void* buf);
+	ScheduledTask GetTask(s32 index);
 	bool RemoveTask(void* buf, bool child);
 	bool RemoveTask(const char* taskName, bool child);
 
 	void Clear();
 	void ClearFreeList(bool emptyList);
 
-	bool Tick(float delta);
+	bool Tick(f32 delta);
 private:
 	bool m_inTick;
 	f32 m_priority;
 	std::list<ScheduledTask> m_FreeList;
+};
+
+class CSaferStr : public std::basic_string<const char*>
+{
+public:
+	CSaferStr& operator=(const char* str)
+	{
+		if (str == NULL)
+		{
+			replace(0, -1, 0);
+		}
+		else
+		{
+			size_t len = strlen(str);
+			assign(len, str);
+		}
+	}
 };
 
 class CSaveManager

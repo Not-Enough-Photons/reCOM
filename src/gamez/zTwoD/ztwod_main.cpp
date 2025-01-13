@@ -1,5 +1,7 @@
 #include "ztwod.h"
 
+#include "gamez/zTexture/ztex.h"
+
 zdb::CCamera* C2D::m_p2dcamera;
 
 f32 C2D::m_topx;

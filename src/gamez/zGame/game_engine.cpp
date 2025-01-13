@@ -10,12 +10,12 @@ bool CGame::StartEngine()
 	// zdb::CRipple::Init();
 	// zdb::CTextureFX::Init();
 	// CValve::Init();
-	// zVid_Init();
+	zVid_Init(ZVID_MODE_NTSC);
 	// zdb::CTexture::Init();
 	// C2D::Init();
 	// zdb::CWorld::Init();
 	// zSysReset();
-	// zVid_Open();
+	zVid_Open();
 	// C2D::Open();
 	// CInput::Init();
 	// zRndrInit();

@@ -34,7 +34,8 @@ int main(int argc, char** argv)
 	do
 	{
 		theGame.Tick(zVid.frameTime);
-	} while (true);
+	} 
+	while (true);
 
 	return 0;
 }

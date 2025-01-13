@@ -13,7 +13,7 @@ void zMath_Init();
 
 extern bool tableInit;
 
-const f32 PI = 3.141593;
+const f32 PI = 3.141593f;
 
 extern f32* sintbl;
 extern f32* costbl;
@@ -141,7 +141,7 @@ public:
 		z = other.z;
 	}
 
-	CPnt3D(float x, float y, float z)
+	CPnt3D(f32 x, f32 y, f32 z)
 	{
 		this->x = x;
 		this->y = y;
@@ -150,8 +150,8 @@ public:
 
 	CPnt3D& operator+(const CPnt3D& vector);
 	CPnt3D& operator-(const CPnt3D& vector);
-	CPnt3D& operator*(float scalar);
-	CPnt3D& operator/(float scalar);
+	CPnt3D& operator*(f32 scalar);
+	CPnt3D& operator/(f32 scalar);
 
 	static const CPnt3D zero;
 public:
@@ -159,7 +159,7 @@ public:
 	void Normalize(CPnt3D* other);
 	CPnt3D* Add(CPnt3D* other);
 	CPnt3D* Sub(CPnt3D* other);
-	void Scale(CPnt3D* other, float scaleFactor);
+	void Scale(CPnt3D* other, f32 scaleFactor);
 	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 
@@ -175,7 +175,7 @@ public:
 	static CQuat Mul(CQuat& left, CQuat& right);
 	static void ToMatrix(CQuat& quat, CMatrix& matrix);
 	static CQuat Exp(CQuat& quat, CPnt3D& point);
-	static void MakeYXZ(float x, float y, float z, CQuat& quat);
+	static void MakeYXZ(f32 x, f32 y, f32 z, CQuat& quat);
 public:
 	CPnt3D vec;
 	f32 w;
@@ -186,7 +186,7 @@ class CMatrix
 public:
 	static const CMatrix identity;
 
-	const float* operator[](const int row);
+	const float* operator[](const s32 row);
 public:
 	const float* GetTranslate() const;
 

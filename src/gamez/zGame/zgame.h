@@ -3,7 +3,6 @@
 #include <string>
 
 #include "gamez/zReader/zrdr.h"
-// #include "gamez/zNetwork/znet.h"
 #include "gamez/zNode/znode.h"
 
 class CGame;
@@ -31,7 +30,6 @@ enum GAME_NAME
 	nameAP
 };
 
-void game_main(int argc, char** argv);
 void process_arguments(int argc, char** argv);
 
 extern CGame theGame;
@@ -78,7 +76,7 @@ public:
 	virtual void PreUnInit() = 0;
 	virtual void UnInit() = 0;
 
-	virtual void Tick(float dT) = 0;
+	virtual void Tick(f32 dT) = 0;
 
 	virtual void OnPop() = 0;
 	virtual void OnPush() = 0;
@@ -98,13 +96,13 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
 protected:
-	float m_agl;
-	float m_posScale;
+	f32 m_agl;
+	f32 m_posScale;
 	bool m_showingTB;
 
 	CMatrix objMtx1;
@@ -112,40 +110,42 @@ protected:
 
 	zdb::CWorld* m_world;
 
-	unsigned int skyColor[3];
+	u32 skyColor[3];
 
-	int m_LoadThreadId;
+	s32 m_LoadThreadId;
 	bool m_loading;
 	bool m_loadstarted;
 	CHUD* m_hud;
-	int m_skip_swap;
+	s32 m_skip_swap;
 };
 
 class CMenuState : public CGameState
 {
+public:
+	CMenuState();
 public:
 	void PreInit() {}
 	bool Init();
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
 private:
 	void* m_menu;
-	int m_skip;
-	int m_skip_swap;
+	s32 m_skip;
+	s32 m_skip_swap;
 
-	// CSaferStr TtySoundString;
-	// CSaferStr BackSoundString;
+	CSaferStr TtySoundString;
+	CSaferStr BackSoundString;
 
 	CSnd* SelectionSound;
 
 	char m_DefaultMenu[64];
 
-	int m_iopregh;
+	s32 m_iopregh;
 };
 
 class CLoadState : public CGameState
@@ -156,7 +156,7 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
@@ -167,8 +167,8 @@ private:
 	bool m_fadeup;
 	bool m_fadedown;
 
-	float m_time_elapsed;
-	int m_tick_alarm_id;
+	f32 m_time_elapsed;
+	s32 m_tick_alarm_id;
 
 	bool m_voiceover_started;
 	bool m_waiting_for_x;
@@ -183,7 +183,7 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
@@ -192,9 +192,9 @@ public:
 private:
 	bool m_movierunning;
 	char* m_moviename;
-	int m_savedFrameRate;
-	int m_videoSave[2];
-	float m_fadeTime;
+	s32 m_savedFrameRate;
+	s32 m_videoSave[2];
+	f32 m_fadeTime;
 };
 
 class CExitState : public CGameState
@@ -205,7 +205,7 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
@@ -224,7 +224,7 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
@@ -243,7 +243,7 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
@@ -257,7 +257,7 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(float dT);
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
@@ -267,7 +267,7 @@ class CGameStateChangeCmd
 {
 	friend class CGame;
 public:
-	static void CreatePool(int size);
+	static void CreatePool(s32 size);
 private:
 	bool m_active;
 	u32 m_type;
@@ -279,6 +279,8 @@ class CStateCmdQueue : public std::deque<CGameStateChangeCmd*> {};
 
 class CGame
 {
+public:
+	CGame();
 public:
 	bool StartEngine();
 	void StartPlay();

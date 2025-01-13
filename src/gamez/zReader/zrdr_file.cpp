@@ -12,7 +12,7 @@ int zrdr_free(CRdrFile* file)
 		}
 		else
 		{
-			free(file->m_buffer);
+			zfree(file->m_buffer);
 			file->m_buffer = NULL;
 			file->m_size = 0;
 		}

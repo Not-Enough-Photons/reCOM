@@ -32,13 +32,20 @@ namespace zdb
 		~CVisData();
 
 		void Clear();
-		void NextVertex(unsigned int vertex);
+		void NextVertex(u32 vertex);
 		void SearchVertex();
-		void SelectVertex(CVisual* vis, unsigned int vertex);
+		void SelectVertex(CVisual* vis, u32 vertex);
 	};
 
 	class CVisual : public CVisBase
 	{
+	public:
+		enum LOD
+		{
+			LOW,
+			MEDIUM,
+			HIGH
+		};
 	public:
 		static void* localLightBuf;
 		static CLight* localLightPtr;
@@ -59,11 +66,11 @@ namespace zdb
 		static CCamera* m_camera;
 		static s32 custom;
 
-		static float m_opacity;
+		static f32 m_opacity;
 
 		static void AddLocalLight(CLight* light, CPnt3D* position);
 		static void AlphaEnable(bool enableAlpha);
-		static int ApplyDecal(unsigned int vertex, float opacity, CPnt3D* position, CMatrix* mat, CTexHandle* handle);
+		static s32 ApplyDecal(u32 vertex, f32 opacity, CPnt3D* position, CMatrix* mat, CTexHandle* handle);
 		static CMesh* Create(zar::CZAR& archive);
 		static void Init();
 		static void LandmarkEnable(bool enableLandmarks);

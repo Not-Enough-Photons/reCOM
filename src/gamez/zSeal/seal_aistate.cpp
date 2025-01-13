@@ -4,7 +4,7 @@
 
 bool CSealCtrlAi::RegisterCommands()
 {
-	unsigned int ai_cmdid = 0;
+	u32 ai_cmdid = 0;
 
 	ai_cmdid = ZAnim.AddCmd("ai::ACTION", CTAction::Parse, NULL, CTAction::Tick, NULL) & 0xffff;
 	ai_cmdid = ZAnim.AddCmd("ai::COMM", CTComm::Parse, NULL, CTComm::Tick, NULL) & 0xffff;

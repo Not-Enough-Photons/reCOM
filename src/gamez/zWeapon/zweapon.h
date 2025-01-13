@@ -241,34 +241,34 @@ public:
 	void SetDisplayName(const char* displayName);
 	void SetDescription(const char* description);
 
-	void SetID(int id);
-	void SetImpactDamage(float impactDamage);
+	void SetID(s32 id);
+	void SetImpactDamage(f32 impactDamage);
 	void SetHitAnimName(const char* hitAnimName);
-	void SetStun(float stun);
-	void SetPiercing(float piercing);
-	void SetExplosionDamage(float explosionDamage);
-	void SetExplosionRadius(float explosionRadius);
-	void SetProjectilesFired(int projectilesFired);
-	void SetBlowbackFalloff(float blowbackFalloff);
-	void SetProximitySquared(float proximity);
-	void SetAccelerationFactor(float acceleration);
-	void SetIsVolatile(bool volatile);
+	void SetStun(f32 stun);
+	void SetPiercing(f32 piercing);
+	void SetExplosionDamage(f32 explosionDamage);
+	void SetExplosionRadius(f32 explosionRadius);
+	void SetProjectilesFired(s32 projectilesFired);
+	void SetBlowbackFalloff(f32 blowbackFalloff);
+	void SetProximitySquared(f32 proximity);
+	void SetAccelerationFactor(f32 acceleration);
+	void SetIsVolatile(bool volitile);
 private:
-	const char* m_internalName;
-	const char* m_displayName;
-	const char* m_description;
+	char* m_internalName;
+	char* m_displayName;
+	char* m_description;
 
-	int m_ID;
-	float m_impactDamage;
+	s32 m_ID;
+	f32 m_impactDamage;
 	const char* m_hitAnimName;
-	float m_stun;
-	float m_piercing;
-	float m_explosionDamage;
-	float m_explosionRadius;
-	int m_projectilesFired;
-	float m_blowbackFalloff;
-	float m_proximitySquared;
-	float m_accelerationFactor;
+	f32 m_stun;
+	f32 m_piercing;
+	f32 m_explosionDamage;
+	f32 m_explosionRadius;
+	s32 m_projectilesFired;
+	f32 m_blowbackFalloff;
+	f32 m_proximitySquared;
+	f32 m_accelerationFactor;
 	bool m_volatile;
 };
 
@@ -280,26 +280,26 @@ public:
 	CZWeaponStance();
 	~CZWeaponStance();
 
-	void SetReticuleKnock(float knock);
-	void SetReticuleKnockReturn(float knockReturn);
-	void SetReticuleKnockMax(float knockMax);
-	void SetTargetDilateUponFire(float dilation);
-	void SetTargetDilateUponMovement(float dilation);
-	void SetTargetConstrict(float constriction);
-	void SetTargetMin(float min);
-	void SetTargetMax(float max);
-	void SetSniperDistPPFrameX(float frame);
-	void SetSniperDistPPFrameY(float frame);
-	void SetSniperDistLimitX(float limit);
-	void SetSniperDistLimitY(float limit);
-	void SetSniperDecayRate(float decay);
-	void SetFireRifleKickRate(float rate);
-	void SetFireRifleKickReturnRate(float returnRate);
-	void SetFireRifleKickBaseDist(float distance);
-	void SetFireRifleKickRandomDist(float randomDistance);
-	void SetKnockCount(int knocks);
-	void SetKnockEntryStrength(float strength);
-	void SetWiggleReport(float wiggleReport);
+	void SetReticuleKnock(f32 knock);
+	void SetReticuleKnockReturn(f32 knockReturn);
+	void SetReticuleKnockMax(f32 knockMax);
+	void SetTargetDilateUponFire(f32 dilation);
+	void SetTargetDilateUponMovement(f32 dilation);
+	void SetTargetConstrict(f32 constriction);
+	void SetTargetMin(f32 min);
+	void SetTargetMax(f32 max);
+	void SetSniperDistPPFrameX(f32 frame);
+	void SetSniperDistPPFrameY(f32 frame);
+	void SetSniperDistLimitX(f32 limit);
+	void SetSniperDistLimitY(f32 limit);
+	void SetSniperDecayRate(f32 decay);
+	void SetFireRifleKickRate(f32 rate);
+	void SetFireRifleKickReturnRate(f32 returnRate);
+	void SetFireRifleKickBaseDist(f32 distance);
+	void SetFireRifleKickRandomDist(f32 randomDistance);
+	void SetKnockCount(s32 knocks);
+	void SetKnockEntryStrength(f32 strength);
+	void SetWiggleReport(f32 wiggleReport);
 private:
 	f32 m_reticuleKnock;
 	f32 m_reticuleKnockReturn;
@@ -393,26 +393,26 @@ public:
 	char* GetWeaponUIName(EQUIP_ITEM id)  const;
 	char* GetWeaponVUIName(EQUIP_ITEM id) const;
 
-	s32           GetAmmoCapacity()               const;
-	s32           GetNumMags()                    const;
+	s32          GetAmmoCapacity()               const;
+	s32          GetNumMags()                    const;
 
-	f32           GetEffectiveRange()             const;
-	f32           GetImpactRadius()               const;
-	f32           GetMaxRange()                   const;
-	f32           GetMuzzleVelocity()             const;
+	f32          GetEffectiveRange()             const;
+	f32          GetImpactRadius()               const;
+	f32          GetMaxRange()                   const;
+	f32          GetMuzzleVelocity()             const;
 
-	CZAnim* GetDefaultSpecialAnim()         const;
-	CZAnim* GetFireAnim()                   const;
-	CZAnim* GetHitAnim()                    const;
-	CZAnim* GetSpecialMaterialAnim()        const;
+	CZAnim*      GetDefaultSpecialAnim()         const;
+	CZAnim*      GetFireAnim()                   const;
+	CZAnim*      GetHitAnim()                    const;
+	CZAnim*      GetSpecialMaterialAnim()        const;
 
-	CSnd* GetBulletPassSound()            const;
+	CSnd*        GetBulletPassSound()            const;
 
-	CZAmmo* GetDefaultAmmo()                const;
+	CZAmmo*      GetDefaultAmmo()                const;
 
-	EQUIP_AMMO    GetDefaultAmmoID()              const;
+	EQUIP_AMMO   GetDefaultAmmoID()              const;
 
-	ENCUMBRANCE   GetEncumbrance()                const;
+	ENCUMBRANCE  GetEncumbrance()                const;
 
 	/// -------------------------------------------
 	/// SETTERS
@@ -528,10 +528,10 @@ public:
 	CZFTSWeapon() : CZWeapon() {}
 	~CZFTSWeapon();
 
-	void SetAccuracyBurstCountMin(int min);
-	void SetAccuracyBurstCountMax(int max);
-	void SetAccuracyScalarMin(float min);
-	void SetAccuracyScalarMax(float max);
+	void SetAccuracyBurstCountMin(s32 min);
+	void SetAccuracyBurstCountMax(s32 max);
+	void SetAccuracyScalarMin(f32 min);
+	void SetAccuracyScalarMax(f32 max);
 private:
 	s32 m_firstZoomLevel;
 	s32 m_secondZoomLevel;
@@ -612,7 +612,7 @@ private:
 class CZWeaponList : public std::list<CZWeapon*>
 {
 public:
-	CZWeapon* GetWeaponByIndex(int index) const;
+	CZWeapon* GetWeaponByIndex(s32 index) const;
 };
 
 class CZProjectileList : public std::list<CZProjectile*> {};

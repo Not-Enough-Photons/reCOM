@@ -24,7 +24,7 @@ namespace zar
 		{
 			if (key->m_size != 0)
 			{
-				int offset = key->m_offset;
+				s32 offset = key->m_offset;
 				size_t position = m_pFile->fseek(offset, SEEK_SET);
 
 				success = offset == position;
@@ -45,7 +45,7 @@ namespace zar
 		return success;
 	}
 
-	bool CZAR::Fetch(const char* name, int(*callback)(CZAR*, int, void*), void* buf)
+	bool CZAR::Fetch(const char* name, s32(*callback)(CZAR*, s32, void*), void* buf)
 	{
 		bool isOpen = false;
 		bool success = false;
@@ -72,11 +72,11 @@ namespace zar
 			CKey* bufferOpenKey = OpenKey(openKey);
 			if (isOpen && bufferOpenKey != NULL)
 			{
-				int position = m_pFile->fseek(openKey->m_offset, SEEK_SET);
+				s32 position = m_pFile->fseek(openKey->m_offset, SEEK_SET);
 				if (position != -1)
 				{
 					hackStr = openKey->m_name;
-					int callbackResult = callback(this, openKey->m_size, buf);
+					s32 callbackResult = callback(this, openKey->m_size, buf);
 
 					if (0 < callbackResult)
 					{
@@ -120,8 +120,8 @@ namespace zar
 			{
 				if (openKey->m_size != 0)
 				{
-					int offset = openKey->m_offset;
-					int position = m_pFile->fseek(offset, SEEK_SET);
+					s32 offset = openKey->m_offset;
+					s32 position = m_pFile->fseek(offset, SEEK_SET);
 					if (offset == position && size <= openKey->m_size)
 					{
 						offset = m_pFile->fread(buf, size);
@@ -182,7 +182,7 @@ namespace zar
 		return success;
 	}
 
-	bool CZAR::Fetch(const char* name, float* buf)
+	bool CZAR::Fetch(const char* name, f32* buf)
 	{
 		bool success = false;
 
@@ -201,7 +201,7 @@ namespace zar
 		return success;
 	}
 
-	bool CZAR::Fetch(const char* name, unsigned int* buf)
+	bool CZAR::Fetch(const char* name, u32* buf)
 	{
 		bool success = false;
 
@@ -220,7 +220,7 @@ namespace zar
 		return success;
 	}
 
-	bool CZAR::Fetch(const char* name, int* buf)
+	bool CZAR::Fetch(const char* name, s32* buf)
 	{
 		bool success = false;
 
@@ -264,9 +264,9 @@ namespace zar
 		return success;
 	}
 
-	bool CZAR::FetchAll(int(*callback)(CZAR*, char*, void*, int, void*), void* buf)
+	bool CZAR::FetchAll(s32(*callback)(CZAR*, char*, void*, s32, void*), void* buf)
 	{
-		int count = 0;
+		s32 count = 0;
 		bool valid = false;
 		bool isOpen = false;
 		CKey* openKey = GetOpenKey();
@@ -287,13 +287,13 @@ namespace zar
 			CKey* bufferOpenKey = OpenKey(curKey);
 			if (isOpen && bufferOpenKey != NULL)
 			{
-				int position = m_pFile->fseek(curKey->m_offset, SEEK_CUR);
+				s32 position = m_pFile->fseek(curKey->m_offset, SEEK_CUR);
 
 				if (position != -1)
 				{
 					void* lipBuf = NULL;
 					FetchLIP(curKey, &lipBuf);
-					int result = callback(this, curKey->m_name, lipBuf, curKey->m_size, buf);
+					s32 result = callback(this, curKey->m_name, lipBuf, curKey->m_size, buf);
 
 					if (0 < result)
 					{
@@ -332,8 +332,8 @@ namespace zar
 		{
 			if (key->m_size != 0)
 			{
-				int offset = key->m_offset;
-				int position = m_pFile->fseek(offset, SEEK_SET);
+				s32 offset = key->m_offset;
+				s32 position = m_pFile->fseek(offset, SEEK_SET);
 				success = offset == position;
 
 				if (success)

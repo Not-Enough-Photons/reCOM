@@ -135,32 +135,32 @@ namespace sealai
 // TODO: Unknown type in std::vector
 class CObjAnims : public std::vector<void*> {};
 
-extern float noTurnThreshold;
-extern float fineTuneThreshold;
-extern float throttleFudge;
+extern f32 noTurnThreshold;
+extern f32 fineTuneThreshold;
+extern f32 throttleFudge;
 
 struct HEALTH_PARAMS
 {
 	void Parse(_zrdr* reader);
 
-	float m_head_health;
-	float m_head_healthMax;
-	float m_body_health;
-	float m_body_healthMax;
-	float m_larm_health;
-	float m_larm_healthMax;
-	float m_rarm_health;
-	float m_rarm_healthMax;
-	float m_lleg_health;
-	float m_lleg_healthMax;
-	float m_rleg_health;
-	float m_rleg_healthMax;
-	float m_armor_head;
-	float m_armor_body;
-	float m_armor_rarm;
-	float m_armor_larm;
-	float m_armor_rleg;
-	float m_armor_lleg;
+	f32 m_head_health;
+	f32 m_head_healthMax;
+	f32 m_body_health;
+	f32 m_body_healthMax;
+	f32 m_larm_health;
+	f32 m_larm_healthMax;
+	f32 m_rarm_health;
+	f32 m_rarm_healthMax;
+	f32 m_lleg_health;
+	f32 m_lleg_healthMax;
+	f32 m_rleg_health;
+	f32 m_rleg_healthMax;
+	f32 m_armor_head;
+	f32 m_armor_body;
+	f32 m_armor_rarm;
+	f32 m_armor_larm;
+	f32 m_armor_rleg;
+	f32 m_armor_lleg;
 };
 
 class CFire : CSequence {};
@@ -176,34 +176,34 @@ public:
 	CZKit();
 	~CZKit();
 
-	void SetItemByIndex(int index, CZWeapon* weapon);
+	void SetItemByIndex(s32 index, CZWeapon* weapon);
 	void SetWeaponInfoChanged();
 	void NVG_Enabled(bool enable);
 
-	void* GetIcon(int index) const;
-	float GetFireDelay() const;
+	void* GetIcon(s32 index) const;
+	f32 GetFireDelay() const;
 	CZWeapon* GetCurItem() const;
-	int GetNumItems() const;
-	float GetCurZoom() const;
+	s32 GetNumItems() const;
+	f32 GetCurZoom() const;
 
 	void SetBody(const CZSealBody& body);
 private:
-	BITFIELD_UINT(m_first, 1);
-	BITFIELD_UINT(m_reticuletypeChanged, 1);
-	BITFIELD_UINT(m_weaponinfoChanged, 1);
-	BITFIELD_UINT(m_retblocked, 1);
-	BITFIELD_UINT(m_nvg_enabled, 1);
-	BITFIELD_UINT(m_binocs_enabled, 1);
-	BITFIELD_UINT(m_lase_echo, 1);
-	BITFIELD_UINT(m_lase_deploy_echo, 1);
-	BITFIELD_UINT(m_lensfx_enable, 1);
-	BITFIELD_UINT(m_waiting_to_fire, 1);
-	BITFIELD_UINT(m_waiting_to_raise, 1);
-	BITFIELD_UINT(m_changeToRifle, 1);
-	BITFIELD_UINT(m_requested_item, 1);
-	BITFIELD_UINT(m_current_requested_ammo, 1);
-	BITFIELD_UINT(m_heartbeat_enabled, 1);
-	BITFIELD_UINT(m_unused, 17);
+	u32 m_first : 1;
+	u32 m_reticuletypeChanged : 1;
+	u32 m_weaponinfoChanged : 1;
+	u32 m_retblocked : 1;
+	u32 m_nvg_enabled : 1;
+	u32 m_binocs_enabled : 1;
+	u32 m_lase_echo : 1;
+	u32 m_lase_deploy_echo : 1;
+	u32 m_lensfx_enable : 1;
+	u32 m_waiting_to_fire : 1;
+	u32 m_waiting_to_raise : 1;
+	u32 m_changeToRifle : 1;
+	u32 m_requested_item : 1;
+	u32 m_current_requested_ammo : 1;
+	u32 m_heartbeat_enabled : 1;
+	u32 m_unused : 17;
 
 	f32 m_retposx;
 	f32 m_retposy;
@@ -270,7 +270,7 @@ private:
 	f32 m_retmax;
 	f32 m_retmin;
 
-	int m_tracercount;
+	s32 m_tracercount;
 	f32 m_firetime;
 	
 	// zdb::CLightMap* m_lightMap; // TODO: Create the CLightMap class
@@ -362,12 +362,12 @@ public:
 	/// EVENTS
 	/// -------------------------------------------
 
-	void PreTick(float delta);
-	void PostPreTick(float delta);
-	void Tick(float delta);
-	void PrePostTick(float delta);
-	void PostTick(float delta);
-	void PostMortemPreTick(float delta);
+	void PreTick(f32 delta);
+	void PostPreTick(f32 delta);
+	void Tick(f32 delta);
+	void PrePostTick(f32 delta);
+	void PostTick(f32 delta);
+	void PostMortemPreTick(f32 delta);
 
 	void OnMissionStart();
 	void OnMissionEnd();
@@ -379,20 +379,20 @@ public:
 	/// HEALTH
 	/// -------------------------------------------
 
-	float SetHealth(float health);
-	void SetArmor(float armor, DAMAGE_LOCATION location);
+	float SetHealth(f32 health);
+	void SetArmor(f32 armor, DAMAGE_LOCATION location);
 
-	int GetHeadDamage(float headDmgOld, float headDmgNew);
-	int GetBodyDamage(float bodyDmgOld, float bodyDmgNew);
-	int GetArmDamage(float armDmgOld, float armDmgNew);
-	int GetLegDamage(float legDmgOld, float legDmgNew);
+	int GetHeadDamage(f32 headDmgOld, f32 headDmgNew);
+	int GetBodyDamage(f32 bodyDmgOld, f32 bodyDmgNew);
+	int GetArmDamage(f32 armDmgOld, f32 armDmgNew);
+	int GetLegDamage(f32 legDmgOld, f32 legDmgNew);
 
-	bool DamageHead(float damage, float damageMax);
-	bool DamageBody(float damage, float damageMax);
-	bool DamageLArm(float damage, float damageMax);
-	bool DamageRArm(float damage, float damageMax);
-	bool DamageLLeg(float damage, float damageMax);
-	bool DamageRLeg(float damage, float damageMax);
+	bool DamageHead(f32 damage, f32 damageMax);
+	bool DamageBody(f32 damage, f32 damageMax);
+	bool DamageLArm(f32 damage, f32 damageMax);
+	bool DamageRArm(f32 damage, f32 damageMax);
+	bool DamageLLeg(f32 damage, f32 damageMax);
+	bool DamageRLeg(f32 damage, f32 damageMax);
 
 	bool DamageHead(CZProjectile* projectile);
 	bool DamageBody(CZProjectile* projectile);
@@ -401,7 +401,7 @@ public:
 	bool DamageLLeg(CZProjectile* projectile);
 	bool DamageRLeg(CZProjectile* projectile);
 
-	void AdrenalineIncr(float increase);
+	void AdrenalineIncr(f32 increase);
 
 	/// -------------------------------------------
 	/// STATE CONDITIONS
@@ -415,7 +415,7 @@ public:
 	bool CanFire() const;
 	bool CanHeadLook() const;
 	bool CanInterrupt() const;
-	bool CanPickupNetItem(unsigned short hostIdx, unsigned short pickupIdx, unsigned short* idxPtr, unsigned char type) const;
+	bool CanPickupNetItem(u16 hostIdx, u16 pickupIdx, u16* idxPtr, u8 type) const;
 	bool CanPitch() const;
 	bool CanProneAim() const;
 	bool CanTraverse(CDIType type) const;
@@ -431,28 +431,28 @@ public:
 	/// (Damage, world interactions, etc.)
 	/// -------------------------------------------
 
-	void HandleBloodDrip(float delta);
+	void HandleBloodDrip(f32 delta);
 	void HandleBombDefuse() {}
 	void HandleDamage(CZProjectile* projectile);
 	void HandleDamageExplosive(CZBodyPart* part, DAMAGE_LOCATION location);
 	void HandleDamageNonExplosive(CZBodyPart* part, DAMAGE_LOCATION location);
-	int HandleFallingDamage(float impactForce); // TODO: Figure out what this function returns
+	s32 HandleFallingDamage(f32 impactForce); // TODO: Figure out what this function returns
 	void HandleFootfallSound(CPnt3D* position);
 	void HandleGrenadeExplosion();
-	void HandleKiller(int killerIndex);
-	void HandleLanding(float impactForce);
-	void HandlePickupAck(int param_1, unsigned short pickupIdx, void* pickupAck); // TODO: Figure out wtf the AckUnion type is
+	void HandleKiller(s32 killerIndex);
+	void HandleLanding(f32 impactForce);
+	void HandlePickupAck(s32 param_1, u16 pickupIdx, void* pickupAck); // TODO: Figure out wtf the AckUnion type is
 	void HandlePickupAmmoInstance(void* pickup); // TODO: Create the CPickup type
 	void HandlePickupEquip(void* pickup); // TODO: Create the CPickup type
 	void HandlePickupMPBomb(void* pickup); // TODO: Create the CPickup type
 	void HandleSealStep();
-	void HandleSliding(float delta);
+	void HandleSliding(f32 delta);
 	void HandleSmokeAndGas(zdb::IntersectStruct* intersection, const void* material, const CPnt3D* position); // TODO: Create the CMaterialEx type
-	void HandleStunDamage(char stunType, float damage, const CPnt3D* position); // TODO: Create the STUN_TYPE enum
-	void HandleStunFromHit(char itemType, const CPnt3D* position); // TODO: Create the EQUIP_ITEM enum
-	void HandleStunRecovery(char stunType); // TODO: Create the STUN_TYPE enum
+	void HandleStunDamage(u8 stunType, f32 damage, const CPnt3D* position); // TODO: Create the STUN_TYPE enum
+	void HandleStunFromHit(EQUIP_ITEM itemType, const CPnt3D* position);
+	void HandleStunRecovery(u8 stunType); // TODO: Create the STUN_TYPE enum
 	void HandleWater(zdb::IntersectStruct* intersection, const void* material, const CPnt3D* position); // TODO: Create the CMaterialEx type
-	void HandleWeaponEvent(CZProjectile* projectile, unsigned int eventIdx, void* eventData);
+	void HandleWeaponEvent(CZProjectile* projectile, u32 eventIdx, void* eventData);
 	bool HandleWeaponIntersect();
 	void HandleWeaponInterp();
 
@@ -462,8 +462,8 @@ public:
 
 	CCharacterType* GetCharacter() const;
 
-	float GetFormationHeading(float heading) const;
-	void UpdateFollowParams(float heading);
+	f32 GetFormationHeading(f32 heading) const;
+	void UpdateFollowParams(f32 heading);
 	void HandleKiller(const CZSealBody& killer);
 
 	CZBodyPart* GetRootPart() const;
@@ -695,45 +695,45 @@ private:
 	zdb::DiIntersect m_projectiledi;
 	u32 m_lastregion;
 
-	BITFIELD_UINT(m_HudUpdateViewCone, 1);
-	BITFIELD_UINT(m_hudwashit, 1);
-	BITFIELD_UINT(m_aim_point_valid, 1);
-	BITFIELD_UINT(m_invincible, 1);
-	BITFIELD_UINT(m_invisible, 1);
-	BITFIELD_UINT(m_infiniteammo, 1);
-	BITFIELD_UINT(m_doPostTick, 1);
-	BITFIELD_UINT(m_restrainable, 1);
-	BITFIELD_UINT(m_restrained, 1);
-	BITFIELD_UINT(m_order_flag, 1);
-	BITFIELD_UINT(m_limp, 1);
-	BITFIELD_UINT(m_isinsmoke, 1);
-	BITFIELD_UINT(m_isingas, 1);
-	BITFIELD_UINT(m_respawning, 1);
-	BITFIELD_UINT(m_joined_unit, 1);
-	BITFIELD_UINT(m_send_detail, 1);
-	BITFIELD_UINT(m_snake_path, 1);
-	BITFIELD_UINT(m_action_climb, 1);
-	BITFIELD_UINT(m_action_jump, 1);
-	BITFIELD_UINT(m_is_moving, 1);
-	BITFIELD_UINT(m_is_turning, 1);
-	BITFIELD_UINT(m_airborne, 1);
-	BITFIELD_UINT(m_jumped, 1);
-	BITFIELD_UINT(m_inwater, 1);
-	BITFIELD_UINT(m_stancechanged, 1);
-	BITFIELD_UINT(m_have_aim_norm, 1);
-	BITFIELD_UINT(m_was_turning, 1);
-	BITFIELD_UINT(m_aimpt_attainable, 1);
-	BITFIELD_UINT(m_firept_attainable, 1);
-	BITFIELD_UINT(m_used_vel_y, 1);
-	BITFIELD_UINT(m_echo_pickup, 1);
-	BITFIELD_UINT(m_animate_me, 1);
-	BITFIELD_UINT(m_do_drop_weapons, 1);
-	BITFIELD_UINT(m_fix_skel_y, 1);
-	BITFIELD_UINT(m_inside, 1);
-	BITFIELD_UINT(m_prev_have_aim_norm, 1);
-	BITFIELD_UINT(m_am_stunned, 1);
-	BITFIELD_UINT(m_iszooming, 1);
-	BITFIELD_UINT(m_unused_bits, 26);
+	u32 m_HudUpdateViewCone : 1;
+	u32 m_hudwashit : 1;
+	u32 m_aim_point_valid : 1;
+	u32 m_invincible : 1;
+	u32 m_invisible : 1;
+	u32 m_infiniteammo : 1;
+	u32 m_doPostTick : 1;
+	u32 m_restrainable : 1;
+	u32 m_restrained : 1;
+	u32 m_order_flag : 1;
+	u32 m_limp : 1;
+	u32 m_isinsmoke : 1;
+	u32 m_isingas : 1;
+	u32 m_respawning : 1;
+	u32 m_joined_unit : 1;
+	u32 m_send_detail : 1;
+	u32 m_snake_path : 1;
+	u32 m_action_climb : 1;
+	u32 m_action_jump : 1;
+	u32 m_is_moving : 1;
+	u32 m_is_turning : 1;
+	u32 m_airborne : 1;
+	u32 m_jumped : 1;
+	u32 m_inwater : 1;
+	u32 m_stancechanged : 1;
+	u32 m_have_aim_norm : 1;
+	u32 m_was_turning : 1;
+	u32 m_aimpt_attainable : 1;
+	u32 m_firept_attainable : 1;
+	u32 m_used_vel_y : 1;
+	u32 m_echo_pickup : 1;
+	u32 m_animate_me : 1;
+	u32 m_do_drop_weapons : 1;
+	u32 m_fix_skel_y : 1;
+	u32 m_inside : 1;
+	u32 m_prev_have_aim_norm : 1;
+	u32 m_am_stunned : 1;
+	u32 m_iszooming : 1;
+	u32 m_unused_bits : 26;
 
 	CQuat m_fwdlook;
 	f32 m_zoomval;
@@ -790,7 +790,7 @@ private:
 class CSealUnit
 {
 public:
-	static bool TickAll(float dT, void* buf);
+	static bool TickAll(f32 dT, void* buf);
 };
 
 class CSealCtrl : CEntityCtrl
@@ -806,65 +806,65 @@ public:
 	virtual bool CanPerformAction(CNodeAction* action) const;
 	virtual void ClearGoal(GOAL_TYPE type);
 	virtual void ClearLook(AI_LOOK look);
-	virtual bool ComputeTurnThrottle(const CPnt3D& velWorld, const CPnt3D& velLocal, float& throttle);
+	virtual bool ComputeTurnThrottle(const CPnt3D& velWorld, const CPnt3D& velLocal, f32& throttle);
 	// virtual float ComputeVisibility(zdb::DiIntersection* intersection, CTarget* target);
 
 	virtual bool IsAi() const;
 	virtual bool IsPlayer() const;
 	virtual bool IsRemote() const;
 
-	bool CreateAiEvent(CAiEvent::EVENT event, float expiration, float radius, bool flag, CPnt3D* position, int dummy);
+	bool CreateAiEvent(CAiEvent::EVENT event, f32 expiration, f32 radius, bool flag, CPnt3D* position, s32 dummy);
 public:
-	unsigned int m_padid;
+	u32 m_padid;
 private:
-	float m_look_timer;
+	f32 m_look_timer;
 	Rfloat m_look_rate;
 	AI_LOOK m_look_mode;
 	LOOK_DATA_TYPE m_look_type;
 	CPnt3D m_look_data;
 	CPnt3D m_look_data_mdir;
 	CPnt3D m_look_bias;
-	unsigned int m_look_flags;
+	u32 m_look_flags;
 
 	Rfloat m_scan_angle;
 	CAiTimer m_scan_timer;
-	float m_scan_limits;
+	f32 m_scan_limits;
 
-	float m_fov;
-	float m_fovtan;
-	float m_fovcos;
+	f32 m_fov;
+	f32 m_fovtan;
+	f32 m_fovcos;
 
 	CAiCone m_view_cone;
 	CAiDecay m_visrange;
 	CAiDecay m_aware;
 
-	unsigned int m_targetSum;
+	u32 m_targetSum;
 	CAiDecay m_targetThreat;
 	CSealUnit m_unit;
 
-	unsigned int m_ai_net_state;
+	u32 m_ai_net_state;
 	TRIGGER m_trigger;
-	float m_trigger_power;
-	int m_throwwait;
-	float m_buttonreading[10];
-	int m_firstreading;
-	int m_lastreading;
+	f32 m_trigger_power;
+	s32 m_throwwait;
+	f32 m_buttonreading[10];
+	s32 m_firstreading;
+	s32 m_lastreading;
 
-	float m_zoomlevel;
-	float m_zoomincrement;
-	float m_aimPitch;
-	float m_aimYaw;
-	float m_highrumbletime;
-	float m_rumbletime;
-	float m_rumblestr;
+	f32 m_zoomlevel;
+	f32 m_zoomincrement;
+	f32 m_aimPitch;
+	f32 m_aimYaw;
+	f32 m_highrumbletime;
+	f32 m_rumbletime;
+	f32 m_rumblestr;
 
-	int m_HudDoPickup;
-	int m_curpickup_ID;
-	int m_curpickup_secondary_ID;
+	s32 m_HudDoPickup;
+	s32 m_curpickup_ID;
+	s32 m_curpickup_secondary_ID;
 
 	zdb::CNode* m_bomb_defusal_node;
 	zdb::CNode* m_mpbomb_node;
-	float m_mpbomb_timer;
+	f32 m_mpbomb_timer;
 
 	CZSealBody* m_victimbody;
 	CZSealBody* m_corpsebody;
@@ -885,7 +885,7 @@ private:
 	bool m_has_respawned;
 	bool m_do_aimap_collide;
 
-	unsigned int m_unused : 16;
+	u32 m_unused : 16;
 
 	CPnt3D m_goal_dir;
 	CPnt3D m_goal_pos;
@@ -894,25 +894,25 @@ private:
 	CPnt3D m_fudge_velW;
 
 	GOAL_TYPE m_goal_type;
-	float m_goal_pos_tolerance;
+	f32 m_goal_pos_tolerance;
 	CAiTimer m_goal_timer;
 
-	float m_speed;
+	f32 m_speed;
 
-	float m_event_time[15];
+	f32 m_event_time[15];
 	CPnt3D m_remote_goal_pos;
 	CQuat m_remote_goal_quat;
 
 	PLAYER_CAM_STATE m_camState;
-	// MENU_STATE m_menustate;
+	MENU_STATE m_menustate;
 
-	float m_hotswapL1;
-	float m_hotswapL2;
+	f32 m_hotswapL1;
+	f32 m_hotswapL2;
 
 	CAiTimer m_wep_state;
 
-	float m_bombpickuptimer;
-	float m_weapon_pickup_timer;
+	f32 m_bombpickuptimer;
+	f32 m_weapon_pickup_timer;
 };
 
 class CSealCtrlAi : CSealCtrl
@@ -930,21 +930,21 @@ class CTAction
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTComm
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTDebug
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTDoor
@@ -953,7 +953,7 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTEvent
@@ -961,7 +961,7 @@ class CTEvent
 public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTFireMode
@@ -969,7 +969,7 @@ class CTFireMode
 public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTFireWeapon
@@ -977,7 +977,7 @@ class CTFireWeapon
 public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTGoto
@@ -986,7 +986,7 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTHold
@@ -995,21 +995,21 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTInState
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTInView
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTLookAt
@@ -1017,7 +1017,7 @@ class CTLookAt
 public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTMacro
@@ -1025,14 +1025,14 @@ class CTMacro
 public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTMap
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTMove
@@ -1041,31 +1041,31 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTPaint
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTParam
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTPlay
 {
 public:
 	static void Begin(_zanim_cmd_hdr* header);
-	static void Create(int count, unsigned int*, float, float);
+	static void Create(int count, unsigned int*, f32, f32);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTPursue
@@ -1074,21 +1074,21 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTRange
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTRegion
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTSelect
@@ -1097,21 +1097,21 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTSetAnimSet
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTSetMode
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTSignal
@@ -1119,7 +1119,7 @@ class CTSignal
 public:
 	static AiSig GetSignalByName(const char* signal);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTSound
@@ -1128,7 +1128,7 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTSpecial
@@ -1137,7 +1137,7 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTStance
@@ -1146,35 +1146,35 @@ public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static void End(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTState
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTStopAll
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTTeam
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTValve
 {
 public:
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };
 
 class CTWait
@@ -1182,5 +1182,5 @@ class CTWait
 public:
 	static void Begin(_zanim_cmd_hdr* header);
 	static _zanim_cmd_hdr* Parse(_zrdr* reader);
-	static bool Tick(_zanim_cmd_hdr* header, float* delta);
+	static bool Tick(_zanim_cmd_hdr* header, f32* delta);
 };

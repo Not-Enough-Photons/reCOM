@@ -8,6 +8,13 @@ class C2D;
 class C2DFont;
 class CUIVariable;
 
+namespace zdb
+{
+	class CTexture;
+	class CTextureRelocMgr;
+	class CTexHandle;
+}
+
 enum tag_string_type
 {
 	STRING_PLAIN,

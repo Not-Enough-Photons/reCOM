@@ -4,15 +4,15 @@
 #include "gamez/zUI/zui.h"
 
 bool g_bJoiningRandomGame;
-int myConnectionIndex;
+s32 myConnectionIndex;
 
 CUIVariable* uiv_LobbyWorldNameVar;
 CUIVariable* uiv_GameNameVar;
 CUIVariable* uiv_ClanNameVar;
 CUIVariable* uiv_ClanDescription;
 
-int dme_joined_count;
-int accum_dme_joined_count;
+s32 dme_joined_count;
+s32 accum_dme_joined_count;
 
 bool ForceReport;
 

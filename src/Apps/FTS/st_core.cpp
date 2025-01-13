@@ -1,7 +1,10 @@
+#include <GLFW/glfw3.h>
+
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zGame/zgame.h"
 #include "gamez/zSeal/zseal.h"
 #include "gamez/zRender/zrender.h"
+#include "gamez/zVideo/zvid.h"
 
 CCoreState::CCoreState()
 {
@@ -39,7 +42,8 @@ bool CCoreState::Init()
 	return true;
 }
 
-void CCoreState::Tick(float dT)
+void CCoreState::Tick(f32 dT)
 {
-
+	glfwPollEvents();
+	zVid_Swap(true);
 }

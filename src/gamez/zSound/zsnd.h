@@ -64,7 +64,7 @@ public:
 	static bool GetSubtitles();
 public:
 	void LoadCSnd(_zrdr* reader);
-	float CalcVol(float volume, float masterVolume);
+	float CalcVol(f32 volume, f32 masterVolume);
 	void SetupJukebox();
 
 	static s32 m_max_num_vags;
@@ -85,7 +85,7 @@ public:
 protected:
 	f32 m_vol;
 
-	const char* m_name;
+	char* m_name;
 
 	PNT2D m_range;
 
@@ -99,10 +99,10 @@ protected:
 	u32 m_soundmode;
 	u32 m_type;
 
-	const char* m_stream1name;
-	const char* m_stream2name;
+	char* m_stream1name;
+	char* m_stream2name;
 
-	const char* m_subtitle;
+	char* m_subtitle;
 	CValve* m_subtitle_translator;
 	f32 m_subtitle_time;
 
@@ -113,10 +113,10 @@ protected:
 class CSndInstance : public CSnd
 {
 public:
-	static float m_mastervol;
+	static f32 m_mastervol;
 	static std::vector<CSnd*> m_sound_instance_pool;
 
-	static void InitInstancePool(int count);
+	static void InitInstancePool(s32 count);
 };
 
 class CSndJukebox
@@ -130,7 +130,7 @@ public:
 	static void LoadMusicLists();
 
 	static void Start();
-	static void Tick(float delta);
+	static void Tick(f32 delta);
 	static void Stop();
 
 	static void Play(MUSIC_MODE mode, CSnd* sound);
@@ -140,7 +140,7 @@ public:
 
 	static bool IsInFight(bool inFight);
 private:
-	float m_weights;
+	f32 m_weights;
 	MUSIC_MODE m_currentmode;
 	bool m_isinfight;
 };
@@ -148,7 +148,7 @@ private:
 class CSndSequence
 {
 public:
-	void CreateSequence(unsigned int* param_1, long param_2);
+	void CreateSequence(u32* param_1, s64 param_2);
 	void Play();
 	void Play(int** param_1);
 	void Tick();

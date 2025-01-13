@@ -1,6 +1,7 @@
 #pragma once
+#include <vector>
+
 #include "gamez/zAssetLib/zAssetLib.h"
-#include "gamez/zNode/znode.h"
 #include "gamez/zSystem/zsys.h"
 
 namespace zdb
@@ -8,8 +9,9 @@ namespace zdb
 	class CLoadImage;
 	class CTexPalette;
 	class CDynTexList;
-	class CTexList;
 	class CTexPalList;
+
+	class CSaveLoad;
 
 	struct TEXTURE_PARAMS
 	{
@@ -45,21 +47,25 @@ namespace zdb
 	public:
 		static CTexManager* m_texmanager;
 
-		static void doAddBuffer(float param_1, float param_2, int param_3, const char* img);
+		static void doAddBuffer(f32 param_1, f32 param_2, s32 param_3, const char* img);
 	};
 
 	class CTexture : public TEXTURE_PARAMS
  	{
+		friend class CTexHandle;
 	public:
 		static void Init();
+	public:
+		u16 Release_HTEX();
+
 		CTexture* Read(CSaveLoad& saveload);
 	private:
+		char* m_name;
 		CAssetLib* m_AssetLib;
-		const char* m_name;
 		void* m_buffer;
 		CTexPalette* m_palette;
-		long m_gifSelect;
-		long m_vuSelect;
+		s64 m_gifSelect;
+		s64 m_vuSelect;
 		u16 m_format;
 		u16 m_palID;
 		u16 m_htex_count;
@@ -97,9 +103,11 @@ namespace zdb
 	class CTexHandle
 	{
 	public:
+		static CTexHandle* Create(CTexture* texture);
+	public:
 		char* m_name;
-		int m_count;
-		unsigned int m_gsAddr;
+		s32 m_count;
+		u32 m_gsAddr;
 		CTexture* m_texture;
 		bool m_libref;
 	};

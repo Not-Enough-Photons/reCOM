@@ -35,6 +35,8 @@ typedef unsigned char u_char;
  * together for a case independent comparison.  The mappings are
  * based upon ascii character sequences.
  */
+#pragma warning (push)
+#pragma warning (disable : 4838)
 static const u_char charmap[] = {
 	'\000', '\001', '\002', '\003', '\004', '\005', '\006', '\007',
 	'\010', '\011', '\012', '\013', '\014', '\015', '\016', '\017',
@@ -69,6 +71,7 @@ static const u_char charmap[] = {
 	'\360', '\361', '\362', '\363', '\364', '\365', '\366', '\367',
 	'\370', '\371', '\372', '\373', '\374', '\375', '\376', '\377',
 };
+#pragma warning (pop)
 static int
 strcasecmp(const char* s1, const char* s2)
 {

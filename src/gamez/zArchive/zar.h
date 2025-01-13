@@ -14,7 +14,7 @@
 		{\
 			do\
 			{\
-				unsigned char* byte = (unsigned char*)((int64_t)buf + line);\
+				unsigned char* byte = (unsigned char*)((s64)buf + line);\
 				line += 8;\
 				byte[0] = ~byte[0];\
 				byte[1] = ~byte[1];\
@@ -28,7 +28,7 @@
 		}\
 			for (; line < size; line++)\
 			{\
-				* (unsigned char*)((int64_t)buf + line) = ~*(unsigned char*)((int64_t)buf + line); \
+				* (unsigned char*)((s64)buf + line) = ~*(unsigned char*)((s64)buf + line); \
 			}\
 		}\
 
@@ -47,15 +47,15 @@ namespace zar
 
 	struct TAIL
 	{
-		int32_t flags;
-		int32_t key_count;
-		int32_t stable_size;
-		int32_t stable_ofs;
-		int32_t reserved[16];
-		int32_t offset;
-		int32_t crc;
-		int32_t appversion;
-		int32_t version;
+		s32 flags;
+		s32 key_count;
+		s32 stable_size;
+		s32 stable_ofs;
+		s32 reserved[16];
+		s32 offset;
+		s32 crc;
+		s32 appversion;
+		s32 version;
 	};
 
 	class CKey : public CKeyRing
@@ -70,7 +70,7 @@ namespace zar
 		CKey* InsertKey(CKey* key);
 		CKey* FindKey(const char* name);
 
-		bool Read(CZAR* file, CBufferIO* io, int64_t offset);
+		bool Read(CZAR* file, CBufferIO* io, s64 offset);
 		bool Write(CZAR* file);
 
 		char* GetName() const
@@ -78,19 +78,19 @@ namespace zar
 			return m_name;
 		}
 
-		int GetSize() const
+		s32 GetSize() const
 		{
 			return m_size;
 		}
 
-		int GetOffset()
+		s32 GetOffset()
 		{
 			return m_offset;
 		}
 	private:
 		char* m_name;
-		int m_size;
-		int m_offset;
+		s32 m_size;
+		s32 m_offset;
 	};
 
 	class CZAR
@@ -98,7 +98,7 @@ namespace zar
 		friend class CKey;
 		friend class CRdrArchive;
 	public:
-		CZAR(const char* name, CIO* io);
+		CZAR(const char* name = NULL, CIO* io = NULL);
 		~CZAR();
 	public:
 		/// <summary>
@@ -173,10 +173,10 @@ namespace zar
 
 		bool Insert(CKey* key, void* buf, size_t size);
 		CKey* Insert(const char* name, void* buf, size_t size);
-		CKey* Insert(const char* name, unsigned int value);
-		CKey* Insert(const char* name, int value);
+		CKey* Insert(const char* name, u32 value);
+		CKey* Insert(const char* name, s32 value);
 
-		bool ReadDirectory(int appver, unsigned int mode);
+		bool ReadDirectory(int appver, u32 mode);
 		bool WriteDirectory() { return false; }
 
 		void SetFilename(const char* name);
@@ -198,7 +198,7 @@ namespace zar
 		/// <param name="callback"> - The fixup function pointer to call.</param>
 		/// <param name="buf"> - The buffer that will store the resource post-fixup.</param>
 		/// <returns>Whether or not the fetch was successful.</returns>
-		bool Fetch(const char* name, int(*callback)(CZAR*, int, void*), void* buf);
+		bool Fetch(const char* name, s32(*callback)(CZAR*, s32, void*), void* buf);
 
 		/// <summary>
 		/// Fetches a resource of an arbitrary size.
@@ -223,7 +223,7 @@ namespace zar
 		/// <param name="name"> - The name of the key to search and open.</param>
 		/// <param name="buf"> - The buffer that stores the float.</param>
 		/// <returns>Whether or not the fetch was successful.</returns>
-		bool Fetch(const char* name, float* buf);
+		bool Fetch(const char* name, f32* buf);
 
 		/// <summary>
 		/// Fetches an unsigned integer.
@@ -231,7 +231,7 @@ namespace zar
 		/// <param name="name"> - The name of the key to search and open.</param>
 		/// <param name="buf"> - The buffer that stores the unsigned integer.</param>
 		/// <returns>Whether or not the fetch was successful.</returns>
-		bool Fetch(const char* name, unsigned int* buf);
+		bool Fetch(const char* name, u32* buf);
 
 		/// <summary>
 		/// Fetches an integer.
@@ -239,7 +239,7 @@ namespace zar
 		/// <param name="name"> - The name of the key to search and open.</param>
 		/// <param name="buf"> - The buffer that stores the integer.</param>
 		/// <returns>Whether or not the fetch was successful.</returns>
-		bool Fetch(const char* name, int* buf);
+		bool Fetch(const char* name, s32* buf);
 
 		/// <summary>
 		/// Fetches a boolean.
@@ -249,7 +249,7 @@ namespace zar
 		/// <returns>Whether or not the fetch was successful.</returns>
 		bool Fetch(const char* name, bool* buf);
 
-		bool FetchAll(int(*callback)(CZAR*, char*, void*, int, void*), void* buf);
+		bool FetchAll(s32(*callback)(CZAR*, char*, void*, s32, void*), void* buf);
 
 		bool FetchLIP(CKey* key, void** buf);
 

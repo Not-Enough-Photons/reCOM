@@ -1,8 +1,8 @@
 #include "zai.h"
 
-float CAiEvent::GetEventRate(EVENT event)
+f32 CAiEvent::GetEventRate(EVENT event)
 {
-	float rate = 0.0f;
+	f32 rate = 0.0f;
 
 	switch (event)
 	{

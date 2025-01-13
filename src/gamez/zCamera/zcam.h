@@ -181,13 +181,13 @@ namespace zdb
 
 		static void CmdBeginParams(_zanim_cmd_hdr* header);
 
-		static bool CmdTickControlSwitch(_zanim_cmd_hdr* header, float* delta);
-		static bool CmdTickIndoorsTest(_zanim_cmd_hdr* header, float* delta);
-		static bool CmdTickSetRegions(_zanim_cmd_hdr* header, float* delta);
-		static bool CmdTickGetRegions(_zanim_cmd_hdr* header, float* delta);
-		static bool CmdTickParams(_zanim_cmd_hdr* header, float* delta);
+		static bool CmdTickControlSwitch(_zanim_cmd_hdr* header, f32* delta);
+		static bool CmdTickIndoorsTest(_zanim_cmd_hdr* header, f32* delta);
+		static bool CmdTickSetRegions(_zanim_cmd_hdr* header, f32* delta);
+		static bool CmdTickGetRegions(_zanim_cmd_hdr* header, f32* delta);
+		static bool CmdTickParams(_zanim_cmd_hdr* header, f32* delta);
 	public:
-		float GetScaledRangeSquared(const CPnt3D& point);
+		f32 GetScaledRangeSquared(const CPnt3D& point);
 	public:
 		f32 m_Zmin;
 		f32 m_Zmax;
@@ -248,25 +248,25 @@ public:
 	CAppCamera(zdb::CWorld* world, zdb::CCamera* camera);
 	~CAppCamera();
 
-	static void GetThirdPersonCameraPos(CPnt3D* out, float* partPosition);
+	static void GetThirdPersonCameraPos(CPnt3D* out, f32* partPosition);
 	static _zanim_cmd_hdr* CmdParse3rdPersonTest(_zrdr* reader);
-	static bool CmdTick3rdPersonTest(_zanim_cmd_hdr* header, float* delta);
+	static bool CmdTick3rdPersonTest(_zanim_cmd_hdr* header, f32* delta);
 	static void RegisterAnimCommands();
 public:
 	// bool AttachTo(CZSealBody* seal);
 
 	void LookAt(const CPnt3D* origin, const CPnt3D* direction, CMatrix* mat);
 
-	void FTSTick(float delta) const;
-	void Tick(float delta);
+	void FTSTick(f32 delta) const;
+	void Tick(f32 delta);
 
 	void UpdateDeathCamState();
 	void ResetDeathCam();
-	void TickCameraWiggle(float delta, zdb::CCamera* camera);
+	void TickCameraWiggle(f32 delta, zdb::CCamera* camera);
 
-	void SetZoom(float zoom);
+	void SetZoom(f32 zoom);
 
-	void WiggleScalar(float wiggle);
+	void WiggleScalar(f32 wiggle);
 	void WiggleEcho(bool echo);
 public:
 	PLAYER_CAM_STATE m_camera_mode;

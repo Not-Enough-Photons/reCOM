@@ -23,7 +23,7 @@ public:
 private:
 	C2DBitmap m_bitmap[2];
 	SLIDE_DIRECTION m_slidedir;
-	float m_curpos;
+	f32 m_curpos;
 };
 
 class CFader : C2DBitmap
@@ -37,11 +37,11 @@ public:
 	};
 private:
 	FADE_DIRECTION m_fadedir;
-	float m_fadetime;
-	float m_fadetotal;
-	float m_faderate;
-	float m_brightness;
-	float m_min_brightness;
+	f32 m_fadetime;
+	f32 m_fadetotal;
+	f32 m_faderate;
+	f32 m_brightness;
+	f32 m_min_brightness;
 };
 
 class CLensFlareSaturate : public C2DBitmap
@@ -232,13 +232,13 @@ private:
 class CInGameWeaponSel : public C2D
 {
 public:
-	void HudTick(float delta);
-	void GetPrevItem(int param_1);
+	void HudTick(f32 delta);
+	void GetPrevItem(s32 param_1);
 	void Clear();
 	void Init(zdb::CWorld* world);
 	void SelectWeapon();
 	void SelectEquipment();
-	bool CanSelectWeapon(int index) const;
+	bool CanSelectWeapon(s32 index) const;
 private:
 	CHUD* m_parent;
 

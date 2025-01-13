@@ -1,10 +1,16 @@
 #include "znode.h"
 
+#include "gamez/zCamera/zcam.h"
+#include "gamez/zRender/zVisual/zvis.h"
+#include "gamez/zTexture/ztex.h"
+
 #define MIN_POOL_SIZE 3000
 #define POOL_INCREMENT 100
 
 namespace zdb
 {
+	CNodeUniverse* NodeUniverse = NULL;
+
 	CWorld* CWorld::m_world = NULL;
 	CCamera* CWorld::m_camera = NULL;
 
@@ -56,7 +62,7 @@ namespace zdb
 		*it = NULL;
 	}
 
-	CNode* CNodeUniverse::GetElement(int index) const
+	CNode* CNodeUniverse::GetElement(s32 index) const
 	{
 		CNode* node;
 
@@ -95,7 +101,36 @@ namespace zdb
 		return index;
 	}
 
-	void CWorld::ReserveChildren(int count)
+	s32 CWorld::GetVersion()
+	{
+		return 0x10001;
+	}
+
+	s32 CWorld::Initalize()
+	{
+		CCamera* camera = new CCamera();
+
+		if (m_camera != camera)
+		{
+			m_camera = camera;
+			CVisual::m_camera = camera;
+		}
+
+		m_camera->SetName("camera");
+		m_camera->SetPosition(CPnt3D::zero.x, CPnt3D::zero.y, CPnt3D::zero.z);
+
+		m_world->m_gLightColUpdate = true;
+		m_world->m_gLightDirUpdate = true;
+
+		CTexHandle* handle = CTexHandle::Create(m_shadowTex[0]);
+		m_shadowTexH = handle;
+
+		CTexManager::m_texmanager->front()->Add(handle, true);
+
+		return 1;
+	}
+
+	void CWorld::ReserveChildren(s32 count)
 	{
 		m_child.reserve(count + m_child.capacity());
 	}

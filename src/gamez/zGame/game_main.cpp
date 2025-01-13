@@ -6,6 +6,18 @@
 
 CGame theGame;
 
+CGame::CGame()
+{
+	m_Active = false;
+	m_InitialState = new CMenuState();
+	m_CurrentState = 0;
+	m_MinIdlePeriod = 100;
+	m_TestVariable = NULL;
+	memset(m_Stack, 0, 64);
+	m_pad = 0;
+	m_maxtick = 0;
+}
+
 void CGame::StartPlay()
 {
 	m_Active = true;

@@ -9,7 +9,7 @@ class CZBodyAnim;
 class CBody
 {
 public:
-	void SmoothAnims(float scale);
+	void SmoothAnims(f32 scale);
 	CZBodyPart* FindPart(const char* name);
 	void* NewBodyPart(zdb::CNode* node, CZBodyPart* part);
 	zdb::CNode& NullNode() const;
@@ -63,8 +63,8 @@ private:
 	zdb::CNode* m_node;
 	CQuat m_rot;
 	CZBodyPart* m_parent;
-	short m_id;
-	short m_blendme;
+	s16 m_id;
+	s16 m_blendme;
 	CPnt3D m_saved_pos;
 	CQuat m_saved_rot;
 };

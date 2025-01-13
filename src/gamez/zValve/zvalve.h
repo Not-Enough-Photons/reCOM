@@ -60,12 +60,9 @@ public:
 class CValve
 {
 public:
-	CValve(const char* name, unsigned int unknown, VALVE_TYPE type);
-	~CValve();
-
 	static void Init();
 
-	static int Open(const char* reader, VALVE_TYPE type);
+	static s32 Open(const char* reader, VALVE_TYPE type);
 	static void Close();
 	static void Reset();
 
@@ -74,7 +71,7 @@ public:
 	// static bool CmdTickCmp(_zanim_cmd_hdr* header, float* delta);
 
 	static CValve* Create(const char* name, VALVE_TYPE type);
-	static CValve* Create(const char* name, int count, VALVE_TYPE type);
+	static CValve* Create(const char* name, s32 count, VALVE_TYPE type);
 	static void Destroy(CValve* valve);
 
 	static CValve* GetByName(const char* name);
@@ -86,20 +83,20 @@ public:
 	void AssignName(const char* name);
 	void FreeName();
 
-	void* AddCallback(int size, void(*callback)(CValve*, void*), void* buffer);
+	void* AddCallback(size_t size, void(*callback)(CValve*, void*), void* buffer);
 	void MakeCallbacks(VALVE_STATE state) {}
 	void DeleteCallbacks();
 
-	bool Set(int value);
+	bool Set(s32 value);
 
 	OP_TYPE ParseOperator(const char* op);
 private:
-	const char* m_name;
-	int m_value;
-	VALVE_TYPE m_type;
-	const char* m_name_pooled;
-	int m_pooled;
-	int m_unused;
+	char* m_name;
+	u32 m_value : 16;
+	u32 m_type : 8;
+	u32 m_name_pooled : 1;
+	u32 m_pooled : 1;
+	u32 m_unused : 6;
 	CValveCBList m_callbacks;
 };
 

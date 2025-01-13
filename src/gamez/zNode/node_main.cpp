@@ -9,9 +9,42 @@
 
 namespace zdb
 {
+	u32 numNodes = 0;
+
 	CNode::CNode()
 	{
+		m_matrix = CMatrix::identity;
 
+		m_name = NULL;
+		m_count = 0;
+		m_model = NULL;
+		m_modelname = NULL;
+		m_vid = 0;
+		m_nodeEx = NULL;
+		m_Atom = NULL;
+		m_AtomCnt = 0;
+		m_AtomAlloc = 0;
+		m_TickNum = -1;
+		m_Opacity = 1.0f;
+		InitNodeParams();
+		m_customGlobalLight = false;
+		m_flatten = false;
+		m_modified = false;
+		m_parent = false;
+		m_unused = 0;
+		m_frameRendered = false;
+		m_region_mask = 0;
+
+		m_bbox.m_min = CPnt3D::zero;
+		m_bbox.m_max = CPnt3D::zero;
+
+		if (NodeUniverse != NULL)
+		{
+			NodeUniverse->AddNode(this);
+		}
+
+		numNodes++;
+		m_name = "UNNAMED_NODE";
 	}
 
 	CNode* CNode::CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation)
@@ -27,14 +60,15 @@ namespace zdb
 	CNode* CNode::Create(const char* name)
 	{
 		CNode* node = new CNode();
-		const char* str;
+		char* str = NULL;
 
-		if (name != 0)
+		if (name != NULL)
 		{
 			str = node->m_name;
+
 			if (str != 0 && str != "UNNAMED_NODE")
 			{
-				// free(str);
+				zfree(str);
 			}
 
 			str = strdup("Node");
@@ -44,12 +78,12 @@ namespace zdb
 		{
 			str = node->m_name;
 
-			if (str != 0 && str != "UNNAMED_NODE")
+			if (str != NULL && str != "UNNAMED_NODE")
 			{
-				// free(str);
+				zfree(str);
 			}
 
-			if (str == 0)
+			if (str == NULL)
 			{
 				node->m_name = "UNNAMED_NODE";
 			}
@@ -61,6 +95,38 @@ namespace zdb
 		}
 
 		return node;
+	}
+
+	void CNode::InitNodeParams(tag_NODE_PARAMS* other)
+	{
+		m_type                         = other != NULL ? other->m_type : 0;
+		m_active                       = other != NULL ? other->m_active : false;
+		m_dynamic_motion               = other != NULL ? other->m_dynamic_motion : false;
+		m_dynamic_light                = other != NULL ? other->m_dynamic_light : false;
+		m_landmark                     = other != NULL ? other->m_landmark : false;
+		m_light                        = other != NULL ? other->m_light : false;
+		m_prelight                     = other != NULL ? other->m_prelight : false;
+		m_fog                          = other != NULL ? other->m_fog : false;
+		m_transparent                  = other != NULL ? other->m_transparent : false;
+		m_facade                       = other != NULL ? other->m_facade : false;
+		m_reflective                   = other != NULL ? other->m_reflective : false;
+		m_bumpmap                      = other != NULL ? other->m_bumpmap : false;
+		m_hasDI                        = other != NULL ? other->m_hasDI : false;
+		m_region_shift                 = other != NULL ? other->m_region_shift : 0;
+		m_has_visuals_prior_to_export  = other != NULL ? other->m_has_visuals_prior_to_export : false;
+		m_shadow                       = other != NULL ? other->m_shadow : false;
+		m_worldchild                   = other != NULL ? other->m_worldchild : false;
+		m_char_common                  = other != NULL ? other->m_char_common : false;
+		m_NOTUSED                      = other != NULL ? other->m_NOTUSED : false;
+		m_hasVisuals                   = other != NULL ? other->m_hasVisuals : false;
+		m_hasMesh                      = other != NULL ? other->m_hasMesh : false;
+		m_scrolling_texture            = other != NULL ? other->m_scrolling_texture : false;
+		m_light_dynamic                = other != NULL ? other->m_light_dynamic : false;
+		m_light_static                 = other != NULL ? other->m_light_static : false;
+		m_clutter                      = other != NULL ? other->m_clutter : false;
+		m_mtx_is_identity              = other != NULL ? other->m_mtx_is_identity : false;
+		m_use_parent_bbox              = other != NULL ? other->m_use_parent_bbox : false;
+		m_apply_clip                   = other != NULL ? other->m_apply_clip : false;
 	}
 
 	void CNode::AddChild(CNode* node)
@@ -89,9 +155,9 @@ namespace zdb
 		}
 	}
 
-	int CNode::DeleteChild(CNode* child)
+	s32 CNode::DeleteChild(CNode* child)
 	{
-		int count = child->m_count;
+		s32 count = child->m_count;
 
 		if (m_child.Exists(child))
 		{
@@ -193,7 +259,7 @@ namespace zdb
 		{
 			CNode* current = m_child.front();
 
-			int count = DeleteChild(current);
+			s32 count = DeleteChild(current);
 
 			if (count == 0 && current != NULL)
 			{
@@ -202,20 +268,20 @@ namespace zdb
 		}
 	}
 
-	float CNode::GetRadius() const
+	f32 CNode::GetRadius() const
 	{
-		float radius = 0.0f;
+		f32 radius = 0.0f;
 
-		float minX = m_bbox.m_min.x;
-		float minY = m_bbox.m_min.y;
-		float minZ = m_bbox.m_min.z;
+		f32 minX = m_bbox.m_min.x;
+		f32 minY = m_bbox.m_min.y;
+		f32 minZ = m_bbox.m_min.z;
 
-		float maxX = m_bbox.m_max.x;
-		float maxY = m_bbox.m_max.y;
-		float maxZ = m_bbox.m_max.z;
+		f32 maxX = m_bbox.m_max.x;
+		f32 maxY = m_bbox.m_max.y;
+		f32 maxZ = m_bbox.m_max.z;
 
-		float min = minZ * minZ + minX * minX + minY * minY;
-		float max = maxZ * maxZ + maxX * maxX + maxY * maxY;
+		f32 min = minZ * minZ + minX * minX + minY * minY;
+		f32 max = maxZ * maxZ + maxX * maxX + maxY * maxY;
 
 		if (min <= max)
 		{
@@ -226,20 +292,20 @@ namespace zdb
 		return radius;
 	}
 
-	float CNode::GetRadiusSq() const
+	f32 CNode::GetRadiusSq() const
 	{
-		float radius = 0.0f;
+		f32 radius = 0.0f;
 
-		float minX = m_bbox.m_min.x;
-		float minY = m_bbox.m_min.y;
-		float minZ = m_bbox.m_min.z;
+		f32 minX = m_bbox.m_min.x;
+		f32 minY = m_bbox.m_min.y;
+		f32 minZ = m_bbox.m_min.z;
 
-		float maxX = m_bbox.m_max.x;
-		float maxY = m_bbox.m_max.y;
-		float maxZ = m_bbox.m_max.z;
+		f32 maxX = m_bbox.m_max.x;
+		f32 maxY = m_bbox.m_max.y;
+		f32 maxZ = m_bbox.m_max.z;
 
-		float min = minZ * minZ + minX * minX + minY * minY;
-		float max = maxZ * maxZ + maxX * maxX + maxY * maxY;
+		f32 min = minZ * minZ + minX * minX + minY * minY;
+		f32 max = maxZ * maxZ + maxX * maxX + maxY * maxY;
 
 		if (min <= max)
 		{
@@ -295,7 +361,26 @@ namespace zdb
 		return m_count;
 	}
 
-	void CNode::SetPosition(float x, float y, float z)
+	void CNode::SetName(const char* name)
+	{
+		char* str = m_name;
+
+		if (str != NULL && str != "UNNAMED_NODE")
+		{
+			zfree(str);
+		}
+
+		str = "UNNAMED_NODE";
+
+		if (name != NULL)
+		{
+			str = zstrdup(name);
+		}
+
+		m_name = str;
+	}
+
+	void CNode::SetPosition(f32 x, f32 y, f32 z)
 	{
 		m_matrix.m_matrix[3][0] = x;
 		m_matrix.m_matrix[3][1] = y;
@@ -303,9 +388,8 @@ namespace zdb
 
 		UpdateGrid();
 		m_modified = true;
-		CNodeEx* nodeEx = this->m_nodeEx;
 
-		if (nodeEx != NULL)
+		if (m_nodeEx != NULL)
 		{
 			m_nodeEx->OnMove(this);
 		}
@@ -331,7 +415,7 @@ namespace zdb
 
 	CNode* CNodeVector::GetNode(const char* name) const
 	{
-		CNode* node;
+		CNode* node = NULL;
 
 		if (name == 0)
 		{

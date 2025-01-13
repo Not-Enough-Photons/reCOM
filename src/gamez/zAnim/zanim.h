@@ -341,7 +341,7 @@ struct _zanim_valve_ref
 
 struct _zanim_sound
 {
-	short name_index;
+	s16 name_index;
 	bool stop_on_exit;
 	CSnd* sound_handle;
 	CSndInstance* sound_instance;
@@ -381,7 +381,7 @@ struct AnimSet
 	bool m_ready;
 	std::string m_name;
 
-	std::vector<unsigned int> m_animIDs;
+	std::vector<u32> m_animIDs;
 	std::vector<AnimType> m_basetypes;
 	std::vector<CZAnim> m_included;
 
@@ -491,10 +491,10 @@ class CZAnimMain
 {
 public:
 	bool InitCommands();
-	unsigned int AddCmd(const char* name, 
+	u32 AddCmd(const char* name, 
 		_zanim_cmd_hdr*(*parser)(_zrdr*), 
 		void(*begin)(_zanim_cmd_hdr*),
-		bool(*tick)(_zanim_cmd_hdr*, float*),
+		bool(*tick)(_zanim_cmd_hdr*, f32*),
 		void(*end)(_zanim_cmd_hdr*));
 public:
 	static bool m_LoadFromZAR;
@@ -552,7 +552,7 @@ static CZAnimMain ZAnim;
 class CZBodyAnimBlend
 {
 public:
-	void SetFractionalTime(float time);
+	void SetFractionalTime(f32 time);
 private:
 	CPnt3D m_dpos;
 	float m_quitT;

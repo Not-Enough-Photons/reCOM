@@ -1,4 +1,6 @@
 #pragma once
+#include "gamez/zSystem/zsys.h"
+
 class CInput;
 class CPad;
 class CKeyboard;
@@ -36,6 +38,25 @@ enum class PAD_BUTTON
 
 void InitKeyreadStuff();
 
+class CStickType
+{
+	friend class CPad;
+private:
+	f32 m_minStickVelocity;
+	f32 m_absoluteDeadZone;
+	f32 m_velocityDeadZone;
+	f32 m_valueForConstant;
+	f32 m_valueForN;
+
+	bool m_velocitySeparate;
+	bool m_deadZoneSeparate;
+
+	f32 m_minZeroVelocityTime;
+
+	bool m_normalize;
+	bool m_dilate;
+};
+
 class CInput
 {
 public:
@@ -44,9 +65,9 @@ public:
 
 	static void Init();
 	static void Uninit();
-	static void Tick(float delta);
-	static CPad* CreatePad(int slot);
-	static void DeletePad(int slot);
+	static void Tick(f32 delta);
+	static CPad* CreatePad(s32 slot);
+	static void DeletePad(s32 slot);
 	static void Flush();
 	static int OpenPadIO();
 	static void ClosePadIO();
@@ -59,24 +80,61 @@ public:
 class CPad
 {
 public:
-	CPad(int port, int slot);
-	~CPad();
+	CPad(s32 port, s32 slot);
 
 	void Flush();
-	void Tick(float delta);
+	void Tick(f32 delta);
 	bool IsOpen();
 private:
-	int port;
-	int slot;
-	int actuator;
-	void* alignBuf;
+	s32 m_port;
+	s32 m_slot;
+	s32 m_open;
 
-	int open;
+	u8 m_ActData;
+	bool m_IsAnalog;
 
-	float leftStickVelX;
-	float leftStickVelY;
-	float rightStickVelX;
-	float rightStickVelY;
+	KEY_STATE m_state[16];
+	u8 m_singleClick[16];
+	u8 m_doubleClick[16];
+	f32 m_click[16];
+
+	long128* m_DmaBuf;
+
+	u8 m_InData[32];
+	u32 m_Data;
+	u32 m_AnalogLeft[2];
+	u32 m_AnalogRight[2];
+
+	s32 m_Phase;
+	s32 m_State;
+	s32 m_Id;
+	s32 m_ExId;
+	s32 m_actuator;
+	s32 m_NumActuators;
+
+	f32 m_LeftStick[2];
+	f32 m_RightStick[2];
+	bool m_swapSticks;
+
+	f32 m_LeftStickDilated;
+	f32 m_RightStickDilated;
+	
+	bool m_DataIsGood;
+
+	u8 m_ActAlign[6];
+
+	s32 m_RotationVibration;
+	s32 m_RotationSpeed;
+	s32 m_ControlNum;
+	s32 m_Consuption;
+
+	u8 m_lastStickRaw[4];
+	f32 m_lastStickVal[4];
+	f32 m_maxStick[4];
+	f32 m_minstick[4];
+	f32 m_deadTime[4];
+
+	CStickType m_stickType[2];
 };
 
 class CKeyboard
@@ -85,5 +143,5 @@ public:
 	CKeyboard();
 	~CKeyboard();
 
-	void Tick(float delta);
+	void Tick(f32 delta);
 };

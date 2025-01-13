@@ -86,7 +86,7 @@ bool CSnd::GetSubtitles()
 	return m_bShowSubtitles;
 }
 
-float CSnd::CalcVol(float volume, float masterVolume)
+float CSnd::CalcVol(f32 volume, f32 masterVolume)
 {
 	return 0.0f;
 }

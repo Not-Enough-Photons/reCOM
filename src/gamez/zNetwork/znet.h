@@ -302,7 +302,7 @@ class CZNetVoice
 {
 public:
 	bool PreTick();
-	bool Tick(float dT);
+	bool Tick(f32 dT);
 private:
 	s32 m_channel;
 	s32 m_timeTaken;

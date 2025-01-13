@@ -25,7 +25,7 @@ namespace zdb
 
 	}
 
-	void CBatchRelocator::TakeDrawPacket(void* spr, int qwc)
+	void CBatchRelocator::TakeDrawPacket(void* spr, s32 qwc)
 	{
 		// zSysFifoKick(spr, qwc);
 	}

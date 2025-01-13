@@ -4,6 +4,7 @@
 #include "gamez/zNode/znode.h"
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zSystem/zsys.h"
+#include "gamez/zRender/zrender.h"
 
 class CEntity;
 class CEntityCtrl;
@@ -11,6 +12,7 @@ class CCharacterType;
 class CharacterDynamics;
 class CZSealBody;
 class CZBodyPart;
+class CModel;
 
 enum class DAMAGE_LOCATION
 {
@@ -37,23 +39,51 @@ extern CharacterDynamics theCharacterDynamics;
 
 void SealInitCharacterDynamics();
 
-class CCharacterType
-{
-public:
-	CCharacterType();
-};
-
 class CCharacterGear
 {
 private:
-	int m_ref_count;
-	int m_partid;
-	unsigned int m_gearid;
+	s32 m_ref_count;
+	s32 m_partid;
+	u32 m_gearid;
 	char* m_name;
 	char* m_model_file;
 	zdb::CModel* m_model;
 	CPnt3D m_offset;
 	CPnt3D m_rotation;
+};
+
+class CCharacterWeap
+{
+private:
+
+};
+
+class CCharacterType
+{
+public:
+	CCharacterType();
+private:
+	char* m_name;
+
+	s32 m_ref_count;
+
+	char* m_model_file;
+	char* m_model_name;
+	u32 m_parentID;
+
+	CSaferStr m_arrSoundNames[66];
+
+	CSnd* m_sounds[66];
+
+	LODVec m_LODs;
+
+	std::vector<AnimSet*> m_anim_sets;
+
+	char* m_texture_asset;
+	zdb::CModel* m_model;
+
+	std::list<CCharacterGear*> m_gear;
+	std::list<CCharacterWeap*> m_weapons;
 };
 
 class CharacterDynamics
@@ -244,11 +274,11 @@ public:
 	CEntityCtrl();
 	~CEntityCtrl();
 
-	virtual void PreTick(float delta);
-	virtual void Tick(float delta);
-	virtual void PostMortemPreTick(float delta);
+	virtual void PreTick(f32 delta);
+	virtual void Tick(f32 delta);
+	virtual void PostMortemPreTick(f32 delta);
 
-	virtual void SetThrottle(float throttle, int pad);
+	virtual void SetThrottle(f32 throttle, s32 pad);
 	virtual void GetRemoteControl() const;
 
 	virtual void OnDeath();
@@ -303,7 +333,7 @@ private:
 	char m_character[48];
 	char m_display_name[32];
 	startvec m_start;
-	int m_teamMask;
+	s32 m_teamMask;
 	AI_PARAMS m_aiParams;
 	u32 m_debug : 1;
 	u32 m_disabled : 1;

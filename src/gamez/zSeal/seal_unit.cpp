@@ -1,6 +1,6 @@
 #include "zseal.h"
 
-bool CSealUnit::TickAll(float dT, void* buf)
+bool CSealUnit::TickAll(f32 dT, void* buf)
 {
 	return false;
 }

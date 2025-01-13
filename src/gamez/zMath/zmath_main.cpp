@@ -2,9 +2,9 @@
 
 #include "zmath.h"
 
-float* sintbl = NULL;
-float* costbl = NULL;
-float* exptbl = NULL;
+f32* sintbl = NULL;
+f32* costbl = NULL;
+f32* exptbl = NULL;
 
 bool tableInit = false;
 
@@ -16,12 +16,12 @@ void init_trig_table()
 {
 	if (!tableInit)
 	{
-		int i = 0;
-		int j = 0;
+		s32 i = 0;
+		s32 j = 0;
 		do
 		{
-			float x = i * 0.02454369f;
-			float calc = sinf(x);
+			f32 x = i * 0.02454369f;
+			f32 calc = sinf(x);
 			*(sintbl + j) = calc;
 			calc = cosf(x);
 			*(costbl + j) = calc;
@@ -52,7 +52,7 @@ CQuat CQuat::Apply(CQuat& quat, CPnt3D& point)
 
 CQuat CQuat::Normalize(CQuat& quat, CQuat& rhs)
 {
-	float placeholder = 0.0f;
+	f32 placeholder = 0.0f;
 	// float innerProduct = Vector3::Product(this, rhs);
 	placeholder = sqrtf(quat.w * quat.w + placeholder);
 	// Vector3::Scale(1.0 / placeholder, rhs, this);
@@ -74,7 +74,7 @@ void CQuat::ToMatrix(CQuat& quat, CMatrix& matrix)
 
 CQuat CQuat::Exp(CQuat& quat, CPnt3D& point)
 {
-	float pointLengthSqr = point.z * point.z + point.y * point.y + point.x * point.x;
+	f32 pointLengthSqr = point.z * point.z + point.y * point.y + point.x * point.x;
 
 	if (pointLengthSqr == 0.0f)
 	{
@@ -86,29 +86,29 @@ CQuat CQuat::Exp(CQuat& quat, CPnt3D& point)
 	else
 	{
 		pointLengthSqr = sqrtf(pointLengthSqr);
-		float sin = sinf(pointLengthSqr);
-		float cos = cosf(pointLengthSqr);
+		f32 sin = sinf(pointLengthSqr);
+		f32 cos = cosf(pointLengthSqr);
 		quat.w = cos;
 	}
 
 	return quat;
 }
 
-void CQuat::MakeYXZ(float x, float y, float z, CQuat& out)
+void CQuat::MakeYXZ(f32 x, f32 y, f32 z, CQuat& out)
 {
-	float halfX = x * 0.5f;
-	float sinHalfX = sinf(halfX);
+	f32 halfX = x * 0.5f;
+	f32 sinHalfX = sinf(halfX);
 	halfX = cosf(halfX);
 
-	float halfY = x * 0.5f;
-	float sinHalfY = sinf(halfY);
+	f32 halfY = x * 0.5f;
+	f32 sinHalfY = sinf(halfY);
 	halfY = cosf(halfY);
 
-	float zMul = sinHalfX * sinHalfY;
+	f32 zMul = sinHalfX * sinHalfY;
 	sinHalfX *= halfY;
 
-	float zSin = sinf(z * 0.5f);
-	float zCos = cosf(z * 0.5f);
+	f32 zSin = sinf(z * 0.5f);
+	f32 zCos = cosf(z * 0.5f);
 
 	out.w = zMul * zSin + halfX * halfY * zCos;
 	out.vec.x = sinHalfX * zSin + halfX * sinHalfY * zCos;

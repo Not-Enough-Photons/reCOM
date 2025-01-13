@@ -19,7 +19,7 @@ bool CZNetVoice::PreTick()
 	return false;
 }
 
-bool CZNetVoice::Tick(float dT)
+bool CZNetVoice::Tick(f32 dT)
 {
 	bool status = false;
 

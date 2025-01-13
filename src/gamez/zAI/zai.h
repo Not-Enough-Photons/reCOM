@@ -232,20 +232,20 @@ enum GOAL_TYPE
 
 struct AI_PARAMS
 {
-	unsigned int mask;
-	float accuracy;
-	float courage;
-	float surrender;
-	float stealth;
-	float training;
-	float visual_sens;
-	float visual_range;
-	float visual_fov;
-	float aware_decay;
-	float thip_range;
-	unsigned int respawn;
-	float target_delay;
-	float target_discipline;
+	u32 mask;
+	f32 accuracy;
+	f32 courage;
+	f32 surrender;
+	f32 stealth;
+	f32 training;
+	f32 visual_sens;
+	f32 visual_range;
+	f32 visual_fov;
+	f32 aware_decay;
+	f32 thip_range;
+	u32 respawn;
+	f32 target_delay;
+	f32 target_discipline;
 	// CVehicleRdrEntry* m_veh;
 };
 
@@ -276,14 +276,14 @@ public:
 	static CAiEvent* Create(CAiEvent* other);
 	static CAiEvent* Acquire();
 
-	static float GetEventRate(EVENT event);
+	static f32 GetEventRate(EVENT event);
 
-	int aiBitMask;
-	float expiration;
-	float soundRadiusSqr;
+	s32 aiBitMask;
+	f32 expiration;
+	f32 soundRadiusSqr;
 	CPnt3D* source;
 	CEntity* originator;
-	int dummy;
+	s32 dummy;
 };
 
 class CAiMapVec : std::vector<CAiMap> { };
@@ -297,25 +297,25 @@ class CAiMap
 
 class CAiMapLoc
 {
-	unsigned int m_mapid : 6;
-	unsigned int m_x : 13;
-	unsigned int m_y : 13;
+	u32 m_mapid : 6;
+	u32 m_x : 13;
+	u32 m_y : 13;
 };
 
 class CAiPathStats
 {
 public:
-	int nodes_searched;
-	int nodes_added;
-	int nodes_removed;
-	int nodes_visited;
-	int nodes_left;
+	f32 nodes_searched;
+	f32 nodes_added;
+	f32 nodes_removed;
+	f32 nodes_visited;
+	f32 nodes_left;
 
-	int path_length;
-	int path_cost;
+	f32 path_length;
+	f32 path_cost;
 
-	int m_ticks;
-	float m_time;
+	f32 m_ticks;
+	f32 m_time;
 	CAiMapLoc m_current;
 	CAiMapLocVec m_visited;
 };
@@ -329,16 +329,16 @@ private:
 	bool m_custom;
 
 	PATH_TYPE m_type;
-	float m_type_bias;
+	f32 m_type_bias;
 
 	CAiPath* m_template;
 	void* m_overlay;
 
-	unsigned int m_flags;
-	unsigned int m_app_flags;
-	unsigned int m_legcount;
-	unsigned int m_planleg;
-	unsigned int m_curleg;
+	s32 m_flags;
+	s32 m_app_flags;
+	s32 m_legcount;
+	s32 m_planleg;
+	s32 m_curleg;
 
 	CAiMapLocVec m_waypts;
 	CAiMapVec m_maps;
@@ -347,13 +347,13 @@ private:
 	PATH_STATE m_state;
 	ASTAR_STATUS m_status;
 
-	float m_length;
-	unsigned int m_tolerance;
-	unsigned int m_search_limit;
-	unsigned int m_snake_len;
+	f32 m_length;
+	s32 m_tolerance;
+	s32 m_search_limit;
+	s32 m_snake_len;
 
 	points m_points;
-	unsigned int m_pathId;
+	s32 m_pathId;
 };
 
 class CAiAStar
@@ -376,7 +376,7 @@ public:
 
 	static CAiState* Create(AI_STATE state);
 
-	virtual bool Tick(float dT, CSealCtrlAi* controller) { return true; }
+	virtual bool Tick(f32 dT, CSealCtrlAi* controller) { return true; }
 	virtual void OnSignal(SIGNAL signal, CSealCtrlAi* controller) { }
 
 	virtual bool CanAttack() const { return true; }
@@ -552,8 +552,8 @@ class CRestrainedPlanner : public CAiPlanner
 
 class CAiDecay
 {
-	float m_value;
-	float m_goal;
+	f32 m_value;
+	f32 m_goal;
 	TYPE m_type;
 };
 
@@ -565,20 +565,20 @@ class CAiParams
 class CAiTimer
 {
 public:
-	const float infinite = 0xBF800000;
+	const f32 infinite = 0xBF800000;
 private:
 	Rfloat m_period;
-	float m_timer;
+	f32 m_timer;
 };
 
 class CAiCone
 {
-	float m_dot;
+	f32 m_dot;
 	CPnt3D m_vec;
-	float m_height;
-	float m_radius;
-	float m_point_radius;
-	float m_inv_height;
+	f32 m_height;
+	f32 m_radius;
+	f32 m_point_radius;
+	f32 m_inv_height;
 	CPnt3D m_cone_pos;
 	CPnt3D m_cone_dir;
 };

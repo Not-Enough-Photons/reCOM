@@ -13,7 +13,7 @@ bool zrdr_init = false;
 bool warnonce = false;
 
 char* cur_zrdr_path = 0;
-int cur_zrdr_flags = 0;
+s32 cur_zrdr_flags = 0;
 
 _zrdr::_zrdr()
 {
@@ -57,15 +57,15 @@ int _zrdr::GetInt() const
 	}
 	else if (type == ZRDR_REAL)
 	{
-		return static_cast<int>(real);
+		return static_cast<s32>(real);
 	}
 
 	return 0;
 }
 
-char* _zrdr::Get(int offset) const
+char* _zrdr::Get(s32 offset) const
 {
-	int length = 0;
+	s32 length = 0;
 
 	if (type == ZRDR_ARRAY)
 	{
@@ -84,8 +84,8 @@ _zrdr* zrdr_findtag(_zrdr* reader, const char* name)
 {
 	if (reader != NULL && reader->type == ZRDR_ARRAY)
 	{
-		int iterations = 0;
-		for (int max_depth = 8; iterations < reader->array->integer; iterations++)
+		s32 iterations = 0;
+		for (s32 max_depth = 8; iterations < reader->array->integer; iterations++)
 		{
 			auto rdr = reader->array;
 
@@ -110,11 +110,11 @@ _zrdr* zrdr_findtag(_zrdr* reader, const char* name)
 	return NULL;
 }
 
-_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, int iterations)
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, s32 iterations)
 {
 	if (reader != NULL && reader->type == ZRDR_ARRAY)
 	{
-		for (int max_depth = iterations << 3; iterations < reader->array->integer; iterations++)
+		for (s32 max_depth = iterations << 3; iterations < reader->array->integer; iterations++)
 		{
 			auto rdr = reader->array;
 
@@ -163,12 +163,12 @@ char* zrdr_findstring(_zrdr* reader, const char* name)
 	return NULL;
 }
 
-bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations)
+bool zrdr_findreal(_zrdr* reader, const char* tag, f32* output, s32 iterations)
 {
 	return false;
 }
 
-bool zrdr_finduint(_zrdr* reader, const char* tag, unsigned int* output, int iterations)
+bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 iterations)
 {
 	return false;
 }
@@ -179,7 +179,7 @@ bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
 	return zrdr_tobool(rdr, output);
 }
 
-bool zrdr_toINT(_zrdr* reader, int* value, int index)
+bool zrdr_toINT(_zrdr* reader, s32* value, s32 index)
 {
 	if (reader == NULL || reader->type != ZRDR_TYPE::ZRDR_ARRAY || reader->array->integer < index + 1)
 	{
@@ -239,8 +239,8 @@ bool zrdr_tobool(_zrdr* reader, bool* output)
 
 _zrdr* _zrdr_nexttag(_zrdr* reader, const char* name, size_t size, _zrdr* other)
 {
-	int i = 8;
-	int count = 1;
+	s32 i = 8;
+	s32 count = 1;
 
 	while (true)
 	{
@@ -279,8 +279,8 @@ void zrdr_freearray(_zrdr* reader)
 	}
 	else if (reader->type == ZRDR_ARRAY && reader->integer != 0)
 	{
-		int it = 0;
-		int shift = 0;
+		s32 it = 0;
+		s32 shift = 0;
 
 		while (true)
 		{
@@ -306,7 +306,7 @@ void zrdr_freearray(_zrdr* reader)
 					subshift += 8;
 				}
 
-				free(array);
+				zfree(array);
 				next->real = 0.0f;
 			}
 
@@ -314,7 +314,7 @@ void zrdr_freearray(_zrdr* reader)
 			shift += 8;
 		}
 
-		free(array);
+		zfree(array);
 		reader->real = 0.0f;
 	}
 }

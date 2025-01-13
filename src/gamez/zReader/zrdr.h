@@ -6,7 +6,7 @@
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stable.h"
 
-class _zrdr;
+struct _zrdr;
 class CRdrFile;
 
 enum ZRDR_TYPE
@@ -24,22 +24,22 @@ extern char* cur_zrdr_path;
 void _resolveA(_zrdr* reader, const _zrdr* other, const char* tag);
 void _resolveB(_zrdr* reader, const _zrdr* other, const char* tag);
 
-_zrdr* zrdr_read(const char* reader, const char* path, int dummy);
+_zrdr* zrdr_read(const char* reader, const char* path, s32 dummy);
 char* zrdr_findfile(const char* file, const char* path);
-int zrdr_free(CRdrFile* reader);
+s32 zrdr_free(CRdrFile* reader);
 void zrdr_freearray(_zrdr* array);
-void _resolveA(_zrdr* reader, const _zrdr* other, int count);
-void _resolveB(_zrdr* reader, const _zrdr* other, int count);
+void _resolveA(_zrdr* reader, const _zrdr* other, s32 count);
+void _resolveB(_zrdr* reader, const _zrdr* other, s32 count);
 
 char* zrdr_findstring(_zrdr* reader, const char* tag);
-bool zrdr_findint(_zrdr* reader, const char* tag, int* output, int iterations);
-bool zrdr_finduint(_zrdr* reader, const char* tag, unsigned int* output, int iterations);
-bool zrdr_findreal(_zrdr* reader, const char* tag, float* output, int iterations);
+bool zrdr_findint(_zrdr* reader, const char* tag, s32* output, s32 iterations);
+bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 iterations);
+bool zrdr_findreal(_zrdr* reader, const char* tag, f32* output, s32 iterations);
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
 _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
-_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, int iterations);
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, s32 iterations);
 
-bool zrdr_toINT(_zrdr* reader, int* output, int size);
+bool zrdr_toINT(_zrdr* reader, s32* output, s32 size);
 bool zrdr_tobool(_zrdr* reader, bool* output);
 
 _zrdr* _zrdr_nexttag(_zrdr* reader, const char* tag, size_t size, _zrdr* other);

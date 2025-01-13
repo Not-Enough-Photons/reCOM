@@ -27,20 +27,20 @@ int CInput::OpenPadIO()
 
 void CInput::ClosePadIO()
 {
-	for (int i = 0; i < c_MaxPads; i++)
+	for (int i = 0; i < 2; i++)
 	{
 		DeletePad(i);
 	}
 }
 
-void CInput::Tick(float delta)
+void CInput::Tick(f32 delta)
 {
 	if (m_keyboard != NULL)
 	{
 		// m_keyboard->Tick(delta);
 	}
 
-	for (int pad = 0; pad < c_MaxPads; pad++)
+	for (s32 pad = 0; pad < 2; pad++)
 	{
 		if (m_pads[pad] != NULL)
 		{
@@ -49,7 +49,7 @@ void CInput::Tick(float delta)
 	}
 }
 
-CPad* CInput::CreatePad(int slot)
+CPad* CInput::CreatePad(s32 slot)
 {
 	CPad* pad;
 
@@ -78,7 +78,7 @@ CPad* CInput::CreatePad(int slot)
 	return pad;
 }
 
-void CInput::DeletePad(int slot)
+void CInput::DeletePad(s32 slot)
 {
 	CPad* pad = m_pads[slot];
 
@@ -91,7 +91,7 @@ void CInput::DeletePad(int slot)
 
 void CInput::Flush()
 {
-	for (int pad = 0; pad < c_MaxPads; pad++)
+	for (s32 pad = 0; pad < c_MaxPads; pad++)
 	{
 		if (m_pads[pad] != NULL)
 		{
@@ -106,11 +106,8 @@ void CInput::Uninit()
 	m_init = false;
 }
 
-CPad::CPad(int port, int slot)
+CPad::CPad(s32 port, s32 slot)
 {
-	this->port = port;
-	this->slot = slot;
-
 	if (port == 0 || port == 1)
 	{
 
@@ -119,19 +116,15 @@ CPad::CPad(int port, int slot)
 
 void CPad::Flush()
 {
-	rightStickVelX = 0.0f;
-	rightStickVelY = 0.0f;
-	leftStickVelX = 0.0f;
-	leftStickVelY = 0.0f;
 	Tick(c_DefaultDelta);
 }
 
-void CPad::Tick(float delta)
+void CPad::Tick(f32 delta)
 {
 	pad_dt = delta;
 }
 
 bool CPad::IsOpen()
 {
-	return open != 0;
+	return m_open != 0;
 }

@@ -6,7 +6,7 @@ CValvePool valvePool;
 
 CValve* CValve::Create(const char* name, VALVE_TYPE type)
 {
-	CValve* valve;
+	CValve* valve = NULL;
 
 	if (name == NULL)
 	{
@@ -33,14 +33,14 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	}
 	else
 	{
-		if (type == VALVE_TYPE::PERM && valve->m_type != VALVE_TYPE::PERSIST)
+		if (type == VALVE_TYPE::PERM && valve->m_type != (u32)VALVE_TYPE::PERSIST)
 		{
-			valve->m_type = VALVE_TYPE::PERM;
+			valve->m_type = (u32)VALVE_TYPE::PERM;
 		}
 
 		if (type == VALVE_TYPE::PERSIST)
 		{
-			valve->m_type = VALVE_TYPE::PERSIST;
+			valve->m_type = (u32)VALVE_TYPE::PERSIST;
 		}
 	}
 
@@ -57,7 +57,7 @@ void CValve::AssignName(const char* name)
 
 }
 
-void* CValve::AddCallback(int size, void(*callback)(CValve*, void*), void* buffer)
+void* CValve::AddCallback(size_t size, void(*callback)(CValve*, void*), void* buffer)
 {
 	m_callbacks.m_list.insert(m_callbacks.m_list.begin(), callback);
 	return callback;
@@ -71,7 +71,7 @@ void CValve::DeleteCallbacks()
 	}
 }
 
-bool CValve::Set(int value)
+bool CValve::Set(s32 value)
 {
 	VALVE_STATE state;
 
@@ -92,7 +92,7 @@ bool CValve::Set(int value)
 
 OP_TYPE CValve::ParseOperator(const char* op)
 {
-	int cmp = 0;
+	s32 cmp = 0;
 	OP_TYPE operation = OP_NONE;
 
 	if (op != 0)
