@@ -71,7 +71,7 @@ extern CTTY theTerminal;
 extern bool postinit;
 extern bool postinited;
 
-struct _word128
+union _word128
 {
 	long128 u128;
 	f32 f32[4];
