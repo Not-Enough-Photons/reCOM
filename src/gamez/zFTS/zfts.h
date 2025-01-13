@@ -17,6 +17,7 @@ class CZNetGame;
 
 extern CMission theMission;
 extern CZSealBody* ftsPlayer;
+extern bool doSquirm;
 
 CZSealBody* ftsGetPlayer();
 void ftsSetPlayer(CZSealBody* player);

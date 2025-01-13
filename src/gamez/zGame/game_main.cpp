@@ -44,13 +44,15 @@ bool CGame::Tick(f32 dT)
 
 	if (m_Active)
 	{
-		if (m_StateChangeQueue.size() == 0)
-		{
-			if (state != NULL)
-			{
-				state->Tick(dT);
-			}
-		}
+		//if (m_StateChangeQueue.size() == 0)
+		//{
+		//	if (state != NULL)
+		//	{
+		//		state->Tick(dT);
+		//	}
+		//}
+
+		m_InitialState->Tick(dT);
 
 		theVoice.Tick(dT);
 	}

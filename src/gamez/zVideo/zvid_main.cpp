@@ -14,6 +14,10 @@ void zVid_Init(_zvid_mode mode)
 {
 	zVid_Assert(glfwInit(), LONG_MAX, __FILE__, __LINE__);
 
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
 	zVid.runTime = 0.0f;
 	zVid.renderWidth = 640;
 	zVid.renderHeight = 448;
@@ -29,6 +33,8 @@ void zVid_Init(_zvid_mode mode)
 	zVid.displayBuf = NULL;
 	zvid_SetVideoMode(mode);
 
+	theWindow = new CWindow("fts", zVid.renderWidth, zVid.renderHeight);
+
 	if (lodLevel == NULL)
 	{
 		lodLevel = CValve::Create("lodLevel", VALVE_TYPE::PERM);
@@ -39,7 +45,6 @@ void zVid_Init(_zvid_mode mode)
 
 void zVid_Open()
 {
-	theWindow = new CWindow("fts", zVid.renderWidth, zVid.renderHeight);
 }
 
 void zvid_SetVideoMode(_zvid_mode mode)
@@ -53,6 +58,7 @@ CWindow::CWindow()
 	m_name = NULL;
 	m_width = 0;
 	m_height = 0;
+	m_window = NULL;
 }
 
 CWindow::CWindow(const char* name, u32 width, u32 height)
@@ -64,10 +70,6 @@ CWindow::CWindow(const char* name, u32 width, u32 height)
 	m_window = glfwCreateWindow(m_width, m_height, name, NULL, NULL);
 
 	zVid_Assert(m_window != NULL, LONG_MAX, __FILE__, __LINE__);
-
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	glfwMakeContextCurrent(m_window);
 }

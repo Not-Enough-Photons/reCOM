@@ -39,6 +39,7 @@ bool CMenuState::Init()
 
 void CMenuState::Tick(f32 dT)
 {
+	// The world has to exist in order for nodes to be rendered
 	if (zdb::CWorld::m_world != NULL)
 	{
 		if (zdb::CWorld::m_world->m_camera != NULL)
@@ -48,5 +49,7 @@ void CMenuState::Tick(f32 dT)
 
 	}
 
+	glfwPollEvents();
+	zVid_ClearColor(0.0f, 0.0f, 0.0f);
 	zVid_Swap(false);
 }
