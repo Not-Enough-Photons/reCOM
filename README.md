@@ -5,6 +5,43 @@ This repository houses the reverse engineered code of SOCOM's engine, GameZ.
 
 It is a work in progress, and a lot needs to make sure the SOCOM experience is one-to-one with the PlayStation 2.
 
+# Source Trees
+## Apps - Application Layer
+| Module | Description |
+| ------ | ----------- |
+| FTS | App specific code such as the game HUD, entry point, and the games database. |
+
+## gamez - Core Engine
+| Module | Description |
+| ------ | :---------- |
+| zAI | AI path generation, A* algorithm implementation, and AI state behavior |
+| zAnim | Animation logic and animation keyframe logic; animation blending |
+| zArchive | GameZ's primary format for storing binary data such as levels, readers, and meshes |
+| zAssetLib | Asset library that contains models, textures, and palettes |
+| zCamera | Camera behavior, FOV controls, and app-specific camera behavior |
+| zEntity | Generic game entity definitions and interactions |
+| zFTS | App-specific code supported by the core engine, like missions |
+| zGame | Game states and managers |
+| zInput | Input handling for gamepads and keyboards |
+| zMath | Math functions for vectors, quaternions, matricies, and more |
+| zNetwork | Network objects and managers for multiplayer, and for Medius |
+| zNode | GameZ's node-based system and node management |
+| zReader | LISP processor for compiled and non-compiled data files |
+| zRender | Main GameZ rendering pipeline; renders nodes, visuals, etc. |
+| zRender/zParticle | GPU instanced particle system |
+| zRender/zVisual | Abstractions for 3D models to be passed to the graphics API (Meshes, sub-meshes, decals, etc.) |
+| zSeal | NPC code, player controller, and AI controller code for NPC objects |
+| zSound | Sound management, handling, and playback |
+| zSystem | Game system management and memory management |
+| zTexture | Textures, management of textures, and container types for textures |
+| zTwoD | 2D elements and handling of 2D elements to be drawn to the UI |
+| zUI | UI framework to house 2D elements |
+| zUtil | Utilities for file I/O and buffered I/O, and string tables |
+| zValve | Game signals and counters to dispatch UI events and game events |
+| zVideo | Render control and controls for the main framebuffer |
+| zWeapon | Generic weapon implementation and ammo |
+
+
 # To-Do List (Not In Order)
 - Loaders for ZAR (Zipper Archive), ZDB (Zipper Database), and other proprietary formats
 - Support for level creation and editing
