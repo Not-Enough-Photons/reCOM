@@ -30,10 +30,15 @@ namespace zdb
 	class CGrid;
 
 	class CVisual;
+	class CMesh;
 	class CSubMesh;
 
 	class CTexture;
 	class CTexHandle;
+
+	class CAssetLib;
+
+	class CVisualVector : public std::vector<CVisual*> {};
 }
 
 namespace zdb
@@ -118,6 +123,7 @@ namespace zdb
 		static CNode* CreateInstance(CModel* model, const CPnt3D& position, const CPnt3D& rotation);
 	public:
 		void InitNodeParams(tag_NODE_PARAMS* other = NULL);
+		virtual bool Read(CSaveLoad& sload);
 
 		CNode* Create(const char* name);
 
@@ -132,6 +138,10 @@ namespace zdb
 		CNode* FindChild(const char* child, bool nested);
 
 		CMatrix& BuildMTW(CMatrix& mat);
+
+		void ReserveChildren(size_t size);
+		void ReserveDI(size_t size);
+		void ReserveVisuals(size_t size);
 
 		virtual s16 Release();
 		bool Rendered();
@@ -168,7 +178,7 @@ namespace zdb
 		// CDIVector m_di;
 		// TODO:
 		// Implement the CVisualVector class
-		// CVisualVector m_visual;
+		CVisualVector m_visual;
 
 		CNodeEx* m_nodeEx;
 		bool m_customGlobalLight;
@@ -396,7 +406,7 @@ namespace zdb
 
 		static CModel* Create(CSaveLoad& saver, CAssetLib* library);
 	public:
-		void Read(CSaveLoad& saver);
+		bool Read(CSaveLoad& sload);
 		void Release(CNode* node);
 	private:
 		s32 m_variant;
@@ -405,6 +415,8 @@ namespace zdb
 		// CRefList m_list;
 		CAssetLib* m_AssetLib;
 	};
+
+	class CModelVector : public std::vector<CModel*> {};
 
 	class CLight : public CNode
 	{
@@ -431,7 +443,7 @@ namespace zdb
 		bool LoadAssetLib_PS2(CWorld* world, CAssetLib* library, size_t size);
 		bool LoadPalettes_PS2(CAssetLib* library);
 		bool LoadTextures_PS2(CAssetLib* library);
-	private:
+	public:
 		CWorld* m_world;
 		zar::CZAR m_zfile;
 		char m_zed_filename[1024];

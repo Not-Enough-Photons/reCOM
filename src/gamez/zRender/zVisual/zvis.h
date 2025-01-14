@@ -19,15 +19,25 @@ namespace zdb
 		ZVIS_FOV_NUM
 	};
 
+	struct vertex
+	{
+		CPnt3D pos;
+		CPnt3D col;
+		CPnt3D tcoords;
+	};
+
 	class CVisBase
 	{
 	public:
 		CVisBase();
 		~CVisBase();
+	protected:
+		void* m_data_buffer;
 	};
 
 	class CVisData
 	{
+	public:
 		CVisData();
 		~CVisData();
 
@@ -71,11 +81,11 @@ namespace zdb
 		static void AddLocalLight(CLight* light, CPnt3D* position);
 		static void AlphaEnable(bool enableAlpha);
 		static s32 ApplyDecal(u32 vertex, f32 opacity, CPnt3D* position, CMatrix* mat, CTexHandle* handle);
-		static CMesh* Create(zar::CZAR& archive);
+		static CVisual* Create(zar::CZAR& archive);
 		static void Init();
 		static void LandmarkEnable(bool enableLandmarks);
-	protected:
-
+	public:
+		bool Read(zar::CZAR& archive);
 	};
 
 	class CMesh : public CVisual

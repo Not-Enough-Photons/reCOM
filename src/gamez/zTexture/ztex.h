@@ -1,18 +1,16 @@
 #pragma once
 #include <vector>
 
-#include "gamez/zAssetLib/zAssetLib.h"
 #include "gamez/zSystem/zsys.h"
 
 namespace zdb
 {
-	class CLoadImage;
-	class CTexPalette;
-	class CDynTexList;
-	class CTexPalList;
-
+	class CAssetLib;
 	class CSaveLoad;
+}
 
+namespace zdb
+{
 	struct TEXTURE_PARAMS
 	{
 		u16 m_width;
@@ -35,19 +33,27 @@ namespace zdb
 	struct PALETTE_PARAMS
 	{
 		u32 m_gsaddr;
-		size_t m_size;
+		u32 m_size : 16;
 		u32 m_format : 8;
-		bool m_combo_pal;
-		bool m_dynamic;
+		u32 m_combo_pal : 1;
+		u32 m_dynamic : 1;
 		u32 m_unused : 6;
 	};
 
-	class CTexManager : public std::vector<CDynTexList*>
+	class CLoadImage
 	{
-	public:
-		static CTexManager* m_texmanager;
 
-		static void doAddBuffer(f32 param_1, f32 param_2, s32 param_3, const char* img);
+	};
+
+	class CTexPalette : public PALETTE_PARAMS
+	{
+	private:
+		CAssetLib* m_AssetLib;
+
+		char* m_name;
+		s32 m_id;
+		void* m_buffer;
+		u32 m_slots;
 	};
 
 	class CTexture : public TEXTURE_PARAMS
@@ -72,16 +78,21 @@ namespace zdb
 		u16 m_gsWords;
 		u64 m_dmaRef;
 		u64 m_dmaRefVu;
-		// GL_TEXTURE* gsTex0;
-		// GL_MIP_TEXTURE* m_MIP1;
-		// GL_MIP_TEXTURE* m_MIP2;
 		std::vector<CTexture*> m_reverse_miplist;
 		CLoadImage* m_loadimage;
 	};
 
-	class CTexList : public std::vector<CTexture*> {};
+	class CTexList : public std::vector<CTexture*> 
+	{
+	public:
+		CTexList() {}
+	};
 
-	class CTexPalList : public std::vector<CTexPalette*> {};
+	class CTexPalList : public std::vector<CTexPalette*>
+	{
+	public:
+		CTexPalList() {}
+	};
 
 	class CDynTexList
 	{
@@ -94,10 +105,12 @@ namespace zdb
 		CTexPalList m_pal_list;
 	};
 
-	class CTexPalette
+	class CTexManager : public std::vector<CDynTexList*>
 	{
 	public:
-	private:
+		static CTexManager* m_texmanager;
+
+		static void doAddBuffer(f32 param_1, f32 param_2, s32 param_3, const char* img);
 	};
 
 	class CTexHandle
@@ -136,11 +149,6 @@ namespace zdb
 	{
 	public:
 		static void Init();
-	};
-
-	class CLoadImage
-	{
-
 	};
 
 	class CRipple

@@ -129,6 +129,38 @@ namespace zdb
 		m_apply_clip                   = other != NULL ? other->m_apply_clip : false;
 	}
 
+	bool CNode::Read(CSaveLoad& sload)
+	{
+		zar::CKey* nodekey = sload.m_zfile.GetOpenKey();
+		SetName(nodekey->GetName());
+
+		sload.m_zfile.Fetch("matrix", &m_matrix, sizeof(CMatrix));
+		sload.m_zfile.Fetch("bbox", &m_bbox, sizeof(CBBox));
+
+		zar::CKey* viskey = sload.m_zfile.OpenKey("visuals");
+
+		if (viskey != NULL)
+		{
+			ReserveVisuals(viskey->GetSize());
+
+			auto it = viskey->begin();
+
+			while (it != viskey->end())
+			{
+				zar::CKey* k = sload.m_zfile.OpenKey(k);
+
+				if (k != NULL)
+				{
+					CVisual* visual = CVisual::Create(k);
+					AddVisual(visual);
+					sload.m_zfile.CloseKey(k);
+				}
+			}
+		}
+
+		return true;
+	}
+
 	void CNode::AddChild(CNode* node)
 	{
 		CNode* parent = node->m_parent;
@@ -266,6 +298,21 @@ namespace zdb
 				// current->~CNode();
 			}
 		}
+	}
+
+	void CNode::ReserveChildren(size_t size)
+	{
+		m_child.reserve(size);
+	}
+
+	void CNode::ReserveDI(size_t size)
+	{
+		// m_di.reserve(size);
+	}
+
+	void CNode::ReserveVisuals(size_t size)
+	{
+		m_visual.reserve(size);
 	}
 
 	f32 CNode::GetRadius() const

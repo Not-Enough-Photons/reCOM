@@ -1,6 +1,8 @@
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
 #include "zvid.h"
 
-#include <GLFW/glfw3.h>
 
 f32 lastRenderTime = 0.0f;
 f32 curRenderTime = 0.0f;
