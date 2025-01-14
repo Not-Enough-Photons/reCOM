@@ -4,9 +4,13 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
+#include "gamez/zRender/zVisual/zvis.h"
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSystem/zsys.h"
 
+/// -------------------------------------------
+/// FORWARD DECLARATIONS
+/// -------------------------------------------
 class CLOD_Object;
 class CMaterial_Object;
 
@@ -37,8 +41,6 @@ namespace zdb
 	class CTexHandle;
 
 	class CAssetLib;
-
-	class CVisualVector : public std::vector<CVisual*> {};
 }
 
 namespace zdb
@@ -142,6 +144,9 @@ namespace zdb
 		void ReserveChildren(size_t size);
 		void ReserveDI(size_t size);
 		void ReserveVisuals(size_t size);
+
+		bool AddVisual(CVisual* visual);
+		void SetParentHasVisuals();
 
 		virtual s16 Release();
 		bool Rendered();

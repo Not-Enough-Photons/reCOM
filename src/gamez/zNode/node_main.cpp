@@ -2,6 +2,7 @@
 
 #include "znode.h"
 
+#include "gamez/zRender/zVisual/zvis.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zTexture/ztex.h"
 #include "gamez/zUtil/util_stable.h"
@@ -151,11 +152,24 @@ namespace zdb
 
 				if (k != NULL)
 				{
-					CVisual* visual = CVisual::Create(k);
+					CVisual* visual = CVisual::Create(sload.m_zfile);
 					AddVisual(visual);
 					sload.m_zfile.CloseKey(k);
 				}
 			}
+		}
+
+		return true;
+	}
+
+	bool CNode::AddVisual(CVisual* visual)
+	{
+		if (visual != NULL && !m_visual.Exists(visual))
+		{
+			visual->m_instance_cnt++;
+			m_visual.insert(m_visual.begin(), visual);
+
+			SetParentHasVisuals();
 		}
 
 		return true;
@@ -313,6 +327,24 @@ namespace zdb
 	void CNode::ReserveVisuals(size_t size)
 	{
 		m_visual.reserve(size);
+	}
+
+	void CNode::SetParentHasVisuals()
+	{
+		m_modified = true;
+
+		if (m_parent != NULL && !m_parent->m_modified)
+		{
+			m_parent->SetParentHasVisuals();
+		}
+
+		CModel* vismdl = dynamic_cast<CModel*>(this);
+
+		if (vismdl != NULL)
+		{
+			// TODO:
+			// Use CRefList for iteration on visuals
+		}
 	}
 
 	f32 CNode::GetRadius() const
