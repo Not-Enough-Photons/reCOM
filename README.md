@@ -20,7 +20,7 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 | zAssetLib | Asset library that contains models, textures, and palettes |
 | zCamera | Camera behavior, FOV controls, and app-specific camera behavior |
 | zEntity | Generic game entity definitions and interactions |
-| zFTS | App-specific code supported by the core engine, like missions |
+| zFTS | App foundation that provides implementations, like missions |
 | zGame | Game states and managers |
 | zInput | Input handling for gamepads and keyboards |
 | zMath | Math functions for vectors, quaternions, matricies, and more |
