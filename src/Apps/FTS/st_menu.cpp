@@ -5,6 +5,8 @@
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zVideo/zvid.h"
 
+bool LoadWorld(const char* name);
+
 CMenuState::CMenuState()
 {
 	m_name = zstrdup("MenuState");
@@ -28,10 +30,17 @@ bool CMenuState::Init()
 
 	if (m_skip == 0)
 	{
-		if (auto archive = CRdrArchive::AddArchive("readerc.zar", "run/ui"))
-		{
+		LoadWorld("ui");
 
+		if (zdb::CWorld::m_world)
+		{
+			zdb::CWorld::m_world->m_camera->SetPosition(320.0f, 0.0f, 320.0f);
+			zdb::CWorld::m_world->m_camera->Update(zdb::tag_ZCAM_TYPE::ZCAM_NORMAL);
+			zdb::CVisual::m_camera = zdb::CWorld::m_world->m_camera;
+			thePipe.m_camera = zdb::CWorld::m_world->m_camera;
 		}
+
+		
 	}
 
 	return true;
@@ -46,7 +55,6 @@ void CMenuState::Tick(f32 dT)
 		{
 			zdb::CWorld::m_world->m_camera->Update(zdb::tag_ZCAM_TYPE::ZCAM_NORMAL);
 		}
-
 	}
 
 	glfwPollEvents();

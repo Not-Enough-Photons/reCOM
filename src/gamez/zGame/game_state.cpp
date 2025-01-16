@@ -55,7 +55,7 @@ CGameState* CGame::Switch(CGameState* state, u32 index)
 			currentState->OnPush();
 		}
 
-		state->OnPush();
+		state->Init();
 	}
 
 	return currentState;

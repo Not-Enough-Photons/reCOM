@@ -4,15 +4,33 @@
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
 
+namespace zar
+{
+	class CZAR;
+}
+
 namespace zdb
 {
+	class CNode;
+	class CModel;
+
+	class CVisBase;
 	class CVisual;
 	class CMesh;
 	class CLight;
 	class CTexHandle;
 
 	class CCamera;
+}
 
+void hookupMesh(zar::CZAR* archive, zdb::CModel* model);
+void hookupVisuals(zar::CZAR* archive, zdb::CModel* model);
+void hookupVisuals(zar::CZAR* archive, zar::CKey* key, zdb::CNode* node, zdb::CModel* model, zdb::CVisBase* vis);
+
+extern s32 node_index;
+
+namespace zdb
+{
 	enum tag_ZVIS_FOV
 	{
 		ZVIS_FOV_CLIP,
@@ -48,8 +66,15 @@ namespace zdb
 
 	class CVisBase
 	{
-	protected:
+	public:
+		CVisBase(size_t size);
+		
+		static u32 m_instance_count;
+
 		void* m_data_buffer;
+		s32 m_buffer_count;
+		size_t m_data_size;
+		bool m_active;
 	};
 
 	class CVisData
@@ -83,9 +108,9 @@ namespace zdb
 		static CVisual* Create(zar::CZAR& archive);
 		static void Init();
 		static void LandmarkEnable(bool enableLandmarks);
-	public:
+
 		bool Read(zar::CZAR& archive);
-	public:
+
 		static std::deque<CVisual*> m_stack_vid;
 
 		static std::vector<CPnt3D*> m_lightMapList;
@@ -95,8 +120,9 @@ namespace zdb
 		static void* localLightBuf;
 		static CLight* localLightPtr;
 
-		static PNT3D m_addColor;
-		static PNT3D m_basefog_color;
+		static CPnt4D m_addColor;
+		static CPnt4D m_basefog_color;
+		static CPnt4D m_basefog_near;
 
 		static bool m_applyDetailTexture;
 		static bool m_applyLocalLights;
@@ -112,8 +138,10 @@ namespace zdb
 		static s32 custom;
 
 		static f32 m_opacity;
+
+		bool m_has_lods;
 		
-		u32 m_instance_cnt;
+		u32 m_refcount;
 		void* m_detail_buff;
 		u32 m_detail_cnt;
 		size_t m_detail_size;

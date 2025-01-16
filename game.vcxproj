@@ -271,6 +271,7 @@
     <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
     <ClInclude Include="src\gamez\zNetwork\znet.h" />
     <ClInclude Include="src\gamez\zNode\znode.h" />
+    <ClInclude Include="src\gamez\zPhysics\zphysics.h" />
     <ClInclude Include="src\gamez\zReader\zrdr.h" />
     <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
     <ClInclude Include="src\gamez\zRender\zParticle\zparticle.h" />
@@ -283,6 +284,7 @@
     <ClInclude Include="src\gamez\zTwoD\ztwod.h" />
     <ClInclude Include="src\gamez\zUI\zui.h" />
     <ClInclude Include="src\gamez\zUtil\util_stable.h" />
+    <ClInclude Include="src\gamez\zUtil\util_stack.h" />
     <ClInclude Include="src\gamez\zUtil\util_systemio.h" />
     <ClInclude Include="src\gamez\zUtil\zutil.h" />
     <ClInclude Include="src\gamez\zValve\zvalve.h" />
@@ -620,6 +622,7 @@
     <ClCompile Include="src\Apps\FTS\st_load.cpp" />
     <ClCompile Include="src\Apps\FTS\st_menu.cpp" />
     <ClCompile Include="src\Apps\FTS\st_mpexit.cpp" />
+    <ClCompile Include="src\Apps\FTS\st_test.cpp" />
     <ClCompile Include="src\Apps\FTS\thezoom.cpp" />
     <ClCompile Include="src\gamez\zAI\ai_astar.cpp" />
     <ClCompile Include="src\gamez\zAI\ai_events.cpp" />
@@ -637,7 +640,6 @@
     <ClCompile Include="src\gamez\zAnim\zanim_menu.cpp" />
     <ClCompile Include="src\gamez\zArchive\zar_main.cpp" />
     <ClCompile Include="src\gamez\zArchive\zar_search.cpp" />
-    <ClCompile Include="src\gamez\zAssetLib\zassetlib_main.cpp" />
     <ClCompile Include="src\gamez\zCamera\camera.cpp" />
     <ClCompile Include="src\gamez\zCamera\fov.cpp" />
     <ClCompile Include="src\gamez\zCamera\zcam_main.cpp" />
@@ -645,8 +647,7 @@
     <ClCompile Include="src\gamez\zEntity\body.cpp" />
     <ClCompile Include="src\gamez\zEntity\char_type.cpp" />
     <ClCompile Include="src\gamez\zEntity\ent_main.cpp" />
-    <ClCompile Include="src\gamez\zEntity\int_main.cpp" />
-    <ClCompile Include="src\gamez\zEntity\int_material.cpp" />
+    <ClCompile Include="src\gamez\zEntity\ent_target.cpp" />
     <ClCompile Include="src\gamez\zEntity\pickup_main.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_action.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_controller.cpp" />
@@ -681,13 +682,165 @@
     <ClCompile Include="src\gamez\zNode\graph_tree.cpp" />
     <ClCompile Include="src\gamez\zNode\grid_clutter.cpp" />
     <ClCompile Include="src\gamez\zNode\grid_di.cpp" />
+    <ClCompile Include="src\gamez\zNode\grid_main.cpp" />
     <ClCompile Include="src\gamez\zNode\node_assetlib.cpp" />
     <ClCompile Include="src\gamez\zNode\node_io.cpp" />
     <ClCompile Include="src\gamez\zNode\node_main.cpp" />
     <ClCompile Include="src\gamez\zNode\node_saveload.cpp" />
     <ClCompile Include="src\gamez\zNode\node_shadow.cpp" />
+    <ClCompile Include="src\gamez\zNode\node_util.cpp" />
     <ClCompile Include="src\gamez\zNode\node_wave.cpp" />
     <ClCompile Include="src\gamez\zNode\node_world.cpp" />
+    <ClCompile Include="src\gamez\zPhysics\int_main.cpp">
+      <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>obj\x86_64\Debug\</AssemblerListingLocation>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <BrowseInformation>false</BrowseInformation>
+      <BrowseInformationFile>obj\x86_64\Debug\</BrowseInformationFile>
+      <CompileAs>Default</CompileAs>
+      <ConformanceMode>Default</ConformanceMode>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <EnableASAN>false</EnableASAN>
+      <EnableFuzzer>false</EnableFuzzer>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <GenerateModuleDependencies>false</GenerateModuleDependencies>
+      <GenerateSourceDependencies>false</GenerateSourceDependencies>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ModuleDependenciesFile>obj\x86_64\Debug\</ModuleDependenciesFile>
+      <ModuleOutputFile>obj\x86_64\Debug\</ModuleOutputFile>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ObjectFileName>obj\x86_64\Debug\</ObjectFileName>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ProgramDataBaseFileName>obj\x86_64\Debug\vc143.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>obj\x86_64\Debug\game.pch</PrecompiledHeaderOutputFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+      <ShowIncludes>false</ShowIncludes>
+      <SourceDependenciesFile>obj\x86_64\Debug\</SourceDependenciesFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <SpectreMitigation>false</SpectreMitigation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <TrackerLogDirectory>obj\x86_64\Debug\game.tlog\</TrackerLogDirectory>
+      <TranslateIncludes>false</TranslateIncludes>
+      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <XMLDocumentationFileName>obj\x86_64\Debug\</XMLDocumentationFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IntelJCCErratum>false</IntelJCCErratum>
+      <BuildStlModules>false</BuildStlModules>
+      <TreatAngleIncludeAsExternal>false</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+      <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
+      <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
+      <PreprocessorDefinitions>DEBUG;_UNICODE;UNICODE;</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor;src;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LinkCompiled>true</LinkCompiled>
+    </ClCompile>
+    <ClCompile Include="src\gamez\zPhysics\int_material.cpp">
+      <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>obj\x86_64\Debug\</AssemblerListingLocation>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <BrowseInformation>false</BrowseInformation>
+      <BrowseInformationFile>obj\x86_64\Debug\</BrowseInformationFile>
+      <CompileAs>Default</CompileAs>
+      <ConformanceMode>Default</ConformanceMode>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <EnableASAN>false</EnableASAN>
+      <EnableFuzzer>false</EnableFuzzer>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <GenerateModuleDependencies>false</GenerateModuleDependencies>
+      <GenerateSourceDependencies>false</GenerateSourceDependencies>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <LanguageStandard>Default</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ModuleDependenciesFile>obj\x86_64\Debug\</ModuleDependenciesFile>
+      <ModuleOutputFile>obj\x86_64\Debug\</ModuleOutputFile>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ObjectFileName>obj\x86_64\Debug\</ObjectFileName>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ProgramDataBaseFileName>obj\x86_64\Debug\vc143.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>obj\x86_64\Debug\game.pch</PrecompiledHeaderOutputFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
+      <ShowIncludes>false</ShowIncludes>
+      <SourceDependenciesFile>obj\x86_64\Debug\</SourceDependenciesFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <SpectreMitigation>false</SpectreMitigation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <TrackerLogDirectory>obj\x86_64\Debug\game.tlog\</TrackerLogDirectory>
+      <TranslateIncludes>false</TranslateIncludes>
+      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <XMLDocumentationFileName>obj\x86_64\Debug\</XMLDocumentationFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IntelJCCErratum>false</IntelJCCErratum>
+      <BuildStlModules>false</BuildStlModules>
+      <TreatAngleIncludeAsExternal>false</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+      <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
+      <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
+      <PreprocessorDefinitions>DEBUG;_UNICODE;UNICODE;</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor;src;</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LinkCompiled>true</LinkCompiled>
+    </ClCompile>
     <ClCompile Include="src\gamez\zReader\zrdr_archive.cpp" />
     <ClCompile Include="src\gamez\zReader\zrdr_edit.cpp" />
     <ClCompile Include="src\gamez\zReader\zrdr_file.cpp" />
@@ -752,6 +905,7 @@
     <ClCompile Include="src\gamez\zUtil\util_bufio.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_output.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_stable.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_stack.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_systemio.cpp" />
     <ClCompile Include="src\gamez\zValve\valve_list.cpp" />
     <ClCompile Include="src\gamez\zValve\valve_main.cpp" />
@@ -910,6 +1064,17 @@
   <ItemGroup>
     <Library Include="lib\glew32.lib" />
     <Library Include="lib\glfw3.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="vendor\std\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\common\zrdr\dynamics.rdr" />
+    <Content Include="data\common\zrdr\global_valves.rdr" />
+    <Content Include="data\common\zrdr\mission.rdr" />
+    <Content Include="data\common\zrdr\sndjukeboxm.rdr" />
+    <Content Include="data\common\zrdr\test.rdr" />
+    <Content Include="data\common\zrdr\vehicles.rdr" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

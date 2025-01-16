@@ -4,7 +4,9 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
+#include "gamez/zPhysics/zphysics.h"
 #include "gamez/zRender/zVisual/zvis.h"
+#include "gamez/zTexture/ztex.h"
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSystem/zsys.h"
 
@@ -91,6 +93,8 @@ namespace zdb
 		u32 m_apply_clip : 1;
 	};
 
+	void InitNodeParams(tag_NODE_PARAMS* nparams, const tag_NODE_PARAMS* other = NULL);
+
 	struct tag_GRID_PARAMS
 	{
 		struct tag_SIZE
@@ -118,14 +122,33 @@ namespace zdb
 		friend class CNodeVector;
 		friend class CWorld;
 	public:
+		// TODO:
+		// guess the rest of these
+		enum class TYPE
+		{
+			NODE_TYPE_UNKNOWN,
+			NODE_TYPE_GENERIC,
+			NODE_TYPE_CHILD,
+			NODE_TYPE_UNK3,
+			NODE_TYPE_UNK4,
+			NODE_TYPE_UNK5,
+			NODE_TYPE_UNK6,
+			NODE_TYPE_UNK7,
+			NODE_TYPE_LIGHT,
+			NODE_TYPE_LENSFLARE,
+			NODE_TYPE_CELL
+		};
+		
 		CNode();
 
-		static CNode* CreateInstance(CSaveLoad& save);
-		static CNode* CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation);
-		static CNode* CreateInstance(CModel* model, const CPnt3D& position, const CPnt3D& rotation);
-	public:
-		void InitNodeParams(tag_NODE_PARAMS* other = NULL);
+		static CNode* CreateInstance(CSaveLoad& sload);
+		static CNode* CreateInstance(const char* name, const CPnt3D* position, const CPnt3D* rotation);
+		static CNode* CreateInstance(CModel* model, const CPnt3D* position, const CPnt3D* rotation);
+
+		static CNode* Read(CSaveLoad& sload, CNode* node);
+	
 		virtual bool Read(CSaveLoad& sload);
+		bool ReadDataBegin(CSaveLoad& sload);
 
 		CNode* Create(const char* name);
 
@@ -146,43 +169,48 @@ namespace zdb
 		void ReserveVisuals(size_t size);
 
 		bool AddVisual(CVisual* visual);
+		bool AddDI(CDI* di);
+		
 		void SetParentHasVisuals();
 
 		virtual s16 Release();
 		bool Rendered();
 
+		CGridAtom* GetAtom(s16 index);
 		void InsertAtom(CGridAtom* atom);
-		CGridAtom* GetAtom(s32 index);
 		void FreeAtom();
-
-		f32 GetRadius() const;
-		f32 GetRadiusSq() const;
-
-		CPnt3D* GetRotation(const CPnt3D* rotation) const;
-		CPnt3D* GetScale(CPnt3D* scale) const;
-		f32 GetScale() const;
-
-		CSubMesh* GetSubMesh() const;
-
-		void SetName(const char* name);
-		void SetModel(CModel* model);
-		void SetModelname(const char* name);
-		bool SetActive(bool active);
+		
+		/// -------------------------------------------
+		/// GETTERS/SETTERS
+		/// -------------------------------------------
 
 		void SetPosition(f32 x, f32 y, f32 z);
 		void SetRotation(const CQuat& rotation) {};
 		void SetScale(f32 scaleFactor);
 		void SetScale(CPnt3D* scale);
+		
+		CPnt3D* GetRotation(const CPnt3D* rotation) const;
+		CPnt3D* GetScale(CPnt3D* scale) const;
+		f32 GetScale() const;
+		
+		f32 GetRadius() const;
+		f32 GetRadiusSq() const;
+
+		CBBox* GetBBox();
+		
+		CMesh* GetMesh() const;
+		CSubMesh* GetSubMesh() const;
+
+		bool SetActive(bool active);
+		void SetName(const char* name);
+		void SetModel(CModel* model);
+		void SetModelname(const char* name);
 	public:
 		char* m_name;
-	protected:
+		
 		CNode* m_parent;
 		CNodeVector m_child;
-		// TODO:
-		// Implement the CDIVector class and CDI
-		// CDIVector m_di;
-		// TODO:
-		// Implement the CVisualVector class
+		CDIVector m_di;
 		CVisualVector m_visual;
 
 		CNodeEx* m_nodeEx;
@@ -222,15 +250,16 @@ namespace zdb
 	public:
 		CWorld() : CNode() {}
 		~CWorld();
-
-		static CCamera* m_camera;
+		
 		static CWorld* m_world;
 
 		static f32 m_scale;
 		static f32 m_invscale;
 
 		static s32 GetVersion();
-	public:
+
+		static CModel* GetModel(const char* name);
+		
 		void Init() {}
 		void Uninit() {}
 
@@ -244,10 +273,12 @@ namespace zdb
 		void AddTextureAssetCharacter(const CNode& textureAsset);
 		void ReserveChildren(s32 count);
 
+		int GenerateLandmarkList();
+		
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);
 
-		// undefined4 DismemberWorldModel();
+		bool DismemberWorldModel();
 
 		void ClearLightMapList();
 		void ClearShadowList();
@@ -257,8 +288,9 @@ namespace zdb
 
 		void GetTexHandle() const;
 		// undefined4 GetTextureByName(const char* name) const;
-		int GetModel() const;
-	private:
+
+		CCamera* m_camera;
+
 		u32 m_default_soiltype;
 		char* m_default_soiltype_name;
 
@@ -299,7 +331,85 @@ namespace zdb
 		CTexture* m_shadowTex[4];
 		CTexHandle* m_shadowTexH;
 	};
+	
+	class CWind
+	{
+	public:
+		static void RegisterAnimCommands();
+		void CmdParseWind();
+	};
 
+	class CClutter
+	{
+	private:
+		CNode* m_node;
+	};
+
+	class CNodeEx : public CNode
+	{
+	public:
+		virtual void OnAction(CNode* node, void* action) = 0;
+		virtual void OnCopy(CNode* node, CNode* other) = 0;
+		virtual void OnDelete(CNode* node) = 0;
+		virtual void OnDoubleClick(CNode* node) = 0;
+		virtual void OnMove(CNode* node) = 0;
+		virtual void OnSelect(CNode* node, bool selected) = 0;
+		// virtual void* OnWeaponHit(CNode* node, IntersectStruct* intersection, CZProjectile* projectile) = 0;
+	};
+
+	class CModel : public CNode
+	{
+	public:
+		CModel(const char* name);
+		~CModel();
+
+		static CModel* Create(CSaveLoad& saver, CAssetLib* library);
+	public:
+		bool Read(CSaveLoad& sload);
+		void Release(CNode* node);
+	private:
+		s32 m_variant;
+		bool m_bForceExport;
+		bool m_bbox_valid;
+		// CRefList m_list;
+		CAssetLib* m_AssetLib;
+	};
+
+	class CModelVector : public std::vector<CModel*>
+	{
+	public:
+		CModel* GetModel(const char* name);
+	};
+
+	class CLight : public CNode
+	{
+	private:
+		f32 m_maxRangeSq;
+		f32 m_maxRange;
+		f32 m_minRange;
+		f32 m_invMaxRange;
+		f32 m_invDeltaRange;
+		f32 m_opacity;
+		CPnt3D m_diffuse;
+		bool m_appliedToNode;
+		CPnt3D m_WorldPosition;
+	};
+
+	class CLensFlare : public CNode
+	{
+		
+	};
+
+	class CLightList : public std::list<CLight*>
+	{
+		
+	};
+
+	class CClutterList : public std::list<CClutter*>
+	{
+		
+	};
+	
 	/// <summary>
 	/// Doubly linked list of atoms that occupy a single cell.
 	/// </summary>
@@ -311,7 +421,7 @@ namespace zdb
 		CGridAtom* Prev;
 	};
 
-	class CCell
+	class CCell : public CNode
 	{
 	public:
 		struct GRIDCELLATOM
@@ -321,6 +431,12 @@ namespace zdb
 			s32 x;
 			s32 z;
 		};
+
+		CCell(const CPnt3D* origin, f32 offset);
+	private:
+		CLightList m_lightList;
+		CClutterList m_clutterList;
+		CDynTexList m_dyntexlist;
 	};
 
 	class COrderedCell
@@ -337,8 +453,13 @@ namespace zdb
 	public:
 		CGrid();
 		~CGrid();
-	public:
+
+		bool Create(CWorld* world, const tag_GRID_PARAMS* params);
+		bool Read(CSaveLoad& sload);
+		
 		void Insert(CNode* node);
+
+		static u32 N_ATOMS;
 	private:
 		CFRect m_extents;
 		CWorld* m_world;
@@ -346,7 +467,7 @@ namespace zdb
 		bool m_ClutterCreated;
 
 		CGridAtom** m_Atoms;
-		CGridAtom** m_AtomBuf;
+		CGridAtom* m_AtomBuf;
 		CGridAtom** m_FreeAtoms;
 		s32 m_AtomFreeCnt;
 		s32 m_AtomFreePtr;
@@ -382,59 +503,6 @@ namespace zdb
 		s32 m_ring;
 
 		COrderedCell m_orderedCells;
-	};
-
-	class CWind
-	{
-	public:
-		static void RegisterAnimCommands();
-		void CmdParseWind();
-	};
-
-	class CNodeEx : public CNode
-	{
-	public:
-		virtual void OnAction(CNode* node, void* action) = 0;
-		virtual void OnCopy(CNode* node, CNode* other) = 0;
-		virtual void OnDelete(CNode* node) = 0;
-		virtual void OnDoubleClick(CNode* node) = 0;
-		virtual void OnMove(CNode* node) = 0;
-		virtual void OnSelect(CNode* node, bool selected) = 0;
-		// virtual void* OnWeaponHit(CNode* node, IntersectStruct* intersection, CZProjectile* projectile) = 0;
-	};
-
-	class CModel : public CNode
-	{
-	public:
-		CModel(const char* name);
-		~CModel();
-
-		static CModel* Create(CSaveLoad& saver, CAssetLib* library);
-	public:
-		bool Read(CSaveLoad& sload);
-		void Release(CNode* node);
-	private:
-		s32 m_variant;
-		bool m_bForceExport;
-		bool m_bbox_valid;
-		// CRefList m_list;
-		CAssetLib* m_AssetLib;
-	};
-
-	class CModelVector : public std::vector<CModel*> {};
-
-	class CLight : public CNode
-	{
-	private:
-		f32 m_maxRangeSq;
-		f32 m_maxRange;
-		f32 m_minRange;
-		f32 m_invMaxRange;
-		f32 m_invDeltaRange;
-		f32 m_opacity;
-		CPnt3D m_diffuse;
-		bool m_appliedToNode;
-		CPnt3D m_WorldPosition;
 	};
 
 	class CSaveLoad
@@ -481,7 +549,7 @@ public:
 	CNodeAction* GetAction(bool isBase) const;
 	CNodeAction* GetActionById(s32 id) const;
 	const char* GetActionType(ACTION_TYPE type) const;
-	CNodeAction* GetClosestAction(const CPnt3D* position, float radius) const;
+	CNodeAction* GetClosestAction(const CPnt3D* position, f32 radius) const;
 
 	// bool ExecuteAction(CZSealBody* seal, unsigned int actionFlags) const;
 

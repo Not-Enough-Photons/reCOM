@@ -124,6 +124,8 @@ public:
 	void RenderUINode(zdb::CNode* node);
 	void RenderUINodeRecursive(zdb::CNode* node);
 	u32 RenderWorld(zdb::CWorld* world);
+	void Flush();
+
 public:
 	zdb::CCamera* m_camera;
 

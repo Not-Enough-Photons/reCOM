@@ -107,10 +107,9 @@ namespace zdb
 		f32 m_landmark_fog_bottom;
 
 		u32 m_flags_unused : 29;
-
-		bool m_fog_enabled;
-		bool m_directional_fog_enabled;
-		bool m_fog_alt_enabled;
+		u32 m_fog_enabled : 1;
+		u32 m_directional_fog_enabled : 1;
+		u32 m_fog_alt_enabled : 1;
 	};
 
 	struct tag_RECT
@@ -167,7 +166,7 @@ namespace zdb
 		CPnt4D BottompPlaneNormal;
 	};
 
-	class CCamera : public CNode, tag_CAMERA_PARAMS
+	class CCamera : public CNode, public tag_CAMERA_PARAMS
 	{
 	public:
 		static void RegisterAnimCommands();
@@ -190,6 +189,8 @@ namespace zdb
 		void Update(tag_ZCAM_TYPE type);
 
 		f32 GetScaledRangeSquared(const CPnt3D& point);
+
+		void SetHalfHorizontalFOVRadians(f32 radians);
 	public:
 		f32 m_Zmin;
 		f32 m_Zmax;

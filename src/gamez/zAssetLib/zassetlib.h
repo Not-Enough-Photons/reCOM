@@ -2,6 +2,8 @@
 #include <vector>
 #include <list>
 
+#include "gamez/zNode/znode.h"
+#include "gamez/zTexture/ztex.h"
 #include "gamez/zSystem/zsys.h"
 
 namespace zdb
@@ -11,19 +13,17 @@ namespace zdb
 	class CModel;
 	class CTexture;
 	class CTexPalette;
-
-	class CModelVector : public std::vector<CModel*> {};
-	class CTexList : public std::vector<CTexture*> {};
-	class CTexPalList : public std::vector<CTexPalette*> {};
 }
 
 namespace zdb
 {
 	class CAssetLib
 	{
+		friend class CAssetList;
 	public:
+		bool IsNamed(const char* name) const;
 		char* RootName() const;
-	private:
+		
 		char* m_name;
 
 		CModelVector m_models;
@@ -42,9 +42,20 @@ namespace zdb
 		s32 m_iRefCount;
 	};
 
+	class CAssetList : public std::list<CAssetLib*>
+	{
+	public:
+		CAssetLib* FindLib(const char* name);
+		CModel* GetModel(const char* name);
+	private:
+		CModel* m_cache_model;
+	};
+
 	class CAssetMgr
 	{
 	public:
-		static std::list<CAssetLib*> m_assets;
+		CAssetLib* GetLoadedLibRef(const char* name);
+		
+		static CAssetList m_assets;
 	};
 }

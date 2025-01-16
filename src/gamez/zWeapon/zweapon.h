@@ -10,9 +10,9 @@ class CZProjectileList;
 class CZWeapon;
 class CZWeaponList;
 
-namespace zwep
+namespace zdb
 {
-	extern u32 personMaterialId;
+	class DiIntersect;
 }
 
 enum class ENCUMBRANCE
@@ -230,6 +230,11 @@ enum class GRENADE_STATE
 	DETONATE,
 	REMOVE
 };
+
+namespace zwep
+{
+	extern u32 personMaterialId;
+}
 
 class CZAmmo
 {

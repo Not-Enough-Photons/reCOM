@@ -13,3 +13,8 @@ void CPipe::RenderUINode(zdb::CNode* node)
 {
 
 }
+
+void CPipe::Flush()
+{
+	
+}

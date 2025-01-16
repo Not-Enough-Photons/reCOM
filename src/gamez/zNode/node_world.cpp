@@ -1,5 +1,6 @@
 #include "znode.h"
 
+#include "gamez/zAssetLib/zassetlib.h"
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zRender/zVisual/zvis.h"
 #include "gamez/zTexture/ztex.h"
@@ -12,7 +13,8 @@ namespace zdb
 	CNodeUniverse* NodeUniverse = NULL;
 
 	CWorld* CWorld::m_world = NULL;
-	CCamera* CWorld::m_camera = NULL;
+	f32 CWorld::m_scale = 1.0f;
+	f32 CWorld::m_invscale = 1.0f / CWorld::m_scale;
 
 	bool CNodeUniverse::AddNode(CNode* node)
 	{
@@ -104,6 +106,11 @@ namespace zdb
 	s32 CWorld::GetVersion()
 	{
 		return 0x10001;
+	}
+
+	CModel* CWorld::GetModel(const char* name)
+	{
+		return CAssetMgr::m_assets.GetModel(name);
 	}
 
 	s32 CWorld::Initalize()

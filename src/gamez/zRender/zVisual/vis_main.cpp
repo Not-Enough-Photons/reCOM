@@ -1,11 +1,81 @@
 #include "zvis.h"
 
 #include "gamez/zArchive/zar.h"
+#include "gamez/zNode/znode.h"
+
+s32 node_index = 0;
+
+void hookupMesh(zar::CZAR* archive, zdb::CModel* model)
+{
+	
+}
+
+void hookupVisuals(zar::CZAR* archive, zar::CKey* key, zdb::CNode* node, zdb::CModel* model, zdb::CVisBase* vis)
+{
+	
+}
+
+void hookupVisuals(zar::CZAR* archive, zdb::CModel* model)
+{
+	zdb::CVisBase* vis = NULL;
+	zdb::CMesh* mesh = model->GetMesh();
+
+	if (!mesh)
+	{
+		node_index = -1;
+
+		zar::CKey* modelkey = archive->OpenKey(model->m_name);
+
+		if (modelkey)
+		{
+			vis = new zdb::CVisBase(modelkey->GetSize());
+			
+			if (!archive->FetchLIP(modelkey, reinterpret_cast<void**>(vis)))
+			{
+				if (modelkey && !vis->m_active)
+				{
+					if (vis->m_data_buffer)
+					{
+						zfree(vis->m_data_buffer);
+					}
+
+					vis->m_data_buffer = NULL;
+				}
+
+				zdb::CVisBase::m_instance_count--;
+				delete vis;
+			}
+			else
+			{
+				// hookupVisuals(modelkey, model, model, vis);
+			}
+
+			archive->CloseKey(modelkey);
+		}
+	}
+	else
+	{
+		hookupMesh(archive, model);
+	}
+}
 
 namespace zdb
 {
+	u32 CVisBase::m_instance_count = 0;
+
+	CPnt4D CVisual::m_basefog_color = CPnt4D::zero;
+	
 	CCamera* CVisual::m_camera = NULL;
 
+	CVisBase::CVisBase(size_t size)
+	{
+		m_data_buffer = NULL;
+		m_buffer_count = 0;
+		m_data_size = size;
+		CVisBase::m_instance_count++;
+		m_active = true;
+	}
+	
 	CVisual* CVisual::Create(zar::CZAR& archive)
 	{
 		CVisual* visual = NULL;

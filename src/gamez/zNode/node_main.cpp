@@ -12,6 +12,8 @@ namespace zdb
 {
 	u32 numNodes = 0;
 
+	u32 CGrid::N_ATOMS = 0;
+
 	CNode::CNode()
 	{
 		m_matrix = CMatrix::identity;
@@ -27,7 +29,7 @@ namespace zdb
 		m_AtomAlloc = 0;
 		m_TickNum = -1;
 		m_Opacity = 1.0f;
-		InitNodeParams();
+		InitNodeParams(this, NULL);
 		m_customGlobalLight = false;
 		m_flatten = false;
 		m_modified = false;
@@ -48,49 +50,39 @@ namespace zdb
 		m_name = "UNNAMED_NODE";
 	}
 
-	CNode* CNode::CreateInstance(const char* name, const CPnt3D& position, const CPnt3D& rotation)
-	{
-		return NULL;
-	}
-
-	CNode* CNode::CreateInstance(CModel* model, const CPnt3D& position, const CPnt3D& rotation)
-	{
-		return NULL;
-	}
-
 	CNode* CNode::Create(const char* name)
 	{
 		CNode* node = new CNode();
 		char* str = NULL;
 
-		if (name != NULL)
+		if (name)
 		{
 			str = node->m_name;
 
-			if (str != 0 && str != "UNNAMED_NODE")
+			if (str && str != "UNNAMED_NODE")
 			{
 				zfree(str);
 			}
 
-			str = strdup("Node");
+			str = zstrdup("Node");
 			node->m_name = str;
 		}
 		else
 		{
 			str = node->m_name;
 
-			if (str != NULL && str != "UNNAMED_NODE")
+			if (str && str != "UNNAMED_NODE")
 			{
 				zfree(str);
 			}
 
-			if (str == NULL)
+			if (!str)
 			{
 				node->m_name = "UNNAMED_NODE";
 			}
 			else
 			{
-				str = strdup(name);
+				str = zstrdup(name);
 				node->m_name = str;
 			}
 		}
@@ -98,92 +90,76 @@ namespace zdb
 		return node;
 	}
 
-	void CNode::InitNodeParams(tag_NODE_PARAMS* other)
+	void InitNodeParams(tag_NODE_PARAMS* nparams, const tag_NODE_PARAMS* other)
 	{
-		m_type                         = other != NULL ? other->m_type : 0;
-		m_active                       = other != NULL ? other->m_active : false;
-		m_dynamic_motion               = other != NULL ? other->m_dynamic_motion : false;
-		m_dynamic_light                = other != NULL ? other->m_dynamic_light : false;
-		m_landmark                     = other != NULL ? other->m_landmark : false;
-		m_light                        = other != NULL ? other->m_light : false;
-		m_prelight                     = other != NULL ? other->m_prelight : false;
-		m_fog                          = other != NULL ? other->m_fog : false;
-		m_transparent                  = other != NULL ? other->m_transparent : false;
-		m_facade                       = other != NULL ? other->m_facade : false;
-		m_reflective                   = other != NULL ? other->m_reflective : false;
-		m_bumpmap                      = other != NULL ? other->m_bumpmap : false;
-		m_hasDI                        = other != NULL ? other->m_hasDI : false;
-		m_region_shift                 = other != NULL ? other->m_region_shift : 0;
-		m_has_visuals_prior_to_export  = other != NULL ? other->m_has_visuals_prior_to_export : false;
-		m_shadow                       = other != NULL ? other->m_shadow : false;
-		m_worldchild                   = other != NULL ? other->m_worldchild : false;
-		m_char_common                  = other != NULL ? other->m_char_common : false;
-		m_NOTUSED                      = other != NULL ? other->m_NOTUSED : false;
-		m_hasVisuals                   = other != NULL ? other->m_hasVisuals : false;
-		m_hasMesh                      = other != NULL ? other->m_hasMesh : false;
-		m_scrolling_texture            = other != NULL ? other->m_scrolling_texture : false;
-		m_light_dynamic                = other != NULL ? other->m_light_dynamic : false;
-		m_light_static                 = other != NULL ? other->m_light_static : false;
-		m_clutter                      = other != NULL ? other->m_clutter : false;
-		m_mtx_is_identity              = other != NULL ? other->m_mtx_is_identity : false;
-		m_use_parent_bbox              = other != NULL ? other->m_use_parent_bbox : false;
-		m_apply_clip                   = other != NULL ? other->m_apply_clip : false;
-	}
-
-	bool CNode::Read(CSaveLoad& sload)
-	{
-		zar::CKey* nodekey = sload.m_zfile.GetOpenKey();
-		SetName(nodekey->GetName());
-
-		sload.m_zfile.Fetch("matrix", &m_matrix, sizeof(CMatrix));
-		sload.m_zfile.Fetch("bbox", &m_bbox, sizeof(CBBox));
-
-		zar::CKey* viskey = sload.m_zfile.OpenKey("visuals");
-
-		if (viskey != NULL)
-		{
-			ReserveVisuals(viskey->GetSize());
-
-			auto it = viskey->begin();
-
-			while (it != viskey->end())
-			{
-				zar::CKey* k = sload.m_zfile.OpenKey(k);
-
-				if (k != NULL)
-				{
-					CVisual* visual = CVisual::Create(sload.m_zfile);
-					AddVisual(visual);
-					sload.m_zfile.CloseKey(k);
-				}
-			}
-		}
-
-		return true;
+		nparams->m_type                         = other != NULL ? other->m_type : 0;
+		nparams->m_active                       = other != NULL ? other->m_active : false;
+		nparams->m_dynamic_motion               = other != NULL ? other->m_dynamic_motion : false;
+		nparams->m_dynamic_light                = other != NULL ? other->m_dynamic_light : false;
+		nparams->m_landmark                     = other != NULL ? other->m_landmark : false;
+		nparams->m_light                        = other != NULL ? other->m_light : false;
+		nparams->m_prelight                     = other != NULL ? other->m_prelight : false;
+		nparams->m_fog                          = other != NULL ? other->m_fog : false;
+		nparams->m_transparent                  = other != NULL ? other->m_transparent : false;
+		nparams->m_facade                       = other != NULL ? other->m_facade : false;
+		nparams->m_reflective                   = other != NULL ? other->m_reflective : false;
+		nparams->m_bumpmap                      = other != NULL ? other->m_bumpmap : false;
+		nparams->m_hasDI                        = other != NULL ? other->m_hasDI : false;
+		nparams->m_region_shift                 = other != NULL ? other->m_region_shift : 0;
+		nparams->m_has_visuals_prior_to_export  = other != NULL ? other->m_has_visuals_prior_to_export : false;
+		nparams->m_shadow                       = other != NULL ? other->m_shadow : false;
+		nparams->m_worldchild                   = other != NULL ? other->m_worldchild : false;
+		nparams->m_char_common                  = other != NULL ? other->m_char_common : false;
+		nparams->m_NOTUSED                      = other != NULL ? other->m_NOTUSED : false;
+		nparams->m_hasVisuals                   = other != NULL ? other->m_hasVisuals : false;
+		nparams->m_hasMesh                      = other != NULL ? other->m_hasMesh : false;
+		nparams->m_scrolling_texture            = other != NULL ? other->m_scrolling_texture : false;
+		nparams->m_light_dynamic                = other != NULL ? other->m_light_dynamic : false;
+		nparams->m_light_static                 = other != NULL ? other->m_light_static : false;
+		nparams->m_clutter                      = other != NULL ? other->m_clutter : false;
+		nparams->m_mtx_is_identity              = other != NULL ? other->m_mtx_is_identity : false;
+		nparams->m_use_parent_bbox              = other != NULL ? other->m_use_parent_bbox : false;
+		nparams->m_apply_clip                   = other != NULL ? other->m_apply_clip : false;
 	}
 
 	bool CNode::AddVisual(CVisual* visual)
 	{
-		if (visual != NULL && !m_visual.Exists(visual))
+		if (visual && !m_visual.Exists(visual))
 		{
-			visual->m_instance_cnt++;
+			visual->m_refcount++;
 			m_visual.insert(m_visual.begin(), visual);
 
 			SetParentHasVisuals();
+
+			return true;
 		}
 
-		return true;
+		return false;
+	}
+
+	bool CNode::AddDI(CDI* di)
+	{
+		if (di && !m_di.Exists(di))
+		{
+			di->m_refcount++;
+			m_di.insert(m_di.begin(), di);
+			m_modified = true;
+
+			return true;
+		}
+
+		return false;
 	}
 
 	void CNode::AddChild(CNode* node)
 	{
 		CNode* parent = node->m_parent;
-		if (node != NULL && parent != this)
+		if (node && parent != this)
 		{
 			CNode* child = node;
-			if (m_type != 3)
+			if (m_type != (u32)TYPE::NODE_TYPE_UNK3)
 			{
-				if (parent != NULL)
+				if (parent)
 				{
 					parent->DeleteChild(node);
 				}
@@ -207,7 +183,7 @@ namespace zdb
 
 		if (m_child.Exists(child))
 		{
-			if (m_type == 3)
+			if (m_type == (u32)TYPE::NODE_TYPE_UNK3)
 			{
 				m_child.Remove(child);
 				count = -1;
@@ -237,7 +213,7 @@ namespace zdb
 
 	CNode* CNode::FindChild(CNode* child, bool nested)
 	{
-		if (child == NULL)
+		if (child)
 		{
 			return NULL;
 		}
@@ -283,7 +259,7 @@ namespace zdb
 				}
 			}
 
-			if (child == NULL && nested)
+			if (child && nested)
 			{
 				for (auto it = m_child.begin(); it != m_child.end(); it++)
 				{
@@ -301,7 +277,7 @@ namespace zdb
 
 	void CNode::DeleteChildren()
 	{
-		while (m_child.size() != 0)
+		while (!m_child.empty())
 		{
 			CNode* current = m_child.front();
 
@@ -333,14 +309,14 @@ namespace zdb
 	{
 		m_modified = true;
 
-		if (m_parent != NULL && !m_parent->m_modified)
+		if (m_parent && !m_parent->m_modified)
 		{
 			m_parent->SetParentHasVisuals();
 		}
 
 		CModel* vismdl = dynamic_cast<CModel*>(this);
 
-		if (vismdl != NULL)
+		if (vismdl)
 		{
 			// TODO:
 			// Use CRefList for iteration on visuals
@@ -418,9 +394,66 @@ namespace zdb
 
 	}
 
+	CBBox* CNode::GetBBox()
+	{
+		if (m_use_parent_bbox)
+		{
+			return m_parent->GetBBox();
+		}
+
+		return &m_bbox;
+	}
+	
+	CMesh* CNode::GetMesh() const
+	{
+		CVisual* mesh = NULL;
+
+		if (!m_visual.empty())
+		{
+			mesh = *m_visual.data();
+		}
+
+		if (!mesh || !mesh->m_has_lods)
+		{
+			mesh = NULL;
+		}
+
+		return reinterpret_cast<CMesh*>(mesh);
+	}
+
+	CGridAtom* CNode::GetAtom(s16 index)
+	{
+		CGridAtom* atom = NULL;
+
+		if (index < m_AtomAlloc)
+		{
+			atom = m_Atom[index];
+		}
+
+		return atom;
+	}
+
+	void CNode::InsertAtom(CGridAtom* atom)
+	{
+		s16 index = 0;
+		m_AtomCnt = index + 1;
+		m_Atom[index] = atom;
+	}
+
+	void CNode::FreeAtom()
+	{
+		if (m_Atom)
+		{
+			zfree(m_Atom);
+		}
+
+		m_Atom = NULL;
+		m_AtomAlloc = 0;
+	}
+
 	CMatrix& CNode::BuildMTW(CMatrix& mat)
 	{
-		if (m_type == 6)
+		if (m_type == (u32)TYPE::NODE_TYPE_UNK6)
 		{
 			// set identity matrix
 		}
@@ -444,14 +477,14 @@ namespace zdb
 	{
 		char* str = m_name;
 
-		if (str != NULL && str != "UNNAMED_NODE")
+		if (str && str != "UNNAMED_NODE")
 		{
 			zfree(str);
 		}
 
 		str = "UNNAMED_NODE";
 
-		if (name != NULL)
+		if (name)
 		{
 			str = zstrdup(name);
 		}
@@ -468,7 +501,7 @@ namespace zdb
 		UpdateGrid();
 		m_modified = true;
 
-		if (m_nodeEx != NULL)
+		if (m_nodeEx)
 		{
 			m_nodeEx->OnMove(this);
 		}
@@ -496,7 +529,7 @@ namespace zdb
 	{
 		CNode* node = NULL;
 
-		if (name == 0)
+		if (!name)
 		{
 			return NULL;
 		}
@@ -553,6 +586,29 @@ namespace zdb
 		erase(it, last);
 
 		return it != last;
+	}
+
+	CModel* CModelVector::GetModel(const char* name)
+	{
+		CModel* model = NULL;
+		
+		if (name == NULL)
+		{
+			model = NULL;
+		}
+		else
+		{
+			for (auto it = begin(); it != end(); it++)
+			{
+				if (strcmp(name, (*it)->m_name) == 0)
+				{
+					model = *it;
+					break;
+				}
+			}
+		}
+
+		return model;
 	}
 }
 

@@ -2,10 +2,12 @@
 #include "gamez/zSound/zsnd.h"
 #include "gamez/zVideo/zvid.h"
 
+bool LoadWorld(const char* name);
+
 int main(int argc, char** argv)
 {
 	process_arguments(argc, argv);
-	zSysInit();
+	// zSysInit();
 
 	if (postinit)
 	{
@@ -30,7 +32,7 @@ int main(int argc, char** argv)
 
 	theGame.StartEngine();
 	theGame.StartPlay();
-
+	
 	do
 	{
 		theGame.Tick(zVid.frameTime);

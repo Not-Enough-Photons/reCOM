@@ -9,6 +9,7 @@ f32* exptbl = NULL;
 bool tableInit = false;
 
 const CPnt3D CPnt3D::zero = { 0.0f, 0.0f, 0.0f };
+const CPnt4D CPnt4D::zero = { 0.0f, 0.0f, 0.0f, 0.0f };
 const CQuat CQuat::identity = { CPnt3D(1.0f, 0.0f, 0.0f), 0.0f };
 const CMatrix CMatrix::identity = {  };
 

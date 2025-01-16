@@ -94,4 +94,15 @@ namespace zdb
 	{
 		return true;
 	}
+
+	void CCamera::SetHalfHorizontalFOVRadians(f32 radians)
+	{
+		m_hfov = radians;
+		m_sin.x = sinf(radians);
+		m_cos.x = cosf(radians);
+		m_tan.x = m_sin.x / m_cos.x;
+		m_cot.x = 1.0f / m_tan.x;
+		m_scrZ = m_farCorner[0][2] * m_cot.x;
+	}
+
 }

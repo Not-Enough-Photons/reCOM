@@ -1,4 +1,5 @@
 #pragma once
+#include "gamez/zPhysics/zphysics.h"
 #include "gamez/zUI/zui.h"
 
 class CMissionCam;

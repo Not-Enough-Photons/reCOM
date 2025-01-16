@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 
+#include "gamez/zSystem/zsys.h"
+
 class CSTable : public std::vector<char*>
 {
 public:
@@ -22,6 +24,6 @@ public:
 private:
 	bool m_owner;
 	char* m_buffer;
-	size_t m_bytes;
-	size_t m_reserve;
+	u32 m_bytes;
+	u32 m_reserve;
 };

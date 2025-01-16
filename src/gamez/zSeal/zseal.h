@@ -5,6 +5,7 @@
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zEntity/body.h"
 #include "gamez/zEntity/zentity.h"
+#include "gamez/zPhysics/zphysics.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUI/zui.h"
@@ -418,7 +419,7 @@ public:
 	bool CanPickupNetItem(u16 hostIdx, u16 pickupIdx, u16* idxPtr, u8 type) const;
 	bool CanPitch() const;
 	bool CanProneAim() const;
-	bool CanTraverse(CDIType type) const;
+	bool CanTraverse(zdb::CDI::CDIType type) const;
 	bool CanTurn() const;
 	bool CanUseBodyCarry(CZSealBody* seal) const;
 	bool CanUseCQB(CZSealBody* seal) const;

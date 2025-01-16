@@ -6,6 +6,14 @@
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stable.h"
 
+#define MAX_ZRDR_PATH_LEN 767
+
+#define pptoken_ifdef 0 
+#define pptoken_else 1
+#define pptoken_endif 2
+#define pptoken_include 3
+#define pptoken_undef 4
+
 struct _zrdr;
 class CRdrFile;
 
@@ -20,12 +28,16 @@ enum ZRDR_TYPE
 
 extern s32 cur_zrdr_flags;
 extern char* cur_zrdr_path;
+extern std::list<char*> zrdr_symbols;
 
 void _resolveA(_zrdr* reader, const _zrdr* other, const char* tag);
 void _resolveB(_zrdr* reader, const _zrdr* other, const char* tag);
+int _get_pptoken(char* token);
+bool _preproc_filter(char* token, bool param_2);
+bool _eval_defined(char* token);
 
 _zrdr* zrdr_read(const char* reader, const char* path, s32 dummy);
-char* zrdr_findfile(const char* file, const char* path);
+const char* zrdr_findfile(const char* file, const char* path);
 s32 zrdr_free(CRdrFile* reader);
 void zrdr_freearray(_zrdr* array);
 void _resolveA(_zrdr* reader, const _zrdr* other, s32 count);
@@ -58,7 +70,7 @@ struct _zrdr
 	u32 packed : 1;
 	u32 unused : 6;
 	u32 length : 16;
-
+	
 	union
 	{
 		f32 real;
@@ -74,16 +86,18 @@ public:
 	CRdrFile();
 
 	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key);
-	static bool ValidateFormat();
 	static bool Resolve(CRdrFile* file, bool resolveA);
 
 	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);
 	_zrdr* MakeUnion(const char* name, bool createString);
 	char ReadToken(_zrdr** readerArray, _zrdr** unionArray);
+	CRdrFile* ReadArray();
+
+	bool ValidateFormat() { return false; }
 
 	CSTable m_strings;
 	char* m_buffer;
-	size_t m_size;
+	u32 m_size;
 };
 
 class CRdrArchive : public zar::CZAR

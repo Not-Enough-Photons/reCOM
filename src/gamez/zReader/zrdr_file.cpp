@@ -2,6 +2,25 @@
 
 #include "gamez/zSystem/zsys.h"
 
+char* buffer = NULL;
+
+CRdrFile::CRdrFile() : _zrdr()
+{
+	m_buffer = NULL;
+	m_size = 0;
+}
+
+const char* zrdr_findfile(const char* name, const char* dir)
+{
+	if (dir)
+	{
+		sprintf(buffer, "%s/%s", name, dir);
+		name = buffer;
+	}
+
+	return name;
+}
+
 int zrdr_free(CRdrFile* file)
 {
 	if (file != NULL)
@@ -26,11 +45,11 @@ int zrdr_free(CRdrFile* file)
 	return 0;
 }
 
-CRdrFile::CRdrFile() : _zrdr()
+CRdrFile* CRdrFile::ReadArray()
 {
-	m_buffer = NULL;
-	m_size = 0;
+	return NULL;
 }
+
 
 CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 {
@@ -65,9 +84,17 @@ bool CRdrFile::Resolve(CRdrFile* file, bool resolveA)
 	_zrdr* buffer = reinterpret_cast<_zrdr*>(file->m_buffer);
 	_zrdr* array = NULL;
 
-	if (buffer != NULL)
+	if (!buffer)
 	{
+		return false;
+	}
 
+	if (resolveA)
+	{
+		if (buffer)
+		{
+			
+		}
 	}
 
 	return true;

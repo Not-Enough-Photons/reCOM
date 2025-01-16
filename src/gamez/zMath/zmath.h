@@ -154,7 +154,7 @@ public:
 	CPnt3D& operator/(f32 scalar);
 
 	static const CPnt3D zero;
-public:
+
 	void Normalize();
 	void Normalize(CPnt3D* other);
 	CPnt3D* Add(CPnt3D* other);
@@ -163,7 +163,45 @@ public:
 	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 
-class CPnt4D : public PNT4D { };
+class CPnt4D : public PNT4D
+{
+public:
+	CPnt4D()
+	{
+		x = 0.0f;
+		y = 0.0f;
+		z = 0.0f;
+		w = 0.0f;
+	}
+
+	CPnt4D(const CPnt4D& other)
+	{
+		x = other.x;
+		y = other.y;
+		z = other.z;
+		w = other.w;
+	}
+
+	CPnt4D(f32 x, f32 y, f32 z, f32 w)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+		this->w = w;
+	}
+
+	CPnt4D& operator=(const CPnt4D& other)
+	{
+		x = other.x;
+		y = other.y;
+		z = other.z;
+		w = other.w;
+
+		return *this;
+	}
+	
+	static const CPnt4D zero;
+};
 
 class CQuat
 {
@@ -217,94 +255,3 @@ public:
 	f32 left;
 	f32 right;
 };
-
-enum CDIType
-{
-	type_00,
-	type_01,
-	type_02,
-	type_03,
-	type_04
-};
-
-namespace zdb
-{
-	class CNode;
-	class CSaveLoad;
-
-	struct DI_PARAMS
-	{
-		CPnt4D m_nrm;
-
-		s32 m_region;
-		s32 m_refcount;
-
-		s8 m_ditype;
-		s32 m_ptcount;
-		s32 m_material;
-
-		s8 m_cameratype;
-
-		s8 m_appflags;
-
-		bool m_inside;
-		bool m_shadow;
-
-		s32 m_reserved;
-	};
-
-	class CDI
-	{
-	public:
-		CDI();
-		~CDI();
-
-		static void* Create(CSaveLoad& saveload);
-	public:
-		void Allocate(size_t size);
-		void Free();
-
-		s32 GetEdgeIntersects(CPnt3D* firstPoint, CPnt3D* secondPoint, CPnt3D* edge) const;
-		s32 GetEdgeIntersectsY(CPnt3D* firstPoint, CPnt3D* secondPoint) const;
-	private:
-		DI_PARAMS DI_PARAMS;
-		CPnt4D* m_pts;
-	};
-
-	struct IntersectStruct
-	{
-		CPnt3D m_pos;
-		CPnt3D m_norm;
-		CNode* m_node;
-	};
-
-	struct DiIntersect
-	{
-		s32 m_Type;
-
-		bool m_IntersectCharacters;
-		bool m_AltitudeCharacters;
-		bool m_ProximityCharacters;
-
-		s32 m_Unused;
-
-		CPnt3D m_Tail;
-		CPnt3D m_Tip;
-		CPnt3D m_MTail;
-		CPnt3D m_MTip;
-
-		s32 m_Cnt;
-		s32 m_BufCnt;
-
-		CNode* m_Node;
-		CNode* m_TreeDoneNode;
-		IntersectStruct* m_Intersects;
-	};
-
-	class CHit : public IntersectStruct
-	{
-	public:
-		CPnt3D m_hit0;
-		CPnt3D m_hit1;
-	};
-}

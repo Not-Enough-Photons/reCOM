@@ -20,7 +20,10 @@ _zrdr::_zrdr()
 	type = ZRDR_NULL;
 	isclone = false;
 	packed = false;
+	unused = 0;
 	length = 0;
+
+	array = NULL;
 }
 
 bool _zrdr::IsArray() const
@@ -201,7 +204,7 @@ bool zrdr_tobool(_zrdr* reader, bool* output)
 		return false;
 	}
 
-	if (reader->type == ZRDR_ARRAY && 1 < reader->array->integer)
+	if (reader->type == ZRDR_ARRAY && reader->array->integer > 1)
 	{
 		reader = reader->array;
 	}
@@ -244,24 +247,24 @@ _zrdr* _zrdr_nexttag(_zrdr* reader, const char* name, size_t size, _zrdr* other)
 
 	while (true)
 	{
-		_zrdr* subreader = reader->array;
+		_zrdr* array = reader->array;
 
-		if (subreader->integer <= count)
+		if (array->integer <= count)
 		{
 			return NULL;
 		}
 
-		if (subreader == other)
+		if (array == other)
 		{
 			other = NULL;
 		}
-		else if (subreader->type == ZRDR_ARRAY)
+		else if (array->type == ZRDR_ARRAY)
 		{
-			return _zrdr_nexttag(subreader, name, size, other);
+			return _zrdr_nexttag(array, name, size, other);
 		}
-		else if (subreader->type == ZRDR_STRING && other == NULL && strncmp(subreader->string, name, size) == 0)
+		else if (array->type == ZRDR_STRING && other == NULL && strncmp(array->string, name, size) == 0)
 		{
-			return subreader + 1;
+			return array + 1;
 		}
 
 		i += 8;
