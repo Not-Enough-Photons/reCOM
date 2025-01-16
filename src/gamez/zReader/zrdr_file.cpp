@@ -1,6 +1,7 @@
 #include "zrdr.h"
 
 #include "gamez/zSystem/zsys.h"
+#include "gamez/zUtil/util_stack.h"
 
 char* buffer = NULL;
 
@@ -50,6 +51,90 @@ CRdrFile* CRdrFile::ReadArray()
 	return NULL;
 }
 
+bool CRdrFile::ValidateFormat()
+{
+	CBufferIO* file = NULL;
+	char symbol = '\0';
+	bool validated = false;
+	bool endline = false;
+	bool comment = false;
+	s32 i = 0;
+	
+	do
+	{
+		while (true)
+		{
+			file = fstack.front();
+
+			if (!file->fread(&symbol, 1))
+			{
+				break;
+			}
+
+			validated = true;
+			
+			if (!validated)
+			{
+				file->fseek(0, SEEK_SET);
+				return i == 0;
+			}
+
+			if (symbol == ')')
+			{
+				if (!endline && !comment)
+				{
+					i--;
+				}
+			}
+			else
+			{
+				if (symbol == '(')
+				{
+					if (!endline && !comment)
+					{
+						i++;
+					}
+				}
+				else
+				{
+					if (symbol == '\n' || symbol == '\r')
+					{
+						if (!endline)
+						{
+							comment = false;
+						}
+					}
+					else
+					{
+						if (symbol == ';')
+						{
+							if (!endline)
+							{
+								comment = true;
+							}
+						}
+						else
+						{
+							if (symbol == '\"' && !comment)
+							{
+								endline = true;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if (fstack.size() < 2)
+		{
+			validated = false;
+			file->fseek(0, SEEK_SET);
+			return i == 0;
+		}
+
+		fstack.pop(true);
+	} while (true);
+}
 
 CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 {

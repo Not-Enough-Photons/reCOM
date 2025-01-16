@@ -93,7 +93,7 @@ public:
 	char ReadToken(_zrdr** readerArray, _zrdr** unionArray);
 	CRdrFile* ReadArray();
 
-	bool ValidateFormat() { return false; }
+	bool ValidateFormat();
 
 	CSTable m_strings;
 	char* m_buffer;
