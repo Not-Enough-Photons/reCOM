@@ -91,9 +91,9 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 		}
 	}
 
-	for (auto it = m_list.begin(); it != m_list.end(); it++)
+	for (auto it = m_list.begin(); it != m_list.end(); ++it)
 	{
-		if (rdr != NULL)
+		if (rdr)
 		{
 			return rdr;
 		}
@@ -102,7 +102,7 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 
 		zar::CZAR* archive = *it;
 
-		if (archive->m_pFileAlloc == NULL)
+		if (!archive->m_pFileAlloc)
 		{
 			open = false;
 		}
@@ -118,7 +118,7 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 
 		rdr = NULL;
 		zar::CKey* key = archive->OpenKey(keyName);
-		if (key != NULL)
+		if (key)
 		{
 			rdr = CRdrFile::Load(archive, key);
 			archive->CloseKey(key);
@@ -139,6 +139,7 @@ void CRdrArchive::OpenAll()
 	{
 		zar::CZAR* archive = *it;
 		archive->ReOpen(1, OpenFlags::READ);
+		std::cout << archive << std::endl;
 	}
 }
 

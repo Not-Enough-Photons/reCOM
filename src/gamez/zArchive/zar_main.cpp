@@ -552,9 +552,9 @@ namespace zar
 		{
 			char* name = m_filename;
 
-			if (name != NULL)
+			if (name)
 			{
-				if (m_pFileAlloc == NULL)
+				if (!m_pFileAlloc)
 				{
 					m_pFileAlloc = new CFileIO();
 					m_pFile = new CBufferIO();
@@ -635,7 +635,7 @@ namespace zar
 						keySize = m_data_padded - keysPerLine;
 					}
 
-					padChar = '¯';
+					padChar = 'ï¿½';
 
 					if (!m_bSecure)
 					{

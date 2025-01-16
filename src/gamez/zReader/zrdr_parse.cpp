@@ -2,6 +2,7 @@
 
 #include "zrdr.h"
 
+#include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"
 
 std::list<char*> zrdr_symbols;
@@ -299,6 +300,31 @@ bool _eval_defined(char* token)
 		fstack.pop(true);
 	}
 	while (true);
+}
+
+void _resolveA(_zrdr* reader, const _zrdr* other, const char* name)
+{
+	s32 idx = 0;
+	s32 rdridx = 8;
+	
+	if (reader->type == ZRDR_STRING)
+	{
+		reader->string = zstrdup(name);
+	}
+	else
+	{
+		idx = 1;
+
+		if (reader->type == ZRDR_ARRAY)
+		{
+			rdridx = 8;
+
+			while (true)
+			{
+				
+			}
+		}
+	}
 }
 
 // TODO:

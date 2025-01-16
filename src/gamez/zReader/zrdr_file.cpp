@@ -156,7 +156,7 @@ CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 				rdrFile->m_size = keySize;
 				rdrFile->type = ZRDR_ARRAY;
 				rdrFile->array = NULL;
-				Resolve(rdrFile, false);
+				rdrFile->Resolve(false);
 			}
 		}
 	}
@@ -164,21 +164,56 @@ CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 	return rdrFile;
 }
 
-bool CRdrFile::Resolve(CRdrFile* file, bool resolveA)
+bool CRdrFile::Resolve(bool resolveA)
 {
-	_zrdr* buffer = reinterpret_cast<_zrdr*>(file->m_buffer);
+	_zrdr* buffer = reinterpret_cast<_zrdr*>(m_buffer);
 	_zrdr* array = NULL;
+	_zrdr* other = NULL;
 
 	if (!buffer)
 	{
 		return false;
 	}
 
+	array = NULL;
+	
 	if (resolveA)
 	{
+		array = NULL;
+
 		if (buffer)
 		{
-			
+			array = buffer + 1;
+		}
+
+		other = NULL;
+
+		if (buffer)
+		{
+			other = buffer->array;
+		}
+
+		if (type != ZRDR_STRING)
+		{
+			s32 i = 1;
+			if (type == ZRDR_ARRAY)
+			{
+				_zrdr* child = NULL;
+				s32 rdridx = 0;
+				while (true)
+				{
+					child = this->array;
+
+					if (child->integer <= i)
+					{
+						break;
+					}
+
+					_resolveA(child->array, other, child->string);
+					rdridx += 8;
+					i++;
+				}
+			}
 		}
 	}
 

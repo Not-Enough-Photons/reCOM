@@ -1,6 +1,8 @@
 ﻿#include "gamez/zFTS/fts_state.h"
 #include "gamez/zReader/zrdr.h"
 
+const char* path = "D:/Misc/Media/Games/PS2/SOCOM/SOCOM 1/SOCOM - May 2002/RUN/READERC.ZAR";
+
 CTestState::CTestState()
 {
     m_name = zstrdup("TestState");
@@ -8,12 +10,9 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    _zrdr reader;
-    _zrdr real;
-    reader.type = ZRDR_ARRAY;
-    real.type = ZRDR_REAL;
-
-    reader.array = &real;
-    real.real = 1.0f; // 0x3f800000
+    CRdrArchive::AddArchive(path, NULL);
+    CRdrArchive::OpenAll();
+    _zrdr* reader = CRdrArchive::FindRdr("ai_common.rdr");
+    CRdrArchive::CloseAll();
     return true;
 }
