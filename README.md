@@ -1,7 +1,7 @@
 ![Isolated.png](https://github.com/Not-Enough-Photons/reCOM/blob/main/img/recom-logo.png?raw=true)
 
 # Intro
-This repository houses the reverse engineered code of SOCOM's engine, GameZ.
+This repository houses the reverse engineered code of the SOCOM games, alongside the engine, GameZ.
 
 It is a work in progress, and a lot needs to make sure the SOCOM experience is one-to-one with the PlayStation 2.
 
