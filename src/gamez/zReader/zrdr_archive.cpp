@@ -139,7 +139,6 @@ void CRdrArchive::OpenAll()
 	{
 		zar::CZAR* archive = *it;
 		archive->ReOpen(1, OpenFlags::READ);
-		std::cout << archive << std::endl;
 	}
 }
 

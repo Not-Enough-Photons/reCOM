@@ -188,3 +188,9 @@ public:
 	void Print(char* buffer, size_t size);
 	void Render();
 };
+
+class CConsole
+{
+public:
+	void Tick(f32 dT);
+};

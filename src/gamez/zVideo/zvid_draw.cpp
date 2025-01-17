@@ -3,7 +3,6 @@
 
 #include "zvid.h"
 
-
 f32 lastRenderTime = 0.0f;
 f32 curRenderTime = 0.0f;
 

@@ -46,6 +46,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -101,15 +102,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>bin\x86\Debug\</OutDir>
-    <IntDir>obj\x86\Debug\</IntDir>
-    <TargetName>game</TargetName>
+    <OutDir>build\x86\</OutDir>
+    <IntDir>build\x86\obj\</IntDir>
+    <TargetName>fts32</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>bin\x86_64\Debug\</OutDir>
-    <IntDir>obj\x86_64\Debug\</IntDir>
+    <OutDir>build\bin\x86_64\Debug\</OutDir>
+    <IntDir>build\obj\x86_64\Debug\</IntDir>
     <TargetName>game</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -157,6 +158,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

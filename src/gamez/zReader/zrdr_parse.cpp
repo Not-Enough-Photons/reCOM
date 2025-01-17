@@ -302,7 +302,7 @@ bool _eval_defined(char* token)
 	while (true);
 }
 
-void _resolveA(_zrdr* reader, const _zrdr* other, const char* name)
+void _resolveA(_zrdr* reader, const _zrdr* other, char* name)
 {
 	s32 idx = 0;
 	s32 rdridx = 8;
@@ -324,6 +324,18 @@ void _resolveA(_zrdr* reader, const _zrdr* other, const char* name)
 				
 			}
 		}
+	}
+}
+
+void _resolveB(_zrdr* reader, const _zrdr* other, char* name)
+{
+	if (reader->type == ZRDR_STRING)
+	{
+		reader->string = reader->string + reinterpret_cast<s32>(name);
+	}
+	else if (reader->type == ZRDR_ARRAY)
+	{
+		reader->string = reader->string + reinterpret_cast<s32>(other);
 	}
 }
 

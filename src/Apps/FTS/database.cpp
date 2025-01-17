@@ -39,7 +39,7 @@ extern bool LoadWorld(const char* name)
 
 		if (library->m_autoload)
 		{
-			sprintf(pathbuf, "run/%s/models.zar", library->m_name);
+			sprintf_s(pathbuf, 64, "run/%s/models.zar", library->m_name);
 
 			if (archive.Open(pathbuf, -1, 1, 16))
 			{

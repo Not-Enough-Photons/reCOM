@@ -169,6 +169,7 @@ bool CRdrFile::Resolve(bool resolveA)
 	_zrdr* buffer = reinterpret_cast<_zrdr*>(m_buffer);
 	_zrdr* array = NULL;
 	_zrdr* other = NULL;
+	_zrdr* resolved_rdr = NULL;
 
 	if (!buffer)
 	{
@@ -217,5 +218,45 @@ bool CRdrFile::Resolve(bool resolveA)
 		}
 	}
 
+	resolved_rdr = NULL;
+
+	if (buffer)
+	{	
+		array = buffer + 1;
+		// Go to the very first zrdr entry below the string table.
+		// This is calculated by taking the address of the array
+		// and adding its length in bytes to get there.
+		resolved_rdr = (_zrdr*)((char*)buffer + array->length);
+	}
+
+	if (type == ZRDR_STRING)
+	{
+		this->string = this->string + (s32)array;
+	}
+	else
+	{
+		if (type != ZRDR_ARRAY)
+		{
+			array = NULL;
+			
+			if (buffer)
+			{
+				array = buffer + 1;
+			}
+
+			this->array = resolved_rdr;
+
+			u32 next = sizeof(_zrdr);
+			for (u32 i = 1; i < array->length; i++)
+			{
+				_resolveB(this->array + next, resolved_rdr, (char*)(array + 1));
+				next += sizeof(_zrdr);
+			}
+			
+			m_strings.LoadTable(array + 1, buffer->length, false);
+			return true;
+		}
+	}
+	
 	return true;
 }
