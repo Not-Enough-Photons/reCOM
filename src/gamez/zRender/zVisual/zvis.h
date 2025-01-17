@@ -4,6 +4,8 @@
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
 
+class CShader;
+
 namespace zar
 {
 	class CZAR;
@@ -106,10 +108,13 @@ namespace zdb
 		static void AlphaEnable(bool enableAlpha);
 		static s32 ApplyDecal(u32 vertex, f32 opacity, CPnt3D* position, CMatrix* mat, CTexHandle* handle);
 		static CVisual* Create(zar::CZAR& archive);
-		static void Init();
 		static void LandmarkEnable(bool enableLandmarks);
+		
+		void Init();
 
 		bool Read(zar::CZAR& archive);
+
+		void Render();
 
 		static std::deque<CVisual*> m_stack_vid;
 
@@ -145,6 +150,11 @@ namespace zdb
 		void* m_detail_buff;
 		u32 m_detail_cnt;
 		size_t m_detail_size;
+
+		CShader* m_shader;
+
+		u32 m_vbo;
+		u32 m_vao;
 	};
 
 	class CMesh : public CVisual

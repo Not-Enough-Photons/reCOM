@@ -15,7 +15,7 @@ const char* zrdr_findfile(const char* name, const char* dir)
 {
 	if (dir)
 	{
-		sprintf(buffer, "%s/%s", name, dir);
+		sprintf_s(buffer, 64, "%s/%s", name, dir);
 		name = buffer;
 	}
 

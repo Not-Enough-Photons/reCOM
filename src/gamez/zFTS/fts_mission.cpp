@@ -6,9 +6,9 @@ CMission theMission;
 
 s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postfix, char* output)
 {
-	int result = 0;
+	s32 result = 0;
 
-	if (infix == NULL)
+	if (!infix)
 	{
 		infix = "/";
 	}
@@ -16,18 +16,18 @@ s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postf
 	// Multiplayer map?
 	if (strncmp(prefix, "mp", 2) == 0)
 	{
-		result = sprintf(output, "%s/mp/%s", infix, postfix);
+		result = sprintf_s(output, 128, "%s/mp/%s", infix, postfix);
 	}
 	else
 	{
 		// Singleplayer map?
 		if (strncmp(prefix, "m", 1) == 0)
 		{
-			result = sprintf(output, "%s/sp/%s", infix, postfix);
+			result = sprintf_s(output, 128, "%s/sp/%s", infix, postfix);
 		}
 		else
 		{
-			result = sprintf(output, "%s/%s", infix, postfix);
+			result = sprintf_s(output, 128, "%s/%s", infix, postfix);
 		}
 	}
 

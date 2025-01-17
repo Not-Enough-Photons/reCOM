@@ -222,10 +222,14 @@ public:
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(f32 dT) {}
+	void Tick(f32 dT);
 
 	void OnPop() {}
 	void OnPush() {}
+
+	void TestLoadReaders(const char* path);
+private:
+	bool m_bTestLoadReaders;
 };
 
 class CGameStateChangeCmd

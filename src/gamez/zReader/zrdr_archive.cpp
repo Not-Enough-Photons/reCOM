@@ -13,13 +13,13 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 	char archiveName[1024];
 	zar::CZAR* output = NULL;
 
-	if (path == NULL)
+	if (!path)
 	{
-		strcpy(archiveName, name);
+		strcpy_s(archiveName, name);
 	}
 	else
 	{
-		sprintf(archiveName, "%s/%s", path, name);
+		sprintf_s(archiveName, 64, "%s/%s", path, name);
 	}
 
 	for (auto it = m_list.begin(); it != m_list.end(); it++)
@@ -44,8 +44,8 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 
 bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 {
-	char* fullPath;
-	sprintf(fullPath, "%s/s", path, name);
+	char* fullPath = NULL;
+	sprintf_s(fullPath, 64, "%s/%s", path, name);
 
 	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{

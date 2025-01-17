@@ -277,6 +277,7 @@
     <ClInclude Include="src\gamez\zReader\zrdr.h" />
     <ClInclude Include="src\gamez\zReader\zrdr_local.h" />
     <ClInclude Include="src\gamez\zRender\zParticle\zparticle.h" />
+    <ClInclude Include="src\gamez\zRender\zShader\zshader.h" />
     <ClInclude Include="src\gamez\zRender\zVisual\zvis.h" />
     <ClInclude Include="src\gamez\zRender\zrender.h" />
     <ClInclude Include="src\gamez\zSeal\zseal.h" />
@@ -852,6 +853,7 @@
     <ClCompile Include="src\gamez\zRender\zParticle\zparticle_buf.cpp" />
     <ClCompile Include="src\gamez\zRender\zParticle\zparticle_instance.cpp" />
     <ClCompile Include="src\gamez\zRender\zParticle\zparticle_source.cpp" />
+    <ClCompile Include="src\gamez\zRender\zShader\zshader_main.cpp" />
     <ClCompile Include="src\gamez\zRender\zVisual\vis_decal.cpp" />
     <ClCompile Include="src\gamez\zRender\zVisual\vis_main.cpp" />
     <ClCompile Include="src\gamez\zRender\zVisual\vis_mesh.cpp" />
@@ -922,8 +924,8 @@
     <ClCompile Include="vendor\glm\detail\glm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\common\shaders\unlit_fragment.shader" />
-    <None Include="data\common\shaders\unlit_vertex.shader" />
+    <None Include="data\common\shaders\unlit.fragment" />
+    <None Include="data\common\shaders\unlit.vertex" />
     <None Include="vendor\glm\detail\func_common.inl" />
     <None Include="vendor\glm\detail\func_common_simd.inl" />
     <None Include="vendor\glm\detail\func_exponential.inl" />

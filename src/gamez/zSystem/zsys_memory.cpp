@@ -60,8 +60,7 @@ void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)
 	{
 		// zSysFifoEnd();
 		char buffer[256];
-		sprintf(buffer, "A S S E R T: %s : %d", file, line);
-		printf(buffer);
+		sprintf_s(buffer, 256, "A S S E R T: %s : %d", file, line);
 		// theTerminal.Print(buffer, 256);
 		// theTerminal.Render();
 		abort();

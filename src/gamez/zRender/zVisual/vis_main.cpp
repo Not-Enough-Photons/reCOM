@@ -1,7 +1,10 @@
+#include <GL/glew.h>
+
 #include "zvis.h"
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zNode/znode.h"
+#include "gamez/zRender/zShader/zshader.h"
 
 s32 node_index = 0;
 
@@ -131,6 +134,18 @@ namespace zdb
 		}
 
 		return true;
+	}
+
+	void CVisual::Init()
+	{
+		
+	}
+	
+	void CVisual::Render()
+	{
+		glUseProgram(m_shader->m_ID);
+		glBindVertexArray(m_vao);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
 
 	bool CVisualVector::Exists(const CVisual* visual)

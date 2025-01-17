@@ -125,7 +125,7 @@ namespace zdb
                 m_Atoms[cx + cy * m_CellCount.cx] = NULL;
 
                 CCell* cell = new CCell(&cellpos, m_CellDim);
-                sprintf(buf, "cell%06d", i);
+                sprintf_s(buf, 24, "cell%06d", i);
                 cell->SetName(buf);
                 world->AddChild(cell);
                 i++;
