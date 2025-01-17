@@ -5,6 +5,10 @@ This repository houses the reverse engineered code of SOCOM's engine, GameZ.
 
 It is a work in progress, and a lot needs to make sure the SOCOM experience is one-to-one with the PlayStation 2.
 
+# ROM Information
+| Name | Build Date |sha256 |
+| SCUS_972.05 | March 19th, 2002 | 00c9cee7f75b921fda1e848d04f64881b5a0b7841300591cac91371bb23d4f8a |
+
 # Source Trees
 ## Apps - Application Layer
 | Module | Description |
