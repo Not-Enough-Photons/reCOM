@@ -7,6 +7,7 @@ public:
     CShader();
 
     void Init();
+    void Link();
     
     void Create(const char* path, u32& shader, const u32& type);
     

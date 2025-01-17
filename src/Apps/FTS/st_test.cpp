@@ -15,8 +15,8 @@ CShader shader;
 
 float vertices[] = {
     -0.5f, -0.5f, 0.0f,
-    0.0f, 0.5f, 0.0f,
-    0.5f, 0.5f, 0.0f
+    0.5f, -0.5f, 0.0f,
+    0.0f, 0.5f, 0.0f
 };
 
 CTestState::CTestState()
@@ -33,30 +33,31 @@ bool CTestState::Init()
 
     shader.Init();
     
-    shader.Create(".../data/common/shaders/unlit_vertex.shader", shader.m_vertex, GL_VERTEX_SHADER);
-    shader.Create(".../data/common/shaders/unlit_fragment.shader", shader.m_fragment, GL_FRAGMENT_SHADER);
+    shader.Create("./data/common/shaders/unlit.vertex", shader.m_vertex, GL_VERTEX_SHADER);
+    shader.Create("./data/common/shaders/unlit.fragment", shader.m_fragment, GL_FRAGMENT_SHADER);
 
-    glGenBuffers(1, &vbo);
-    glGenBuffers(1, &vao);
+    shader.Link();
     
+    glGenVertexArrays(1, &vao);
+    glGenBuffers(1, &vbo);
+        
+    glBindVertexArray(vao);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glBindVertexArray(vao);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
     return true;
 }
 
 void CTestState::Tick(f32 dT)
 {
-    glfwPollEvents();
     zVid_ClearColor(0.0f, 0.0f, 0.0f);
     glUseProgram(shader.m_ID);
+    glBindVertexArray(vao);
     glDrawArrays(GL_TRIANGLES, 0, 3);
     zVid_Swap(false);
+    glfwPollEvents();
 }
 
 void CTestState::TestLoadReaders(const char* path)

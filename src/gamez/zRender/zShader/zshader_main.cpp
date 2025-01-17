@@ -18,6 +18,26 @@ void CShader::Init()
     m_ID = glCreateProgram();
 }
 
+void CShader::Link()
+{
+    s32 success = false;
+    char infoLog[512];
+    
+    glAttachShader(m_ID, m_vertex);
+    glAttachShader(m_ID, m_fragment);
+    glLinkProgram(m_ID);
+    
+    glGetProgramiv(m_ID, GL_LINK_STATUS, &success);
+    if (!success)
+    {
+        glGetProgramInfoLog(m_ID, 512, NULL, infoLog);
+        printf_s("E R R O R : Shader linking failed!\n%s", infoLog);
+    }
+
+    glDeleteShader(m_vertex);
+    glDeleteShader(m_fragment);
+}
+
 void CShader::Create(const char* path, u32& shader, const u32& type)
 {
     char* source = NULL;
@@ -29,7 +49,7 @@ void CShader::Create(const char* path, u32& shader, const u32& type)
 
     std::fstream io(path);
 
-    if (io)
+    if (io.good())
     {
         std::stringstream buffer;
 
@@ -47,8 +67,14 @@ void CShader::Create(const char* path, u32& shader, const u32& type)
     glShaderSource(shader, 1, &source, NULL);
     glCompileShader(shader);
 
-    glAttachShader(m_ID, shader);
-    glDeleteShader(shader);
+    s32 success;
+    char infoLog[512];
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    if (!success)
+    {
+        glGetShaderInfoLog(shader, 512, NULL, infoLog);
+        printf_s("E R R O R (%s) : Shader compilation failed!\n%s", path, infoLog);
+    }
 }
 
 void CShader::Bind()
