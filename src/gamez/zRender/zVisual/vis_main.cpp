@@ -4,6 +4,7 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zNode/znode.h"
+#include "gamez/zRender/zrender.h"
 #include "gamez/zRender/zShader/zshader.h"
 
 s32 node_index = 0;
@@ -140,13 +141,59 @@ namespace zdb
 	{
 		
 	}
+
+	bool CVisual::DrawLOD(zdb::CLOD_band* lod, f32 range, f32* distance)
+	{
+		bool inrange = false;
+
+		if (lod->m_minRangeNearSq < range && range < lod->m_maxRangeFarSq)
+		{
+			if (lod->m_minFade)
+			{
+				inrange = true;
+			}
+			else if (range < lod->m_minRangeFarSq || (inrange = true, lod->m_maxRangeFarSq < range))
+			{
+				if (lod->m_minFade || lod->m_minRangeNearSq < range)
+				{
+					inrange = true;
+					if (lod->m_maxFade)
+					{
+						if (lod->m_maxRangeNearSq <= range)
+						{
+							inrange = true;
+							*distance = *distance * lod->m_minInvDeltaRangeSq * (range - lod->m_minRangeNearSq);
+						}
+					}
+				}
+			}
+		}
+
+		return inrange;
+	}
+
 	
 	void CVisual::Render()
+	{
+		if (m_renderState != 0)
+		{
+			VuUpdate(1.0f);
+		}
+	}
+
+	void CVisual::VuUpdate(f32 opacity)
 	{
 		glUseProgram(m_shader->m_ID);
 		glBindVertexArray(m_vao);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
+	
+	u32 CVisual::Release()
+	{
+		m_instance_cnt--;
+		return m_instance_cnt;
+	}
+
 
 	bool CVisualVector::Exists(const CVisual* visual)
 	{

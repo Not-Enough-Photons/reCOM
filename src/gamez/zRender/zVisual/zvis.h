@@ -19,10 +19,12 @@ namespace zdb
 	class CVisBase;
 	class CVisual;
 	class CMesh;
+	class CDecal;
 	class CLight;
 	class CTexHandle;
 
 	class CCamera;
+	class CLOD_band;
 }
 
 void hookupMesh(zar::CZAR* archive, zdb::CModel* model);
@@ -53,12 +55,9 @@ namespace zdb
 		// TODO:
 		// Figure out the rest of the struct
 		u32 m_parent_has_visuals : 1;
-		u32 m_unused : 31;
-		u32 m_field1;
-		u32 m_field2;
-		u32 m_field3;
-		u32 m_field4;
-		u32 m_field5;
+		u32 m_field1 : 1;
+		u32 m_unused : 30;
+		CPnt4D m_field2;
 	};
 
 	struct tag_DETAIL_PARAMS
@@ -114,7 +113,13 @@ namespace zdb
 
 		bool Read(zar::CZAR& archive);
 
+		void ApplyDecal(CDecal* decal);
+
+		bool DrawLOD(CLOD_band* lod, f32 range, f32* distance);
 		void Render();
+		void VuUpdate(f32 opacity);
+
+		u32 Release();
 
 		static std::deque<CVisual*> m_stack_vid;
 
@@ -150,6 +155,13 @@ namespace zdb
 		void* m_detail_buff;
 		u32 m_detail_cnt;
 		size_t m_detail_size;
+
+		u32 m_instance_cnt;
+
+		std::vector<CDecal*> m_decals;
+		s32 m_decal_idx;
+
+		s32 m_renderState;
 
 		CShader* m_shader;
 

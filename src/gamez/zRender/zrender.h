@@ -171,19 +171,23 @@ public:
 	u32 m_delayedNodeNum;
 };
 
-class CLOD_band
+namespace zdb
 {
-public:
-	f32 m_minRangeNearSq;
-	f32 m_minRangeFarSq;
-	f32 m_minInvDeltaRangeSq;
-	f32 m_maxRangeNearSq;
-	f32 m_maxRangeFarSq;
-	u32 m_minFade : 1;
-	u32 m_maxFade : 1;
-	u32 m_unused : 30;
-	u32 m_padding;
-};
+	class CLOD_band
+	{
+	public:
+		f32 m_minRangeNearSq;
+		f32 m_minRangeFarSq;
+		f32 m_minInvDeltaRangeSq;
+		f32 m_maxRangeNearSq;
+		f32 m_maxRangeFarSq;
+		u32 m_minFade : 1;
+		u32 m_maxFade : 1;
+		u32 m_unused : 30;
+		u32 m_padding;
+	};
+}
+
 
 class CMaterial_band
 {
@@ -233,7 +237,7 @@ public:
 	f32 m_dv;
 };
 
-class CLOD_Object : public std::vector<CLOD_band*>
+class CLOD_Object : public std::vector<zdb::CLOD_band*>
 {
 private:
 	s32 m_bandMax;
