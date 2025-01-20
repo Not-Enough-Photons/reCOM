@@ -333,10 +333,11 @@ void _resolveB(_zrdr* self, _zrdr* root, char* name)
 	{
 		// Assign string pointer to point at the entry in the string table
 		self->string += (s32)name;
+		std::cout << self->string << std::endl;
 	}
 	else if (self->type == ZRDR_ARRAY)
 	{
-		self->array = &root[root->integer];
+		self->string += (s32)root;
 	
 		for (u32 i = 1; i < self->array->integer; i++)
 		{
@@ -344,11 +345,12 @@ void _resolveB(_zrdr* self, _zrdr* root, char* name)
 			
 			if (child->type == ZRDR_STRING)
 			{
-				child->string = name;
+				child->string += (s32)name;
+				std::cout << child->string << std::endl;
 			}
 			else if (child->type == ZRDR_ARRAY)
 			{
-				child->array += (s32)root;
+				child->string += (s32)root;
 				for (u32 j = 1; j < child->array->integer; j++)
 				{
 					_resolveB(&child->array[j], root, name);

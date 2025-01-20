@@ -65,6 +65,6 @@ void CTestState::TestLoadReaders(const char* path)
 {
     CRdrArchive::AddArchive(path, NULL);
     CRdrArchive::OpenAll();
-    _zrdr* reader = CRdrArchive::FindRdr("motion.rdr");
+    _zrdr* reader = CRdrArchive::FindRdr("global_valves.rdr");
     CRdrArchive::CloseAll();
 }
