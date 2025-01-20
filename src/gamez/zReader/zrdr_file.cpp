@@ -168,8 +168,8 @@ bool CRdrFile::Resolve(bool resolveA)
 {
 	_zrdr* header = reinterpret_cast<_zrdr*>(m_buffer);
 	_zrdr* resolved = NULL;
-	char* str = NULL;
 	char* start = NULL;
+	char* str = NULL;
 	char* table = NULL;
 
 	if (!header)
@@ -229,6 +229,6 @@ bool CRdrFile::Resolve(bool resolveA)
 		table = start + sizeof(_zrdr);
 	}
 
-	m_strings.LoadTable(table, reinterpret_cast<u32>(start), false);
+	m_strings.LoadTable(table, *(u32*)start, false);
 	return true;
 }
