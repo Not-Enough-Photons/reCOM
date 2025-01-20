@@ -31,7 +31,7 @@ extern char* cur_zrdr_path;
 extern std::list<char*> zrdr_symbols;
 
 void _resolveA(_zrdr* reader, const _zrdr* other, char* tag);
-void _resolveB(_zrdr* reader, const _zrdr* other, char* tag);
+void _resolveB(_zrdr* self, _zrdr* root, char* tag);
 int _get_pptoken(char* token);
 bool _preproc_filter(char* token, bool param_2);
 bool _eval_defined(char* token);
@@ -65,14 +65,14 @@ struct _zrdr
 	int GetInt() const;
 	char* Get(int offset) const;
 
+	u32 type : 8;
+	u32 isclone : 1;
+	u32 packed : 1;
+	u32 unused : 6;
+	u32 length : 16;
+	
 	union
 	{
-		u32 type : 8;
-		u32 isclone : 1;
-		u32 packed : 1;
-		u32 unused : 6;
-		u32 length : 16;
-		
 		f32 real;
 		s32 integer;
 		char* string;

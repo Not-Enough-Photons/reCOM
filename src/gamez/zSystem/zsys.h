@@ -29,7 +29,7 @@ typedef int8_t     s8;  // char
 typedef int16_t    s16; // short
 typedef int32_t    s32; // int
 typedef int64_t    s64; // long
-typedef float_t    f32; // float
+typedef float      f32; // float
 
 /// -------------------------------------------
 /// USEFUL MACROS

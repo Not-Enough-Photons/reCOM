@@ -28,22 +28,18 @@ void CPnt3D::Normalize(CPnt3D* other)
 	}
 }
 
-CPnt3D* CPnt3D::Add(CPnt3D* other)
+void CPnt3D::Add(const CPnt3D* other, CPnt3D* out)
 {
-	CPnt3D* output;
-	output->x = x + other->x;
-	output->y = y + other->y;
-	output->z = z + other->z;
-	return output;
+	out->x = x + other->x;
+	out->y = y + other->y;
+	out->z = z + other->z;
 }
 
-CPnt3D* CPnt3D::Sub(CPnt3D* other)
+void CPnt3D::Sub(const CPnt3D* other, CPnt3D* out)
 {
-	CPnt3D* output;
-	output->x = x - other->x;
-	output->y = y - other->y;
-	output->z = z - other->z;
-	return output;
+	out->x = x - other->x;
+	out->y = y - other->y;
+	out->z = z - other->z;
 }
 
 void CPnt3D::Scale(CPnt3D* other, f32 scaleFactor)

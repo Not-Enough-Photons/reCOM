@@ -12,7 +12,7 @@ class CZWeaponList;
 
 namespace zdb
 {
-	class DiIntersect;
+	struct DiIntersect;
 }
 
 enum class ENCUMBRANCE

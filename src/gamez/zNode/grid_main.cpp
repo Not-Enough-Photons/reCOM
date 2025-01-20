@@ -16,7 +16,7 @@ namespace zdb
 
         CPnt3D max = m_bbox.m_max;
 
-        max.Add(&boxextents);
+        max.Add(origin, &boxextents);
         
         m_type = (u32)TYPE::NODE_TYPE_CELL;
 

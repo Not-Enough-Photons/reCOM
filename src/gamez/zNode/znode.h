@@ -206,13 +206,11 @@ namespace zdb
 		void SetModel(CModel* model);
 		void SetModelname(const char* name);
 	public:
-		char* m_name;
-		
 		CNode* m_parent;
 		CNodeVector m_child;
 		CDIVector m_di;
 		CVisualVector m_visual;
-
+		char* m_name;
 		CNodeEx* m_nodeEx;
 		bool m_customGlobalLight;
 		bool m_frameRendered;

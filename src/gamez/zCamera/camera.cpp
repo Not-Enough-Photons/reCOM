@@ -133,6 +133,17 @@ bool CAppCamera::CmdTick3rdPersonTest(_zanim_cmd_hdr* header, f32* delta)
 	return appCamera->m_camera_mode != PLAYER_CAM_STATE::cam_mode_FP;
 }
 
+void CAppCamera::LookAt(CPnt3D* origin, CPnt3D* direction, CMatrix& mat)
+{
+	CPnt3D lookAt;
+	direction->Sub(origin, &lookAt);
+
+	mat.m_matrix[3][0] = origin->x;
+	mat.m_matrix[3][1] = origin->y;
+	mat.m_matrix[3][2] = origin->z;
+	m_wPos = *origin;
+}
+
 void CAppCamera::SetZoom(f32 zoom)
 {
 	m_camera->m_Zmin = zoom;

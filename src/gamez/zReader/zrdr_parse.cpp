@@ -327,15 +327,34 @@ void _resolveA(_zrdr* reader, const _zrdr* other, char* name)
 	}
 }
 
-void _resolveB(_zrdr* reader, const _zrdr* other, char* name)
+void _resolveB(_zrdr* self, _zrdr* root, char* name)
 {
-	if (reader->type == ZRDR_STRING)
+	if (self->type == ZRDR_STRING)
 	{
-		reader->string = reader->string + reinterpret_cast<s32>(name);
+		// Assign string pointer to point at the entry in the string table
+		self->string += (s32)name;
 	}
-	else if (reader->type == ZRDR_ARRAY)
+	else if (self->type == ZRDR_ARRAY)
 	{
-		reader->string = reader->string + reinterpret_cast<s32>(other);
+		self->array = &root[root->integer];
+	
+		for (u32 i = 1; i < self->array->integer; i++)
+		{
+			_zrdr* child = &self->array[i];
+			
+			if (child->type == ZRDR_STRING)
+			{
+				child->string = name;
+			}
+			else if (child->type == ZRDR_ARRAY)
+			{
+				child->array += (s32)root;
+				for (u32 j = 1; j < child->array->integer; j++)
+				{
+					_resolveB(&child->array[j], root, name);
+				}
+			}
+		}
 	}
 }
 

@@ -166,97 +166,69 @@ CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 
 bool CRdrFile::Resolve(bool resolveA)
 {
-	_zrdr* buffer = reinterpret_cast<_zrdr*>(m_buffer);
-	_zrdr* array = NULL;
-	_zrdr* other = NULL;
-	_zrdr* resolved_rdr = NULL;
+	_zrdr* header = reinterpret_cast<_zrdr*>(m_buffer);
+	_zrdr* resolved = NULL;
+	char* str = NULL;
+	char* start = NULL;
+	char* table = NULL;
 
-	if (!buffer)
+	if (!header)
 	{
 		return false;
 	}
 
-	array = NULL;
-	
+	str = NULL;
+
 	if (resolveA)
 	{
-		array = NULL;
-
-		if (buffer)
-		{
-			array = buffer + 1;
-		}
-
-		other = NULL;
-
-		if (buffer)
-		{
-			other = buffer->array;
-		}
-
-		if (type != ZRDR_STRING)
-		{
-			s32 i = 1;
-			if (type == ZRDR_ARRAY)
-			{
-				_zrdr* child = NULL;
-				s32 rdridx = 0;
-				while (true)
-				{
-					child = this->array;
-
-					if (child->integer <= i)
-					{
-						break;
-					}
-
-					_resolveA(child->array, other, child->string);
-					rdridx += 8;
-					i++;
-				}
-			}
-		}
+		
 	}
 
-	resolved_rdr = NULL;
+	resolved = NULL;
 
-	if (buffer)
-	{	
-		array = buffer + 1;
-		// Go to the very first zrdr entry below the string table.
-		// This is calculated by taking the address of the array
-		// and adding its length in bytes to get there.
-		resolved_rdr = (_zrdr*)((char*)buffer + array->length);
+	if (header)
+	{
+		str = reinterpret_cast<char*>(header + 1);
+		resolved = reinterpret_cast<_zrdr*>(m_buffer + header->integer);
 	}
 
 	if (type == ZRDR_STRING)
 	{
-		this->string = this->string + (s32)array;
+		this->string = str;
 	}
 	else
 	{
 		if (type != ZRDR_ARRAY)
 		{
-			array = NULL;
-			
-			if (buffer)
+			start = m_buffer;
+			table = NULL;
+
+			if (start)
 			{
-				array = buffer + 1;
+				table = start + sizeof(_zrdr);
 			}
 
-			this->array = resolved_rdr;
-
-			u32 next = sizeof(_zrdr);
-			for (u32 i = 1; i < array->length; i++)
-			{
-				_resolveB(this->array + next, resolved_rdr, (char*)(array + 1));
-				next += sizeof(_zrdr);
-			}
-			
-			m_strings.LoadTable(array + 1, buffer->length, false);
+			m_strings.LoadTable(table, reinterpret_cast<u32>(start), false);
 			return true;
 		}
+
+		this->array = resolved;
+		
+		for (u32 i = 1; this->array->integer; i++)
+		{
+			_resolveB(&this->array[i], resolved, str);
+		}
 	}
-	
+
+	start = m_buffer;
+
+	table = NULL;
+
+	if (start)
+	{
+		table = start + sizeof(_zrdr);
+	}
+
+	m_strings.LoadTable(table, reinterpret_cast<u32>(start), false);
 	return true;
 }

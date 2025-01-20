@@ -258,7 +258,7 @@ public:
 public:
 	// bool AttachTo(CZSealBody* seal);
 
-	void LookAt(const CPnt3D* origin, const CPnt3D* direction, CMatrix* mat);
+	void LookAt(CPnt3D* origin, CPnt3D* direction, CMatrix& mat);
 
 	void FTSTick(f32 delta) const;
 	void Tick(f32 delta);
