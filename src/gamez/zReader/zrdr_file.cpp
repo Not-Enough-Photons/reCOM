@@ -214,7 +214,7 @@ bool CRdrFile::Resolve(bool resolveA)
 
 		this->array = resolved;
 		
-		for (u32 i = 1; this->array->integer; i++)
+		for (u32 i = 1; i < this->array->integer; i++)
 		{
 			_resolveB(&this->array[i], resolved, str);
 		}
