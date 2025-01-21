@@ -68,6 +68,6 @@ My final goal with this engine is that it will eventually get to a state where w
 Stay tuned, and you are free to contribute any findings you see fit.
 
 # Disclaimer
-This repository **will NOT** contain any copyrighted assets. If you are using this engine to load reCOM, you **MUST** own the original SOCOM games for this to work.
+This repository **will NOT** contain any copyrighted assets. If you are using this project to play SOCOM titles, you **MUST** own legal copies of the games for this to work.
 We will not distribute illegal copies of the game.
 All rights are reserved to Zipper Interactive and Sony Computer Entertainment.
