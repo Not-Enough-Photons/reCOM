@@ -88,9 +88,9 @@ public:
 	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key);
 
 	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);
-	_zrdr* MakeUnion(const char* name, bool createString);
-	char ReadToken(_zrdr** readerArray, _zrdr** unionArray);
-	CRdrFile* ReadArray();
+	_zrdr* MakeUnion(const char* name, bool isstr);
+	char ReadToken(_zrdr** array);
+	_zrdr* ReadArray();
 	bool Resolve(bool resolveA);
 
 	bool ValidateFormat();

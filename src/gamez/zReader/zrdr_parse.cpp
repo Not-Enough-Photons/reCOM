@@ -1,6 +1,7 @@
 #include <ctype.h>
 
 #include "zrdr.h"
+#include "zrdr_local.h"
 
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"
@@ -370,34 +371,280 @@ _zrdr* zrdr_read(const char* name, const char* path, s32 flags)
 	cur_zrdr_flags = flags;
 
 	CRdrFile* rdrfile = CRdrArchive::FindRdr(name);
-	
+
+	// Is the zrdr file non-compiled?
 	if (flags & 1U != 0 || !rdrfile)
 	{
 		CBufferIO* io = new CBufferIO();
+
+		// Search for it in the game disc directory
 		if (!io->Open(zrdr_findfile(name, path)))
 		{
 			io->Close();
 		}
 		else
 		{
+			// Insert into file stack
 			fstack.insert(fstack.begin(), io);
 
 			rdrfile = new CRdrFile();
 
+			// Check for any syntax errors
 			if (rdrfile->ValidateFormat())
 			{
+				// Begin tokenization and create zrdr structure
 				_zrdr* array = rdrfile->ReadArray();
 				rdrfile->type = array->type;
-				// rdrfile = array;
-			}
-		}
+				rdrfile->array = array;
 
-		rdrfile = NULL;
-	}
-	else
-	{
-		
+				// Why is this here?
+				// zfree(array);
+			}
+			// Syntax error check failed
+			else
+			{
+				// delete array;
+				rdrfile = NULL;
+			}
+
+			if (!fstack.empty())
+			{
+				fstack.erase(fstack.begin(), fstack.end());
+			}
+
+			io->Close();
+		}
 	}
 	
-	return NULL;
+	return rdrfile;
 }
+
+_zrdr* CRdrFile::ReadArray()
+{
+	std::list<_zrdr*> arrays;
+	_zrdr* array = NULL;
+	_zrdr* rdr = NULL;
+	_zrdr* child = NULL;
+	char token = 1;
+	bool tag = false;
+	
+	while (!tag && token != 0)
+	{
+		token = ReadToken(&array);
+
+		if (token != 0)
+		{
+			if (array)
+			{
+				arrays.insert(arrays.begin(), array);
+			}
+
+			if (token == '(')
+			{
+				array = ReadArray();
+				arrays.insert(arrays.begin(), array);
+			}
+			else if (token == ')')
+			{
+				tag = true;
+			}
+		}
+	}
+
+	rdr = zrdr_alloc(sizeof(_zrdr), 1);
+	rdr->type = ZRDR_ARRAY;
+
+	child = zrdr_alloc(sizeof(_zrdr), arrays.size());
+	child->type = ZRDR_INTEGER;
+
+	rdr->array = child;
+	*rdr->string = 0x1;
+	rdr->array->integer = arrays.size();
+
+	u32 i = 0;
+	
+	while (!arrays.empty())
+	{
+		array = arrays.front();
+		arrays.erase(arrays.begin());
+		_zrdr* r = rdr->array;
+		r[i] = *array;
+		i++;
+		zfree(array);
+	}
+	
+	return rdr;
+}
+
+char CRdrFile::ReadToken(_zrdr** array)
+{
+	CBufferIO* file = NULL;
+	char pathbuf[783];
+	u32 pathidx = 0;
+	bool valid = false;
+	char token = 0;
+	bool nonum = false;
+	
+	do
+	{
+		file = fstack.front();
+
+		if (!file->fread(&token, 1))
+		{
+			return 0;
+		}
+
+		valid = true;
+
+		if (token == ';')
+		{
+			do
+			{
+				if (token == '\n')
+				{
+					break;
+				}
+				
+				while (true)
+				{
+					file = fstack.front();
+
+					if (!file->fread(&token, 1))
+					{
+						break;
+					}
+					
+					if (fstack.size() < 2)
+					{
+						valid = false;
+						return 0;
+					}
+
+					fstack.pop(true);
+				}
+
+				valid = true;
+			} while (valid);
+		}
+		else
+		{
+			if (pathidx == 0 && token == '#')
+			{
+				_preproc_filter(&token, false);
+			}
+
+			// TODO:
+			// Better character sanitization
+			// You'll never know what kind of crazy characters can be made
+			if (token == '(' || token == ')' || isspace(token))
+			{
+				if (pathidx == 0)
+				{
+					*array = NULL;
+					return token;
+				}
+
+				_zrdr* zunion = MakeUnion(pathbuf, nonum);
+				*array = zunion;
+				return token;
+			}
+
+			if (pathidx > MAX_ZRDR_PATH_LEN)
+			{
+				*array = NULL;
+				return 0;
+			}
+
+			if (token == '\"')
+			{
+				nonum = true;
+
+				while (true)
+				{
+					file = fstack.front();
+
+					if (file->fread(&token, 1) || fstack.size() < 2)
+					{
+						break;
+					}
+
+					fstack.pop(true);
+				}
+
+				while (token != '\"')
+				{
+					pathbuf[pathidx] = token;
+					pathidx++;
+
+					while (true)
+					{
+						file = fstack.front();
+
+						if (file->fread(&token, 1) || fstack.size() < 2)
+						{
+							break;
+						}
+
+						fstack.pop(true);
+					}
+				}
+
+				pathbuf[pathidx] = '\0';
+				pathidx++;
+			}
+			else
+			{
+				pathbuf[pathidx] = token;
+				pathbuf[pathidx + 1] = '\0';
+				pathidx++;
+			}
+
+			continue;
+		}
+
+		if (fstack.size() < 2)
+		{
+			valid = false;
+			return 0;
+		}
+		
+		fstack.pop(true);
+	}
+	while (true);
+}
+
+_zrdr* CRdrFile::MakeUnion(const char* name, bool isstr)
+{
+	char* end;
+	_zrdr* zunion = zrdr_alloc(sizeof(_zrdr), 1);
+	zunion->type = ZRDR_NULL;
+
+	size_t size = strlen(name);
+
+	if (!isstr && size > 0)
+	{
+		s64 inum = strtol(name, &end, 10);
+
+		if (size == end - name)
+		{
+			zunion->type = ZRDR_INTEGER;
+			zunion->integer = inum;
+			return zunion;
+		}
+
+		double dnum = strtod(name, &end);
+
+		if (size == end - name)
+		{
+			zunion->type = ZRDR_REAL;
+			zunion->real = dnum;
+			return zunion;
+		}
+	}
+
+	zunion->type = ZRDR_STRING;
+	char* str = m_strings.CreateString(name);
+	zunion->string = str;
+	return zunion;
+}
+

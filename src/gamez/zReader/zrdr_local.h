@@ -1,6 +1,8 @@
 #pragma once
 #include "zrdr.h"
 
+#define zrdr_alloc(count, size) (_zrdr*)zcalloc(count, size)
+
 class CRdrEditor
 {
 public:
@@ -17,10 +19,10 @@ public:
 
 int CRdrEditor::addint(const char* tag, s32 value)
 {
-
+	return 0;
 }
 
 int CRdrEditor::addSTRING(const char* tag, const char* value)
 {
-
+	return 0;
 }

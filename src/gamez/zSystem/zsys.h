@@ -185,6 +185,14 @@ public:
 class CTTY
 {
 public:
+	enum class ZLOG_LEVEL
+	{
+		LVL_INFO,
+		LVL_WARN,
+		LVL_ERROR,
+		LVL_CRITICAL
+	};
+	
 	void Print(char* buffer, size_t size);
 	void Render();
 };

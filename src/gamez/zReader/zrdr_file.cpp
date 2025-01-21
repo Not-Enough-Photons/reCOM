@@ -46,11 +46,6 @@ int zrdr_free(CRdrFile* file)
 	return 0;
 }
 
-CRdrFile* CRdrFile::ReadArray()
-{
-	return NULL;
-}
-
 bool CRdrFile::ValidateFormat()
 {
 	CBufferIO* file = NULL;
@@ -79,15 +74,17 @@ bool CRdrFile::ValidateFormat()
 				return i == 0;
 			}
 
+			// Tag end
 			if (symbol == ')')
 			{
-				if (!endline && !comment)
+				if ((!endline) && (!comment))
 				{
 					i--;
 				}
 			}
 			else
 			{
+				// Tag begin
 				if (symbol == '(')
 				{
 					if (!endline && !comment)
@@ -97,7 +94,8 @@ bool CRdrFile::ValidateFormat()
 				}
 				else
 				{
-					if (symbol == '\n' || symbol == '\r')
+					// New-line or carriage return
+					if ((symbol == '\n') || (symbol == '\r'))
 					{
 						if (!endline)
 						{
@@ -106,6 +104,7 @@ bool CRdrFile::ValidateFormat()
 					}
 					else
 					{
+						// Comment
 						if (symbol == ';')
 						{
 							if (!endline)
@@ -115,9 +114,10 @@ bool CRdrFile::ValidateFormat()
 						}
 						else
 						{
-							if (symbol == '\"' && !comment)
+							// Include path
+							if ((symbol == '\"') && (!comment))
 							{
-								endline = true;
+								endline = (bool)(endline ^ 1);
 							}
 						}
 					}

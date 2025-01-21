@@ -45,11 +45,11 @@ CFileIO::CFileIO(const CFileIO& other)
 
 bool CFileIO::Open(const char* file)
 {
-	m_file = (s64)std::fopen(file, "rb");;
+	m_file = (s64)std::fopen(file, "rb");
 
 	if (m_file != NULL)
 	{
-		size_t filesize = std::fseek((FILE*)m_file, 0, SEEK_END);
+		s32 filesize = std::fseek((FILE*)m_file, 0, SEEK_END);
 		m_filesize = filesize;
 		std::fseek((FILE*)m_file, 0, SEEK_SET);
 	}

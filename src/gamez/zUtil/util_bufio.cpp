@@ -76,7 +76,7 @@ bool CBufferIO::LoadBuffer()
 
 			m_filesize = size;
 
-			if (m_file == NULL)
+			if (m_file)
 			{
 				size = m_filesize;
 				int position = CFileIO::fread(m_buffer, size);
@@ -173,7 +173,7 @@ size_t CBufferIO::fseek(int offset, int mode)
 {
 	int pos = 0;
 
-	if (m_file == NULL)
+	if (m_buffer == NULL)
 	{
 		pos = CFileIO::fseek(offset, mode);
 	}

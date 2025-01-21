@@ -2,7 +2,10 @@
 
 CSTable::CSTable()
 {
-
+	m_owner = false;
+	m_buffer = NULL;
+	m_bytes = 0;
+	m_reserve = 0;
 }
 
 CSTable::CSTable(size_t size, size_t count)
@@ -85,8 +88,9 @@ char* CSTable::CreateString(const char* str)
 		if (m_buffer == NULL)
 		{
 			// Duplicate the string and insert it
-			char* dupstr = strdup(str);
+			char* dupstr = zstrdup(str);
 			insert(begin(), dupstr);
+			out = dupstr;
 		}
 		// Are we the owner of all strings?
 		else if (m_owner)
