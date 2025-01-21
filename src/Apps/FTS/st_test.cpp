@@ -26,7 +26,7 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    TestLoadReaders("C:/Users/Adam/Desktop/test.rdr");
+    TestLoadReaders("D:/run/readerc.zar");
     // if (m_bTestLoadReaders)
     // {
     //     TestLoadReaders(path);
@@ -65,8 +65,10 @@ void CTestState::TestLoadReaders(const char* path)
 {
     CRdrArchive::AddArchive(path, NULL);
     CRdrArchive::OpenAll();
-    _zrdr* reader = zrdr_read(path, NULL, 0);
-    _zrdr* test = zrdr_findtag(reader, "my_value");
+    _zrdr* reader = zrdr_read("dynamics.rdr", NULL, 0);
+
+    f32 gravity = 0.0f;
+    zrdr_findreal(reader, "gravity", &gravity, 1);
     
     CRdrArchive::CloseAll();
 }

@@ -49,7 +49,7 @@ bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 iterations);
 bool zrdr_findreal(_zrdr* reader, const char* tag, f32* output, s32 iterations);
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
 _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
-_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, s32 iterations);
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, u32 depth);
 
 bool zrdr_toINT(_zrdr* reader, s32* output, s32 size);
 bool zrdr_tobool(_zrdr* reader, bool* output);
