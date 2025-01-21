@@ -47,25 +47,10 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 | zVideo | Render control and controls for the main framebuffer |
 | zWeapon | Generic weapon implementation and ammo |
 
-
-# To-Do List (Not In Order)
-- Loaders for ZAR (Zipper Archive), ZDB (Zipper Database), and other proprietary formats
-- Support for level creation and editing
-- Rendering pipelines
-- Asset editor for the aforementioned data formats
-- ZAR property serialization/deserialization
-- Engine templates to port games over
-
 # Background
-Currently, I (adamdev) am the sole contributor to this project. A few weeks ago I got started on using Ghidra to reverse engineer the binaries of the games, to some luck.
+Currently, I (adamdev) am the sole contributor to this project. I have been using Ghidra to reverse engineer the binaries of the games, to some luck.
 
-I scoured demo disks, beta copies of the game, and even release builds to find strings and start building context of the games binary to see how it ticks.
-
-Now I am on the stage of using the Metrowerks IDE (what Zipper used to develop the game) to compile C++ code into MIPS assembly to closely match what they're doing, down to a ground truth.
-
-My final goal with this engine is that it will eventually get to a state where we can tackle all SOCOM PlayStation games and bring those titles to PC, using this engine as a base.
-
-Stay tuned, and you are free to contribute any findings you see fit.
+I have sourced a demo disk that contains all debug symbols (thank you Zero1UP!), which is indispensable to this project.
 
 # Disclaimer
 This repository **will NOT** contain any copyrighted assets. If you are using this project to play SOCOM titles, you **MUST** own legal copies of the games for this to work.
