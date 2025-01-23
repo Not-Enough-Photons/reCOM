@@ -20,9 +20,9 @@ extern f32 save_short_tether_length;
 extern f32 DeltaRot;
 extern f32 DeltaAim;
 
-// void FirstToThirdPersonTransition(CAppCamera* appCamera);
-// void ThirdToFirstPersonTransition(CAppCamera* appCamera);
-// void APTeatherCam(CAppCamera* appCamera, CMatrix* transform, float offset);
+void GetFirstPersonCameraPos(CAppCamera* appCamera);
+void FirstToThirdPersonTransition(CAppCamera* appCamera);
+void ThirdToFirstPersonTransition(CAppCamera* appCamera);
 
 enum class CAMVIEW
 {
@@ -201,7 +201,7 @@ namespace zdb
 		f32 m_Zmin;
 		f32 m_Zmax;
 		f32 m_RangeScale;
-	private:
+	
 		CPnt3D m_frustum[3];
 		CPnt3D m_fullfrustum[6];
 		s32 m_full_frustum_points;
@@ -264,6 +264,10 @@ public:
 public:
 	// bool AttachTo(CZSealBody* seal);
 
+	void APLookAt(f32 dT, CEntity* entity, CMatrix& matrix);
+	void APFirstPersonCam(CMatrix& matrix);
+	void APTeatherCam(CMatrix& transform, float offset);
+	
 	void LookAt(CPnt3D* origin, CPnt3D* direction, CMatrix& mat);
 
 	void FTSTick(f32 delta);
@@ -271,7 +275,7 @@ public:
 
 	void UpdateDeathCamState();
 	void ResetDeathCam();
-	void TickCameraWiggle(f32 delta, zdb::CCamera* camera);
+	void TickCameraWiggle(f32 dT, zdb::CCamera* camera);
 
 	void SetZoom(f32 zoom);
 

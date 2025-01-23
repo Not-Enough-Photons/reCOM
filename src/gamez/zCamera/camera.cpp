@@ -113,13 +113,13 @@ _zanim_cmd_hdr* CAppCamera::CmdParse3rdPersonTest(_zrdr* reader)
 {
 	_zanim_cmd_hdr* cmd = NULL;
 
-	if (reader == NULL)
+	if (!reader)
 	{
 		cmd = NULL;
 	}
 	else
 	{
-		_zanim_cmd_hdr* cmd = static_cast<_zanim_cmd_hdr*>(zcalloc(1, sizeof(_zanim_cmd_hdr)));
+		cmd = static_cast<_zanim_cmd_hdr*>(zcalloc(1, sizeof(_zanim_cmd_hdr)));
 		cmd->quad_align = false;
 		cmd->timeless = false;
 	}
@@ -127,14 +127,14 @@ _zanim_cmd_hdr* CAppCamera::CmdParse3rdPersonTest(_zrdr* reader)
 	return cmd;
 }
 
-void CAppCamera::RegisterAnimCommands()
-{
-	ZAnim.AddCmd("CAMERA_3RD_PERSON", CmdParse3rdPersonTest, NULL, CmdTick3rdPersonTest, NULL);
-}
-
 bool CAppCamera::CmdTick3rdPersonTest(_zanim_cmd_hdr* header, f32* delta)
 {
 	return appCamera->m_camera_mode != PLAYER_CAM_STATE::cam_mode_FP;
+}
+
+void CAppCamera::RegisterAnimCommands()
+{
+	ZAnim.AddCmd("CAMERA_3RD_PERSON", CmdParse3rdPersonTest, NULL, CmdTick3rdPersonTest, NULL);
 }
 
 void CAppCamera::FTSTick(f32 dT)
@@ -276,10 +276,10 @@ void CAppCamera::Tick(f32 dT)
 		{
 			if (m_camera_last_mode == PLAYER_CAM_STATE::cam_mode_tether)
 			{
-				ThirdToFirstPersonTransition();
+				ThirdToFirstPersonTransition(this);
 			}
 
-			APFirstPersonCam(&firstperson);
+			APFirstPersonCam(firstperson);
 		}
 		else
 		{
@@ -287,13 +287,13 @@ void CAppCamera::Tick(f32 dT)
 			{
 				if (m_camera_last_mode == PLAYER_CAM_STATE::cam_mode_FP)
 				{
-					FirstToThirdPersonTransition();
+					FirstToThirdPersonTransition(this);
 				}
 				
-				APTeatherCam(&firstperson, dT);
+				APTeatherCam(firstperson, dT);
 			}
 			
-			ApTeatherCam(&firstperson, dT);
+			APTeatherCam(firstperson, dT);
 		}
 	}
 
@@ -305,15 +305,15 @@ void CAppCamera::Tick(f32 dT)
 	}
 }
 
-void CAppCamera::TickCameraWiggle(f32 delta, zdb::CCamera* camera)
+void CAppCamera::TickCameraWiggle(f32 dT, zdb::CCamera* camera)
 {
 	f32 wiggle = 0.0f;
 	f32 wiggle_cur_time = m_wiggle_cur_time;
 
 	if (m_wiggle_duration < wiggle_cur_time)
 	{
-		// camera->unkown01 = 0.0f;
-		// camera->unkown02 = 0.0f;
+		camera->m_screen.right = 0;
+		camera->m_screen.bottom = 0;
 		m_wiggle_echo = false;
 	}
 	else
@@ -335,9 +335,9 @@ void CAppCamera::TickCameraWiggle(f32 delta, zdb::CCamera* camera)
 
 		wiggle = (1.0f - wiggle) * m_wiggle_amp * m_wiggle_scalar;
 		wiggle_inv_duration = sinf(wiggle_cur_time);
-		// camera->unka = wiggle * wiggle_cur_time + camera->unka;
-		// camera->unkb = wiggle * 0.5 * wiggle_inv_duration + camera->unkb;
-		m_wiggle_cur_time += delta;
+		camera->m_screen.right = wiggle * wiggle_cur_time + camera->m_screen.right;
+		camera->m_screen.bottom = wiggle * 0.5 * wiggle_inv_duration + camera->m_screen.bottom;
+		m_wiggle_cur_time += dT;
 	}
 }
 

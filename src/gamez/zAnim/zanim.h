@@ -253,7 +253,7 @@ struct _zanim_cmd_hdr
 
 struct _zanim_cmd_set
 {
-	const char* name;
+	char* name;
 	s32 count;
 	zanim_cmd* cmd_list;
 };
@@ -262,7 +262,7 @@ struct _zanim_main_params
 {
 	s32 m_version;
 	f32 m_gravity;
-	bool m_search_external_nodes;
+	u32 m_search_external_nodes : 1;
 	u32 m_unused : 31;
 	s32 m_UserActionAnimIndex;
 };
@@ -494,15 +494,13 @@ public:
 	void GetName();
 };
 
-class CZAnimMain
+class CZAnimMain : public _zanim_main_params
 {
 public:
+	bool SplitName(const char* name, char** splitname);
+	
 	bool InitCommands();
-	u32 AddCmd(const char* name, 
-		_zanim_cmd_hdr*(*parser)(_zrdr*), 
-		void(*begin)(_zanim_cmd_hdr*),
-		bool(*tick)(_zanim_cmd_hdr*, f32*),
-		void(*end)(_zanim_cmd_hdr*));
+	u32 AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
 public:
 	static bool m_LoadFromZAR;
 private:
