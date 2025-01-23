@@ -184,6 +184,7 @@ namespace zdb
 		/// GETTERS/SETTERS
 		/// -------------------------------------------
 
+		void SetMatrix(const CMatrix* matrix);
 		void SetPosition(f32 x, f32 y, f32 z);
 		void SetRotation(const CQuat& rotation) {};
 		void SetScale(f32 scaleFactor);

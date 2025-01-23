@@ -227,7 +227,7 @@ public:
 	void OnPop() {}
 	void OnPush() {}
 
-	void TestLoadReaders(const char* path);
+	void TestLoadReaders();
 private:
 	bool m_bTestLoadReaders;
 };

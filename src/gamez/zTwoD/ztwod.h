@@ -143,7 +143,8 @@ private:
 
 class CPlainBmp : public C2D
 {
-
+public:
+	CPlainBmp() {}
 };
 
 class C2DString : public C2D
@@ -317,4 +318,45 @@ private:
 	f32 m_displayTime;
 	bool m_bEnabled;
 	f32 m_Distance;
+};
+
+class C3StateButton : public C2D
+{
+public:
+	char* _szCaption;
+	C2DString _strCaption;
+	s32 _iTextX;
+	s32 _iTextY;
+	bool _bCaptionCentered;
+};
+
+class C2DButton : public C3StateButton
+{
+public:
+	struct ButtonState
+	{
+		CSaferStr _TexName;
+		zdb::CTexHandle* _Texture;
+		f32 _iGlowStart;
+		f32 _iGlowEnd;
+		bool _bGlowy;
+		f32 _fPulseTime;
+		f32 _fGlowTime;
+		CPnt3D _pntTextColor;
+		f32 _fScale;
+	};
+
+	ButtonState _PressedState;
+	ButtonState _ActiveState;
+	ButtonState _NormalState;
+	ButtonState _DisabledState;
+
+	CPlainBmp _bmp;
+
+	f32 _fWidth;
+	f32 _fHeight;
+
+	C2DFont* m_alternateFont;
+
+	f32 _fPressedTime;
 };

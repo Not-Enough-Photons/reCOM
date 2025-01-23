@@ -15,6 +15,9 @@
 /// FORWARD DECLARATIONS
 /// -------------------------------------------
 class CSealCtrl;
+class CAppCamera;
+
+enum class PLAYER_CAM_STATE;
 
 /// -------------------------------------------
 /// ENUMS
@@ -319,6 +322,8 @@ public:
 	virtual void OnMove(CNode* node);
 	virtual void OnSelect(CNode* node, bool selected);
 	virtual void* OnWeaponHit(CNode* node, zdb::IntersectStruct* intersection, CZProjectile* projectile);
+
+	CZSealBody* m_seal;
 };
 
 class CZSealBody : public CEntity, public CBody
@@ -330,8 +335,7 @@ public:
 	/// CREATION/DELETION
 	/// -------------------------------------------
 
-	CZSealBody(const zdb::CNode& node, const CCharacterType& character) : CEntity(CEntity::ENT_TYPE_SEAL, node) {}
-	~CZSealBody();
+	CZSealBody(zdb::CNode* node, CCharacterType* chartype);
 
 	static CCharacterType* PreCreateSeal(CCharacterType* charType, const char* name, zdb::CNode** nodes);
 	static CZSealBody* Create(CCharacterType* charType, const char* name, CSealCtrl* controller);
@@ -510,13 +514,12 @@ private:
 	bool p0_run;
 
 	zdb::DiIntersect pa_di;
-	zdb::DiIntersect pa_diIntersect[1]; // ...what?
+	zdb::DiIntersect pi_diIntersect[1];
 	CPnt3D pi_diTail;
-	s32 pi_diIntersectHandle[1]; // ...why?
+	s32 pi_diIntersectHandle[1];
 	s32 pa_diIntersectHandle;
-
-	// Don't know what type goes into the vector, so we'll assume a float for now
-	std::vector<float> m_volumetricAltitudes;
+	
+	std::vector<zdb::IntersectStruct*> m_volumetricAltitudes;
 
 	CZBodyPart* m_root;
 	CZBodyPart* m_lfoot;

@@ -78,6 +78,19 @@ namespace zdb
         m_shadow = 0;
         m_reserved = 0;
     }
+
+    DiIntersect::DiIntersect(s32 count)
+    {
+        m_BufCnt = count;
+        m_Intersects = static_cast<IntersectStruct*>(zmalloc(count << 5));
+        m_Node = NULL;
+        m_Cnt = 0;
+
+        m_Type = 0;
+        m_IntersectCharacters = false;
+        m_AltitudeCharacters = false;
+        m_ProximityCharacters = false;
+    }
     
     bool CDIVector::Exists(CDI* di)
     {

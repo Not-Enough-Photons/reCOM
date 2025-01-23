@@ -115,6 +115,8 @@ namespace zdb
 
 		void ApplyDecal(CDecal* decal);
 
+		void SetBuffer();
+		
 		bool DrawLOD(CLOD_band* lod, f32 range, f32* distance);
 		void Render();
 		void VuUpdate(f32 opacity);
@@ -171,7 +173,7 @@ namespace zdb
 
 	class CMesh : public CVisual
 	{
-
+		
 	};
 
 	class CSubMesh : public CMesh

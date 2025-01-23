@@ -154,6 +154,7 @@ public:
 	CPnt3D& operator/(f32 scalar);
 
 	static const CPnt3D zero;
+	static const CPnt3D unit_nz;
 
 	void Normalize();
 	void Normalize(CPnt3D* other);
@@ -228,6 +229,7 @@ public:
 public:
 	const float* GetTranslate() const;
 
+	void Transform(CPnt3D* point, s32 count) const;
 	void Multiply(const CMatrix* first, const CMatrix* second);
 
 	void SetRotation(const CPnt3D* rotation);

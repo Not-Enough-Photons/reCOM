@@ -1,11 +1,12 @@
-
 #pragma once
 #include "gamez/zAI/zai.h"
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zNode/znode.h"
-#include "gamez/zCamera/zcam.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zRender/zrender.h"
+
+struct cam_wiggle;
+struct throw_params;
 
 class CEntity;
 class CEntityCtrl;
@@ -14,6 +15,7 @@ class CharacterDynamics;
 class CZSealBody;
 class CZBodyPart;
 class CModel;
+class CCameraParams;
 
 enum class DAMAGE_LOCATION
 {
@@ -63,6 +65,8 @@ class CCharacterType
 {
 public:
 	CCharacterType();
+
+	static bool Open(const char* path);
 private:
 	char* m_name;
 
@@ -92,36 +96,36 @@ class CharacterDynamics
 public:
 	void Load(_zrdr* reader);
 
-	f32 m_gravity;
-	f32 m_DamageToNewtons;
-	f32 m_jumpFactor;
-	f32 m_landFallRate;
-	f32 m_landHardFallRate;
-	f32 m_groundTouchDistance;
-	f32 m_maxSlopeCos;
-	f32 m_stepHeight;
-	f32 m_blastBoostY;
+	f32 m_gravity = 98.1f;
+	f32 m_DamageToNewtons = 235.0f;
+	f32 m_jumpFactor = 1.0f;
+	f32 m_landFallRate = 0.0f;
+	f32 m_landHardFallRate = 90.0f;
+	f32 m_groundTouchDistance = 3.0f;
+	f32 m_maxSlopeCos = 0.64278f;
+	f32 m_stepHeight = 4.0f;
+	f32 m_blastBoostY = 1.0f;
 	f32 m_fallDist[3];
 	f32 m_landSpeed[3];
-	f32 m_standTurnFactor;
-	f32 m_turn_maxRate;
-	f32 m_accelXMin;
-	f32 m_accelXMax;
-	f32 m_accelZMin;
-	f32 m_accelZMax;
-	f32 m_initAimPitch;
-	f32 m_maxAimPitch;
-	f32 m_minAimPitch;
-	f32 m_maxAimYaw;
-	f32 m_proneMaxAimPitch;
-	f32 m_proneMinAimPitch;
-	f32 m_proneMaxAimYaw;
-	f32 m_proneZoomDeltaYaw;
-	f32 m_maxLookPitch;
-	f32 m_minLookPitch;
-	f32 m_maxLookYaw;
-	f32 m_maxEyelookPitch;
-	f32 m_minEyelookPitch;
+	f32 m_standTurnFactor = 1.0f;
+	f32 m_turn_maxRate = 2.0f;
+	f32 m_accelXMin = 2.0f;
+	f32 m_accelXMax = 5.0f;
+	f32 m_accelZMin = 2.0f;
+	f32 m_accelZMax = 5.0f;
+	f32 m_initAimPitch = -0.159f;
+	f32 m_maxAimPitch = 1.483f;
+	f32 m_minAimPitch = -1.483f;
+	f32 m_maxAimYaw = 1.483f;
+	f32 m_proneMaxAimPitch = 0.349f;
+	f32 m_proneMinAimPitch = -0.349f;
+	f32 m_proneMaxAimYaw = 0.785f;
+	f32 m_proneZoomDeltaYaw = 0.349f;
+	f32 m_maxLookPitch = 1.55f;
+	f32 m_minLookPitch = -1.55f;
+	f32 m_maxLookYaw = 1.55f;
+	f32 m_maxEyelookPitch = 0.139f;
+	f32 m_minEyelookPitch = -0.139f;
 	f32 m_maxEyelookYaw;
 	f32 m_maxBlinkRate;
 	f32 m_maxBlinkAngle;
@@ -183,7 +187,7 @@ public:
 	f32 m_minJumpHeight;
 	cam_wiggle m_cam_wiggle;
 	throw_params m_throw_params;
-	bool m_loaded;
+	bool m_loaded = false;
 	std::vector<CCameraParams> m_cam_params;
 };
 
@@ -198,8 +202,7 @@ public:
 		ENT_TYPE_TURRET
 	};
 
-	CEntity(TYPE type, const zdb::CNode& node);
-	~CEntity();
+	CEntity(TYPE type, zdb::CNode* node);
 public:
 	void IncrementAwareCounter();
 	void DecrementAwareCounter();
@@ -230,7 +233,7 @@ public:
 	void SetController(CEntityCtrl* controller);
 public:
 	CEntityCtrl* m_control;
-protected:
+	
 	u32 m_id;
 	u32 m_index;
 	u32 m_vehicle_index;

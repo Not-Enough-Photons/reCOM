@@ -4,6 +4,8 @@
 #include "gamez/zNode/znode.h"
 #include "gamez/zSystem/zsys.h"
 
+enum class SEAL_PEEK;
+
 class CHUD;
 
 class CEntity;
@@ -169,6 +171,8 @@ namespace zdb
 	class CCamera : public CNode, public tag_CAMERA_PARAMS
 	{
 	public:
+		CCamera();
+		
 		static void RegisterAnimCommands();
 
 		static _zanim_cmd_hdr* CmdParseRelease(_zrdr* reader);
@@ -185,13 +189,15 @@ namespace zdb
 		static bool CmdTickSetRegions(_zanim_cmd_hdr* header, f32* delta);
 		static bool CmdTickGetRegions(_zanim_cmd_hdr* header, f32* delta);
 		static bool CmdTickParams(_zanim_cmd_hdr* header, f32* delta);
-	public:
+		
 		void Update(tag_ZCAM_TYPE type);
 
 		f32 GetScaledRangeSquared(const CPnt3D& point);
 
 		void SetHalfHorizontalFOVRadians(f32 radians);
-	public:
+
+		static bool m_dynamics_controlled;
+		
 		f32 m_Zmin;
 		f32 m_Zmax;
 		f32 m_RangeScale;
@@ -260,8 +266,8 @@ public:
 
 	void LookAt(CPnt3D* origin, CPnt3D* direction, CMatrix& mat);
 
-	void FTSTick(f32 delta) const;
-	void Tick(f32 delta);
+	void FTSTick(f32 delta);
+	void Tick(f32 dT);
 
 	void UpdateDeathCamState();
 	void ResetDeathCam();
@@ -274,7 +280,7 @@ public:
 public:
 	PLAYER_CAM_STATE m_camera_mode;
 	PLAYER_CAM_STATE m_camera_last_mode;
-private:
+
 	CPnt3D m_cameraAim;
 	CPnt3D m_cameraTie;
 	CPnt3D m_camGoalPos;
@@ -309,7 +315,7 @@ private:
 
 	CEntity* m_track;
 
-	// SEAL_PEEK m_save_peek;
+	SEAL_PEEK m_save_peek;
 	CAMVIEW m_save_view;
 
 	bool m_auto_death_cam;

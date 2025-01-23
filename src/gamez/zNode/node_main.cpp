@@ -383,6 +383,18 @@ namespace zdb
 		return NULL;
 	}
 
+	void CNode::SetMatrix(const CMatrix* matrix)
+	{
+		m_matrix = *matrix;
+		UpdateGrid();
+		m_modified = true;
+
+		if (m_nodeEx)
+		{
+			m_nodeEx->OnMove(this);
+		}
+	}
+	
 	bool CNode::SetActive(bool active)
 	{
 		m_active = active;

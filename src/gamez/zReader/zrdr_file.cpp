@@ -5,6 +5,8 @@
 
 char* buffer = NULL;
 
+s32 CRdrArchive::version = 1;
+
 CRdrFile::CRdrFile() : _zrdr()
 {
 	m_buffer = NULL;

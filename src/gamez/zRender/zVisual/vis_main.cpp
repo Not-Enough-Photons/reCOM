@@ -137,11 +137,6 @@ namespace zdb
 		return true;
 	}
 
-	void CVisual::Init()
-	{
-		
-	}
-
 	bool CVisual::DrawLOD(zdb::CLOD_band* lod, f32 range, f32* distance)
 	{
 		bool inrange = false;

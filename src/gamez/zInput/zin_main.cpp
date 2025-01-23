@@ -1,9 +1,6 @@
 #include "gamez/zInput/zinput.h"
 #include "gamez/zMath/zmath.h"
 
-const float c_DefaultDelta = 0.03333334f;
-const int c_MaxPads = 2;
-
 float pad_dt = 0.0f;
 
 bool CInput::m_init = false;
@@ -91,7 +88,7 @@ void CInput::DeletePad(s32 slot)
 
 void CInput::Flush()
 {
-	for (s32 pad = 0; pad < c_MaxPads; pad++)
+	for (s32 pad = 0; pad < 2; pad++)
 	{
 		if (m_pads[pad] != NULL)
 		{
@@ -104,27 +101,4 @@ void CInput::Uninit()
 {
 	ClosePadIO();
 	m_init = false;
-}
-
-CPad::CPad(s32 port, s32 slot)
-{
-	if (port == 0 || port == 1)
-	{
-
-	}
-}
-
-void CPad::Flush()
-{
-	Tick(c_DefaultDelta);
-}
-
-void CPad::Tick(f32 delta)
-{
-	pad_dt = delta;
-}
-
-bool CPad::IsOpen()
-{
-	return m_open != 0;
 }

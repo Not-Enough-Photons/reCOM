@@ -36,13 +36,14 @@ namespace zdb
 
     struct DiIntersect
     {
-        s32 m_Type;
-
-        bool m_IntersectCharacters;
-        bool m_AltitudeCharacters;
-        bool m_ProximityCharacters;
-
-        s32 m_Unused;
+        DiIntersect() {}
+        DiIntersect(s32 count);
+        
+        u32 m_Type : 16;
+        u32 m_IntersectCharacters : 1;
+        u32 m_AltitudeCharacters : 1;
+        u32 m_ProximityCharacters : 1;
+        u32 m_Unused : 13;
 
         CPnt3D m_Tail;
         CPnt3D m_Tip;

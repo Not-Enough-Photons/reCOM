@@ -1,6 +1,7 @@
 ﻿#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include "gamez/zEntity/zentity.h"
 #include "gamez/zFTS/fts_state.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zRender/zShader/zshader.h"
@@ -26,49 +27,31 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    TestLoadReaders("D:/run/readerc.zar");
-    // if (m_bTestLoadReaders)
-    // {
-    //     TestLoadReaders(path);
-    // }
-    // 
-    // shader.Init();
-    // 
-    // shader.Create("./data/common/shaders/unlit.vertex", shader.m_vertex, GL_VERTEX_SHADER);
-    // shader.Create("./data/common/shaders/unlit.fragment", shader.m_fragment, GL_FRAGMENT_SHADER);
-    // 
-    // shader.Link();
-    // 
-    // glGenVertexArrays(1, &vao);
-    // glGenBuffers(1, &vbo);
-    //     
-    // glBindVertexArray(vao);
-    // glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    // glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-    // 
-    // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    // glEnableVertexAttribArray(0);
+    shader.Init();
+    
+    shader.Create("./data/common/shaders/unlit.vertex", shader.m_vertex, GL_VERTEX_SHADER);
+    shader.Create("./data/common/shaders/unlit.fragment", shader.m_fragment, GL_FRAGMENT_SHADER);
+    
+    shader.Link();
+    
+    glGenVertexArrays(1, &vao);
+    glGenBuffers(1, &vbo);
+        
+    glBindVertexArray(vao);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
     return true;
 }
 
 void CTestState::Tick(f32 dT)
 {
-    // zVid_ClearColor(0.0f, 0.0f, 0.0f);
-    // glUseProgram(shader.m_ID);
-    // glBindVertexArray(vao);
-    // glDrawArrays(GL_TRIANGLES, 0, 3);
-    // zVid_Swap(false);
-    // glfwPollEvents();
-}
-
-void CTestState::TestLoadReaders(const char* path)
-{
-    CRdrArchive::AddArchive(path, NULL);
-    CRdrArchive::OpenAll();
-    _zrdr* reader = zrdr_read("dynamics.rdr", NULL, 0);
-
-    f32 gravity = 0.0f;
-    zrdr_findreal(reader, "gravity", &gravity, 1);
-    
-    CRdrArchive::CloseAll();
+    zVid_ClearColor(0.0f, 0.0f, 0.0f);
+    glUseProgram(shader.m_ID);
+    glBindVertexArray(vao);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    zVid_Swap(false);
+    glfwPollEvents();
 }

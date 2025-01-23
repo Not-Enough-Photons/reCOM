@@ -30,17 +30,26 @@ bool CMenuState::Init()
 
 	if (m_skip == 0)
 	{
+		zar::CZAR* archive = CRdrArchive::AddArchive("readerc.zar", "run/ui");
+
+		if (archive)
+		{
+			archive->ReOpen(CRdrArchive::version, 1);
+		}
+
+		// zdb::CTexManager::m_texmanager->doSetupBuffers();
+		
 		LoadWorld("ui");
 
 		if (zdb::CWorld::m_world)
 		{
-			zdb::CWorld::m_world->m_camera->SetPosition(320.0f, 0.0f, 320.0f);
-			zdb::CWorld::m_world->m_camera->Update(zdb::tag_ZCAM_TYPE::ZCAM_NORMAL);
-			zdb::CVisual::m_camera = zdb::CWorld::m_world->m_camera;
-			thePipe.m_camera = zdb::CWorld::m_world->m_camera;
+			zdb::CCamera* camera = zdb::CWorld::m_world->m_camera;
+			
+			camera->SetPosition(320.0f, 0.0f, 320.0f);
+			camera->Update(zdb::tag_ZCAM_TYPE::ZCAM_NORMAL);
+			zdb::CVisual::m_camera = camera;
+			thePipe.m_camera = camera;
 		}
-
-		
 	}
 
 	return true;

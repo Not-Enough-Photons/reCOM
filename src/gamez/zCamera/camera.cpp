@@ -1,5 +1,7 @@
 #include "zcam.h"
 
+#include "glm/ext/matrix_transform.hpp"
+
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zSeal/zseal.h"
@@ -11,6 +13,8 @@ bool camera_tether_intersects_something;
 f32 save_short_tether_length;
 f32 DeltaRot;
 f32 DeltaAim;
+
+f32 peekCur = 0.0f;
 
 CAppCamera::CAppCamera(zdb::CWorld* world, zdb::CCamera* camera)
 {
@@ -46,26 +50,26 @@ CAppCamera::CAppCamera(zdb::CWorld* world, zdb::CCamera* camera)
 	f32 goalSqr = (goalZ * goalZ) + (goalX * goalX) + (goalY * goalY);
 	m_goal_t_len = goalSqr;
 
-	CZSealBody* player = static_cast<CZSealBody*>(ftsGetPlayer());
+	CZSealBody* player = ftsGetPlayer();
 
-	if (player != NULL)
+	if (player)
 	{
 		bool isPlayer = false;
 
 		if (player->m_control != NULL)
 		{
-			isPlayer = static_cast<CSealCtrl*>(player->m_control)->IsPlayer();
+			isPlayer = ((CSealCtrl*)player->m_control)->IsPlayer();
 		}
 
 		if (isPlayer)
 		{
-			m_padid = static_cast<CSealCtrl*>(player->m_control)->m_padid;
+			m_padid = ((CSealCtrl*)player->m_control)->m_padid;
 		}
 	}
 
 	m_entity = player;
 
-	if (m_entity == NULL)
+	if (!m_entity)
 	{
 		m_camera_effects = NULL;
 		m_skel_root = NULL;
@@ -133,15 +137,107 @@ bool CAppCamera::CmdTick3rdPersonTest(_zanim_cmd_hdr* header, f32* delta)
 	return appCamera->m_camera_mode != PLAYER_CAM_STATE::cam_mode_FP;
 }
 
-void CAppCamera::LookAt(CPnt3D* origin, CPnt3D* direction, CMatrix& mat)
+void CAppCamera::FTSTick(f32 dT)
 {
-	CPnt3D lookAt;
-	direction->Sub(origin, &lookAt);
+	bool isPlayer = false;
+	
+	if (m_entity)
+	{
+		if (!m_entity->m_control)
+		{
+			isPlayer = false;
+		}
+		else
+		{
+			isPlayer = ((CSealCtrl*)m_entity->m_control)->IsPlayer();
+		}
 
-	mat.m_matrix[3][0] = origin->x;
-	mat.m_matrix[3][1] = origin->y;
-	mat.m_matrix[3][2] = origin->z;
-	m_wPos = *origin;
+		if (isPlayer)
+		{
+			m_padid = ((CSealCtrl*)m_entity->m_control)->m_padid;
+		}
+
+		CPad* pad = NULL;
+		
+		if (m_padid < 2)
+		{
+			pad = CInput::m_pads[m_padid];
+		}
+
+		if (!pad)
+		{
+			pad = CInput::m_pads[0];
+		}
+
+		bool isButtonsDown = pad->GetTwoButtons(PAD_BUTTON::PAD_SELECT, PAD_BUTTON::PAD_DOWN);
+
+		if (pad && isButtonsDown)
+		{
+			// m_ctrl_view = m_ctrl_view % (CAMVIEW)theCharacterDynamics.m_cam_params.size();
+		}
+
+		if (m_ctrl_view != m_save_view)
+		{
+			m_camGoalPos = theCharacterDynamics.m_cam_params.front().m_cam_offset;
+			m_cameraAim = theCharacterDynamics.m_cam_params.front().m_cam_aimpoint;
+
+			f32 x = m_camGoalPos.x;
+			f32 y = m_camGoalPos.y;
+			f32 z = m_camGoalPos.z;
+
+			m_goal_t_len = sqrtf(z * z + y * y + x * x);
+
+			if (m_entity)
+			{
+				CMatrix lookat = CMatrix::identity;
+				m_entity->m_node->m_matrix.Transform(&m_camGoalPos, 1);
+				m_entity->m_node->m_matrix.Transform(&m_cameraAim, 1);
+				LookAt(&m_camGoalPos, &m_cameraAim, lookat);
+				m_camera->SetMatrix(&lookat);
+			}
+
+			m_save_view = m_ctrl_view;
+
+			if (m_ctrl_view == CAMVIEW::cam_view_first)
+			{
+				m_camera_mode = PLAYER_CAM_STATE::cam_mode_FP;
+			}
+			else
+			{
+				m_camera_mode = PLAYER_CAM_STATE::cam_mode_tether;
+			}
+		}
+	}
+}
+
+
+void CAppCamera::LookAt(CPnt3D* center, CPnt3D* eye, CMatrix& mat)
+{
+	glm::mat4x4 lookat = glm::lookAt(
+		glm::vec3(eye->x, eye->y, eye->z),
+		glm::vec3(center->x, center->y, center->z),
+		glm::vec3(0, 1, 0)
+		);
+
+	mat.m_matrix[0][0] = lookat[0][0];
+	mat.m_matrix[0][1] = lookat[0][1];
+	mat.m_matrix[0][2] = lookat[0][2];
+	mat.m_matrix[0][3] = lookat[0][3];
+
+	mat.m_matrix[1][0] = lookat[1][0];
+	mat.m_matrix[1][1] = lookat[1][1];
+	mat.m_matrix[1][2] = lookat[1][2];
+	mat.m_matrix[1][3] = lookat[1][3];
+
+	mat.m_matrix[2][0] = lookat[2][0];
+	mat.m_matrix[2][1] = lookat[2][1];
+	mat.m_matrix[2][2] = lookat[2][2];
+	mat.m_matrix[2][3] = lookat[2][3];
+
+	mat.m_matrix[3][0] = mat.m_matrix[0][0];
+	mat.m_matrix[3][1] = mat.m_matrix[0][1];
+	mat.m_matrix[3][2] = mat.m_matrix[0][2];
+	mat.m_matrix[3][3] = mat.m_matrix[0][3];
 }
 
 void CAppCamera::SetZoom(f32 zoom)
@@ -158,6 +254,55 @@ void CAppCamera::ResetDeathCam()
 	save_short_tether_length = 10000.0f;
 	DeltaRot = 0.0f;
 	DeltaAim = 0.0f;
+}
+
+void CAppCamera::Tick(f32 dT)
+{
+	if (!zdb::CCamera::m_dynamics_controlled)
+	{
+		return;
+	}
+
+	CMatrix firstperson = CMatrix::identity;
+	FTSTick(dT);
+	
+	if (m_camera_mode != PLAYER_CAM_STATE::cam_mode_net)
+	{
+		if (m_camera_mode == PLAYER_CAM_STATE::cam_mode_apLook)
+		{
+			// APLookAt();
+		}
+		else if (m_camera_mode == PLAYER_CAM_STATE::cam_mode_FP)
+		{
+			if (m_camera_last_mode == PLAYER_CAM_STATE::cam_mode_tether)
+			{
+				ThirdToFirstPersonTransition();
+			}
+
+			APFirstPersonCam(&firstperson);
+		}
+		else
+		{
+			if (m_camera_mode == PLAYER_CAM_STATE::cam_mode_tether)
+			{
+				if (m_camera_last_mode == PLAYER_CAM_STATE::cam_mode_FP)
+				{
+					FirstToThirdPersonTransition();
+				}
+				
+				APTeatherCam(&firstperson, dT);
+			}
+			
+			ApTeatherCam(&firstperson, dT);
+		}
+	}
+
+	m_camera_last_mode = m_camera_mode;
+
+	if (m_camera_effects)
+	{
+		
+	}
 }
 
 void CAppCamera::TickCameraWiggle(f32 delta, zdb::CCamera* camera)

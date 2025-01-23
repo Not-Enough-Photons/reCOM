@@ -5,6 +5,13 @@
 
 namespace zdb
 {
+	bool CCamera::m_dynamics_controlled = true;
+	
+	CCamera::CCamera() : CNode()
+	{
+		
+	}
+	
 	void CCamera::RegisterAnimCommands()
 	{
 		ZAnim.AddCmd("DYNAMICS_RELEASE_CAMERA", CmdParseRelease, NULL, CmdTickControlSwitch, NULL);

@@ -207,9 +207,55 @@ bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 iterations)
 	return found;
 }
 
-bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 iterations)
+bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 iterations)
 {
-	return false;
+	u32 i = 0;
+	bool found = false;
+	_zrdr* tag = zrdr_findtag_startidx(reader, name, 1);
+
+	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < iterations + 1)
+	{
+		found = false;
+	}
+	else
+	{
+		i = 0;
+
+		if (iterations > 0)
+		{
+			do
+			{
+				s32 integer = 0;
+				_zrdr* array = tag->array;
+
+				if (array->type == ZRDR_REAL)
+				{
+					integer = static_cast<s32>(array->real);
+				}
+				else if (array->type == ZRDR_INTEGER)
+				{
+					integer = array->integer;
+				}
+				else
+				{
+					integer = output[i];
+				}
+				
+				i++;
+				*output = integer;
+			} while (i < iterations);
+		}
+
+		found = true;
+	}
+	
+	return found;
+}
+
+bool zrdr_finduint(_zrdr* reader, const char* name, u32* output, s32 iterations)
+{
+	_zrdr* tag = zrdr_findtag_startidx(reader, name, iterations);
+	return zrdr_toINT(tag, reinterpret_cast<s32*>(output), iterations);
 }
 
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
@@ -218,26 +264,108 @@ bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
 	return zrdr_tobool(rdr, output);
 }
 
-bool zrdr_toINT(_zrdr* reader, s32* value, s32 index)
+bool zrdr_toINT(_zrdr* reader, s32* output, s32 size)
 {
-	if (reader == NULL || reader->type != ZRDR_TYPE::ZRDR_ARRAY || reader->array->integer < index + 1)
+	bool success = false;
+	u32 i = 0;
+	
+	if (!reader || reader->type != ZRDR_ARRAY || reader->array->integer < size + 1)
 	{
-		return false;
+		success = false;
+	}
+	else
+	{
+		if (size > 0)
+		{
+			i = 0;
+
+			do
+			{
+				_zrdr* array = reader->array;
+				s32 integer = 0;
+				
+				if (array->type == ZRDR_REAL)
+				{
+					integer = static_cast<s32>(array->real);
+				}
+				else if (array->type == ZRDR_INTEGER)
+				{
+					integer = array->integer;
+				}
+				else
+				{
+					integer = *output;
+				}
+				
+				i++;
+				*output = integer;
+			} while (i < size);
+		}
+
+		success = true;
 	}
 
+	return success;
+}
 
+bool zrdr_toREAL(_zrdr* reader, f32* output, s32 size)
+{
+	u32 i = 0;
+	bool success = false;
+	
+	if (!reader || reader->type != ZRDR_ARRAY || reader->array->integer < size + 1)
+	{
+		success = false;
+	}
+	else
+	{
+		if (size > 0)
+		{
+			i = 0;
+			do
+			{
+				_zrdr* array = reader->array;
+				f32 real = 0.0f;
+				
+				if (array->type == ZRDR_REAL)
+				{
+					real = array->real;
+				}
+				else if (array->type == ZRDR_INTEGER)
+				{
+					real = static_cast<f32>(array->integer);
+				}
+				else
+				{
+					real = *output;
+				}
+
+				i++;
+				*output = real;
+			}
+			while (i < size);
+		}
+
+		success = true;
+	}
+
+	return success;
 }
 
 bool zrdr_tobool(_zrdr* reader, bool* output)
 {
-	if (output == NULL)
+	bool success = false;
+	
+	if (!output)
 	{
-		return false;
+		*output = false;
 	}
 
-	if (reader == NULL)
+	success = false;
+	
+	if (!reader)
 	{
-		return false;
+		return success;
 	}
 
 	if (reader->type == ZRDR_ARRAY && reader->array->integer > 1)
@@ -250,30 +378,33 @@ bool zrdr_tobool(_zrdr* reader, bool* output)
 		if (reader->integer == 0)
 		{
 			*output = false;
-			return true;
+			success = true;
 		}
 		else
 		{
 			*output = true;
-			return true;
+			success = true;
 		}
 	}
-
-	if (reader->type == ZRDR_STRING)
+	else
 	{
-		if (strcasecmp(reader->string, "true") == 0 || strcasecmp(reader->string, "on"))
+		success = false;
+		if (reader->type == ZRDR_STRING)
 		{
-			*output = true;
-			return true;
-		}
-		else if (strcasecmp(reader->string, "false") == 0 || strcasecmp(reader->string, "off"))
-		{
-			*output = false;
-			return true;
+			if (strcasecmp(reader->string, "true") == 0 || strcasecmp(reader->string, "on"))
+			{
+				*output = true;
+				success = true;
+			}
+			else if (strcasecmp(reader->string, "false") == 0 || strcasecmp(reader->string, "off"))
+			{
+				*output = false;
+				success = true;
+			}
 		}
 	}
 	
-	return false;
+	return success;
 }
 
 _zrdr* _zrdr_nexttag(_zrdr* reader, const char* name, size_t size, _zrdr* other)

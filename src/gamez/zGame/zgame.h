@@ -1,17 +1,18 @@
 #pragma once
-#include <deque>
-#include <string>
-
 #include "gamez/zFTS/fts_state.h"
-
-#include "gamez/zReader/zrdr.h"
-#include "gamez/zNode/znode.h"
+#include "gamez/zTwoD/ztwod.h"
 
 class CGame;
 class CGameStateChangeCmd;
 class CHUD;
 class CSnd;
 class CZAnimZAR;
+
+namespace zdb
+{
+	class CAssetLib;
+	class CNode;
+}
 
 enum MENU_STATE
 {
@@ -119,4 +120,16 @@ public:
 
 	zdb::CNode* m_pBackplaneNode;
 	zdb::CNode* m_pForeplaneNode;
+	zdb::CNode* m_popupnode;
+
+	CPlainBmp _bmpBackground;
+	CPlainBmp _bmpFade;
+	C2DFont _font;
+	zdb::CAssetLib* _pFontLib;
+
+	bool m_movieRunning;
+	bool m_has_mpeg_background;
+
+	CSaferStr m_MPEGName;
+	C2DButton m_ScreenControls;
 };
