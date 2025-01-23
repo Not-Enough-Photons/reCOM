@@ -17,6 +17,8 @@ class CZBodyPart;
 class CModel;
 class CCameraParams;
 
+struct HEALTH_PARAMS;
+
 enum class DAMAGE_LOCATION
 {
 	HEAD,
@@ -42,6 +44,66 @@ extern CharacterDynamics theCharacterDynamics;
 
 void SealInitCharacterDynamics();
 
+struct HEALTH_PARAMS
+{
+	void Parse(_zrdr* reader);
+
+	f32 m_head_health;
+	f32 m_head_healthMax;
+	f32 m_body_health;
+	f32 m_body_healthMax;
+	f32 m_larm_health;
+	f32 m_larm_healthMax;
+	f32 m_rarm_health;
+	f32 m_rarm_healthMax;
+	f32 m_lleg_health;
+	f32 m_lleg_healthMax;
+	f32 m_rleg_health;
+	f32 m_rleg_healthMax;
+	f32 m_armor_head;
+	f32 m_armor_body;
+	f32 m_armor_rarm;
+	f32 m_armor_larm;
+	f32 m_armor_rleg;
+	f32 m_armor_lleg;
+};
+
+struct start
+{
+	char m_name[16];
+	s32 m_dir;
+};
+
+struct startvec
+{
+	u32 m_count;
+	start m_start[4];
+};
+
+class CVehicleRdr
+{
+
+};
+
+class CVehicleRdrEntry
+{
+private:
+	char m_name[32];
+	char m_character[48];
+	char m_display_name[32];
+	startvec m_start;
+	s32 m_teamMask;
+	AI_PARAMS m_aiParams;
+	u32 m_debug : 1;
+	u32 m_disabled : 1;
+	u32 m_nofade : 1;
+	u32 m_noshoot : 1;
+	u32 m_recycle : 1;
+	u32 m_nosnooze : 1;
+	u32 m_unused : 26;
+	s32 m_startIndex;
+};
+
 class CCharacterGear
 {
 private:
@@ -64,6 +126,25 @@ private:
 class CCharacterType
 {
 public:
+	struct AI_PARAMS
+	{
+		u32 mask;
+		f32 accuracy;
+		f32 courage;
+		f32 surrender;
+		f32 stealth;
+		f32 training;
+		f32 visual_sens;
+		f32 visual_range;
+		f32 visual_fov;
+		f32 aware_decay;
+		f32 thip_range;
+		u32 respawn;
+		f32 target_delay;
+		f32 target_discipline;
+		CVehicleRdrEntry* m_veh;
+	};
+	
 	CCharacterType();
 
 	static bool Open(const char* path);
@@ -88,7 +169,16 @@ private:
 	zdb::CModel* m_model;
 
 	std::list<CCharacterGear*> m_gear;
-	std::list<CCharacterWeap*> m_weapons;
+	std::vector<CCharacterWeap*> m_weapons;
+
+	s32 m_strength;
+	s32 m_recovery_factor;
+	s32 m_controller_id;
+
+	bool m_istemporary;
+
+	AI_PARAMS m_aiParams;
+	HEALTH_PARAMS m_healthParams;
 };
 
 class CharacterDynamics
@@ -311,40 +401,4 @@ private:
 	s16 m_id;
 	s16 m_netid;
 	bool m_visible_by_units;
-};
-
-struct start
-{
-	char m_name[16];
-	s32 m_dir;
-};
-
-struct startvec
-{
-	u32 m_count;
-	start m_start[4];
-};
-
-class CVehicleRdr
-{
-
-};
-
-class CVehicleRdrEntry
-{
-private:
-	char m_name[32];
-	char m_character[48];
-	char m_display_name[32];
-	startvec m_start;
-	s32 m_teamMask;
-	AI_PARAMS m_aiParams;
-	u32 m_debug : 1;
-	u32 m_disabled : 1;
-	u32 m_nofade : 1;
-	u32 m_noshoot : 1;
-	u32 m_recycle : 1;
-	u32 m_nosnooze : 1;
-	u32 m_unused : 26;
-	s32 m_startIndex;
 };

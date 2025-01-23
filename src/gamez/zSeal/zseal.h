@@ -143,30 +143,6 @@ extern f32 noTurnThreshold;
 extern f32 fineTuneThreshold;
 extern f32 throttleFudge;
 
-struct HEALTH_PARAMS
-{
-	void Parse(_zrdr* reader);
-
-	f32 m_head_health;
-	f32 m_head_healthMax;
-	f32 m_body_health;
-	f32 m_body_healthMax;
-	f32 m_larm_health;
-	f32 m_larm_healthMax;
-	f32 m_rarm_health;
-	f32 m_rarm_healthMax;
-	f32 m_lleg_health;
-	f32 m_lleg_healthMax;
-	f32 m_rleg_health;
-	f32 m_rleg_healthMax;
-	f32 m_armor_head;
-	f32 m_armor_body;
-	f32 m_armor_rarm;
-	f32 m_armor_larm;
-	f32 m_armor_rleg;
-	f32 m_armor_lleg;
-};
-
 class CFire : CSequence {};
 class CLookItem : CSequence {};
 class CLook : CSequence {};
