@@ -1,3 +1,5 @@
+#include <SDL3/SDL_events.h>
+
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zGame/zgame.h"
 #include "gamez/zInput/zinput.h"
@@ -66,7 +68,8 @@ void CMenuState::Tick(f32 dT)
 		}
 	}
 
-	glfwPollEvents();
+	SDL_Event e;
+	SDL_PollEvent(&e);
 	zVid_ClearColor(0.0f, 0.0f, 0.0f);
 	zVid_Swap(false);
 }

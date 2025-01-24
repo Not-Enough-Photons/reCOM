@@ -4,6 +4,65 @@
 
 CValvePool valvePool;
 
+bool CValve::Open(const char* reader, VALVE_TYPE type)
+{
+	if (reader)
+	{
+		_zrdr* file = zrdr_read(reader, NULL, 0);
+		Parse(file, type);
+		// zrdr_free(file);
+	}
+
+	return true;
+}
+
+bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
+{
+	_zrdr* valves = zrdr_findtag(reader, "valves");
+
+	if (valves)
+	{
+		s32 idx = 1;
+		
+		if (valves->array->integer > 1)
+		{
+			do
+			{
+				char* name = NULL;
+				s32 value = 0;
+				char* valve_type = NULL;
+				
+				_zrdr* node = &valves->array[idx++];
+
+				name = zrdr_findstring(node, "name");
+				zrdr_findint(node, "value", &value, 1);
+				valve_type = zrdr_findstring(node, "type");
+
+				VALVE_TYPE rdr_valve_type = VALVE_TYPE::NONE;
+
+				if (valve_type)
+				{
+					if (strcmp(valve_type, "PERM") == 0)
+					{
+						rdr_valve_type = VALVE_TYPE::PERM;
+					}
+					else if (strcmp(valve_type, "TEMP") == 0)
+					{
+						rdr_valve_type = VALVE_TYPE::TEMP;
+					}
+					else if (strcmp(valve_type, "PERSIST") == 0)
+					{
+						rdr_valve_type = VALVE_TYPE::PERSIST;
+					}
+				}
+			}
+			while (idx < valves->array->integer);
+		}
+	}
+	
+	return true;
+}
+
 CValve* CValve::Create(const char* name, VALVE_TYPE type)
 {
 	CValve* valve = NULL;

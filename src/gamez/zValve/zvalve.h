@@ -62,11 +62,11 @@ class CValve
 public:
 	static void Init();
 
-	static s32 Open(const char* reader, VALVE_TYPE type);
+	static bool Open(const char* reader, VALVE_TYPE type);
 	static void Close();
 	static void Reset();
 
-	static bool Parse(CRdrFile* file, VALVE_TYPE type);
+	static bool Parse(_zrdr* file, VALVE_TYPE type);
 	// static _zanim_cmd_hdr* CmdParseCmp(_zrdr* reader);
 	// static bool CmdTickCmp(_zanim_cmd_hdr* header, float* delta);
 

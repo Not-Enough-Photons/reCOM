@@ -1,4 +1,6 @@
 #pragma once
+#include <SDL3/SDL_video.h>
+
 #include "gamez/zMath/zmath.h"
 
 class _zvid_public;
@@ -83,13 +85,13 @@ public:
 	CWindow();
 	CWindow(const char* name, u32 width, u32 height);
 
-	GLFWwindow* GetWindow() const;
+	SDL_Window* GetWindow() const;
 private:
 	char* m_name;
 	u32 m_width;
 	u32 m_height;
 
-	GLFWwindow* m_window;
+	SDL_Window* m_window;
 };
 
 class CVideo

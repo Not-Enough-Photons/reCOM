@@ -1,3 +1,6 @@
 #include "zseal.h"
 
-#include "gamez/zPhysics/zphysics.h"
+void CZSealBody::OnWeaponHit(zdb::IntersectStruct* intersection, CZProjectile* projectile)
+{
+    
+}

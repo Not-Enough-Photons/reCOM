@@ -16,6 +16,21 @@ f32 DeltaAim;
 
 f32 peekCur = 0.0f;
 
+void GetFirstPersonCameraPos(CAppCamera* camera)
+{
+	
+}
+
+void FirstToThirdPersonTransition(CAppCamera* camera)
+{
+	
+}
+
+void ThirdToFirstPersonTransition(CAppCamera* camera)
+{
+	
+}
+
 CAppCamera::CAppCamera(zdb::CWorld* world, zdb::CCamera* camera)
 {
 	m_cameraAim.x = 0.0f;
@@ -136,6 +151,27 @@ void CAppCamera::RegisterAnimCommands()
 {
 	ZAnim.AddCmd("CAMERA_3RD_PERSON", CmdParse3rdPersonTest, NULL, CmdTick3rdPersonTest, NULL);
 }
+
+void CAppCamera::APFirstPersonCam(CMatrix& matrix)
+{
+	
+}
+
+void CAppCamera::APLookAt(f32 dT, CEntity* entity, CMatrix& matrix)
+{
+	
+}
+
+void CAppCamera::APTeatherCam(CMatrix& transform, float offset)
+{
+	
+}
+
+void CAppCamera::UpdateDeathCamState()
+{
+	
+}
+
 
 void CAppCamera::FTSTick(f32 dT)
 {

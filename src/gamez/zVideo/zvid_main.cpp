@@ -1,8 +1,7 @@
 #include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <SDL3/SDL.h>
 
 #include "zvid.h"
-
 
 #include "gamez/zValve/zvalve.h"
 
@@ -12,11 +11,7 @@ CWindow* theWindow = NULL;
 
 void zVid_Init(_zvid_mode mode)
 {
-	zVid_Assert(glfwInit(), LONG_MAX, __FILE__, __LINE__);
-
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	zVid_Assert(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO), LONG_MAX, __FILE__, __LINE__);
 
 	zVid.runTime = 0.0f;
 	zVid.renderWidth = 640;
@@ -67,14 +62,14 @@ CWindow::CWindow(const char* name, u32 width, u32 height)
 	m_width = width;
 	m_height = height;
 
-	m_window = glfwCreateWindow(m_width, m_height, name, NULL, NULL);
+	m_window = SDL_CreateWindow(m_name, m_width, m_height, SDL_WINDOW_OPENGL | SDL_WINDOW_MAXIMIZED);
 
 	zVid_Assert(m_window != NULL, LONG_MAX, __FILE__, __LINE__);
 
-	glfwMakeContextCurrent(m_window);
+	SDL_GL_CreateContext(m_window);
 }
 
-GLFWwindow* CWindow::GetWindow() const
+SDL_Window* CWindow::GetWindow() const
 {
 	return m_window;
 }

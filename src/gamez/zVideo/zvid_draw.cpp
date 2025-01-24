@@ -1,5 +1,5 @@
 #include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <SDL3/SDL_timer.h>
 
 #include "zvid.h"
 
@@ -11,9 +11,9 @@ void zVid_Swap(bool doSwap)
 	lastRenderTime = 0.0f;
 	curRenderTime = 0.0f;
 
-	lastRenderTime = (f32)glfwGetTime();
-	glfwSwapBuffers(theWindow->GetWindow());
-	curRenderTime = (f32)glfwGetTime();
+	lastRenderTime = SDL_GetTicks();
+	SDL_GL_SwapWindow(theWindow->GetWindow());
+	curRenderTime = SDL_GetTicks();
 
 	zVid.frameTime = (curRenderTime - lastRenderTime) * zSys.timerScale;
 	zVid.frameRate = 1.0f / zVid.frameTime + 0.5f;

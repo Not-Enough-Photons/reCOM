@@ -395,7 +395,7 @@ _zrdr* zrdr_read(const char* name, const char* path, s32 flags)
 				// Begin tokenization and create zrdr structure
 				_zrdr* array = rdrfile->ReadArray();
 				rdrfile->type = array->type;
-				rdrfile->array = array;
+				rdrfile->array = array->array;
 
 				// Why is this here?
 				// zfree(array);

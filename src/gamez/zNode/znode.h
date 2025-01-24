@@ -16,6 +16,8 @@
 class CLOD_Object;
 class CMaterial_Object;
 
+class CZProjectile;
+
 namespace zdb
 {
 	struct tag_NODE_PARAMS;
@@ -347,13 +349,13 @@ namespace zdb
 	class CNodeEx : public CNode
 	{
 	public:
-		virtual void OnAction(CNode* node, void* action) = 0;
-		virtual void OnCopy(CNode* node, CNode* other) = 0;
-		virtual void OnDelete(CNode* node) = 0;
-		virtual void OnDoubleClick(CNode* node) = 0;
-		virtual void OnMove(CNode* node) = 0;
-		virtual void OnSelect(CNode* node, bool selected) = 0;
-		// virtual void* OnWeaponHit(CNode* node, IntersectStruct* intersection, CZProjectile* projectile) = 0;
+		virtual void OnAction(CNode* node, void* action) {}
+		virtual void OnCopy(CNode* node, CNode* other) {}
+		virtual void OnDelete(CNode* node) {}
+		virtual void OnDoubleClick(CNode* node) {}
+		virtual void OnMove(CNode* node) {}
+		virtual void OnSelect(CNode* node, bool selected) {}
+		virtual void OnWeaponHit(CNode* node, IntersectStruct* intersection, CZProjectile* projectile) {}
 	};
 
 	class CModel : public CNode

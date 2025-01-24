@@ -25,7 +25,23 @@ bool CCharacterType::Open(const char* path)
 
     if (reader)
     {
-        _zrdr* ai_settings = zrdr_findtag(reader, "ai_settings");
+        _zrdr* gear = zrdr_findtag(reader, "gear");
+
+        if (gear)
+        {
+            s32 i = 1;
+            
+            do
+            {
+                _zrdr* cur = &gear->array[i];
+                
+                char* name = zrdr_findstring(cur, "name");
+                char* model_name = zrdr_findstring(cur, "model");
+                _zrdr* ofs = zrdr_findtag(cur, "ofs");
+                i++;
+            }
+            while (i < gear->array->integer);
+        }
     }
 
     return true;

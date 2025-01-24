@@ -102,7 +102,7 @@ _zrdr* zrdr_findtag(_zrdr* reader, const char* name)
 			}
 			else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
 			{
-				return rdr + 1;
+				return &rdr[1];
 			}
 		}
 	}
@@ -124,12 +124,12 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 depth)
 
 				if (rdr)
 				{
-					return rdr->array + 1;
+					return &rdr->array[1];
 				}
 			}
 			else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
 			{
-				return reader->array + 2;
+				return &rdr[1];
 			}
 		}
 	}
@@ -142,7 +142,7 @@ char* zrdr_findstring(_zrdr* reader, const char* name)
 	char* str = NULL;
 	auto tag = zrdr_findtag_startidx(reader, name, 1);
 
-	if (tag == NULL)
+	if (!tag)
 	{
 		str = NULL;
 	}
@@ -150,9 +150,9 @@ char* zrdr_findstring(_zrdr* reader, const char* name)
 	{
 		str = tag->string;
 	}
-	else if (tag->type == ZRDR_ARRAY && tag->array->type == ZRDR_STRING)
+	else if (tag->type == ZRDR_ARRAY && tag->array[1].type == ZRDR_STRING)
 	{
-		str = tag->array->string;
+		str = tag->array[1].string;
 	}
 	else
 	{
@@ -228,13 +228,13 @@ bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 iterations)
 				s32 integer = 0;
 				_zrdr* array = tag->array;
 
-				if (array->type == ZRDR_REAL)
+				if (array[1].type == ZRDR_REAL)
 				{
-					integer = static_cast<s32>(array->real);
+					integer = static_cast<s32>(array[1].real);
 				}
-				else if (array->type == ZRDR_INTEGER)
+				else if (array[1].type == ZRDR_INTEGER)
 				{
-					integer = array->integer;
+					integer = array[1].integer;
 				}
 				else
 				{

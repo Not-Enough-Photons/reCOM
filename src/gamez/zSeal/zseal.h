@@ -14,6 +14,7 @@
 /// -------------------------------------------
 /// FORWARD DECLARATIONS
 /// -------------------------------------------
+class CZSealBody;
 class CSealCtrl;
 class CAppCamera;
 
@@ -153,8 +154,7 @@ class CCrouchedRun : CSequence {};
 class CZKit
 {
 public:
-	CZKit();
-	~CZKit();
+	// CZKit();
 
 	void SetItemByIndex(s32 index, CZWeapon* weapon);
 	void SetWeaponInfoChanged();
@@ -291,13 +291,7 @@ public:
 class CSealEx : public zdb::CNodeEx
 {
 public:
-	virtual void OnAction(CNode* node, void* action);
-	virtual void OnCopy(CNode* node, CNode* other);
-	virtual void OnDelete(CNode* node);
-	virtual void OnDoubleClick(CNode* node);
-	virtual void OnMove(CNode* node);
-	virtual void OnSelect(CNode* node, bool selected);
-	virtual void* OnWeaponHit(CNode* node, zdb::IntersectStruct* intersection, CZProjectile* projectile);
+	void OnWeaponHit(CNode* node, zdb::IntersectStruct* intersection, CZProjectile* projectile);
 
 	CZSealBody* m_seal;
 };
@@ -350,17 +344,17 @@ public:
 	void PostTick(f32 delta);
 	void PostMortemPreTick(f32 delta);
 
-	void OnMissionStart();
-	void OnMissionEnd();
-	void OnWeaponHit();
+	void OnMissionStart() {}
+	void OnMissionEnd() {}
+	void OnWeaponHit(zdb::IntersectStruct* intersection, CZProjectile* projectile);
 	void OnDeath();
-	void OnRecycleEntity();
+	void OnRecycleEntity() {}
 
 	/// -------------------------------------------
 	/// HEALTH
 	/// -------------------------------------------
 
-	float SetHealth(f32 health);
+	f32 SetHealth(f32 health);
 	void SetArmor(f32 armor, DAMAGE_LOCATION location);
 
 	int GetHeadDamage(f32 headDmgOld, f32 headDmgNew);
@@ -437,7 +431,7 @@ public:
 	bool HandleWeaponIntersect();
 	void HandleWeaponInterp();
 
-	void TeleportTo(const CMatrix& mat);
+	void TeleportTo(const CMatrix& mat) {}
 
 	void AttemptBombDefuse() const;
 
@@ -469,8 +463,8 @@ private:
 	f32 m_blooddriptimer;
 
 	CZSealBody* m_cachedReticuleSeal;
-	BITFIELD_INT(m_useCachedReticuleSeal, 1);
-	BITFIELD_INT(m_unused, 31);
+	u32 m_useCachedReticuleSeal : 1;
+	u32 m_unused : 31;
 
 	bool m_TriggerCount;
 	s32 m_RemoteRoundCount;

@@ -298,13 +298,13 @@ public:
 	void DecrementAwareCounter();
 
 	// Recycler functions
-	virtual void OnRecycleEntity();
-	CEntity* CreateRecycler();
-	void OpenRecycler();
+	virtual void OnRecycleEntity() {}
+	CEntity* CreateRecycler() { return NULL; }
+	void OpenRecycler() {}
 
 	// Mission callback functions
-	virtual void OnMissionStart();
-	virtual void OnMissionEnd();
+	virtual void OnMissionStart() {}
+	virtual void OnMissionEnd() {}
 
 	// Tick virtual functions
 	virtual void PreTick() {};
@@ -315,7 +315,7 @@ public:
 
 	void SetDisplayName(const char* displayName);
 
-	virtual void TeleportTo(const CMatrix& mat);
+	virtual void TeleportTo(const CMatrix& mat) {}
 
 	zdb::CNode* GetNode() const;
 	bool IsValid() const;

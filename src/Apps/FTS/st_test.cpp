@@ -1,14 +1,10 @@
 ﻿#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zFTS/fts_state.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zRender/zShader/zshader.h"
 #include "gamez/zVideo/zvid.h"
-
-const char* path = "D:/RUN/READERC.ZAR";
-
 u32 vao;
 u32 vbo;
 
@@ -27,8 +23,12 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    const char* rdrpath = "C:/Users/adamdev.NOTENOUGHPHOTON/Desktop/reader.rdr";
-    _zrdr* test = zrdr_read(rdrpath, NULL, 1);
+    const char* path = "D:/run/readerc.zar";
+    CRdrArchive::AddArchive(path, NULL);
+    CRdrArchive::OpenAll();
+    CCharacterType::Open("character.rdr");
+    // CValve::Open("global_valves.rdr", VALVE_TYPE::PERM);
+    CRdrArchive::CloseAll();
     return true;
 }
 
