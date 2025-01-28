@@ -1,7 +1,64 @@
 #include "ztex.h"
 
+#include "gamez/zArchive/zar.h"
+
 namespace zdb
 {
+	CTexture::CTexture(const char* name)
+	{
+		m_name = "UNNAMED_TEX";
+		m_palette = NULL;
+
+		m_texelBitSize = 0;
+		m_selectQwc = 0;
+		m_pal_offset = 0;
+		m_transparent = false;
+		m_palettized = false;
+		m_is_mip_child = false;
+		m_bumpmap = false;
+		m_bilinear = false;
+		m_transp_1bit = false;
+		m_dynamic = false;
+		m_context = false;
+
+		m_width = 0;
+		m_height = 0;
+		m_gsaddr = 0;
+		m_palID = 0;
+
+		m_AssetLib = NULL;
+		m_htex_count = 0;
+
+		if (m_name && m_name != "UNNAMED_TEX")
+		{
+			zfree(m_name);
+		}
+
+		m_name = "UNNAMED_TEX";
+
+		if (name)
+		{
+			m_name = zstrdup(name);
+		}
+	}
+	
+	bool CTexture::Read(zar::CZAR& archive)
+	{
+		bool success = false;
+		_word128* lipbuf = NULL;
+		auto texdat = archive.FindKey("texdat");
+
+		if (texdat && archive.FetchLIP(texdat, (void**)&lipbuf))
+		{
+			success = true;
+			memcpy(this, lipbuf, sizeof(TEXTURE_PARAMS));
+			u32 ofs = lipbuf[1].u32[0];
+			m_buffer = &lipbuf->u8[ofs] + 24;
+		}
+
+		return success;
+	}
+	
 	u16 CTexture::Release_HTEX()
 	{
 		u16 count = m_htex_count;

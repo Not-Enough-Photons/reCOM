@@ -93,7 +93,7 @@ private:
 
 class MapCompass
 {
-private:
+public:
 	f32 m_scale;
 
 	zdb::CTexture* m_newcompasstex;

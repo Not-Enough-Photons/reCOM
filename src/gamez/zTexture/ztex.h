@@ -3,6 +3,11 @@
 
 #include "gamez/zSystem/zsys.h"
 
+namespace zar
+{
+	class CZAR;
+}
+
 namespace zdb
 {
 	class CAssetLib;
@@ -60,12 +65,16 @@ namespace zdb
  	{
 		friend class CTexHandle;
 	public:
+		CTexture() {}
+		CTexture(const char* name);
+		
 		static void Init();
-	public:
+
 		u16 Release_HTEX();
 
-		CTexture* Read(CSaveLoad& saveload);
-	private:
+		bool Read(CSaveLoad& saveload);
+		bool Read(zar::CZAR& archive);
+	
 		char* m_name;
 		CAssetLib* m_AssetLib;
 		void* m_buffer;
