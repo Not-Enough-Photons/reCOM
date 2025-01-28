@@ -1,7 +1,12 @@
 #pragma once
 #include "zrdr.h"
 
+#include <ctype.h>
+
 #define zrdr_alloc(count, size) (_zrdr*)zcalloc(count, size)
+
+bool _NeedQuotes(_zrdr* reader);
+bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset);
 
 class CRdrEditor
 {
@@ -16,13 +21,3 @@ public:
 	int addintnode(const char* tag, s32 value);
 	int addSTRING(const char* tag, const char* value);
 };
-
-int CRdrEditor::addint(const char* tag, s32 value)
-{
-	return 0;
-}
-
-int CRdrEditor::addSTRING(const char* tag, const char* value)
-{
-	return 0;
-}

@@ -2,7 +2,7 @@
 
 #include "gamez/zAssetLib/zassetlib.h"
 #include "gamez/zCamera/zcam.h"
-#include "gamez/zRender/zVisual/zvis.h"
+#include "gamez/zVisual/zvis.h"
 #include "gamez/zTexture/ztex.h"
 
 #define MIN_POOL_SIZE 3000

@@ -64,22 +64,22 @@ bool CBufferIO::LoadBuffer()
 
 	if (CFileIO::IsOpen())
 	{
-		size_t size = GetSize();
+		size_t size = CBufferIO::GetSize();
 
-		if (0 < size)
+		if (size > 0)
 		{
 			if (m_bufsize < size)
 			{
-				m_file = (s64)realloc((FILE*)m_file, size);
+				m_buffer = zrealloc(m_buffer, size);
 				m_bufsize = size;
 			}
 
 			m_filesize = size;
 
-			if (m_file)
+			if (m_buffer)
 			{
 				size = m_filesize;
-				int position = CFileIO::fread(m_buffer, size);
+				u32 position = CFileIO::fread(m_buffer, size);
 
 				if (size == position)
 				{
@@ -89,7 +89,7 @@ bool CBufferIO::LoadBuffer()
 				else
 				{
 					success = false;
-					free((FILE*)m_file);
+					zfree(m_buffer);
 					m_file = NULL;
 					m_bufsize = 0;
 					m_filesize = 0;
@@ -214,13 +214,13 @@ size_t CBufferIO::ftell()
 {
 	int position = 0;
 
-	if (m_buffer == NULL)
+	if (!m_buffer)
 	{
 		position = CFileIO::ftell();
 	}
 	else
 	{
-		position = (s64)m_file - (s64)m_buffer;
+		position = m_file - (s64)m_buffer;
 	}
 
 	return position;

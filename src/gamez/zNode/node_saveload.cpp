@@ -156,17 +156,22 @@ namespace zdb
 
 			m_world->m_grid->Read(*this);
 
-			if (zar::CKey* key = m_zfile.OpenKey("assetlibs"))
+			zar::CKey* key = m_zfile.OpenKey("assetlibs");
+			
+			if (key)
 			{
 				auto it = key->begin();
 
 				while (it != key->end())
 				{
 					
-					
 					++it;
 				}
+
+				m_zfile.CloseKey(key);
 			}
+
+			m_zfile.Close();
 		}
 
 		return world;

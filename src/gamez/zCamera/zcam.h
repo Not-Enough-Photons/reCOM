@@ -55,22 +55,6 @@ enum class CAM_DEATH_STATE
 	user_rotate_body
 };
 
-struct cam_wiggle
-{
-	f32 amplitude;
-	f32 duration;
-	f32 rate;
-};
-
-struct throw_params
-{
-	f32 m_abort_threshold;
-	f32 max_distance_stand;
-	f32 max_distance_crouch;
-	f32 toss_power_threshold;
-	f32 toss_aim_threshold;
-};
-
 class CCameraParams
 {
 public:

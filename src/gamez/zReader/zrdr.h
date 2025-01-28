@@ -1,7 +1,4 @@
 #pragma once
-#include <iostream>
-#include <cstdint>
-
 #include "gamez/zArchive/zar.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stable.h"
@@ -59,6 +56,7 @@ _zrdr* _zrdr_nexttag(_zrdr* reader, const char* tag, size_t size, _zrdr* other);
 struct _zrdr
 {
 	_zrdr();
+	_zrdr(_zrdr* reader, CSTable* stable);
 
 	bool IsArray() const;
 	void Clone(const _zrdr* other, const CSTable* table);

@@ -1,4 +1,4 @@
-#include "body.h"
+#include "zbody.h"
 
 #include "gamez/zNode/znode.h"
 #include "gamez/zMath/zmath.h"

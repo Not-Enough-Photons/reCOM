@@ -66,4 +66,21 @@ namespace zdb
 	{
 
 	}
+
+	CGSTexBuffer::CGSTexBuffer()
+	{
+		m_checkForOverflow = true;
+		m_startAddress = 0;
+		m_nextAddress = 0;
+		m_endAddress = 0;
+		m_assetLib = NULL;
+		m_chainp = NULL;
+		m_name = NULL;
+	}
+
+	void CGSTexBuffer::Hookup(CAssetLib* lib)
+	{
+		
+	}
+
 }

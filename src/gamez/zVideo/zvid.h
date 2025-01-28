@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL3/SDL_video.h>
+#include <SDL3/SDL_render.h>
 
 #include "gamez/zMath/zmath.h"
 
@@ -84,20 +85,22 @@ class CWindow
 public:
 	CWindow();
 	CWindow(const char* name, u32 width, u32 height);
-
+	
 	SDL_Window* GetWindow() const;
+	SDL_Renderer* GetRenderer() const;
 private:
 	char* m_name;
 	u32 m_width;
 	u32 m_height;
 
 	SDL_Window* m_window;
+	SDL_Renderer* m_renderer;
 };
 
 class CVideo
 {
 public:
-	static void RestoreImage(const char* img);
+	static void RestoreImage(const char* img, bool raw = false);
 };
 
 class CMPEG

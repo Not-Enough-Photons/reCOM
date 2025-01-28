@@ -5,13 +5,37 @@
 #include "gamez/zArchive/zar.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zRender/zrender.h"
-#include "gamez/zRender/zShader/zshader.h"
+#include "gamez/zShader/zshader.h"
 
 s32 node_index = 0;
 
 void hookupMesh(zar::CZAR* archive, zdb::CModel* model)
 {
+	u32* data = NULL;
+	_word128* meshword = NULL;
+	char buf[192];
 	
+	zdb::CMesh* mesh = model->GetMesh();
+	sprintf_s(buf, 192, "MESH_%s", model->m_name);
+
+	zar::CKey* meshkey = archive->OpenKey(buf);
+
+	if (meshkey)
+	{
+		if (archive->FetchLIP(meshkey, reinterpret_cast<void**>(meshword)))
+		{
+			u32 ofs = 0;
+			
+			strcat_s(buf, "_START");
+
+			archive->Fetch(buf, &ofs);
+			archive->Fetch(buf, &mesh->m_mtx_count);
+
+			data = &meshword->u32[ofs];
+		}
+
+		archive->CloseKey(meshkey);
+	}
 }
 
 void hookupVisuals(zar::CZAR* archive, zar::CKey* key, zdb::CNode* node, zdb::CModel* model, zdb::CVisBase* vis)
@@ -51,7 +75,7 @@ void hookupVisuals(zar::CZAR* archive, zdb::CModel* model)
 			}
 			else
 			{
-				// hookupVisuals(modelkey, model, model, vis);
+				hookupVisuals(archive, modelkey, model, model, vis);
 			}
 
 			archive->CloseKey(modelkey);

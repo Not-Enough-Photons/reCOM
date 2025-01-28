@@ -28,6 +28,7 @@ typedef int16_t    s16; // short
 typedef int32_t    s32; // int
 typedef int64_t    s64; // long
 typedef float      f32; // float
+typedef double     f64;
 
 /// -------------------------------------------
 /// USEFUL MACROS
@@ -193,6 +194,8 @@ public:
 	
 	void Print(char* buffer, size_t size);
 	void Render();
+private:
+	char m_buffer[1024];
 };
 
 class CConsole

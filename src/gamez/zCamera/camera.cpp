@@ -2,6 +2,7 @@
 
 #include "glm/ext/matrix_transform.hpp"
 
+#include "gamez/zCharacter/zchar.h"
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zSeal/zseal.h"

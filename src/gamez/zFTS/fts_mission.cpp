@@ -4,6 +4,52 @@
 
 CMission theMission;
 
+void UpdateMissionArchive(const char* type, const char* path)
+{
+	std::string pathstr = "run/";
+
+	if (type)
+	{
+		pathstr.assign("run/", pathstr.length());
+
+		if (strncmp(type, "mp", 2) == 0)
+		{
+			pathstr.append("mp");
+		}
+		else
+		{
+			if (strncmp(type, "m", 1) == 0)
+			{
+				pathstr.append("sp/");
+			}
+		}
+	}
+
+	if (path)
+	{
+		if (strlen(path) != 0)
+		{
+			pathstr.assign("run/", pathstr.length());
+
+			if (strncmp(path, "mp", 2) == 0)
+			{
+				pathstr.append("mp/", strlen("mp/"));
+			}
+			else
+			{
+				if (strncmp(path, "m", 1) == 0)
+				{
+					pathstr.append("sp/", strlen("sp/"));
+				}
+			}
+
+			pathstr.append(path, strlen(path));
+			CRdrArchive::AddArchive("readerm.zar", pathstr.c_str());
+			CRdrArchive::OpenAll();
+		}
+	}
+}
+
 s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postfix, char* output)
 {
 	s32 result = 0;
@@ -45,6 +91,45 @@ void CMission::Init()
 	// CAppCamera::RegisterAnimCommands();
 	// CftsPlayer::RegisterAnimCommands();
 	// zdb::CWind::RegisterAnimCommands();
+}
+
+void CMission::PreOpen(const char* db)
+{
+	if (db && *db != '\0')
+	{
+		UpdateMissionArchive(m_database, db);
+		m_database = m_db_string;
+		strcpy_s(m_db_string, db);
+	}
+	else
+	{
+		m_database = NULL;
+		return;
+	}
+
+	_zrdr* mission = zrdr_read("mission.rdr", NULL, 0);
+	char* loadingscreenassets = zrdr_findstring(mission, "LoadingScreenAssets");
+
+	if (!loadingscreenassets)
+	{
+		m_strLoadingScrLib.replace(0, 0, 0);
+	}
+	else
+	{
+		size_t len = strlen(loadingscreenassets);
+		m_strLoadingScrLib.assign(&loadingscreenassets, len);
+	}
+
+	_zrdr* uivars = zrdr_findtag(mission, "UiVars");
+	u32 idx = 0;
+	
+	while (true)
+	{
+		if (!uivars)
+		{
+			break;
+		}
+	}
 }
 
 void CMission::Read(_zrdr* reader)

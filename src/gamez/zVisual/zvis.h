@@ -173,7 +173,8 @@ namespace zdb
 
 	class CMesh : public CVisual
 	{
-		
+	public:
+		u32 m_mtx_count;
 	};
 
 	class CSubMesh : public CMesh

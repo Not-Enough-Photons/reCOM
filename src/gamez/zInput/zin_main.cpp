@@ -1,3 +1,6 @@
+#include <SDL3/SDL_gamepad.h>
+#include <SDL3/SDL_joystick.h>
+
 #include "gamez/zInput/zinput.h"
 #include "gamez/zMath/zmath.h"
 

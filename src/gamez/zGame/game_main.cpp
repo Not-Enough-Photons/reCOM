@@ -2,10 +2,9 @@
 
 #include "gamez/zRender/zrender.h"
 #include "gamez/zNetwork/znet.h"
-#include "gamez/zUtil/zutil.h"
 #include "gamez/zVideo/zvid.h"
 
-CGame theGame;
+COurGame theGame;
 
 CGame::CGame()
 {

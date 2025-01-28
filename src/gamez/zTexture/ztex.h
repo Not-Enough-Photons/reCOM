@@ -44,10 +44,10 @@ namespace zdb
 	{
 
 	};
-
+	
 	class CTexPalette : public PALETTE_PARAMS
 	{
-	private:
+	public:
 		CAssetLib* m_AssetLib;
 
 		char* m_name;
@@ -82,7 +82,7 @@ namespace zdb
 		CLoadImage* m_loadimage;
 	};
 
-	class CTexList : public std::vector<CTexture*> 
+	class CTexList : public std::vector<CTexHandle*> 
 	{
 	public:
 		CTexList() {}
@@ -105,12 +105,48 @@ namespace zdb
 		CTexPalList m_pal_list;
 	};
 
+	class CGSTexBuffer
+	{
+	public:
+		CGSTexBuffer();
+
+		void Hookup(CAssetLib* lib);
+		
+		char* m_name;
+
+		bool m_checkForOverflow;
+
+		u32 m_startAddress;
+		u32 m_nextAddress;
+		u32 m_endAddress;
+
+		zdb::CAssetLib* m_assetLib;
+
+		s64* m_chainp;
+
+		std::vector<void*> m_pktbuf;
+
+		CDynTexList m_dyntex_list;
+	};
+
+	struct tag_TexLoadCmds
+	{
+		CGSTexBuffer* pTexAsset;
+		CGSTexBuffer* pTexAssetUsed;
+		u32* pWaitTime;
+	};
+
 	class CTexManager : public std::vector<CDynTexList*>
 	{
 	public:
 		static CTexManager* m_texmanager;
 
-		static void doAddBuffer(f32 param_1, f32 param_2, s32 param_3, const char* img);
+		void doAddBuffer(const char* name, f32 param_2, f32 param_3);
+
+		u32 m_renderMapNum;
+		u32 m_renderMapNumBytes;
+		u32 m_shadowMapSize;
+		u32 m_reflectionMapSize;
 	};
 
 	class CTexHandle

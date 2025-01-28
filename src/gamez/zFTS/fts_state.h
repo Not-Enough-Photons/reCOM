@@ -101,11 +101,11 @@ class CLoadState : public CGameState
 {
 public:
 	void PreInit() {}
-	bool Init();
+	bool Init() { return true; }
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(f32 dT);
+	void Tick(f32 dT) {}
 
 	void OnPop() {}
 	void OnPush() {}
@@ -128,11 +128,11 @@ class CCinematicState : public CGameState
 {
 public:
 	void PreInit() {}
-	bool Init();
+	bool Init() { return true; }
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(f32 dT);
+	void Tick(f32 dT) {}
 
 	void OnPop() {}
 	void OnPush() {}
@@ -150,11 +150,11 @@ class CExitState : public CGameState
 {
 public:
 	void PreInit() {}
-	bool Init();
+	bool Init() { return true; }
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(f32 dT);
+	void Tick(f32 dT) {}
 
 	void OnPop() {}
 	void OnPush() {}
@@ -169,11 +169,11 @@ class CMPExitState : public CGameState
 {
 public:
 	void PreInit() {}
-	bool Init();
+	bool Init() { return true; }
 	void PreUnInit() {}
 	void UnInit() {}
 
-	void Tick(f32 dT);
+	void Tick(f32 dT) {}
 
 	void OnPop() {}
 	void OnPush() {}

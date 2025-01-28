@@ -3,6 +3,7 @@
 #include "gamez/zTwoD/ztwod.h"
 
 class CGame;
+class COurGame;
 class CGameStateChangeCmd;
 class CHUD;
 class CSnd;
@@ -34,7 +35,7 @@ enum GAME_NAME
 
 void process_arguments(int argc, char** argv);
 
-extern CGame theGame;
+extern COurGame theGame;
 extern std::vector<CGameStateChangeCmd*> m_pool;
 
 struct _options
@@ -75,7 +76,7 @@ class CGame
 public:
 	CGame();
 public:
-	bool StartEngine();
+	virtual bool StartEngine();
 	void StartPlay();
 	bool Tick(f32 dT);
 	CGameState* Switch(CGameState* state, u32 index);
@@ -99,7 +100,7 @@ protected:
 class COurGame : public CGame
 {
 public:
-	static bool StartEngine();
+	bool StartEngine();
 protected:
 	CMenuState m_menuState;
 	CLoadState m_loadState;

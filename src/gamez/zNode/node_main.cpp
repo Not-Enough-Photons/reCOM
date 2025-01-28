@@ -2,10 +2,8 @@
 
 #include "znode.h"
 
-#include "gamez/zRender/zVisual/zvis.h"
 #include "gamez/zSystem/zsys.h"
-#include "gamez/zTexture/ztex.h"
-#include "gamez/zUtil/util_stable.h"
+#include "gamez/zVisual/zvis.h"
 #include "gamez/zUtil/zutil.h"
 
 namespace zdb
@@ -430,7 +428,7 @@ namespace zdb
 			mesh = NULL;
 		}
 
-		return reinterpret_cast<CMesh*>(mesh);
+		return static_cast<CMesh*>(mesh);
 	}
 
 	CGridAtom* CNode::GetAtom(s16 index)

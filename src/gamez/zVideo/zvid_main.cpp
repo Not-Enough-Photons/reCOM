@@ -3,6 +3,7 @@
 
 #include "zvid.h"
 
+#include "gamez/zReader/zrdr.h"
 #include "gamez/zValve/zvalve.h"
 
 _zvid_public zVid;
@@ -14,8 +15,8 @@ void zVid_Init(_zvid_mode mode)
 	zVid_Assert(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO), LONG_MAX, __FILE__, __LINE__);
 
 	zVid.runTime = 0.0f;
-	zVid.renderWidth = 640;
-	zVid.renderHeight = 448;
+	zVid.renderWidth = 1920;
+	zVid.renderHeight = 1080;
 	zVid.renderBuf = NULL;
 	zVid.ztest_on = GL_DEPTH_TEST;
 	zVid.ztest_off = GL_DEPTH_TEST;
@@ -35,11 +36,15 @@ void zVid_Init(_zvid_mode mode)
 		lodLevel = CValve::Create("lodLevel", VALVE_TYPE::PERM);
 	}
 
-	zVid_Assert(glewInit() == GLEW_OK, LONG_MAX, __FILE__, __LINE__);
+	if ((SDL_GetWindowFlags(theWindow->GetWindow()) & SDL_WINDOW_OPENGL) != 0)
+	{
+		zVid_Assert(glewInit() == GLEW_OK, LONG_MAX, __FILE__, __LINE__);
+	}
 }
 
 void zVid_Open()
 {
+	
 }
 
 void zvid_SetVideoMode(_zvid_mode mode)
@@ -54,6 +59,7 @@ CWindow::CWindow()
 	m_width = 0;
 	m_height = 0;
 	m_window = NULL;
+	m_renderer = NULL;
 }
 
 CWindow::CWindow(const char* name, u32 width, u32 height)
@@ -61,15 +67,25 @@ CWindow::CWindow(const char* name, u32 width, u32 height)
 	m_name = zstrdup(name);
 	m_width = width;
 	m_height = height;
-
-	m_window = SDL_CreateWindow(m_name, m_width, m_height, SDL_WINDOW_OPENGL | SDL_WINDOW_MAXIMIZED);
+	
+	m_window = SDL_CreateWindow(m_name, m_width, m_height, SDL_WINDOW_OPENGL);
 
 	zVid_Assert(m_window != NULL, LONG_MAX, __FILE__, __LINE__);
 
-	SDL_GL_CreateContext(m_window);
+	m_renderer = SDL_CreateRenderer(m_window, NULL);
+
+	if ((SDL_GetWindowFlags(m_window) & SDL_WINDOW_OPENGL) != 0)
+	{
+		SDL_GL_CreateContext(m_window);
+	}
 }
 
 SDL_Window* CWindow::GetWindow() const
 {
 	return m_window;
+}
+
+SDL_Renderer* CWindow::GetRenderer() const
+{
+	return m_renderer;
 }

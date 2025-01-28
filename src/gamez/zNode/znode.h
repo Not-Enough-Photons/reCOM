@@ -4,8 +4,8 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zMath/zmath.h"
-#include "gamez/zPhysics/zphysics.h"
-#include "gamez/zRender/zVisual/zvis.h"
+#include "gamez/zIntersect/zintersect.h"
+#include "gamez/zVisual/zvis.h"
 #include "gamez/zTexture/ztex.h"
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSystem/zsys.h"

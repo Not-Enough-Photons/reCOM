@@ -3,18 +3,8 @@
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zFTS/fts_state.h"
 #include "gamez/zReader/zrdr.h"
-#include "gamez/zRender/zShader/zshader.h"
+#include "gamez/zReader/zrdr_local.h"
 #include "gamez/zVideo/zvid.h"
-u32 vao;
-u32 vbo;
-
-CShader shader;
-
-float vertices[] = {
-    -0.5f, -0.5f, 0.0f,
-    0.5f, -0.5f, 0.0f,
-    0.0f, 0.5f, 0.0f
-};
 
 CTestState::CTestState()
 {
@@ -23,16 +13,23 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    const char* path = "D:/run/readerc.zar";
-    CRdrArchive::AddArchive(path, NULL);
-    CRdrArchive::OpenAll();
-    CCharacterType::Open("character.rdr");
-    // CValve::Open("global_valves.rdr", VALVE_TYPE::PERM);
-    CRdrArchive::CloseAll();
+    const char* path = "D:/run/ui/assetlib/ui2d/ui2d_txr.zed";
+    zar::CZAR archive = zar::CZAR(NULL, NULL);
+    if (!archive.Open(path, 1, 0, 16))
+    {
+        theTerminal.Print("Archive read failed!", 128);
+        theTerminal.Render();
+        return false;
+    }
+
+    
+    
     return true;
 }
 
 void CTestState::Tick(f32 dT)
 {
-
+    zVid_Swap(true);
+    SDL_Event e;
+    SDL_PollEvent(&e);
 }

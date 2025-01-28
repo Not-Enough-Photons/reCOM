@@ -26,6 +26,17 @@ _zrdr::_zrdr()
 	array = NULL;
 }
 
+_zrdr::_zrdr(_zrdr* other, CSTable* stable)
+{
+	type = ZRDR_NULL;
+	isclone = false;
+	packed = false;
+	unused = 0;
+	length = 0;
+
+	Clone(other, stable);
+}
+
 bool _zrdr::IsArray() const
 {
 	return type == ZRDR_ARRAY;
@@ -43,7 +54,6 @@ void _zrdr::Clone(const _zrdr* other, const CSTable* table)
 	{
 		return;
 	}
-
 	
 	type = other->type;
 	if (type == ZRDR_ARRAY)

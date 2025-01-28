@@ -3,10 +3,17 @@
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zRender/zrender.h"
-#include "gamez/zRender/zVisual/zvis.h"
+#include "gamez/zVisual/zvis.h"
+
+char* database;
 
 extern zar::CZAR archive = zar::CZAR();
 extern zdb::CWorld* theWorld = NULL;
+
+extern char* GetDatabase()
+{
+	return database;
+}
 
 extern bool LoadWorld(const char* name)
 {

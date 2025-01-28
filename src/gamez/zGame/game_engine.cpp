@@ -2,11 +2,14 @@
 
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zVideo/zvid.h"
+#include "SDL3/SDL_time.h"
+#include "SDL3/SDL_timer.h"
+
+char* GetDatabase();
 
 bool CGame::StartEngine()
 {
-	// InitSystemTuners();
-	// CSched_Manager::Clear("zTaskScheduler");
+	// zTaskScheduler.Clear();
 	// zdb::CRipple::Init();
 	// zdb::CTextureFX::Init();
 	// CValve::Init();
@@ -16,8 +19,8 @@ bool CGame::StartEngine()
 	// zdb::CWorld::Init();
 	// zSysReset();
 	zVid_Open();
-	// C2D::Open();
-	// CInput::Init();
+	C2D::Open();
+	CInput::Init();
 	// zRndrInit();
 	// CSndInstance::InitInstancePool(48);
 	// CInput::CreatePad(0);
@@ -32,16 +35,29 @@ bool CGame::StartEngine()
 
 bool COurGame::StartEngine()
 {
-	bool success = theGame.StartEngine();
+	bool success = CGame::StartEngine();
 	if (success)
 	{
-		// CVideo::RestoreImage("RUN\\LOADING.RAW");
-		// zVid_Swap(1);
-		// zdb::CTexManager::doAddBuffer(0.0f, 1.0f, 0x4b9590, "default");
-		// theMission.Init();
-		// int clock = sceCdReadClock(...)
-		// TODO:
-		// add more past CMission::Init();
+		CVideo::RestoreImage("D:/RUN/LOADING.RAW", true);
+		zVid_Swap(true);
+		zdb::CTexManager::m_texmanager->doAddBuffer("default", 0.0f, 0.0f);
+		
+		theMission.Init();
+		
+		SDL_Time ticks;
+		srand(SDL_GetCurrentTime(&ticks));
+
+		char* db = GetDatabase();
+
+		if (db)
+		{
+			size_t dblen = strlen(db);
+
+			if (dblen != 0)
+			{
+				theMission.PreOpen(db);
+			}
+		}
 	}
 
 	return true;

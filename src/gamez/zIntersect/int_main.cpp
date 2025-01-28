@@ -1,4 +1,5 @@
-#include "zphysics.h"
+#include "zintersect.h"
+
 #include "gamez/zArchive/zar.h"
 #include "gamez/zNode/znode.h"
 

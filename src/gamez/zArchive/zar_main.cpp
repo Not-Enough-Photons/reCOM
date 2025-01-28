@@ -727,7 +727,7 @@ namespace zar
 			return false;
 		}
 
-		s32 position = m_pFileAlloc->fseek(0xffffffffffffffa0, SEEK_END);
+		size_t position = m_pFileAlloc->fseek(-96, SEEK_END);
 		size_t size = 0;
 
 		if (position != -1)

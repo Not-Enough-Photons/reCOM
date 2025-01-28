@@ -3,7 +3,7 @@
 
 #include "gamez/zAI/zai.h"
 #include "gamez/zAnim/zanim.h"
-#include "gamez/zEntity/body.h"
+#include "gamez/zBody/zbody.h"
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zPhysics/zphysics.h"
 #include "gamez/zMath/zmath.h"
@@ -17,6 +17,8 @@
 class CZSealBody;
 class CSealCtrl;
 class CAppCamera;
+
+class CCharacterGear;
 
 enum class PLAYER_CAM_STATE;
 

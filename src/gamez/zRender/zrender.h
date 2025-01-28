@@ -7,7 +7,7 @@
 // - Experiment with deferred rendering
 // - Implement mesh abstractions defined in the game renderer
 
-#include "zVisual/zvis.h"
+#include "gamez/zVisual/zvis.h"
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zCamera/zcam.h"
@@ -17,7 +17,7 @@
 
 class CPipe;
 
-enum _RenderPhase
+enum class _RenderPhase
 {
 	WORLD,
 	HUD_OBSOLETE,
@@ -67,35 +67,6 @@ class CStack
 
 class LODVec : public std::vector<LOD*> {};
 
-class CDynTexList : public std::vector<void*> {};
-
-class CGSTexBuffer
-{
-public:
-	const char* m_name;
-
-	bool m_checkForOverflow;
-
-	u32 m_startAddress;
-	u32 m_nextAddress;
-	u32 m_endAddress;
-
-	zdb::CAssetLib* m_assetLib;
-
-	s64* m_chainp;
-
-	std::vector<void*> m_pktbuf;
-
-	CDynTexList m_dyntex_list;
-};
-
-struct tag_TexLoadCmds
-{
-	CGSTexBuffer* pTexAsset;
-	CGSTexBuffer* pTexAssetUsed;
-	u32* pWaitTime;
-};
-
 /// <summary>
 /// Handles transparency.
 /// </summary>
@@ -107,7 +78,7 @@ private:
 	void* m_visualList;
 	void* m_next;
 	std::list<void*> m_drawList;
-	CDynTexList m_dyntexlist;
+	zdb::CDynTexList m_dyntexlist;
 };
 
 /// <summary>
@@ -126,20 +97,19 @@ public:
 	u32 RenderWorld(zdb::CWorld* world);
 	void Flush();
 
-public:
 	zdb::CCamera* m_camera;
 
 	u32 m_texIntIdx;
 	u32 m_texLoadIdx;
 
-	tag_TexLoadCmds m_texLoadChain[128];
+	zdb::tag_TexLoadCmds m_texLoadChain[128];
 
-	CGSTexBuffer* m_assetAlpha;
-	CGSTexBuffer* m_assetCommon;
-	CGSTexBuffer* m_assetCharacter[2];
-	CGSTexBuffer* m_assetHUD1;
-	CGSTexBuffer* m_assetHUD2;
-	CGSTexBuffer* m_assetHUDX;
+	zdb::CGSTexBuffer* m_assetAlpha;
+	zdb::CGSTexBuffer* m_assetCommon;
+	zdb::CGSTexBuffer* m_assetCharacter[2];
+	zdb::CGSTexBuffer* m_assetHUD1;
+	zdb::CGSTexBuffer* m_assetHUD2;
+	zdb::CGSTexBuffer* m_assetHUDX;
 
 	zdb::CWorld* m_world;
 	zdb::CCell* m_cell;

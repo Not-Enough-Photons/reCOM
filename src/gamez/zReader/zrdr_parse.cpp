@@ -469,6 +469,7 @@ _zrdr* CRdrFile::ReadArray()
 		arrays.erase(arrays.begin());
 		_zrdr* r = rdr->array;
 		r[i] = *array;
+		r->array = array;
 		i++;
 		zfree(array);
 	}

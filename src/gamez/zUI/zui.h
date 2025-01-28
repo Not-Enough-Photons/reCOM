@@ -22,10 +22,25 @@ class CZUI
 
 };
 
-class CUIVariable
+class CUIVariable : public _zrdr
 {
 public:
 	void Set(_zrdr* reader);
+
+	char* m_varname;
+	std::vector<void*> m_attached_items;
+	UIVAR_LONGEVITY m_longevity;
+};
+
+class CUIVariableSpec
+{
+public:
+	CUIVariableSpec(_zrdr* reader);
+
+	char* m_name;
+	_zrdr* m_array;
+	CSTable m_stable;
+	u32 m_type;
 };
 
 class CUIVarManager

@@ -1,8 +1,6 @@
-#include "zentity.h"
+#include "zchar.h"
 
 #include "gamez/zReader/zrdr.h"
-
-
 
 CCharacterType::CCharacterType()
 {
@@ -17,7 +15,6 @@ CCharacterType::CCharacterType()
 
     m_controller_id = 0;
 }
-
 
 bool CCharacterType::Open(const char* path)
 {

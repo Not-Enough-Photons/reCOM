@@ -13,6 +13,8 @@ class CMissionObjectiveCam;
 class CObjAnchor;
 class CObjAnchorVec;
 
+class CVehicleRdr;
+
 class CZNetGame;
 
 extern CMission theMission;
@@ -72,7 +74,7 @@ public:
 	void Init();
 
 	void Open();
-	void PreOpen();
+	void PreOpen(const char* db);
 	void Read(_zrdr* reader);
 public:
 	CZNetGame* netGame;
@@ -132,7 +134,7 @@ private:
 	CRdrFile* m_subtitlesRdr;
 	CRdrFile* m_smallmessagesRdr;
 
-	CSaferStr m_m_strLoadedScrLib;
+	CSaferStr m_strLoadingScrLib;
 	// 
 	// CMissionCamList m_missioncams;
 	// CMissionObjectiveCamList m_objectivecams;

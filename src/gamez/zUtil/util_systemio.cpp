@@ -49,8 +49,8 @@ bool CFileIO::Open(const char* file)
 
 	if (m_file != NULL)
 	{
-		s32 filesize = std::fseek((FILE*)m_file, 0, SEEK_END);
-		m_filesize = filesize;
+		std::fseek((FILE*)m_file, 0, SEEK_END);
+		m_filesize = std::ftell((FILE*)m_file);
 		std::fseek((FILE*)m_file, 0, SEEK_SET);
 	}
 
@@ -94,12 +94,8 @@ size_t CFileIO::fread(void* buf, size_t size)
 	{
 		return 0;
 	}
-	else
-	{
-		return std::fread(buf, 1, size, (FILE*)m_file);
-	}
-
-	return 0;
+	
+	return std::fread(buf, 1, size, (FILE*)m_file);
 }
 
 size_t CFileIO::fread(int offset, void** buf)
@@ -110,7 +106,12 @@ size_t CFileIO::fread(int offset, void** buf)
 
 size_t CFileIO::fseek(int offset, int origin)
 {
-	return std::fseek((FILE*)m_file, offset += m_filesize, origin);
+	if (origin != SEEK_SET && origin == SEEK_END)
+	{
+		offset += m_filesize;
+	}
+	
+	return std::fseek((FILE*)m_file, offset, SEEK_SET);
 }
 
 size_t CFileIO::ftell()
