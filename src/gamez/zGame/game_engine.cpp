@@ -1,6 +1,7 @@
 #include "zgame.h"
 
 #include "gamez/zFTS/zfts.h"
+#include "gamez/zIMGUI/zimgui.h"
 #include "gamez/zVideo/zvid.h"
 #include "SDL3/SDL_time.h"
 #include "SDL3/SDL_timer.h"
@@ -21,6 +22,7 @@ bool CGame::StartEngine()
 	zVid_Open();
 	C2D::Open();
 	CInput::Init();
+	CZIMGUI::Init();
 	// zRndrInit();
 	// CSndInstance::InitInstancePool(48);
 	// CInput::CreatePad(0);

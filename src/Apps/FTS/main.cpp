@@ -1,6 +1,10 @@
+#include <imgui/imgui.h>
+#include <imgui/imgui_impl_sdl3.h>
+
 #include "gamez/zGame/zgame.h"
 #include "gamez/zSound/zsnd.h"
 #include "gamez/zVideo/zvid.h"
+#include "imgui/imgui_impl_sdlrenderer3.h"
 
 bool LoadWorld(const char* name);
 

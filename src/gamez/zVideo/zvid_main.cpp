@@ -15,8 +15,8 @@ void zVid_Init(_zvid_mode mode)
 	zVid_Assert(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO), LONG_MAX, __FILE__, __LINE__);
 
 	zVid.runTime = 0.0f;
-	zVid.renderWidth = 1920;
-	zVid.renderHeight = 1080;
+	zVid.renderWidth = 1280;
+	zVid.renderHeight = 960;
 	zVid.renderBuf = NULL;
 	zVid.ztest_on = GL_DEPTH_TEST;
 	zVid.ztest_off = GL_DEPTH_TEST;

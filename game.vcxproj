@@ -269,6 +269,7 @@
     <ClInclude Include="src\gamez\zFTS\fts_state.h" />
     <ClInclude Include="src\gamez\zFTS\zfts.h" />
     <ClInclude Include="src\gamez\zGame\zgame.h" />
+    <ClInclude Include="src\gamez\zIMGUI\zimgui.h" />
     <ClInclude Include="src\gamez\zInput\zinput.h" />
     <ClInclude Include="src\gamez\zIntersect\zintersect.h" />
     <ClInclude Include="src\gamez\zMath\zmath.h" />
@@ -590,6 +591,18 @@
     <ClInclude Include="vendor\GL\glew.h" />
     <ClInclude Include="vendor\GL\glxew.h" />
     <ClInclude Include="vendor\GL\wglew.h" />
+    <ClInclude Include="vendor\imgui\imconfig.h" />
+    <ClInclude Include="vendor\imgui\imgui.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_sdl3.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_sdlgpu3.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_sdlgpu3_shaders.h" />
+    <ClInclude Include="vendor\imgui\imgui_impl_sdlrenderer3.h" />
+    <ClInclude Include="vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="vendor\rsa\rsadef.h" />
     <ClInclude Include="vendor\rt\rtarray.h" />
     <ClInclude Include="vendor\SDL3\SDL.h" />
@@ -910,6 +923,7 @@
     <ClCompile Include="src\gamez\zGame\game_main.cpp" />
     <ClCompile Include="src\gamez\zGame\game_state.cpp" />
     <ClCompile Include="src\gamez\zGame\game_tree.cpp" />
+    <ClCompile Include="src\gamez\zIMGUI\zimgui_main.cpp" />
     <ClCompile Include="src\gamez\zInput\remote_control.cpp" />
     <ClCompile Include="src\gamez\zInput\zin_cheats.cpp" />
     <ClCompile Include="src\gamez\zInput\zin_kb.cpp" />
@@ -1246,6 +1260,15 @@
     <ClCompile Include="src\gamez\zWeapon\zwep_projectile.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_weapon.cpp" />
     <ClCompile Include="vendor\glm\detail\glm.cpp" />
+    <ClCompile Include="vendor\imgui\imgui.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_sdl3.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_sdlgpu3.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_impl_sdlrenderer3.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="vendor\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\glm\detail\func_common.inl" />
@@ -1386,6 +1409,11 @@
     <None Include="vendor\glm\gtx\vector_angle.inl" />
     <None Include="vendor\glm\gtx\vector_query.inl" />
     <None Include="vendor\glm\gtx\wrap.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="vendor\imgui\sdlgpu3\build_instructions.txt" />
+    <Content Include="vendor\imgui\sdlgpu3\shader.frag" />
+    <Content Include="vendor\imgui\sdlgpu3\shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

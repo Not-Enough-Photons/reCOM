@@ -4,7 +4,7 @@
 
 #include "gamez/zEntity/zentity.h"
 #include "gamez/zFTS/fts_state.h"
-#include "gamez/zReader/zrdr_local.h"
+#include "gamez/zIMGUI/zimgui.h"
 #include "gamez/zVideo/zvid.h"
 #include "gamez/zTexture/ztex.h"
 
@@ -15,7 +15,7 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    const char* path = "D:/RUN/COMMON/ASSETLIB/SPLASH/SPLA_TXR.ZED";
+    const char* path = "E:/RUN/COMMON/ASSETLIB/HUD/HUD_TXR.ZED";
     zar::CZAR archive = zar::CZAR(NULL, NULL);
     if (!archive.Open(path, 1, 0, 16))
     {
@@ -25,7 +25,7 @@ bool CTestState::Init()
     }
 
     auto texkey = archive.OpenKey("textures");
-    auto key = archive.OpenKey("miss_fail_back.tif");
+    auto key = archive.OpenKey("action_tune_offense.tif");
     
     zdb::CTexture texture = zdb::CTexture(key->GetName());
     texture.Read(archive);
@@ -57,10 +57,9 @@ bool CTestState::Init()
     rect.y = 100;
     rect.w = texture.m_width;
     rect.h = texture.m_height;
-    
-    SDL_RenderClear(renderer);
+
+    // zVid_ClearColor(0.0f, 0.0f, 0.0f);
     SDL_RenderTexture(renderer, tex, NULL, &rect);
-    SDL_RenderPresent(renderer);
 
     SDL_DestroySurface(surface);
     
@@ -69,7 +68,8 @@ bool CTestState::Init()
 
 void CTestState::Tick(f32 dT)
 {
-    zVid_Swap(true);
-    SDL_Event e;
-    SDL_PollEvent(&e);
+    zVid_ClearColor(0.0f, 0.0f, 0.0f);
+    // zVid_Swap(true);
+    CZIMGUI::Tick(dT);
+    SDL_RenderClear(theWindow->GetRenderer());
 }
