@@ -8,7 +8,7 @@
 
 namespace zdb
 {
-	enum _RenderPhase;
+	enum class _RenderPhase;
 
 	class CModel;
 	class CTexture;
@@ -25,6 +25,9 @@ namespace zdb
 	{
 		friend class CAssetList;
 	public:
+		bool AddTexture(const char* name);
+		bool AddTexture(zdb::CTexture* texture);
+		
 		bool IsNamed(const char* name) const;
 		char* RootName() const;
 		
@@ -49,6 +52,7 @@ namespace zdb
 	class CAssetList : public std::list<CAssetLib*>
 	{
 	public:
+		CTexHandle* GetTexHandle(const char* name);
 		CAssetLib* FindLib(const char* name);
 		CModel* GetModel(const char* name);
 	private:
@@ -58,7 +62,7 @@ namespace zdb
 	class CAssetMgr
 	{
 	public:
-		CAssetLib* GetLoadedLibRef(const char* name);
+		static CAssetLib* GetLoadedLibRef(const char* name);
 		
 		static CAssetList m_assets;
 	};

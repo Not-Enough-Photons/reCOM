@@ -7,15 +7,32 @@
 // - Experiment with deferred rendering
 // - Implement mesh abstractions defined in the game renderer
 
-#include "gamez/zVisual/zvis.h"
-
 #include "gamez/zArchive/zar.h"
-#include "gamez/zCamera/zcam.h"
 #include "gamez/zMath/zmath.h"
-#include "gamez/zNode/znode.h"
 #include "gamez/zTexture/ztex.h"
 
 class CPipe;
+
+namespace zar
+{
+	class CKey;
+}
+
+namespace zdb
+{
+	struct tag_TexLoadCmds;
+
+	class CCamera;
+	
+	class CNode;
+	class CWorld;
+	class CCell;
+
+	class CTexture;
+	class CGSTexBuffer;
+
+	enum class tag_ZVIS_FOV;
+}
 
 enum class _RenderPhase
 {
@@ -209,7 +226,9 @@ public:
 
 class CLOD_Object : public std::vector<zdb::CLOD_band*>
 {
-private:
+public:
+	zar::CKey* Read(zdb::CSaveLoad* sload);
+	
 	s32 m_bandMax;
 };
 

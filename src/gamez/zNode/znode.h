@@ -1,26 +1,23 @@
 #pragma once
 #include <vector>
-#include <string>
 
-#include "gamez/zArchive/zar.h"
-#include "gamez/zMath/zmath.h"
+#include "gamez/zRender/zrender.h"
 #include "gamez/zIntersect/zintersect.h"
 #include "gamez/zVisual/zvis.h"
 #include "gamez/zTexture/ztex.h"
-#include "gamez/zValve/zvalve.h"
-#include "gamez/zSystem/zsys.h"
 
 /// -------------------------------------------
 /// FORWARD DECLARATIONS
 /// -------------------------------------------
-class CLOD_Object;
 class CMaterial_Object;
-
 class CZProjectile;
+class CValve;
 
 namespace zdb
 {
 	struct tag_NODE_PARAMS;
+	struct IntersectStruct;
+	
 	class CNode;
 	class CNodeEx;
 
@@ -45,6 +42,8 @@ namespace zdb
 	class CTexHandle;
 
 	class CAssetLib;
+
+	class CDI;
 }
 
 namespace zdb
@@ -302,12 +301,12 @@ namespace zdb
 		// CRenderMapVector m_shadows;
 		// CLightMapVector m_lightMaps;
 
-		// CLOD_Object m_LOD_Object;
-		// CMaterial_Object m_Material_Object;
-		// CSubSurf_Object m_SubSurf_Object;
-		// CPreLight_Object m_PreLight_Object;
-		// CProjectedMap_Object m_ProjectedMap_Object;
-		// CScrollingTexture_Object m_ScrollingTexture_Object;
+		CLOD_Object m_LOD_Object;
+		CMaterial_Object m_Material_Object;
+		CSubSurf_Object m_SubSurf_Object;
+		CPreLight_Object m_PreLight_Object;
+		CProjectedMap_Object m_ProjectedMap_Object;
+		CScrollingTexture_Object m_ScrollingTexture_Object;
 
 		bool m_night_mission;
 
@@ -504,24 +503,6 @@ namespace zdb
 		s32 m_ring;
 
 		COrderedCell m_orderedCells;
-	};
-
-	class CSaveLoad
-	{
-		friend class CNode;
-	public:
-		CSaveLoad();
-
-		CWorld* Load(const char* path);
-		bool LoadAssetLib(CWorld* world, CAssetLib* library, size_t size);
-		bool LoadAssetLib_PS2(CWorld* world, CAssetLib* library, size_t size);
-		bool LoadPalettes_PS2(CAssetLib* library);
-		bool LoadTextures_PS2(CAssetLib* library);
-	public:
-		CWorld* m_world;
-		zar::CZAR m_zfile;
-		char m_zed_filename[1024];
-		s32 m_version;
 	};
 }
 

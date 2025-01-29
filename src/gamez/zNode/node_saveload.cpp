@@ -1,20 +1,14 @@
 #include "znode.h"
 
 #include "gamez/zArchive/zar.h"
+#include "gamez/zAssetLib/zassetlib.h"
 #include "gamez/zFTS/zfts.h"
+#include "gamez/zSave/zsave.h"
 #include "gamez/zPhysics/zphysics.h"
 #include "gamez/zSystem/zsys.h"
 
 namespace zdb
 {
-	CSaveLoad::CSaveLoad()
-	{
-		m_world = NULL;
-		m_zfile = zar::CZAR();
-		m_zed_filename[0] = '\0';
-		m_version = 0;
-	}
-
 	bool CNode::ReadDataBegin(CSaveLoad& sload)
 	{
 		zar::CKey* openkey = sload.m_zfile.GetOpenKey();
@@ -164,13 +158,17 @@ namespace zdb
 
 				while (it != key->end())
 				{
-					
+					CAssetMgr::GetLoadedLibRef((*it)->GetName());
 					++it;
 				}
 
 				m_zfile.CloseKey(key);
 			}
 
+			m_world->Read(*this);
+			// m_world->m_LOD_Object.Read(*this);
+			// m_world->m_Material_Object.Read(*this);
+			
 			m_zfile.Close();
 		}
 

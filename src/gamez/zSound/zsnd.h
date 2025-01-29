@@ -54,15 +54,13 @@ public:
 	CSnd();
 
 	static void Init();
-
 	static void Close();
-
 	static void UIOpen();
-
 	static void AddNewCSnd(CSnd* sound);
 	static CSnd* GetSoundByName(const char* name);
 	static bool GetSubtitles();
-public:
+	static bool vagReadOffset(const char* name, u32& offset, u32& size);
+	
 	void LoadCSnd(_zrdr* reader);
 	float CalcVol(f32 volume, f32 masterVolume);
 	void SetupJukebox();
@@ -73,8 +71,8 @@ public:
 	static bool m_bShowSubtitles;
 	static bool m_hasreverb;
 	static bool m_vagEnabled;
-	static zar::CZAR* m_vagArchive;
-	static zar::CZAR* m_bnkArchive;
+	static zar::CZAR m_vagArchive;
+	static zar::CZAR m_bnkArchive;
 	static s32 m_bnkoffset;
 	static s32 m_vagoffset;
 

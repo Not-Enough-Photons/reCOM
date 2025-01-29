@@ -1,6 +1,9 @@
 #include "ztex.h"
 
+#include "freebsd/strcasecmp.h"
+
 #include "gamez/zArchive/zar.h"
+#include "gamez/zSave/zsave.h"
 
 namespace zdb
 {
@@ -40,6 +43,24 @@ namespace zdb
 		{
 			m_name = zstrdup(name);
 		}
+	}
+
+	bool CTexture::Read(zdb::CSaveLoad& sload)
+	{
+		bool success = false;
+		_word128* lipbuf = NULL;
+		auto texdat = sload.m_zfile.FindKey("texdat");
+
+		if (texdat && sload.m_zfile.FetchLIP(texdat, (void**)&lipbuf))
+		{
+			success = true;
+			memcpy(this, lipbuf, sizeof(TEXTURE_PARAMS));
+			void* texalloc = zmalloc(sizeof(CTexture));
+			u32 ofs = lipbuf[1].u32[0];
+			m_buffer = &lipbuf->u8[ofs] + 24;
+		}
+
+		return success;
 	}
 	
 	bool CTexture::Read(zar::CZAR& archive)
@@ -138,6 +159,30 @@ namespace zdb
 	void CGSTexBuffer::Hookup(CAssetLib* lib)
 	{
 		
+	}
+
+	CTexHandle* CTexList::GetHandle(const char* name)
+	{
+		auto it = begin();
+
+		while (it != end())
+		{
+			CTexHandle* handle = *it;
+
+			if (!handle->m_texture || !handle->m_name)
+			{
+				continue;
+			}
+
+			if (strcasecmp(handle->m_name, name) == 0)
+			{
+				break;
+			}
+			
+			++it;
+		}
+
+		return *it;
 	}
 
 }

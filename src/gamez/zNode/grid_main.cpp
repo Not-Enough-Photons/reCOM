@@ -1,5 +1,7 @@
 ﻿#include "znode.h"
 
+#include "gamez/zSave/zsave.h"
+
 namespace zdb
 {
     CCell::CCell(const CPnt3D* origin, f32 offset) : CNode()

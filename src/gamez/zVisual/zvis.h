@@ -35,7 +35,7 @@ extern s32 node_index;
 
 namespace zdb
 {
-	enum tag_ZVIS_FOV
+	enum class tag_ZVIS_FOV
 	{
 		ZVIS_FOV_CLIP,
 		ZVIS_FOV_ALL_IN,

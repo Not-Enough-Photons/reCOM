@@ -95,6 +95,9 @@ namespace zdb
 	{
 	public:
 		CTexList() {}
+
+		CTexHandle* Append(CTexture* texture, bool search);
+		CTexHandle* GetHandle(const char* name);
 	};
 
 	class CTexPalList : public std::vector<CTexPalette*>

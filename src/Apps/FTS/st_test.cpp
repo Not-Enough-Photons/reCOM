@@ -8,6 +8,10 @@
 #include "gamez/zVideo/zvid.h"
 #include "gamez/zTexture/ztex.h"
 
+SDL_AudioStream* audiostream;
+u8* snd_data = NULL;
+u32 snd_len = NULL;
+
 CTestState::CTestState()
 {
     m_name = zstrdup("TestState");
@@ -15,61 +19,31 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
-    const char* path = "E:/RUN/COMMON/ASSETLIB/HUD/HUD_TXR.ZED";
-    zar::CZAR archive = zar::CZAR(NULL, NULL);
-    if (!archive.Open(path, 1, 0, 16))
-    {
-        theTerminal.Print("Archive read failed!", 128);
-        theTerminal.Render();
-        return false;
-    }
-
-    auto texkey = archive.OpenKey("textures");
-    auto key = archive.OpenKey("action_tune_offense.tif");
+    CSnd::Init();
+    zar::CKey* key = CSnd::m_vagArchive.OpenKey("TC8_01.wav");
+    void* buffer = zmalloc(key->GetSize());
+    CSnd::m_vagArchive.Fetch(key, buffer, key->GetSize());
     
-    zdb::CTexture texture = zdb::CTexture(key->GetName());
-    texture.Read(archive);
-
-    archive.CloseKey(key);
-    archive.Close();
+    SDL_IOStream* stream = SDL_IOFromMem(buffer, key->GetSize());
     
-    SDL_Renderer* renderer = theWindow->GetRenderer();
-    
-    // SDL_Surface* surface = IMG_LoadTIF_IO(SDL_IOFromMem(texture.m_buffer, texture.m_size));
-    SDL_Surface* surface = SDL_CreateSurfaceFrom(texture.m_width, texture.m_height, SDL_PIXELFORMAT_ABGR8888, texture.m_buffer, texture.m_width * (sizeof(u8) * 4));
+    snd_data = NULL;
+    snd_len = NULL;
+    SDL_AudioSpec audioSpec { SDL_AUDIO_S16, 1, 11025 };
+    audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
+    SDL_LoadWAV_IO(stream, false, &audioSpec, &snd_data, &snd_len);
 
-    if (!surface)
-    {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, SDL_GetError());
-        return false;
-    }
-		
-    SDL_Texture* tex = SDL_CreateTextureFromSurface(renderer, surface);
-
-    if (!tex)
-    {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, SDL_GetError());
-        return false;
-    }
-
-    SDL_FRect rect;
-    rect.x = 100;
-    rect.y = 100;
-    rect.w = texture.m_width;
-    rect.h = texture.m_height;
-
-    // zVid_ClearColor(0.0f, 0.0f, 0.0f);
-    SDL_RenderTexture(renderer, tex, NULL, &rect);
-
-    SDL_DestroySurface(surface);
+    SDL_ResumeAudioStreamDevice(audiostream);
     
     return true;
 }
 
 void CTestState::Tick(f32 dT)
 {
-    zVid_ClearColor(0.0f, 0.0f, 0.0f);
+    if (SDL_GetAudioStreamAvailable(audiostream) < (s32)snd_len)
+    {
+        SDL_PutAudioStreamData(audiostream, snd_data, snd_len);
+    }
     // zVid_Swap(true);
-    CZIMGUI::Tick(dT);
+    // CZIMGUI::Tick(dT);
     SDL_RenderClear(theWindow->GetRenderer());
 }

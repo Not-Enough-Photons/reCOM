@@ -1,5 +1,7 @@
 #include "znode.h"
 
+#include "gamez/zSave/zsave.h"
+
 namespace zdb
 {
 	CNode* CNode::CreateInstance(CSaveLoad& sload)

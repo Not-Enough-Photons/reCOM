@@ -3,6 +3,7 @@
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zRender/zrender.h"
+#include "gamez/zSave/zsave.h"
 #include "gamez/zVisual/zvis.h"
 
 char* database;

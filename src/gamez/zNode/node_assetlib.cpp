@@ -6,7 +6,7 @@ namespace zdb
 {
 	CAssetList CAssetMgr::m_assets;
 
-	extern CAssetList g_assetsRecycle = CAssetList();
+	CAssetList g_assetsRecycle;
 
 	CModel* CAssetList::GetModel(const char* name)
 	{
@@ -129,7 +129,7 @@ namespace zdb
 			// search any subdirectories
 			if (!lib)
 			{
-				 auto it = begin();
+				it = begin();
 
 				while (it != end())
 				{
@@ -174,10 +174,14 @@ namespace zdb
 	{
 		CAssetLib* lib = m_assets.FindLib(name);
 
+		// Check recycle asset lib container
+		// Promotes efficient memory usage without allocating/deallocating
 		if (!lib)
 		{
 			lib = g_assetsRecycle.FindLib(name);
 
+			// Still nothing in the recycle bin
+			// Empty the whole thing
 			if (!lib)
 			{
 				for (auto it = g_assetsRecycle.begin(); it != g_assetsRecycle.end(); ++it)
@@ -189,6 +193,7 @@ namespace zdb
 			}
 			else
 			{
+				// Library found, insert library into our asset list
 				lib->m_iRefCount++;
 				m_assets.insert(m_assets.begin(), lib);
 			}

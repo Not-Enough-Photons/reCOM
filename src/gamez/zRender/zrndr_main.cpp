@@ -26,3 +26,8 @@ CPipe::CPipe()
 	m_texIntIdx = 0;
 	m_texLoadIdx = 0;
 }
+
+zar::CKey* CLOD_Object::Read(zdb::CSaveLoad* sload)
+{
+	return NULL;
+}

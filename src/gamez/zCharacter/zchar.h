@@ -1,7 +1,10 @@
-﻿#include "gamez/zMath/zmath.h"
+﻿#include "gamez/zCamera/zcam.h"
+#include "gamez/zMath/zmath.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zRender/zrender.h"
 #include "gamez/zSystem/zsys.h"
+
+struct AnimSet;
 
 class CSnd;
 

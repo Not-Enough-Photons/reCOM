@@ -2,6 +2,7 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zNode/znode.h"
+#include "gamez/zSave/zsave.h"
 
 namespace zdb
 {

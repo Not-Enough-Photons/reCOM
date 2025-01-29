@@ -1,5 +1,6 @@
 #include "zsnd.h"
 
+#include "gamez/zArchive/zar.h"
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zSystem/zsys.h"
@@ -9,6 +10,9 @@ s32 g_iReverbTime = 0;
 bool vagArchiveIsOpen = false;
 bool bnkArchiveIsOpen = false;
 bool snd_system_initialized = false;
+
+zar::CZAR CSnd::m_bnkArchive;
+zar::CZAR CSnd::m_vagArchive;
 
 s32 CSnd::m_max_num_vags = 0;
 bool CSnd::m_isDisabled = false;
@@ -23,13 +27,22 @@ CSnd::CSnd()
 {
 	if (!m_isDisabled)
 	{
-
+		
 	}
 }
 
 void CSnd::Init()
 {
-	
+	if (m_isDisabled)
+	{
+		return;
+	}
+
+	if (!vagArchiveIsOpen)
+	{
+		vagArchiveIsOpen = true;
+		m_vagArchive.Open("D:/RUN/SOUNDS/VAGSTORE.ZAR", 0, 33, 16);
+	}
 }
 
 void CSnd::UIOpen()
@@ -49,6 +62,26 @@ void CSnd::Close()
 {
 	m_max_num_vags = 0;
 	Headset::ftsDeleteHeadset();
+}
+
+bool CSnd::vagReadOffset(const char* name, u32& offset, u32& size)
+{
+	if (m_isDisabled)
+	{
+		return false;
+	}
+
+	zar::CKey* key = m_vagArchive.FindKey(name);
+	
+	if (key)
+	{
+		offset = key->GetOffset();
+		size = key->GetSize();
+		m_vagArchive.CloseKey(key);
+		return true;
+	}
+	
+	return false;
 }
 
 void CSnd::AddNewCSnd(CSnd* sound)

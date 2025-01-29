@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 
-// #include "gamez/zEntity/body.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zReader/zrdr.h"
