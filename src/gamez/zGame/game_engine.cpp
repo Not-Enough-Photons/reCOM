@@ -22,7 +22,7 @@ bool CGame::StartEngine()
 	zVid_Open();
 	C2D::Open();
 	CInput::Init();
-	// CZIMGUI::Init();
+	CZIMGUI::Init();
 	// zRndrInit();
 	// CSndInstance::InitInstancePool(48);
 	// CInput::CreatePad(0);

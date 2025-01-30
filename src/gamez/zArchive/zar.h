@@ -261,11 +261,11 @@ namespace zar
 
 		void Securify(void* buf, size_t size);
 		void Unsecurify(void* buf, size_t size);
-	public:
+
 		char* m_filename;
 		CFileIO* m_pFileAlloc;
 		CBufferIO* m_pFile;
-	protected:
+
 		CKeyRing m_keys;
 
 		void* m_databuffer;

@@ -14,6 +14,10 @@ bool snd_system_initialized = false;
 zar::CZAR CSnd::m_bnkArchive;
 zar::CZAR CSnd::m_vagArchive;
 
+SDL_AudioStream* CSnd::m_audiostream = NULL;
+u8* CSnd::m_snd_data = NULL;
+u32 CSnd::m_snd_len = 0;
+
 s32 CSnd::m_max_num_vags = 0;
 bool CSnd::m_isDisabled = false;
 bool CSnd::m_bShowSubtitles = false;
@@ -22,6 +26,25 @@ std::vector<CSnd*> CSnd::m_soundlist;
 std::unordered_map<const char*, CSnd*> CSnd::m_soundmap;
 
 _zrdr* sound_rdr = NULL;
+
+u8* vagDecode(u8* ptr, const tag_VAGHeader& header);
+
+tag_VAGHeader::tag_VAGHeader()
+{
+	
+}
+
+tag_VAGHeader::tag_VAGHeader(void* ptr, size_t size)
+{
+	CBufferIO fileio;
+	fileio.Open(ptr, size);
+	fileio.fread(this, sizeof(tag_VAGHeader));
+	// fileio.Close();
+
+	version = U32_BE(&version);
+	samples = U32_BE(&samples);
+	rate    = U32_BE(&rate);
+}
 
 CSnd::CSnd()
 {
@@ -83,6 +106,78 @@ bool CSnd::vagReadOffset(const char* name, u32& offset, u32& size)
 	
 	return false;
 }
+
+void CSnd::LoadWAV(const char* name)
+{
+	SDL_PauseAudioStreamDevice(m_audiostream);
+	m_snd_data = NULL;
+	m_snd_len = 0;
+	
+	zar::CKey* key = m_vagArchive.OpenKey(name);
+
+	if (!key)
+	{
+		return;
+	}
+    
+	void* buffer = zmalloc(key->GetSize());
+	m_vagArchive.Fetch(key, buffer, key->GetSize());
+    
+	SDL_IOStream* stream = SDL_IOFromMem(buffer, key->GetSize());
+    
+	m_snd_data = NULL;
+	m_snd_len = NULL;
+	SDL_AudioSpec audioSpec { SDL_AUDIO_S16, 1, 44100 };
+	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
+	SDL_LoadWAV_IO(stream, false, &audioSpec, &m_snd_data, &m_snd_len);
+
+	SDL_ResumeAudioStreamDevice(m_audiostream);
+
+	if (SDL_GetAudioStreamAvailable(m_audiostream) < (s32)m_snd_len)
+	{
+		SDL_PutAudioStreamData(m_audiostream, m_snd_data, m_snd_len);
+	}
+	
+	m_vagArchive.CloseKey(key);
+}
+
+void CSnd::LoadVAG(const char* name)
+{
+	SDL_PauseAudioStreamDevice(m_audiostream);
+	m_snd_data = NULL;
+	m_snd_len = 0;
+	
+	zar::CKey* key = m_vagArchive.OpenKey(name);
+
+	if (!key)
+	{
+		return;
+	}
+
+	size_t size = key->GetSize();
+	u8* buffer = (u8*)zmalloc(size);
+	m_vagArchive.Fetch(key, buffer, size);
+
+	tag_VAGHeader header = tag_VAGHeader(buffer, size);
+
+	u8* data = vagDecode(buffer, header);
+	
+	SDL_IOStream* stream = SDL_IOFromMem(data, key->GetSize());
+	m_snd_data = data;
+	m_snd_len = header.samples;
+	SDL_AudioSpec audioSpec { SDL_AUDIO_U8, 1, (s32)header.rate };
+	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
+
+	SDL_ResumeAudioStreamDevice(m_audiostream);
+
+	if (SDL_GetAudioStreamAvailable(m_audiostream) < (s32)m_snd_len)
+	{
+		SDL_PutAudioStreamData(m_audiostream, data, key->GetSize());
+	}
+	
+	m_vagArchive.CloseKey(key);
+}
+
 
 void CSnd::AddNewCSnd(CSnd* sound)
 {

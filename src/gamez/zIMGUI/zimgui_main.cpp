@@ -4,6 +4,7 @@
 #include <imgui/imgui_impl_sdl3.h>
 #include <imgui/imgui_impl_sdlrenderer3.h>
 
+#include "gamez/zSound/zsnd.h"
 #include "gamez/zVideo/zvid.h"
 
 ImGuiIO CZIMGUI::m_io;
@@ -33,9 +34,28 @@ bool CZIMGUI::Tick(f32 dT)
     
     ImGui_ImplSDL3_NewFrame();
     ImGui_ImplSDLRenderer3_NewFrame();
+    
     ImGui::NewFrame();
+    
+    if (ImGui::CollapsingHeader("Sounds"))
+    {
+        s32 id = 0;
+        for (auto it = CSnd::m_vagArchive.m_stable->begin(); it != CSnd::m_vagArchive.m_stable->end(); ++it)
+        {
+            char* key = *it;
 
-    ImGui::ShowDemoWindow();
+            ImGui::PushID(id++);
+            if (ImGui::TreeNode(key))
+            {
+                if (ImGui::Button("Play"))
+                {
+                    CSnd::LoadVAG(key);
+                }
+                ImGui::TreePop();
+            }
+            ImGui::PopID();
+        }
+    }
 
     ImGui::Render();
     
