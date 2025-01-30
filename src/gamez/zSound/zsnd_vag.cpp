@@ -26,52 +26,57 @@ extern u8* vagDecode(u8* ptr, const tag_VAGHeader& header)
     ptr += sizeof(tag_VAGHeader);
     ptr += 16;
 
-    s8 coeff = *ptr++;
+    CBufferIO io;
+    io.Open(ptr, header.samples);
 
-    tag_VAGChunk chunk
+    while (io.ftell() < header.samples)
     {
-        (s8)(coeff & 0xF),
-        (s8)((coeff & 0xF0) >> 4),
-        *ptr++
-    };
+        s8 coeff = 0;
+        io.fread(&coeff, 1);
 
-    chunk.sample = new u8[VAG_SAMPLE_BYTES];
+        tag_VAGChunk chunk;
+
+        chunk.shift = (s8)(coeff & 0xF);
+        chunk.predict = (s8)(coeff & 0xF0) >> 4;
+        io.fread(&chunk.flags, 1);
+        io.fread(&chunk.sample, VAG_SAMPLE_BYTES);
+
+        chunk.sample = new u8[VAG_SAMPLE_BYTES];
         
-    for (u8 i = 0; i < VAG_SAMPLE_BYTES; i++)
-    {
-        chunk.sample[i] = *ptr++;
-    }
-
-    s8 samples[VAG_SAMPLE_NIBBLE];
-
-    // Upscale 4-bit sample to 8-bits
-    for (u8 i = 0; i < VAG_SAMPLE_BYTES; i++)
-    {
-        samples[i * 2] = chunk.sample[i] & 0xF;
-        samples[i * 2 + 1] = (chunk.sample[i] & 0xF0) >> 4;
-    }
-
-    // Decode
-    for (u8 i = 0; i < VAG_SAMPLE_NIBBLE; i++)
-    {
-        // Shift 4 bits to top range of s16
-        s32 s = samples[i] << 12;
-
-        if ((s & 0x8000) != 0)
+        for (u8 i = 0; i < VAG_SAMPLE_BYTES; i++)
         {
-            s = (s32)(s | 0xFFFF0000);
+            io.fread(&chunk.sample[i], 1);
         }
 
-        // swy: don't overflow the LUT array access; limit the max allowed index
-        s8 four = 4;
-        s8 predict = min(chunk.predict, four);
-        f32 sample = (s >> chunk.shift) + hist1 * vagLUT[predict][0] + hist2 * vagLUT[predict][1];
-        hist2 = hist1;
-        hist1 = sample;
-        output.push_back(sample);
+        s8 samples[VAG_SAMPLE_NIBBLE];
+
+        // Upscale 4-bit sample to 8-bits
+        for (u8 i = 0; i < VAG_SAMPLE_BYTES; i++)
+        {
+            samples[i * 2] = chunk.sample[i] & 0xF;
+            samples[i * 2 + 1] = (chunk.sample[i] & 0xF0) >> 4;
+        }
+
+        // Decode
+        for (u8 i = 0; i < VAG_SAMPLE_NIBBLE; i++)
+        {
+            // Shift 4 bits to top range of s16
+            s32 s = samples[i] << 12;
+
+            if ((s & 0x8000) != 0)
+            {
+                s = (s32)(s | 0xFFFF0000);
+            }
+
+            // swy: don't overflow the LUT array access; limit the max allowed index
+            s8 four = 4;
+            s8 predict = min(chunk.predict, four);
+            f32 sample = (s >> chunk.shift) + hist1 * vagLUT[predict][0] + hist2 * vagLUT[predict][1];
+            hist2 = hist1;
+            hist1 = sample;
+            output.push_back(sample);
+        }
     }
-        
-    ptr++;
 
     return output.data();
 }
