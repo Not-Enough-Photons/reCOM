@@ -713,7 +713,7 @@ namespace zar
 		return newKey;
 	}
 
-	bool CZAR::ReadDirectory(s32 appver, u32 mode)
+	bool CZAR::	ReadDirectory(s32 appver, u32 mode)
 	{
 		bool success = false;
 

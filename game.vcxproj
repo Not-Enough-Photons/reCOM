@@ -265,6 +265,7 @@
     <ClInclude Include="src\gamez\zBody\zbody.h" />
     <ClInclude Include="src\gamez\zCamera\zcam.h" />
     <ClInclude Include="src\gamez\zCharacter\zchar.h" />
+    <ClInclude Include="src\gamez\zEntity\ent_dipool.h" />
     <ClInclude Include="src\gamez\zEntity\zentity.h" />
     <ClInclude Include="src\gamez\zFTS\fts_state.h" />
     <ClInclude Include="src\gamez\zFTS\zfts.h" />
@@ -274,6 +275,7 @@
     <ClInclude Include="src\gamez\zIntersect\zintersect.h" />
     <ClInclude Include="src\gamez\zMath\zmath.h" />
     <ClInclude Include="src\gamez\zMath\zmath_bits.h" />
+    <ClInclude Include="src\gamez\zMPEG\zmpeg.h" />
     <ClInclude Include="src\gamez\zNetwork\znet.h" />
     <ClInclude Include="src\gamez\zNode\znode.h" />
     <ClInclude Include="src\gamez\zParticle\zparticle.h" />
@@ -298,8 +300,10 @@
     <ClInclude Include="src\gamez\zValve\zvalve.h" />
     <ClInclude Include="src\gamez\zVehicle\zvehicle.h" />
     <ClInclude Include="src\gamez\zVideo\zvid.h" />
+    <ClInclude Include="src\gamez\zVisual\vis_local.h" />
     <ClInclude Include="src\gamez\zVisual\zvis.h" />
     <ClInclude Include="src\gamez\zWeapon\zweapon.h" />
+    <ClInclude Include="src\gamez\zWorld\zworld.h" />
     <ClInclude Include="vendor\freebsd\strcasecmp.h" />
     <ClInclude Include="vendor\glm\common.hpp" />
     <ClInclude Include="vendor\glm\detail\compute_common.hpp" />
@@ -697,6 +701,7 @@
   <ItemGroup>
     <ClCompile Include="src\Apps\FTS\database.cpp" />
     <ClCompile Include="src\Apps\FTS\getopt.cpp" />
+    <ClCompile Include="src\Apps\FTS\headset.cpp" />
     <ClCompile Include="src\Apps\FTS\hud_actionbitmap.cpp" />
     <ClCompile Include="src\Apps\FTS\hud_bitmapreticule.cpp" />
     <ClCompile Include="src\Apps\FTS\hud_bombmapitem.cpp" />
@@ -719,6 +724,7 @@
     <ClCompile Include="src\Apps\FTS\hud_teammatenames.cpp" />
     <ClCompile Include="src\Apps\FTS\hud_teamnames.cpp" />
     <ClCompile Include="src\Apps\FTS\hud_weaponsel.cpp" />
+    <ClCompile Include="src\Apps\FTS\lobby_roomlist.cpp" />
     <ClCompile Include="src\Apps\FTS\main.cpp" />
     <ClCompile Include="src\Apps\FTS\options.cpp" />
     <ClCompile Include="src\Apps\FTS\orders.cpp" />
@@ -912,6 +918,7 @@
     <ClCompile Include="src\gamez\zFTS\fts_main.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_mission.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_missioncam.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_msgEditor.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_net_bomb.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_net_game.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_net_grenade.cpp" />
@@ -1091,6 +1098,7 @@
     <ClCompile Include="src\gamez\zMath\zmath_matrix.cpp" />
     <ClCompile Include="src\gamez\zMath\zmath_pnt3d.cpp" />
     <ClCompile Include="src\gamez\zMath\zmath_pnt4d.cpp" />
+    <ClCompile Include="src\gamez\zMPEG\zmpeg.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetDme.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetMain.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetMedius.cpp" />
@@ -1117,6 +1125,7 @@
     <ClCompile Include="src\gamez\zReader\zrdr_local.cpp" />
     <ClCompile Include="src\gamez\zReader\zrdr_main.cpp" />
     <ClCompile Include="src\gamez\zReader\zrdr_parse.cpp" />
+    <ClCompile Include="src\gamez\zReader\zrdr_util.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_directx.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_main.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_opengl.cpp" />
@@ -1226,6 +1235,8 @@
     <ClCompile Include="src\gamez\zSeal\seal_unit.cpp" />
     <ClCompile Include="src\gamez\zSeal\seal_weapon.cpp" />
     <ClCompile Include="src\gamez\zShader\zshader_main.cpp" />
+    <ClCompile Include="src\gamez\zSoftImage\si_object.cpp" />
+    <ClCompile Include="src\gamez\zSoftImage\si_script.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_csnd.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_csndgroup.cpp" />
     <ClCompile Include="src\gamez\zSound\zsnd_csndinstance.cpp" />
@@ -1236,8 +1247,11 @@
     <ClCompile Include="src\gamez\zSystem\zsys_memory.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsys_sched.cpp" />
     <ClCompile Include="src\gamez\zSystem\zsys_tty.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_handle.cpp" />
     <ClCompile Include="src\gamez\zTexture\ztex_main.cpp" />
     <ClCompile Include="src\gamez\zTexture\ztex_manager.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_palette.cpp" />
+    <ClCompile Include="src\gamez\zTexture\ztex_read.cpp" />
     <ClCompile Include="src\gamez\zTwoD\ztwod_main.cpp" />
     <ClCompile Include="src\gamez\zUI\c2dstring.cpp" />
     <ClCompile Include="src\gamez\zUI\zui.cpp" />
@@ -1245,18 +1259,24 @@
     <ClCompile Include="src\gamez\zUI\zui_cleanup.cpp" />
     <ClCompile Include="src\gamez\zUI\zui_spec.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_bufio.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_localization.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_output.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_stable.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_stack.cpp" />
+    <ClCompile Include="src\gamez\zUtil\util_statemachine.cpp" />
     <ClCompile Include="src\gamez\zUtil\util_systemio.cpp" />
     <ClCompile Include="src\gamez\zValve\valve_list.cpp" />
     <ClCompile Include="src\gamez\zValve\valve_main.cpp" />
     <ClCompile Include="src\gamez\zVideo\zmpeg.cpp" />
+    <ClCompile Include="src\gamez\zVideo\zvid_capture.cpp" />
     <ClCompile Include="src\gamez\zVideo\zvid_draw.cpp" />
     <ClCompile Include="src\gamez\zVideo\zvid_main.cpp" />
+    <ClCompile Include="src\gamez\zVisual\vis_bands.cpp" />
     <ClCompile Include="src\gamez\zVisual\vis_decal.cpp" />
+    <ClCompile Include="src\gamez\zVisual\vis_init.cpp" />
     <ClCompile Include="src\gamez\zVisual\vis_main.cpp" />
     <ClCompile Include="src\gamez\zVisual\vis_mesh.cpp" />
+    <ClCompile Include="src\gamez\zVisual\vis_ripplefx.cpp" />
     <ClCompile Include="src\gamez\zVisual\vis_texfx.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_ammo.cpp" />
     <ClCompile Include="src\gamez\zWeapon\zwep_explosive.cpp" />
