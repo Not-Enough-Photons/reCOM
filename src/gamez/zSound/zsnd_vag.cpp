@@ -3,80 +3,44 @@
 #define VAG_SAMPLE_BYTES 14
 #define VAG_SAMPLE_NIBBLE VAG_SAMPLE_BYTES * 2
 
-// From:
-// https://github.com/eurotools/es-ps2-vag-tool/blob/main/PS2VagTool/Vag%20Functions/SonyVagDecoder.cs
-f32 vagLUT[5][2]
+f32 ps_adpcm_coeffs_f[5][2]
 {
     { 0.0f, 0.0f },
-    { 60.0f / 64.0f, 0.0f },
-    { 115.0f / 64.0f, -52.0f / 64.0f },
-    { 98.0f / 64.0f, -55.0f / 64.0f },
-    { 122.0f / 64.0f, -60.0f / 64.0f }
+    { 0.9375f, 0.0f },
+    { 1.796875f, -0.8125f },
+    { 1.53125f, -0.859375f },
+    { 1.90625f, -0.9375f }
 };
 
 f32 hist1 = 0.0f;
 f32 hist2 = 0.0f;
 
-extern u8* vagDecode(u8* ptr, const tag_VAGHeader& header)
+extern s16* vagDecode(u8* ptr, tag_VAGHeader& header)
 {
-    std::vector<u8> output;
+    std::vector<s16> output;
     hist1 = 0.0f;
     hist2 = 0.0f;
-    
-    ptr += sizeof(tag_VAGHeader);
-    ptr += 16;
 
     CBufferIO io;
     io.Open(ptr, header.samples);
 
+    io.fread(&header, sizeof(tag_VAGHeader));
+
+    header.version = U32_BE(&header.version);
+    header.rate = U32_BE(&header.rate);
+    header.samples = U32_BE(&header.samples);
+ 
+    io.fseek(16, SEEK_CUR);
+
     while (io.ftell() < header.samples)
     {
-        s8 coeff = 0;
-        io.fread(&coeff, 1);
+        s32 coeff_idx = 0;
+        s32 shift = 0;
 
-        tag_VAGChunk chunk;
-
-        chunk.shift = (s8)(coeff & 0xF);
-        chunk.predict = (s8)(coeff & 0xF0) >> 4;
-        io.fread(&chunk.flags, 1);
-        io.fread(&chunk.sample, VAG_SAMPLE_BYTES);
-
-        chunk.sample = new u8[VAG_SAMPLE_BYTES];
-        
-        for (u8 i = 0; i < VAG_SAMPLE_BYTES; i++)
-        {
-            io.fread(&chunk.sample[i], 1);
-        }
-
-        s8 samples[VAG_SAMPLE_NIBBLE];
-
-        // Upscale 4-bit sample to 8-bits
-        for (u8 i = 0; i < VAG_SAMPLE_BYTES; i++)
-        {
-            samples[i * 2] = chunk.sample[i] & 0xF;
-            samples[i * 2 + 1] = (chunk.sample[i] & 0xF0) >> 4;
-        }
-
-        // Decode
-        for (u8 i = 0; i < VAG_SAMPLE_NIBBLE; i++)
-        {
-            // Shift 4 bits to top range of s16
-            s32 s = samples[i] << 12;
-
-            if ((s & 0x8000) != 0)
-            {
-                s = (s32)(s | 0xFFFF0000);
-            }
-
-            // swy: don't overflow the LUT array access; limit the max allowed index
-            s8 four = 4;
-            s8 predict = min(chunk.predict, four);
-            f32 sample = (s >> chunk.shift) + hist1 * vagLUT[predict][0] + hist2 * vagLUT[predict][1];
-            hist2 = hist1;
-            hist1 = sample;
-            output.push_back(sample);
-        }
+        io.fread(&coeff_idx, sizeof(s32));
     }
 
+    io.Close();
+    
     return output.data();
 }

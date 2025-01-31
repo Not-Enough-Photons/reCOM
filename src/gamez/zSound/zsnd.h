@@ -67,26 +67,13 @@ enum class VAG_FLAGS
 
 struct tag_VAGHeader
 {
-	tag_VAGHeader();
-	tag_VAGHeader(void* ptr, size_t size);
-	
 	char magic[4];
 	s32 version;
-	s32 unknown01;
+	s32 reserved00;
 	u32 samples;
 	u32 rate;
-	s32 unknown02;
-	u32 unknown03;
-	u32 unknown04;
+	s32 reserved01[3];
 	char name[16];
-};
-
-struct tag_VAGChunk
-{
-	s8 shift;
-	s8 predict;
-	u8 flags;
-	u8* sample;
 };
 
 class CSnd

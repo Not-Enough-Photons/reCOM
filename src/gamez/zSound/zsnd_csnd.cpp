@@ -27,24 +27,7 @@ std::unordered_map<const char*, CSnd*> CSnd::m_soundmap;
 
 _zrdr* sound_rdr = NULL;
 
-u8* vagDecode(u8* ptr, const tag_VAGHeader& header);
-
-tag_VAGHeader::tag_VAGHeader()
-{
-	
-}
-
-tag_VAGHeader::tag_VAGHeader(void* ptr, size_t size)
-{
-	CBufferIO fileio;
-	fileio.Open(ptr, size);
-	fileio.fread(this, sizeof(tag_VAGHeader));
-	// fileio.Close();
-
-	version = U32_BE(&version);
-	samples = U32_BE(&samples);
-	rate    = U32_BE(&rate);
-}
+s16* vagDecode(u8* ptr, tag_VAGHeader& header);
 
 CSnd::CSnd()
 {
@@ -158,14 +141,13 @@ void CSnd::LoadVAG(const char* name)
 	u8* buffer = (u8*)zmalloc(size);
 	m_vagArchive.Fetch(key, buffer, size);
 
-	tag_VAGHeader header = tag_VAGHeader(buffer, size);
-
-	u8* data = vagDecode(buffer, header);
+	tag_VAGHeader header;
+	
+	s16* data = vagDecode(buffer, header);
 	
 	SDL_IOStream* stream = SDL_IOFromMem(data, key->GetSize());
-	m_snd_data = data;
 	m_snd_len = header.samples;
-	SDL_AudioSpec audioSpec { SDL_AUDIO_U8, 1, (s32)header.rate };
+	SDL_AudioSpec audioSpec { SDL_AUDIO_S16, 1, (s32)header.rate };
 	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
 
 	SDL_ResumeAudioStreamDevice(m_audiostream);
