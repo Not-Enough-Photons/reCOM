@@ -24,19 +24,27 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 | zAnim | Animation logic and animation keyframe logic; animation blending |
 | zArchive | GameZ's primary format for storing binary data such as levels, readers, and meshes |
 | zAssetLib | Asset library that contains models, textures, and palettes |
+| zBody | Skeleton classes, animation blending, body parts, etc. |
 | zCamera | Camera behavior, FOV controls, and app-specific camera behavior |
+| zCharacter | NPC setup classes and settings definitions for NPCs |
 | zEntity | Generic game entity definitions and interactions |
 | zFTS | App foundation that provides implementations, like missions |
 | zGame | Game states and managers |
+| zIMGUI | IMGUI debug interface (is not a part of the original source tree) |
 | zInput | Input handling for gamepads and keyboards |
+| zIntersect | Raycasts, intersections, and collision logic |
 | zMath | Math functions for vectors, quaternions, matricies, and more |
+| zMPEG | Video playback and video managers in-engine |
 | zNetwork | Network objects and managers for multiplayer, and for Medius |
 | zNode | GameZ's node-based system and node management |
+| zParticle | GPU instanced particle system |
+| zPhysics | Physics engine for GameZ |
 | zReader | LISP processor for compiled and non-compiled data files |
 | zRender | Main GameZ rendering pipeline; renders nodes, visuals, etc. |
-| zRender/zParticle | GPU instanced particle system |
-| zRender/zVisual | Abstractions for 3D models to be passed to the graphics API (Meshes, sub-meshes, decals, etc.) |
+| zSave | Saver/loader for GameZ saves and save states |
 | zSeal | NPC code, player controller, and AI controller code for NPC objects |
+| zShader | GLSL/HLSL shader classes |
+| zSoftImage | Autodesk SoftImage script parsers and object parsers |
 | zSound | Sound management, handling, and playback |
 | zSystem | Game system management and memory management |
 | zTexture | Textures, management of textures, and container types for textures |
@@ -44,8 +52,11 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 | zUI | UI framework to house 2D elements |
 | zUtil | Utilities for file I/O and buffered I/O, and string tables |
 | zValve | Game signals and counters to dispatch UI events and game events |
+| zVehicle | Manages character types and AI stats (NOT related to drivable vehicles) |
 | zVideo | Render control and controls for the main framebuffer |
+| zVisual | Interface for dealing with OpenFlight (.FLT) meshes, decals, and sub-meshes |
 | zWeapon | Generic weapon implementation and ammo |
+| zWorld | Root parent class, CWorld, for all nodes |
 
 # Background
 Currently, I (adamdev) am the sole contributor to this project. I have been using Ghidra to reverse engineer the binaries of the games, to some luck.
