@@ -60,9 +60,11 @@ public:
 class CValve
 {
 public:
+	CValve(const char* name, u32 value, VALVE_TYPE type);
+	
 	static void Init();
 
-	static bool Open(const char* reader, VALVE_TYPE type);
+	static bool Open(const char* name, VALVE_TYPE type);
 	static void Close();
 	static void Reset();
 
@@ -79,7 +81,7 @@ public:
 	static void RegisterCommands();
 	
 	static std::list<CValve*> m_list;
-public:
+
 	void AssignName(const char* name);
 	void FreeName();
 
@@ -100,7 +102,7 @@ private:
 	CValveCBList m_callbacks;
 };
 
-class CValvePool
+class CValvePool : public std::vector<CValve*>
 {
 public:
 	CValve* Acquire(const char* name, VALVE_TYPE type) { return NULL; }

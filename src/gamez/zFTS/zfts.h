@@ -34,6 +34,14 @@ void ftsNetworkSealInit();
 
 s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postfix, char* output);
 
+_zanim_cmd_hdr* HUDCmdParseOn(_zrdr* reader);
+bool HUDCmdTickControlSwitch(_zanim_cmd_hdr* header, f32* dT);
+_zanim_cmd_hdr* HUDCmdParseOff(_zrdr* reader);
+
+_zanim_cmd_hdr*  HUDLetterBoxCmdParseOn(_zrdr* reader);
+bool HUDLetterBoxCmdTick(_zanim_cmd_hdr* header, f32* dT);
+_zanim_cmd_hdr* HUDLetterBoxCmdParseOff(_zrdr* reader);
+
 class Headset
 {
 public:
@@ -70,13 +78,13 @@ public:
 	CMission() : CSaveModule("CMission", NULL) {}
 
 	static f32 nextFrameDelta;
-public:
-	void Init();
+
+	bool Init();
 
 	void Open();
 	void PreOpen(const char* db);
 	void Read(_zrdr* reader);
-public:
+
 	CZNetGame* netGame;
 private:
 	MISSION_STATE m_state;

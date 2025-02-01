@@ -112,4 +112,9 @@ namespace zdb
 		m_scrZ = m_farCorner[0][2] * m_cot.x;
 	}
 
+	void CCamera::SetFarClip(f32 farclip)
+	{
+		m_far_plane = farclip;
+		m_farCorner[0][1] = farclip;
+	}
 }

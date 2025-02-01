@@ -359,9 +359,7 @@ void _resolveB(_zrdr* self, _zrdr* root, char* name)
 	}
 }
 
-// TODO:
-// complete this function
-_zrdr* zrdr_read(const char* name, const char* path, s32 flags)
+CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 {
 	if (path && strlen(path) < MAX_ZRDR_PATH_LEN)
 	{

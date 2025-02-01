@@ -1,13 +1,12 @@
+#include "zrdr.h"
+
 #include <cstring>
 
 #include <freebsd/strcasecmp.h>
 
-#include "zrdr.h"
-
+#include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
-#include "gamez/zUtil/zutil.h"
 #include "gamez/zUtil/util_systemio.h"
-// #include "gamez/zWeapon/zwep_weapon.h"
 
 bool zrdr_init = false;
 bool warnonce = false;
@@ -272,6 +271,94 @@ bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
 {
 	_zrdr* rdr = zrdr_findtag_startidx(reader, tag, 1);
 	return zrdr_tobool(rdr, output);
+}
+
+bool zrdr_findPNT2D(_zrdr* reader, const char* name, PNT2D* output)
+{
+	u32 i = 0;
+	bool found = false;
+	_zrdr* tag = zrdr_findtag_startidx(reader, name, 1);
+
+	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < 3)
+	{
+		found = false;
+	}
+	else
+	{
+		i = 1;
+
+		f32 axis = 0.0f;
+
+		do
+		{
+			_zrdr* array = tag->array;
+
+			if (array[1].array[i].type == ZRDR_REAL)
+			{
+				axis = array[1].array[i].real;
+			}
+			else if (array[1].array[i].type == ZRDR_INTEGER)
+			{
+				axis = static_cast<f32>(array[1].array[i].integer);
+			}
+			else
+			{
+				axis = *(f32*)(output + i);
+			}
+
+			*(f32*)(output + i) = axis;
+				
+			i++;
+		} while (i < 2);
+
+		found = true;
+	}
+	
+	return found;
+}
+
+bool zrdr_findPNT3D(_zrdr* reader, const char* name, PNT3D* output)
+{
+	u32 i = 0;
+	bool found = false;
+	_zrdr* tag = zrdr_findtag_startidx(reader, name, 1);
+
+	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < 3)
+	{
+		found = false;
+	}
+	else
+	{
+		i = 1;
+
+		f32 axis = 0.0f;
+
+		do
+		{
+			_zrdr* array = tag->array;
+
+			if (array[1].array[i].type == ZRDR_REAL)
+			{
+				axis = array[1].array[i].real;
+			}
+			else if (array[1].array[i].type == ZRDR_INTEGER)
+			{
+				axis = static_cast<f32>(array[1].array[i].integer);
+			}
+			else
+			{
+				axis = *(f32*)(output + i);
+			}
+
+			*(f32*)(output + i) = axis;
+				
+			i++;
+		} while (i < 3);
+
+		found = true;
+	}
+	
+	return found;
 }
 
 bool zrdr_toINT(_zrdr* reader, s32* output, s32 size)

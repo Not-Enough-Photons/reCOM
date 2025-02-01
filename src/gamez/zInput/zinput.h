@@ -143,8 +143,5 @@ private:
 class CKeyboard
 {
 public:
-	CKeyboard();
-	~CKeyboard();
-
 	void Tick(f32 delta);
 };

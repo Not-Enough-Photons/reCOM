@@ -29,7 +29,7 @@ CSTable::~CSTable()
 	{
 		for (auto it = begin(); it != end(); it++)
 		{
-			free(*it);
+			zfree(*it);
 			*it = NULL;
 		}
 	}
@@ -37,7 +37,7 @@ CSTable::~CSTable()
 	{
 		if (!m_owner)
 		{
-			free(m_buffer);
+			zfree(m_buffer);
 		}
 
 		m_buffer = NULL;

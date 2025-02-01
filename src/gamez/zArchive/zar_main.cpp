@@ -845,18 +845,16 @@ namespace zar
 		{
 			return NULL;
 		}
-		else
+		
+		CBufferIO* fileAlloc = dynamic_cast<CBufferIO*>(m_pFile);
+
+		if (fileAlloc != NULL)
 		{
-			CBufferIO* fileAlloc = dynamic_cast<CBufferIO*>(m_pFile);
-
-			if (fileAlloc != NULL)
-			{
-				fileAlloc->Release();
-			}
-
-			buffer = m_databuffer;
-			m_databuffer = NULL;
+			fileAlloc->Release();
 		}
+
+		buffer = m_databuffer;
+		m_databuffer = NULL;
 
 		return buffer;
 	}

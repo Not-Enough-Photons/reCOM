@@ -6,10 +6,10 @@
 #include "gamez/zTexture/ztex.h"
 #include "gamez/zSystem/zsys.h"
 
+enum class _RenderPhase;
+
 namespace zdb
 {
-	enum class _RenderPhase;
-
 	class CModel;
 	class CTexture;
 	class CTexPalette;
@@ -25,6 +25,8 @@ namespace zdb
 	{
 		friend class CAssetList;
 	public:
+		CAssetLib(const char* name);
+		
 		bool AddTexture(const char* name);
 		bool AddTexture(zdb::CTexture* texture);
 		
@@ -66,4 +68,6 @@ namespace zdb
 		
 		static CAssetList m_assets;
 	};
+
+	class CRefList : public std::list<CAssetLib*> {};
 }

@@ -1,8 +1,9 @@
 #include "zanim.h"
 
+CZAnimMain ZAnim;
 bool CZAnimMain::m_LoadFromZAR = false;
 
-bool CZAnimMain::SplitName(const char* name, char** splitname)
+bool CZAnimMain::SplitName(char* name, char** splitname)
 {
 	bool split_success = false;
 	char* haystack = NULL;
@@ -14,11 +15,11 @@ bool CZAnimMain::SplitName(const char* name, char** splitname)
 	}
 	else
 	{
-		char* separator = zstrdup(strstr(name, "::"));
+		char* separator = strstr(name, "::");
 
 		if (!separator)
 		{
-			*splitname = zstrdup(name);
+			*splitname = name;
 		}
 		else
 		{
@@ -42,7 +43,7 @@ u32 CZAnimMain::AddCmd(const char* name,
 {
 	char* anim_name = NULL;
 	
-	bool split_success = SplitName(name, &anim_name);
+	bool split_success = SplitName(zstrdup(name), &anim_name);
 	
 	return 0;
 }

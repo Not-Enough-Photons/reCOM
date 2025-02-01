@@ -179,7 +179,8 @@ namespace zdb
 		f32 GetScaledRangeSquared(const CPnt3D& point);
 
 		void SetHalfHorizontalFOVRadians(f32 radians);
-
+		void SetFarClip(f32 farclip);
+		
 		static bool m_dynamics_controlled;
 		
 		f32 m_Zmin;

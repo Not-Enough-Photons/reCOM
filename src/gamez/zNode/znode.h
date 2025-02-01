@@ -273,7 +273,7 @@ namespace zdb
 		void AddTextureAssetCharacter(const CNode& textureAsset);
 		void ReserveChildren(s32 count);
 
-		int GenerateLandmarkList();
+		s32 GenerateLandmarkList();
 		
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);

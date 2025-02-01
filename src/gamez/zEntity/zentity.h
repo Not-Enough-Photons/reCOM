@@ -42,8 +42,6 @@ extern int recycler_index;
 extern CSealAnim* m_sealanim;
 extern CharacterDynamics theCharacterDynamics;
 
-void SealInitCharacterDynamics();
-
 struct start
 {
 	char m_name[16];

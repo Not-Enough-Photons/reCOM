@@ -192,4 +192,42 @@ namespace zdb
 
 		// landmark->RemoveFromParent();
 	}
+
+	bool CWorld::DismemberWorldModel()
+	{
+		CModel* worldmodel = CAssetMgr::m_assets.GetModel("worldmodel");
+
+		if (!worldmodel)
+		{
+			return false;
+		}
+
+		// ReserveChildren(worldmodel->m_reflist.size());
+
+		auto it = worldmodel->m_child.begin();
+
+		while (it != worldmodel->m_child.end())
+		{
+			CNode* child = *it;
+			m_child.insert(m_child.begin(), child);
+			child->m_parent = this;
+			// m_grid->Update();
+			++it;
+		}
+
+		return true;
+	}
+
+	s32 CWorld::GenerateLandmarkList()
+	{
+		CStack::m_pointer++;
+		CStack::m_top++;
+
+		*CStack::m_top = CMatrix::identity;
+
+		m_numNoFarClipNodes = 0;
+
+		return 1;
+	}
+
 }

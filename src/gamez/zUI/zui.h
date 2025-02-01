@@ -1,13 +1,14 @@
 #pragma once
 #include <list>
 
-#include "gamez/zGame/zgame.h"
 #include "gamez/zTwoD/ztwod.h"
 #include "gamez/zWeapon/zweapon.h"
 
 class CUIVariable;
 class CUIVariableSpec;
 class CUIVarManager;
+
+s32 ZuiInit();
 
 enum UIVAR_LONGEVITY
 {

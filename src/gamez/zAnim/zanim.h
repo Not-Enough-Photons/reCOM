@@ -496,8 +496,9 @@ public:
 class CZAnimMain : public _zanim_main_params
 {
 public:
-	bool SplitName(const char* name, char** splitname);
-	
+	bool SplitName(char* name, char** splitname);
+
+	void Open() {}
 	bool InitCommands();
 	u32 AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
 public:
@@ -550,8 +551,6 @@ class CActiveAnimPool
 {
 
 };
-
-static CZAnimMain ZAnim;
 
 class CZBodyAnimBlend
 {

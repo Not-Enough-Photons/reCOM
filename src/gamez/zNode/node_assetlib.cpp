@@ -1,6 +1,7 @@
 #include "znode.h"
 
 #include "gamez/zAssetLib/zassetlib.h"
+#include "gamez/zSave/zsave.h"
 
 namespace zdb
 {
@@ -190,6 +191,9 @@ namespace zdb
 				}
 
 				g_assetsRecycle.erase(g_assetsRecycle.begin(), g_assetsRecycle.end());
+
+				CSaveLoad sload;
+				CAssetLib* assetlib = new CAssetLib(name);
 			}
 			else
 			{

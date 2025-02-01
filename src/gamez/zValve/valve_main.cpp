@@ -4,15 +4,46 @@
 
 CValvePool valvePool;
 
-bool CValve::Open(const char* reader, VALVE_TYPE type)
+CValve::CValve(const char* name, u32 value, VALVE_TYPE type)
 {
-	if (reader)
+	m_name = NULL;
+	m_name_pooled = false;
+	m_pooled = false;
+	m_value = value;
+	m_type = (u32)VALVE_TYPE::NONE;
+
+	FreeName();
+
+	if (name)
 	{
-		_zrdr* file = zrdr_read(reader, NULL, 0);
+		m_name = zstrdup(name);
+	}
+}
+
+bool CValve::Open(const char* name, VALVE_TYPE type)
+{
+	if (name)
+	{
+		CRdrFile* file = zrdr_read(name, NULL, 0);
 		Parse(file, type);
-		// zrdr_free(file);
+		zrdr_free(file);
 	}
 
+	if (valvePool.empty())
+	{
+		valvePool.reserve(256);
+
+		for (u32 i = 0; i < 256; i++)
+		{
+			CValve* valve = new CValve(NULL, 0, VALVE_TYPE::TEMP);
+			valve->m_name_pooled = true;
+			valve->m_pooled = true;
+			valve->m_type = (u32)VALVE_TYPE::PERM;
+			valve->m_value = 1;
+			valvePool.insert(valvePool.end(), valve);
+		}
+	}
+	
 	return true;
 }
 
@@ -32,7 +63,7 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 				s32 value = 0;
 				char* valve_type = NULL;
 				
-				_zrdr* node = &valves->array[idx++];
+				_zrdr* node = &valves->array[idx];
 
 				name = zrdr_findstring(node, "name");
 				zrdr_findint(node, "value", &value, 1);
@@ -55,6 +86,17 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 						rdr_valve_type = VALVE_TYPE::PERSIST;
 					}
 				}
+
+				if (!name)
+				{
+					
+				}
+				else
+				{
+					
+				}
+				
+				idx++;
 			}
 			while (idx < valves->array->integer);
 		}
@@ -71,20 +113,18 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	{
 		return NULL;
 	}
-	else
-	{
-		for (auto it = m_list.begin(); it != m_list.end(); it++)
-		{
-			CValve* curValve = *it;
-			const char* valveName = curValve->m_name;
 
-			if (valveName != NULL && strcmp(valveName, name) == 0)
-			{
-				valve = curValve;
-			}
+	for (auto it = m_list.begin(); it != m_list.end(); it++)
+	{
+		CValve* curValve = *it;
+		const char* valveName = curValve->m_name;
+
+		if (valveName != NULL && strcmp(valveName, name) == 0)
+		{
+			valve = curValve;
 		}
 	}
-
+	
 	if (valve == NULL)
 	{
 		valve = valvePool.Acquire(name, type);
@@ -104,6 +144,11 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	}
 
 	return valve;
+}
+
+CValve* CValve::Create(const char* name, s32 count, VALVE_TYPE type)
+{
+	return NULL;
 }
 
 void CValve::RegisterCommands()
@@ -128,6 +173,25 @@ void CValve::DeleteCallbacks()
 	{
 		m_callbacks.m_list.erase(m_callbacks.m_list.begin());
 	}
+}
+
+void CValve::FreeName()
+{
+	if (m_name_pooled)
+	{
+		if (m_name)
+		{
+			zfree(m_name);
+		}
+
+		m_name = NULL;
+	}
+	else
+	{
+		m_name = NULL;
+	}
+
+	m_name_pooled = false;
 }
 
 bool CValve::Set(s32 value)

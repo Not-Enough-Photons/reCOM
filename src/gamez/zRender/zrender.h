@@ -79,7 +79,11 @@ struct BLENDMODE
 /// </summary>
 class CStack
 {
-
+public:
+	static void Multiply(const CMatrix* matrix, bool other);
+	
+	static CMatrix* m_top;
+	static CMatrix* m_pointer;
 };
 
 class LODVec : public std::vector<LOD*> {};

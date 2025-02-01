@@ -7,4 +7,6 @@ void process_arguments(int argc, char** argv)
 {
 	zSys.cdSounds = false;
 	CZAnimMain::m_LoadFromZAR = true;
+
+	
 }

@@ -1,6 +1,11 @@
 #include "gamez/zAnim/zanim.h"
+#include "gamez/zBone/zbone.h"
+#include "gamez/zCharacter/zchar.h"
 #include "gamez/zFTS/zfts.h"
+#include "gamez/zNetwork/znet.h"
+#include "gamez/zSeal/zseal.h"
 #include "gamez/zSystem/zsys.h"
+#include "gamez/zVehicle/zvehicle.h"
 
 CMission theMission;
 
@@ -80,17 +85,86 @@ s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postf
 	return result;
 }
 
-void CMission::Init()
+bool CMission::Init()
 {
 	// TODO:
 	// Implement all these
-	// CZAnimMain::Open("ZAnim");
-	// CSealCtrlAi::RegisterCommands();
+	ZAnim.Open();
+	CSealCtrlAi::RegisterCommands();
 	// CValve::RegisterCommands();
 	// zdb::CCamera::RegisterAnimCommands();
 	// CAppCamera::RegisterAnimCommands();
 	// CftsPlayer::RegisterAnimCommands();
 	// zdb::CWind::RegisterAnimCommands();
+
+	ZAnim.AddCmd("HUD_ON", HUDCmdParseOn, NULL, HUDCmdTickControlSwitch, NULL);
+	ZAnim.AddCmd("HUD_OFF", HUDCmdParseOff, NULL, HUDCmdTickControlSwitch, NULL);
+	ZAnim.AddCmd("HUD_LETTERBOX_ON", HUDLetterBoxCmdParseOn, NULL, HUDLetterBoxCmdTick, NULL);
+	ZAnim.AddCmd("HUD_LETTERBOX_OFF", HUDLetterBoxCmdParseOff, NULL, HUDLetterBoxCmdTick, NULL);
+
+	m_chars_loaded = false;
+
+	CRdrArchive::AddArchive("readerc.zar", "d:/run");
+	CRdrArchive::AddArchive("readerc.zar", "d:/run/ui");
+	CRdrArchive::OpenAll();
+
+	zBoneInit();
+	zBoneOpen();
+	zBoneLoadAll();
+	zBoneClose();
+
+	CZNetGame* netgame = new CZNetGame();
+
+	netgame->m_clock.m_max_game_time = 0;
+	netgame->m_clock.m_game_time = 0;
+	netgame->m_clock.m_time_in_round = 0;
+	netgame->m_clock.m_initial_read = 0;
+	netgame->m_clock.m_total_time = 0;
+	netgame->m_clock.m_initial_read_set = false;
+	netgame->m_clock.m_clock_running = false;
+	netgame->Initialize();
+
+	CRdrFile* hud_rdr = zrdr_read("hud.rdr", NULL, 0);
+
+	if (hud_rdr)
+	{
+		zrdr_findPNT2D(hud_rdr, "static_radio", &m_pNetGame->m_static_radio_loc);
+		zrdr_findPNT2D(hud_rdr, "dynamic_radio", &m_pNetGame->m_dynamic_radio_loc);
+	}
+
+	zrdr_free(hud_rdr);
+
+	CValve::Open("global_valves.rdr", VALVE_TYPE::PERM);
+	m_valve_complete = CValve::Create("mission_complete", VALVE_TYPE::PERM);
+	m_valve_failure = CValve::Create("mission_failure", VALVE_TYPE::PERM);
+	m_valve_abort = CValve::Create("mission_abort", VALVE_TYPE::PERM);
+	m_valve_timeout = CValve::Create("mission_timeout", VALVE_TYPE::PERM);
+	m_valve_nofade = CValve::Create("mission_nofade", VALVE_TYPE::PERM);
+
+	m_ordersRdr = zrdr_read("orders.rdr", NULL, 0);
+	m_materialsRdr = zrdr_read("materials.rdr", NULL, 0);
+	m_decalsRdr = zrdr_read("decals.rdr", NULL, 0);
+	m_fontsRdr = zrdr_read("fonts.rdr", NULL, 0);
+	m_messagesRdr = zrdr_read("messages.rdr", NULL, 0);
+	m_subtitlesRdr = zrdr_read("subtitles.rdr", NULL, 0);
+	m_smallmessagesRdr = zrdr_read("small_messages.rdr", NULL, 0);
+
+	// Particle::Init();
+	SealInitCharacterDynamics();
+
+	m_vehicleRdr = new CVehicleRdr();
+
+	// AnimSet::Load();
+	CCharacterType::Open("character.rdr");
+	// CCtrlrConfigs::Init()
+	
+	ZuiInit();
+	hudInit();
+
+	// CTurret::Init("ai_turrets.rdr", "data/common");
+	CRdrArchive::RemoveArchive("readerc.zar", "run");
+
+	return true;
 }
 
 void CMission::PreOpen(const char* db)
@@ -122,14 +196,6 @@ void CMission::PreOpen(const char* db)
 
 	_zrdr* uivars = zrdr_findtag(mission, "UiVars");
 	u32 idx = 0;
-	
-	while (true)
-	{
-		if (!uivars)
-		{
-			break;
-		}
-	}
 }
 
 void CMission::Read(_zrdr* reader)

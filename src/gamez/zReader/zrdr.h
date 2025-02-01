@@ -1,5 +1,6 @@
 #pragma once
 #include "gamez/zArchive/zar.h"
+#include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stable.h"
 
@@ -33,7 +34,7 @@ int _get_pptoken(char* token);
 bool _preproc_filter(char* token, bool param_2);
 bool _eval_defined(char* token);
 
-_zrdr* zrdr_read(const char* reader, const char* path, s32 dummy);
+CRdrFile* zrdr_read(const char* reader, const char* path, s32 dummy);
 const char* zrdr_findfile(const char* file, const char* path);
 s32 zrdr_free(CRdrFile* reader);
 void zrdr_freearray(_zrdr* array);
@@ -45,6 +46,8 @@ bool zrdr_findint(_zrdr* reader, const char* tag, s32* output, s32 iterations);
 bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 iterations);
 bool zrdr_findreal(_zrdr* reader, const char* tag, f32* output, s32 iterations);
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
+bool zrdr_findPNT2D(_zrdr* reader, const char* tag, PNT2D* output);
+bool zrdr_findPNT3D(_zrdr* reader, const char* tag, PNT3D* output);
 _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
 _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, u32 depth);
 

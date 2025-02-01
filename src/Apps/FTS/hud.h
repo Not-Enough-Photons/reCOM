@@ -1,4 +1,7 @@
 #pragma once
+#include <map>
+
+#include "gamez/zGame/zgame.h"
 #include "gamez/zPhysics/zphysics.h"
 #include "gamez/zUI/zui.h"
 
@@ -10,6 +13,22 @@ enum HUD_MODE
 {
 	ZOOMIN,
 	ZOOMOUT
+};
+
+s32 hudInit();
+bool hudAddPolyType(_zrdr* node);
+bool hudAddLineType(_zrdr* node);
+
+struct LINE_DATA
+{
+	PNT3D color;
+	f32 opacity;
+	f32 _fWidth;
+};
+
+struct tacmap_line
+{
+	
 };
 
 class CLetterBox : C2D

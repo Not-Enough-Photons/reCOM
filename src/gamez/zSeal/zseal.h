@@ -146,6 +146,8 @@ extern f32 noTurnThreshold;
 extern f32 fineTuneThreshold;
 extern f32 throttleFudge;
 
+void SealInitCharacterDynamics();
+
 class CFire : CSequence {};
 class CLookItem : CSequence {};
 class CLook : CSequence {};
@@ -314,6 +316,8 @@ public:
 	static void PostCreateSeal(CZSealBody* seal, CSealCtrl* controller);
 	static bool ReCreate(CZSealBody* seal, const CCharacterType* charType);
 
+	static void InitLookAnims();
+
 	void Destroy();
 	bool DestroyAimAnims();
 	void DeleteCameraEffectsNode();
@@ -325,7 +329,6 @@ public:
 	void InitDatabaseHandles();
 	void InitDecalHandles();
 	void InitHandSignals();
-	void InitLookAnims();
 	CRdrFile* InitMotionRdrFile();
 
 	void SetupGear();

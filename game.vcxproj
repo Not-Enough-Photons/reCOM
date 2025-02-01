@@ -263,6 +263,7 @@
     <ClInclude Include="src\gamez\zArchive\zar.h" />
     <ClInclude Include="src\gamez\zAssetLib\zassetlib.h" />
     <ClInclude Include="src\gamez\zBody\zbody.h" />
+    <ClInclude Include="src\gamez\zBone\zbone.h" />
     <ClInclude Include="src\gamez\zCamera\zcam.h" />
     <ClInclude Include="src\gamez\zCharacter\zchar.h" />
     <ClInclude Include="src\gamez\zEntity\ent_dipool.h" />
@@ -726,6 +727,7 @@
     <ClCompile Include="src\Apps\FTS\hud_weaponsel.cpp" />
     <ClCompile Include="src\Apps\FTS\lobby_roomlist.cpp" />
     <ClCompile Include="src\Apps\FTS\main.cpp" />
+    <ClCompile Include="src\Apps\FTS\mem_overload.cpp" />
     <ClCompile Include="src\Apps\FTS\options.cpp" />
     <ClCompile Include="src\Apps\FTS\orders.cpp" />
     <ClCompile Include="src\Apps\FTS\reco.cpp" />
@@ -829,10 +831,12 @@
       <AdditionalIncludeDirectories>vendor;src;</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="src\gamez\zBone\bone_init.cpp" />
     <ClCompile Include="src\gamez\zCamera\camera.cpp" />
     <ClCompile Include="src\gamez\zCamera\fov.cpp" />
     <ClCompile Include="src\gamez\zCamera\zcam_main.cpp" />
     <ClCompile Include="src\gamez\zCamera\zcam_update.cpp" />
+    <ClCompile Include="src\gamez\zCharacter\char_dyn.cpp" />
     <ClCompile Include="src\gamez\zCharacter\char_main.cpp" />
     <ClCompile Include="src\gamez\zCharacter\char_type.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
@@ -914,6 +918,12 @@
     <ClCompile Include="src\gamez\zEntity\ent_target.cpp" />
     <ClCompile Include="src\gamez\zEntity\pickup_main.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_action.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_anim_action.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_anim_camera.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_anim_hud.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_anim_player.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_anim_seal.cpp" />
+    <ClCompile Include="src\gamez\zFTS\fts_autoplay.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_controller.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_main.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_mission.cpp" />
@@ -928,6 +938,11 @@
     <ClCompile Include="src\gamez\zFTS\fts_player.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_remote.cpp" />
     <ClCompile Include="src\gamez\zFTS\fts_state.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_anim_camera.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_anim_decal.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_anim_valve.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_anim_video.cpp" />
+    <ClCompile Include="src\gamez\zGame\game_anim_wind.cpp" />
     <ClCompile Include="src\gamez\zGame\game_engine.cpp" />
     <ClCompile Include="src\gamez\zGame\game_main.cpp" />
     <ClCompile Include="src\gamez\zGame\game_state.cpp" />
@@ -1100,6 +1115,7 @@
     <ClCompile Include="src\gamez\zMath\zmath_pnt4d.cpp" />
     <ClCompile Include="src\gamez\zMPEG\zmpeg.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetDme.cpp" />
+    <ClCompile Include="src\gamez\zNetwork\zNetGame.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetMain.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetMedius.cpp" />
     <ClCompile Include="src\gamez\zNetwork\zNetVoice.cpp" />
@@ -1130,6 +1146,7 @@
     <ClCompile Include="src\gamez\zRender\zrndr_main.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_opengl.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_pipe.cpp" />
+    <ClCompile Include="src\gamez\zRender\zrndr_stack.cpp" />
     <ClCompile Include="src\gamez\zRender\zrndr_vulkan.cpp" />
     <ClCompile Include="src\gamez\zSave\zsav_main.cpp" />
     <ClCompile Include="src\gamez\zSave\zsav_manager.cpp">

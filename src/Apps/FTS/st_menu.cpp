@@ -32,7 +32,7 @@ bool CMenuState::Init()
 
 	if (m_skip == 0)
 	{
-		zar::CZAR* archive = CRdrArchive::AddArchive("readerc.zar", "run/ui");
+		zar::CZAR* archive = CRdrArchive::AddArchive("readerc.zar", "D:/run/ui");
 
 		if (archive)
 		{

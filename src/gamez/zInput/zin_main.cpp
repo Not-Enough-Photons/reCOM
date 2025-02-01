@@ -16,7 +16,7 @@ void CInput::Init()
 	// TODO:
 	// Add replacement IOP function for Windows/Linux
 	// InitKeyreadStuff();
-	// CInput::m_keyboard = new CKeyboard();
+	m_keyboard = new CKeyboard();
 	m_init = true;
 }
 

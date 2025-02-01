@@ -207,7 +207,7 @@ public:
 class CNetClock
 {
 	friend class CZNetGame;
-private:
+public:
 	u32 m_max_game_time;
 	u32 m_save_max_game_time;
 	u32 m_initial_read;
@@ -222,6 +222,8 @@ private:
 class CZNetGame
 {
 public:
+	bool Initialize();
+	
 	CValve* m_pMaxRoundCountValve;
 	CValve* m_pHalfRoundCountValve;
 	CValve* m_pRoundCountValve;

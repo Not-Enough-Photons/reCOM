@@ -8,11 +8,8 @@
 bool _NeedQuotes(_zrdr* reader);
 bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset);
 
-class CRdrEditor
+class CRdrEditor : public CRdrFile
 {
-public:
-	CRdrEditor();
-	~CRdrEditor();
 public:
 	int push(const char* str);
 	int pop();

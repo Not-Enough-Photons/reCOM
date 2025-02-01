@@ -21,6 +21,25 @@ void HookupLib(zdb::CAssetLib lib)
 
 namespace zdb
 {
+    CAssetLib::CAssetLib(const char* name)
+    {
+        m_name = NULL;
+        m_texture_buffer = NULL;
+        m_model_buffer = NULL;
+        m_iRefCount = 1;
+        m_autoload = true;
+        m_locked = false;
+        m_gearlib = false;
+        m_renderphase = _RenderPhase::WORLD;
+
+        if (m_name)
+        {
+            zfree(m_name);
+        }
+
+        m_name = zstrdup(name);
+    }
+    
     CTexHandle* CAssetList::GetTexHandle(const char* name)
     {
         CTexHandle* handle = NULL;
