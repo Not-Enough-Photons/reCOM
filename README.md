@@ -15,7 +15,7 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 ## Apps - Application Layer
 | Module | Description |
 | ------ | ----------- |
-| FTS | App specific code such as the game HUD, entry point, and the games database. |
+| [FTS](https://github.com/Not-Enough-Photons/reCOM/tree/main/src/Apps/FTS) | App specific code such as the game HUD, entry point, and the games database. |
 
 ## gamez - Core Engine
 | Module | Description |
