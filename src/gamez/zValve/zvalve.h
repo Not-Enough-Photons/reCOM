@@ -105,6 +105,6 @@ private:
 class CValvePool : public std::vector<CValve*>
 {
 public:
-	CValve* Acquire(const char* name, VALVE_TYPE type) { return NULL; }
+	CValve* Acquire(const char* name, VALVE_TYPE type);
 };
 

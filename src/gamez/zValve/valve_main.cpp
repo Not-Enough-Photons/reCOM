@@ -6,6 +6,8 @@ CValvePool valvePool;
 
 CValve::CValve(const char* name, u32 value, VALVE_TYPE type)
 {
+	m_list.clear();
+	
 	m_name = NULL;
 	m_name_pooled = false;
 	m_pooled = false;
@@ -114,7 +116,7 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 		return NULL;
 	}
 
-	for (auto it = m_list.begin(); it != m_list.end(); it++)
+	for (auto it = m_list.begin(); it != m_list.end(); ++it)
 	{
 		CValve* curValve = *it;
 		const char* valveName = curValve->m_name;
