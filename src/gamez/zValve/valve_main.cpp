@@ -12,7 +12,7 @@ CValve::CValve(const char* name, u32 value, VALVE_TYPE type)
 	m_name_pooled = false;
 	m_pooled = false;
 	m_value = value;
-	m_type = (u32)VALVE_TYPE::NONE;
+	m_type = (u32)VALVE_TYPE::VTYPE_NONE;
 
 	FreeName();
 
@@ -37,10 +37,10 @@ bool CValve::Open(const char* name, VALVE_TYPE type)
 
 		for (u32 i = 0; i < 256; i++)
 		{
-			CValve* valve = new CValve(NULL, 0, VALVE_TYPE::TEMP);
+			CValve* valve = new CValve(NULL, 0, VALVE_TYPE::VTYPE_TEMP);
 			valve->m_name_pooled = true;
 			valve->m_pooled = true;
-			valve->m_type = (u32)VALVE_TYPE::PERM;
+			valve->m_type = (u32)VALVE_TYPE::VTYPE_PERM;
 			valve->m_value = 1;
 			valvePool.insert(valvePool.end(), valve);
 		}
@@ -51,6 +51,7 @@ bool CValve::Open(const char* name, VALVE_TYPE type)
 
 bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 {
+	CValve* valve = NULL;
 	_zrdr* valves = zrdr_findtag(reader, "valves");
 
 	if (valves)
@@ -61,6 +62,7 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 		{
 			do
 			{
+				VALVE_STATE vstate;
 				char* name = NULL;
 				s32 value = 0;
 				char* valve_type = NULL;
@@ -71,31 +73,56 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 				zrdr_findint(node, "value", &value, 1);
 				valve_type = zrdr_findstring(node, "type");
 
-				VALVE_TYPE rdr_valve_type = VALVE_TYPE::NONE;
+				VALVE_TYPE rdr_valve_type = VALVE_TYPE::VTYPE_NONE;
 
 				if (valve_type)
 				{
 					if (strcmp(valve_type, "PERM") == 0)
 					{
-						rdr_valve_type = VALVE_TYPE::PERM;
+						rdr_valve_type = VALVE_TYPE::VTYPE_PERM;
 					}
 					else if (strcmp(valve_type, "TEMP") == 0)
 					{
-						rdr_valve_type = VALVE_TYPE::TEMP;
+						rdr_valve_type = VALVE_TYPE::VTYPE_TEMP;
 					}
 					else if (strcmp(valve_type, "PERSIST") == 0)
 					{
-						rdr_valve_type = VALVE_TYPE::PERSIST;
+						rdr_valve_type = VALVE_TYPE::VTYPE_PERSIST;
 					}
 				}
 
 				if (!name)
 				{
-					
+					valve = NULL;
 				}
 				else
 				{
+					valve = GetByName(name);
+				}
+
+				if (!valve)
+				{
+					valve = valvePool.Acquire(name, type);
+					vstate = VALVE_STATE::VSTATE_DORMANT;
+
+					if (value != 0)
+					{
+						vstate = VALVE_STATE::VSTATE_PERMANENT;
+					}
 					
+					if (valve->m_value != value)
+					{
+						vstate = VALVE_STATE::VSTATE_TEMPORARY;
+					}
+
+					valve->m_value = value;
+
+					if (vstate != VALVE_STATE::VSTATE_DORMANT)
+					{
+						// valve->MakeCallbacks(vstate);
+					}
+
+					m_list.insert(m_list.begin(), valve);
 				}
 				
 				idx++;
@@ -134,14 +161,14 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 	}
 	else
 	{
-		if (type == VALVE_TYPE::PERM && valve->m_type != (u32)VALVE_TYPE::PERSIST)
+		if (type == VALVE_TYPE::VTYPE_PERM && valve->m_type != (u32)VALVE_TYPE::VTYPE_PERSIST)
 		{
-			valve->m_type = (u32)VALVE_TYPE::PERM;
+			valve->m_type = (u32)VALVE_TYPE::VTYPE_PERM;
 		}
 
-		if (type == VALVE_TYPE::PERSIST)
+		if (type == VALVE_TYPE::VTYPE_PERSIST)
 		{
-			valve->m_type = (u32)VALVE_TYPE::PERSIST;
+			valve->m_type = (u32)VALVE_TYPE::VTYPE_PERSIST;
 		}
 	}
 
@@ -150,6 +177,27 @@ CValve* CValve::Create(const char* name, VALVE_TYPE type)
 
 CValve* CValve::Create(const char* name, s32 count, VALVE_TYPE type)
 {
+	return NULL;
+}
+
+CValve* CValve::GetByName(const char* name)
+{
+	if (name)
+	{
+		auto it = m_list.begin();
+		while (it != m_list.end())
+		{
+			CValve* current = *it;
+
+			if (strcmp(current->m_name, name) == 0)
+			{
+				return current;
+			}
+			
+			++it;
+		}
+	}
+
 	return NULL;
 }
 
@@ -202,17 +250,17 @@ bool CValve::Set(s32 value)
 
 	if (m_value != value && value != 0)
 	{
-		state = VALVE_STATE::IDLE;
+		state = VALVE_STATE::VSTATE_DORMANT;
 	}
 
 	m_value = value;
 
-	if (state != VALVE_STATE::IDLE)
+	if (state != VALVE_STATE::VSTATE_DORMANT)
 	{
 		MakeCallbacks(state);
 	}
 
-	return state != VALVE_STATE::IDLE;
+	return state != VALVE_STATE::VSTATE_DORMANT;
 }
 
 OP_TYPE CValve::ParseOperator(const char* op)

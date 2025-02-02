@@ -13,10 +13,10 @@ bool CGame::StartEngine()
 	// zTaskScheduler.Clear();
 	// zdb::CRipple::Init();
 	// zdb::CTextureFX::Init();
-	// CValve::Init();
+	CValve::Init();
 	zVid_Init(ZVID_MODE_NTSC);
-	// zdb::CTexture::Init();
-	// C2D::Init();
+	zdb::CTexture::Init();
+	C2D::Init();
 	// zdb::CWorld::Init();
 	// zSysReset();
 	zVid_Open();
@@ -25,8 +25,8 @@ bool CGame::StartEngine()
 	CZIMGUI::Init();
 	// zRndrInit();
 	// CSndInstance::InitInstancePool(48);
-	// CInput::CreatePad(0);
-	// CInput::CreatePad(1);
+	CInput::CreatePad(0);
+	CInput::CreatePad(1);
 	// zMath_Init();
 	// CPipe::Init();
 	// CGameStateChangeCmd::CreatePool(16);

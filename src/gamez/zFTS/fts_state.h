@@ -5,8 +5,8 @@
 #include "gamez/zSystem/zsys.h"
 
 class CHUD;
-
 class CSnd;
+class CGameMenu;
 
 namespace zdb
 {
@@ -83,7 +83,7 @@ public:
 
 	void DrawForeplane();
 private:
-	void* m_menu;
+	CGameMenu* m_menu;
 	s32 m_skip;
 	s32 m_skip_swap;
 

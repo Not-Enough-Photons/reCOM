@@ -229,6 +229,8 @@ namespace zdb
 		{
 			zar::CKey* openkey = sload.m_zfile.GetOpenKey();
 			SetName(openkey->GetName());
+			sload.m_zfile.Fetch("matrix", &m_matrix, sizeof(CMatrix));
+			sload.m_zfile.Fetch("bbox", &m_bbox, sizeof(CBBox));
 			zar::CKey* visualskey = sload.m_zfile.OpenKey("visuals");
 
 			// If the node has visuals
@@ -256,6 +258,7 @@ namespace zdb
 
 			zar::CKey* dikey = sload.m_zfile.OpenKey("di");
 
+			// If the node has collision data
 			if (dikey)
 			{
 				ReserveDI(dikey->GetSize());
@@ -282,6 +285,7 @@ namespace zdb
 
 		zar::CKey* childrenkey = sload.m_zfile.OpenKey("children");
 
+		// If the node has children
 		if (childrenkey)
 		{
 			ReserveChildren(childrenkey->GetSize());

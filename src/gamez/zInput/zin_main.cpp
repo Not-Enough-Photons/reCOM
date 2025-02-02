@@ -7,22 +7,20 @@
 float pad_dt = 0.0f;
 
 bool CInput::m_init = false;
-CPad** CInput::m_pads = NULL;
+CPad* CInput::m_pads[2];
 CKeyboard* CInput::m_keyboard = NULL;
 
 void CInput::Init()
 {
-	OpenPadIO();
-	// TODO:
-	// Add replacement IOP function for Windows/Linux
-	// InitKeyreadStuff();
+	m_init = OpenPadIO() != false;
+
 	m_keyboard = new CKeyboard();
 	m_init = true;
 }
 
 int CInput::OpenPadIO()
 {
-	return -1;
+	return 1;
 }
 
 void CInput::ClosePadIO()
@@ -33,23 +31,23 @@ void CInput::ClosePadIO()
 	}
 }
 
-void CInput::Tick(f32 delta)
+void CInput::Tick(f32 dT)
 {
 	if (m_keyboard != NULL)
 	{
-		// m_keyboard->Tick(delta);
+		// m_keyboard->Tick(dT);
 	}
 
 	for (s32 pad = 0; pad < 2; pad++)
 	{
 		if (m_pads[pad] != NULL)
 		{
-			m_pads[pad]->Tick(delta);
+			m_pads[pad]->Tick(dT);
 		}
 	}
 }
 
-CPad* CInput::CreatePad(s32 slot)
+CPad* CInput::CreatePad(u32 slot)
 {
 	CPad* pad;
 
@@ -66,8 +64,7 @@ CPad* CInput::CreatePad(s32 slot)
 		
 		if (!pad->IsOpen() && m_pads[slot] != NULL)
 		{
-			// delete pad;
-			m_pads = NULL;
+			
 		}
 	}
 	else
@@ -78,7 +75,7 @@ CPad* CInput::CreatePad(s32 slot)
 	return pad;
 }
 
-void CInput::DeletePad(s32 slot)
+void CInput::DeletePad(u32 slot)
 {
 	CPad* pad = m_pads[slot];
 

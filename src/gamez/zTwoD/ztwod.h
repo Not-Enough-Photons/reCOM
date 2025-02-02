@@ -262,8 +262,6 @@ private:
 class C2DFont : public C2D
 {
 public:
-	C2DFont();
-private:
 	std::vector<C2DFontEntry> m_charlist;
 	zdb::CTexHandle* m_pTexHandle;
 	zdb::CTexHandle* m_pGlowTexHandle;

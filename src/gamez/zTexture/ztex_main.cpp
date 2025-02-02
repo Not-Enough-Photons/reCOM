@@ -4,9 +4,14 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zSave/zsave.h"
+#include "gamez/zVideo/zvid.h"
 
 namespace zdb
 {
+	u32 CTexture::m_baseAddress = 0;
+	u32 CTexture::m_endAddress = 0;
+	u32 CTexture::m_startAddress = 0;
+	
 	CTexture::CTexture(const char* name)
 	{
 		m_name = "UNNAMED_TEX";
@@ -45,6 +50,18 @@ namespace zdb
 		}
 	}
 
+	CTexture::~CTexture()
+	{
+		
+	}
+
+	void CTexture::Init()
+	{
+		m_baseAddress = zVid.textureBaseAddr;
+		m_endAddress = zVid.textureEndAddr;
+		m_startAddress = zVid.textureBaseAddr + 0x200;
+	}
+
 	bool CTexture::Read(zdb::CSaveLoad& sload)
 	{
 		bool success = false;
@@ -74,7 +91,7 @@ namespace zdb
 			success = true;
 			memcpy(this, lipbuf, sizeof(TEXTURE_PARAMS));
 			u32 ofs = lipbuf[1].u32[0];
-			m_buffer = &lipbuf->u8[ofs] + 24;
+			m_buffer = lipbuf->u8 + ofs + 0x18;
 		}
 
 		return success;

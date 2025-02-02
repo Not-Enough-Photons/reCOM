@@ -4,7 +4,7 @@
 
 namespace zdb
 {
-    CCell::CCell(const CPnt3D* origin, f32 offset) : CNode()
+    CCell::CCell(const CPnt3D* origin, f32 offset)
     {
         CPnt3D boxextents;
         
@@ -23,6 +23,11 @@ namespace zdb
         m_type = (u32)TYPE::NODE_TYPE_CELL;
 
         m_lightList.erase(m_lightList.begin(), m_lightList.end());
+    }
+
+    CGrid::CGrid()
+    {
+        
     }
     
     bool CGrid::Create(CWorld* world, const tag_GRID_PARAMS* params)
@@ -94,7 +99,7 @@ namespace zdb
                 s32 cx = 0;
                 s32 cy = 0;
                 CPnt3D cellpos;
-                char* buf = NULL;
+                char buf[24];
 
                 cellpos.y = m_origin.y;
                 cellpos.x = m_origin.x + (x * m_CellDim);
@@ -150,7 +155,7 @@ namespace zdb
         }
         else
         {
-            return Create(m_world, this);
+            return Create(sload.m_world, this);
         }
 
         return false;

@@ -29,18 +29,18 @@ enum OP_TYPE
 /// </summary>
 enum class VALVE_TYPE
 {
-	NONE,
-	PERM,
-	TEMP,
-	PERSIST
+	VTYPE_NONE,
+	VTYPE_PERM,
+	VTYPE_TEMP,
+	VTYPE_PERSIST
 };
 
 enum class VALVE_STATE
 {
-	NONE,
-	IDLE,
-	ACTIVE,
-	UNKNOWN
+	VSTATE_DORMANT,
+	VSTATE_TEMPORARY,
+	VSTATE_PERMANENT,
+	VSTATE_PERSISTENT
 };
 
 class CValvePool;
@@ -62,7 +62,7 @@ class CValve
 public:
 	CValve(const char* name, u32 value, VALVE_TYPE type);
 	
-	static void Init();
+	static void Init() { }
 
 	static bool Open(const char* name, VALVE_TYPE type);
 	static void Close();
@@ -92,7 +92,7 @@ public:
 	bool Set(s32 value);
 
 	OP_TYPE ParseOperator(const char* op);
-private:
+
 	char* m_name;
 	u32 m_value : 16;
 	u32 m_type : 8;
@@ -106,5 +106,10 @@ class CValvePool : public std::vector<CValve*>
 {
 public:
 	CValve* Acquire(const char* name, VALVE_TYPE type);
+
+	bool m_has_name;
+	char* m_pool_name;
+	u32 m_pool_length;
+	u32 m_max_char_len;
 };
 

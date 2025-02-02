@@ -113,8 +113,10 @@ protected:
 class CGameMenu
 {
 public:
+	void Tick(f32 dT) {}
+	
 	void DrawForeplane();
-public:
+
 	zdb::CNode m_nodeTop;
 
 	CZAnimZAR* animfile;

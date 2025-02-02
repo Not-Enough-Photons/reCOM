@@ -414,7 +414,7 @@ namespace zar
 			return false;
 		}
 
-		if (m_filename != NULL && m_filename != "DEFAULT_ZAR_NAME")
+		if (m_filename && m_filename != "DEFAULT_ZAR_NAME")
 		{
 			if (m_filename == name)
 			{
@@ -472,7 +472,7 @@ namespace zar
 				}
 			}
 
-			free(&m_filename);
+			zfree(m_filename);
 			m_filename = NULL;
 		}
 

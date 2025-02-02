@@ -53,6 +53,9 @@ namespace zdb
 	class CTexPalette : public PALETTE_PARAMS
 	{
 	public:
+		bool Read(CSaveLoad& sload);
+		bool Read(zar::CZAR& archive);
+		
 		CAssetLib* m_AssetLib;
 
 		char* m_name;
@@ -67,6 +70,7 @@ namespace zdb
 	public:
 		CTexture() {}
 		CTexture(const char* name);
+		~CTexture();
 		
 		static void Init();
 
@@ -74,13 +78,17 @@ namespace zdb
 
 		bool Read(CSaveLoad& saveload);
 		bool Read(zar::CZAR& archive);
-	
+
+		static u32 m_baseAddress;
+		static u32 m_endAddress;
+		static u32 m_startAddress;
+		
 		char* m_name;
 		CAssetLib* m_AssetLib;
 		void* m_buffer;
 		CTexPalette* m_palette;
-		s64 m_gifSelect;
-		s64 m_vuSelect;
+		_word128* m_gifSelect;
+		_word128* m_vuSelect;
 		u16 m_format;
 		u16 m_palID;
 		u16 m_htex_count;

@@ -44,27 +44,30 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 
 bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 {
-	char* fullPath = NULL;
+	char fullPath[64];
 	sprintf_s(fullPath, 64, "%s/%s", path, name);
 
-	for (auto it = m_list.begin(); it != m_list.end(); it++)
-	{
-		zar::CZAR* archive = *it;
+	auto it = m_list.begin();
 
-		if (strstr(archive->m_filename, fullPath) != 0)
+	while (it != m_list.end())
+	{
+		CZAR* archive = *it;
+
+		if (!strstr(archive->m_filename, fullPath))
 		{
+			++it;
 			continue;
 		}
-		else
-		{
-			m_list.erase(it);
-			archive->Close();
+		
+		m_list.erase(it);
+		archive->Close();
 
-			if (archive != NULL)
-			{
-				archive->~CZAR();
-			}
+		if (archive)
+		{
+			delete archive;
 		}
+
+		break;
 	}
 
 	return false;

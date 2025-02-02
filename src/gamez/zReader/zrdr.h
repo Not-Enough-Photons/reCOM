@@ -25,7 +25,7 @@ enum ZRDR_TYPE
 };
 
 extern s32 cur_zrdr_flags;
-extern char* cur_zrdr_path;
+extern char cur_zrdr_path[256];
 extern std::list<char*> zrdr_symbols;
 
 void _resolveA(_zrdr* reader, const _zrdr* other, char* tag);

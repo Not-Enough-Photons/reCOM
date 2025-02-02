@@ -83,7 +83,7 @@ namespace zdb
 		
 		zdb::CWorld* world = NULL;
 
-		FilterMissionFolder(name, "/run", name, m_zed_filename);
+		FilterMissionFolder(name, "D:/run", name, m_zed_filename);
 		strcat(m_zed_filename, "/");
 		strcat(m_zed_filename, name);
 		strcat(m_zed_filename, ".zed");
@@ -97,10 +97,10 @@ namespace zdb
 		}
 		else
 		{
-			world = new zdb::CWorld();
+			world = new CWorld(name);
 
 			m_world = world;
-			m_world->Init();
+			m_world->Initalize();
 
 			metersperunit = 1.0f;
 			shadowvector = CPnt3D::zero;
@@ -166,8 +166,6 @@ namespace zdb
 			}
 
 			m_world->Read(*this);
-			// m_world->m_LOD_Object.Read(*this);
-			// m_world->m_Material_Object.Read(*this);
 			
 			m_zfile.Close();
 		}

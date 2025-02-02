@@ -11,7 +11,7 @@ CMission theMission;
 
 void UpdateMissionArchive(const char* type, const char* path)
 {
-	std::string pathstr = "run/";
+	std::string pathstr = "D:/run/";
 
 	if (type)
 	{
@@ -34,7 +34,7 @@ void UpdateMissionArchive(const char* type, const char* path)
 	{
 		if (strlen(path) != 0)
 		{
-			pathstr.assign("run/", pathstr.length());
+			pathstr.assign("D:/run/", pathstr.length());
 
 			if (strncmp(path, "mp", 2) == 0)
 			{
@@ -124,6 +124,8 @@ bool CMission::Init()
 	netgame->m_clock.m_clock_running = false;
 	netgame->Initialize();
 
+	m_pNetGame = netgame;
+
 	CRdrFile* hud_rdr = zrdr_read("hud.rdr", NULL, 0);
 
 	if (hud_rdr)
@@ -134,12 +136,12 @@ bool CMission::Init()
 
 	zrdr_free(hud_rdr);
 
-	CValve::Open("global_valves.rdr", VALVE_TYPE::PERM);
-	m_valve_complete = CValve::Create("mission_complete", VALVE_TYPE::PERM);
-	m_valve_failure = CValve::Create("mission_failure", VALVE_TYPE::PERM);
-	m_valve_abort = CValve::Create("mission_abort", VALVE_TYPE::PERM);
-	m_valve_timeout = CValve::Create("mission_timeout", VALVE_TYPE::PERM);
-	m_valve_nofade = CValve::Create("mission_nofade", VALVE_TYPE::PERM);
+	CValve::Open("global_valves.rdr", VALVE_TYPE::VTYPE_PERM);
+	m_valve_complete = CValve::Create("mission_complete", VALVE_TYPE::VTYPE_PERM);
+	m_valve_failure = CValve::Create("mission_failure", VALVE_TYPE::VTYPE_PERM);
+	m_valve_abort = CValve::Create("mission_abort", VALVE_TYPE::VTYPE_PERM);
+	m_valve_timeout = CValve::Create("mission_timeout", VALVE_TYPE::VTYPE_PERM);
+	m_valve_nofade = CValve::Create("mission_nofade", VALVE_TYPE::VTYPE_PERM);
 
 	m_ordersRdr = zrdr_read("orders.rdr", NULL, 0);
 	m_materialsRdr = zrdr_read("materials.rdr", NULL, 0);
@@ -162,7 +164,7 @@ bool CMission::Init()
 	hudInit();
 
 	// CTurret::Init("ai_turrets.rdr", "data/common");
-	CRdrArchive::RemoveArchive("readerc.zar", "run");
+	CRdrArchive::RemoveArchive("readerc.zar", "d:/run");
 
 	return true;
 }

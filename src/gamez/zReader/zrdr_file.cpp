@@ -39,7 +39,8 @@ int zrdr_free(CRdrFile* file)
 			file->m_size = 0;
 		}
 
-		file->m_strings.~CSTable();
+		// TODO: Implement a proper way to delete the string table
+		// delete &file->m_strings;
 
 		// TODO: Implement destructor for CRdrFile
 		// delete file;

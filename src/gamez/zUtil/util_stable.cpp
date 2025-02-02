@@ -27,7 +27,7 @@ CSTable::~CSTable()
 {
 	if (m_buffer != NULL)
 	{
-		for (auto it = begin(); it != end(); it++)
+		for (auto it = begin(); it != end(); ++it)
 		{
 			zfree(*it);
 			*it = NULL;

@@ -32,7 +32,7 @@ void CZOnlineLobby::Init()
 		dme_joined_count = 0;
 		accum_dme_joined_count = 0;
 
-		onlineStatusValve = CValve::Create("socom_online_state", VALVE_TYPE::PERM);
+		onlineStatusValve = CValve::Create("socom_online_state", VALVE_TYPE::VTYPE_PERM);
 		ForceReport = false;
 
 		// TODO:

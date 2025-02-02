@@ -1,10 +1,14 @@
 #include "zinput.h"
+#include "SDL3/SDL_gamepad.h"
 
-CPad::CPad(s32 port, s32 slot)
+CPad::CPad(u32 port, u32 slot)
 {
+    m_port = port;
+    m_slot = slot;
+
     if (port == 0 || port == 1)
     {
-
+        m_open = SDL_OpenGamepad(port) != 0;
     }
 }
 

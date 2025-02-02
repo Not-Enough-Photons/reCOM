@@ -36,7 +36,7 @@ enum class PAD_BUTTON
 	PAD_MAX_BUTTONS
 };
 
-void InitKeyreadStuff();
+s32 InitKeyreadStuff();
 
 class CStickType
 {
@@ -65,22 +65,23 @@ public:
 
 	static void Init();
 	static void Uninit();
-	static void Tick(f32 delta);
-	static CPad* CreatePad(s32 slot);
-	static void DeletePad(s32 slot);
+	static void Tick(f32 dT);
+	static CPad* CreatePad(u32 slot);
+	static void DeletePad(u32 slot);
 	static void Flush();
 	static int OpenPadIO();
 	static void ClosePadIO();
 	static bool m_init;
 
-	static CPad** m_pads;
+	static CPad* m_pads[2];
 	static CKeyboard* m_keyboard;
 };
 
 class CPad
 {
 public:
-	CPad(s32 port, s32 slot);
+	CPad() { }
+	CPad(u32 port, u32 slot);
 
 	void Flush();
 	

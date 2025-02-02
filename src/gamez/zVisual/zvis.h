@@ -33,6 +33,12 @@ void hookupVisuals(zar::CZAR* archive, zar::CKey* key, zdb::CNode* node, zdb::CM
 
 extern s32 node_index;
 
+// Header for OpenFlight models.
+struct tag_ObjectHeader
+{
+	
+};
+
 namespace zdb
 {
 	enum class tag_ZVIS_FOV

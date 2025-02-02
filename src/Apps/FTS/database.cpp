@@ -6,7 +6,7 @@
 #include "gamez/zSave/zsave.h"
 #include "gamez/zVisual/zvis.h"
 
-char* database = "ui";
+char* database = "";
 
 extern zar::CZAR archive = zar::CZAR();
 extern zdb::CWorld* theWorld = NULL;
@@ -46,7 +46,7 @@ extern bool LoadWorld(const char* name)
 	
 	appCamera = new CAppCamera(theWorld, theWorld->m_camera);
 	char* pathbuf = NULL;
-		
+		 
 	for (auto it = zdb::CAssetMgr::m_assets.begin(); it != zdb::CAssetMgr::m_assets.end(); ++it)
 	{
 		zdb::CAssetLib* library = *it;

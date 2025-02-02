@@ -173,6 +173,8 @@ public:
 			size_t len = strlen(str);
 			assign(len, str);
 		}
+
+		return *this;
 	}
 };
 

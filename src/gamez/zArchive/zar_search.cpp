@@ -242,7 +242,7 @@ namespace zar
 	bool CZAR::Fetch(const char* name, bool* buf)
 	{
 		bool success = false;
-		char cBool = 0;
+		s32 cBool = 0;
 
 		CKey* openKey = GetOpenKey();
 

@@ -42,6 +42,4 @@ int main(int argc, char** argv)
 		theGame.Tick(zVid.frameTime);
 	} 
 	while (true);
-
-	return 0;
 }

@@ -46,6 +46,13 @@ namespace zdb
 	class CDI;
 }
 
+struct _cellData
+{
+	u32 offPntNorm[2];
+	u32 offUV[2];
+	u32 offColor[2];
+};
+
 namespace zdb
 {
 	extern u32 numNodes;
@@ -145,19 +152,21 @@ namespace zdb
 		static CNode* CreateInstance(CSaveLoad& sload);
 		static CNode* CreateInstance(const char* name, const CPnt3D* position, const CPnt3D* rotation);
 		static CNode* CreateInstance(CModel* model, const CPnt3D* position, const CPnt3D* rotation);
-
-		static CNode* Read(CSaveLoad& sload, CNode* node);
-	
-		virtual bool Read(CSaveLoad& sload);
-		bool ReadDataBegin(CSaveLoad& sload);
-
+		
 		CNode* Create(const char* name);
 
+		static CNode* Read(CSaveLoad& sload, CNode* node);
+		virtual bool Read(CSaveLoad& sload);
+		bool ReadDataBegin(CSaveLoad& sload);
+		
 		void AddChild(CNode* child);
 		s32 DeleteChild(CNode* child);
 		void DeleteChildren();
 		void RemoveFromParent();
 
+		CGridAtom* GetAtom(s16 index);
+		void InsertAtom(CGridAtom* atom);
+		void FreeAtom();
 		bool UpdateGrid() const { return false; }
 
 		CNode* FindChild(CNode* child, bool nested);
@@ -176,10 +185,6 @@ namespace zdb
 
 		virtual s16 Release();
 		bool Rendered();
-
-		CGridAtom* GetAtom(s16 index);
-		void InsertAtom(CGridAtom* atom);
-		void FreeAtom();
 		
 		/// -------------------------------------------
 		/// GETTERS/SETTERS
@@ -207,7 +212,7 @@ namespace zdb
 		void SetName(const char* name);
 		void SetModel(CModel* model);
 		void SetModelname(const char* name);
-	public:
+
 		CNode* m_parent;
 		CNodeVector m_child;
 		CDIVector m_di;
@@ -233,6 +238,52 @@ namespace zdb
 		u32 m_region_mask;
 	};
 
+	class CWind
+	{
+	public:
+		static void RegisterAnimCommands();
+		static void CmdParseWind();
+
+		void Reset();
+		
+		f32 m_AzimuthGoal;
+		f32 m_ZenithGoal;
+		f32 m_SpeedGoal;
+
+		f32 m_AzimuthGoalDelta;
+		f32 m_ZenithGoalDelta;
+		f32 m_SpeedGoalDelta;
+
+		f32 m_Azimuth;
+
+		CPnt4D m_Wind;
+
+		f32 m_Zenith;
+		f32 m_Speed;
+
+		f32 m_AzimuthOffset;
+		f32 m_MinAzimuthOffset;
+		f32 m_MaxAzimuthOffset;
+
+		f32 m_ZenithOffset;
+		f32 m_MinZenithOffset;
+		f32 m_MaxZenithOffset;
+
+		f32 m_AzimuthOffsetVelocity;
+		f32 m_ZenithOffsetVelocity;
+		
+		f32 m_SpeedOffset;
+		f32 m_MinSpeedOffset;
+		f32 m_MaxSpeedOffset;
+
+		f32 m_SpeedOffsetVelocity;
+
+		bool m_TickAzimuth;
+		bool m_TickZenith;
+		bool m_TickSpeed;
+		bool m_TickGoal;
+	};
+	
 	class CNodeUniverse : public std::vector<CNode*>
 	{
 	public:
@@ -248,7 +299,7 @@ namespace zdb
 	{
 		friend class CCamera;
 	public:
-		CWorld() : CNode() {}
+		CWorld(const char* name);
 		~CWorld();
 		
 		static CWorld* m_world;
@@ -266,7 +317,7 @@ namespace zdb
 		void diTick();
 		void Update();
 
-		s32 Initalize();
+		bool Initalize();
 
 		void AddChild(CNode* child);
 		void AddLandmark(CNode* landmark);
@@ -293,6 +344,14 @@ namespace zdb
 
 		u32 m_default_soiltype;
 		char* m_default_soiltype_name;
+
+		DiIntersect* m_diInt;
+		DiIntersect* m_diIntDelay;
+		s32 m_diIntDelayCnt;
+
+		CWind m_Wind;
+
+		_cellData** m_cellData;
 
 		s32 m_maxOverlap;
 
@@ -332,13 +391,6 @@ namespace zdb
 		CTexHandle* m_shadowTexH;
 	};
 	
-	class CWind
-	{
-	public:
-		static void RegisterAnimCommands();
-		void CmdParseWind();
-	};
-
 	class CClutter
 	{
 	private:

@@ -103,6 +103,34 @@ namespace zdb
 		return index;
 	}
 
+	CWorld::CWorld(const char* name)
+	{
+		m_camera = NULL;
+		m_diInt = NULL;
+		m_Wind.Reset();
+
+		m_cellData = NULL;
+
+		m_maxOverlap = 2;
+
+		m_grid = new CGrid();
+
+		SetName(name);
+
+		m_scale = 10.0f;
+		m_invscale = 0.1f;
+		m_world = this;
+
+		m_diInt = new DiIntersect(1024);
+		m_diIntDelayCnt = 0.0f;
+
+		m_gLightDirUpdate = true;
+		m_gLightColUpdate = true;
+
+		m_default_soiltype = 0;
+		m_default_soiltype_name = NULL;
+	}
+	
 	s32 CWorld::GetVersion()
 	{
 		return 0x10001;
@@ -113,7 +141,7 @@ namespace zdb
 		return CAssetMgr::m_assets.GetModel(name);
 	}
 
-	s32 CWorld::Initalize()
+	bool CWorld::Initalize()
 	{
 		CCamera* camera = new CCamera();
 
@@ -129,12 +157,12 @@ namespace zdb
 		m_world->m_gLightColUpdate = true;
 		m_world->m_gLightDirUpdate = true;
 
-		CTexHandle* handle = CTexHandle::Create(m_shadowTex[0]);
-		m_shadowTexH = handle;
+		// CTexHandle* handle = CTexHandle::Create(m_shadowTex[0]);
+		// m_shadowTexH = handle;
 
-		CTexManager::m_texmanager->front()->Add(handle, true);
+		// CTexManager::m_texmanager->front()->Add(handle, true);
 
-		return 1;
+		return true;
 	}
 
 	void CWorld::ReserveChildren(s32 count)
@@ -228,6 +256,34 @@ namespace zdb
 		m_numNoFarClipNodes = 0;
 
 		return 1;
+	}
+
+	void CWind::Reset()
+	{
+		m_ZenithGoal = 0.0f;
+		m_AzimuthGoal = 0.0f;
+		m_SpeedGoal = 0.0f;
+		m_TickGoal = false;
+
+		m_Zenith = 0.0f;
+		m_Azimuth = 0.0f;
+		m_Speed = 8.0f;
+
+		m_AzimuthOffset = 0.0f;
+		m_MinAzimuthOffset = -0.7853982f;
+		m_MaxAzimuthOffset = 0.7853982f;
+		
+		m_ZenithOffset = 0.0f;
+		m_MinZenithOffset = -0.7853982f;
+		m_MaxZenithOffset = 0.7853982f;
+
+		m_AzimuthOffsetVelocity = 0.2617994f;
+		m_ZenithOffsetVelocity = 0.08726646f;
+
+		m_SpeedOffset = 3.0f;
+		m_MinSpeedOffset = -7.5f;
+		m_MaxSpeedOffset = 9.0f;
+		m_SpeedOffsetVelocity = 3.0f;
 	}
 
 }

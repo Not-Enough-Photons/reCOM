@@ -37,21 +37,21 @@ bool CZNetGame::Initialize()
 
     m_uiv_ChatList->Set(&rdr);
 
-    m_pMajorGameStateValve = CValve::Create("mp_major_game_state", 0, VALVE_TYPE::PERM);
+    m_pMajorGameStateValve = CValve::Create("mp_major_game_state", 0, VALVE_TYPE::VTYPE_PERM);
 
-    m_pJoinGameValve = CValve::Create("mp_join_game", VALVE_TYPE::PERM);
-    m_pPlayerTeamValve = CValve::Create("player_team", VALVE_TYPE::PERM);
-    m_pLateJoinerValve = CValve::Create("late_joiner", VALVE_TYPE::PERM);
+    m_pJoinGameValve = CValve::Create("mp_join_game", VALVE_TYPE::VTYPE_PERM);
+    m_pPlayerTeamValve = CValve::Create("player_team", VALVE_TYPE::VTYPE_PERM);
+    m_pLateJoinerValve = CValve::Create("late_joiner", VALVE_TYPE::VTYPE_PERM);
     m_was_late_joiner = false;
-    m_p45SecondClockValve = CValve::Create("mp_45_sec_clock", VALVE_TYPE::PERM);
-    m_pPenaltyValve = CValve::Create("mp_penalty", VALVE_TYPE::PERM);
-    m_pPlayerJoinCountValve = CValve::Create("player_join_count", VALVE_TYPE::PERM);
-    m_pPlayerReadyCountValve = CValve::Create("player_ready_count", VALVE_TYPE::PERM);
-    m_pMPPersistentValve = CValve::Create("mp_persistent", VALVE_TYPE::PERM);
-    m_pBombStatusValve = CValve::Create("mp_bomb", VALVE_TYPE::PERM);
-    m_pGameOverValve = CValve::Create("mp_game_over", 0, VALVE_TYPE::PERM);
-    m_pBombOwnerValve = CValve::Create("bomb_owner", VALVE_TYPE::PERM);
-    m_pRoundCountValve = CValve::Create("round_count", 0, VALVE_TYPE::PERM);
+    m_p45SecondClockValve = CValve::Create("mp_45_sec_clock", VALVE_TYPE::VTYPE_PERM);
+    m_pPenaltyValve = CValve::Create("mp_penalty", VALVE_TYPE::VTYPE_PERM);
+    m_pPlayerJoinCountValve = CValve::Create("player_join_count", VALVE_TYPE::VTYPE_PERM);
+    m_pPlayerReadyCountValve = CValve::Create("player_ready_count", VALVE_TYPE::VTYPE_PERM);
+    m_pMPPersistentValve = CValve::Create("mp_persistent", VALVE_TYPE::VTYPE_PERM);
+    m_pBombStatusValve = CValve::Create("mp_bomb", VALVE_TYPE::VTYPE_PERM);
+    m_pGameOverValve = CValve::Create("mp_game_over", 0, VALVE_TYPE::VTYPE_PERM);
+    m_pBombOwnerValve = CValve::Create("bomb_owner", VALVE_TYPE::VTYPE_PERM);
+    m_pRoundCountValve = CValve::Create("round_count", 0, VALVE_TYPE::VTYPE_PERM);
 
     return true;
 }

@@ -11,7 +11,7 @@
 bool zrdr_init = false;
 bool warnonce = false;
 
-char* cur_zrdr_path = 0;
+char cur_zrdr_path[256];
 s32 cur_zrdr_flags = 0;
 
 _zrdr::_zrdr()
@@ -133,12 +133,12 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 depth)
 
 				if (rdr)
 				{
-					return &rdr->array[1];
+					return rdr;
 				}
 			}
 			else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
 			{
-				return &rdr[1];
+				return rdr + 1;
 			}
 		}
 	}
@@ -285,7 +285,7 @@ bool zrdr_findPNT2D(_zrdr* reader, const char* name, PNT2D* output)
 	}
 	else
 	{
-		i = 1;
+		i = 0;
 
 		f32 axis = 0.0f;
 
@@ -293,13 +293,13 @@ bool zrdr_findPNT2D(_zrdr* reader, const char* name, PNT2D* output)
 		{
 			_zrdr* array = tag->array;
 
-			if (array[1].array[i].type == ZRDR_REAL)
+			if (array[i].type == ZRDR_REAL)
 			{
-				axis = array[1].array[i].real;
+				axis = array[i].real;
 			}
-			else if (array[1].array[i].type == ZRDR_INTEGER)
+			else if (array[i].type == ZRDR_INTEGER)
 			{
-				axis = static_cast<f32>(array[1].array[i].integer);
+				axis = static_cast<f32>(array[i].integer);
 			}
 			else
 			{

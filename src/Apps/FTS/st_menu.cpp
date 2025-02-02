@@ -52,6 +52,47 @@ bool CMenuState::Init()
 			zdb::CVisual::m_camera = camera;
 			thePipe.m_camera = camera;
 		}
+
+		m_menu = new CGameMenu();
+
+		CRdrFile* uisounds = zrdr_read("uisounds.rdr", "data/common/dialog", 0);
+
+		if (uisounds)
+		{
+			_zrdr* sounds = zrdr_findtag(uisounds, "SOUNDS");
+
+			if (sounds)
+			{
+				char* teletype = zrdr_findstring(sounds, "TELETYPE");
+
+				if (!teletype)
+				{
+					TtySoundString = NULL;
+				}
+				else
+				{
+					TtySoundString = teletype;
+				}
+
+				char* back = zrdr_findstring(sounds, "BACK");
+
+				if (!back)
+				{
+					BackSoundString = NULL;
+				}
+				else
+				{
+					BackSoundString = back;
+				}
+			}
+
+			zrdr_free(uisounds);
+		}
+
+		// CSnd::Close();
+		// CSnd::LoadSounds("sounds.rdr", "HUDUI");
+		// CSnd::LoadSounds("sounds.rdr", "SMUS");
+		// CSnd::UIOpen();
 	}
 
 	return true;
@@ -59,6 +100,8 @@ bool CMenuState::Init()
 
 void CMenuState::Tick(f32 dT)
 {
+	m_menu->Tick(dT);
+	
 	// The world has to exist in order for nodes to be rendered
 	if (zdb::CWorld::m_world != NULL)
 	{
