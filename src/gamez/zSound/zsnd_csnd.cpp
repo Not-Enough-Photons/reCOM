@@ -110,7 +110,7 @@ void CSnd::LoadWAV(const char* name)
     
 	m_snd_data = NULL;
 	m_snd_len = NULL;
-	SDL_AudioSpec audioSpec { SDL_AUDIO_S16, 1, 44100 };
+	SDL_AudioSpec audioSpec { SDL_AUDIO_S16, 1, 11025 };
 	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
 	SDL_LoadWAV_IO(stream, false, &audioSpec, &m_snd_data, &m_snd_len);
 
@@ -145,9 +145,8 @@ void CSnd::LoadVAG(const char* name)
 	
 	s16* data = vagDecode(buffer, header);
 	
-	SDL_IOStream* stream = SDL_IOFromMem(data, key->GetSize());
 	m_snd_len = header.samples;
-	SDL_AudioSpec audioSpec { SDL_AUDIO_S16, 1, (s32)header.rate };
+	SDL_AudioSpec audioSpec { SDL_AUDIO_S16BE, 1, (s32)header.rate };
 	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
 
 	SDL_ResumeAudioStreamDevice(m_audiostream);

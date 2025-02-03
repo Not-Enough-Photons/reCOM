@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "gamez/zSystem/zsys.h"
+#include "SDL3/SDL_pixels.h"
 
 namespace zar
 {
@@ -89,7 +90,7 @@ namespace zdb
 		CTexPalette* m_palette;
 		_word128* m_gifSelect;
 		_word128* m_vuSelect;
-		u16 m_format;
+		SDL_PixelFormat m_format;
 		u16 m_palID;
 		u16 m_htex_count;
 		u16 m_gsWords;

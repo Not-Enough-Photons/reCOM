@@ -25,6 +25,7 @@ struct Preview
     SDL_FRect rect;
     SDL_Texture* texture;
     SDL_Surface* surface;
+    zdb::CTexture* ztexture;
 };
 
 Preview preview;
@@ -51,20 +52,64 @@ extern bool LoadTexture(zdb::CTexture texture)
         SDL_DestroySurface(preview.surface);
         preview.surface = NULL;
     }
+
+    s32 pitch = 0;
+
+    if (texture.m_format == SDL_PIXELFORMAT_RGBA32 || texture.m_format == SDL_PIXELFORMAT_RGBA8888)
+    {
+        pitch = texture.m_width * sizeof(u8) * 4;
+    }
+    else if (texture.m_format == SDL_PIXELFORMAT_RGB24)
+    {
+        pitch = texture.m_width * sizeof(u8) * 3;
+    }
+    else if (texture.m_format == SDL_PIXELFORMAT_RGBA5551 || texture.m_format == SDL_PIXELFORMAT_RGBA4444)
+    {
+        pitch = texture.m_width * sizeof(u8) * 2;
+    }
+    else if (texture.m_format == SDL_PIXELFORMAT_INDEX8)
+    {
+        pitch = texture.m_width * sizeof(u8);
+    }
     
-    preview.surface = SDL_CreateSurface(texture.m_width, texture.m_height, SDL_PIXELFORMAT_RGBA32);
+    preview.surface = SDL_CreateSurface(texture.m_width, texture.m_height, texture.m_format);
     
+    if (!preview.surface)
+    {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, SDL_GetError());
+        return false;
+    }
+
     u8* tex_ptr = (u8*)texture.m_buffer;
 
     for (u32 y = 0; y < texture.m_height; y++)
     {
         for (u32 x = 0; x < texture.m_width; x++)
         {
-            SDL_Color col = pal->colors[*tex_ptr++];
+            SDL_Color col;
+
+            if (texture.m_palettized)
+            {
+                col = pal->colors[*tex_ptr++];
+            }
+            else
+            {
+                if (texture.m_transparent)
+                {
+                    col = { tex_ptr[0], tex_ptr[1], tex_ptr[2], tex_ptr[3] };
+                }
+                else
+                {
+                    col = { tex_ptr[0], tex_ptr[1], tex_ptr[2], 255 };
+                }
+                
+                tex_ptr += sizeof(u32);
+            }
+            
             SDL_WriteSurfacePixel(preview.surface, x, y, col.r, col.g, col.b, col.a);
         }
     }
-
+    
     SDL_FlipSurface(preview.surface, SDL_FLIP_VERTICAL);
     
     preview.texture = SDL_CreateTextureFromSurface(renderer, preview.surface);
@@ -75,6 +120,16 @@ extern bool LoadTexture(zdb::CTexture texture)
         return false;
     }
 
+    if (texture.m_bilinear)
+    {
+        SDL_SetTextureScaleMode(preview.texture, SDL_SCALEMODE_LINEAR);
+    }
+    else
+    {
+        SDL_SetTextureScaleMode(preview.texture, SDL_SCALEMODE_NEAREST);
+    }
+
+    preview.surface = SDL_ConvertSurface(preview.surface, SDL_PIXELFORMAT_RGBA32);
     SDL_RenderTexture(renderer, preview.texture, NULL, NULL);
     
     SDL_FRect rect;
@@ -100,14 +155,33 @@ extern bool LoadPalette(zdb::CTexPalette palette)
 
     while (i < palette.m_size)
     {
-        u8 r = ptr[0];
-        u8 g = ptr[1];
-        u8 b = ptr[2];
-        u8 a = ptr[3];
+        u8 r = 0;
+        u8 g = 0;
+        u8 b = 0;
+        u8 a = 0;
 
-        colors.push_back({ r, g, b, a });
-        i += sizeof(u32);
-        ptr += sizeof(u32);
+        if (palette.m_format == 2)
+        {
+            a = ptr[0] & 0xF0;
+            b = ptr[0] & 0x0F;
+            g = ptr[1] & 0xF0;
+            r = ptr[1] & 0x0F;
+            
+            i += sizeof(u16);
+            ptr += sizeof(u16);
+        }
+        else
+        {
+            r = ptr[0];
+            g = ptr[1];
+            b = ptr[2];
+            a = ptr[3];
+            
+            i += sizeof(u32);
+            ptr += sizeof(u32);
+        }
+        
+        colors.insert(colors.begin(), { r, g, b, a });
     }
 
     pal = SDL_CreatePalette(colors.size());
@@ -135,8 +209,8 @@ bool CTestState::Init()
 void CTestState::Tick(f32 dT)
 {
     SDL_RenderClear(theWindow->GetRenderer());
-    SDL_SetRenderDrawColor(theWindow->GetRenderer(), 75, 75, 75, 255);
     CZIMGUI::Tick(dT);
+    SDL_SetRenderDrawColor(theWindow->GetRenderer(), 15, 15, 15, 255);
     SDL_RenderTexture(theWindow->GetRenderer(), preview.texture, NULL, &preview.rect);
     SDL_RenderPresent(theWindow->GetRenderer());
 }

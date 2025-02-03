@@ -77,6 +77,52 @@ namespace zdb
 			m_buffer = &lipbuf->u8[ofs] + 24;
 		}
 
+		if (m_texelBitSize == 4)
+		{
+			m_format = SDL_PIXELFORMAT_ABGR4444;
+		}
+		else if (m_texelBitSize == 8)
+		{
+			m_format = SDL_PIXELFORMAT_ABGR8888;
+		}
+		else
+		{
+			bool palettized = false;
+			
+			if (m_texelBitSize == 16)
+			{
+				palettized = m_palettized;
+			}
+			else
+			{
+				if (m_texelBitSize == 24)
+				{
+					m_format = SDL_PIXELFORMAT_BGR24;
+					m_palID = m_pal_offset >> 50;
+					return success;
+				}
+
+				if (m_texelBitSize == 32)
+				{
+					m_format = SDL_PIXELFORMAT_ABGR32;
+					m_palID = m_pal_offset >> 50;
+					return success;
+				}
+
+				palettized = m_palettized;
+			}
+
+			if (palettized)
+			{
+				m_format = SDL_PIXELFORMAT_INDEX8;
+			}
+			else
+			{
+				m_format = SDL_PIXELFORMAT_BGRA5551;
+			}
+		}
+
+		m_palID = m_pal_offset >> 50;
 		return success;
 	}
 	
@@ -94,6 +140,52 @@ namespace zdb
 			m_buffer = lipbuf->u8 + ofs + 0x18;
 		}
 
+		if (m_texelBitSize == 4)
+		{
+			m_format = SDL_PIXELFORMAT_RGBA4444;
+		}
+		else if (m_texelBitSize == 8)
+		{
+			m_format = SDL_PIXELFORMAT_RGBA8888;
+		}
+		else
+		{
+			bool palettized = false;
+			
+			if (m_texelBitSize == 16)
+			{
+				palettized = m_palettized;
+			}
+			else
+			{
+				if (m_texelBitSize == 24)
+				{
+					m_format = SDL_PIXELFORMAT_RGB24;
+					m_palID = m_pal_offset >> 50;
+					return success;
+				}
+
+				if (m_texelBitSize == 32)
+				{
+					m_format = SDL_PIXELFORMAT_RGBA32;
+					m_palID = m_pal_offset >> 50;
+					return success;
+				}
+
+				palettized = m_palettized;
+			}
+
+			if (palettized)
+			{
+				m_format = SDL_PIXELFORMAT_INDEX8;
+			}
+			else
+			{
+				m_format = SDL_PIXELFORMAT_RGBA5551;
+			}
+		}
+
+		m_palID = m_pal_offset >> 50;
 		return success;
 	}
 	
