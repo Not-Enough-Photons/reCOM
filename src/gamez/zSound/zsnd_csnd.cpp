@@ -27,8 +27,6 @@ std::unordered_map<const char*, CSnd*> CSnd::m_soundmap;
 
 _zrdr* sound_rdr = NULL;
 
-s16* vagDecode(u8* ptr, tag_VAGHeader& header);
-
 CSnd::CSnd()
 {
 	if (!m_isDisabled)
@@ -141,24 +139,41 @@ void CSnd::LoadVAG(const char* name)
 	u8* buffer = (u8*)zmalloc(size);
 	m_vagArchive.Fetch(key, buffer, size);
 
+	CBufferIO io;
+	std::vector<s16> samples;
+	
+	io.Open(buffer, size);
+	
 	tag_VAGHeader header;
+	vag_read_header(&io, &header);
 	
-	s16* data = vagDecode(buffer, header);
+	m_snd_len = (header.size - sizeof(tag_VAGHeader)) / sizeof(tag_VAGChunk);
+
+	for (u32 i = 0; i < m_snd_len; i++)
+	{
+		vag_decode(&io, samples);
+	}
 	
-	m_snd_len = header.samples;
-	SDL_AudioSpec audioSpec { SDL_AUDIO_S16BE, 1, (s32)header.rate };
+	io.Close();
+	
+	SDL_AudioSpec audioSpec
+	{
+		SDL_AUDIO_S16,
+		1,
+		(s32)header.rate
+	};
+	
 	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
 
 	SDL_ResumeAudioStreamDevice(m_audiostream);
 
 	if (SDL_GetAudioStreamAvailable(m_audiostream) < (s32)m_snd_len)
 	{
-		SDL_PutAudioStreamData(m_audiostream, data, key->GetSize());
+		SDL_PutAudioStreamData(m_audiostream, samples.data(), samples.size() * sizeof(s16));
 	}
 	
 	m_vagArchive.CloseKey(key);
 }
-
 
 void CSnd::AddNewCSnd(CSnd* sound)
 {

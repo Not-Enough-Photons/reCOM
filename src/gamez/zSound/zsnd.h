@@ -10,6 +10,9 @@
 #include "gamez/zValve/zvalve.h"
 #include "gamez/zSystem/zsys.h"
 
+#define VAG_SAMPLES 14
+#define VAG_EXPAND_SAMPLES VAG_SAMPLES * 2
+
 class CSnd;
 
 enum SOUND_TYPE
@@ -49,32 +52,33 @@ extern bool bnkArchiveIsOpen;
 extern bool snd_system_initialized;
 extern _zrdr* sound_rdr;
 extern std::unordered_map<const char*, CSnd*> sound_map;
-extern f32 vagLUT[5][2];
-
-// From:
-// https://github.com/eurotools/es-ps2-vag-tool/blob/main/PS2VagTool/Vag%20Functions/SonyVag.cs
-enum class VAG_FLAGS
-{
-	VAG_NOTHING = 0,
-	VAG_LOOP_LAST_BLOCK = 1,
-	VAG_LOOP_REGION = 2,
-	VAG_LOOP_END = 3,
-	VAG_LOOP_FIRST_BLOCK = 4,
-	VAG_UNK = 5,
-	VAG_LOOP_START = 6,
-	VAG_PLAYBACK_END = 7
-};
 
 struct tag_VAGHeader
 {
 	char magic[4];
-	s32 version;
-	s32 reserved00;
-	u32 samples;
+	u32 version;
+	u32 unused1;
+	u32 size;
 	u32 rate;
-	s32 reserved01[3];
+	u32 unused2[3];
 	char name[16];
+	u8 padding[16];
 };
+
+struct tag_VAGChunk
+{
+	union
+	{
+		u8 shift;
+		u8 predict;
+	};
+
+	u8 flags;
+	u8 sample[VAG_SAMPLES];
+};
+
+void vag_read_header(CBufferIO* io, tag_VAGHeader* header);
+void vag_decode(CBufferIO* io, std::vector<s16>& out);
 
 class CSnd
 {
