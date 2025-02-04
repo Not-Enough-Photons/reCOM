@@ -160,8 +160,8 @@ bool CMission::Init()
 	CCharacterType::Open("character.rdr");
 	// CCtrlrConfigs::Init()
 	
-	ZuiInit();
-	hudInit();
+	// ZuiInit();
+	// hudInit();
 
 	// CTurret::Init("ai_turrets.rdr", "data/common");
 	CRdrArchive::RemoveArchive("readerc.zar", "d:/run");

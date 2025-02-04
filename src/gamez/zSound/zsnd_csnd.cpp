@@ -45,7 +45,7 @@ void CSnd::Init()
 	if (!vagArchiveIsOpen)
 	{
 		vagArchiveIsOpen = true;
-		m_vagArchive.Open("D:/RUN/SOUNDS/VAGSTORE.ZAR", 0, 33, 16);
+		m_vagArchive.Open("E:/RUN/SOUNDS/VAGSTORE.ZAR", 0, 33, 16);
 	}
 }
 

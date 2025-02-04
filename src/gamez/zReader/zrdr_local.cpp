@@ -60,5 +60,140 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
         return true;
     }
 
+    for (u32 i = 0; i + 1 < reader->array->integer - 1; i++)
+    {
+        _zrdr* node = NULL;
+        
+        if (i < reader->array->integer - 1)
+        {
+            node = &reader->array[i] + 1;
+        }
+        else
+        {
+            node = NULL;
+        }
+
+        if (node && node->type == ZRDR_STRING)
+        {
+            if (i + 1 < reader->array->integer - 1)
+            {
+                node = &reader->array[i] + 2;
+            }
+            else
+            {
+                node = NULL;
+            }
+
+            if (node && node->type == ZRDR_ARRAY)
+            {
+                break;
+            }
+        }
+    }
+
+    bool grouparray = false;
+    for (u32 i = 0; i + 1 < reader->array->integer - 1; i++)
+    {
+        _zrdr* node = NULL;
+        
+        if (i < reader->array->integer - 1)
+        {
+            node = &reader->array[i] + 1;
+        }
+        else
+        {
+            node = NULL;
+        }
+
+        if (node && node->type == ZRDR_STRING)
+        {
+            if (i + 1 < reader->array->integer - 1)
+            {
+                node = &reader->array[i] + 2;
+            }
+            else
+            {
+                node = NULL;
+            }
+
+            if (node && node->type == ZRDR_ARRAY)
+            {
+                grouparray = true;
+                break;
+            }
+        }
+    }
+
+    if (grouparray)
+    {
+        fprintf_s(out, "(\n");
+
+        u32 node_idx = 0;
+
+        if (offset + 1 > 0)
+        {
+            do
+            {
+                fprintf_s(out, " ");
+                node_idx++;
+            } while (node_idx < offset + 1);
+        }
+    }
+    else
+    {
+        fprintf_s(out, "(");
+    }
+
+    u32 node_idx = 0;
+
+    while (true)
+    {
+        _zrdr* node = NULL;
+        type = static_cast<ZRDR_TYPE>(reader->type);
+        u32 child_count = 0;
+
+        if (type == ZRDR_ARRAY)
+        {
+            child_count = reader->array->integer - 1;
+        }
+
+        if (child_count <= node_idx)
+        {
+            break;
+        }
+
+        child_count = 0;
+
+        if (type == ZRDR_ARRAY)
+        {
+            child_count = reader->array->integer - 1;
+        }
+
+        if (node_idx < child_count)
+        {
+            node = &reader->array[node_idx] + 1;
+        }
+        else
+        {
+            node = NULL;
+        }
+
+        _OutputASCII(out, node, offset + 1);
+        node_idx++;
+    }
+
+    do
+    {
+        _zrdr* node = NULL;
+        type = static_cast<ZRDR_TYPE>(reader->type);
+        u32 child_count = 0;
+        
+        if (type == ZRDR_ARRAY)
+        {
+            
+        }
+    }
+    while (true);
+    
     return true;
 }
