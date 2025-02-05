@@ -1,0 +1,1094 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8objsetup)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(arrow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj1)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(22640.0000002080.00000046240.000000)
+      
+      ROTATE_FROM(-4-0.000000-24-0.00000000.000000)
+      
+      TRANSLATE_TO(27810.0000003250.00000037500.000000)
+      
+      ROTATE_TO(-17-0.00000080.00000000.000000)
+      
+      RUN_TIME(110.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_TO(27130.0000002590.00000032220.000000)
+      
+      ROTATE_TO(-13-0.000000500.00000000.000000)
+      
+      RUN_TIME(40.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(drop_arrow)
+      
+      )
+     
+     WAIT(70.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(drop_arrow)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(20.000000)
+     
+     CALL_ANIMATION(
+       NAME(arrow1)
+      
+      STOP_ON_EXIT()
+      
+      WITH_TRANSLATION(
+        XYZ(25210.0000001600.00000030590.000000)
+       
+       )
+      
+      )
+     
+     WAIT(40.000000)
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj2)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     CALL_SEQUENCE(
+       NAME(drop_arrow)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(24630.0000001850.00000044030.000000)
+      
+      ROTATE_FROM(-28-0.0000001230.00000000.000000)
+      
+      TRANSLATE_TO(24630.0000001850.00000044030.000000)
+      
+      ROTATE_TO(-28-0.0000001230.00000000.000000)
+      
+      RUN_TIME(70.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(drop_arrow)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(30.000000)
+     
+     CALL_ANIMATION(
+       NAME(arrow1)
+      
+      STOP_ON_EXIT()
+      
+      WITH_TRANSLATION(
+        XYZ(23600.000000950.00000044750.000000)
+       
+       )
+      
+      )
+     
+     WAIT(40.000000)
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj3)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     CALL_SEQUENCE(
+       NAME(drop_arrow)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(21790.0000001060.00000046200.000000)
+      
+      ROTATE_FROM(-8-0.000000-28-0.00000000.000000)
+      
+      TRANSLATE_TO(21790.0000001060.00000046200.000000)
+      
+      ROTATE_TO(-8-0.000000-28-0.00000000.000000)
+      
+      RUN_TIME(70.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(drop_arrow)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(30.000000)
+     
+     CALL_ANIMATION(
+       NAME(arrow1)
+      
+      STOP_ON_EXIT()
+      
+      WITH_TRANSLATION(
+        XYZ(22440.000000890.00000044940.000000)
+       
+       )
+      
+      )
+     
+     WAIT(40.000000)
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj4)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(snow_falling)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(snow_falling)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(17410.0000001390.00000015000.000000)
+      
+      ROTATE_FROM(-10-0.000000-63-0.00000000.000000)
+      
+      TRANSLATE_TO(17560.0000001360.00000014880.000000)
+      
+      ROTATE_TO(-9-0.000000-81-0.00000000.000000)
+      
+      RUN_TIME(50.000000)
+      
+      )
+     
+     WAIT(30.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj5)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(22280.000000820.00000018280.000000)
+      
+      ROTATE_FROM(-10-0.000000800.00000000.000000)
+      
+      TRANSLATE_TO(22180.000000870.00000017610.000000)
+      
+      ROTATE_TO(-13-0.0000001280.00000000.000000)
+      
+      RUN_TIME(100.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj6)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     CALL_SEQUENCE(
+       NAME(drop_arrow)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(14630.0000002420.00000021670.000000)
+      
+      ROTATE_FROM(-28-0.000000210.00000000.000000)
+      
+      TRANSLATE_TO(13080.0000001980.00000021470.000000)
+      
+      ROTATE_TO(-16-0.00000000.00000000.000000)
+      
+      RUN_TIME(20.000000)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(drop_arrow)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(30.000000)
+     
+     CALL_ANIMATION(
+       NAME(arrow1)
+      
+      STOP_ON_EXIT()
+      
+      WITH_TRANSLATION(
+        XYZ(13180.000000700.00000018190.000000)
+       
+       )
+      
+      )
+     
+     WAIT(40.000000)
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj7a)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(19960.0000001050.00000025030.000000)
+      
+      ROTATE_FROM(-7-0.000000-62-0.00000000.000000)
+      
+      TRANSLATE_TO(19960.0000001050.00000025030.000000)
+      
+      ROTATE_TO(-7-0.000000-62-0.00000000.000000)
+      
+      RUN_TIME(30.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(19330.000000900.00000028010.000000)
+      
+      ROTATE_FROM(-6-0.000000-143-0.00000000.000000)
+      
+      TRANSLATE_TO(19330.000000900.00000028010.000000)
+      
+      ROTATE_TO(-6-0.000000-143-0.00000000.000000)
+      
+      RUN_TIME(30.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(14450.0000001430.00000022850.000000)
+      
+      ROTATE_FROM(-8-0.000000-144-0.00000000.000000)
+      
+      TRANSLATE_TO(14450.0000001430.00000022850.000000)
+      
+      ROTATE_TO(-8-0.000000-144-0.00000000.000000)
+      
+      RUN_TIME(30.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj8)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      ROTATE_FROM(00.000000-168-0.00000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      ROTATE_TO(40.000000-160-0.00000000.000000)
+      
+      RUN_TIME(100.000000)
+      
+      )
+     
+     WAIT(30.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj9)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(20380.0000001810.00000023450.000000)
+      
+      ROTATE_FROM(-4-0.0000001200.00000000.000000)
+      
+      TRANSLATE_TO(13620.0000002050.00000023500.000000)
+      
+      ROTATE_TO(-20-0.0000002210.00000000.000000)
+      
+      RUN_TIME(70.000000)
+      
+      )
+     
+     WAIT(30.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj10)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(16700.0000001950.00000033580.000000)
+      
+      ROTATE_FROM(-28-0.0000001310.00000000.000000)
+      
+      TRANSLATE_TO(16730.0000001410.00000032670.000000)
+      
+      ROTATE_TO(-10-0.0000001450.00000000.000000)
+      
+      RUN_TIME(70.000000)
+      
+      )
+     
+     WAIT(30.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj11)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     SET_CAMERA_REGION_TEST(ON)
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(snow_falling)
+      
+      )
+     
+     IF(
+       VALVE(pincusion_on==10.000000)
+      
+      )
+     
+     ELSE()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(Snow3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     SET_CAMERA_REGION_TEST(OFF)
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     IF(
+       NODE_ACTIVE(
+        NAME(Snow3)
+       
+       STATE(ACTIVE)
+       
+       )
+      
+      )
+     
+     VALVE(pincusion_on=10.000000)
+     
+     ELSE()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(Snow3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     VALVE(pincusion_on=00.000000)
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(GLOBALcamera)
+      
+      TRANSLATE_FROM(18610.0000002440.00000022780.000000)
+      
+      ROTATE_FROM(-19-0.0000001330.00000000.000000)
+      
+      TRANSLATE_TO(18580.0000002010.00000022590.000000)
+      
+      ROTATE_TO(-9-0.0000001360.00000000.000000)
+      
+      RUN_TIME(50.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(snow_falling)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(GLOBALcamera)
+      
+      TRANSLATE_FROM(14650.0000001540.00000025200.000000)
+      
+      ROTATE_FROM(-32-0.0000001720.00000000.000000)
+      
+      TRANSLATE_TO(14910.0000001360.00000025240.000000)
+      
+      ROTATE_TO(-1-0.0000001300.00000000.000000)
+      
+      RUN_TIME(80.000000)
+      
+      )
+     
+     WAIT(30.000000)
+     
+     CALL_ANIMATION(
+       NAME(snow_falling)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8obj13)
+    
+    ACTIVATION(ON_CALL)
+    
+    CLEANUP_SEQUENCE(
+      ai::STOPALL(false)
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     CAMERA_PARAMS(
+       RESTORE_PARAMS()
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      ai::STOPALL(true)
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     CAMERA_PARAMS(
+       SAVE_PARAMS()
+      
+      FOV(00.000000700.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     CALL_SEQUENCE(
+       NAME(drop_arrow)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(camera)
+      
+      TRANSLATE_FROM(20750.0000003600.00000038660.000000)
+      
+      ROTATE_FROM(-17-0.000000650.00000000.000000)
+      
+      TRANSLATE_TO(16740.0000001180.00000036920.000000)
+      
+      ROTATE_TO(-13-0.000000650.00000000.000000)
+      
+      RUN_TIME(40.000000)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(drop_arrow)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(50.000000)
+     
+     CALL_ANIMATION(
+       NAME(arrow1)
+      
+      STOP_ON_EXIT()
+      
+      WITH_TRANSLATION(
+        XYZ(14570.000000350.00000036030.000000)
+       
+       )
+      
+      )
+     
+     WAIT(40.000000)
+     
+     STOP_ANIMATION(
+       NAME(arrow1)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(arrow*)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    CLEANUP_SEQUENCE(
+      OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(LOCALdrop_arrow)
+      
+      TRANSLATE_FROM(00.0000001200.00000000.000000)
+      
+      TRANSLATE_TO(00.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(LOCALdrop_arrow)
+      
+      TRANSLATION(00.000000900.000000400.000000-160-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(LOCALdrop_arrow)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(LOCALdrop_arrow)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,571 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     NAME(doorhit)
+    
+    CREATE_CLONES()
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONPARENTNAME(doorbit1)
+      
+      NAME(doorbit2)
+      
+      NAME(doorbit3)
+      
+      NAME(doorbit4)
+      
+      NAME(doorbit5)
+      
+      NAME(doorbit6)
+      
+      NAME(doorbit7)
+      
+      NAME(doorbit8)
+      
+      )
+     
+     (
+       ACTIVENAME(doorbits)
+      
+      NAME(doordi)
+      
+      NAME(detail)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(doorbits)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(doorhit)
+    
+    ANIMATION_NAME(blowDoor)
+    
+    HEALTH_ROOT_NAME(doordi)
+    
+    HEALTH(10.000000)
+    
+    SHIELD(100.000000)
+    
+    CREATE_CLONES()
+    
+    ACTIVATION(WEAPON_HIT)
+    
+    SEQUENCE_DEFINITION(
+      NAME(turnitoff)
+     
+     ai::MAP(
+       clear_action(10.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(doordi)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(detail)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(doorbits)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit1)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit1)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit2)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit2)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit3)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit3)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit4)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit4)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit5)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit5)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit6)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit6)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit7)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit7)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(doorbreak)
+      
+      WITH_NODE(doorbit8)
+      
+      WITH_TRANSLATION(
+        AT_NODE(doorbit8)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ACTIVATION(ON_CALL)
+    
+    ANIMATION_NAME(doorbreak)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_DELETE_CHILD(
+       PARENT(doorbits)
+      
+      CHILD(INPUT_NODE)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(INPUT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     OBJECT_ADD_CHILD(
+       PARENT(GLOBALm8)
+      
+      CHILD(INPUT_NODE)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(INPUT_NODE)
+      
+      GRAVITY()
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      
+      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      
+      FORWARD_ROTATION(DISTANCE0.000000-nan)
+      
+      RUN_TIME(80.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      OPACITY_FROM(0.000000ON)
+      
+      OPACITY_TO(0.000000ON)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(INPUT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      OPACITY_FROM(0.000000ON)
+      
+      OPACITY_TO(0.000000OFF)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(singleDoor)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(seq_0)
+     
+     IF(
+       VALVE(INPUT_VALVE==00.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(open)
+      
+      )
+     
+     ELSEIF(
+       VALVE(INPUT_VALVE==10.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(close)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(open)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::MOVE(
+       node(INPUT_NODE)
+      
+      ofs(0.0000000.000000-13-0.000000)
+      
+      dist(0.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Open door" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     VALVE(INPUT_VALVE=10.000000)
+     
+     ai::EVENT(
+       node(INPUT_NODE)
+      
+      pos(0.0000000.000000-13-0.000000)
+      
+      range(0.000000)
+      
+      duration(0.000000)
+      
+      )
+     
+     ai::MOVE(
+       selfpos(0.0000000.0000000.000000)
+      
+      dist(0.000000)
+      
+      noblock)
+     
+     SOUND(
+       START()
+      
+      NAME(SND_DOOR_OPEN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      RELATIVE()
+      
+      ROTATE_FROM(0.0000000.0000000.000000)
+      
+      ROTATE_TO(0.000000-nan0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     ai::SIGNAL(AISIG_ANIMCOMPLETE)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(close)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::MOVE(
+       node(INPUT_NODE)
+      
+      ofs(0.0000000.000000-13-0.000000)
+      
+      dist(0.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Open door" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     VALVE(INPUT_VALVE=00.000000)
+     
+     ai::MOVE(
+       selfpos(0.0000000.0000000.000000)
+      
+      dist(0.000000)
+      
+      noblock)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      RELATIVE()
+      
+      ROTATE_FROM(0.0000000.0000000.000000)
+      
+      ROTATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      NAME(SND_DOOR_CLOSE)
+      
+      AT_NODE(INPUT_NODE)
+      
+      )
+     
+     ai::SIGNAL(AISIG_ANIMCOMPLETE)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(kick_singleDoor)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(seq_0)
+     
+     IF(
+       VALVE(INPUT_VALVE==00.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(open)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(open)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::MOVE(
+       node(INPUT_NODE)
+      
+      ofs(0.0000000.000000-13-0.000000)
+      
+      dist(0.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Kick open door" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     VALVE(INPUT_VALVE=10.000000)
+     
+     ai::EVENT(
+       node(INPUT_NODE)
+      
+      pos(0.0000000.000000-13-0.000000)
+      
+      range(0.000000)
+      
+      duration(0.000000)
+      
+      )
+     
+     ai::MOVE(
+       selfpos(0.0000000.0000000.000000)
+      
+      dist(0.000000)
+      
+      noblock)
+     
+     SOUND(
+       START()
+      
+      NAME(SND_DOOR_OPEN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      RELATIVE()
+      
+      ROTATE_FROM(0.0000000.0000000.000000)
+      
+      ROTATE_TO(0.000000-nan0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      RELATIVE()
+      
+      ROTATE_FROM(0.000000-nan0.000000)
+      
+      ROTATE_TO(0.000000-nan0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     ai::SIGNAL(AISIG_ANIMCOMPLETE)
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

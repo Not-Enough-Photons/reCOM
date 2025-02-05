@@ -1,0 +1,2531 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(objectives)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      NAME(start)
+     
+     IF(
+       VALVE(ReplayMissionMusic==00.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(PlayMPEG)
+      
+      ARGUMENT(run/movies/0122.pss)
+      
+      )
+     
+     ENDIF()
+     
+     VALVE(ReplayMissionMusic=10.000000)
+     
+     HUD_TRIGGER_MISSION_CAM(m8bs)
+     
+     HUD_TRIGGER_MISSION_CAM(m8tut1)
+     
+     WAIT(0.000000)
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE: INSERT INTO THE MISSION AREA" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(computer==990.000000)
+      
+      &&VALVE(extract==10.000000)
+      
+      &&VALVE(cratecount>=30.000000)
+      
+      &&VALVE(POBJ5==10.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     MESSAGE(
+       MESSAGE("VICTORY: MISSION OBJECTIVES COMPLETED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_VM08_67)
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(success)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(player_valve_alive==00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(success)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("FAILURE: PLAYER DEATH" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_PLAYER_DEATH)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(failure)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     ELSEIF(
+       VALVE(nodocs==10.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(success)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("FAILURE: DOCUMENTS DESTROYED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_VM08_11)
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(failure)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     ELSEIF(
+       VALVE(aiteam_01==10.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(success)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       NAME(SND_VOC_231)
+      
+      START()
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("MISSION FAILURE: YOUR SEAL TEAM HAS BEEN INCAPACITATED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(failure)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Insert)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(InsertObj)
+       
+       entity(player)
+       
+       )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: INSERTION ACHIEVED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(POBJ4=10.000000)
+     
+     SOUND(
+       NAME(MUS_OBJ_COMPLETE)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     HUD_TRIGGER_MISSION_CAM(m8tut2)
+     
+     WAIT(0.000000)
+     
+     IF(
+       VALVE(POBJ1==00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("NEW OBJECTIVE: SECURE THE TERRORIST'S LAPTOP COMPUTER" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Insert)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sentry)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(OutPatrol4_valve_alive==00.000000)
+      
+      ||ai::INSTATE(
+        state(restrained)
+       
+       entity(OutPatrol4)
+       
+       )
+      
+      ||ai::INSTATE(
+        state(following)
+       
+       entity(OutPatrol4)
+       
+       )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: SENTRY NEUTRALIZED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ1=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Sentry)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Ambush_cover)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(OutPatrol4_valve_alive==00.000000)
+      
+      ||ai::INSTATE(
+        state(restrained)
+       
+       entity(OutPatrol4)
+       
+       )
+      
+      ||ai::INSTATE(
+        state(following)
+       
+       entity(OutPatrol4)
+       
+       )
+      
+      )
+     
+     VALVE(SOBJ10Fail=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Ambush_cover)
+      
+      )
+     
+     ELSEIF(
+       ai::INREGION(
+        region(Ambush)
+       
+       entity(Bailey)
+       
+       )
+      
+      &&ai::INREGION(
+        region(Ambush)
+       
+       entity(DiMone)
+       
+       )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: BRAVO MOVED TO CHARLIE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ10=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Ambush_cover)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Hostagewarn)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(aiteam_04<=30.000000)
+      
+      &&VALVE(Snow3_valve_alive==10.000000)
+      
+      )
+     
+     IF(
+       VALVE(POBJ3==00.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_51)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     MESSAGE(
+       MESSAGE("NEW OBJECTIVE: CAPTURE TERRORIST FOR QUESTIONING" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Hostagewarn)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Computer)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(computer==990.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: INTEL RECOVERED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(POBJ1=10.000000)
+     
+     SOUND(
+       NAME(MUS_OBJ_COMPLETE)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     IF(
+       VALVE(POBJ5==00.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_61)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     MESSAGE(
+       MESSAGE("NEW OBJECTIVE: SECURE COMPOUND" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     CALL_SEQUENCE(
+       NAME(SnowMob1)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Computer)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Crates)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(cratecount==30.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("THIRD SUPPLY CACHE DESTROYED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: SUPPLIES DESTROYED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(POBJ2=10.000000)
+     
+     SOUND(
+       NAME(MUS_OBJ_COMPLETE)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_55)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     ELSE()
+     
+     ai::SOUND(
+       name(SND_VM08_58)
+      
+      entity(Hutchins)
+      
+      broadcast)
+     
+     ENDIF()
+     
+     WAIT(0.000000)
+     
+     IF(
+       VALVE(POBJ3==00.000000)
+      
+      )
+     
+     HUD_TRIGGER_MISSION_CAM(m8tut4)
+     
+     WAIT(0.000000)
+     
+     IF(
+       VALVE(POBJ3==00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("NEW OBJECTIVE: SECURE PINCUSHION" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Crates)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Crate1)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(cratecount==10.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_VM08_73)
+      
+      START()
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("FIRST SUPPLY CACHE DESTROYED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(Spotted=10.000000)
+     
+     ai::COMM(
+       team(130.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     ai::PARAM(
+       aware=20.000000entity(Leader)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Crate1)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Crate2)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(cratecount==20.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_VM08_74)
+      
+      START()
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("SECOND SUPPLY CACHE DESTROYED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Crate2)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Compound)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(SOBJ2==10.000000)
+      
+      &&VALVE(SOBJ3==10.000000)
+      
+      &&VALVE(SOBJ4==10.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: COMPOUND SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(POBJ5=10.000000)
+     
+     IF(
+       !VALVE(cratecount==30.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       NAME(SND_VM08_54)
+      
+      START()
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("NEW OBJECTIVE: DESTROY SUPPLY CACHES" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Compound)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(LodgePrompt)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(aiteam_11==00.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     MESSAGE(
+       MESSAGE("LODGE GUARDS ELIMINATED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(LodgePrompt)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Lodge)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(SearchLodge)
+       
+       entity(player)
+       
+       )
+      
+      &&VALVE(aiteam_11==00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: BUILDING SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ2=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(LodgePrompt)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Lodge)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(SnowPrompt)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(Snow1_valve_alive==00.000000)
+      
+      &&VALVE(Snow2_valve_alive==00.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     MESSAGE(
+       MESSAGE("BOSLER BUILDING GUARDS ELIMINATED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(SnowPrompt)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Snow)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(SearchSnow)
+       
+       entity(player)
+       
+       )
+      
+      &&VALVE(Snow1_valve_alive==00.000000)
+      
+      &&VALVE(Snow2_valve_alive==00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: BUILDING SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ3=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(SnowPrompt)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Snow)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Cabin)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(CabinBreech==20.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: BRAVO CLEARED CABIN" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ4=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Cabin2Prompt)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Cabin2)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Cabin)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Cabin2Prompt)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(Shed1_valve_alive==00.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     MESSAGE(
+       MESSAGE("CABIN BUILDING GUARD ELIMINATED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Cabin2Prompt)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Cabin2)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Safe1)
+       
+       entity(player)
+       
+       )
+      
+      &&VALVE(Shed1_valve_alive==00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: CABIN SECURE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ4=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Cabin2Prompt)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Cabin)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Cabin2)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Hutchins_killed)
+     
+     WHILE(
+       VALVE(Hutchins_valve_alive!=00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       NAME(MUS_BUDDY_DEATH)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Hutchins_killed)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Bailey_killed)
+     
+     WHILE(
+       VALVE(Bailey_valve_alive!=00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       NAME(MUS_BUDDY_DEATH)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Bailey_killed)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(DiMone_killed)
+     
+     WHILE(
+       VALVE(DiMone_valve_alive!=00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       NAME(MUS_BUDDY_DEATH)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(DiMone_killed)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Leader_killed)
+     
+     WHILE(
+       VALVE(Leader_valve_alive!=00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_14)
+      
+      entity(Leader)
+      
+      )
+     
+     ELSE()
+     
+     ai::SOUND(
+       name(SND_VM08_15)
+      
+      entity(Leader)
+      
+      )
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Leader_killed)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Bravo_cover)
+     
+     ACTIVATION(ON_CALL)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(comerunning==10.000000)
+      
+      )
+     
+     VALVE(SOBJ9Fail=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Bravo_cover)
+      
+      )
+     
+     ELSEIF(
+       VALVE(Bailey_valve_alive==00.000000)
+      
+      &&VALVE(DiMone_valve_alive==00.000000)
+      
+      )
+     
+     VALVE(SOBJ9Fail=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Bravo_cover)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       (
+        ai::INREGION(
+         region(Cover)
+        
+        entity(Bailey)
+        
+        )
+       
+       ||VALVE(Bailey_valve_alive==00.000000)
+       
+       )
+      
+      &&(
+        ai::INREGION(
+         region(Cover)
+        
+        entity(DiMone)
+        
+        )
+       
+       ||VALVE(DiMone_valve_alive==00.000000)
+       
+       )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: BRAVO COVERING DREDGE ENTRY" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_59)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     VALVE(SOBJ9=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(Bravo_cover)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(RestrainKola)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INSTATE(
+        state(following)
+       
+       entity(Snow3)
+       
+       )
+      
+      ||ai::INSTATE(
+        state(restrained)
+       
+       entity(Snow3)
+       
+       )
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Hostagewarn)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: PINCUSHION SECURED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(hostage=10.000000)
+     
+     VALVE(POBJ3=10.000000)
+     
+     SOUND(
+       NAME(MUS_OBJ_COMPLETE)
+      
+      MUSIC_EVENT()
+      
+      START()
+      
+      )
+     
+     SOUND(
+       NAME(SND_VM08_66)
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       NAME(SND_VM08_53)
+      
+      START()
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("ESCORT PINCUSHION TO THE EXTRACTION ZONE" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(RestrainKola)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Extract)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Extract)
+       
+       entity(Snow3)
+       
+       )
+      
+      &&ai::INSTATE(
+        state(rescued)
+       
+       entity(Snow3)
+       
+       )
+      
+      )
+     
+     VALVE(extract=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(PlayMPEG)
+      
+      ARGUMENT(run/movies/m8/extract.pss)
+      
+      )
+     
+     IF(
+       VALVE(computer==990.000000)
+      
+      &&VALVE(extract==10.000000)
+      
+      &&VALVE(cratecount>=30.000000)
+      
+      &&VALVE(POBJ5==10.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(success)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     ENDIF()
+     
+     VALVE(extractsync=10.000000)
+     
+     VALVE(Spotted=10.000000)
+     
+     ai::COMM(
+       team(130.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     ai::PARAM(
+       aware=20.000000entity(Leader)
+      
+      )
+     
+     VALVE(SOBJ6=10.000000)
+     
+     MESSAGE(
+       MESSAGE("OBJECTIVE COMPLETED: TERRORIST EXTRACTED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Extract)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Bonus)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(Shed2_valve_alive==00.000000)
+      
+      )
+     
+     IF(
+       VALVE(outhouse1==10.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("BONUS OBJECTIVE COMPLETED: OUTHOUSE AMBUSH SUCCESSFUL" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     VALVE(SOBJ7=10.000000)
+     
+     ai::SOUND(
+       name(SND_VM08_23)
+      
+      entity(DiMone)
+      
+      broadcast)
+     
+     STOP_SEQUENCE(
+       NAME(Bonus)
+      
+      )
+     
+     ELSE()
+     
+     STOP_SEQUENCE(
+       NAME(Bonus)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper1)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Crapper)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(100.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_ALASKA)
+      
+      MUSIC_LOCAL()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper2)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper1)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper2)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Shed)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(100.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_ALASKA)
+      
+      MUSIC_LOCAL()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper1)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper2)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper3)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Bunkhouse)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(110.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_AK_STEALTH02)
+      
+      MUSIC_LOCAL()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper3)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper4)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Snowshed)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(120.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_AK_STEALTH03)
+      
+      MUSIC_LOCAL()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper4)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper5)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Dredge)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(130.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     IF(
+       VALVE(Bailey_valve_alive==10.000000)
+      
+      ||VALVE(DiMone_valve_alive==10.000000)
+      
+      )
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_50)
+      
+      entity(Hutchins)
+      
+      broadcast)
+     
+     ELSE()
+     
+     ai::SOUND(
+       name(SND_VM08_56)
+      
+      entity(DiMone)
+      
+      broadcast)
+     
+     ENDIF()
+     
+     IF(
+       VALVE(SOBJ9==00.000000)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACTICAL: ORDER BRAVO TO RUN TO ZULU" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     CALL_SEQUENCE(
+       NAME(Bravo_cover)
+      
+      )
+     
+     VALVE(SOBJ9Display=10.000000)
+     
+     ELSE()
+     
+     VALVE(SOBJ9Fail=10.000000)
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper5)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper6)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(MidBottom)
+       
+       team(10.000000)
+       
+       )
+      
+      ||ai::INREGION(
+        region(MidLink)
+       
+       team(10.000000)
+       
+       )
+      
+      ||ai::INREGION(
+        region(MidLink2)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(90.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     ai::COMM(
+       team(140.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_M8_CAMP)
+      
+      MUSIC_LOCAL()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper6)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper7)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Generator)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(130.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_16)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     ELSE()
+     
+     ai::SOUND(
+       name(SND_VM08_17)
+      
+      entity(DiMone)
+      
+      broadcast)
+     
+     ENDIF()
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper7)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper8)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(BottomOStairs)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(150.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_AMBUSH)
+      
+      MUSIC_LOCAL()
+      
+      START()
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper8)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Sleeper9)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(TopOStairs)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ai::COMM(
+       team(60.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Sleeper9)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(SpotKola)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(Snow3_valve_alive==00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(SpotKola)
+      
+      )
+     
+     ELSEIF(
+       ai::INVIEW(
+        target(Snow3)
+       
+       viewer(player)
+       
+       )
+      
+      )
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_18)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     ELSE()
+     
+     ai::SOUND(
+       name(SND_VM08_19)
+      
+      entity(DiMone)
+      
+      broadcast)
+     
+     ENDIF()
+     
+     MESSAGE(
+       MESSAGE("INFO: PINCUSHION SPOTTED AND IDENTIFIED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(SpotKola)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(KillKola)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(Snow3_valve_alive==00.000000)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(success)
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("MISSION FAILURE: PINCUSHION KILLED" )
+      
+      RED(00.000000)
+      
+      GREEN(00.000000)
+      
+      BLUE(00.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_VM08_57)
+      
+      START()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(failure)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(RestrainKola)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(KillKola)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Out1)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(out_count==10.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ai::SOUND(
+       name(SND_VM08_62)
+      
+      entity(Hutchins)
+      
+      broadcast)
+     
+     STOP_SEQUENCE(
+       NAME(Out1)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Out2)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(out_count==20.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ai::SOUND(
+       name(SND_VM08_63)
+      
+      entity(Bailey)
+      
+      broadcast)
+     
+     STOP_SEQUENCE(
+       NAME(Out2)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(SnowMob1)
+     
+     ACTIVATION(ON_CALL)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(Down1)
+       
+       entity(player)
+       
+       )
+      
+      ||ai::INREGION(
+        region(Down2)
+       
+       entity(player)
+       
+       )
+      
+      ||ai::INREGION(
+        region(Down3)
+       
+       entity(player)
+       
+       )
+      
+      ||ai::INREGION(
+        region(Down4)
+       
+       entity(player)
+       
+       )
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(SnowMob2)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(MidTop)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(SnowMob1)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(SnowMob2)
+     
+     ACTIVATION(ON_CALL)
+     
+     WHILE(TRUE)
+     
+     IF(
+       !ai::INREGION(
+        region(Dredge)
+       
+       entity(player)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(70.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(PlayMPEG)
+      
+      ARGUMENT(run/movies/m8/sriders.pss)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(SnowMob2)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(MidTop)
+     
+     ACTIVATION(ON_CALL)
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INREGION(
+        region(MidTop)
+       
+       team(10.000000)
+       
+       )
+      
+      ||ai::INREGION(
+        region(MidTop2)
+       
+       team(10.000000)
+       
+       )
+      
+      )
+     
+     ai::COMM(
+       team(50.000000)
+      
+      cmd(CMD_AWAKE)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(MidTop)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(success)
+     
+     ACTIVATION(ON_CALL)
+     
+     VALVE(nofade=10.000000)
+     
+     VALVE(mission_complete=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(failure)
+     
+     ACTIVATION(ON_CALL)
+     
+     VALVE(mission_failure=10.000000)
+     
+     STOP_SEQUENCE(
+       NAME(start)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

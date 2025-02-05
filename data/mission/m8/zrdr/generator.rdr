@@ -1,0 +1,860 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     NAME(gen_fiddle_switch)
+    
+    ANIMATION_NAME(turn_off_gen)
+    
+    ACTIVATION(ON_CALL)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(INPUT_VALVE==10.000000)
+      
+      )
+     
+     ai::MOVE(
+       node(INPUT_NODE)
+      
+      ofs(0.0000000.0000000.000000)
+      
+      dist(100.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Flipswitch reverse" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     ai::EVENT(
+       node(INPUT_NODE)
+      
+      pos(0.0000000.000000-13-0.000000)
+      
+      range(0.000000)
+      
+      duration(0.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_switch_up)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     VALVE(INPUT_VALVE=00.000000)
+     
+     ELSE()
+     
+     ai::MOVE(
+       node(INPUT_NODE)
+      
+      ofs(0.0000000.0000000.000000)
+      
+      dist(100.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim(Flipswitch)
+      
+      postwait(0.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_switch_down)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     VALVE(INPUT_VALVE=10.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(generator_1)
+    
+    ANIMATION_NAME(gen_switch_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION_FROM_TO(
+       NAME(LOCALswitch)
+      
+      ROTATE_FROM(0.0000000.0000000.000000)
+      
+      ROTATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out01)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out02)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out03)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out04)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out05)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out06)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out07)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out08)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out09)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out10)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out11)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out12)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out13)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out14)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out15)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out16)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(gen_goin_down)
+     
+     STOP_ANIMATION(
+       NAME(gen_smoke1)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       START()
+      
+      STOP()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_GEN_DESTROY)
+      
+      AT_NODE(INPUT_NODE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(generator_1)
+    
+    ANIMATION_NAME(gen_switch_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION_FROM_TO(
+       NAME(LOCALswitch)
+      
+      ROTATE_FROM(0.0000000.0000000.000000)
+      
+      ROTATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_smoke1)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on01)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on02)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on03)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on04)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on05)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on06)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on07)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on08)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on09)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on10)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on11)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on12)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on13)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on14)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on15)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_on16)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(generator_1)
+    
+    HEALTH_ROOT_NAME(gen_good)
+    
+    ACTIVATION(WEAPON_HIT)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    HEALTH(0.000000)
+    
+    SHIELD(100.000000)
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONACTIVEPARENTNAME(stack)
+      
+      NAME(part1)
+      
+      NAME(part2)
+      
+      NAME(part3)
+      
+      NAME(part4)
+      
+      )
+     
+     (
+       ROTATIONACTIVENAME(gen_good)
+      
+      NAME(gen_parts)
+      
+      NAME(frame)
+      
+      NAME(switch)
+      
+      NAME(kill_switch)
+      
+      )
+     
+     (
+       SET_INACTIVENAME(destroyed)
+      
+      NAME(destroyed_di)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      VALVE(generator=10.000000)
+     
+     INVALIDATE_ANIMATION(
+       NAME(turn_off_gen)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(kill_switch)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(GLOBALgen_fiddle_switch)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(gen_good)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(destroyed)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(gen_parts)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out01)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out02)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out03)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out04)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out05)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out06)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out07)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out08)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out09)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out10)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out11)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out12)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out13)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out14)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out15)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(aklite_out16)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_part_fly)
+      
+      WITH_NODE(part1)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part1)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_part_fly)
+      
+      WITH_NODE(part2)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part2)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_part_fly)
+      
+      WITH_NODE(part3)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part3)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_part_fly)
+      
+      WITH_NODE(part4)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part4)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(gen_part_fly)
+      
+      WITH_NODE(stack)
+      
+      WITH_TRANSLATION(
+        AT_NODE(stack)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(destroyed_di)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(gen_goin_down)
+     
+     STOP_ANIMATION(
+       NAME(gen_smoke1)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_GEN_DESTROY)
+      
+      AT_NODE(ROOT_NODE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ACTIVATION(ON_CALL)
+    
+    NAME(generator_1)
+    
+    ANIMATION_NAME(gen_part_fly)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_DELETE_CHILD(
+       PARENT(gen_parts)
+      
+      CHILD(INPUT_NODE)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      LIKE_NODE(generator_1)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(INPUT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     OBJECT_ADD_CHILD(
+       PARENT(GLOBALm8)
+      
+      CHILD(INPUT_NODE)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(INPUT_NODE)
+      
+      GRAVITY()
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      
+      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      
+      FORWARD_ROTATION(DISTANCE0.000000-nan)
+      
+      RUN_TIME(80.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      OPACITY_FROM(0.000000ON)
+      
+      OPACITY_TO(0.000000ON)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(INPUT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(INPUT_NODE)
+      
+      OPACITY_FROM(0.000000ON)
+      
+      OPACITY_TO(0.000000OFF)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(generator_1)
+    
+    ANIMATION_NAME(gen_smoke1)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(gen_smoke1)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      AT_NODE(stack)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(20.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      MAX_VIEW_DISTANCE(3800.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     OBJECT_ROTATE_STATE(
+       NAME(wiggle)
+      
+      ROTATION(00.00000000.00000000.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(wiggle)
+      
+      ROTATE_FROM(00.0000000.0000000.000000)
+      
+      ROTATE_TO(00.0000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(wiggle)
+      
+      ROTATE_FROM(00.0000000.00000000.000000)
+      
+      ROTATE_TO(0.0000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(wiggle)
+      
+      ROTATE_FROM(0.0000000.00000000.000000)
+      
+      ROTATE_TO(0.0000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(wiggle)
+      
+      ROTATE_FROM(0.0000000.00000000.000000)
+      
+      ROTATE_TO(00.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_GENERATOR_LOOP)
+      
+      AT_NODE(stack)
+      
+      PITCH(0.000000)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,63 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ACTIVATION(WEAPON_HIT)
+    
+    NAME(gentire*)
+    
+    HEALTH_ROOT_NAME(tire_single_di)
+    
+    HEALTH(10.000000)
+    
+    SHIELD(100.000000)
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONACTIVENAME(gentire*)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION(
+       NAME(ROOT_NODE)
+      
+      GRAVITY()
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      BOUNCE_ELASTICITY(0.000000)
+      
+      INPUT_VELOCITY(
+        SCALE(0.000000)
+       
+       ROTATE)
+      
+      XYZ_ROTATION(0.0000000.0000000.0000000.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -9,15 +9,26 @@
 
 zar::CZAR rdrArchive;
 const char* rdr_dir;
+char path[256];
+char input_path[256];
 
 void FileCallback(void* userdata, const char * const *filelist, int filter)
 {
     if (filelist)
     {
-        rdrArchive.Close();
+        // rdrArchive.Close();
         rdr_dir = *filelist;
         rdrArchive = *CRdrArchive::AddArchive(rdr_dir, NULL);
         CRdrArchive::OpenAll();
+
+        for (auto it = rdrArchive.m_stable->begin(); it != rdrArchive.m_stable->end(); ++it)
+        {
+            CRdrFile* reader = zrdr_read(*it, NULL, 0);
+            sprintf_s(path, 256, "%s/%s", input_path, *it);
+            FILE* file = fopen(path, "w");
+            _OutputASCII(file, reader, 0);
+            fclose(file);
+        }
     }
     else
     {
@@ -29,33 +40,11 @@ bool CZIMGUI::Tick_ReaderDisplay(f32 dT)
 {
     if (ImGui::Begin("zReader"))
     {
-        if (ImGui::Button("Load"))
+        ImGui::InputText("Export Directory", input_path, 256);
+
+        if (ImGui::Button("Dump"))
         {
             SDL_ShowOpenFileDialog(FileCallback, NULL, theWindow->GetWindow(), NULL, 0, "D:/", false);
-        }
-        
-        s32 id = 0;
-        
-        for (auto it = rdrArchive.m_stable->begin(); it != rdrArchive.m_stable->end(); ++it)
-        {
-            id++;
-
-            ImGui::PushID(id);
-            if (ImGui::TreeNode(*it))
-            {
-                if (ImGui::Button("Dump"))
-                {
-                    CRdrFile* reader = zrdr_read(*it, NULL, 0);
-                    char path[256];
-                    sprintf_s(path, 256, "%s/%s", "data/common/zrdr", *it);
-                    FILE* file = fopen(path, "w");
-                    _OutputASCII(file, reader, 0);
-                    fclose(file);
-                }
-                
-                ImGui::TreePop();
-            }
-            ImGui::PopID();
         }
         
         ImGui::End();

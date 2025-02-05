@@ -1,0 +1,61 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     NAME(alaska4h_beartrap01)
+    
+    ACTIVATION(WEAPON_HIT)
+    
+    HEALTH_ROOT_NAME(tread_here)
+    
+    HEALTH(10.000000)
+    
+    AUTO_COPY_ANIMATION()
+    
+    CREATE_CLONES()
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONNAME(alaska4h_beartrap01)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION_FROM_TO(
+       NAME(left_clamp)
+      
+      ROTATE_FROM(00.00000000.00000000.000000)
+      
+      ROTATE_TO(-74-0.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION_FROM_TO(
+       NAME(right_clamp)
+      
+      ROTATE_FROM(00.00000000.00000000.000000)
+      
+      ROTATE_TO(740.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

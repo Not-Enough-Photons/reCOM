@@ -1,0 +1,192 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ACTIVATION(WEAPON_HIT)
+    
+    NAME(alaska4d_beer)
+    
+    HEALTH_ROOT_NAME(alaska4d_beer)
+    
+    HEALTH(10.000000)
+    
+    AUTO_COPY_ANIMATION()
+    
+    CREATE_CLONES()
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONACTIVENAME(alaska4d_beer)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       START()
+      
+      NAME(SND_BULLET_PLATE)
+      
+      AT_NODE(ROOT_NODE0.0000000.0000000.000000)
+      
+      )
+     
+     DESTRUCTION_SOURCE(
+       NODE(ROOT_NODE)
+      
+      TEXTURE(alaska4d_bottle01.tif)
+      
+      COLOR(
+        RED(0.000000)
+       
+       GREEN(0.000000)
+       
+       BLUE(0.000000)
+       
+       ALPHA(0.000000)
+       
+       )
+      
+      MAXSIZE(0.000000)
+      
+      VELOCITY_X(0.000000-nan)
+      
+      VELOCITY_Y(0.0000000.000000)
+      
+      VELOCITY_Z(0.000000-nan)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ACTIVATION(WEAPON_HIT)
+    
+    NETWORK_LOG(ON)
+    
+    NAME(alaska4d_plate)
+    
+    HEALTH_ROOT_NAME(alaska4d_plate)
+    
+    HEALTH(10.000000)
+    
+    AUTO_COPY_ANIMATION()
+    
+    CREATE_CLONES()
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONACTIVENAME(alaska4d_plate)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       START()
+      
+      NAME(SND_BULLET_PLATE)
+      
+      AT_NODE(ROOT_NODE0.0000000.0000000.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(ROOT_NODE)
+      
+      GRAVITY(0.000000)
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      BOUNCE_ELASTICITY(0.000000)
+      
+      TRANSLATION_RANGE_MIN(00.000000750.000000200.00000000.000000)
+      
+      TRANSLATION_RANGE_MAX(3600.000000900.000000500.00000000.000000)
+      
+      FORWARD_ROTATION(DISTANCE0.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ACTIVATION(WEAPON_HIT)
+    
+    NAME(alaska4d_foamcup)
+    
+    HEALTH_ROOT_NAME(alaska4d_foamcup)
+    
+    HEALTH(10.000000)
+    
+    AUTO_COPY_ANIMATION()
+    
+    CREATE_CLONES()
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONACTIVENAME(alaska4d_foamcup)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       START()
+      
+      NAME(SND_BULLET_PLATE)
+      
+      AT_NODE(ROOT_NODE0.0000000.0000000.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(ROOT_NODE)
+      
+      GRAVITY(0.000000)
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      BOUNCE_ELASTICITY(0.000000)
+      
+      TRANSLATION_RANGE_MIN(00.000000750.000000200.00000000.000000)
+      
+      TRANSLATION_RANGE_MAX(3600.000000900.000000500.00000000.000000)
+      
+      FORWARD_ROTATION(DISTANCE0.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

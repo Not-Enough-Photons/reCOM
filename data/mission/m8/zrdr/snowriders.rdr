@@ -1,0 +1,231 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     NAME(smobile5)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(50.000000)
+     
+     CALL_SEQUENCE(
+       NAME(camseq)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(gosnomo)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(camseq)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::STOPALL(true)
+     
+     HUD_OFF()
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       NAME(GLOBALcamera)
+      
+      SCRIPT_FRAME_RATE(200.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/snomocam1.zan)
+      
+      )
+     
+     HUD_ON()
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     ai::STOPALL(false)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(gosnomo)
+     
+     ACTIVATION(ON_CALL)
+     
+     CALL_SEQUENCE(
+       NAME(gosnomo2)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(Snowrider2)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(smobile5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/snomo2.zan)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(smobile5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(20.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(gosnomo2)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(0.000000)
+     
+     CALL_ANIMATION(
+       NAME(Snowrider1)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile4)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(smobile4)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(smobile4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/snomo1.zan)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(smobile4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(Snowrider2)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(Snowrider1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/snowrider2.zan)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(Snowrider1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(Snowrider1)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(Snowrider2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/snowrider1.zan)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(Snowrider2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,651 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(Sniper1_special)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(seq_0)
+     
+     ai::SPECIAL()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(Sniper1_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(startup)
+     
+     ai::DEBUG("starting startup" )
+     
+     ai::SETMODE(sleep)
+     
+     WHILE(
+       ai::PARAM(sleep==10.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     WHILE(
+       !VALVE(comerunning==10.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ai::PARAM(aware=20.000000)
+     
+     WHILE(TRUE)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware0)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("starting on_aware0" )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware1)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware1" )
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INRANGE(
+        entity(player)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware1)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(Hutchins)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware1)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(Bailey)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware1)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(DiMone)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware1)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware2)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware2" )
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INRANGE(
+        entity(player)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware2)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(Hutchins)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware2)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(Bailey)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware2)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(DiMone)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware2)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware3)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware3" )
+     
+     WHILE(TRUE)
+     
+     IF(
+       ai::INRANGE(
+        entity(player)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware3)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(Hutchins)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware3)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(Bailey)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware3)
+      
+      )
+     
+     ELSEIF(
+       ai::INRANGE(
+        entity(DiMone)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::STANCE(
+       stance(stand)
+      
+      )
+     
+     ai::GOTO(
+       node(SnipeHide1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(SE)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(on_aware3)
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware4)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::STANCE(
+       stance(Prone)
+      
+      )
+     
+     ai::FIREMODE(
+       weapon(00.000000)
+      
+      trigger(0.0000000.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_lowhealth)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_lowhealth" )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_noammo)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_noammo" )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_corpse)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_corpse" )
+     
+     ai::ANIMATE(
+       anim(Kicklow)
+      
+      postwait(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

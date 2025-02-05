@@ -1,0 +1,366 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_ROOT_NAME(WORLDtree01)
+    
+    AUTO_COPY_ANIMATION()
+    
+    CREATE_CLONES()
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb01)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb04)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb06)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb02)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb05)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb03)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(treelimb07)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION(
+       NAME(tree01)
+      
+      XYZ_ROTATION(0.00000000.00000000.0000000.00000000.00000000.000000)
+      
+      RUN_TIME(80.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(tree01)
+      
+      XYZ_ROTATION(-nan00.00000000.0000000.00000000.00000000.000000)
+      
+      RUN_TIME(80.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(tree01)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb01)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb01)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(10.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb01)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb01)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb02)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb02)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb02)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb02)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb03)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb03)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb03)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb03)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb04)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb04)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb04)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb04)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb05)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb05)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb05)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb05)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb06)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb06)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb06)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb06)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(treelimb07)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION(
+       NAME(treelimb07)
+      
+      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(treelimb07)
+      
+      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(treelimb07)
+      
+      STATE(00.00000000.00000000.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

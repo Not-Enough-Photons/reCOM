@@ -1,0 +1,456 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ACTIVATION(ON_STARTUP)
+    
+    NAME(smobile*)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    SAVE_NODE_STATES((
+       TRANSLATIONROTATIONACTIVEPARENTNAME(part1)
+      
+      NAME(part2)
+      
+      NAME(part3)
+      
+      NAME(part4)
+      
+      NAME(part5)
+      
+      NAME(part6)
+      
+      NAME(part7)
+      
+      NAME(part8)
+      
+      NAME(part9)
+      
+      NAME(part10)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(smobile_hitme)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(healthy)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(destroyed)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(hulkdi)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ACTIVATION(WEAPON_HIT)
+    
+    LOCAL_NODES_ONLY(ON)
+    
+    NAME(smobile*)
+    
+    HEALTH_ROOT_NAME(smobile_hitme)
+    
+    HEALTH(10.000000)
+    
+    SHIELD(100.000000)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(smobile_hitme)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(healthy)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(destroyed)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(hulkdi)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part1)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part1)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part2)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part2)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part3)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part3)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part4)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part4)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part5)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part5)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part7)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part7)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part8)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part8)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part9)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part9)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(smobile_flypart*)
+      
+      WITH_NODE(part10)
+      
+      WITH_TRANSLATION(
+        AT_NODE(part10)
+       
+       )
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(main_barrel_fire)
+      
+      TEXTURES(fire_hardedge.tif)
+      
+      TRANSLATION(0.0000000.0000000.000000)
+      
+      AT_NODE(hulk)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(-nan0.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(fire_smoker1)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      TRANSLATION(0.0000000.0000000.000000)
+      
+      AT_NODE(hulk)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.000000-nan)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(0.0000000.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ACTIVATION(ON_CALL)
+    
+    NAME(smobile*)
+    
+    ANIMATION_NAME(smobile_flypart*)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_DELETE_CHILD(
+       PARENT(destroyed)
+      
+      CHILD(INPUT_NODE)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      LIKE_NODE(smobile*)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(INPUT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     OBJECT_ADD_CHILD(
+       PARENT(GLOBALm8)
+      
+      CHILD(INPUT_NODE)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(INPUT_NODE)
+      
+      GRAVITY()
+      
+      DO_INTERSECTIONS()
+      
+      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      
+      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      
+      FORWARD_ROTATION(DISTANCE0.000000-nan)
+      
+      RUN_TIME(120.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(INPUT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,83 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(check_camera_inside_state)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(snd_wind_outside)
+      
+      )
+     
+     VALVE(windblowing=10.000000)
+     
+     WAIT(80.000000)
+     
+     WHILE(TRUE)
+     
+     IF(
+       CAMERA_INDOORS()
+      
+      )
+     
+     IF(
+       VALVE(windblowing==10.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(snd_wind_outside)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(snd_wind_inside)
+      
+      )
+     
+     VALVE(windblowing=00.000000)
+     
+     ENDIF()
+     
+     ELSE()
+     
+     IF(
+       VALVE(windblowing==00.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(snd_wind_inside)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(snd_wind_outside)
+      
+      )
+     
+     VALVE(windblowing=10.000000)
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

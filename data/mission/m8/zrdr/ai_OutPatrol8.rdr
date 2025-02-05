@@ -1,0 +1,764 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(OutPatrol8_special)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(seq_0)
+     
+     ai::SPECIAL()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OutPatrol8_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(startup)
+     
+     ai::DEBUG("starting startup" )
+     
+     ai::SETMODE(sleep)
+     
+     WHILE(
+       ai::PARAM(sleep==10.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     WHILE(
+       !VALVE(comerunning==10.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ai::PARAM(aware=20.000000)
+     
+     WHILE(TRUE)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware0)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("starting on_aware0" )
+     
+     WHILE(TRUE)
+     
+     ai::GOTO(
+       node(Outp8A)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8B)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Cold shrug01" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     ai::MACRO(
+       anim(Patrol_banter2)
+      
+      blocking)
+     
+     ai::HOLD(
+       wait(100.000000150.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8A)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8_start)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(20.00000040.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8_start)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Barrel8)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(NW)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::PARAM(sleep=00.000000Snow3)
+     
+     VALVE(barrel=10.000000)
+     
+     ai::SETANIMSET(
+       name("Guard_bored03 anim set" )
+      
+      )
+     
+     ai::HOLD(
+       wait(100.000000)
+      
+      )
+     
+     ai::SETANIMSET(
+       name("Guard_warmhands anim set" )
+      
+      )
+     
+     ai::HOLD(
+       wait(150.000000)
+      
+      )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::HOLD(
+       wait(50.000000)
+      
+      )
+     
+     ai::DEBUG("Exiting Hold" )
+     
+     IF(
+       VALVE(Snow1_valve_alive==10.000000)
+      
+      )
+     
+     ai::DEBUG("Snow1 alive" )
+     
+     IF(
+       ai::INRANGE(
+        entity(Snow1)
+       
+       range(0.000000)
+       
+       )
+      
+      )
+     
+     ai::DEBUG("INRANGE test passed" )
+     
+     ai::SOUND(
+       name(SND_VM08_32)
+      
+      aware(10.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ai::SOUND(
+       name(SND_VM08_33)
+      
+      aware(10.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     VALVE(converse1=10.000000)
+     
+     VALVE(barrel=00.000000)
+     
+     ai::HOLD(
+       wait(100.000000)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     VALVE(barrel=00.000000)
+     
+     VALVE(converse1=00.000000)
+     
+     ai::HOLD(
+       wait(100.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8C)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8D)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(20.00000040.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8E)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Cold shrug02" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     ai::MACRO(
+       anim(Patrol_banter2)
+      
+      blocking)
+     
+     ai::HOLD(
+       wait(100.000000150.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8D)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(20.00000040.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8C)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Barrel8)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::LOOKAT(
+       dir(NW)
+      
+      wait(0.000000)
+      
+      )
+     
+     ai::SETANIMSET(
+       name("Guard_bored03 anim set" )
+      
+      )
+     
+     ai::HOLD(
+       wait(50.000000150.000000)
+      
+      )
+     
+     ai::SOUND(
+       name(SND_VM08_32)
+      
+      aware(10.000000)
+      
+      )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8_start)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(20.00000040.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware1)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware1" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::MACRO(
+       anim(Close_call2)
+      
+      blocking)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware2)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware2" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     IF(
+       VALVE(comerunning==10.000000)
+      
+      &&VALVE(Out8==00.000000)
+      
+      )
+     
+     ai::SIGNAL(
+       signal(AISIG_BEGINCRITICAL)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm1)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm2)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm3)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm4)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm5)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm6)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Alarm78)
+      
+      speed(0.000000)
+      
+      )
+     
+     VALVE(Out8=10.000000)
+     
+     ai::SIGNAL(
+       signal(AISIG_ENDCRITICAL)
+      
+      )
+     
+     ELSE()
+     
+     WHILE(TRUE)
+     
+     ai::GOTO(
+       node(Outp8A)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8B)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8A)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8_start)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8C)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8D)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8E)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8D)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8C)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     ai::GOTO(
+       node(Outp8_start)
+      
+      speed(0.000000)
+      
+      )
+     
+     ai::HOLD(
+       wait(10.00000020.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware3)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware3" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::MACRO(
+       anim(Patrol_guns)
+      
+      blocking)
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(Crouch)
+      
+      )
+     
+     ai::PURSUE(
+       duration(0.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(Stand)
+      
+      )
+     
+     ai::PURSUE(
+       duration(0.000000)
+      
+      )
+     
+     ELSE()
+     
+     ai::STANCE(
+       stance(Prone)
+      
+      )
+     
+     ENDIF()
+     
+     ai::STANCE(
+       stance(Prone)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_aware4)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_aware4" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::MACRO(
+       anim(Spot_shout2)
+      
+      blocking)
+     
+     ai::MACRO(
+       anim(Patrol_guns)
+      
+      blocking)
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(Crouch)
+      
+      )
+     
+     ai::PURSUE(
+       duration(0.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     ai::STANCE(
+       stance(Stand)
+      
+      )
+     
+     ai::PURSUE(
+       duration(0.000000)
+      
+      )
+     
+     ELSE()
+     
+     ai::STANCE(
+       stance(Prone)
+      
+      )
+     
+     ENDIF()
+     
+     ai::STANCE(
+       stance(Prone)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_lowhealth)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_lowhealth" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_noammo)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_noammo" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::STANCE(
+       stance(prone)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(on_corpse)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG("Starting on_corpse" )
+     
+     ai::SETANIMSET(
+       name("Guard anim set" )
+      
+      )
+     
+     ai::ANIMATE(
+       anim(Kicklow)
+      
+      postwait(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

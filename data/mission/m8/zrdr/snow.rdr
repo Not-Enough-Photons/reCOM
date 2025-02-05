@@ -1,0 +1,322 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(snow_falling)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(snow_flakes)
+      
+      TEXTURES(effect_snow.tifeffect_snow02.tifeffect_snow03.tifeffect_snow04.tifeffect_snow05.tif)
+      
+      TRANSLATION(0.0000000.000000-nan)
+      
+      AT_NODE(camera)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(20.000000)
+      
+      LOCAL_VELOCITY(0.000000-nan0.000000)
+      
+      WORLD_VELOCITY(0.000000-nan0.000000)
+      
+      PERTURB_VELOCITY(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(-nan0.000000)
+      
+      INHERIT_VELOCITY(TRUE)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(-nan0.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      MAX_VIEW_DISTANCE(2500.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     WAIT(0.000000)
+     
+     IF(
+       CAMERA_INDOORS()
+      
+      )
+     
+     PARTICLE_SOURCE(
+       NAME(snow_flakes)
+      
+      ACTIVE_STATE(INACTIVE)
+      
+      )
+     
+     VALVE(indoor_outdoor=10.000000)
+     
+     ELSE()
+     
+     PARTICLE_SOURCE(
+       NAME(snow_flakes)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      )
+     
+     VALVE(indoor_outdoor=00.000000)
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(outdoor_clip)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      NAME(clip_out)
+     
+     WHILE(TRUE)
+     
+     IF(
+       VALVE(lodLevel==10.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(clip_fast)
+      
+      )
+     
+     ELSEIF(
+       VALVE(lodLevel==250.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(clip_medfast)
+      
+      )
+     
+     ELSEIF(
+       VALVE(lodLevel==500.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(clip_med)
+      
+      )
+     
+     ELSEIF(
+       VALVE(lodLevel==750.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(clip_slow)
+      
+      )
+     
+     ELSE()
+     
+     CALL_SEQUENCE(
+       NAME(clip_realslow)
+      
+      )
+     
+     ENDIF()
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(stop_all)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(stop_all)
+     
+     ACTIVATION(ON_CALL)
+     
+     STOP_SEQUENCE(
+       NAME(clip_realslow)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(clip_slow)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(clip_med)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(clip_medfast)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(clip_fast)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(clip_fast)
+     
+     ACTIVATION(ON_CALL)
+     
+     CAMERA(
+       NAME(GLOBALcamera)
+      
+      FAR_CLIP(12500.000000)
+      
+      MID_CLIP(12400.000000)
+      
+      FOG_FAR(12000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(clip_medfast)
+     
+     ACTIVATION(ON_CALL)
+     
+     CAMERA(
+       NAME(GLOBALcamera)
+      
+      FAR_CLIP(9500.000000)
+      
+      MID_CLIP(9400.000000)
+      
+      FOG_FAR(9000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(clip_med)
+     
+     ACTIVATION(ON_CALL)
+     
+     CAMERA(
+       NAME(GLOBALcamera)
+      
+      FAR_CLIP(7500.000000)
+      
+      MID_CLIP(7400.000000)
+      
+      FOG_FAR(7000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(clip_slow)
+     
+     ACTIVATION(ON_CALL)
+     
+     CAMERA(
+       NAME(GLOBALcamera)
+      
+      FAR_CLIP(6400.000000)
+      
+      MID_CLIP(6300.000000)
+      
+      FOG_FAR(6000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(clip_realslow)
+     
+     ACTIVATION(ON_CALL)
+     
+     CAMERA(
+       NAME(GLOBALcamera)
+      
+      FAR_CLIP(5100.000000)
+      
+      MID_CLIP(5000.000000)
+      
+      FOG_FAR(4800.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

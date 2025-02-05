@@ -1,0 +1,178 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(snd_wind_outside)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WHILE(TRUE)
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_CROW_SQUAK)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_CROW_SQUAK)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     WAIT(0.0000000.000000)
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_CROW_SQUAK)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     WAIT(0.0000000.000000)
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_CROW_SQUAK)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     ENDIF()
+     
+     WAIT(0.0000000.000000)
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_CROW_SQUAK)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     WAIT(0.0000000.000000)
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_CROW_SQUAK)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     ENDIF()
+     
+     WAIT(0.0000000.000000)
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_WOLFHOWL)
+      
+      )
+     
+     ENDIF()
+     
+     WAIT(0.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_OUTDOOR_AMBIENCE_LOOP)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(snd_wind_inside)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_OUTDOOR_AMBIENCE_LOOP)
+      
+      VOLUME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PAUSE_ANIMATION()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

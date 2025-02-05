@@ -1,0 +1,412 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(deactivate_copter)
+    
+    ACTIVATION(ON_STARTUP)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(WORLDm8copter)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(WORLDfadetoblack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(m8extract)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      DYNAMICS_RELEASE_CAMERA()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(m8copter)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_STREAM_AF1)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(tweakparticle)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(coptersounds)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(turn_main_rotor)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(turn_tail_rotor)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(copter)
+      
+      )
+     
+     HUD_OFF()
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       SPLINE_INTERP()
+      
+      ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/cam1.zan)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       SPLINE_INTERP()
+      
+      ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/cam2.zan)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       SPLINE_INTERP()
+      
+      ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/cam3.zan)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       SPLINE_INTERP()
+      
+      ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/cam4.zan)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(coptersounds)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(turn_main_rotor)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(turn_tail_rotor)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(copter)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(m8copter)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     VALVE(mission_complete=10.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(tweakparticle)
+     
+     ACTIVATION(ON_CALL)
+     
+     PARTICLE_SOURCE(
+       NAME(e1)
+      
+      ACTIVE_STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     PARTICLE_SOURCE(
+       NAME(e1)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_ANIMATION(
+       NAME(do_fadetoblack)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(coptersounds)
+     
+     ACTIVATION(ON_CALL)
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_AM01_CHOPPER_ENGINE_LOOP)
+      
+      AT_NODE(m8copter)
+      
+      )
+     
+     SOUND(
+       START()
+      
+      STOP_ON_EXIT()
+      
+      NAME(SND_AM01_CHOPPER_CHOP_LOOP)
+      
+      AT_NODE(m8copter)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(copter)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       SPLINE_INTERP()
+      
+      ALL_NAMES()
+      
+      SCRIPT_FRAME_RATE(0.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/copter1.zan)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION(
+       NAME(WORLDmainrotor)
+      
+      XYZ_ROTATION(00.00000010300.00000000.00000000.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION(
+       NAME(WORLDtailrotor)
+      
+      XYZ_ROTATION(10300.00000000.00000000.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(snoblo)
+     
+     PARTICLE_SOURCE(
+       NAME(e1)
+      
+      TEXTURES(effect_dustpuff01.tifcloudpuff01.tif)
+      
+      AT_NODE(
+        NAME(WORLDm8copter)
+       
+       OFFSET(00.000000-80-0.00000000.000000)
+       
+       )
+      
+      ACTIVE_STATE(INACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(40.000000)
+      
+      NUM_PERIODS(-1-0.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(10.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      SCALE_SEQUENCE((00.00000010.000000)
+       
+       (10.00000020.000000)
+       
+       )
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(do_fadetoblack)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(WORLDfadetoblack)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(WORLDfadetoblack)
+      
+      AT_NODE(GLOBALcamera)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(WORLDfadetoblack)
+      
+      LIKE_NODE(GLOBALcamera)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     LOOP(
+       LOOP_COUNT(160.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_OPACITY_FROM_TO(
+       NAME(WORLDfadetoblack)
+      
+      OPACITY_FROM(00.000000ON)
+      
+      OPACITY_TO(10.000000OFF)
+      
+      RUN_TIME(40.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(WORLDfadetoblack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

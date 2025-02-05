@@ -1,0 +1,49 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(view_klaxon)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(camseq)
+     
+     HUD_OFF()
+     
+     DYNAMICS_RELEASE_CAMERA()
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       NAME(GLOBALcamera)
+      
+      SCRIPT_FRAME_RATE(900.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/klaxoncam1.zan)
+      
+      )
+     
+     OBJECT_MOTION_SI_SCRIPT(
+       NAME(GLOBALcamera)
+      
+      SCRIPT_FRAME_RATE(300.000000)
+      
+      SCRIPT_FILENAME(data/m8/zrdr/envmodels/klaxoncam2.zan)
+      
+      )
+     
+     HUD_ON()
+     
+     DYNAMICS_ACQUIRE_CAMERA()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+
