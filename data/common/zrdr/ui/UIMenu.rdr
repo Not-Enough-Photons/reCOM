@@ -1,0 +1,92 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(on_new_game)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(CLEARGAMESTATE)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(switch)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(switch)
+     
+     ACTIVATION(ON_CALL)
+     
+     SOUND(
+       NAME(SND_DINK)
+      
+      AT_NODE(ROOT_NODE)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMISSIONSELECTION.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(title_onbutton_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      STOP_ANIMATION(
+       NAME(title_onstart)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(title_onstart)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

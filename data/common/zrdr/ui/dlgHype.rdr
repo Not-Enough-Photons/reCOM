@@ -1,0 +1,593 @@
+((
+  SCREENS((
+    LIBRARIES(ui/assetlib/ui2dui/assetlib/hype)
+   
+   FONT(myriad)
+   
+   SCRIPT_LIBRARY(dlgHype.rdr)
+   
+   OBJECTS((
+      NAME(Hype5)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      FILENAME(hype_screen5.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Hype4)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      FILENAME(hype_screen4.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Hype3)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      FILENAME(hype_screen3.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Hype2)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      FILENAME(hype_screen2.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Hype1)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      FILENAME(hype_screen1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(HypeText)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(-10-0.000000)
+     
+     SPEC(
+       XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      FILENAME(hype_scrn.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SplashLogo)
+     
+     TYPE(IMAGE)
+     
+     XPOS(450.000000)
+     
+     YPOS(200.000000)
+     
+     SPEC(
+       XSIZE(2000.000000)
+      
+      YSIZE(1000.000000)
+      
+      FILENAME(SplashLogo.tif)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      EVENT(ONSTART)
+     
+     ANIMATION(CallMusic)
+     
+     )
+    
+    (
+      BUTTON(CROSS)
+     
+     ANIMATION(BackOutWithMusic)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(BackOutWithMusic)
+     
+     )
+    
+    (
+      BUTTON(DOWN)
+     
+     ANIMATION(BackOutWithMusic)
+     
+     )
+    
+    (
+      BUTTON(UP)
+     
+     ANIMATION(BackOutWithMusic)
+     
+     )
+    
+    (
+      BUTTON(LEFT)
+     
+     ANIMATION(BackOutWithMusic)
+     
+     )
+    
+    (
+      BUTTON(RIGHT)
+     
+     ANIMATION(BackOutWithMusic)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(EnterSlideShow)
+     
+     )
+    
+    )
+   
+   CONTROLS()
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(EnterSlideShow)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(CameFromOther=10.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHypeText)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHypeText)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUHype1)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUHype2)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUHype3)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUHype4)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUHype4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(50.000000)
+     
+     CALL_ANIMATION(
+       NAME(BackOutWithMusic)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(CallMusic)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(CameFromDebriefing=00.000000)
+     
+     VALVE(CameFromOther=00.000000)
+     
+     SOUND(
+       NAME(MUS_MENU_THEME)
+      
+      START()
+      
+      )
+     
+     WHILE(TRUE)
+     
+     END_WHILE()
+     
+     VALVE(BackFromBrief=00.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(BackOutWithMusic)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(StopAllSounds)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(VagStreaming)
+      
+      ARGUMENT(OFF)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

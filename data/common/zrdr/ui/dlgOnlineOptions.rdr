@@ -1,0 +1,973 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/uimp)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(multplay_back.tif)
+    
+    )
+   
+   FONT(myriad)
+   
+   SCRIPT_LIBRARY(dlgOnlineOptions.rdr)
+   
+   OBJECTS((
+      NAME(letterbar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(blank_top_bar.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(bar_title)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       FONT(Gothic_13)
+      
+      CHILDOF(letterbar)
+      
+      CAPTION("ONLINE OPTIONS" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(letterbar_bottom)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(3840.000000)
+     
+     SPEC(
+       FILENAME(common_bar_bottom.tif)
+      
+      SIZE(6400.000000640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(net_conn_ind_Yel)
+     
+     TYPE(IMAGE)
+     
+     XPOS(5720.000000)
+     
+     YPOS(250.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      FILENAME(NetMonY.tif)
+      
+      SIZE(280.000000280.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(net_conn_ind_blue)
+     
+     TYPE(IMAGE)
+     
+     XPOS(5810.000000)
+     
+     YPOS(340.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      FILENAME(NetMonB.tif)
+      
+      SIZE(100.000000120.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(playertext)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar_bottom)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION(Player:)
+      
+      )
+     
+     )
+    
+    (
+      NAME(clantext)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(450.000000)
+     
+     CHILDOF(letterbar_bottom)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION(Clan:)
+      
+      )
+     
+     )
+    
+    (
+      NAME(playername)
+     
+     TYPE(TEXT)
+     
+     XPOS(800.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar_bottom)
+     
+     SPEC(
+       UIVAR(
+        NAME(PLAYERNAMEVAR)
+       
+       LONGEVITY(PERSISTENT)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(txtClanName)
+     
+     TYPE(TEXT)
+     
+     XPOS(800.000000)
+     
+     YPOS(450.000000)
+     
+     SPEC(
+       CHILDOF(letterbar_bottom)
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(CLANNAMEVAR)
+       
+       VALUE(Unaffiliated)
+       
+       TYPE(PERMANENT)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1870.000000)
+     
+     YPOS(650.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1870.000000)
+     
+     YPOS(970.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(PlayerDescription)
+     
+     TYPE(WRAPPEDTEXT)
+     
+     XPOS(2000.000000)
+     
+     YPOS(1170.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      WIDTH(2000.000000)
+      
+      SPACING(150.000000)
+      
+      UIVAR(
+        NAME(PlayerDescription)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(DescriptionText)
+     
+     TYPE(TEXT)
+     
+     XPOS(2000.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      SCALE(0.000000)
+      
+      CAPTION(" " )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabText)
+     
+     TYPE(TEXT)
+     
+     XPOS(2200.000000)
+     
+     YPOS(1050.000000)
+     
+     SPEC(
+       CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dogtags)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3700.000000)
+     
+     YPOS(3250.000000)
+     
+     SPEC(
+       FILENAME(dogtags.tif)
+      
+      SIZE(2560.0000001280.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(check_then_save_and_leave)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(net_monitor)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(OnStartAct)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(bottom_bar_slide_up)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(letterbar_slide_down)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_ERROR)
+     
+     ANIMATION(OnMultiplayerDisconnect)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(playerdesc)
+     
+     XPOS(100.000000)
+     
+     YPOS(970.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1750.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(220.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      CAPTION("PLAYER DESCRIPTION" )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(playerdescAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(SetPlayerDescription)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Messaging)
+     
+     XPOS(100.000000)
+     
+     YPOS(1270.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       CAPTION("SETUP MESSAGING" )
+      
+      XSIZE(1750.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(220.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(SetSOPAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgSetSOP.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Taunts)
+     
+     XPOS(100.000000)
+     
+     YPOS(1570.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       CAPTION("SETUP TAUNTS" )
+      
+      XSIZE(1750.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(220.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(SetTauntAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgSetTaunts.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(filters)
+     
+     XPOS(100.000000)
+     
+     YPOS(1870.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1750.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(220.000000)
+      
+      CAPTION("INPUT FILTERS" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(InputFilterAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgOnlineFilters.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(check_then_save_and_leave)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(OptionsChanged==10.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(save_and_leave)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     VALVE(OptionsChanged=00.000000)
+     
+     ELSE()
+     
+     CALL_ANIMATION(
+       NAME(menu_fade_down)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgWorldOfSOCOM.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnStartAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(responsetime)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(playerdescAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Press the X button to enter your player description." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(SetSOPAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Press the X button to enter your standard operating procedures." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(SetTauntAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Press the X button to enter your taunts." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(InputFilterAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Press the X button to set your game filters." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(toggle_automsg)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(ToggleAutoMessages)
+      
+      )
+     
+     VALVE(OptionsChanged=10.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(SetPlayerDescription)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetSkbPurpose)
+      
+      ARGUMENT("Enter Your Player Description" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(GetTextInput)
+      
+      NODE(MENUMPPLAYERNAME)
+      
+      ARGUMENT(PlayerDescription)
+      
+      )
+     
+     VALVE(SkbMaxChars=250.000000)
+     
+     WHILE(
+       VALVE(skb_done!=10.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ui::UI_COMMAND(
+       TYPE(SetPlayerDescription)
+      
+      )
+     
+     VALVE(OptionsChanged=10.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,753 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(AskToFormat)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(AreYouSure=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Memory card (PS2) in slot 1 is not formatted. Do you want to format and create new data?" )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1500.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(AreYouSure)
+       
+       YES(
+         CAPTION("No " )
+        
+        POS(400.0000001150.000000)
+        
+        TEXTOFFSET(180.000000200.000000)
+        
+        WIDTH(600.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       NO(
+         CAPTION("Yes " )
+        
+        POS(1700.0000001150.000000)
+        
+        TEXTOFFSET(150.000000200.000000)
+        
+        WIDTH(600.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(AreYouSure==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(AreYouSureYouWantToFormat)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(AreYouSure=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Are you sure you want to format the memory card (PS2)?" )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1500.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(AreYouSure)
+       
+       YES(
+         CAPTION("No " )
+        
+        POS(400.0000001150.000000)
+        
+        TEXTOFFSET(180.000000200.000000)
+        
+        WIDTH(600.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       NO(
+         CAPTION("Yes " )
+        
+        POS(1700.0000001150.000000)
+        
+        TEXTOFFSET(150.000000200.000000)
+        
+        WIDTH(600.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(AreYouSure==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(AreYouSureYouDontWantToFormat)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(AreYouSure=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Are you sure you don't want to format the memory card (PS2)?" )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1500.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(AreYouSure)
+       
+       YES(
+         CAPTION("Yes " )
+        
+        POS(400.0000001150.000000)
+        
+        TEXTOFFSET(150.000000200.000000)
+        
+        WIDTH(600.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       NO(
+         CAPTION("No " )
+        
+        POS(1700.0000001150.000000)
+        
+        TEXTOFFSET(180.000000200.000000)
+        
+        WIDTH(600.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(AreYouSure==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(intro_onstart)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(MC_Init)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_ChPort)
+      
+      ARGUMENT("0" )
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsMemCardInserted)
+       
+       )
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(check_formatted)
+      
+      )
+     
+     ELSE()
+     
+     CALL_SEQUENCE(
+       NAME(end_of_screen)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(check_formatted)
+     
+     ACTIVATION(ON_CALL)
+     
+     IF(
+       !(
+        ui::UI_COMMAND(
+         TYPE(IsMemCardFormatted)
+        
+        )
+       
+       )
+      
+      )
+     
+     VALVE(NotDone=00.000000)
+     
+     WHILE(
+       VALVE(NotDone==00.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(AskToFormat)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     IF(
+       VALVE(AreYouSure!=10.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(AreYouSureYouWantToFormat)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     IF(
+       VALVE(AreYouSure!=10.000000)
+      
+      &&ui::UI_COMMAND(
+        TYPE(IsMemCardInserted)
+       
+       )
+      
+      &&!(
+        ui::UI_COMMAND(
+         TYPE(IsMemCardFormatted)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(do_formatting)
+      
+      )
+     
+     VALVE(NotDone=10.000000)
+     
+     ENDIF()
+     
+     ELSE()
+     
+     CALL_ANIMATION(
+       NAME(AreYouSureYouDontWantToFormat)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     IF(
+       VALVE(AreYouSure==10.000000)
+      
+      )
+     
+     VALVE(NotDone=10.000000)
+     
+     CALL_SEQUENCE(
+       NAME(end_of_screen)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     ELSE()
+     
+     IF(
+       !ui::UI_COMMAND(
+        TYPE(IsSpaceForSaveGameFile)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     VALVE(SitHere=00.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("There is insufficient space on the memory card (PS2). At least 300KB is needed to save this game data." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(SitHere)
+       
+       YES(
+         CAPTION(Continue)
+        
+        POS(500.000000650.000000)
+        
+        TEXTOFFSET(100.000000180.000000)
+        
+        WIDTH(500.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        SCALE(0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(SitHere==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ENDIF()
+     
+     CALL_SEQUENCE(
+       NAME(end_of_screen)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(do_formatting)
+     
+     ACTIVATION(ON_CALL)
+     
+     VALVE(AreYouSure=30000.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Formatting...do not remove memory card (PS2)" )
+      
+      PROTECTED()
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1500.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(AreYouSure)
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(FormatMemCard)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Copying system files...do not remove memory card (PS2)" )
+      
+      PROTECTED()
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1500.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(AreYouSure)
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_ANIMATION(
+       NAME(Ensure_MC_Dirs)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(end_of_screen)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(end_of_screen)
+     
+     ACTIVATION(ON_CALL)
+     
+     ui::UI_COMMAND(
+       TYPE(MC_UnInit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgIntroCinematic.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

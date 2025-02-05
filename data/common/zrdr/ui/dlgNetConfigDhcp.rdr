@@ -1,0 +1,788 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/uimp)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(multplay_back.tif)
+    
+    )
+   
+   FONT(myriad)
+   
+   SCRIPT_LIBRARY(dlgNetConfigDhcp.rdr)
+   
+   OBJECTS((
+      NAME(letterbar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(blank_top_bar.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(letterbar_bottom)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(3610.000000)
+     
+     SPEC(
+       FILENAME(common_bar_bottom.tif)
+      
+      SIZE(6400.000000640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(bar_title)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(500.000000)
+     
+     CHILDOF(letterbar)
+     
+     SPEC(
+       FONT(Gothic_13)
+      
+      CAPTION("DHCP OPTIONS" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(IFC_value)
+     
+     TYPE(TEXT)
+     
+     XPOS(300.000000)
+     
+     YPOS(800.000000)
+     
+     SPEC(
+       CAPTION("IFC NAME" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(name_value)
+     
+     TYPE(TEXT)
+     
+     XPOS(2000.000000)
+     
+     YPOS(800.000000)
+     
+     SPEC(
+       UIVAR(
+        NAME(IFC_NAME)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dhcp_hostname)
+     
+     TYPE(TEXT)
+     
+     XPOS(2000.000000)
+     
+     YPOS(1520.000000)
+     
+     SPEC(
+       UIVAR(
+        NAME(DHCP_HOSTNAME)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(SELECT)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgNetConfigDhcp.rdr)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgNetConfigNewIFC.rdr)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(letterbar_slide_down)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(bottom_bar_slide_up)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(on_start)
+     
+     )
+    
+    (
+      EVENT(NETCNF_ERROR)
+     
+     ANIMATION(OnNetCnfErr)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(RequiredBack)
+     
+     TYPE(IMAGE)
+     
+     XPOS(200.000000)
+     
+     YPOS(1100.000000)
+     
+     SPEC(
+       XSIZE(1700.000000)
+      
+      YSIZE(250.000000)
+      
+      FILENAME(brown_back.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SettingsField)
+     
+     TYPE(IMAGE)
+     
+     XPOS(200.000000)
+     
+     YPOS(600.000000)
+     
+     SPEC(
+       XSIZE(5500.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(FieldOnly)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1950.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       XSIZE(1300.000000)
+      
+      YSIZE(250.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dhcp_hostname_required_btn)
+     
+     XPOS(2100.000000)
+     
+     YPOS(1060.000000)
+     
+     TYPE(CHECKBOX)
+     
+     SPEC(
+       CHECK_X(70.000000)
+      
+      CHECK_Y(70.000000)
+      
+      CHECKSIZE_X(250.000000)
+      
+      CHECKSIZE_Y(250.000000)
+      
+      CHECK_TEXTURE(op_check.tif)
+      
+      ONCHECK(
+        BUTTON(NONE)
+       
+       ANIMATION(enable_hostname)
+       
+       )
+      
+      ONUNCHECK(
+        BUTTON(NONE)
+       
+       ANIMATION(disable_hostname)
+       
+       )
+      
+      CAPTION("HOSTNAME REQUIRED?" )
+      
+      SCALE(0.000000)
+      
+      XOFFSET(-175-0.000000)
+      
+      YOFFSET(220.000000)
+      
+      PRESSED(op_checkbox.tif)
+      
+      NORMAL(op_checkbox.tif)
+      
+      ACTIVE(op_checkbox.tif)
+      
+      PRESSED_COLOR(0.0000000.0000000.000000)
+      
+      NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      ACTIVE_COLOR(0.0000000.0000000.000000)
+      
+      DISABLED_COLOR(500.000000500.000000500.000000)
+      
+      XSIZE(350.000000)
+      
+      YSIZE(350.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dhcp_hostname_btn)
+     
+     XPOS(200.000000)
+     
+     YPOS(1350.000000)
+     
+     TYPE(BUTTON)
+     
+     CHILDOF(dhcp_root)
+     
+     SPEC(
+       XSIZE(1700.000000)
+      
+      YSIZE(250.000000)
+      
+      SCALE(0.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(180.000000)
+      
+      CAPTION(HOSTNAME)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(set_dhcp_hostname)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(save_btn)
+     
+     XPOS(200.000000)
+     
+     YPOS(2400.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1500.000000)
+      
+      YSIZE(250.000000)
+      
+      SCALE(0.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(180.000000)
+      
+      CAPTION(SAVE)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(save_ifc)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(on_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(IP_ADDRESSING_TYPE=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(NetGetInterfaceList)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(NetUpdateIFCVars)
+      
+      ARGUMENT(READ)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(set_dhcp_hostname)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(GetTextInput)
+      
+      ARGUMENT(DHCP_HOSTNAME)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(save_ifc)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(NetAddIFC)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(NetSaveIFC)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsMemCardInserted)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgNetConfigNewCombo.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgNetConfig.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnNetCnfErr)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     VALVE(WaitForX=00.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION(INPUT_STRING)
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1100.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(WaitForX)
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(WaitForX==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ui::UI_COMMAND(
+       TYPE(KILLPOPUP)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+ENDOFFILE)
+

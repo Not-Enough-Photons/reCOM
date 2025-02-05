@@ -1,0 +1,235 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(Menu036_CreateGame_Background.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(dlgMultiPlayer.rdr)
+   
+   ANIMATIONS((
+      BUTTON(SELECT)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgMenu.rdr)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(entering_multiplayer_select)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME("Multi Player Mission Select" )
+     
+     XPOS(800.000000)
+     
+     YPOS(1050.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       FILENAME(Menu050_CreateGame_MissionPressed.tif)
+      
+      XSIZE(1700.000000)
+      
+      YSIZE(2200.000000)
+      
+      SPACING(300.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(300.000000)
+      
+      TOP_MARGIN(300.000000)
+      
+      OPTIONS((
+         TYPE(TEXT)
+        
+        CAPTION(mp1)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp1)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp2)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp2)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp3)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp3)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp4)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp4)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp5)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp5)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp6)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp6)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp7)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp7)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp8)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp8)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp9)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp9)
+        
+        )
+       
+       (
+         TYPE(TEXT)
+        
+        CAPTION(mp10)
+        
+        BUTTON(CROSS)
+        
+        ANIMATION(select_and_switch)
+        
+        ARGUMENT(mp10)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(select_and_switch)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(INPUT_STRING)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgGameLobby.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

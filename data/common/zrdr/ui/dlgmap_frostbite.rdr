@@ -1,0 +1,97 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(IMAGE)
+   
+   FILENAME(map_frostbite.tif)
+   
+   )
+  
+  FONT(arialblack)
+  
+  SCRIPT_LIBRARY(uianim.rdr)
+  
+  OBJECTS((
+     NAME(STANDIN)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1920.000000)
+    
+    YPOS(310.000000)
+    
+    SPEC(
+      XSIZE(2560.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(SELECT)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgMenu.rdr)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(overview)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(1250.000000)
+    
+    SPEC(
+      XSIZE(2560.000000)
+     
+     YSIZE(320.000000)
+     
+     XOFFSET(00.000000)
+     
+     YOFFSET(00.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(" " )
+     
+     NORMAL(" " )
+     
+     ACTIVE(A_common_highlight.tif)
+     
+     PRESSED(A_common_highlight.tif)
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgSingle_alaska.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

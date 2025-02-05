@@ -1,0 +1,1015 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/uimp)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(multplay_back.tif)
+    
+    )
+   
+   FONT(myriad)
+   
+   SCRIPT_LIBRARY(dlgSetSOP.rdr)
+   
+   commentedoutfornowpendingadecisiononwhethertoputthescriptsinaseperatefileoraspartofthedialogdefinitionOBJECTS((
+      NAME(letterbar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(blank_top_bar.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(bar_title)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       FONT(Gothic_13)
+      
+      CHILDOF(letterbar)
+      
+      CAPTION("INPUT MESSAGES" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(net_conn_ind_Yel)
+     
+     TYPE(IMAGE)
+     
+     XPOS(5720.000000)
+     
+     YPOS(250.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      FILENAME(NetMonY.tif)
+      
+      SIZE(280.000000280.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(net_conn_ind_blue)
+     
+     TYPE(IMAGE)
+     
+     XPOS(5810.000000)
+     
+     YPOS(340.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      FILENAME(NetMonB.tif)
+      
+      SIZE(100.000000120.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1600.000000)
+     
+     YPOS(670.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1600.000000)
+     
+     YPOS(970.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1600.000000)
+     
+     YPOS(1270.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1600.000000)
+     
+     YPOS(1570.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1600.000000)
+     
+     YPOS(1870.000000)
+     
+     SPEC(
+       XSIZE(4450.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SOP1)
+     
+     TYPE(TEXT)
+     
+     XPOS(1850.000000)
+     
+     YPOS(870.000000)
+     
+     SPEC(
+       CAPTION("SET ME" )
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(MPLOCALSOP1)
+       
+       LONGEVITY(PERSISTENT)
+       
+       VALUE("I'M GOING LEFT." )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SOP2)
+     
+     TYPE(TEXT)
+     
+     XPOS(1850.000000)
+     
+     YPOS(1170.000000)
+     
+     SPEC(
+       CAPTION("SET ME" )
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(MPLOCALSOP2)
+       
+       LONGEVITY(PERSISTENT)
+       
+       VALUE("I'M GOING RIGHT." )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SOP3)
+     
+     TYPE(TEXT)
+     
+     XPOS(1850.000000)
+     
+     YPOS(1470.000000)
+     
+     SPEC(
+       CAPTION("SET ME" )
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(MPLOCALSOP3)
+       
+       LONGEVITY(PERSISTENT)
+       
+       VALUE("I'M GOING DOWN THE MIDDLE." )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SOP4)
+     
+     TYPE(TEXT)
+     
+     XPOS(1850.000000)
+     
+     YPOS(1770.000000)
+     
+     SPEC(
+       CAPTION("SET ME" )
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(MPLOCALSOP4)
+       
+       LONGEVITY(PERSISTENT)
+       
+       VALUE("I'M GOING FOR THE BOMB." )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SOP5)
+     
+     TYPE(TEXT)
+     
+     XPOS(1850.000000)
+     
+     YPOS(2070.000000)
+     
+     SPEC(
+       CAPTION("SET ME" )
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(MPLOCALSOP5)
+       
+       LONGEVITY(PERSISTENT)
+       
+       VALUE("I'M GOING FOR THE HOSTAGES." )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(letterbar_bottom)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(3610.000000)
+     
+     SPEC(
+       FILENAME(common_bar_bottom.tif)
+      
+      SIZE(6400.000000860.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dogtags)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3700.000000)
+     
+     YPOS(3250.000000)
+     
+     SPEC(
+       FILENAME(dogtags.tif)
+      
+      SIZE(2560.0000001280.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      EVENT(ONSTART)
+     
+     ANIMATION(net_monitor)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(letterbar_slide_down)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(bottom_bar_slide_up)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(OnSetSOPStart)
+     
+     )
+    
+    (
+      EVENT(ON_SKB_APPLY)
+     
+     ANIMATION(OnSKBApply)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(PREVIOUS_SCREEN)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_ERROR)
+     
+     ANIMATION(OnMultiplayerDisconnect)
+     
+     )
+    
+    (
+      EVENT(MEMCARD_ERROR)
+     
+     ANIMATION(handle_memcard_error)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(SetSOP1)
+     
+     XPOS(100.000000)
+     
+     YPOS(670.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1450.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(220.000000)
+      
+      CAPTION("MESSAGE 1" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(do_chat)
+        
+        ARGUMENT(MPLOCALSOP1)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SetSOP2)
+     
+     XPOS(100.000000)
+     
+     YPOS(970.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1450.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(220.000000)
+      
+      CAPTION("MESSAGE 2" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(do_chat)
+        
+        ARGUMENT(MPLOCALSOP2)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SetSOP3)
+     
+     XPOS(100.000000)
+     
+     YPOS(1270.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1450.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(220.000000)
+      
+      CAPTION("MESSAGE 3" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(do_chat)
+        
+        ARGUMENT(MPLOCALSOP3)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SetSOP4)
+     
+     XPOS(100.000000)
+     
+     YPOS(1570.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1450.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(220.000000)
+      
+      CAPTION("MESSAGE 4" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(do_chat)
+        
+        ARGUMENT(MPLOCALSOP4)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SetSOP5)
+     
+     XPOS(100.000000)
+     
+     YPOS(1870.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1450.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(220.000000)
+      
+      CAPTION("MESSAGE 5" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(do_chat)
+        
+        ARGUMENT(MPLOCALSOP5)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(handle_memcard_error)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Error loading data, press X to continue." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(960.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(load_initial_config)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(save_and_leave)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(Ensure_MC_Dirs)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(do_chat)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetSkbPurpose)
+      
+      ARGUMENT("Enter a SOP Message" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(GetTextInput)
+      
+      NODE(MENUMPPLAYERNAME)
+      
+      ARGUMENT($1)
+      
+      )
+     
+     VALVE(SkbMaxChars=500.000000)
+     
+     WHILE(
+       VALVE(skb_done==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     VALVE(OptionsChanged=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(NetCensorText)
+      
+      ARGUMENT($1)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

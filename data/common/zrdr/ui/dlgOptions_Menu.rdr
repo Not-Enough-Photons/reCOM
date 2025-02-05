@@ -1,0 +1,771 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(IMAGE)
+   
+   FILENAME(multplay_back.tif)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlgOptions_Menu.rdr)
+  
+  OBJECTS((
+     NAME(letterbar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(00.000000)
+    
+    SPEC(
+      FILENAME(blank_top_bar.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(bar_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(Gothic_13)
+     
+     CHILDOF(letterbar)
+     
+     CAPTION(OPTIONS)
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(letterbar_bottom)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3840.000000)
+    
+    SPEC(
+      FILENAME(common_bar_bottom.tif)
+     
+     SIZE(6400.000000640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(TabSmWindow)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1950.000000)
+    
+    YPOS(700.000000)
+    
+    SPEC(
+      XSIZE(4350.000000)
+     
+     YSIZE(300.000000)
+     
+     FILENAME(infoWin1.tif)
+     
+     )
+    
+    )
+   
+   (
+     NAME(dogtags)
+    
+    TYPE(IMAGE)
+    
+    XPOS(3600.000000)
+    
+    YPOS(3200.000000)
+    
+    SPEC(
+      FILENAME(dogtags.tif)
+     
+     SIZE(2560.0000001280.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(instText)
+    
+    TYPE(TEXT)
+    
+    XPOS(2000.000000)
+    
+    YPOS(900.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("Change audio options" )
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(TRIANGLE)
+    
+    ANIMATION(check_then_save_and_leave)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(OnAudioAct)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(letterbar_slide_down)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(bottom_bar_slide_up)
+    
+    )
+   
+   (
+     EVENT(MEMCARD_ERROR)
+    
+    ANIMATION(handle_memcard_error)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(AudioOpBtn)
+    
+    XPOS(100.000000)
+    
+    YPOS(700.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      XSIZE(1800.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(220.000000)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     SCALE(0.000000)
+     
+     CAPTION("AUDIO OPTIONS" )
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(OnAudioAct)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgOptions_Audio.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(VideoOpBtn)
+    
+    XPOS(100.000000)
+    
+    YPOS(1000.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      XSIZE(1800.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(220.000000)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     CAPTION("VIDEO OPTIONS" )
+     
+     SCALE(0.000000)
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(OnVideoAct)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgOptions_Video.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(ControlOpBtn)
+    
+    XPOS(100.000000)
+    
+    YPOS(1300.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      XSIZE(1800.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(220.000000)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     CAPTION("CONTROLLER OPTIONS" )
+     
+     SCALE(0.000000)
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(OnContSelAct)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgControllerSelection.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(ControlPresetBtn)
+    
+    XPOS(100.000000)
+    
+    YPOS(1600.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      XSIZE(1800.000000)
+     
+     YSIZE(350.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(220.000000)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     CAPTION("CONTROLLER PRESETS" )
+     
+     SCALE(0.000000)
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(OnContPreAct)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgControllerPresets.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(check_then_save_and_leave)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(StopAllSounds)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(VagStreaming)
+      
+      ARGUMENT(OFF)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(menu_fade_down)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnAudioAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(CameFromOther=10.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUinstText)
+      
+      CAPTION("Change audio options" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(handle_memcard_error)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Error loading data, press X to continue." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(960.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(load_initial_config)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(save_and_leave)
+      
+      )
+     
+     STOP_ANIMATINO(
+       NAME(Ensure_MC_Dirs)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Uninit)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnVideoAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUinstText)
+      
+      CAPTION("Change video options" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnContSelAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUinstText)
+      
+      CAPTION("Change controller options" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnContPreAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUinstText)
+      
+      CAPTION("Change controller options from preset configurations" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,154 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  FONT(arialblack)
+  
+  SCRIPT_LIBRARY(dlgPlayTutMovies.rdr)
+  
+  OBJECTS()
+  
+  ANIMATIONS((
+     EVENT(ONSTART)
+    
+    ANIMATION(ReplayCinematic)
+    
+    )
+   
+   )
+  
+  ANIMATION_DEFINITIONS(
+    ANIMATION_LIST(
+     ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+    
+    ANIMATION_DEFINITION(
+      ANIMATION_NAME(ReplayCinematic)
+     
+     ACTIVATION(ON_CALL)
+     
+     SEQUENCE_DEFINITION(
+       STOP_ANIMATION(
+        NAME(menu_fade_up)
+       
+       )
+      
+      OBJECT_OPACITY_FROM_TO(
+        NAME(MENUMENUFADER)
+       
+       RUN_TIME(0.000000)
+       
+       OPACITY_FROM(0.000000)
+       
+       OPACITY_TO(0.000000)
+       
+       )
+      
+      CALL_SEQUENCE(
+        NAME(switch)
+       
+       )
+      
+      )
+     
+     SEQUENCE_DEFINITION(
+       NAME(switch)
+      
+      ACTIVATION(ON_CALL)
+      
+      IF(
+        VALVE(uiDocChapter==10.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0100.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiDocChapter==20.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0300.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiDocChapter==30.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0300.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiDocChapter==40.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0500.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiDocChapter==50.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0100.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiDocChapter==60.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0300.pss)
+       
+       )
+      
+      ENDIF()
+      
+      WAIT(0.000000)
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_tutorial.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

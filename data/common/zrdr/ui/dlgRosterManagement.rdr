@@ -1,0 +1,412 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(undefined.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(dlgRosterManagement.rdr)
+   
+   OBJECTS((
+      NAME(STANDIN)
+     
+     TYPE(TEXT)
+     
+     XPOS(300.000000)
+     
+     YPOS(0.000000)
+     
+     SPEC(
+       CAPTION("ROSTER MANAGEMENT SCREEN" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(STANDIN)
+     
+     TYPE(TEXT)
+     
+     XPOS(550.000000)
+     
+     YPOS(1000.000000)
+     
+     SPEC(
+       CAPTION("Clan Roster" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(STANDIN)
+     
+     TYPE(WRAPPEDTEXT)
+     
+     XPOS(3000.000000)
+     
+     YPOS(1000.000000)
+     
+     SPEC(
+       CAPTION("Clan Statistics go here. Things like challenges won, enemies killed, average win time, number of losses, leader name, number of members, that sort of thing." )
+      
+      SCALE(0.000000)
+      
+      WIDTH(2000.000000)
+      
+      SPACING(200.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(STANDIN)
+     
+     TYPE(TEXT)
+     
+     XPOS(1000.000000)
+     
+     YPOS(3000.000000)
+     
+     SPEC(
+       CAPTION("CLAN CHALLENGES LISTED HERE" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(PREVIOUS_SCREEN)
+     
+     )
+    
+    (
+      BUTTON(SELECT)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgRosterManagement.rdr)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(get_clan_roster)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_ERROR)
+     
+     ANIMATION(OnMultiplayerDisconnect)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(acceptchallenge)
+     
+     XPOS(300.000000)
+     
+     YPOS(3800.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      CAPTION("Accept Challenge" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(inviteplyr)
+     
+     XPOS(1500.000000)
+     
+     YPOS(3800.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      CAPTION("Invite Player " )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgInvitedPlayers.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(removeplyr)
+     
+     XPOS(2450.000000)
+     
+     YPOS(3800.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      CAPTION("Remove Player" )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgRemovePlayer.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(templeader)
+     
+     XPOS(3500.000000)
+     
+     YPOS(3800.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      CAPTION("Temp. Leader" )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgLeadershipChange.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(chngleader)
+     
+     XPOS(4410.000000)
+     
+     YPOS(3800.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      CAPTION("Change Leader" )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgLeadershipChange.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(exit)
+     
+     XPOS(5460.000000)
+     
+     YPOS(3800.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      CAPTION(Exit)
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(PREVIOUS_SCREEN)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME("Clan Roster" )
+     
+     XPOS(550.000000)
+     
+     YPOS(1200.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       XSIZE(1280.000000)
+      
+      YSIZE(550.000000)
+      
+      SPACING(170.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(300.000000)
+      
+      TOP_MARGIN(00.000000)
+      
+      UIVAR(
+        NAME(CLAN_ROSTER)
+       
+       )
+      
+      OPTIONS((
+         CAPTION(Bob)
+        
+        )
+       
+       (
+         CAPTION(Dave)
+        
+        )
+       
+       (
+         CAPTION(Conrad)
+        
+        )
+       
+       (
+         CAPTION(Tom)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(get_clan_roster)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(GetClanRoster)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

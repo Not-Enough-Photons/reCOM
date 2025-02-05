@@ -1,0 +1,3934 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/uimp)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(multplay_back.tif)
+    
+    )
+   
+   FONT(myriad)
+   
+   SCRIPT_LIBRARY(dlgWorldOfSOCOM.rdr)
+   
+   OBJECTS((
+      NAME(JoiningAnim)
+     
+     TYPE(TEXT)
+     
+     XPOS(3200.000000)
+     
+     YPOS(3000.000000)
+     
+     SPEC(
+       COLOR(2430.0000002430.000000690.000000)
+      
+      CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(JoiningAnimRed)
+     
+     TYPE(TEXT)
+     
+     XPOS(3200.000000)
+     
+     YPOS(3000.000000)
+     
+     SPEC(
+       COLOR(1500.0000001500.0000001500.000000)
+      
+      CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(letterbar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(blank_top_bar.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(bar_title)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       FONT(Gothic_13)
+      
+      CHILDOF(letterbar)
+      
+      CAPTION("SOCOM ONLINE" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(letterbar_bottom)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(3610.000000)
+     
+     SPEC(
+       FILENAME(common_bar_bottom.tif)
+      
+      SIZE(6400.000000640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(net_conn_ind_Yel)
+     
+     TYPE(IMAGE)
+     
+     XPOS(5720.000000)
+     
+     YPOS(250.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      FILENAME(NetMonY.tif)
+      
+      SIZE(280.000000280.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(net_conn_ind_blue)
+     
+     TYPE(IMAGE)
+     
+     XPOS(5810.000000)
+     
+     YPOS(340.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      FILENAME(NetMonB.tif)
+      
+      SIZE(100.000000120.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(MainWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1700.000000)
+     
+     YPOS(700.000000)
+     
+     SPEC(
+       XSIZE(4600.000000)
+      
+      YSIZE(2950.000000)
+      
+      FILENAME(eq_CharWinInv.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(DescFieldTop)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1770.000000)
+     
+     YPOS(750.000000)
+     
+     SPEC(
+       XSIZE(4460.000000)
+      
+      YSIZE(160.000000)
+      
+      FILENAME(blue_back_plate.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(DescFieldLow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1780.000000)
+     
+     YPOS(3420.000000)
+     
+     SPEC(
+       XSIZE(4460.000000)
+      
+      YSIZE(200.000000)
+      
+      FILENAME(blue_back_plate.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabDivHorTop)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1750.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       XSIZE(4500.000000)
+      
+      YSIZE(80.000000)
+      
+      FILENAME(Tab_HorGold_Divider.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabDivHorLow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1750.000000)
+     
+     YPOS(3380.000000)
+     
+     SPEC(
+       XSIZE(4500.000000)
+      
+      YSIZE(80.000000)
+      
+      FILENAME(Tab_HorGold_Divider.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(playertext)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar_bottom)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION(Player:)
+      
+      )
+     
+     )
+    
+    (
+      NAME(clantext)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(450.000000)
+     
+     CHILDOF(letterbar_bottom)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION(Clan:)
+      
+      )
+     
+     )
+    
+    (
+      NAME(playername)
+     
+     TYPE(TEXT)
+     
+     XPOS(800.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar_bottom)
+     
+     SPEC(
+       UIVAR(
+        NAME(PLAYERNAMEVAR)
+       
+       LONGEVITY(PERSISTENT)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(txtClanName)
+     
+     TYPE(TEXT)
+     
+     XPOS(800.000000)
+     
+     YPOS(450.000000)
+     
+     SPEC(
+       CHILDOF(letterbar_bottom)
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(CLANNAMEVAR)
+       
+       VALUE(Unaffiliated)
+       
+       TYPE(PERMANENT)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(DescriptionText)
+     
+     TYPE(TEXT)
+     
+     XPOS(1850.000000)
+     
+     YPOS(890.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      SCALE(0.000000)
+      
+      CAPTION(" " )
+      
+      )
+     
+     )
+    
+    (
+      NAME(DescriptionTextLow)
+     
+     TYPE(TEXT)
+     
+     XPOS(2000.000000)
+     
+     YPOS(3600.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      SCALE(0.000000)
+      
+      CAPTION(" " )
+      
+      )
+     
+     )
+    
+    (
+      NAME(BlueBack)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1760.000000)
+     
+     YPOS(950.000000)
+     
+     SPEC(
+       FILENAME(DescField.tif)
+      
+      SIZE(4480.000000200.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TopTenText)
+     
+     TYPE(TEXT)
+     
+     XPOS(700.000000)
+     
+     YPOS(200.000000)
+     
+     SPEC(
+       CHILDOF(BlueBack)
+      
+      COLOR(0.0000000.0000000.000000)
+      
+      SCALE(0.000000)
+      
+      CAPTION("TOP TEN SOCOM ONLINE PLAYERS" )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabDivHorTop)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(200.000000)
+     
+     SPEC(
+       CHILDOF(BlueBack)
+      
+      XSIZE(4500.000000)
+      
+      YSIZE(80.000000)
+      
+      FILENAME(Tab_HorGold_Divider.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dogtags)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3700.000000)
+     
+     YPOS(3250.000000)
+     
+     SPEC(
+       FILENAME(dogtags.tif)
+      
+      SIZE(2560.0000001280.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow1)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3200.000000)
+     
+     YPOS(1270.000000)
+     
+     SPEC(
+       XSIZE(2900.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow2)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(300.000000)
+     
+     SPEC(
+       CHILDOF(TabSmWindow1)
+      
+      XSIZE(2900.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabSmWindow3)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(600.000000)
+     
+     SPEC(
+       CHILDOF(TabSmWindow1)
+      
+      XSIZE(2900.000000)
+      
+      YSIZE(300.000000)
+      
+      FILENAME(infoWin1.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(which_map)
+     
+     TYPE(TEXT)
+     
+     XPOS(-140-0.000000)
+     
+     YPOS(200.000000)
+     
+     SPEC(
+       CHILDOF(TabSmWindow1)
+      
+      COLOR(0.0000000.0000000.000000)
+      
+      CAPTION("Which maps" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(HManyPlayers)
+     
+     TYPE(TEXT)
+     
+     XPOS(-140-0.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       CHILDOF(TabSmWindow1)
+      
+      COLOR(0.0000000.0000000.000000)
+      
+      CAPTION("How many players" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(what_speed)
+     
+     TYPE(TEXT)
+     
+     XPOS(-140-0.000000)
+     
+     YPOS(800.000000)
+     
+     SPEC(
+       CHILDOF(TabSmWindow1)
+      
+      COLOR(0.0000000.0000000.000000)
+      
+      CAPTION("Connection speed" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(O_filters)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(1800.000000)
+     
+     YPOS(2470.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      MAXLENGTH(3800.000000)
+      
+      MAXHEIGHT(1700.000000)
+      
+      PULSERATE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      SPACING(200.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(game_type_desc)
+     
+     TYPE(TEXT)
+     
+     XPOS(3300.000000)
+     
+     YPOS(1470.000000)
+     
+     SPEC(
+       CAPTION("ONLINE FILTERS" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(game_player_desc)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(300.000000)
+     
+     SPEC(
+       CHILDOF(game_type_desc)
+      
+      CAPTION("ONLINE FILTERS" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(game_speed_desc)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(600.000000)
+     
+     SPEC(
+       CHILDOF(game_type_desc)
+      
+      CAPTION("ONLINE FILTERS" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      EVENT(MP_MEDIUS_HAS_INVITES)
+     
+     ANIMATION(TurnOnInvitations)
+     
+     )
+    
+    (
+      BUTTON(TRIGGER_R2)
+     
+     ANIMATION(ForceUsagePolicy)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(bottom_bar_slide_up)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(init_screen)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(letterbar_slide_down)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(net_monitor)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(exit_lobby)
+     
+     )
+    
+    (
+      BUTTON(CIRCLE)
+     
+     ANIMATION(do_chat)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(OnBriefingRoomstart)
+     
+     )
+    
+    (
+      EVENT(MP_JOIN_ROOM)
+     
+     ANIMATION(switch_to_briefing_room)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_ERROR)
+     
+     ANIMATION(OnMultiplayerDisconnect)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_JOIN_GAME_FAILURE)
+     
+     ANIMATION(OnRandomGameFailure)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_READY_TO_CONNECT)
+     
+     ANIMATION(join_game)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(get_ladder_top_10)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_BECAME_LEADER)
+     
+     ANIMATION(have_become_leader)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_JOIN_ROOM_FAILURE)
+     
+     ANIMATION(OnJoinRoomFailure)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(LadderTop10)
+     
+     XPOS(1800.000000)
+     
+     YPOS(1100.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      XSIZE(2500.000000)
+      
+      YSIZE(2500.000000)
+      
+      PADHOG()
+      
+      NOSELECT()
+      
+      SPACING(210.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(100.000000)
+      
+      TOP_MARGIN(300.000000)
+      
+      COLUMNS((
+         POSITION(00.000000)
+        
+        )
+       
+       (
+         POSITION(350.000000)
+        
+        )
+       
+       (
+         POSITION(1500.000000)
+        
+        )
+       
+       )
+      
+      UIVAR(
+        NAME(LADDER_TOP_10)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(ROOMLIST)
+     
+     XPOS(1800.000000)
+     
+     YPOS(950.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       PRESSED_COLOR(0.0000000.0000000.000000)
+      
+      NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      ACTIVE_COLOR(
+        0.0000000.0000000.000000RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      XSIZE(2500.000000)
+      
+      YSIZE(2400.000000)
+      
+      PADHOG()
+      
+      NOSELECT()
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      UP_ARROW(
+        TEXTURE(arrow_top.tif)
+       
+       SIZE(300.000000300.000000)
+       
+       OFFSET(1200.000000-10-0.000000)
+       
+       )
+      
+      DOWN_ARROW(
+        TEXTURE(arrow_botm.tif)
+       
+       SIZE(300.000000300.000000)
+       
+       OFFSET(1200.0000002250.000000)
+       
+       )
+      
+      LEFT_MARGIN(100.000000)
+      
+      TOP_MARGIN(300.000000)
+      
+      COLUMNS((
+         POSITION(00.000000)
+        
+        )
+       
+       (
+         POSITION(2000.000000)
+        
+        )
+       
+       )
+      
+      UIVAR(
+        NAME(ROOMLISTVAR)
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(join_room)
+        
+        )
+       
+       (
+         BUTTON(TRIANGLE)
+        
+        ANIMATION(OnBriefingRoomstart)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(motd)
+     
+     TYPE(WRAPPEDTEXT)
+     
+     XPOS(1950.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       UIVAR(
+        NAME(MEDIUS_MOTD)
+       
+       )
+      
+      WIDTH(3500.000000)
+      
+      HEIGHT(2000.000000)
+      
+      CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      SPACING(200.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(briefingrooms)
+     
+     XPOS(100.000000)
+     
+     YPOS(670.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION("BRIEFING ROOMS" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(OnBriefingRoombtn)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(PressBriefingRoombtn)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(autoplay)
+     
+     XPOS(100.000000)
+     
+     YPOS(970.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION(AUTOPLAY)
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(aplaytext)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(join_random_game)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(ranking)
+     
+     XPOS(100.000000)
+     
+     YPOS(1270.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION("PLAYER RANKING" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(rankingAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgLadderLobby.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(newsandmessages)
+     
+     XPOS(100.000000)
+     
+     YPOS(1570.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION(NEWS/MESSAGES)
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back_real.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(OnNewsbtn)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(ClanManage)
+     
+     XPOS(100.000000)
+     
+     YPOS(1870.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       CAPTION(CLAN)
+      
+      XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(ClanManageAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(create_modify_clan)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(invitations)
+     
+     XPOS(100.000000)
+     
+     YPOS(2170.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION(INVITATIONS)
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(invitationsAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgRespondToInvites.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(refreshlist)
+     
+     XPOS(100.000000)
+     
+     YPOS(2470.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION("REFRESH LIST" )
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(refreshAct)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(refresh_roomlist)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(options)
+     
+     XPOS(100.000000)
+     
+     YPOS(2770.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1550.000000)
+      
+      YSIZE(300.000000)
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(210.000000)
+      
+      CAPTION(OPTIONS)
+      
+      SCALE(0.000000)
+      
+      PRESSED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      NORMAL(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      ACTIVE(
+        IMAGE(brown_back.tif)
+       
+       TEXT_GLOW(
+         RANGE(0.0000000.000000)
+        
+        TIME(0.000000)
+        
+        )
+       
+       TEXT_COLOR(0.0000000.0000000.000000)
+       
+       )
+      
+      DISABLED(
+        IMAGE(brown_back.tif)
+       
+       TEXT_COLOR(500.000000500.000000500.000000)
+       
+       )
+      
+      ANIMATIONS((
+         EVENT(ONACTIVATE)
+        
+        ANIMATION(optiontext)
+        
+        )
+       
+       (
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgOnlineOptions.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(get_ladder_top_10)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(GetLadderInfo)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(create_modify_clan)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       ui::UI_COMMAND(
+        TYPE(IsMemberOfClan)
+       
+       )
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsLeaderOfClan)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SwitchMenu)
+      
+      ARGUMENT(dlgManageRosterLeader.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(SwitchMenu)
+      
+      ARGUMENT(dlgManageRoster.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(SwitchMenu)
+      
+      ARGUMENT(dlgCreateClan.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnBriefingRoomstart)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUinvitations)
+      
+      CAPTION("NO INVITATIONS" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(invitations)
+      
+      )
+     
+     VALVE(NoExitState=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(LadderTop10)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(briefingrooms)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(ROOMLIST)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(motd)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUnewsandmessages)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnNewsbtn)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_DINK)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("News of the day" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnBriefingRoombtn)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUO_filters)
+      
+      CAPTION(" " )
+      
+      )
+     
+     SOUND(
+       NAME(SND_DINK)
+      
+      START()
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Press the X button to activate the rooms list." )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(PressBriefingRoombtn)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(Uibuttonset=10.000000)
+     
+     SOUND(
+       NAME(SND_DINK)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(ROOMLIST)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(ROOMLIST)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Scroll the rooms available to you." )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(aplaytext)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(refresh_filter_screen)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUO_filters)
+      
+      CAPTION("The settings in the fields above reflect what is set on the input filters screen. To change input filter settings, press the options button then the input filters button   " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Play a random game determined by your filter settings" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(optiontext)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Change online options" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(invitationsAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("View current clan invites" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(rankingAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUO_filters)
+      
+      CAPTION(" " )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Press the X button to view the rest" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUBlueBack)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ClanrankingAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("View a list of the top clans" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(refreshAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Refresh the game list" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ClanManageAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENULadderTop10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUO_filters)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("Create or manage your clan" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUTabSmWindow1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_type_desc)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUROOMLIST)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmotd)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(exit_lobby)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     VALVE(AreYouSure=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("You will be logging off of SOCOM Online. Are you sure you want to do this?" )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1280.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(300.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(AreYouSure)
+       
+       YES(
+         CAPTION(Yes)
+        
+        POS(600.000000900.000000)
+        
+        TEXTOFFSET(100.000000180.000000)
+        
+        WIDTH(500.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        )
+       
+       NO(
+         CAPTION(No)
+        
+        POS(1800.000000900.000000)
+        
+        TEXTOFFSET(130.000000180.000000)
+        
+        WIDTH(500.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(pop_butt.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(AreYouSure==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(AreYouSure==10.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Logging off" )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(960.000000)
+      
+      XOFFSET(900.000000)
+      
+      YOFFSET(400.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(LobbyLogout)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(UnInitNetwork)
+      
+      )
+     
+     VALVE(socom_online_initialized=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(NetCnfClose)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(NetCnfUnInit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(RebootIOP)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(KILLPOPUP)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(KILLPOPUP)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(refresh_roomlist)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUROOMLIST)
+      
+      TYPE(RefreshRoomList)
+      
+      )
+     
+     DEBUG(
+       PREFIX_STRING("Debug: " )
+      
+      ANIM_NAME(": " )
+      
+      SEQ_NAME(": " )
+      
+      STRING("Refresh RoomList" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(TurnOnInvitations)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(invitations)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUinvitations)
+      
+      CAPTION(INVITATIONS)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(init_screen)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(GetClan)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(GetMediusAnnouncements)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUROOMLIST)
+      
+      TYPE(RefreshRoomList)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(roomlist_autorefresh)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(roomlist_autorefresh)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUROOMLIST)
+      
+      TYPE(RefreshRoomList)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(join_room)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      DEBUG(
+       MASTER(ON)
+      
+      ANIM(ON)
+      
+      PREFIX_STRING("Debug: " )
+      
+      ANIM_NAME(": " )
+      
+      SEQ_NAME(": " )
+      
+      STRING("Joining MP Room" )
+      
+      OBJECT_ACTIVE_STATE(
+        NAME(MENUTabWindowActive)
+       
+       STATE(ACTIVE)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(JoinMPRoom)
+      
+      ARGUMENT(INPUT_STRING)
+      
+      )
+     
+     WHILE(
+       VALVE(socom_online_state!=110.000000)
+      
+      )
+     
+     IF(
+       VALVE(socom_online_state==190.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUONLINE_LOBBY_STATE)
+      
+      CAPTION("STATE: Join Room" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(socom_online_state==200.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUONLINE_LOBBY_STATE)
+      
+      CAPTION("STATE: Create Room" )
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       NODE(MENUONLINE_LOBBY_STATE)
+      
+      CAPTION("STATE: Unknown" )
+      
+      )
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(join_random_game)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Searching For Game To Join. Please Be Patient." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(JoinMPGame)
+      
+      ARGUMENT(RANDOM)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(have_become_leader)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("You have become leader of the clan. Press the X button to continue." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      CANCELLABLE()
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnRandomGameFailure)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("No Game Found. Change Filter Settings or Join Game Manually. Press the X button to continue." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     VALVE(NoExitState=00.000000)
+     
+     STOP_ANIMATION(
+       NAME(join_game)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnim)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnimRed)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnJoinRoomFailure)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUROOMLIST)
+      
+      TYPE(RefreshRoomList)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Cannot join room. It may be full. Please try another." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    WAIT(0.000000)
+    
+    ui::UI_COMMAND(
+      TYPE(KILLPOPUP)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(switch_to_briefing_room)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      DEBUG(
+       MASTER(ON)
+      
+      ANIM(ON)
+      
+      PREFIX_STRING("Debug: " )
+      
+      ANIM_NAME(": " )
+      
+      SEQ_NAME(": " )
+      
+      STRING("Joining MP Room" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMPBriefingRoom.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(join_game)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(join_game_main)
+     
+     VALVE(NoExitState=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(KILLPOPUP)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(monitor_timeout)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(Join_flash)
+      
+      )
+     
+     WHILE(
+       VALVE(socom_online_state!=170.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     IF(
+       VALVE(socom_online_state==110.000000)
+      
+      )
+     
+     IF(
+       !ui::UI_COMMAND(
+        TYPE(JoinMPGame)
+       
+       ARGUMENT(INPUT_STRING)
+       
+       )
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(abort_join)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     END_WHILE()
+     
+     VALVE(mp_join_game=90.000000)
+     
+     WAIT(0.000000)
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(ConnectToGameServer)
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     STOP_SEQUENCE(
+       NAME(monitor_timeout)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(join_after_a_while)
+      
+      )
+     
+     WHILE(
+       VALVE(mp_join_game==90.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(CheckJoinMP)
+      
+      )
+     
+     END_WHILE()
+     
+     STOP_SEQUENCE(
+       NAME(join_after_a_while)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(do_join)
+      
+      )
+     
+     ELSE()
+     
+     CALL_SEQUENCE(
+       NAME(abort_join)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(join_after_a_while)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(0.000000)
+     
+     STOP_SEQUENCE(
+       NAME(join_game_main)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(do_join)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(do_join)
+     
+     ACTIVATION(ON_CALL)
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(JoinGameServer)
+       
+       )
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(monitor_timeout)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgGameLobby.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(DisconnectFromGameServer)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(abort_join)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(Join_flash)
+     
+     ACTIVATION(ON_CALL)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnim)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnimRed)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . . . . . " )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . . . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnim)
+      
+      CAPTION("JOINING GAME. ." )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnim)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnimRed)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . . . . . " )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . . . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUJoiningAnimRed)
+      
+      CAPTION("JOINING GAME. ." )
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(abort_join)
+     
+     ACTIVATION(ON_CALL)
+     
+     STOP_SEQUENCE(
+       NAME(monitor_timeout)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(join_game_main)
+      
+      )
+     
+     STOP_SEQUENCE(
+       NAME(Join_flash)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnim)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUJoiningAnimRed)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(monitor_timeout)
+     
+     ACTIVATION(ON_CALL)
+     
+     WAIT(0.000000)
+     
+     CALL_SEQUENCE(
+       NAME(abort_join)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(refresh_filter_screen)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(GameTypeFilter==00.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION(ANY)
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==10.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP1 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==20.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP2 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==40.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP4 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==50.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP5 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==60.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP6 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==70.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP7 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==90.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP9 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==100.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("MP10 ONLY" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==1010.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("Deathmatch ONLY (MP2 MP5)" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==1020.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("Footbomb ONLY (MP1 MP7 MP9)" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameTypeFilter==1030.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_type_desc)
+      
+      CAPTION("Hostage ONLY (MP4 MP6 MP10)" )
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(GamePlayerFilter==00.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("ANY NUMBER OF PLAYERS" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==20.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 2 players" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==40.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 4 players" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==60.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 6 players" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==80.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 8 players" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==100.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 10 players" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==120.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 12 players" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GamePlayerFilter==140.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_player_desc)
+      
+      CAPTION("More than 14 players" )
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(GameSpeedFilter==650000.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_speed_desc)
+      
+      CAPTION("Any Speed ( 65000 )" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameSpeedFilter==3000.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_speed_desc)
+      
+      CAPTION("Fast ( 300 )" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameSpeedFilter==6000.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_speed_desc)
+      
+      CAPTION("AVERAGE ( 600 )" )
+      
+      )
+     
+     ELSEIF(
+       VALVE(GameSpeedFilter==12000.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgame_speed_desc)
+      
+      CAPTION("SLOW ( 1200 )" )
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(FF_FILTER==00.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUsubtitles)
+      
+      SELECTION(
+        INDEX(10.000000)
+       
+       )
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

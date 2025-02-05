@@ -1,0 +1,3428 @@
+((
+  SCREENS((
+    LIBRARY(common/assetlib/splash)
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(dlgExitState.rdr)
+   
+   OBJECTS((
+      NAME(ToDebriefing)
+     
+     TYPE(TEXT)
+     
+     XPOS(5100.000000)
+     
+     YPOS(450.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      CAPTION("LOADING. . . ." )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Primary)
+     
+     TYPE(TEXT)
+     
+     XPOS(350.000000)
+     
+     YPOS(3850.000000)
+     
+     SPEC(
+       CAPTION(PRIMARY)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Objectives)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Primary)
+     
+     SPEC(
+       CAPTION(OBJECTIVES)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Complete)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(300.000000)
+     
+     CHILDOF(Primary)
+     
+     SPEC(
+       CAPTION(COMPLETE)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(PrimCompCntr)
+     
+     TYPE(COUNTER)
+     
+     XPOS(1100.000000)
+     
+     YPOS(00.000000)
+     
+     CHILDOF(Primary)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatPrimaryObjectivesComplete)
+      
+      )
+     
+     )
+    
+    (
+      NAME(PrimaryOf)
+     
+     TYPE(TEXT)
+     
+     XPOS(1100.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Primary)
+     
+     SPEC(
+       CAPTION(OF)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(PrimaryTotal)
+     
+     TYPE(TEXT)
+     
+     XPOS(1100.000000)
+     
+     YPOS(300.000000)
+     
+     CHILDOF(Primary)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      UIVAR(
+        NAME(StatPrimaryObjectivesTotal)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Secondary)
+     
+     TYPE(TEXT)
+     
+     XPOS(1950.000000)
+     
+     YPOS(3850.000000)
+     
+     SPEC(
+       CAPTION(SECONDARY)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Objectives)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Secondary)
+     
+     SPEC(
+       CAPTION(OBJECTIVES)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Complete)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(300.000000)
+     
+     CHILDOF(Secondary)
+     
+     SPEC(
+       CAPTION(COMPLETE)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SecCompCntr)
+     
+     TYPE(COUNTER)
+     
+     XPOS(1100.000000)
+     
+     YPOS(00.000000)
+     
+     CHILDOF(Secondary)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatSecondaryObjectivesComplete)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SecondaryOf)
+     
+     TYPE(TEXT)
+     
+     XPOS(1100.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Secondary)
+     
+     SPEC(
+       CAPTION(OF)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SecondaryTotal)
+     
+     TYPE(TEXT)
+     
+     XPOS(1100.000000)
+     
+     YPOS(300.000000)
+     
+     CHILDOF(Secondary)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      UIVAR(
+        NAME(StatSecondaryObjectivesTotal)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Percent)
+     
+     TYPE(TEXT)
+     
+     XPOS(3550.000000)
+     
+     YPOS(3850.000000)
+     
+     SPEC(
+       CAPTION(PERCENTAGE)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Comp)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Percent)
+     
+     SPEC(
+       CAPTION(COMPLETED)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(PercentCntr)
+     
+     TYPE(COUNTER)
+     
+     XPOS(900.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Percent)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatObjectivesPct)
+      
+      )
+     
+     )
+    
+    (
+      NAME(PercentSymbol)
+     
+     TYPE(TEXT)
+     
+     XPOS(1150.000000)
+     
+     YPOS(150.000000)
+     
+     CHILDOF(Percent)
+     
+     SPEC(
+       CAPTION(%)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SealTeamList)
+     
+     TYPE(TEXT)
+     
+     XPOS(300.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       CAPTION("SEAL TEAM" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(KahunaList)
+     
+     TYPE(TEXT)
+     
+     XPOS(2400.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       CAPTION(KAHUNA)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(BoomerList)
+     
+     TYPE(TEXT)
+     
+     XPOS(3170.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       CAPTION(BOOMER)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SmileyList)
+     
+     TYPE(TEXT)
+     
+     XPOS(3980.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       CAPTION(JESTER)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SpectreList)
+     
+     TYPE(TEXT)
+     
+     XPOS(4750.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       CAPTION(SPECTRE)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalList)
+     
+     TYPE(TEXT)
+     
+     XPOS(5650.000000)
+     
+     YPOS(900.000000)
+     
+     SPEC(
+       CAPTION(TOTAL)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Kills)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       CAPTION("#P1 KILLS" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Kills)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatKillsSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Kills)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatKillsSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Kills)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatKillsSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Kills)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatKillsSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalKills)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(1150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatKillsTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(HeadShots)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 HEAD SHOTS" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1HeadShots)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHeadShotsSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2HeadShots)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHeadShotsSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3HeadShots)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHeadShotsSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4HeadShots)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHeadShotsSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalHeadShots)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(1350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatHeadShotsTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(StealthKills)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(1550.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 STEALTH/KNIFE KILLS" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Stealth)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(1550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatStealthSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Stealth)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(1550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatStealthSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Stealth)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(1550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatStealthSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Stealth)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(1550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatStealthSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalStealth)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(1550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatStealthTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Restraints)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(1750.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 RESTRAINED" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Restrained)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(1750.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatRestrainedSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Restrained)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(1750.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatRestrainedSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Restrained)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(1750.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatRestrainedSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Restrained)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(1750.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatRestrainedSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalRestrained)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(1750.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatRestrainedTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(CoverBlown)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 TIMES SEEN" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Seen)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSeenSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Seen)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSeenSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Seen)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSeenSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Seen)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSeenSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalSeen)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatSeenTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(RoundsPrimary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 PRIMARY ROUNDS FIRED" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Primary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatPrimarySeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Primary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatPrimarySeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Primary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatPrimarySeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Primary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatPrimarySeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalPrimary)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatPrimaryTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(RoundsSecondary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(2350.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 SECONDARY ROUNDS FIRED" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Secondary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(2350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSecondarySeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Secondary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(2350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSecondarySeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Secondary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(2350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSecondarySeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Secondary)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(2350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatSecondarySeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalSecondary)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(2350.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatSecondaryTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(RoundsGrenade)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(2550.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 GRENADES DEPLOYED" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Grenades)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(2550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatGrenadesSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Grenades)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(2550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatGrenadesSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Grenades)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(2550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatGrenadesSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Grenades)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(2550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatGrenadesSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalGrenades)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(2550.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatGrenadesTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(gunButted)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(2770.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 GUN BUTTS" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Butts)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(2770.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatButtsSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Butts)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(2770.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatButtsSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Butts)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(2770.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatButtsSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Butts)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(2770.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatButtsSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalButts)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(2770.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatButtsTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(HitsTaken)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(2970.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 HITS TAKEN" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1HitsTaken)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(2970.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHitsTakenSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2HitsTaken)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(2970.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHitsTakenSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3HitsTaken)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(2970.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHitsTakenSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4HitsTaken)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(2970.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatHitsTakenSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalHitsTaken)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(2970.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatHitsTakenTot)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Died)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(300.000000)
+     
+     YPOS(3170.000000)
+     
+     SPEC(
+       CAPTION("#P1000000 DIED" )
+      
+      SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal1Died)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(2650.000000)
+     
+     YPOS(3170.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatDiedSeal1)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal2Died)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(3450.000000)
+     
+     YPOS(3170.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatDiedSeal2)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal3Died)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(4250.000000)
+     
+     YPOS(3170.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatDiedSeal3)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Seal4Died)
+     
+     TYPE(TELETYPE)
+     
+     XPOS(5000.000000)
+     
+     YPOS(3170.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      INTERVAL(0.000000)
+      
+      NOCURSOR()
+      
+      UIVAR(
+        NAME(StatDiedSeal4)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TotalDied)
+     
+     TYPE(COUNTER)
+     
+     XPOS(5800.000000)
+     
+     YPOS(3170.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      StartTime(10000000.000000)
+      
+      Duration(0.000000)
+      
+      ValVar(StatDiedTot)
+      
+      )
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(SuccessBackground)
+     
+     TYPE(IMAGE)
+     
+     SPEC(
+       FILENAME(db_back.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(FailureBackground)
+     
+     TYPE(IMAGE)
+     
+     SPEC(
+       FILENAME(miss_fail_back.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(4480.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      EVENT(ONSTART)
+     
+     ANIMATION(ExitOnStart)
+     
+     )
+    
+    (
+      EVENT(ON_TTY_DONE)
+     
+     ANIMATION(ExitOnTtyDone)
+     
+     )
+    
+    (
+      BUTTON(CROSS)
+     
+     ANIMATION(ExitOnCross)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(ExitOnTriangle)
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(DebriefingAnim)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUToDebriefing)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ExitOnStart)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUToDebriefing)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsMissionSuccessful)
+       
+       )
+      
+      )
+     
+     SOUND(
+       NAME(MUS_SUCCESS)
+      
+      START()
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUFailureBackground)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ELSE()
+     
+     SOUND(
+       NAME(MUS_FAILURE)
+      
+      START()
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSuccessBackground)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     VALVE(StatsProgress=00.000000)
+     
+     VALVE(bHighSpeed=00.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUPrimaryOf)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUPrimaryTotal)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSecondaryOf)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSecondaryTotal)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUPercentSymbol)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ExitOnTtyDone)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(StatsProgress==00.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Kills)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==10.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Kills)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==20.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Kills)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==30.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Kills)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==40.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalKills)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUHeadShots)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==50.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1HeadShots)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==60.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2HeadShots)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==70.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3HeadShots)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==80.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4HeadShots)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==90.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalHeadShots)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUStealthKills)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==100.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Stealth)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==110.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Stealth)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==120.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Stealth)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==130.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Stealth)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==140.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalStealth)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENURestraints)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==150.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Restrained)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==160.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Restrained)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==170.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Restrained)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==180.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Restrained)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==190.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalRestrained)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUCoverBlown)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==200.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Seen)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==210.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Seen)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==220.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Seen)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==230.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Seen)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==240.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalSeen)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENURoundsPrimary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==250.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Primary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==260.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Primary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==270.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Primary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==280.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Primary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==290.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalPrimary)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENURoundsSecondary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==300.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Secondary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==310.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Secondary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==320.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Secondary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==330.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Secondary)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==340.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalSecondary)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENURoundsGrenade)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==350.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Grenades)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==360.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Grenades)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==370.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Grenades)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==380.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Grenades)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==390.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalGrenades)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUgunButted)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==400.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Butts)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==410.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Butts)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==420.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Butts)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==430.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Butts)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==440.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalButts)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUHitsTaken)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==450.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1HitsTaken)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==460.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2HitsTaken)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==470.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3HitsTaken)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==480.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4HitsTaken)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==490.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalHitsTaken)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDied)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==500.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal1Died)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==510.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal2Died)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==520.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal3Died)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==530.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSeal4Died)
+      
+      CONTINUE()
+      
+      )
+     
+     ELSEIF(
+       VALVE(StatsProgress==540.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTotalDied)
+      
+      START()
+      
+      )
+     
+     VALVE(StatsProgress=900.000000)
+     
+     IF(
+       VALVE(bHighSpeed==10.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SetCounterSpeedFactor)
+      
+      ARGUMENT("3" )
+      
+      )
+     
+     ELSE()
+     
+     WAIT(0.000000)
+     
+     ENDIF()
+     
+     ui::UI_COMMAND(
+       NODE(MENUPrimCompCntr)
+      
+      START()
+      
+      )
+     
+     IF(
+       VALVE(bHighSpeed==10.000000)
+      
+      )
+     
+     ELSE()
+     
+     WAIT(0.000000)
+     
+     ENDIF()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUPrimaryOf)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUPrimaryTotal)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUSecCompCntr)
+      
+      START()
+      
+      )
+     
+     IF(
+       VALVE(bHighSpeed==10.000000)
+      
+      )
+     
+     ELSE()
+     
+     WAIT(0.000000)
+     
+     ENDIF()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSecondaryOf)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSecondaryTotal)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPercentCntr)
+      
+      START()
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUPercentSymbol)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     VALVE(StatsProgress=990.000000)
+     
+     ENDIF()
+     
+     VALVE(StatsProgress+=10.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ExitOnCross)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(StatsProgress<1000.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SetTtySpeedFactor)
+      
+      ARGUMENT("100" )
+      
+      )
+     
+     IF(
+       VALVE(StatsProgress<900.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SetCounterSpeedFactor)
+      
+      ARGUMENT("3000" )
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(SetCounterSpeedFactor)
+      
+      ARGUMENT("100" )
+      
+      )
+     
+     ENDIF()
+     
+     VALVE(bHighSpeed=10.000000)
+     
+     ELSE()
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsMissionSuccessful)
+       
+       )
+      
+      )
+     
+     VALVE(ReplayMissAnyway=00.000000)
+     
+     CALL_ANIMATION(
+       NAME(DebriefingAnim)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlgDebriefing.rdr)
+      
+      )
+     
+     ELSE()
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(StopAllSounds)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(DebriefingAnim)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ReplayMission)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ExitOnCrossRising)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetTtySpeedFactor)
+      
+      ARGUMENT("1" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SetCounterSpeedFactor)
+      
+      ARGUMENT("1" )
+      
+      )
+     
+     VALVE(bHighSpeed=00.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ExitOnTriangle)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(StopAllSounds)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(DebriefingAnim)
+      
+      )
+     
+     IF(
+       !(
+        ui::UI_COMMAND(
+         TYPE(IsMissionSuccessful)
+        
+        )
+       
+       )
+      
+      )
+     
+     IF(
+       VALVE(CurrentMission==60.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlgAlaska_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==80.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlgAlaska_mission3.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==50.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlgAlaska_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==90.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_thai_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==110.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_thai_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==120.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_thai_mission3.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==170.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_congo_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==190.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_congo_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==210.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_congo_mission3.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==130.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_turk_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==150.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_turk_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==160.000000)
+      
+      )
+     
+     VALVE(CameFromDebriefing=1)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlg_turk_mission3.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

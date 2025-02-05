@@ -1,0 +1,365 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  FONT(arialblack)
+  
+  SCRIPT_LIBRARY(dlgReplayCinematic.rdr)
+  
+  OBJECTS()
+  
+  ANIMATIONS((
+     EVENT(ONSTART)
+    
+    ANIMATION(ReplayCinematic)
+    
+    )
+   
+   )
+  
+  ANIMATION_DEFINITIONS(
+    ANIMATION_LIST(
+     ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+    
+    ANIMATION_DEFINITION(
+      ANIMATION_NAME(ReplayCinematic)
+     
+     ACTIVATION(ON_CALL)
+     
+     SEQUENCE_DEFINITION(
+       STOP_ANIMATION(
+        NAME(menu_fade_up)
+       
+       )
+      
+      OBJECT_OPACITY_FROM_TO(
+        NAME(MENUMENUFADER)
+       
+       RUN_TIME(0.000000)
+       
+       OPACITY_FROM(0.000000)
+       
+       OPACITY_TO(0.000000)
+       
+       )
+      
+      CALL_SEQUENCE(
+        NAME(switch)
+       
+       )
+      
+      )
+     
+     SEQUENCE_DEFINITION(
+       NAME(switch)
+      
+      ACTIVATION(ON_CALL)
+      
+      IF(
+        VALVE(uiEquipReturnScreen==50.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0100.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==60.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0100.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==80.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0100.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==90.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0300.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==110.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0300.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==120.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0300.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==170.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0500.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==190.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0500.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==210.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0500.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==130.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0400.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==150.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0400.pss)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==160.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(PlayMPEG)
+       
+       ARGUMENT(run/movies/0400.pss)
+       
+       )
+      
+      ENDIF()
+      
+      WAIT(0.000000)
+      
+      IF(
+        VALVE(uiEquipReturnScreen==50.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlgAlaska_mission1.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==60.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlgAlaska_mission2.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==80.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlgAlaska_mission3.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==90.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_thai_mission1.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==110.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_thai_mission2.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==120.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_thai_mission3.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==170.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_Congo_mission1.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==190.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_Congo_mission2.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==210.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_Congo_mission3.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==130.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_Turk_mission1.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==150.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_Turk_mission2.rdr)
+       
+       )
+      
+      ELSEIF(
+        VALVE(uiEquipReturnScreen==160.000000)
+       
+       )
+      
+      ui::UI_COMMAND(
+        TYPE(SWITCHMENU)
+       
+       ARGUMENT(dlg_Turk_mission3.rdr)
+       
+       )
+      
+      ENDIF()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

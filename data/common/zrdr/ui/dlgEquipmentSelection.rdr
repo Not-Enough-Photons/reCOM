@@ -1,0 +1,698 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(undefined.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(uianim.rdr)
+   
+   OBJECTS((
+      NAME(STANDIN)
+     
+     TYPE(IMAGE)
+     
+     XPOS(300.000000)
+     
+     YPOS(0.000000)
+     
+     SPEC(
+       FILENAME(Menu420_EQUIPMENTTEXT)
+      
+      XSIZE(2560.000000)
+      
+      YSIZE(320.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(ARROWFTEAM)
+     
+     XPOS(1780.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(IMAGE)
+     
+     SPEC(
+       XSIZE(160.000000)
+      
+      YSIZE(160.000000)
+      
+      FILENAME(Menu425_ARROWFTEAM.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(ARROWALPHA)
+     
+     XPOS(980.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(IMAGE)
+     
+     SPEC(
+       XSIZE(160.000000)
+      
+      YSIZE(160.000000)
+      
+      FILENAME(Menu427_ARROWALPHA.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(ARROWBRAVO)
+     
+     XPOS(2690.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(IMAGE)
+     
+     SPEC(
+       XSIZE(160.000000)
+      
+      YSIZE(160.000000)
+      
+      FILENAME(Menu429_ARROWBRAVO.tif)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgMultiMissionBriefing.rdr)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME("Team Tree Control" )
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     TYPE(TREECONTROL)
+     
+     SPEC(
+       SUBORDINATES((
+         NAME(fireteam)
+        
+        XPOS(1320.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(1280.000000)
+         
+         YSIZE(640.000000)
+         
+         NORMAL(Menu421_FIRETEAM.tif)
+         
+         ACTIVE(A_Menu421_FIRETEAM.tif)
+         
+         PRESSED(Menu422_FIRETEAM_GLOW.tif)
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       (
+         NAME(ALPHA)
+        
+        XPOS(770.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(640.000000)
+         
+         YSIZE(320.000000)
+         
+         NORMAL(Menu435_ALPHA.tif)
+         
+         ACTIVE(A_Menu435_ALPHA.tif)
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       (
+         NAME(BRAVO)
+        
+        XPOS(2450.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(640.000000)
+         
+         YSIZE(320.000000)
+         
+         NORMAL(Menu437_BRAVO.tif)
+         
+         ACTIVE(A_Menu438_BRAVO_GLOW.tif)
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       (
+         NAME(GEIGER)
+        
+        XPOS(340.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(640.000000)
+         
+         YSIZE(320.000000)
+         
+         NORMAL(Menu439_GIEGER.tif)
+         
+         ACTIVE(A_Menu440_GIEGER_GLOW.tif)
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       (
+         NAME(HUTHINS)
+        
+        XPOS(1240.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(640.000000)
+         
+         YSIZE(320.000000)
+         
+         NORMAL(Menu441_HUTCHINS.tif)
+         
+         ACTIVE(A_Menu442_HUTCHINS_GLOW.tif)
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       (
+         NAME(BAILEY)
+        
+        XPOS(2080.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(640.000000)
+         
+         YSIZE(320.000000)
+         
+         NORMAL(Menu443_BAILEY.tif)
+         
+         ACTIVE("A_Menu444_BAILEY_GLOW.tif	" )
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       (
+         NAME(DIMONE)
+        
+        XPOS(2980.000000)
+        
+        YPOS(0.000000)
+        
+        TYPE(BUTTON)
+        
+        SPEC(
+          XSIZE(640.000000)
+         
+         YSIZE(320.000000)
+         
+         NORMAL(Menu445_DIMONE.tif)
+         
+         ACTIVE(A_Menu445_DIMONE.tif)
+         
+         CAPTION(" " )
+         
+         ANIMATIONS((
+            BUTTON(CROSS)
+           
+           ANIMATION(goto_menu)
+           
+           ARGUMENT(dlgMissionBriefing.rdr)
+           
+           )
+          
+          )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(deploy)
+     
+     XPOS(1350.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1280.000000)
+      
+      YSIZE(320.000000)
+      
+      NORMAL(Menu423_DEPLOY.tif)
+      
+      ACTIVE(A_Menu423_DEPLOY.tif)
+      
+      PRESSED(Menu424_DEPLOY_GLOW.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgload2.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(HIGHLIGHTGIEGER)
+     
+     XPOS(4050.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(640.000000)
+      
+      NORMAL(Menu431_HIGHLIGHTGIEGER.tif)
+      
+      ACTIVE(A_Menu431_HIGHLIGHTGIEGER.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(HIGHLIGHTHUTCHINS)
+     
+     XPOS(4050.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(640.000000)
+      
+      NORMAL(Menu432_HIGHLIGHTHUTCHINS.tif)
+      
+      ACTIVE(A_Menu432_HIGHLIGHTHUTCHINS.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(HIGHLIGHTBAILEY)
+     
+     XPOS(4050.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(640.000000)
+      
+      NORMAL(Menu433_HIGHLIGHTBAILEY.tif)
+      
+      ACTIVE(A_Menu433_HIGHLIGHTBAILEY.tif)
+      
+      PRESSED(Menu433_HIGHLIGHTBAILEY_GLOW.tif)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(HIGHLIGHTDIMONE)
+     
+     XPOS(4050.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(640.000000)
+      
+      NORMAL(Menu434_HIGHLIGHTDIMONE.tif)
+      
+      ACTIVE(A_Menu434_HIGHLIGHTDIMONE.tiff)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(PRIMARY)
+     
+     XPOS(360.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(320.000000)
+      
+      NORMAL(Menu447_PRIMARY.tif)
+      
+      ACTIVE(A_Menu447_PRIMARY.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(SECONDARY)
+     
+     XPOS(1100.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(320.000000)
+      
+      NORMAL(Menu449_SECONDARY.tif)
+      
+      ACTIVE(A_Menu449_SECONDARY.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(EQUIPMET)
+     
+     XPOS(2000.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(320.000000)
+      
+      NORMAL(Menu451_EQUIPMET.tif)
+      
+      ACTIVE(A_Menu451_EQUIPMET.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(DEFAULT)
+     
+     XPOS(2900.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(640.000000)
+      
+      YSIZE(320.000000)
+      
+      NORMAL(Menu453_DEFAULT.tif)
+      
+      ACTIVE(A_Menu453_DEFAULT.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgMissionBriefing.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

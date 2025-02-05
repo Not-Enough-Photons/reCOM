@@ -1,0 +1,529 @@
+((
+  SCREENS((
+    LIBRARY(common/assetlib/loading)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(LittleBlack.tif)
+    
+    )
+   
+   FONT(myriad_load)
+   
+   NOFONTLIB()
+   
+   SCRIPT_LIBRARY(dlgLoad.rdr)
+   
+   OBJECTS((
+      NAME(LoadingText)
+     
+     TYPE(TEXT)
+     
+     XPOS(5200.000000)
+     
+     YPOS(3650.000000)
+     
+     SPEC(
+       COLOR(80.000000600.0000001370.000000)
+      
+      CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(LoadingBackground)
+     
+     TYPE(IMAGE)
+     
+     XPOS(200.000000)
+     
+     YPOS(1200.000000)
+     
+     SPEC(
+       XSIZE(6000.000000)
+      
+      YSIZE(2100.000000)
+      
+      UIVAR(
+        NAME(LoadingScreenBackground)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(load_progress_filling)
+     
+     TYPE(PROGRESSBAR)
+     
+     XPOS(200.000000)
+     
+     YPOS(1200.000000)
+     
+     SPEC(
+       LEADING_EDGE_NODE(LeadingEdge)
+      
+      FILENAME_IS_UIVAR()
+      
+      FILENAME(load_progress_texture)
+      
+      XSIZE(6000.000000)
+      
+      YSIZE(2100.000000)
+      
+      UIVAR(
+        NAME(Load_progress)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(title)
+     
+     TYPE(TEXT)
+     
+     XPOS(3200.000000)
+     
+     YPOS(1000.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      UIVAR(
+        NAME(mission_title)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(description)
+     
+     TYPE(TEXT)
+     
+     XPOS(3200.000000)
+     
+     YPOS(4000.000000)
+     
+     SPEC(
+       WIDTH(6400.000000)
+      
+      SPACING(150.000000)
+      
+      HCENTERED()
+      
+      UIVAR(
+        NAME(mission_description)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(LeadingEdge)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(" " )
+      
+      XSIZE(00.000000)
+      
+      YSIZE(00.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Leader_follow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(" " )
+      
+      XSIZE(00.000000)
+      
+      YSIZE(00.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(RedDown)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       CHILDOF(Leader_follow)
+      
+      FILENAME(loading_cursor.tif)
+      
+      XSIZE(60.000000)
+      
+      YSIZE(1800.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      EVENT(ONSTART)
+     
+     ANIMATION(RenderStreakDwn)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(Leader_follow)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(Load_Anim)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(OnMenuStart)
+     
+     )
+    
+    (
+      EVENT(ON_LOAD_COMPLETE)
+     
+     ANIMATION(load_complete)
+     
+     )
+    
+    (
+      EVENT(MP_VERSION_NUMBER_ERROR)
+     
+     ANIMATION(exit_load_screen)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(exit_load_screen)
+     
+     )
+    
+    )
+   
+   CONTROLS()
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(Leader_follow)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(MENULeader_follow)
+      
+      AT_NODE(MENULeadingEdge)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(RenderStreakDwn)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_MOTION_FROM_TO(
+       NAME(MENURedDown)
+      
+      TRANSLATE_FROM(-nan-nan0.000000)
+      
+      TRANSLATE_TO(-nan0.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENURedDown)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(-nan-nan0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(Load_Anim)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(Load_Anim)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING.)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING..)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING...)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING....)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING.....)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING.......)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENULoadingText)
+      
+      CAPTION(LOADING........)
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnMenuStart)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(Did_SM_lock==10.000000)
+      
+      )
+     
+     VALVE(mp_locked_game=10.000000)
+     
+     ELSE()
+     
+     VALVE(mp_locked_game=00.000000)
+     
+     ENDIF()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUlate_joiner_msg)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_clock)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(exit_load_screen)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       ui::UI_COMMAND(
+        TYPE(IsNetwork)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(AbortLoad)
+      
+      ARGUMENT(dlgNetAbort.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(AbortLoad)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(load_complete)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(late_joiner==10.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENURedDown)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULoadingText)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUlate_joiner_msg)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUgame_clock)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

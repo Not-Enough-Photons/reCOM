@@ -1,0 +1,551 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(IMAGE)
+   
+   FILENAME(background_multiplayer_select.tif)
+   
+   )
+  
+  FONT(arialblack)
+  
+  SCRIPT_LIBRARY(dlg_multiplayer_select.rdr)
+  
+  OBJECTS()
+  
+  ANIMATIONS((
+     BUTTON(TRIANGLE)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(PREVIOUS_SCREEN)
+    
+    )
+   
+   (
+     BUTTON(CROSS)
+    
+    ANIMATION(goto_multiplayer)
+    
+    )
+   
+   (
+     BUTTON(SQUARE)
+    
+    ANIMATION(Cooperative_Process)
+    
+    )
+   
+   )
+  
+  CONTROLS()
+  
+  MODELS()
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(Cooperative_Process)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(MC_Init)
+      
+      )
+     
+     VALVE(Single_or_Campaign=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUPOPUP)
+      
+      TRANSLATE_FROM(-nan-nan-nan)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Campaign or Single Mission" )
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(2000.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(100.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(Single_or_Campaign)
+       
+       YES(
+         CAPTION(Campaign)
+        
+        POS(500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       NO(
+         CAPTION(Single)
+        
+        POS(2500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(Single_or_Campaign==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(Single_or_Campaign==20.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SwitchMenu)
+      
+      ARGUMENT(dlgCooperativeMissionSelection.rdr)
+      
+      )
+     
+     ELSE()
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsMemCardInserted)
+       
+       )
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(CoopMissionExists)
+      
+      )
+     
+     VALVE(Single_or_Campaign=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Continue Saved Game or Start Over?" )
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(2000.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(100.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(Single_or_Campaign)
+       
+       YES(
+         CAPTION(Continue)
+        
+        POS(500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       NO(
+         CAPTION(Restart)
+        
+        POS(2500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(Single_or_Campaign==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(Single_or_Campaign==10.000000)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("Delete Saved Game and start campaign over?" )
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(2000.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(100.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(Single_or_Campaign)
+       
+       YES(
+         CAPTION(Delete)
+        
+        POS(500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       NO(
+         CAPTION(Abort)
+        
+        POS(2500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(Single_or_Campaign==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(Single_or_Campaign==10.000000)
+      
+      )
+     
+     ELSE()
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     ELSE()
+     
+     ENDIF()
+     
+     ELSE()
+     
+     VALVE(Single_or_Campaign=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("No MemCard Inserted. Continue Anyways?" )
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(2000.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(100.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(Single_or_Campaign)
+       
+       YES(
+         CAPTION(Continue)
+        
+        POS(500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       NO(
+         CAPTION(Abort)
+        
+        POS(2500.0000001000.000000)
+        
+        TEXTOFFSET(100.000000300.000000)
+        
+        WIDTH(1000.000000)
+        
+        HEIGHT(500.000000)
+        
+        PRESSED(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(blue_back.tif)
+         
+         TEXT_COLOR(1000.0000001000.0000001000.000000)
+         
+         )
+        
+        NORMAL(
+          TEXT_COLOR(1000.00000000.0000001000.000000)
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(Single_or_Campaign==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(Single_or_Campaign==10.000000)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     ui::UI_COMMAND(
+       TYPE(MC_UnInit)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

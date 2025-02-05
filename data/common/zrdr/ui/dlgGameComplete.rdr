@@ -1,0 +1,403 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(IMAGE)
+   
+   FILENAME(multplay_back.tif)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlgGameComplete.rdr)
+  
+  OBJECTS((
+     NAME(letterbar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(00.000000)
+    
+    SPEC(
+      FILENAME(blank_top_bar.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(bar_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(Gothic_13)
+     
+     CHILDOF(letterbar)
+     
+     CAPTION(CONGRATULATIONS)
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(letterbar_bottom)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3840.000000)
+    
+    SPEC(
+      FILENAME(common_bar_bottom.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Medal)
+    
+    TYPE(IMAGE)
+    
+    XPOS(4700.000000)
+    
+    YPOS(1500.000000)
+    
+    SPEC(
+      FILENAME(Medal.tif)
+     
+     SIZE(940.0000001580.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_plate)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1900.000000)
+    
+    YPOS(790.000000)
+    
+    SPEC(
+      FILENAME(common_teletype_plate.tif)
+     
+     XSIZE(4400.000000)
+     
+     YSIZE(3000.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_text)
+    
+    TYPE(TELETYPE)
+    
+    XPOS(150.000000)
+    
+    YPOS(550.000000)
+    
+    SPEC(
+      CHILDOF(teletype_plate)
+     
+     MAXLENGTH(1550.000000)
+     
+     MAXHEIGHT(2370.000000)
+     
+     PULSERATE(100.000000)
+     
+     CAPTION(" " )
+     
+     SCALE(0.000000)
+     
+     INTERVAL(0.000000)
+     
+     SPACING(170.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Objtext)
+    
+    TYPE(TEXT)
+    
+    XPOS(100.000000)
+    
+    YPOS(250.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     CHILDOF(teletype_plate)
+     
+     CAPTION("YOU HAVE COMPLETED THE GAME" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(SELECT)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgGameComplete.rdr)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(ReplayOptions)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(bottom_bar_slide_up)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(letterbar_slide)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(MMButton)
+    
+    TYPE(BUTTON)
+    
+    XPOS(100.000000)
+    
+    YPOS(750.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      SIZE(1750.000000320.000000)
+     
+     XOFFSET(150.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("MISSIONS SCREEN" )
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgMISSIONSELECTION.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ReplayOptions)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUMedal)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUMedal1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUMedal2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("PLACEHOLDER. We need to put game replay conditions in here." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_THUNK)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

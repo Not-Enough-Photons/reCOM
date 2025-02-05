@@ -1,0 +1,864 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/uimp)
+   
+   FONT(myriad)
+   
+   SCRIPT_LIBRARY(dlgClanLadderLobby.rdr)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(multplay_back.tif)
+    
+    )
+   
+   OBJECTS((
+      NAME(letterbar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(00.000000)
+     
+     SPEC(
+       FILENAME(blank_top_bar.tif)
+      
+      XSIZE(6400.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(bar_title)
+     
+     TYPE(TEXT)
+     
+     XPOS(200.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       FONT(Gothic_13)
+      
+      CHILDOF(letterbar)
+      
+      CAPTION("WORLD CLAN RANK" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(letterbar_bottom)
+     
+     TYPE(IMAGE)
+     
+     XPOS(00.000000)
+     
+     YPOS(3840.000000)
+     
+     SPEC(
+       FILENAME(common_bar_bottom.tif)
+      
+      SIZE(6400.000000640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(playername)
+     
+     TYPE(TEXT)
+     
+     XPOS(3800.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar)
+     
+     SPEC(
+       UIVAR(
+        NAME(PLAYERNAMEVAR)
+       
+       LONGEVITY(PERSISTENT)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(txtClanName)
+     
+     TYPE(TEXT)
+     
+     XPOS(3800.000000)
+     
+     YPOS(450.000000)
+     
+     SPEC(
+       CHILDOF(letterbar)
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(CLANNAMEVAR)
+       
+       VALUE(TALICLAN)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(LadderRating)
+     
+     TYPE(TEXT)
+     
+     XPOS(5700.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar)
+     
+     SPEC(
+       UIVAR(
+        NAME(LadderRating)
+       
+       )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(LadderRatingDesc)
+     
+     TYPE(TEXT)
+     
+     XPOS(5000.000000)
+     
+     YPOS(250.000000)
+     
+     CHILDOF(letterbar)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION(RATING:)
+      
+      )
+     
+     )
+    
+    (
+      NAME(LadderRankingDesc)
+     
+     TYPE(TEXT)
+     
+     XPOS(5000.000000)
+     
+     YPOS(450.000000)
+     
+     CHILDOF(letterbar)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION(RANKING:)
+      
+      )
+     
+     )
+    
+    (
+      NAME(LadderRanking)
+     
+     TYPE(TEXT)
+     
+     XPOS(5700.000000)
+     
+     YPOS(450.000000)
+     
+     CHILDOF(letterbar)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      UIVAR(
+        NAME(LadderRanking)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(eq_Titlebar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(230.000000)
+     
+     YPOS(750.000000)
+     
+     SPEC(
+       FILENAME(blue_back_plate.tif)
+      
+      SIZE(5850.000000250.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(eq_Titlebar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(230.000000)
+     
+     YPOS(3430.000000)
+     
+     SPEC(
+       FILENAME(blue_back_plate.tif)
+      
+      SIZE(5850.000000220.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(eq_Titlebar)
+     
+     TYPE(IMAGE)
+     
+     XPOS(230.000000)
+     
+     YPOS(1800.000000)
+     
+     SPEC(
+       FILENAME(blue_back_plate.tif)
+      
+      SIZE(5850.000000200.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TopTenText)
+     
+     TYPE(TEXT)
+     
+     XPOS(450.000000)
+     
+     YPOS(950.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      SCALE(0.000000)
+      
+      CAPTION("THE PODIUM" )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TopTenText)
+     
+     TYPE(TEXT)
+     
+     XPOS(450.000000)
+     
+     YPOS(1950.000000)
+     
+     SPEC(
+       COLOR(0.0000000.0000000.000000)
+      
+      SCALE(0.000000)
+      
+      CAPTION("THE REST" )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabDivHor)
+     
+     TYPE(IMAGE)
+     
+     XPOS(220.000000)
+     
+     YPOS(940.000000)
+     
+     SPEC(
+       XSIZE(5860.000000)
+      
+      YSIZE(150.000000)
+      
+      FILENAME(Tab_HorGold_Divider.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabDivHor)
+     
+     TYPE(IMAGE)
+     
+     XPOS(220.000000)
+     
+     YPOS(3350.000000)
+     
+     SPEC(
+       XSIZE(5860.000000)
+      
+      YSIZE(150.000000)
+      
+      FILENAME(Tab_HorGold_Divider.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TabDivHor)
+     
+     TYPE(IMAGE)
+     
+     XPOS(220.000000)
+     
+     YPOS(1700.000000)
+     
+     SPEC(
+       XSIZE(5860.000000)
+      
+      YSIZE(150.000000)
+      
+      FILENAME(Tab_HorGold_Divider.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(arrow_up)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1800.000000)
+     
+     YPOS(1720.000000)
+     
+     SPEC(
+       FILENAME(arrow_top.tif)
+      
+      XSIZE(350.000000)
+      
+      YSIZE(350.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(arrow_dwn)
+     
+     TYPE(IMAGE)
+     
+     XPOS(1800.000000)
+     
+     YPOS(3370.000000)
+     
+     SPEC(
+       FILENAME(arrow_botm.tif)
+      
+      XSIZE(350.000000)
+      
+      YSIZE(350.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(dogtags)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3700.000000)
+     
+     YPOS(3300.000000)
+     
+     SPEC(
+       FILENAME(dogtags.tif)
+      
+      SIZE(2560.0000001280.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      EVENT(ONSTART)
+     
+     ANIMATION(letterbar_slide_down)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(bottom_bar_slide_up)
+     
+     )
+    
+    (
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(PREVIOUS_SCREEN)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(get_ladder_top_10)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_ERROR)
+     
+     ANIMATION(OnMultiplayerDisconnect)
+     
+     )
+    
+    (
+      EVENT(ON_LADDER_REFRESH)
+     
+     ANIMATION(RefreshArrows)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(MainWindow)
+     
+     TYPE(IMAGE)
+     
+     XPOS(150.000000)
+     
+     YPOS(700.000000)
+     
+     SPEC(
+       XSIZE(6000.000000)
+      
+      YSIZE(3000.000000)
+      
+      FILENAME(eq_CharWinInv.tif)
+      
+      )
+     
+     )
+    
+    (
+      NAME(LadderList)
+     
+     XPOS(350.000000)
+     
+     YPOS(1870.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       ACTIVE_COLOR(0.0000000.0000000.000000)
+      
+      NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      PRESSED_COLOR(0.0000000.0000000.000000)
+      
+      XSIZE(3500.000000)
+      
+      YSIZE(1700.000000)
+      
+      PADHOG()
+      
+      NOSELECT()
+      
+      SPACING(160.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(100.000000)
+      
+      TOP_MARGIN(300.000000)
+      
+      OPTIONS((
+         CAPTION("ZIPPER CHUCKERS" )
+        
+        )
+       
+       (
+         CAPTION(TALICLAN)
+        
+        )
+       
+       (
+         CAPTION("MICROSOFT WIMPS" )
+        
+        )
+       
+       (
+         CAPTION("ARRAKEEN FARMERS" )
+        
+        )
+       
+       (
+         CAPTION("FAIRE DINKUM" )
+        
+        )
+       
+       (
+         CAPTION("GREGG'S EGGS" )
+        
+        )
+       
+       (
+         CAPTION("KIMOCK'S CRUSADERS" )
+        
+        )
+       
+       )
+      
+      ANIMATIONS((
+         BUTTON(UP)
+        
+        ANIMATION(ladder_up)
+        
+        )
+       
+       (
+         BUTTON(DOWN)
+        
+        ANIMATION(ladder_down)
+        
+        )
+       
+       )
+      
+      COLUMNS((
+         POSITION(00.000000)
+        
+        )
+       
+       (
+         POSITION(350.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(LadderTop10)
+     
+     XPOS(350.000000)
+     
+     YPOS(950.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      XSIZE(2500.000000)
+      
+      YSIZE(1000.000000)
+      
+      PADHOG()
+      
+      NOSELECT()
+      
+      SPACING(210.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(100.000000)
+      
+      TOP_MARGIN(300.000000)
+      
+      OPTIONS((
+         CAPTION("ZIPPER CHUCKERS" )
+        
+        )
+       
+       (
+         CAPTION(TALICLAN)
+        
+        )
+       
+       (
+         CAPTION("ARRAKEEN FARMERS" )
+        
+        )
+       
+       )
+      
+      COLUMNS((
+         POSITION(00.000000)
+        
+        )
+       
+       (
+         POSITION(350.000000)
+        
+        )
+       
+       (
+         POSITION(1500.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(get_ladder_top_10)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(GetLadderInfo)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ladder_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(LadderUp)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ladder_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(LadderDown)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(RefreshArrows)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       ui::UI_COMMAND(
+        TYPE(CanLadderPressDown)
+       
+       )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderDownArrow)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ELSE()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderDownArrow)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(CanLadderPressUp)
+       
+       )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderUpArrow)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ELSE()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENULadderUpArrow)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide_down)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

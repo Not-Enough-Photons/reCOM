@@ -1,0 +1,1744 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(MPEG)
+   
+   FILENAME(run/movies/common/radar.pss)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlg_Turk_mission1.rdr)
+  
+  OBJECTS((
+     NAME(letterbar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(00.000000)
+    
+    SPEC(
+      FILENAME(blank_top_bar.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(bar_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(Gothic_13)
+     
+     CHILDOF(letterbar)
+     
+     CAPTION("MISSION BRIEFING" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(letterbar_bottom)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3610.000000)
+    
+    SPEC(
+      FILENAME(common_bar_bottom.tif)
+     
+     SIZE(6400.000000640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_plate)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1900.000000)
+    
+    YPOS(1150.000000)
+    
+    SPEC(
+      FILENAME(common_teletype_plate.tif)
+     
+     XSIZE(4360.000000)
+     
+     YSIZE(2350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(DescFieldTop)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1970.000000)
+    
+    YPOS(1190.000000)
+    
+    SPEC(
+      XSIZE(4230.000000)
+     
+     YSIZE(210.000000)
+     
+     FILENAME(blue_back_plate.tif)
+     
+     )
+    
+    )
+   
+   (
+     NAME(DescriptionText)
+    
+    TYPE(TEXT)
+    
+    XPOS(2000.000000)
+    
+    YPOS(1350.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(" " )
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_text)
+    
+    TYPE(TELETYPE)
+    
+    XPOS(100.000000)
+    
+    YPOS(450.000000)
+    
+    SPEC(
+      CHILDOF(teletype_plate)
+     
+     MAXLENGTH(2800.000000)
+     
+     MAXHEIGHT(1700.000000)
+     
+     PULSERATE(0.000000)
+     
+     CAPTION(" " )
+     
+     SCALE(0.000000)
+     
+     INTERVAL(0.000000)
+     
+     SPACING(200.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(title_bar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(600.000000)
+    
+    SPEC(
+      FILENAME(undefined.tif)
+     
+     SIZE(7000.000000320.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Mission_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(800.000000)
+    
+    YPOS(230.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     CHILDOF(title_bar)
+     
+     CAPTION("OP SERPENT STRIKE: PRISON BREAK" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(dogtags)
+    
+    TYPE(IMAGE)
+    
+    XPOS(3700.000000)
+    
+    YPOS(3200.000000)
+    
+    SPEC(
+      FILENAME(dogtags.tif)
+     
+     SIZE(2560.0000001280.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(TRIANGLE)
+    
+    ANIMATION(UiBackWhere)
+    
+    )
+   
+   (
+     BUTTON(SQUARE)
+    
+    ANIMATION(switch_menu)
+    
+    ARGUMENT(dlgReplayCinematic.rdr)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(letterbar_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(bottom_bar_slide_up)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(teletype_plate_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(mission_details_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(overview_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(objective_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(map_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(equipment_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(deploy_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(title_oilplatform_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(CallMusic)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(anchor)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(1000.000000)
+    
+    SPEC(
+      FILENAME(anchor_turkmenistan.tif)
+     
+     SIZE(1450.0000002860.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(anchor)
+    
+    TYPE(IMAGE)
+    
+    XPOS(450.000000)
+    
+    YPOS(3120.000000)
+    
+    SPEC(
+      FILENAME(anchor_rocks.tif)
+     
+     SIZE(3360.000000760.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(overview_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(1760.000000)
+    
+    SPEC(
+      SIZE(1670.000000320.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(OVERVIEW)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(tty_speed_up)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_mission1_overview)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(mission_details_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(2110.000000)
+    
+    SPEC(
+      SIZE(1670.000000320.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("MISSION DETAILS" )
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(tty_speed_up)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_mission1_details)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(objective_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(2450.000000)
+    
+    SPEC(
+      SIZE(1670.000000320.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(OBJECTIVES)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(tty_speed_up)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_mission1_tactical)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(map_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(3110.000000)
+    
+    SPEC(
+      SIZE(1670.000000320.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(MAP)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgTk13_map.rdr)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(map_alaska_mission1_turn_on)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(equipment_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(3400.000000)
+    
+    SPEC(
+      SIZE(1670.000000320.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(EQUIPMENT)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_eq_menu_set_return_valve)
+       
+       ARGUMENT(dlg_equipment_main.rdr)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(all_window_pictures_off)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(deploy_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(3790.000000)
+    
+    SPEC(
+      SIZE(1670.000000320.000000)
+     
+     XOFFSET(100.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(START)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(LOAD_SCREEN)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(OnDeployAct)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  MODELS()
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(CallMusic)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(CameFromMap==00.000000)
+      
+      &&VALVE(CameFromDebriefing==10.000000)
+      
+      )
+     
+     SOUND(
+       NAME(MUS_MENU_THEME)
+      
+      START()
+      
+      )
+     
+     ELSE()
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(UiBackWhere)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(GameComplete>=10.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_areaop_turk.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(StopAllSounds)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(set_return_valve)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(uiEquipReturnScreen=130.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(set_return_valve)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(uiEquipReturnScreen=130.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(goto_eq_menu_set_return_valve)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(uiEquipReturnScreen=130.000000)
+     
+     SOUND(
+       NAME(SND_DINK)
+      
+      AT_NODE(ROOT_NODE)
+      
+      START()
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(INPUT_STRING)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(overview_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoverview_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUoverview_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoverview_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(mission_details_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmission_details_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmission_details_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmission_details_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(objective_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUobjective_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUobjective_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUobjective_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(map_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmap_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(equipment_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUequipment_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUequipment_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUequipment_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(deploy_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUdeploy_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUdeploy_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUdeploy_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(title_oilplatform_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUtitle_bar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUtitle_bar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUtitle_bar)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(-nan0.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(map_alaska_mission1_turn_on)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION(" " )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("PRISON BREAK MISSION MAP" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUarrow_up)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(all_window_pictures_off)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUarrow_up)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION(" " )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("PRESS THE X BUTTON AND SELECT EQUIPMENT" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_plate_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_plate)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_plate)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUteletype_plate)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnDeployAct)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetTtySpeedFactor)
+      
+      ARGUMENT("1" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("SELECT TO ENTER MISSION" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_mission1_overview)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetTtySpeedFactor)
+      
+      ARGUMENT("1" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("PRISON BREAK MISSION OVERVIEW" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("GOOD MORNING, TEAM. ONE OF OUR INDIGENOUS INFORMANTS IN TURKMENISTAN, BASIM MACCEK, WENT SILENT LAST WEEK; THIS WEEK WE KNOW WHY. HE IS IMPRISONED IN A TURKMEN DETENTION CENTER IN THE MOUNTAINS.  MACCEK'S NOT THE BEST MAN IN THE WORLD, BUT YOU'VE GOT TO PROTECT HIM, SEALS." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_mission1_details)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetTtySpeedFactor)
+      
+      ARGUMENT("1" )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("SWIFT JUSTICE MISSION INTEL" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("PLACEHOLDER! WE HAVE EXTREMELY LIMITED INFORMATION ON THIS AREA.  WE KNOW MACCEK IS IN A DILAPIDATED FORMER RUSSIAN DETENTION CENTER IN THE MOUNTAINS 100 KM FROM THE CAPITAL, ASHGHABAT.  THIS IS NOT A PLEASANT FACILITY, AND THEY WON'T LIKE YOU INSPECTING IT. PLACEHOLDER! SPECIFIC OBJECTIVES: #N #P1 1. LOCATE AND PROTECT THE INFORMANT BASIM MACCEK #N #P1 2. OBTAIN INTEL FROM MACCEK. #N #P1 THERE WILL BE OTHER PRISONERS ALL HELD IN THIS FACILITY; FREEING THEM MAY HELP YOU.   " )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_mission1_tactical)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("PRISON BREAK MISSION OBJECTIVES" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("PLACEHOLDER! SPECIFIC OBJECTIVES: #N #P1 1. LOCATE AND PROTECT THE INFORMANT BASIM MACCEK #N #P1 2. OBTAIN INTEL FROM MACCEK. #N #P1 THERE WILL BE OTHER PRISONERS ALL HELD IN THIS FACILITY; FREEING THEM MAY HELP YOU." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(tty_speed_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SetTtySpeedFactor)
+      
+      ARGUMENT("100" )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  :endofList)
+ 
+ :endofDef's)
+
+:endoffile)
+

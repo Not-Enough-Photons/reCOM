@@ -1,0 +1,205 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(undefined.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(dlgLeadershipChange.rdr)
+   
+   OBJECTS((
+      NAME(Clan_Roster_Label)
+     
+     XPOS(550.000000)
+     
+     YPOS(550.000000)
+     
+     TYPE(TEXT)
+     
+     SPEC(
+       CAPTION(CLAN_ROSTER)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(PREVIOUS_SCREEN)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(get_clan_roster)
+     
+     )
+    
+    (
+      EVENT(MP_MEDIUS_ERROR)
+     
+     ANIMATION(OnMultiplayerDisconnect)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(appointpermldr)
+     
+     XPOS(300.000000)
+     
+     YPOS(3000.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       CAPTION("Permanent Leader" )
+      
+      Scale(0.000000)
+      
+      NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(exit)
+     
+     XPOS(4000.000000)
+     
+     YPOS(3000.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       CAPTION(EXIT)
+      
+      SCALE(0.000000)
+      
+      NORMAL_COLOR(1000.0000001000.0000001000.000000)
+      
+      ACTIVE_COLOR(00.0000001000.0000001000.000000)
+      
+      PRESSED_COLOR(1000.00000000.00000000.000000)
+      
+      ANIMATIONS((
+         BUTTON(SELECT)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgLeadershipChange.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME("Clan Roster" )
+     
+     XPOS(550.000000)
+     
+     YPOS(1200.000000)
+     
+     TYPE(LISTBOX)
+     
+     SPEC(
+       XSIZE(1280.000000)
+      
+      YSIZE(550.000000)
+      
+      SPACING(170.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(300.000000)
+      
+      TOP_MARGIN(00.000000)
+      
+      UIVAR(
+        NAME(CLAN_ROSTER)
+       
+       )
+      
+      OPTIONS((
+         CAPTION(Bob)
+        
+        )
+       
+       (
+         CAPTION(Dave)
+        
+        )
+       
+       (
+         CAPTION(Conrad)
+        
+        )
+       
+       (
+         CAPTION(Tom)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(get_clan_roster)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(GetClanRoster)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

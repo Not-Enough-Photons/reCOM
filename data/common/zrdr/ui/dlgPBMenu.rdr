@@ -1,0 +1,3270 @@
+((
+  SCREENS(
+   LIBRARIES(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(MPEG)
+   
+   FILENAME(run/movies/common/menuloop.pss)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlgMenu.rdr)
+  
+  OBJECTS((
+     NAME(memuse)
+    
+    TYPE(TEXT)
+    
+    XPOS(300.000000)
+    
+    YPOS(1500.000000)
+    
+    SPEC(
+      SCALE(0.000000)
+     
+     UIVAR(
+       NAME(MEM_USAGE)
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(memmax)
+    
+    TYPE(TEXT)
+    
+    XPOS(300.000000)
+    
+    YPOS(1700.000000)
+    
+    SPEC(
+      SCALE(0.000000)
+     
+     UIVAR(
+       NAME(MEM_MAX)
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(SplashLogo)
+    
+    TYPE(IMAGE)
+    
+    XPOS(850.000000)
+    
+    YPOS(650.000000)
+    
+    SPEC(
+      XSIZE(4700.000000)
+     
+     YSIZE(2160.000000)
+     
+     FILENAME(SplashLogo.tif)
+     
+     )
+    
+    )
+   
+   (
+     NAME(BETA)
+    
+    TYPE(TEXT)
+    
+    XPOS(3200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(myriad)
+     
+     CAPTION("PUBLIC BETA V1.0" )
+     
+     SCALE(0.000000)
+     
+     HCENTERED()
+     
+     )
+    
+    )
+   
+   (
+     NAME(LEGALEZE1)
+    
+    TYPE(TEXT)
+    
+    XPOS(3100.000000)
+    
+    YPOS(4150.000000)
+    
+    SPEC(
+      FONT(myriad)
+     
+     CAPTION("SOCOM is a trademark of Sony Computer Entertainment America Inc." )
+     
+     SCALE(0.000000)
+     
+     HCENTERED()
+     
+     )
+    
+    )
+   
+   (
+     NAME(LEGALEZE2)
+    
+    TYPE(TEXT)
+    
+    XPOS(00.000000)
+    
+    YPOS(150.000000)
+    
+    CHILDOF(LEGALEZE1)
+    
+    SPEC(
+      CAPTION(" Developed by Zipper Interactive,Inc.(c) 2002 Sony Computer Entertainment America Inc." )
+     
+     SCALE(0.000000)
+     
+     HCENTERED()
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(SELECT)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgMenu.rdr)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(SetMenuValve)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(fadelogo)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(ArrowPulse)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(load_initial_config)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(load_game_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(2560.000000)
+    
+    YPOS(3000.000000)
+    
+    SPEC(
+      HCENTERED()
+     
+     XSIZE(2500.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(550.000000)
+     
+     YOFFSET(220.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(PREVIEW)
+     
+     PRESSED(
+       TEXT_COLOR(2550.000000740.00000080.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ACTIVE(
+       TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     NORMAL(
+       SCALE(0.000000)
+      
+      TEXT_COLOR(1480.0000001480.0000001480.000000)
+      
+      )
+     
+     DISABLED(
+       TEXT_COLOR(800.000000800.000000800.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgHype.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(new_game_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(2560.000000)
+    
+    YPOS(3300.000000)
+    
+    SPEC(
+      HCENTERED()
+     
+     XSIZE(2560.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(550.000000)
+     
+     YOFFSET(220.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(ONLINE)
+     
+     PRESSED(
+       TEXT_COLOR(2550.000000740.00000080.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ACTIVE(
+       TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     NORMAL(
+       SCALE(0.000000)
+      
+      TEXT_COLOR(1480.0000001480.0000001480.000000)
+      
+      )
+     
+     DISABLED(
+       TEXT_COLOR(800.000000800.000000800.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(do_multi_or_medius)
+       
+       )
+      
+      (
+        BUTTON(SQUARE)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgMISSIONSELECTION.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(multiplayer_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(2560.000000)
+    
+    YPOS(3600.000000)
+    
+    SPEC(
+      HCENTERED()
+     
+     XSIZE(2000.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(550.000000)
+     
+     YOFFSET(220.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(" " )
+     
+     PRESSED(
+       TEXT_COLOR(2550.000000740.00000080.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ACTIVE(
+       TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     NORMAL(
+       SCALE(0.000000)
+      
+      TEXT_COLOR(1480.0000001480.0000001480.000000)
+      
+      )
+     
+     DISABLED(
+       TEXT_COLOR(800.000000800.000000800.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgOptions_Menu.rdr)
+       
+       )
+      
+      (
+        BUTTON(DOWN)
+       
+       ANIMATION(OnMenuBtnDown)
+       
+       )
+      
+      (
+        BUTTON(LEFT)
+       
+       ANIMATION(OnMenuBtnUp)
+       
+       )
+      
+      (
+        BUTTON(RIGHT)
+       
+       ANIMATION(OnMenuBtnDown)
+       
+       )
+      
+      (
+        BUTTON(UP)
+       
+       ANIMATION(OnMenuBtnUp)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(options_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(2560.000000)
+    
+    YPOS(3900.000000)
+    
+    SPEC(
+      HCENTERED()
+     
+     XSIZE(2500.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(550.000000)
+     
+     YOFFSET(220.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("LOAD GAME" )
+     
+     PRESSED(
+       TEXT_COLOR(2550.000000740.00000080.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ACTIVE(
+       TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     NORMAL(
+       SCALE(0.000000)
+      
+      TEXT_COLOR(1480.0000001480.0000001480.000000)
+      
+      )
+     
+     DISABLED(
+       TEXT_COLOR(800.000000800.000000800.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlgOptions_Menu.rdr)
+       
+       )
+      
+      (
+        BUTTON(DOWN)
+       
+       ANIMATION(OnMenuBtnDown)
+       
+       )
+      
+      (
+        BUTTON(LEFT)
+       
+       ANIMATION(OnMenuBtnUp)
+       
+       )
+      
+      (
+        BUTTON(RIGHT)
+       
+       ANIMATION(OnMenuBtnDown)
+       
+       )
+      
+      (
+        BUTTON(UP)
+       
+       ANIMATION(OnMenuBtnUp)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(Documentary_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(2560.000000)
+    
+    YPOS(4200.000000)
+    
+    SPEC(
+      HCENTERED()
+     
+     XSIZE(2500.000000)
+     
+     YSIZE(300.000000)
+     
+     XOFFSET(550.000000)
+     
+     YOFFSET(220.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("NEW GAME" )
+     
+     PRESSED(
+       TEXT_COLOR(2550.000000740.00000080.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ACTIVE(
+       TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     NORMAL(
+       SCALE(0.000000)
+      
+      TEXT_COLOR(1480.0000001480.0000001480.000000)
+      
+      )
+     
+     DISABLED(
+       TEXT_COLOR(800.000000800.000000800.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CIRCLE)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlg_fIconTest.rdr)
+       
+       )
+      
+      (
+        BUTTON(SQUARE)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlg_fontTest.rdr)
+       
+       )
+      
+      (
+        BUTTON(UP)
+       
+       ANIMATION(OnMenuBtnUp)
+       
+       )
+      
+      (
+        BUTTON(LEFT)
+       
+       ANIMATION(OnMenuBtnUp)
+       
+       )
+      
+      (
+        BUTTON(RIGHT)
+       
+       ANIMATION(OnMenuBtnDown)
+       
+       )
+      
+      (
+        BUTTON(DOWN)
+       
+       ANIMATION(OnMenuBtnDown)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(SavedGames)
+    
+    XPOS(950.000000)
+    
+    YPOS(1600.000000)
+    
+    TYPE(LISTBOX)
+    
+    SPEC(
+      CHILDOF("CGameMenu foreplane" )
+     
+     PRESSED_COLOR(0.0000000.0000000.000000)
+     
+     NORMAL_COLOR(0.0000000.0000000.000000)
+     
+     ACTIVE_COLOR(0.0000000.0000000.000000)
+     
+     NOSELECT()
+     
+     PADHOG()
+     
+     FILENAME(popupOp.tif)
+     
+     XSIZE(4000.000000)
+     
+     YSIZE(2000.000000)
+     
+     SPACING(180.000000)
+     
+     SCALE(0.000000)
+     
+     LEFT_MARGIN(300.000000)
+     
+     TOP_MARGIN(300.000000)
+     
+     COLUMNS((
+        POSITION(00.000000)
+       
+       )
+      
+      (
+        POSITION(500.000000)
+       
+       )
+      
+      (
+        POSITION(2000.000000)
+       
+       )
+      
+      (
+        POSITION(3000.000000)
+       
+       )
+      
+      )
+     
+     UIVAR(
+       NAME(SavedGames)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(LoadGameOnListBox)
+       
+       )
+      
+      (
+        BUTTON(TRIANGLE)
+       
+       ANIMATION(CancelLoadGame)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  MODELS()
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+   
+   ANIMATION_DEFINITION_FILE(data\common\dialog\UIMemCardAnim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ArrowPulse)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_OPACITY_FROM_TO(
+       NAME(MENUarrow_up)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUarrow_up)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_OPACITY_FROM_TO(
+       NAME(MENUarrow_dwn)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUarrow_dwn)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnMenuBtnUp)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     IF(
+       VALVE(MenuSpot==10.000000)
+      
+      )
+     
+     VALVE(MenuSpot=50.000000)
+     
+     CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(options_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(Documentary_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(LoadSetUp)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==50.000000)
+      
+      )
+     
+     VALVE(MenuSpot=40.000000)
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(documentarySetUp)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==40.000000)
+      
+      )
+     
+     VALVE(MenuSpot=30.000000)
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(Documentary_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(optionSetUp)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==30.000000)
+      
+      )
+     
+     VALVE(MenuSpot=20.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(options_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(MPSetUp)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==20.000000)
+      
+      )
+     
+     VALVE(MenuSpot=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(NewSetUp)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(OnMenuBtnDown)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     IF(
+       VALVE(MenuSpot==10.000000)
+      
+      )
+     
+     VALVE(MenuSpot=20.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(MPSetDown)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==20.000000)
+      
+      )
+     
+     VALVE(MenuSpot=30.000000)
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(optionSetDown)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==30.000000)
+      
+      )
+     
+     VALVE(MenuSpot=40.000000)
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(options_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(documentarySetDown)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==40.000000)
+      
+      )
+     
+     VALVE(MenuSpot=50.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(Documentary_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(LoadSetDown)
+      
+      )
+     
+     ELSEIF(
+       VALVE(MenuSpot==50.000000)
+      
+      )
+     
+     VALVE(MenuSpot=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(EnableButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(NewSetDown)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(NewSetUp)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(MPSetUp)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(optionSetUp)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(documentarySetUp)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(LoadSetUp)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(NewSetDown)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(MPSetDown)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(optionSetDown)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(documentarySetDown)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(LoadSetDown)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUoptions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUoptions_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUDocumentary_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUDocumentary_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUload_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUload_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUnew_game_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUnew_game_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUmultiplayer_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUmultiplayer_button)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(SetMenuValve)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     VALVE(MenuSpot=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(multiplayer_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(options_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(DisableButton)
+      
+      ARGUMENT(Documentary_button)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(new_game_button)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSavedGames)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(NewSetDown)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(UiprepMission1)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     IF(
+       VALVE(GameComplete==10.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMISSIONSELECTION.rdr)
+      
+      )
+     
+     ELSE()
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(PlayMPEG)
+      
+      ARGUMENT(run/movies/0100.pss)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m6)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgAlaska_mission2.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(fadeLogo)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUSplashLogo)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSplashLogo)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUSplashLogo)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(do_multi_or_medius)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     SOUND(
+       NAME(SND_DINK)
+      
+      AT_NODE(ROOT_NODE)
+      
+      START()
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(MediusEnabled)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgNetLogin.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_multiplayer_select.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(CancelLoadGame)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_DINK)
+      
+      AT_NODE(ROOT_NODE)
+      
+      START()
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSavedGames)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(load_game_button)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(MainMenuOnLoad)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     VALVE(MainMenuCardSlot=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("SELECT PS2 MEMORY CARD SLOT: PRESS X" )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      TEXT_COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      CANCELLABLE()
+      
+      YESNO(
+        VALVE(MainMenuCardSlot)
+       
+       YES(
+         CAPTION("SLOT 1" )
+        
+        POS(400.000000650.000000)
+        
+        TEXTOFFSET(100.000000200.000000)
+        
+        WIDTH(750.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(Popup_bk.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(Popup_bk.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(Popup_bk.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        )
+       
+       NO(
+         CAPTION("SLOT 2" )
+        
+        POS(1900.000000650.000000)
+        
+        TEXTOFFSET(100.000000200.000000)
+        
+        WIDTH(750.000000)
+        
+        HEIGHT(250.000000)
+        
+        PRESSED(
+          IMAGE(Popup_bk.tif)
+         
+         TEXT_COLOR(1000.00000000.00000000.000000)
+         
+         )
+        
+        ACTIVE(
+          IMAGE(Popup_bk.tif)
+         
+         TEXT_COLOR(2550.0000002040.000000510.000000)
+         
+         )
+        
+        NORMAL(
+          IMAGE(Popup_bk.tif)
+         
+         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(MainMenuCardSlot==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(MainMenuCardSlot!=660.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("CHECKING. DO NOT REMOVE MEMORY CARD AT THIS TIME." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Init)
+      
+      )
+     
+     IF(
+       VALVE(MainMenuCardSlot==10.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_ChPort)
+      
+      ARGUMENT("0" )
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(MC_ChPort)
+      
+      ARGUMENT("1" )
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(IsMemCardInserted)
+       
+       )
+      
+      &&ui::UI_COMMAND(
+        TYPE(IsMemCardFormatted)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(KillPopup)
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(HasSOCOMDir)
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(LoadGameOnStart)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUSavedGames)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(SavedGames)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("No SOCOM: U.S. NAVY SEALS DATA IN MEMORY CARD. PRESS X." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ENDIF()
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(KillPopup)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("NO MEMORY CARD IN SLOT, OR MEMORY CARD NOT FORMATTED. PRESS X." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      COLOR(2550.0000002040.000000510.000000)
+      
+      WIDTH(3000.000000)
+      
+      HEIGHT(1000.000000)
+      
+      XOFFSET(200.000000)
+      
+      YOFFSET(350.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     ENDIF()
+     
+     ui::UI_COMMAND(
+       TYPE(MC_UnInit)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(LoadGameOnListBox)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(UiStopAttract)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(MC_Init)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(Ensure_MC_Dirs_Fast)
+      
+      WAIT_FOR_COMPLETION()
+      
+      )
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(DoesSlotHaveGame)
+       
+       ARGUMENT(INPUT_STRING)
+       
+       )
+      
+      )
+     
+     VALVE(LoadingSavedGame=10.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION(LOADING...)
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      WIDTH(4000.000000)
+      
+      HEIGHT(2000.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(400.000000)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(LoadSavedGame)
+      
+      ARGUMENT(INPUT_STRING)
+      
+      )
+     
+     WHILE(
+       VALVE(LoadingSavedGame==10.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     ui::UI_COMMAND(
+       TYPE(KillPopup)
+      
+      )
+     
+     VALVE(LoadedPopupResult=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(POPUPDIALOG)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUPOPUP)
+      
+      CAPTION("GAME LOADED SUCCESSFULLY. PRESS X." )
+      
+      BACKGROUND(popupOp.tif)
+      
+      POSITION(0.0000000.000000)
+      
+      WIDTH(4000.000000)
+      
+      HEIGHT(2000.000000)
+      
+      XOFFSET(100.000000)
+      
+      YOFFSET(400.000000)
+      
+      SCALE(0.000000)
+      
+      YESNO(
+        VALVE(LoadedPopupResult)
+       
+       )
+      
+      )
+     
+     WHILE(
+       VALVE(LoadedPopupResult==00.000000)
+      
+      )
+     
+     END_WHILE()
+     
+     IF(
+       VALVE(CurrentMission==60.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m8)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgAlaska_mission3.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==80.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m5)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgAlaska_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==50.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m9)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_thai_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==90.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m11)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_thai_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==110.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m12)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_thai_mission3.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==120.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m17)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_congo_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==170.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m19)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_congo_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==190.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m21)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_congo_mission3.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==210.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m13)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_turk_mission1.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==130.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m15)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_turk_mission2.rdr)
+      
+      )
+     
+     ELSEIF(
+       VALVE(CurrentMission==150.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m16)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlg_turk_mission3.rdr)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     ENDIF()
+     
+     ELSE()
+     
+     ENDIF()
+     
+     ui::UI_COMMAND(
+       TYPE(MC_UnInit)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

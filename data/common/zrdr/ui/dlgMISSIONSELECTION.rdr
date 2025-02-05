@@ -1,0 +1,1228 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(MPEG)
+   
+   FILENAME(run/movies/common/radar.pss)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlgMISSIONSELECTION.rdr)
+  
+  OBJECTS((
+     NAME(letterbar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(00.000000)
+    
+    SPEC(
+      FILENAME(blank_top_bar.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(bar_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(Gothic_13)
+     
+     CHILDOF(letterbar)
+     
+     CAPTION("AREA OF OPERATION" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(letterbar_bottom)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3610.000000)
+    
+    SPEC(
+      FILENAME(common_bar_bottom.tif)
+     
+     SIZE(6400.000000640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(dogtags)
+    
+    TYPE(IMAGE)
+    
+    XPOS(3700.000000)
+    
+    YPOS(3200.000000)
+    
+    SPEC(
+      FILENAME(dogtags.tif)
+     
+     SIZE(2560.0000001280.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(alaska_picture)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2850.000000)
+    
+    YPOS(900.000000)
+    
+    SPEC(
+      FILENAME(aop_alaska_picture.tif)
+     
+     XSIZE(2900.000000)
+     
+     YSIZE(2750.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(congo_picture)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2850.000000)
+    
+    YPOS(900.000000)
+    
+    SPEC(
+      FILENAME(aop_congo_picture.tif)
+     
+     XSIZE(2900.000000)
+     
+     YSIZE(2750.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(thai_picture)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2850.000000)
+    
+    YPOS(900.000000)
+    
+    SPEC(
+      FILENAME(aop_thailand_picture.tif)
+     
+     XSIZE(2900.000000)
+     
+     YSIZE(2750.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(turk_picture)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2850.000000)
+    
+    YPOS(900.000000)
+    
+    SPEC(
+      FILENAME(aop_turkmenistan_picture.tif)
+     
+     XSIZE(2900.000000)
+     
+     YSIZE(2750.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(mission_description)
+    
+    TYPE(TELETYPE)
+    
+    XPOS(150.000000)
+    
+    YPOS(770.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     CAPTION(" " )
+     
+     PULSERATE(200.000000)
+     
+     SCALE(0.000000)
+     
+     INTERVAL(6300.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(ak_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(300.000000)
+    
+    YPOS(400.000000)
+    
+    CHILDOF(alaska_missions_button)
+    
+    SPEC(
+      CAPTION("OPERATION FROSTBITE" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(thai_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(300.000000)
+    
+    YPOS(400.000000)
+    
+    CHILDOF(thai_missions_button)
+    
+    SPEC(
+      CAPTION("OPERATION GOOD KARMA" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(congo_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(300.000000)
+    
+    YPOS(400.000000)
+    
+    CHILDOF(congo_missions_button)
+    
+    SPEC(
+      CAPTION("OPERATION SWIFT JUSTICE" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(turk_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(300.000000)
+    
+    YPOS(400.000000)
+    
+    CHILDOF(turk_missions_button)
+    
+    SPEC(
+      CAPTION("OPERATION SERPENT STRIKE" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(TRIANGLE)
+    
+    ANIMATION(BackOutWithMusic)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(CallMusic)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(alaska_op_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(congo_op_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(thai_op_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(turk_op_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(letterbar_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(bottom_bar_slide_up)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(alaska_missions_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(-40-0.000000)
+    
+    YPOS(950.000000)
+    
+    SPEC(
+      XSIZE(2500.000000)
+     
+     YSIZE(520.000000)
+     
+     XOFFSET(300.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(ALASKA)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_alaska_op_description)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(alaska_picture_turn_on)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlg_areaop_alaska.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(thai_missions_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(-40-0.000000)
+    
+    YPOS(2160.000000)
+    
+    SPEC(
+      XSIZE(2500.000000)
+     
+     YSIZE(520.000000)
+     
+     XOFFSET(300.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(THAILAND)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(thai_picture_turn_on)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_thailand_op_description)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlg_areaop_thai.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(congo_missions_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(-40-0.000000)
+    
+    YPOS(1560.000000)
+    
+    SPEC(
+      XSIZE(2500.000000)
+     
+     YSIZE(520.000000)
+     
+     XOFFSET(300.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(CONGO)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(congo_picture_turn_on)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_congo_op_description)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlg_areaop_congo.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(turk_missions_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(-40-0.000000)
+    
+    YPOS(2720.000000)
+    
+    SPEC(
+      XSIZE(2500.000000)
+     
+     YSIZE(520.000000)
+     
+     XOFFSET(300.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(TURKMENISTAN)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(turk_picture_turn_on)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_turkmen_op_description)
+       
+       )
+      
+      (
+        BUTTON(CROSS)
+       
+       ANIMATION(goto_menu)
+       
+       ARGUMENT(dlg_areaop_turk.rdr)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(BackOutWithMusic)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(StopAllSounds)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(CallMusic)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(CameFromOther=00.000000)
+     
+     SOUND(
+       NAME(MUS_MENU_THEME)
+      
+      START()
+      
+      )
+     
+     WHILE(TRUE)
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(alaska_op_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_missions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_missions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUalaska_missions_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(thai_op_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUthai_missions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUthai_missions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUthai_missions_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(congo_op_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUcongo_missions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUcongo_missions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUcongo_missions_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(turk_op_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUturk_missions_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUturk_missions_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUturk_missions_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(alaska_picture_turn_on)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_picture)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUturk_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUcongo_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUthai_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(congo_picture_turn_on)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUcongo_picture)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUthai_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUturk_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(thai_picture_turn_on)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUthai_picture)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUcongo_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUturk_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(turk_picture_turn_on)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUturk_picture)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUthai_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUcongo_picture)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_alaska_op_description)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUmission_description)
+      
+      CAPTION(" ALASKA: ECO-TERRORISM IN NORTH AMERICA!" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_thailand_op_description)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUmission_description)
+      
+      CAPTION(" THAILAND: BIOLOGICAL WARFARE EXPLODES IN THE JUNGLE!" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_congo_op_description)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUmission_description)
+      
+      CAPTION(" CONGO: MERCENARIES ENTRENCHED IN THE CONGO!" )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_turkmen_op_description)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       NODE(MENUmission_description)
+      
+      CAPTION(" TURKMENISTAN: TERRORISTS ACQUIRE ATOMIC ARSENAL!" )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

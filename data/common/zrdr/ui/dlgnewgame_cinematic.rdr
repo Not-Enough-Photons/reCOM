@@ -1,0 +1,45 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(MPEG)
+    
+    FILENAME(run/movies/alaska/0100.pss)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(uianim.rdr)
+   
+   OBJECTS()
+   
+   ANIMATIONS((
+      EVENT(ONMPEGEND)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgMISSIONSELECTION.rdr)
+     
+     )
+    
+    (
+      BUTTON(CROSS)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgMISSIONSELECTION.rdr)
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

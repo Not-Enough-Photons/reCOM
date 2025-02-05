@@ -1,0 +1,504 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(IMAGE)
+   
+   FILENAME(multplay_back.tif)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlgUsagePolicy.rdr)
+  
+  OBJECTS((
+     NAME(letterbar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(00.000000)
+    
+    SPEC(
+      FILENAME(blank_top_bar.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(bar_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(Gothic_13)
+     
+     CHILDOF(letterbar)
+     
+     CAPTION("USAGE POLICY" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(letterbar_bottom)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3840.000000)
+    
+    SPEC(
+      FILENAME(common_bar_bottom.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_plate)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1000.000000)
+    
+    YPOS(750.000000)
+    
+    SPEC(
+      FILENAME(common_teletype_plate.tif)
+     
+     XSIZE(4360.000000)
+     
+     YSIZE(2350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_text)
+    
+    TYPE(TELETYPE)
+    
+    XPOS(100.000000)
+    
+    YPOS(400.000000)
+    
+    SPEC(
+      CHILDOF(teletype_plate)
+     
+     MAXLENGTH(3000.000000)
+     
+     MAXHEIGHT(3000.000000)
+     
+     CAPTION("I HAVE READ AND AGREE TO THE TERMS OF USAGE AS DETAILED IN THE SONY USAGE POLICY." )
+     
+     SCALE(0.000000)
+     
+     INTERVAL(0.000000)
+     
+     SPACING(170.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     EVENT(ONSTART)
+    
+    ANIMATION(bottom_bar_slide_up)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(letterbar_slide)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(YesAccept)
+    
+    TYPE(BUTTON)
+    
+    XPOS(2000.000000)
+    
+    YPOS(2700.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      SIZE(600.000000320.000000)
+     
+     CHILDOF(teletype_plate)
+     
+     XOFFSET(150.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(YES)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(ForceUsagePolicyReturn)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(NoAccept)
+    
+    TYPE(BUTTON)
+    
+    XPOS(3500.000000)
+    
+    YPOS(2700.000000)
+    
+    TYPE(BUTTON)
+    
+    SPEC(
+      SIZE(600.000000320.000000)
+     
+     CHILDOF(teletype_plate)
+     
+     XOFFSET(150.000000)
+     
+     YOFFSET(230.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(NO)
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(ReturnToMMenu)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ForceUsagePolicyReturn)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(UsagePolicyReturnScreen==10.000000)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgWorldOfSOCOM.rdr)
+      
+      )
+     
+     ELSE()
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(PREVIOUS_SCREEN)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ReturnToMMenu)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(LobbyLogout)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(UnInitNetwork)
+      
+      )
+     
+     VALVE(socom_online_initialized=00.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(NetCnfClose)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(NetCnfUnInit)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(RebootIOP)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgMenu.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(0.000000)
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_THUNK)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

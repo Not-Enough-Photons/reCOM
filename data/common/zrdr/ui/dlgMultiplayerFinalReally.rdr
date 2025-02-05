@@ -1,0 +1,1023 @@
+((
+  SCREENS((
+    LIBRARY(common/assetlib/spmp)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(MP_Game_Complete.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(dlgMultiplayerFinalReally.rdr)
+   
+   ANIMATIONS((
+      EVENT(ONSTART)
+     
+     ANIMATION(ReturnFlash)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(ExitOnStart)
+     
+     )
+    
+    (
+      EVENT(ONSTART)
+     
+     ANIMATION(MaintainDoneCounting)
+     
+     )
+    
+    )
+   
+   OBJECTS((
+      NAME(RTGL)
+     
+     TYPE(TEXT)
+     
+     XPOS(3400.000000)
+     
+     YPOS(4300.000000)
+     
+     SPEC(
+       CAPTION(" " )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Kills)
+     
+     TYPE(TEXT)
+     
+     XPOS(2200.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       CAPTION(KILLS)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(headshot)
+     
+     TYPE(TEXT)
+     
+     XPOS(2950.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(HEAD)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(shots)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       CHILDOF(headshot)
+      
+      HCENTERED()
+      
+      CAPTION(SHOTS)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(hit%)
+     
+     TYPE(TEXT)
+     
+     XPOS(3450.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       CAPTION("HIT %" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(hits)
+     
+     TYPE(TEXT)
+     
+     XPOS(4250.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(HITS)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(taken)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CHILDOF(hits)
+      
+      CAPTION(TAKEN)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(hostages)
+     
+     TYPE(TEXT)
+     
+     XPOS(4950.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(HOSTAGES)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(rescued)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CHILDOF(hostages)
+      
+      CAPTION(RESCUED)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(bases)
+     
+     TYPE(TEXT)
+     
+     XPOS(5800.000000)
+     
+     YPOS(850.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(BASES)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(destroyed)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CHILDOF(bases)
+      
+      CAPTION(DESTROYED)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(SealText)
+     
+     TYPE(TEXT)
+     
+     XPOS(300.000000)
+     
+     YPOS(1300.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION("SEAL'S TOTALS" )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TerrText)
+     
+     TYPE(TEXT)
+     
+     XPOS(300.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       SCALE(0.000000)
+      
+      CAPTION("TERRORIST'S TOTALS" )
+      
+      )
+     
+     )
+    
+    (
+      NAME(Time)
+     
+     TYPE(TEXT)
+     
+     XPOS(850.000000)
+     
+     YPOS(3180.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(TIME)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(Played)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CHILDOF(Time)
+      
+      CAPTION(PLAYED)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(TimePlayed)
+     
+     TYPE(TEXT)
+     
+     XPOS(-30-0.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       CHILDOF(Time)
+      
+      SCALE(0.000000)
+      
+      UIVAR(
+        NAME(TimeInGame)
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(roundswonS)
+     
+     TYPE(TEXT)
+     
+     XPOS(2300.000000)
+     
+     YPOS(3180.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(SEALS)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(byseals)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       CHILDOF(roundswonS)
+      
+      HCENTERED()
+      
+      CAPTION("ROUNDS WON" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(RoundsWonSeals)
+     
+     TYPE(COUNTER)
+     
+     XPOS(100.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       CHILDOF(roundswonS)
+      
+      HCENTERED()
+      
+      SCALE(0.000000)
+      
+      StartTime(0.000000)
+      
+      EndTime(0.000000)
+      
+      ValVar(RoundsWonSeals)
+      
+      )
+     
+     )
+    
+    (
+      NAME(roundswonT)
+     
+     TYPE(TEXT)
+     
+     XPOS(3700.000000)
+     
+     YPOS(3180.000000)
+     
+     SPEC(
+       HCENTERED()
+      
+      CAPTION(TERRORISTS)
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(byterr)
+     
+     TYPE(TEXT)
+     
+     XPOS(00.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       CHILDOF(roundswonT)
+      
+      HCENTERED()
+      
+      CAPTION("ROUNDS WON" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(RoundsWonTerrs)
+     
+     TYPE(COUNTER)
+     
+     XPOS(-5-0.000000)
+     
+     YPOS(500.000000)
+     
+     SPEC(
+       CHILDOF(roundswonT)
+      
+      SCALE(0.000000)
+      
+      StartTime(0.000000)
+      
+      EndTime(0.000000)
+      
+      ValVar(RoundsWonTerrs)
+      
+      )
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(SealsTotals)
+     
+     TYPE(LISTBOX)
+     
+     XPOS(2000.000000)
+     
+     YPOS(1300.000000)
+     
+     SPEC(
+       PRESSED_COLOR(0.0000000.0000000.000000)
+      
+      NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      ACTIVE_COLOR(0.0000000.0000000.000000)
+      
+      NOSELECT()
+      
+      XSIZE(1280.000000)
+      
+      YSIZE(400.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(00.000000)
+      
+      TOP_MARGIN(00.000000)
+      
+      UIVAR(
+        NAME(GameSealsTotLbContents)
+       
+       )
+      
+      SEQUENCE_DELAY(0.000000)
+      
+      SEQUENCE_INTERVAL(0.000000)
+      
+      COLUMNS((
+         POSITION(400.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(1000.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(1600.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(2200.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(8900.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(8700.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+      NAME(TerrsTotals)
+     
+     TYPE(LISTBOX)
+     
+     XPOS(2000.000000)
+     
+     YPOS(2150.000000)
+     
+     SPEC(
+       PRESSED_COLOR(0.0000000.0000000.000000)
+      
+      NORMAL_COLOR(0.0000000.0000000.000000)
+      
+      ACTIVE_COLOR(0.0000000.0000000.000000)
+      
+      NOSELECT()
+      
+      XSIZE(1280.000000)
+      
+      YSIZE(500.000000)
+      
+      SPACING(200.000000)
+      
+      SCALE(0.000000)
+      
+      LEFT_MARGIN(00.000000)
+      
+      TOP_MARGIN(00.000000)
+      
+      UIVAR(
+        NAME(GameTerrsTotLbContents)
+       
+       )
+      
+      SEQUENCE_DELAY(0.000000)
+      
+      SEQUENCE_INTERVAL(0.000000)
+      
+      COLUMNS((
+         POSITION(400.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(1000.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(1600.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(2200.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(8900.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       (
+         POSITION(8700.000000)
+        
+        TIMED_TEXT()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ReturnFlash)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(Join_flash)
+     
+     ui::UI_COMMAND(
+       NODE(MENURTGL)
+      
+      CAPTION("RETURNING TO LOBBY." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENURTGL)
+      
+      CAPTION("RETURNING TO LOBBY. ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENURTGL)
+      
+      CAPTION("RETURNING TO LOBBY. . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENURTGL)
+      
+      CAPTION("RETURNING TO LOBBY. . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENURTGL)
+      
+      CAPTION("RETURNING TO LOBBY. . . . ." )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENURTGL)
+      
+      CAPTION("RETURNING TO LOBBY. . . . . . " )
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     LOOP(
+       LOOP_COUNT(-1-0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ExitOnStart)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(IDFromBriefing=00.000000)
+     
+     IF(
+       ui::UI_COMMAND(
+        TYPE(HaveBeenBannedFromGame)
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(BanSelfFromGame)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SetDefaultMenuScreen)
+      
+      ARGUMENT(dlgNetBanned.rdr)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(GameStatePopCommand)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SwitchMenu)
+      
+      ARGUMENT(MENU_SCREEN)
+      
+      )
+     
+     ELSE()
+     
+     IF(
+       !(
+        ui::UI_COMMAND(
+         TYPE(IsSessionMaster)
+        
+        )
+       
+       )
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlgGameLobby.rdr)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(watch_for_switch_to_master)
+      
+      )
+     
+     ELSE()
+     
+     CALL_SEQUENCE(
+       NAME(watch_for_switch_to_client)
+      
+      )
+     
+     ENDIF()
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(watch_for_switch_to_master)
+     
+     ACTIVATION(ON_CALL)
+     
+     WHILE(TRUE)
+     
+     IF((
+        ui::UI_COMMAND(
+         TYPE(IsSessionMaster)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(watch_for_switch_to_client)
+      
+      )
+     
+     BREAK()
+     
+     ENDIF()
+     
+     WAIT(0.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(watch_for_switch_to_client)
+     
+     ACTIVATION(ON_CALL)
+     
+     CALL_ANIMATION(
+       NAME(call_gamelobby)
+      
+      )
+     
+     WHILE(TRUE)
+     
+     IF(
+       !(
+        ui::UI_COMMAND(
+         TYPE(IsSessionMaster)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(watch_for_switch_to_master)
+      
+      )
+     
+     BREAK()
+     
+     ENDIF()
+     
+     WAIT(0.000000)
+     
+     END_WHILE()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(call_gamelobby)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      WAIT(100.000000)
+     
+     SOUND(
+       NAME(SND_THUNK)
+      
+      START()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(return_to_gamelobby)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(return_to_gamelobby)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_THUNK)
+      
+      START()
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(ExitOnStart)
+      
+      )
+     
+     VALVE(player_ready_count=00.000000)
+     
+     VALVE(mp_x_sec_clock=110.000000)
+     
+     ui::UI_COMMAND(
+       TYPE(CloseAndSwitch)
+      
+      ARGUMENT(dlgGameLobby.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(MaintainDoneCounting)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      VALVE(DoneCounting=00.000000)
+     
+     WAIT(0.000000)
+     
+     VALVE(DoneCounting=10.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(MpFinalOnOk)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       VALVE(DoneCounting==10.000000)
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(return_to_gamelobby)
+      
+      )
+     
+     ELSE()
+     
+     ui::UI_COMMAND(
+       NODE(MENUSealsTotals)
+      
+      FINISH()
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUTerrsTotals)
+      
+      FINISH()
+      
+      )
+     
+     VALVE(DoneCounting=10.000000)
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

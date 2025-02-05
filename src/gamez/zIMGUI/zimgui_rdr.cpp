@@ -1,10 +1,29 @@
 ﻿#include "zimgui.h"
 
+#include <SDL3/SDL_dialog.h>
+
 #include "gamez/zArchive/zar.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zReader/zrdr_local.h"
+#include "gamez/zVideo/zvid.h"
 
 zar::CZAR rdrArchive;
+const char* rdr_dir;
+
+void FileCallback(void* userdata, const char * const *filelist, int filter)
+{
+    if (filelist)
+    {
+        rdrArchive.Close();
+        rdr_dir = *filelist;
+        rdrArchive = *CRdrArchive::AddArchive(rdr_dir, NULL);
+        CRdrArchive::OpenAll();
+    }
+    else
+    {
+        rdr_dir = "";
+    }
+}
 
 bool CZIMGUI::Tick_ReaderDisplay(f32 dT)
 {
@@ -12,20 +31,10 @@ bool CZIMGUI::Tick_ReaderDisplay(f32 dT)
     {
         if (ImGui::Button("Load"))
         {
-            rdrArchive = *CRdrArchive::AddArchive("READERC.ZAR", "D:/RUN");
-            CRdrArchive::OpenAll();
+            SDL_ShowOpenFileDialog(FileCallback, NULL, theWindow->GetWindow(), NULL, 0, "D:/", false);
         }
         
         s32 id = 0;
-
-        //for (auto it = archive->m_stable->begin(); it != archive->m_stable->end(); ++it)
-        //{
-        //    char* str = *it;
-        //    CRdrFile* reader = zrdr_read(str, NULL, 0);
-        //    FILE* file = fopen(str, "w");
-        //    _OutputASCII(file, reader, 0);
-        //    fclose(file);
-        //}
         
         for (auto it = rdrArchive.m_stable->begin(); it != rdrArchive.m_stable->end(); ++it)
         {
@@ -38,7 +47,7 @@ bool CZIMGUI::Tick_ReaderDisplay(f32 dT)
                 {
                     CRdrFile* reader = zrdr_read(*it, NULL, 0);
                     char path[256];
-                    sprintf_s(path, 256, "%s/%s", "data/common/zrdr/", *it);
+                    sprintf_s(path, 256, "%s/%s", "data/common/zrdr", *it);
                     FILE* file = fopen(path, "w");
                     _OutputASCII(file, reader, 0);
                     fclose(file);

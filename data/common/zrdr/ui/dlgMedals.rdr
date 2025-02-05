@@ -1,0 +1,135 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(undefined.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(uianim.rdr)
+   
+   OBJECTS((
+      NAME(STANDIN)
+     
+     TYPE(IMAGE)
+     
+     XPOS(300.000000)
+     
+     YPOS(0.000000)
+     
+     SPEC(
+       FILENAME(Menu584_medalcase.tif)
+      
+      XSIZE(2560.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(STANDIN)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3040.000000)
+     
+     YPOS(0.000000)
+     
+     SPEC(
+       FILENAME(Menu585_medaldisplay.tif)
+      
+      XSIZE(2560.000000)
+      
+      YSIZE(2560.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(STANDIN)
+     
+     TYPE(IMAGE)
+     
+     XPOS(3050.000000)
+     
+     YPOS(0.000000)
+     
+     SPEC(
+       FILENAME(Menu586_medaldesc.tif)
+      
+      XSIZE(2560.000000)
+      
+      YSIZE(640.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgOnlineOptions.rdr)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(exit)
+     
+     XPOS(880.000000)
+     
+     YPOS(0.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(1280.000000)
+      
+      YSIZE(640.000000)
+      
+      NORMAL(Menu587_exit.tif)
+      
+      ACTIVE(A_Menu587_exit.tif)
+      
+      PRESSED(Menu588_exit_GLOW.tif)
+      
+      CAPTION(" " )
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgOnlineOptions.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

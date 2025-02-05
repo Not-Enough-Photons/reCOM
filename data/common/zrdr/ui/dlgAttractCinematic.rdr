@@ -1,0 +1,52 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(MPEG)
+   
+   FILENAME(run/movies/Intro_2.pss)
+   
+   )
+  
+  FONT(arialblack)
+  
+  SCRIPT_LIBRARY(uianim.rdr)
+  
+  OBJECTS()
+  
+  ANIMATIONS((
+     EVENT(ONMPEGEND)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgMenu.rdr)
+    
+    )
+   
+   (
+     BUTTON(START)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgMenu.rdr)
+    
+    )
+   
+   (
+     BUTTON(CROSS)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgMenu.rdr)
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

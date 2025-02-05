@@ -1,0 +1,2181 @@
+((
+  SCREENS(
+   LIBRARY(ui/assetlib/ui2d)
+  
+  BACKGROUND(
+    TYPE(MPEG)
+   
+   FILENAME(run/movies/common/radar.pss)
+   
+   )
+  
+  FONT(myriad)
+  
+  SCRIPT_LIBRARY(dlg_areaop_alaska.rdr)
+  
+  OBJECTS((
+     NAME(letterbar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(00.000000)
+    
+    SPEC(
+      FILENAME(blank_top_bar.tif)
+     
+     XSIZE(6400.000000)
+     
+     YSIZE(640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(bar_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(200.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      FONT(Gothic_13)
+     
+     CHILDOF(letterbar)
+     
+     CAPTION("MISSION SELECTION" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(letterbar_bottom)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3610.000000)
+    
+    SPEC(
+      FILENAME(common_bar_bottom.tif)
+     
+     SIZE(6400.000000640.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star1)
+    
+    TYPE(IMAGE)
+    
+    XPOS(650.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission1_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star2)
+    
+    TYPE(IMAGE)
+    
+    XPOS(650.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission2_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star3)
+    
+    TYPE(IMAGE)
+    
+    XPOS(650.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission3_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star4)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission1_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star5)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission2_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star6)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission3_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star7)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1650.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission1_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star8)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1650.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission2_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star9)
+    
+    TYPE(IMAGE)
+    
+    XPOS(1650.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission3_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star10)
+    
+    TYPE(IMAGE)
+    
+    XPOS(150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission1_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star11)
+    
+    TYPE(IMAGE)
+    
+    XPOS(150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission2_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star12)
+    
+    TYPE(IMAGE)
+    
+    XPOS(150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission3_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star13)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission1_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star14)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission2_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Star15)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2150.000000)
+    
+    YPOS(200.000000)
+    
+    SPEC(
+      CHILDOF(alaska_mission3_button)
+     
+     FILENAME(GoldStar.tif)
+     
+     SIZE(350.000000350.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(pipes)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(3400.000000)
+    
+    SPEC(
+      FILENAME(common_alaska_pipes.tif)
+     
+     SIZE(2560.0000001280.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_plate)
+    
+    TYPE(IMAGE)
+    
+    XPOS(2850.000000)
+    
+    YPOS(1050.000000)
+    
+    SPEC(
+      FILENAME(common_teletype_plate.tif)
+     
+     XSIZE(3500.000000)
+     
+     YSIZE(2450.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(teletype_text)
+    
+    TYPE(TELETYPE)
+    
+    XPOS(100.000000)
+    
+    YPOS(500.000000)
+    
+    SPEC(
+      CHILDOF(teletype_plate)
+     
+     PULSERATE(0.000000)
+     
+     MAXLENGTH(2200.000000)
+     
+     MAXHEIGHT(1700.000000)
+     
+     CAPTION(" " )
+     
+     SCALE(0.000000)
+     
+     INTERVAL(0.000000)
+     
+     SPACING(200.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(DescriptionText)
+    
+    TYPE(TEXT)
+    
+    XPOS(3000.000000)
+    
+    YPOS(1250.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION(" " )
+     
+     )
+    
+    )
+   
+   (
+     NAME(title_bar)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(600.000000)
+    
+    SPEC(
+      FILENAME(undefined.tif)
+     
+     SIZE(7000.000000320.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(Mission_title)
+    
+    TYPE(TEXT)
+    
+    XPOS(800.000000)
+    
+    YPOS(230.000000)
+    
+    SPEC(
+      COLOR(0.0000000.0000000.000000)
+     
+     CHILDOF(title_bar)
+     
+     CAPTION("ALASKA: OPERATION FROSTBITE" )
+     
+     SCALE(0.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(dogtags)
+    
+    TYPE(IMAGE)
+    
+    XPOS(3700.000000)
+    
+    YPOS(3200.000000)
+    
+    SPEC(
+      FILENAME(dogtags.tif)
+     
+     SIZE(2560.0000001280.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  ANIMATIONS((
+     BUTTON(SELECT)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlg_areaop_alaska.rdr)
+    
+    )
+   
+   (
+     BUTTON(TRIANGLE)
+    
+    ANIMATION(goto_menu)
+    
+    ARGUMENT(dlgMISSIONSELECTION.rdr)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(PlaceStars)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(mission1_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(mission2_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(mission3_button_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(title_oilplatform_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(letterbar_slide)
+    
+    )
+   
+   (
+     EVENT(ONSTART)
+    
+    ANIMATION(bottom_bar_slide_up)
+    
+    )
+   
+   )
+  
+  CONTROLS((
+     NAME(anchor)
+    
+    TYPE(IMAGE)
+    
+    XPOS(00.000000)
+    
+    YPOS(1100.000000)
+    
+    SPEC(
+      FILENAME(anchor_alaska.tif)
+     
+     SIZE(1480.0000002760.000000)
+     
+     )
+    
+    )
+   
+   (
+     NAME(alaska_mission1_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(1760.000000)
+    
+    SPEC(
+      XSIZE(2650.000000)
+     
+     YSIZE(360.000000)
+     
+     XOFFSET(200.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("DEATH AT SEA" )
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(UiAopAkOnMission1)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_mission1_overview)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(alaska_mission2_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(2450.000000)
+    
+    SPEC(
+      XSIZE(2650.000000)
+     
+     YSIZE(360.000000)
+     
+     XOFFSET(200.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("GHOST TOWN" )
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(UiAopAkOnMission2)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_mission2_overview)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+     NAME(alaska_mission3_button)
+    
+    TYPE(BUTTON)
+    
+    XPOS(00.000000)
+    
+    YPOS(2790.000000)
+    
+    SPEC(
+      XSIZE(2650.000000)
+     
+     YSIZE(360.000000)
+     
+     XOFFSET(150.000000)
+     
+     YOFFSET(250.000000)
+     
+     SCALE(0.000000)
+     
+     CAPTION("OIL PLATFORM TAKEDOWN" )
+     
+     PRESSED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     NORMAL(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     ACTIVE(
+       IMAGE(brown_back_real.tif)
+      
+      TEXT_GLOW(
+        RANGE(0.0000000.000000)
+       
+       TIME(0.000000)
+       
+       )
+      
+      TEXT_COLOR(0.0000000.0000000.000000)
+      
+      )
+     
+     DISABLED(
+       IMAGE(brown_back.tif)
+      
+      TEXT_COLOR(500.000000500.000000500.000000)
+      
+      )
+     
+     ANIMATIONS((
+        BUTTON(CROSS)
+       
+       ANIMATION(UiAopAkOnMission3)
+       
+       )
+      
+      (
+        EVENT(ONACTIVATE)
+       
+       ANIMATION(teletype_mission3_overview)
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION_FILE(uianim.rdr)
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(PlaceStars)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENU100Addition1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENU100Addition2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENU100Addition3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar7)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar8)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar9)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar11)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar12)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar13)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar14)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar15)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     IF(
+       VALVE(incr_miss_6==00.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar7)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar10)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar13)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8==00.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar8)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar11)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar14)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5==00.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar9)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar12)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar15)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_6==10.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8==10.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5==10.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_6==20.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8==20.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5==20.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_6==30.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar7)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8==30.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar8)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5==30.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar9)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_6==40.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar7)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8==40.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar8)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5==40.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar9)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_6==50.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar7)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar10)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8==50.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar8)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar11)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5==50.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar9)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar12)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_6>=60.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar1)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar4)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar7)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar10)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar13)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_8>=60.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar2)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar5)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar8)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar11)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar14)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     IF(
+       VALVE(incr_miss_5>=60.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar3)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar6)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar9)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar12)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUStar15)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_mission1_overview)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUarrow_up)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("DEATH AT SEA" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("INTERCEPT A BLACKMARKET TRADE IN INTERNATIONAL WATERS.  GATHER INTEL REGARDING THE NEW TERRORIST ORGANIZATION AND SINK THEIR TRADING VESSEL.        " )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_mission2_overview)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUarrow_up)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("GHOST TOWN" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("INFILTRATE THE IRON BROTHERHOOD'S BASE OF OPERATIONS. DETAIN ONE TERRORIST FOR QUESTIONING. DESTROY WEAPONS CASHES, ANS MOST IMPORTANTLY, RETRIEVE VALUABLE INTEL." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(teletype_mission3_overview)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_Div)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUarrow_up)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUmap_alaska_mission1)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUDescriptionText)
+      
+      CAPTION("OIL PLATFORM TAKEDOWN" )
+      
+      )
+     
+     ui::UI_COMMAND(
+       NODE(MENUInstructionText)
+      
+      CAPTION(" " )
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUteletype_text)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     ui::UI_COMMAND(
+       NODE(MENUteletype_text)
+      
+      CAPTION("PLACEHOLDER! USING OUR INFORMANT'S INFORMATION AND THE MAP OBTAINED FROM THE PRISON, WE'VE LOCATED THE LOCATION OF THE NUKES. WE'VE KNOWN OF THIS CAVE NETWORK, AND IT'S TERRORIST ASSOCIATIONS, FOR SOME TIME.  NOW WE HAVE A REASON TO STRIKE." )
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(mission1_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_mission1_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_mission1_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUalaska_mission1_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(ActivateButton)
+      
+      ARGUMENT(alaska_mission1_button)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(mission2_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_mission2_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_mission2_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUalaska_mission2_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(mission3_button_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_mission3_button)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUalaska_mission3_button)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     SOUND(
+       NAME(SND_SLIDE)
+      
+      START()
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUalaska_mission3_button)
+      
+      TRANSLATE_FROM(-nan0.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(title_oilplatform_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUtitle_bar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUtitle_bar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUtitle_bar)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(-nan0.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(letterbar_slide)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar)
+      
+      TRANSLATE_FROM(0.000000-nan0.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(bottom_bar_slide_up)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     WAIT(0.000000)
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(MENUletterbar_bottom)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(MENUletterbar_bottom)
+      
+      TRANSLATE_FROM(0.0000000.0000000.000000)
+      
+      TRANSLATE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     SOUND(
+       NAME(SND_METAL)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(UiAopAkOnMission1)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m6)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgAlaska_mission2.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(UiAopAkOnMission2)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m8)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgAlaska_mission3.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(UiAopAkOnMission3)
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      ui::UI_COMMAND(
+       TYPE(SETMISSION)
+      
+      ARGUMENT(m5)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(menu_fade_up)
+      
+      )
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(MENUMENUFADER)
+      
+      RUN_TIME(0.000000)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      )
+     
+     ui::UI_COMMAND(
+       TYPE(SWITCHMENU)
+      
+      ARGUMENT(dlgAlaska_mission1.rdr)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

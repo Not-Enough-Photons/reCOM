@@ -1,0 +1,115 @@
+((
+  SCREENS((
+    LIBRARY(ui/assetlib/ui2d)
+   
+   BACKGROUND(
+     TYPE(IMAGE)
+    
+    FILENAME(undefined.tif)
+    
+    )
+   
+   FONT(arialblack)
+   
+   SCRIPT_LIBRARY(uianim.rdr)
+   
+   OBJECTS((
+      NAME(STANDIN)
+     
+     TYPE(TEXT)
+     
+     XPOS(3500.000000)
+     
+     YPOS(150.000000)
+     
+     SPEC(
+       CAPTION("STANDIN FOR ONLINE ROOMS SCREEN" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    (
+      NAME(DIRECTIONS)
+     
+     TYPE(TEXT)
+     
+     XPOS(100.000000)
+     
+     YPOS(700.000000)
+     
+     SPEC(
+       CAPTION("This is the Online Options Screen" )
+      
+      SCALE(0.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATIONS((
+      BUTTON(TRIANGLE)
+     
+     ANIMATION(goto_menu)
+     
+     ARGUMENT(dlgSocomOnline.rdr)
+     
+     )
+    
+    )
+   
+   CONTROLS((
+      NAME(forward)
+     
+     XPOS(1630.000000)
+     
+     YPOS(1500.000000)
+     
+     TYPE(BUTTON)
+     
+     SPEC(
+       XSIZE(2000.000000)
+      
+      YSIZE(400.000000)
+      
+      CAPTION("Rooms List" )
+      
+      XOFFSET(150.000000)
+      
+      YOFFSET(150.000000)
+      
+      SCALE(0.000000)
+      
+      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
+      
+      PRESSED(Menu050_CreateGame_MissionPressed.tif)
+      
+      ANIMATIONS((
+         BUTTON(CROSS)
+        
+        ANIMATION(goto_menu)
+        
+        ARGUMENT(dlgRoomsList.rdr)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    ````````)
+   
+   )
+  
+  )
+ 
+ )
+
+)
+
