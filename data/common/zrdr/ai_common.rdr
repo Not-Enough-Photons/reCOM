@@ -1,0 +1,290 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(ai_knife_attack)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(knife_attack)
+     
+     ai::MOVE(
+       pos(-nan0.0000000.000000)
+      
+      relseal(10.000000)
+      
+      )
+     
+     ai::SETMODE(
+       holdai(10.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(killer)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(victim)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(killer)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG(killer)
+     
+     ai::ANIMATE(
+       anim(Stab)
+      
+      ai(00.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(victim)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG(victim)
+     
+     ai::ANIMATE(
+       anim(Stabbed)
+      
+      postwait(0.000000)
+      
+      ai(10.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ai_cqb_attack)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(cqb_attack)
+     
+     ai::SETMODE(
+       holdai(10.000000)
+      
+      )
+     
+     ai::MOVE(
+       offset(-nan)
+      
+      relseal(10.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(aggressor)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(victim)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(aggressor)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG(aggressor)
+     
+     ai::ANIMATE(
+       anim("CQB attack" )
+      
+      ai(00.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(victim)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG(victim)
+     
+     ai::ANIMATE(
+       anim("Death stand head01" )
+      
+      prewait(0.000000)
+      
+      ai(10.000000)
+      
+      )
+     
+     ai::PARAM(
+       health=0.000000ai(10.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ai_restrain)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(restrain)
+     
+     ai::MOVE(
+       offset(0.000000)
+      
+      relseal(10.000000)
+      
+      )
+     
+     ai::MOVE(
+       dir(0.0000000.000000-nan)
+      
+      relseal(00.000000)
+      
+      ai(10.000000)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(master)
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(victim)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(master)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG(master)
+     
+     ai::ANIMATE(
+       anim("Apply restraints" )
+      
+      ai(00.000000)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(victim)
+     
+     ACTIVATION(ON_CALL)
+     
+     ai::DEBUG(victim)
+     
+     ai::ANIMATE(
+       anim("Receive restraints" )
+      
+      prewait(0.000000)
+      
+      ai(10.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ai_pickup_grenade)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(pickup)
+     
+     ai::MOVE(
+       pos(0.000000)
+      
+      relnode(INPUT_NODE)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Return throw grenade" )
+      
+      postwait(0.000000)
+      
+      )
+     
+     VALVE(INPUT_VALVE=10.000000)
+     
+     ai::SIGNAL()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(ai_pickup)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(pickup)
+     
+     ai::MOVE(
+       pos(0.000000)
+      
+      relnode(INPUT_NODE)
+      
+      )
+     
+     ai::ANIMATE(
+       anim("Get from ground" )
+      
+      )
+     
+     ai::SIGNAL()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

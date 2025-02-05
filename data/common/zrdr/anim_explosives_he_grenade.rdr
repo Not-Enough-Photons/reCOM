@@ -1,0 +1,505 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(HE_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_THROW_OBJECT_WHOOSH)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_MALE_GRUNT)
+      
+      START()
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(dust_explode_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(fire_explode_med)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(light_flash_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_high)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_high)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_low1)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_low2)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_low3)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_GRENADE_MEDIUM)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_sand)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_thatch)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_stone)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_person)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_wood_thin)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_rubber)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_wood_thick)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_metal_thin)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_metal_thick)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_glass)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_asphalt)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_fabric_heavy)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_snow)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(he_grenade_grass)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(he_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

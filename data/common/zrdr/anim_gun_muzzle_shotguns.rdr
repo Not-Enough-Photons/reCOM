@@ -1,0 +1,160 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_shotgun)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject3)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_small)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shotgun_smoke)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_big)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_REMINGTON_870_SHOTGUN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_shotgun_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_REMINGTON_870_SHOTGUN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_shotgun2)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(flash_fire_small)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shotgun_smoke)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_big)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_JACKHAMMER_MK_3_A2_SHOTGUN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_shotgun2_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_JACKHAMMER_MK_3_A2_SHOTGUN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

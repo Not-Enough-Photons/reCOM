@@ -1,0 +1,135 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(drop_item)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(0.0000000.0000000.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(-nan0.0000000.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(-nan-nan0.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(0.0000000.0000000.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(0.0000000.0000000.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(-nan0.0000000.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(0.0000000.0000000.000000)
+      
+      )
+     
+     ELSE()
+     
+     OBJECT_ROTATE_STATE(
+       NAME(INPUT_NODE)
+      
+      ROTATION(0.0000000.0000000.000000)
+      
+      )
+     
+     ENDIF()
+     
+     OBJECT_MOTION(
+       NAME(INPUT_NODE)
+      
+      GRAVITY()
+      
+      DO_ALTITUDES()
+      
+      BOUNCE_ELASTICITY(0.000000)
+      
+      TRANSLATION(0.000000-nan0.0000000.000000)
+      
+      RUN_TIME(80.000000)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

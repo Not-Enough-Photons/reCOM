@@ -1,0 +1,167 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_m60)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(tracer)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M60_E3)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_m60_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M60_E3)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_stoner)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M63A_STONER)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_stoner_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M63A_STONER)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

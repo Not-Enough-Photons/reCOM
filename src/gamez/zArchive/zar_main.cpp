@@ -726,6 +726,7 @@ namespace zar
 		{
 			return false;
 		}
+		
 
 		size_t position = m_pFileAlloc->fseek(-96, SEEK_END);
 		size_t size = 0;

@@ -1,0 +1,2055 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_THROW_OBJECT_WHOOSH)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_MALE_GRUNT)
+      
+      START()
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(bsmoke_explode_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(dust_explode_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(light_flash_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_small_low1)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(camera_shake)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_small_low2)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_GRENADE_MEDIUM)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_underwater)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_EXPLOSION_UNDER_WATER)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(camera_shake)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_water_out)
+      
+      TEXTURES(waterspray.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(60.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT20.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_water_up)
+      
+      TEXTURES(waterspray.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT30.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_water_up2)
+      
+      TEXTURES(waterspray.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT40.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_sand)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_GRENADE_MEDIUM)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(grenade_)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(dust_explode_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_sand_out)
+      
+      TEXTURES(effect_spark02.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT20.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_sand_up)
+      
+      TEXTURES(effect_spark02.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT30.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_sand_up2)
+      
+      TEXTURES(waterspray.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT40.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(sand_explode)
+     
+     PARTICLE_SOURCE(
+       NAME(grenade_sand_ground)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(200.000000)
+      
+      NUM_PERIODS(10.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(00.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_dirt)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_GRENADE_MEDIUM)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(camera_shake)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_dirt_out)
+      
+      TEXTURES(effect_spark02.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(60.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT20.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_dirt_up)
+      
+      TEXTURES(effect_spark02.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(0.0000000.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT30.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_dirt_up2)
+      
+      TEXTURES(waterspray.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT40.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(dirt_explode)
+     
+     PARTICLE_SOURCE(
+       NAME(grenade_dirt_ground)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(200.000000)
+      
+      NUM_PERIODS(10.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(00.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_stone)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_thatch)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_person)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_wood_thin)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_wood_thick)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_metal_thin)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_metal_thick)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_glass)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_asphalt)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_fabric_heavy)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_snow)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(big_snow_out)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(60.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT20.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(snow_last)
+     
+     PARTICLE_SOURCE(
+       NAME(snowpuffycombs)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(60.000000)
+      
+      NUM_PERIODS(50.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(300.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(snow_last2)
+     
+     PARTICLE_SOURCE(
+       NAME(snowpuffycombs2)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(60.000000)
+      
+      NUM_PERIODS(50.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(130.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(snow_chunks)
+      
+      TEXTURES(effect_spark02.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(80.000000)
+      
+      NUM_PERIODS(80.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT30.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(bigsnow_puffy_cloud)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(20.000000)
+      
+      NUM_PERIODS(40.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.000000-nan0.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(50.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(snow_explode)
+     
+     PARTICLE_SOURCE(
+       NAME(grenade_snow_ground)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(200.000000)
+      
+      NUM_PERIODS(10.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(00.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(snow_explode2)
+     
+     PARTICLE_SOURCE(
+       NAME(grenade_dust_snow)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(200.000000)
+      
+      NUM_PERIODS(10.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(30.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(EVENT_OFFSET0.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(camera_shake)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(frag_streak_whitephos)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_GRENADE_MEDIUM)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(frag_grenade_grass)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(frag_grenade)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

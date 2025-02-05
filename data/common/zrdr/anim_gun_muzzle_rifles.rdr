@@ -1,0 +1,1217 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_m4)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M4_A1)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_m4_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M4_A1)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_m4SD)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(tracer)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_H_K_P9S_SILENCER)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_m4SD_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(tracer)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_H_K_P9S_SILENCER)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_aks74)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_break_big)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_AKS_74)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_aks74_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_AKS_74)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_ak47)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_AK47)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_ak47_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_AK47)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_m203)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_M203_G_LAUNCHER)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(m203_muzzle_smoke)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      AT_NODE(INPUT_NODE)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(0.0000000.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR(0.0000000.000000)
+      
+      FADE_FAR(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT20.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_m203_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M203_G_LAUNCHER)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      PARTICLE_SOURCE(
+       NAME(m203_muzzle_smoke)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      AT_NODE(INPUT_NODE)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(0.0000000.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR(0.0000000.000000)
+      
+      FADE_FAR(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT20.000000)
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_sigcom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_SIG_552_COMMANDO)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_sigcom_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_SIG_552_COMMANDO)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_M16A2)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M16A2)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_M16A2_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M16A2)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_M14)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M14)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_M14_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_M14)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_McMillan)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_break_big)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(sniper_flash)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_MCMILLAN_50)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_McMillan_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(sniper_flash)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_MCMILLAN_50)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_model_700)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_big)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_MODEL_700_REMINGTON)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_model_700_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_MODEL_700_REMINGTON)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_stoner_SR25SD)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_SR25_SILENCED)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_stoner_SR25SD_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_SR25_SILENCED)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_stoner_SR25)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_SR25)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_stoner_SR25_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_SR25)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_Barret-M82a1)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_hider)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_BARRETT_LIGHT_50)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_Barret-M82a1_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_BARRETT_LIGHT_50)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_model_870)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(shell_eject)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(flash_fire_break_big)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_REMINGTON_870_SHOTGUN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(muzzle_rifle_model_870_zoom)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      CALL_ANIMATION(
+       NAME(zoom_flash_fire)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(shell_smoke_med)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     SOUND(
+       NAME(SND_REMINGTON_870_SHOTGUN)
+      
+      AT_NODE(INPUT_NODE)
+      
+      START()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

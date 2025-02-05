@@ -1,0 +1,226 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(chunk_gray_small_mf)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(chunk_gray)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      NAME(trail)
+     
+     ACTIVATION(ON_CALL)
+     
+     PARTICLE_SOURCE(
+       NAME(trail01)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      AT_NODE(ROOT_NODE)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      DISTANCE_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(stop_trail)
+     
+     ACTIVATION(ON_CALL)
+     
+     PARTICLE_SOURCE(
+       NAME(trail01)
+      
+      ACTIVE_STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(flypart01)
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(ROOT_NODE)
+      
+      SCALE_FROM(0.0000000.0000000.000000)
+      
+      SCALE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(00.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(ROOT_NODE)
+      
+      SCALE_FROM(0.0000000.0000000.000000)
+      
+      SCALE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(00.000000)
+      
+      )
+     
+     ELSEIF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(ROOT_NODE)
+      
+      SCALE_FROM(0.0000000.0000000.000000)
+      
+      SCALE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(00.000000)
+      
+      )
+     
+     ELSE()
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(ROOT_NODE)
+      
+      SCALE_FROM(0.0000000.0000000.000000)
+      
+      SCALE_TO(0.0000000.0000000.000000)
+      
+      RUN_TIME(00.000000)
+      
+      )
+     
+     ENDIF()
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(ROOT_NODE)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     CALL_SEQUENCE(
+       NAME(trail)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(ROOT_NODE)
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      BOUNCE_ELASTICITY(0.000000)
+      
+      GRAVITY(
+        MULTIPLIER(0.000000)
+       
+       )
+      
+      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      
+      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      
+      FORWARD_ROTATION(TIME2000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     WAIT(0.0000000.000000)
+     
+     OBJECT_OPACITY_FROM_TO(
+       NAME(ROOT_NODE)
+      
+      OPACITY_FROM(0.000000)
+      
+      OPACITY_TO(0.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

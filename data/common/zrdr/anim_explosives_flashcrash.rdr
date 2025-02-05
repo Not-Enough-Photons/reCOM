@@ -1,0 +1,250 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(flashbang_start)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_THROW_OBJECT_WHOOSH)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_MALE_GRUNT)
+      
+      START()
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     ANIMATION_NAME(flashcrash_grenade)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_MARK_141_FLASHCRASH)
+      
+      VOLUME(0.000000)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(camera_shake)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(smoke_a_puffin1)
+     
+     PARTICLE_SOURCE(
+       NAME(flashcrash_smoke)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT10.000000)
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      LIGHT(
+       NAME(explosion_light)
+      
+      START()
+      
+      STOP()
+      
+      INPUT_TRANSLATION()
+      
+      TRANSLATION(0.0000000.0000000.000000)
+      
+      DIFFUSE(0.0000000.0000000.000000)
+      
+      RANGE_SEQUENCE((0.0000000.0000000.000000)
+       
+       (0.0000000.0000000.000000)
+       
+       (0.0000000.0000000.000000)
+       
+       (0.0000000.0000000.000000)
+       
+       (0.0000000.0000000.000000)
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(explosion)
+     
+     PARTICLE_SOURCE(
+       NAME(party_grenade1)
+      
+      INPUT_TRANSLATION()
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(10.000000)
+      
+      PERTURB_POSITION_X(-nan0.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(-nan0.000000)
+      
+      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Y(0.0000000.000000)
+      
+      PERTURB_VELOCITY_Z(0.0000000.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      TEXTURES(explosion2.tif)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     WAIT(FRAME_COUNT10.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

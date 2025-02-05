@@ -1,0 +1,227 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(shell_eject)
+    
+    ANIMATION_ROOT_NAME(bullet_shell_9m)
+    
+    ACTIVATION(ON_CALL)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    ACTIVATION_TEST(
+      IF(
+       RANGE_TEST(
+        P1(
+         NODE(GLOBALcamera)
+        
+        )
+       
+       P2(
+         NODE(INPUT_NODE)
+        
+        )
+       
+       TEST(>)
+       
+       RANGE(0.000000)
+       
+       )
+      
+      )
+     
+     FAIL()
+     
+     ENDIF()
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(ACTIVE)
+      
+      )
+     
+     OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      AT_NODE(INPUT_NODE)
+      
+      )
+     
+     IF(
+       RANDOM_WEIGHT(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(ROOT_NODE)
+      
+      RELATIVE_NODE(INPUT_NODE)
+      
+      GRAVITY()
+      
+      DO_ALTITUDES()
+      
+      DO_INTERSECTIONS()
+      
+      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      
+      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      
+      INPUT_VELOCITY()
+      
+      XYZ_ROTATION(0.0000000.0000000.0000000.0000000.0000000.000000)
+      
+      BOUNCE_MATERIAL(
+        NAME(metal_thick)
+       
+       SOUND(SND_BULLET_CASING_METAL)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(metal_thin)
+       
+       SOUND(SND_BULLET_CASING_METAL)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(stone)
+       
+       SOUND(SND_BULLET_CASING_STONE)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(asphalt)
+       
+       SOUND(SND_BULLET_CASING_STONE)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(grass)
+       
+       SOUND(SND_BULLET_CASING_DIRT)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(dirt)
+       
+       SOUND(SND_BULLET_CASING_DIRT)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(sand)
+       
+       SOUND(SND_BULLET_CASING_SAND)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(wood_thick)
+       
+       SOUND(SND_BULLET_CASING_WOOD)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(wood_thin)
+       
+       SOUND(SND_BULLET_CASING_WOOD)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(metal_thick)
+       
+       SOUND(SND_BULLET_CASING_METAL)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      BOUNCE_MATERIAL(
+        NAME(metal_thin)
+       
+       SOUND(SND_BULLET_CASING_METAL)
+       
+       ELASTICITY(0.000000)
+       
+       )
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     ELSE()
+     
+     OBJECT_MOTION(
+       NAME(ROOT_NODE)
+      
+      RELATIVE_NODE(INPUT_NODE)
+      
+      GRAVITY()
+      
+      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      
+      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      
+      INPUT_VELOCITY()
+      
+      XYZ_ROTATION(0.0000000.0000000.0000000.0000000.0000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     ENDIF()
+     
+     OBJECT_ACTIVE_STATE(
+       NAME(ROOT_NODE)
+      
+      STATE(INACTIVE)
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

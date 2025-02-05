@@ -1,0 +1,128 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     NAME(player)
+    
+    ANIMATION_NAME(camera_look)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       IS_PLAYER_NODE(ROOT_NODE)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(camera_effects)
+      
+      XYZ_ROTATION(00.00000000.00000000.000000-140-0.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(camera_effects)
+      
+      XYZ_ROTATION(-70-0.00000000.00000000.0000001400.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     WAIT(40.000000)
+     
+     OBJECT_MOTION(
+       NAME(camera_effects)
+      
+      XYZ_ROTATION(00.00000000.00000000.0000001400.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(camera_effects)
+      
+      XYZ_ROTATION(700.00000000.00000000.000000-140-0.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(camera_effects)
+      
+      ROTATION(00.00000000.00000000.000000)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   ANIMATION_DEFINITION(
+     NAME(player)
+    
+    ANIMATION_NAME(camera_return)
+    
+    LOCAL_NODES_ONLY()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      IF(
+       IS_PLAYER_NODE(ROOT_NODE)
+      
+      )
+     
+     STOP_ANIMATION(
+       NAME(camera_look)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(camera_effects)
+      
+      XYZ_ROTATION(00.00000000.00000000.0000001400.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_MOTION(
+       NAME(camera_effects)
+      
+      XYZ_ROTATION(700.00000000.00000000.000000-140-0.00000000.00000000.000000)
+      
+      RUN_TIME(0.000000)
+      
+      )
+     
+     OBJECT_ROTATE_STATE(
+       NAME(camera_effects)
+      
+      ROTATION(00.00000000.00000000.000000)
+      
+      )
+     
+     ENDIF()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

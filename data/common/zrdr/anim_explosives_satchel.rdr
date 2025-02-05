@@ -1,0 +1,731 @@
+((
+  ANIMATION_DEFINITIONS(
+   GRAVITY(-nan)
+  
+  ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_NAME(satchel)
+    
+    ACTIVATION(ON_CALL)
+    
+    ANIMATION_ROOT_NAME(dummy_node)
+    
+    AUTO_INSTANCE_ROOT()
+    
+    AUTO_COPY_ANIMATION()
+    
+    SEQUENCE_DEFINITION(
+      OBJECT_TRANSLATE_STATE(
+       NAME(ROOT_NODE)
+      
+      INPUT_TRANSLATION()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      SOUND(
+       NAME(SND_MK138_SATCHEL_CHARGE)
+      
+      INPUT_TRANSLATION()
+      
+      START()
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(camera_shake)
+      
+      WITH_INPUT_ARGS()
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(explode)
+     
+     CALL_ANIMATION(
+       NAME(fire_explode_med)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(light_flash_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_ANIMATION(
+       NAME(fire_explode_med)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(light_flash_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(dust_explode_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_ANIMATION(
+       NAME(fire_explode_med)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(light_flash_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(dust_explode_large)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    SEQUENCE_DEFINITION(
+      NAME(fly_bits)
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(chunk_gray_small_mf)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     WAIT(0.000000)
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_high)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_high)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(-15-0.00000000.000000150.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_low1)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_low2)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(00.00000000.00000000.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     CALL_ANIMATION(
+       NAME(firestreak_small_low3)
+      
+      WITH_TRANSLATION(
+        AT_NODE(
+         NAME(ROOT_NODE)
+        
+        OFFSET(150.00000000.000000-15-0.000000)
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

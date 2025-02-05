@@ -1,0 +1,188 @@
+((
+  ANIMATION_DEFINITIONS(
+   ANIMATION_LIST(
+    ANIMATION_DEFINITION(
+     ANIMATION_ROOT_NAME(dummy_node)
+    
+    ANIMATION_NAME(cold_breath)
+    
+    AUTO_COPY_ANIMATION()
+    
+    ACTIVATION(ON_CALL)
+    
+    SEQUENCE_DEFINITION(
+      NAME(breath)
+     
+     IF(
+       IS_PLAYER_NODE(ROOT_NODE)
+      
+      )
+     
+     IF(
+       CAMERA_3RD_PERSON()
+      
+      &&!(
+        CAMERA_INDOORS()
+       
+       )
+      
+      )
+     
+     PARTICLE_SOURCE(
+       NAME(cold_breath_p)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      AT_NODE(head)
+      
+      TRANSLATION(0.0000000.0000000.000000)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(20.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.000000-nan)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(-nan0.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      MAX_VIEW_DISTANCE(1400.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     ENDIF()
+     
+     ELSE()
+     
+     PARTICLE_SOURCE(
+       NAME(cold_breath_p)
+      
+      ACTIVE_STATE(ACTIVE)
+      
+      AT_NODE(head)
+      
+      TRANSLATION(0.0000000.0000000.000000)
+      
+      TIME_INTERVAL(0.000000)
+      
+      NUMBER(20.000000)
+      
+      PERTURB_POSITION_X(0.0000000.000000)
+      
+      PERTURB_POSITION_Y(0.0000000.000000)
+      
+      PERTURB_POSITION_Z(0.0000000.000000)
+      
+      LOCAL_VELOCITY(0.0000000.000000-nan)
+      
+      WORLD_VELOCITY(0.0000000.0000000.000000)
+      
+      PERTURB_VELOCITY_X(-nan0.000000)
+      
+      PERTURB_VELOCITY_Y(-nan0.000000)
+      
+      PERTURB_VELOCITY_Z(-nan0.000000)
+      
+      RADIUS_RANGE(0.0000000.000000)
+      
+      LIFESPAN_RANGE(0.0000000.000000)
+      
+      START_AGE_RANGE(0.0000000.000000)
+      
+      PRIORITY(0.000000)
+      
+      WIND_FACTOR(0.000000)
+      
+      FRICTION(0.000000)
+      
+      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      
+      MAX_VIEW_DISTANCE(1400.000000)
+      
+      FADE_NEAR_RANGE(0.0000000.000000)
+      
+      FADE_FAR_RANGE(0.0000000.000000)
+      
+      TEXTURES(cloudpuff01.tif)
+      
+      COLORS((0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       (0.0000000.0000000.0000000.0000000.000000)
+       
+       )
+      
+      SCALE_SEQUENCE((0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       (0.0000000.000000)
+       
+       )
+      
+      )
+     
+     ENDIF()
+     
+     WAIT(0.0000000.000000)
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+
