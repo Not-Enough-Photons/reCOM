@@ -25,12 +25,12 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
@@ -47,7 +47,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      IF(
        ai::INSTATE(
@@ -91,10 +91,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -110,7 +110,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      IF(
        ai::INSTATE(
@@ -196,7 +196,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      ai::MACRO(
        anim(Inside_guns)
@@ -210,10 +210,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -224,10 +224,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -243,17 +243,17 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

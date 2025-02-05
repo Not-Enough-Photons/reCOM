@@ -18,14 +18,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(00.000000)
+    XPOS( 0  0.000000 )
     
-    YPOS(00.000000)
+    YPOS( 0  0.000000 )
     
     SPEC(
       FILENAME(blank_top_bar.tif)
      
-     SIZE(6400.000000640.000000)
+     SIZE( 640  0.000000  64  0.000000 )
      
      )
     
@@ -36,14 +36,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(00.000000)
+    XPOS( 0  0.000000 )
     
-    YPOS(3610.000000)
+    YPOS( 361  0.000000 )
     
     SPEC(
       FILENAME(common_bar_bottom.tif)
      
-     SIZE(6400.000000860.000000)
+     SIZE( 640  0.000000  86  0.000000 )
      
      )
     
@@ -54,16 +54,16 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(400.000000)
+    YPOS( 40  0.000000 )
     
     SPEC(
       FONT(arialblack)
      
-     CAPTION("Frag Grenade with 23.6 Shots" )
+     CAPTION("Frag Grenade with 23.6 Shots")
      
-     SCALE(0.000000)
+     SCALE( 0.700000 )
      
      )
     
@@ -74,16 +74,16 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(800.000000)
+    YPOS( 80  0.000000 )
     
     SPEC(
       FONT(arialblack)
      
-     CAPTION("Do you want to pick up the Smith & Wesson Browning?" )
+     CAPTION("Do you want to pick up the Smith & Wesson Browning?")
      
-     SCALE(0.000000)
+     SCALE( 0.800000 )
      
      )
     
@@ -94,16 +94,16 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(1300.000000)
+    YPOS( 130  0.000000 )
     
     SPEC(
       FONT(arialblack)
      
-     CAPTION("Range Uzi Semi-Automatic 5.56 Ammo" )
+     CAPTION("Range Uzi Semi-Automatic 5.56 Ammo")
      
-     SCALE(0.000000)
+     SCALE( 0.800000 )
      
      )
     
@@ -114,16 +114,16 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(1700.000000)
+    YPOS( 170  0.000000 )
     
     SPEC(
       FONT(arialblack)
      
-     CAPTION("Please get up on it" )
+     CAPTION("Please get up on it")
      
-     SCALE(0.000000)
+     SCALE( 0.800000 )
      
      )
     
@@ -134,14 +134,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(100.000000)
+    XPOS( 10  0.000000 )
     
-    YPOS(2600.000000)
+    YPOS( 260  0.000000 )
     
     SPEC(
       FILENAME(skbQ.tif)
      
-     SIZE(3600.0000001800.000000)
+     SIZE( 360  0.000000  180  0.000000 )
      
      )
     
@@ -152,24 +152,24 @@
     
     TYPE(TELETYPE)
     
-    XPOS(100.000000)
+    XPOS( 10  0.000000 )
     
-    YPOS(400.000000)
+    YPOS( 40  0.000000 )
     
     SPEC(
       CHILDOF(teletype_plate)
      
-     MAXLENGTH(3900.000000)
+     MAXLENGTH( 390  0.000000 )
      
-     MAXHEIGHT(1700.000000)
+     MAXHEIGHT( 170  0.000000 )
      
-     CAPTION(" " )
+     CAPTION(" ")
      
-     SCALE(0.000000)
+     SCALE( 0.375000 )
      
-     INTERVAL(0.000000)
+     INTERVAL( 800.000000 )
      
-     SPACING(170.000000)
+     SPACING( 17  0.000000 )
      
      )
     
@@ -193,18 +193,18 @@
     
     TYPE(BUTTON)
     
-    XPOS(00.000000)
+    XPOS( 0  0.000000 )
     
-    YPOS(3430.000000)
+    YPOS( 343  0.000000 )
     
     SPEC(
-      SIZE(1500.000000320.000000)
+      SIZE( 150  0.000000  32  0.000000 )
      
-     XOFFSET(250.000000)
+     XOFFSET( 25  0.000000 )
      
-     YOFFSET(250.000000)
+     YOFFSET( 25  0.000000 )
      
-     SCALE(0.000000)
+     SCALE( 0.500000 )
      
      CAPTION(DEPLOY)
      
@@ -214,11 +214,11 @@
      
      ACTIVE(blue_back.tif)
      
-     PRESSED_COLOR(0.0000000.0000000.000000)
+     PRESSED_COLOR( 255.000000  74.000000  8.000000 )
      
-     NORMAL_COLOR(0.0000000.0000000.000000)
+     NORMAL_COLOR( 108.000000  108.000000  108.000000 )
      
-     ACTIVE_COLOR(0.0000000.0000000.000000)
+     ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
      
      ANIMATIONS((
         BUTTON(CROSS)
@@ -258,7 +258,7 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      VALVE(uiEquipReturnScreen=210.000000)
+      VALVE(uiEquipReturnScreen= 21  0.000000 )
      
      SOUND(
        NAME(SND_DINK)
@@ -272,11 +272,11 @@
      OBJECT_OPACITY_FROM_TO(
        NAME(MENUMENUFADER)
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.500000 )
       
-      OPACITY_FROM(0.000000)
+      OPACITY_FROM( 0.000000 )
       
-      OPACITY_TO(0.000000)
+      OPACITY_TO( 0.990000 )
       
       )
      
@@ -333,11 +333,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUoverview_button)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  130.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  130.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -358,7 +358,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUintel_button)
@@ -377,11 +377,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUintel_button)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  160.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  160.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -402,7 +402,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUrecon_button)
@@ -421,11 +421,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUrecon_button)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  190.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  190.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -446,7 +446,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.300000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUtactical_button)
@@ -465,11 +465,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUtactical_button)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  220.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  220.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -490,7 +490,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUsomething_button)
@@ -509,11 +509,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUsomething_button)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  250.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  250.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -534,7 +534,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.500000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUsomething_or)
@@ -553,11 +553,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUsomething_or)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  280.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  280.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -578,7 +578,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.600000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUdeploy_button)
@@ -597,11 +597,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUdeploy_button)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -50.000000  310.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 60.000000  310.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
@@ -632,11 +632,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUMission_title)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 640.000000  105.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 65.000000  105.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.400000 )
       
       )
      
@@ -650,16 +650,16 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 0.200000 )
      
      OBJECT_MOTION_FROM_TO(
        NAME(MENUletterbar_mission_briefing)
       
-      TRANSLATE_FROM(0.000000-nan0.000000)
+      TRANSLATE_FROM( 0.000000  -86.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.250000 )
       
       )
      
@@ -673,16 +673,16 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 0.200000 )
      
      OBJECT_MOTION_FROM_TO(
        NAME(MENUletterbar_bottom)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 0.000000  361.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.250000 )
       
       )
      
@@ -713,18 +713,18 @@
      ui::UI_COMMAND(
        NODE(MENUteletype_text)
       
-      CAPTION(" " )
+      CAPTION(" ")
       
       )
      
      OBJECT_OPACITY_FROM_TO(
        NAME(MENUmap_alaska_mission1)
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.300000 )
       
-      OPACITY_FROM(0.000000)
+      OPACITY_FROM( 0.000000 )
       
-      OPACITY_TO(0.000000)
+      OPACITY_TO( 0.990000 )
       
       )
      
@@ -748,7 +748,7 @@
       ui::UI_COMMAND(
        NODE(MENUteletype_text)
       
-      CAPTION(" " )
+      CAPTION(" ")
       
       )
      
@@ -786,11 +786,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUteletype_plate)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 645.000000  115.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 210.000000  115.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.400000 )
       
       )
      
@@ -818,12 +818,12 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      ui::UI_COMMAND(
        NODE(MENUteletype_text)
       
-      CAPTION(" " )
+      CAPTION(" ")
       
       )
      
@@ -851,12 +851,12 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      ui::UI_COMMAND(
        NODE(MENUteletype_text)
       
-      CAPTION("  " )
+      CAPTION("  ")
       
       )
      
@@ -884,12 +884,12 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      ui::UI_COMMAND(
        NODE(MENUteletype_text)
       
-      CAPTION("  " )
+      CAPTION("  ")
       
       )
      
@@ -917,12 +917,12 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      ui::UI_COMMAND(
        NODE(MENUteletype_text)
       
-      CAPTION("THE LAST MARINE WAS NOT IN THE RIVER BUNKER. THE MERCENARIES ANTICIPATED OUR MOVE AND RELOCATED HIM BEFORE YOUR ARRIVAL.  THEY WILL NOT BE ABLE TO MOVE HIM AGAIN. WE'VE ISOLATED THE MARINE'S CURRENT LOCATION, MORE OR LESS, AND YOU'RE GOING TO SAVE HIM, SEAL TEAM. INFILTRATE THIS MERCENARY STRONGHOLD IN THE CONGO JUNGLE.  YOU ARE AUTHORIZED TO USE ANY FORCE NECESSARY TO RETURN THE MARINE ALIVE. BRING HIM BACK ALIVE." )
+      CAPTION("THE LAST MARINE WAS NOT IN THE RIVER BUNKER. THE MERCENARIES ANTICIPATED OUR MOVE AND RELOCATED HIM BEFORE YOUR ARRIVAL.  THEY WILL NOT BE ABLE TO MOVE HIM AGAIN. WE'VE ISOLATED THE MARINE'S CURRENT LOCATION, MORE OR LESS, AND YOU'RE GOING TO SAVE HIM, SEAL TEAM. INFILTRATE THIS MERCENARY STRONGHOLD IN THE CONGO JUNGLE.  YOU ARE AUTHORIZED TO USE ANY FORCE NECESSARY TO RETURN THE MARINE ALIVE. BRING HIM BACK ALIVE.")
       
       )
      

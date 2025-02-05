@@ -11,49 +11,49 @@
     ACTIVATION(ON_STARTUP)
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb01)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb04)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb06)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb02)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb05)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb03)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      CALL_SEQUENCE(
        NAME(treelimb07)
@@ -66,30 +66,30 @@
       OBJECT_MOTION(
        NAME(tree01)
       
-      XYZ_ROTATION(0.00000000.00000000.0000000.00000000.00000000.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  0  0.000000  -0.375000  0  0.000000  0  0.000000 )
       
-      RUN_TIME(80.000000)
+      RUN_TIME( 8  0.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(tree01)
       
-      XYZ_ROTATION(-nan00.00000000.0000000.00000000.00000000.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  0  0.000000  0.375000  0  0.000000  0  0.000000 )
       
-      RUN_TIME(80.000000)
+      RUN_TIME( 8  0.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(tree01)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -103,30 +103,30 @@
      OBJECT_MOTION(
        NAME(treelimb01)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(10.000000)
+      RUN_TIME( 1  0.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb01)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb01)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -140,30 +140,30 @@
      OBJECT_MOTION(
        NAME(treelimb02)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb02)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb02)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -177,30 +177,30 @@
      OBJECT_MOTION(
        NAME(treelimb03)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb03)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb03)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -214,30 +214,30 @@
      OBJECT_MOTION(
        NAME(treelimb04)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb04)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb04)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -251,30 +251,30 @@
      OBJECT_MOTION(
        NAME(treelimb05)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb05)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb05)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -288,30 +288,30 @@
      OBJECT_MOTION(
        NAME(treelimb06)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb06)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb06)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -325,30 +325,30 @@
      OBJECT_MOTION(
        NAME(treelimb07)
       
-      XYZ_ROTATION(0.00000000.00000010.000000-3-0.00000000.000000-2-0.000000)
+      XYZ_ROTATION( 1.500000  0  0.000000  1  0.000000  -3  -nan  0  0.000000  -2  -nan )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_MOTION(
        NAME(treelimb07)
       
-      XYZ_ROTATION(-nan00.000000-1-0.00000030.00000000.00000020.000000)
+      XYZ_ROTATION( -1.500000  0  0.000000  -1  -nan  3  0.000000  0  0.000000  2  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      
      OBJECT_ROTATE_STATE(
        NAME(treelimb07)
       
-      STATE(00.00000000.00000000.000000)
+      STATE( 0  0.000000  0  0.000000  0  0.000000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      

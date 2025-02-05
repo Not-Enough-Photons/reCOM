@@ -18,16 +18,16 @@
      
      TYPE(IMAGE)
      
-     XPOS(00.000000)
+     XPOS( 0  0.000000 )
      
-     YPOS(00.000000)
+     YPOS( 0  0.000000 )
      
      SPEC(
        FILENAME(blank_top_bar.tif)
       
-      XSIZE(6400.000000)
+      XSIZE( 640  0.000000 )
       
-      YSIZE(640.000000)
+      YSIZE( 64  0.000000 )
       
       )
      
@@ -38,18 +38,18 @@
      
      TYPE(TEXT)
      
-     XPOS(200.000000)
+     XPOS( 20  0.000000 )
      
-     YPOS(500.000000)
+     YPOS( 50  0.000000 )
      
      SPEC(
        FONT(Gothic_13)
       
       CHILDOF(letterbar)
       
-      CAPTION("ONLINE OPTIONS" )
+      CAPTION("ONLINE OPTIONS")
       
-      SCALE(0.000000)
+      SCALE( 0.950000 )
       
       )
      
@@ -60,14 +60,14 @@
      
      TYPE(IMAGE)
      
-     XPOS(00.000000)
+     XPOS( 0  0.000000 )
      
-     YPOS(3840.000000)
+     YPOS( 384  0.000000 )
      
      SPEC(
        FILENAME(common_bar_bottom.tif)
       
-      SIZE(6400.000000640.000000)
+      SIZE( 640  0.000000  64  0.000000 )
       
       )
      
@@ -78,16 +78,16 @@
      
      TYPE(IMAGE)
      
-     XPOS(5720.000000)
+     XPOS( 572  0.000000 )
      
-     YPOS(250.000000)
+     YPOS( 25  0.000000 )
      
      SPEC(
        CHILDOF(letterbar)
       
       FILENAME(NetMonY.tif)
       
-      SIZE(280.000000280.000000)
+      SIZE( 28  0.000000  28  0.000000 )
       
       )
      
@@ -98,16 +98,16 @@
      
      TYPE(IMAGE)
      
-     XPOS(5810.000000)
+     XPOS( 581  0.000000 )
      
-     YPOS(340.000000)
+     YPOS( 34  0.000000 )
      
      SPEC(
        CHILDOF(letterbar)
       
       FILENAME(NetMonB.tif)
       
-      SIZE(100.000000120.000000)
+      SIZE( 10  0.000000  12  0.000000 )
       
       )
      
@@ -118,14 +118,14 @@
      
      TYPE(TEXT)
      
-     XPOS(200.000000)
+     XPOS( 20  0.000000 )
      
-     YPOS(250.000000)
+     YPOS( 25  0.000000 )
      
      CHILDOF(letterbar_bottom)
      
      SPEC(
-       SCALE(0.000000)
+       SCALE( 0.400000 )
       
       CAPTION(Player:)
       
@@ -138,14 +138,14 @@
      
      TYPE(TEXT)
      
-     XPOS(200.000000)
+     XPOS( 20  0.000000 )
      
-     YPOS(450.000000)
+     YPOS( 45  0.000000 )
      
      CHILDOF(letterbar_bottom)
      
      SPEC(
-       SCALE(0.000000)
+       SCALE( 0.400000 )
       
       CAPTION(Clan:)
       
@@ -158,9 +158,9 @@
      
      TYPE(TEXT)
      
-     XPOS(800.000000)
+     XPOS( 80  0.000000 )
      
-     YPOS(250.000000)
+     YPOS( 25  0.000000 )
      
      CHILDOF(letterbar_bottom)
      
@@ -172,7 +172,7 @@
        
        )
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       )
      
@@ -183,14 +183,14 @@
      
      TYPE(TEXT)
      
-     XPOS(800.000000)
+     XPOS( 80  0.000000 )
      
-     YPOS(450.000000)
+     YPOS( 45  0.000000 )
      
      SPEC(
        CHILDOF(letterbar_bottom)
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       UIVAR(
         NAME(CLANNAMEVAR)
@@ -210,14 +210,14 @@
      
      TYPE(IMAGE)
      
-     XPOS(1870.000000)
+     XPOS( 187  0.000000 )
      
-     YPOS(650.000000)
+     YPOS( 65  0.000000 )
      
      SPEC(
-       XSIZE(4450.000000)
+       XSIZE( 445  0.000000 )
       
-      YSIZE(300.000000)
+      YSIZE( 30  0.000000 )
       
       FILENAME(infoWin1.tif)
       
@@ -230,14 +230,14 @@
      
      TYPE(IMAGE)
      
-     XPOS(1870.000000)
+     XPOS( 187  0.000000 )
      
-     YPOS(970.000000)
+     YPOS( 97  0.000000 )
      
      SPEC(
-       XSIZE(4450.000000)
+       XSIZE( 445  0.000000 )
       
-      YSIZE(300.000000)
+      YSIZE( 30  0.000000 )
       
       FILENAME(infoWin1.tif)
       
@@ -250,16 +250,16 @@
      
      TYPE(WRAPPEDTEXT)
      
-     XPOS(2000.000000)
+     XPOS( 200  0.000000 )
      
-     YPOS(1170.000000)
+     YPOS( 117  0.000000 )
      
      SPEC(
-       SCALE(0.000000)
+       SCALE( 0.350000 )
       
-      WIDTH(2000.000000)
+      WIDTH( 200  0.000000 )
       
-      SPACING(150.000000)
+      SPACING( 15  0.000000 )
       
       UIVAR(
         NAME(PlayerDescription)
@@ -275,16 +275,16 @@
      
      TYPE(TEXT)
      
-     XPOS(2000.000000)
+     XPOS( 200  0.000000 )
      
-     YPOS(850.000000)
+     YPOS( 85  0.000000 )
      
      SPEC(
-       COLOR(0.0000000.0000000.000000)
+       COLOR( 255.000000  104.000000  51.000000 )
       
-      SCALE(0.000000)
+      SCALE( 0.350000 )
       
-      CAPTION(" " )
+      CAPTION(" ")
       
       )
      
@@ -295,14 +295,14 @@
      
      TYPE(TEXT)
      
-     XPOS(2200.000000)
+     XPOS( 220  0.000000 )
      
-     YPOS(1050.000000)
+     YPOS( 105  0.000000 )
      
      SPEC(
-       CAPTION(" " )
+       CAPTION(" ")
       
-      SCALE(0.000000)
+      SCALE( 0.850000 )
       
       )
      
@@ -313,14 +313,14 @@
      
      TYPE(IMAGE)
      
-     XPOS(3700.000000)
+     XPOS( 370  0.000000 )
      
-     YPOS(3250.000000)
+     YPOS( 325  0.000000 )
      
      SPEC(
        FILENAME(dogtags.tif)
       
-      SIZE(2560.0000001280.000000)
+      SIZE( 256  0.000000  128  0.000000 )
       
       )
      
@@ -375,32 +375,32 @@
    CONTROLS((
       NAME(playerdesc)
      
-     XPOS(100.000000)
+     XPOS( 10  0.000000 )
      
-     YPOS(970.000000)
+     YPOS( 97  0.000000 )
      
      TYPE(BUTTON)
      
      SPEC(
-       XSIZE(1750.000000)
+       XSIZE( 175  0.000000 )
       
-      YSIZE(300.000000)
+      YSIZE( 30  0.000000 )
       
-      XOFFSET(100.000000)
+      XOFFSET( 10  0.000000 )
       
-      YOFFSET(220.000000)
+      YOFFSET( 22  0.000000 )
       
       PRESSED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  74.000000  8.000000 )
        
        )
       
       NORMAL(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 128.000000  128.000000  128.000000 )
        
        )
       
@@ -408,26 +408,26 @@
         IMAGE(brown_back_real.tif)
        
        TEXT_GLOW(
-         RANGE(0.0000000.000000)
+         RANGE( 0.500000  1.000000 )
         
-        TIME(0.000000)
+        TIME( 0.500000 )
         
         )
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  204.000000  51.000000 )
        
        )
       
       DISABLED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(500.000000500.000000500.000000)
+       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
        
        )
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
-      CAPTION("PLAYER DESCRIPTION" )
+      CAPTION("PLAYER DESCRIPTION")
       
       ANIMATIONS((
          EVENT(ONACTIVATE)
@@ -452,34 +452,34 @@
     (
       NAME(Messaging)
      
-     XPOS(100.000000)
+     XPOS( 10  0.000000 )
      
-     YPOS(1270.000000)
+     YPOS( 127  0.000000 )
      
      TYPE(BUTTON)
      
      SPEC(
-       CAPTION("SETUP MESSAGING" )
+       CAPTION("SETUP MESSAGING")
       
-      XSIZE(1750.000000)
+      XSIZE( 175  0.000000 )
       
-      YSIZE(300.000000)
+      YSIZE( 30  0.000000 )
       
-      XOFFSET(100.000000)
+      XOFFSET( 10  0.000000 )
       
-      YOFFSET(220.000000)
+      YOFFSET( 22  0.000000 )
       
       PRESSED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  74.000000  8.000000 )
        
        )
       
       NORMAL(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 128.000000  128.000000  128.000000 )
        
        )
       
@@ -487,24 +487,24 @@
         IMAGE(brown_back_real.tif)
        
        TEXT_GLOW(
-         RANGE(0.0000000.000000)
+         RANGE( 0.500000  1.000000 )
         
-        TIME(0.000000)
+        TIME( 0.500000 )
         
         )
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  204.000000  51.000000 )
        
        )
       
       DISABLED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(500.000000500.000000500.000000)
+       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
        
        )
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       ANIMATIONS((
          EVENT(ONACTIVATE)
@@ -531,34 +531,34 @@
     (
       NAME(Taunts)
      
-     XPOS(100.000000)
+     XPOS( 10  0.000000 )
      
-     YPOS(1570.000000)
+     YPOS( 157  0.000000 )
      
      TYPE(BUTTON)
      
      SPEC(
-       CAPTION("SETUP TAUNTS" )
+       CAPTION("SETUP TAUNTS")
       
-      XSIZE(1750.000000)
+      XSIZE( 175  0.000000 )
       
-      YSIZE(300.000000)
+      YSIZE( 30  0.000000 )
       
-      XOFFSET(100.000000)
+      XOFFSET( 10  0.000000 )
       
-      YOFFSET(220.000000)
+      YOFFSET( 22  0.000000 )
       
       PRESSED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  74.000000  8.000000 )
        
        )
       
       NORMAL(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 128.000000  128.000000  128.000000 )
        
        )
       
@@ -566,24 +566,24 @@
         IMAGE(brown_back_real.tif)
        
        TEXT_GLOW(
-         RANGE(0.0000000.000000)
+         RANGE( 0.500000  1.000000 )
         
-        TIME(0.000000)
+        TIME( 0.500000 )
         
         )
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  204.000000  51.000000 )
        
        )
       
       DISABLED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(500.000000500.000000500.000000)
+       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
        
        )
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       ANIMATIONS((
          EVENT(ONACTIVATE)
@@ -610,36 +610,36 @@
     (
       NAME(filters)
      
-     XPOS(100.000000)
+     XPOS( 10  0.000000 )
      
-     YPOS(1870.000000)
+     YPOS( 187  0.000000 )
      
      TYPE(BUTTON)
      
      SPEC(
-       XSIZE(1750.000000)
+       XSIZE( 175  0.000000 )
       
-      YSIZE(300.000000)
+      YSIZE( 30  0.000000 )
       
-      XOFFSET(100.000000)
+      XOFFSET( 10  0.000000 )
       
-      YOFFSET(220.000000)
+      YOFFSET( 22  0.000000 )
       
-      CAPTION("INPUT FILTERS" )
+      CAPTION("INPUT FILTERS")
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       PRESSED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  74.000000  8.000000 )
        
        )
       
       NORMAL(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 128.000000  128.000000  128.000000 )
        
        )
       
@@ -647,20 +647,20 @@
         IMAGE(brown_back_real.tif)
        
        TEXT_GLOW(
-         RANGE(0.0000000.000000)
+         RANGE( 0.500000  1.000000 )
         
-        TIME(0.000000)
+        TIME( 0.500000 )
         
         )
        
-       TEXT_COLOR(0.0000000.0000000.000000)
+       TEXT_COLOR( 255.000000  204.000000  51.000000 )
        
        )
       
       DISABLED(
         IMAGE(brown_back.tif)
        
-       TEXT_COLOR(500.000000500.000000500.000000)
+       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
        
        )
       
@@ -705,7 +705,7 @@
     
     SEQUENCE_DEFINITION(
       IF(
-       VALVE(OptionsChanged==10.000000)
+       VALVE(OptionsChanged== 1  0.000000 )
       
       )
      
@@ -716,7 +716,7 @@
       
       )
      
-     VALVE(OptionsChanged=00.000000)
+     VALVE(OptionsChanged= 0  0.000000 )
      
      ELSE()
      
@@ -764,7 +764,7 @@
       ui::UI_COMMAND(
        NODE(MENUDescriptionText)
       
-      CAPTION("Press the X button to enter your player description." )
+      CAPTION("Press the X button to enter your player description.")
       
       )
      
@@ -781,7 +781,7 @@
       ui::UI_COMMAND(
        NODE(MENUDescriptionText)
       
-      CAPTION("Press the X button to enter your standard operating procedures." )
+      CAPTION("Press the X button to enter your standard operating procedures.")
       
       )
      
@@ -798,7 +798,7 @@
       ui::UI_COMMAND(
        NODE(MENUDescriptionText)
       
-      CAPTION("Press the X button to enter your taunts." )
+      CAPTION("Press the X button to enter your taunts.")
       
       )
      
@@ -815,7 +815,7 @@
       ui::UI_COMMAND(
        NODE(MENUDescriptionText)
       
-      CAPTION("Press the X button to set your game filters." )
+      CAPTION("Press the X button to set your game filters.")
       
       )
      
@@ -834,7 +834,7 @@
       
       )
      
-     VALVE(OptionsChanged=10.000000)
+     VALVE(OptionsChanged= 1  0.000000 )
      
      )
     
@@ -849,7 +849,7 @@
       ui::UI_COMMAND(
        TYPE(SetSkbPurpose)
       
-      ARGUMENT("Enter Your Player Description" )
+      ARGUMENT("Enter Your Player Description")
       
       )
      
@@ -862,10 +862,10 @@
       
       )
      
-     VALVE(SkbMaxChars=250.000000)
+     VALVE(SkbMaxChars= 25  0.000000 )
      
      WHILE(
-       VALVE(skb_done!=10.000000)
+       VALVE(skb_done!= 1  0.000000 )
       
       )
      
@@ -876,7 +876,7 @@
       
       )
      
-     VALVE(OptionsChanged=10.000000)
+     VALVE(OptionsChanged= 1  0.000000 )
      
      )
     
@@ -895,7 +895,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUletterbar_bottom)
@@ -907,11 +907,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUletterbar_bottom)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.250000 )
       
       )
      
@@ -939,7 +939,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUletterbar)
@@ -951,11 +951,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUletterbar)
       
-      TRANSLATE_FROM(0.000000-nan0.000000)
+      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.250000 )
       
       )
      

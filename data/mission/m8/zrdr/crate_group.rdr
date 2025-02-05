@@ -10,9 +10,9 @@
     
     HEALTH_ROOT_NAME(crate_good)
     
-    HEALTH(10.000000)
+    HEALTH( 1  0.000000 )
     
-    SHIELD(110.000000)
+    SHIELD( 11  0.000000 )
     
     SAVE_NODE_STATES((
        TRANSLATIONROTATIONACTIVEPARENTNAME(part1)
@@ -56,9 +56,9 @@
      )
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 5.000000 )
      
-     VALVE(cratecount+=10.000000)
+     VALVE(cratecount+= 1  0.000000 )
      
      )
     
@@ -66,11 +66,11 @@
       ai::EVENT(
        node(ROOT_NODE)
       
-      pos(0.0000000.0000000.000000)
+      pos( 0.000000  0.000000  0.000000 )
       
-      range(0.000000)
+      range( 500.000000 )
       
-      duration(0.000000)
+      duration( 0.250000 )
       
       )
      
@@ -261,7 +261,7 @@
     SEQUENCE_DEFINITION(
       NAME(extra_explosives)
      
-     WAIT(FRAME_COUNT40.000000)
+     WAIT(FRAME_COUNT 4  0.000000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -270,7 +270,7 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.950000 )
       
       )
      
@@ -281,7 +281,7 @@
         AT_NODE(
          NAME(crate_good)
         
-        OFFSET(00.00000050.00000000.000000)
+        OFFSET( 0  0.000000  5  0.000000  0  0.000000 )
         
         )
        
@@ -289,7 +289,7 @@
       
       )
      
-     WAIT(FRAME_COUNT60.000000)
+     WAIT(FRAME_COUNT 6  0.000000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -298,7 +298,7 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.700000 )
       
       )
      
@@ -309,7 +309,7 @@
         AT_NODE(
          NAME(crate_good)
         
-        OFFSET(50.000000100.00000050.000000)
+        OFFSET( 5  0.000000  10  0.000000  5  0.000000 )
         
         )
        
@@ -317,7 +317,7 @@
       
       )
      
-     WAIT(FRAME_COUNT70.000000)
+     WAIT(FRAME_COUNT 7  0.000000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -326,9 +326,9 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 1.000000 )
       
-      PITCH(0.000000)
+      PITCH( 0.480000 )
       
       )
      
@@ -339,7 +339,7 @@
         AT_NODE(
          NAME(crate_good)
         
-        OFFSET(-5-0.000000150.000000-5-0.000000)
+        OFFSET( -5  -nan  15  0.000000  -5  -nan )
         
         )
        
@@ -347,7 +347,7 @@
       
       )
      
-     WAIT(FRAME_COUNT60.000000)
+     WAIT(FRAME_COUNT 6  0.000000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -356,9 +356,9 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.950000 )
       
-      PITCH(0.000000)
+      PITCH( 0.470000 )
       
       )
      
@@ -369,7 +369,7 @@
         AT_NODE(
          NAME(crate_good)
         
-        OFFSET(30.000000250.00000030.000000)
+        OFFSET( 3  0.000000  25  0.000000  3  0.000000 )
         
         )
        
@@ -391,13 +391,13 @@
       AT_NODE(crate_good)
       
       DIRECTION(
-        AZ(00.00000000.000000)
+        AZ( 0  0.000000  0  0.000000 )
        
        )
       
-      DETONATE_TIME(0.000000)
+      DETONATE_TIME( 0.001000 )
       
-      EXPIRATION_TIME(0.000000)
+      EXPIRATION_TIME( 0.010000 )
       
       )
      
@@ -406,7 +406,7 @@
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 1.100000  2.300000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -415,11 +415,11 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.400000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 1.700000  2.300000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -428,11 +428,11 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.300000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 1.900000  3.300000 )
      
      SOUND(
        NAME(SND_C4_EXPLOSION_1)
@@ -441,7 +441,7 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.200000 )
       
       )
      
@@ -459,11 +459,11 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.800000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 0.100000  0.200000 )
      
      SOUND(
        NAME(SND_CROW_SQUAK)
@@ -472,11 +472,11 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.500000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 0.100000  0.200000 )
      
      SOUND(
        NAME(SND_CROW_SQUAK)
@@ -485,14 +485,14 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.600000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 0.050000  0.100000 )
      
      LOOP(
-       LOOP_COUNT(100.000000)
+       LOOP_COUNT( 10  0.000000 )
       
       )
      
@@ -515,11 +515,11 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.500000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 0.100000  0.300000 )
      
      SOUND(
        NAME(SND_CROW_SQUAK)
@@ -528,11 +528,11 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.300000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 0.100000  0.300000 )
      
      SOUND(
        NAME(SND_CROW_SQUAK)
@@ -541,14 +541,14 @@
       
       AT_NODE(crate_good)
       
-      VOLUME(0.000000)
+      VOLUME( 0.200000 )
       
       )
      
-     WAIT(0.0000000.000000)
+     WAIT( 0.100000  0.300000 )
      
      LOOP(
-       LOOP_COUNT(60.000000)
+       LOOP_COUNT( 6  0.000000 )
       
       )
      
@@ -601,29 +601,29 @@
       
       DO_INTERSECTIONS()
       
-      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MIN( 0.000000  35.000000  80.000000  -0.300000 )
       
-      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MAX( 350.000000  90.000000  160.000000  -0.500000 )
       
-      FORWARD_ROTATION(DISTANCE0.000000-nan)
+      FORWARD_ROTATION(DISTANCE 10.000000  -3.000000 )
       
-      RUN_TIME(80.000000)
+      RUN_TIME( 8  0.000000 )
       
       )
      
      )
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 2.000000 )
      
      OBJECT_OPACITY_FROM_TO(
        NAME(INPUT_NODE)
       
-      OPACITY_FROM(0.000000ON)
+      OPACITY_FROM( 1.000000 ON)
       
-      OPACITY_TO(0.000000ON)
+      OPACITY_TO( 0.000000 ON)
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
       
       )
      
@@ -637,11 +637,11 @@
      OBJECT_OPACITY_FROM_TO(
        NAME(INPUT_NODE)
       
-      OPACITY_FROM(0.000000ON)
+      OPACITY_FROM( 0.000000 ON)
       
-      OPACITY_TO(0.000000OFF)
+      OPACITY_TO( 1.000000 OFF)
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.000000 )
       
       )
      
@@ -649,7 +649,7 @@
     
     SEQUENCE_DEFINITION(
       IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.250000 )
       
       )
      
@@ -662,63 +662,63 @@
       
       ACTIVE_STATE(ACTIVE)
       
-      TIME_INTERVAL(0.000000)
+      TIME_INTERVAL( 0.030000 )
       
-      NUMBER(10.000000)
+      NUMBER( 1  0.000000 )
       
-      PERTURB_POSITION_X(0.0000000.000000)
+      PERTURB_POSITION_X( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y(0.0000000.000000)
+      PERTURB_POSITION_Y( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z(0.0000000.000000)
+      PERTURB_POSITION_Z( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY(0.0000000.0000000.000000)
+      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X(-nan0.000000)
+      PERTURB_VELOCITY_X( -2.000000  2.000000 )
       
-      PERTURB_VELOCITY_Y(0.0000000.000000)
+      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z(-nan0.000000)
+      PERTURB_VELOCITY_Z( -1.000000  2.000000 )
       
-      RADIUS_RANGE(0.0000000.000000)
+      RADIUS_RANGE( 0.500000  0.700000 )
       
-      LIFESPAN_RANGE(0.0000000.000000)
+      LIFESPAN_RANGE( 1.600000  2.200000 )
       
-      START_AGE_RANGE(0.0000000.000000)
+      START_AGE_RANGE( 0.000000  0.000000 )
       
-      PRIORITY(0.000000)
+      PRIORITY( 0.000000 )
       
-      WIND_FACTOR(0.000000)
+      WIND_FACTOR( 0.300000 )
       
-      FRICTION(0.000000)
+      FRICTION( 0.200000 )
       
-      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      WORLD_ACCELERATION( 0.000000  4.000000  0.000000 )
       
-      FADE_FAR_RANGE(0.0000000.000000)
+      FADE_FAR_RANGE( 420.000000  540.000000 )
       
-      COLORS((0.0000000.0000000.0000000.0000000.000000)
+      COLORS(( 0.000000  0.950000  0.900000  0.700000  0.600000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 0.200000  0.950000  0.800000  0.300000  0.400000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 0.600000  0.950000  0.400000  0.070000  0.200000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
        
        )
       
-      SCALE_SEQUENCE((0.0000000.000000)
+      SCALE_SEQUENCE(( 0.000000  5.000000 )
        
-       (0.0000000.000000)
+       ( 0.500000  2.000000 )
        
-       (0.0000000.000000)
+       ( 1.000000  0.400000 )
        
        )
       
       )
      
-     WAIT(FRAME_COUNT300.000000)
+     WAIT(FRAME_COUNT 30  0.000000 )
      
      ENDIF()
      
@@ -726,7 +726,7 @@
     
     SEQUENCE_DEFINITION(
       IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.250000 )
       
       )
      
@@ -739,61 +739,61 @@
       
       ACTIVE_STATE(ACTIVE)
       
-      TIME_INTERVAL(0.000000)
+      TIME_INTERVAL( 0.030000 )
       
-      NUMBER(10.000000)
+      NUMBER( 1  0.000000 )
       
-      PERTURB_POSITION_X(0.0000000.000000)
+      PERTURB_POSITION_X( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y(0.0000000.000000)
+      PERTURB_POSITION_Y( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z(0.0000000.000000)
+      PERTURB_POSITION_Z( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY(0.0000000.0000000.000000)
+      LOCAL_VELOCITY( 0.000000  5.000000  0.000000 )
       
-      WORLD_VELOCITY(0.0000000.0000000.000000)
+      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X(-nan0.000000)
+      PERTURB_VELOCITY_X( -2.000000  2.000000 )
       
-      PERTURB_VELOCITY_Y(0.0000000.000000)
+      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z(-nan0.000000)
+      PERTURB_VELOCITY_Z( -2.000000  2.000000 )
       
-      RADIUS_RANGE(0.0000000.000000)
+      RADIUS_RANGE( 1.000000  1.300000 )
       
-      LIFESPAN_RANGE(0.0000000.000000)
+      LIFESPAN_RANGE( 1.500000  3.000000 )
       
-      START_AGE_RANGE(0.0000000.000000)
+      START_AGE_RANGE( 0.000000  0.000000 )
       
-      PRIORITY(0.000000)
+      PRIORITY( 0.000000 )
       
-      WIND_FACTOR(0.000000)
+      WIND_FACTOR( 0.200000 )
       
-      FRICTION(0.000000)
+      FRICTION( 0.100000 )
       
-      WORLD_ACCELERATION(0.0000000.0000000.000000)
+      WORLD_ACCELERATION( 0.000000  1.800000  0.000000 )
       
-      FADE_FAR_RANGE(0.0000000.000000)
+      FADE_FAR_RANGE( 240.000000  340.000000 )
       
-      COLORS((0.0000000.0000000.0000000.0000000.000000)
+      COLORS(( 0.000000  0.000000  0.000000  0.000000  0.400000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 0.400000  0.050000  0.050000  0.050000  0.300000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 1.000000  0.140000  0.130000  0.130000  0.000000 )
        
        )
       
-      SCALE_SEQUENCE((0.0000000.000000)
+      SCALE_SEQUENCE(( 0.000000  1.500000 )
        
-       (0.0000000.000000)
+       ( 0.400000  3.000000 )
        
-       (0.0000000.000000)
+       ( 1.000000  8.000000 )
        
        )
       
       )
      
-     WAIT(FRAME_COUNT500.000000)
+     WAIT(FRAME_COUNT 50  0.000000 )
      
      ENDIF()
      

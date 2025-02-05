@@ -18,14 +18,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(00.000000)
+    XPOS( 0  0.000000 )
     
-    YPOS(3840.000000)
+    YPOS( 384  0.000000 )
     
     SPEC(
       FILENAME(common_bar_bottom.tif)
      
-     SIZE(6400.000000640.000000)
+     SIZE( 640  0.000000  64  0.000000 )
      
      )
     
@@ -36,20 +36,20 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(300.000000)
+    YPOS( 30  0.000000 )
     
     SPEC(
       CHILDOF(letterbar_bottom)
      
-     COLOR(0.0000000.0000000.000000)
+     COLOR( 255.000000  204.000000  51.000000 )
      
      FONT(myriad)
      
-     SCALE(0.000000)
+     SCALE( 0.400000 )
      
-     CAPTION("View presets with directional pad buttons" )
+     CAPTION("View presets with directional pad buttons")
      
      )
     
@@ -60,14 +60,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(250.000000)
+    XPOS( 25  0.000000 )
     
-    YPOS(800.000000)
+    YPOS( 80  0.000000 )
     
     SPEC(
-      XSIZE(5800.000000)
+      XSIZE( 580  0.000000 )
      
-     YSIZE(2800.000000)
+     YSIZE( 280  0.000000 )
      
      FILENAME(ContPic1.tif)
      
@@ -80,14 +80,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(250.000000)
+    XPOS( 25  0.000000 )
     
-    YPOS(800.000000)
+    YPOS( 80  0.000000 )
     
     SPEC(
-      XSIZE(5800.000000)
+      XSIZE( 580  0.000000 )
      
-     YSIZE(2800.000000)
+     YSIZE( 280  0.000000 )
      
      FILENAME(ContPic2.tif)
      
@@ -100,14 +100,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(250.000000)
+    XPOS( 25  0.000000 )
     
-    YPOS(800.000000)
+    YPOS( 80  0.000000 )
     
     SPEC(
-      XSIZE(5800.000000)
+      XSIZE( 580  0.000000 )
      
-     YSIZE(2800.000000)
+     YSIZE( 280  0.000000 )
      
      FILENAME(ContPic3.tif)
      
@@ -120,14 +120,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(250.000000)
+    XPOS( 25  0.000000 )
     
-    YPOS(800.000000)
+    YPOS( 80  0.000000 )
     
     SPEC(
-      XSIZE(5800.000000)
+      XSIZE( 580  0.000000 )
      
-     YSIZE(2800.000000)
+     YSIZE( 280  0.000000 )
      
      FILENAME(ContPic4.tif)
      
@@ -140,14 +140,14 @@
     
     TYPE(IMAGE)
     
-    XPOS(3600.000000)
+    XPOS( 360  0.000000 )
     
-    YPOS(3200.000000)
+    YPOS( 320  0.000000 )
     
     SPEC(
       FILENAME(dogtags.tif)
      
-     SIZE(2560.0000001280.000000)
+     SIZE( 256  0.000000  128  0.000000 )
      
      )
     
@@ -158,16 +158,16 @@
     
     TYPE(IMAGE)
     
-    XPOS(00.000000)
+    XPOS( 0  0.000000 )
     
-    YPOS(00.000000)
+    YPOS( 0  0.000000 )
     
     SPEC(
       FILENAME(blank_top_bar.tif)
      
-     XSIZE(6400.000000)
+     XSIZE( 640  0.000000 )
      
-     YSIZE(640.000000)
+     YSIZE( 64  0.000000 )
      
      )
     
@@ -178,18 +178,18 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(500.000000)
+    YPOS( 50  0.000000 )
     
     SPEC(
       FONT(Gothic_13)
      
      CHILDOF(letterbar)
      
-     CAPTION("PRESET SELECTION 1" )
+     CAPTION("PRESET SELECTION 1")
      
-     SCALE(0.000000)
+     SCALE( 0.950000 )
      
      )
     
@@ -200,16 +200,16 @@
     
     TYPE(TEXT)
     
-    XPOS(200.000000)
+    XPOS( 20  0.000000 )
     
-    YPOS(3860.000000)
+    YPOS( 386  0.000000 )
     
     SPEC(
-      COLOR(0.0000000.0000000.000000)
+      COLOR( 255.000000  104.000000  51.000000 )
      
-     CAPTION(" " )
+     CAPTION(" ")
      
-     SCALE(0.000000)
+     SCALE( 0.400000 )
      
      )
     
@@ -252,26 +252,26 @@
   CONTROLS((
      NAME(Preset1Btn)
     
-    XPOS(150.000000)
+    XPOS( 15  0.000000 )
     
-    YPOS(700.000000)
+    YPOS( 70  0.000000 )
     
     TYPE(BUTTON)
     
     SPEC(
-      XSIZE(6000.000000)
+      XSIZE( 600  0.000000 )
      
-     YSIZE(3000.000000)
+     YSIZE( 300  0.000000 )
      
-     XOFFSET(00.000000)
+     XOFFSET( 0  0.000000 )
      
-     YOFFSET(00.000000)
+     YOFFSET( 0  0.000000 )
      
      PRESSED(eq_CharWinInv.tif)
      
-     CAPTION(" " )
+     CAPTION(" ")
      
-     SCALE(0.000000)
+     SCALE( 1.000000 )
      
      ANIMATIONS((
         BUTTON(UP)
@@ -317,26 +317,26 @@
    (
      NAME(Preset2Btn)
     
-    XPOS(150.000000)
+    XPOS( 15  0.000000 )
     
-    YPOS(700.000000)
+    YPOS( 70  0.000000 )
     
     TYPE(BUTTON)
     
     SPEC(
-      XSIZE(6000.000000)
+      XSIZE( 600  0.000000 )
      
-     YSIZE(3000.000000)
+     YSIZE( 300  0.000000 )
      
-     XOFFSET(00.000000)
+     XOFFSET( 0  0.000000 )
      
-     YOFFSET(00.000000)
+     YOFFSET( 0  0.000000 )
      
      PRESSED(eq_CharWinInv.tif)
      
-     CAPTION(" " )
+     CAPTION(" ")
      
-     SCALE(0.000000)
+     SCALE( 1.000000 )
      
      ANIMATIONS((
         BUTTON(LEFT)
@@ -382,26 +382,26 @@
    (
      NAME(Preset3Btn)
     
-    XPOS(150.000000)
+    XPOS( 15  0.000000 )
     
-    YPOS(700.000000)
+    YPOS( 70  0.000000 )
     
     TYPE(BUTTON)
     
     SPEC(
-      XSIZE(6000.000000)
+      XSIZE( 600  0.000000 )
      
-     YSIZE(3000.000000)
+     YSIZE( 300  0.000000 )
      
-     XOFFSET(00.000000)
+     XOFFSET( 0  0.000000 )
      
-     YOFFSET(00.000000)
+     YOFFSET( 0  0.000000 )
      
      PRESSED(eq_CharWinInv.tif)
      
-     CAPTION(" " )
+     CAPTION(" ")
      
-     SCALE(0.000000)
+     SCALE( 1.000000 )
      
      ANIMATIONS((
         BUTTON(UP)
@@ -447,26 +447,26 @@
    (
      NAME(Preset4Btn)
     
-    XPOS(150.000000)
+    XPOS( 15  0.000000 )
     
-    YPOS(700.000000)
+    YPOS( 70  0.000000 )
     
     TYPE(BUTTON)
     
     SPEC(
-      XSIZE(6000.000000)
+      XSIZE( 600  0.000000 )
      
-     YSIZE(3000.000000)
+     YSIZE( 300  0.000000 )
      
-     XOFFSET(00.000000)
+     XOFFSET( 0  0.000000 )
      
-     YOFFSET(00.000000)
+     YOFFSET( 0  0.000000 )
      
      PRESSED(eq_CharWinInv.tif)
      
-     CAPTION(" " )
+     CAPTION(" ")
      
-     SCALE(0.000000)
+     SCALE( 1.000000 )
      
      ANIMATIONS((
         BUTTON(UP)
@@ -528,7 +528,7 @@
       ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 1" )
+      CAPTION("PRESET SELECTION 1")
       
       )
      
@@ -570,33 +570,33 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.000000 )
       
       )
      
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.000000 )
       
       )
      
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -655.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.000000 )
       
       )
      
@@ -631,12 +631,12 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged=10.000000)
+      VALVE(OptionsMenuChanged= 1  0.000000 )
      
      ui::UI_COMMAND(
        NODE(MENUPresetSelectedText)
       
-      CAPTION("PRESET #1 HAS BEEN SELECTED" )
+      CAPTION("PRESET #1 HAS BEEN SELECTED")
       
       )
      
@@ -664,12 +664,12 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged=10.000000)
+      VALVE(OptionsMenuChanged= 1  0.000000 )
      
      ui::UI_COMMAND(
        NODE(MENUPresetSelectedText)
       
-      CAPTION("PRESET #2 HAS BEEN SELECTED" )
+      CAPTION("PRESET #2 HAS BEEN SELECTED")
       
       )
      
@@ -697,12 +697,12 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged=10.000000)
+      VALVE(OptionsMenuChanged= 1  0.000000 )
      
      ui::UI_COMMAND(
        NODE(MENUPresetSelectedText)
       
-      CAPTION("PRESET #3 HAS BEEN SELECTED" )
+      CAPTION("PRESET #3 HAS BEEN SELECTED")
       
       )
      
@@ -730,12 +730,12 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged=10.000000)
+      VALVE(OptionsMenuChanged= 1  0.000000 )
      
      ui::UI_COMMAND(
        NODE(MENUPresetSelectedText)
       
-      CAPTION("PRESET #4 HAS BEEN SELECTED" )
+      CAPTION("PRESET #4 HAS BEEN SELECTED")
       
       )
      
@@ -773,11 +773,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -665.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -791,7 +791,7 @@
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 2" )
+      CAPTION("PRESET SELECTION 2")
       
       )
      
@@ -815,11 +815,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -836,11 +836,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -849,11 +849,11 @@
     OBJECT_MOTION_FROM_TO(
       NAME(MENUContPic4)
      
-     TRANSLATE_FROM(-nan0.0000000.000000)
+     TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
      
-     TRANSLATE_TO(0.0000000.0000000.000000)
+     TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
      
-     RUN_TIME(0.000000)
+     RUN_TIME( 0.200000 )
      
      )
     
@@ -882,11 +882,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -903,11 +903,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -924,11 +924,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -655.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -952,18 +952,18 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 4" )
+      CAPTION("PRESET SELECTION 4")
       
       )
      
@@ -994,11 +994,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -665.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1012,7 +1012,7 @@
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 3" )
+      CAPTION("PRESET SELECTION 3")
       
       )
      
@@ -1029,11 +1029,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -665.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1057,11 +1057,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1078,11 +1078,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1106,11 +1106,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1124,7 +1124,7 @@
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 1" )
+      CAPTION("PRESET SELECTION 1")
       
       )
      
@@ -1148,11 +1148,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1169,11 +1169,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1190,11 +1190,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -655.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1225,11 +1225,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -665.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1246,11 +1246,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1260,11 +1260,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -665.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1288,18 +1288,18 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 4" )
+      CAPTION("PRESET SELECTION 4")
       
       )
      
@@ -1337,18 +1337,18 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 2" )
+      CAPTION("PRESET SELECTION 2")
       
       )
      
@@ -1365,11 +1365,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -655.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1386,11 +1386,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1407,11 +1407,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1449,18 +1449,18 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 1" )
+      CAPTION("PRESET SELECTION 1")
       
       )
      
@@ -1484,11 +1484,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1498,11 +1498,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1519,11 +1519,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -655.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1561,11 +1561,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic2)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 1300.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -655.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1575,11 +1575,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic1)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 650.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 1300.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1603,18 +1603,18 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic3)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -655.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 25.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
      ui::UI_COMMAND(
        NODE(MENUbar_title)
       
-      CAPTION("PRESET SELECTION 3" )
+      CAPTION("PRESET SELECTION 3")
       
       )
      
@@ -1631,11 +1631,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENUContPic4)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 25.000000  80.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 650.000000  80.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.200000 )
       
       )
      
@@ -1663,7 +1663,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUletterbar)
@@ -1675,11 +1675,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUletterbar)
       
-      TRANSLATE_FROM(0.000000-nan0.000000)
+      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.250000 )
       
       )
      
@@ -1700,7 +1700,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.400000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(MENUletterbar_bottom)
@@ -1712,11 +1712,11 @@
      OBJECT_MOTION_FROM_TO(
        NAME(MENUletterbar_bottom)
       
-      TRANSLATE_FROM(0.0000000.0000000.000000)
+      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO(0.0000000.0000000.000000)
+      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.250000 )
       
       )
      

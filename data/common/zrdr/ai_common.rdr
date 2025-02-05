@@ -12,14 +12,14 @@
       NAME(knife_attack)
      
      ai::MOVE(
-       pos(-nan0.0000000.000000)
+       pos( -2.100000  0.600000  8.890000 )
       
-      relseal(10.000000)
+      relseal( 1  0.000000 )
       
       )
      
      ai::SETMODE(
-       holdai(10.000000)
+       holdai( 1  0.000000 )
       
       )
      
@@ -45,7 +45,7 @@
      ai::ANIMATE(
        anim(Stab)
       
-      ai(00.000000)
+      ai( 0  0.000000 )
       
       )
      
@@ -61,9 +61,9 @@
      ai::ANIMATE(
        anim(Stabbed)
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
-      ai(10.000000)
+      ai( 1  0.000000 )
       
       )
      
@@ -82,14 +82,14 @@
       NAME(cqb_attack)
      
      ai::SETMODE(
-       holdai(10.000000)
+       holdai( 1  0.000000 )
       
       )
      
      ai::MOVE(
-       offset(-nan)
+       offset( -12.340000 )
       
-      relseal(10.000000)
+      relseal( 1  0.000000 )
       
       )
      
@@ -113,9 +113,9 @@
      ai::DEBUG(aggressor)
      
      ai::ANIMATE(
-       anim("CQB attack" )
+       anim("CQB attack")
       
-      ai(00.000000)
+      ai( 0  0.000000 )
       
       )
      
@@ -129,16 +129,16 @@
      ai::DEBUG(victim)
      
      ai::ANIMATE(
-       anim("Death stand head01" )
+       anim("Death stand head01")
       
-      prewait(0.000000)
+      prewait( 0.300000 )
       
-      ai(10.000000)
+      ai( 1  0.000000 )
       
       )
      
      ai::PARAM(
-       health=0.000000ai(10.000000)
+       health= 0.000000 ai( 1  0.000000 )
       
       )
      
@@ -157,18 +157,18 @@
       NAME(restrain)
      
      ai::MOVE(
-       offset(0.000000)
+       offset( 6.013300 )
       
-      relseal(10.000000)
+      relseal( 1  0.000000 )
       
       )
      
      ai::MOVE(
-       dir(0.0000000.000000-nan)
+       dir( 0.000000  0.000000  -1.000000 )
       
-      relseal(00.000000)
+      relseal( 0  0.000000 )
       
-      ai(10.000000)
+      ai( 1  0.000000 )
       
       )
      
@@ -192,9 +192,9 @@
      ai::DEBUG(master)
      
      ai::ANIMATE(
-       anim("Apply restraints" )
+       anim("Apply restraints")
       
-      ai(00.000000)
+      ai( 0  0.000000 )
       
       )
      
@@ -208,11 +208,11 @@
      ai::DEBUG(victim)
      
      ai::ANIMATE(
-       anim("Receive restraints" )
+       anim("Receive restraints")
       
-      prewait(0.000000)
+      prewait( 0.200000 )
       
-      ai(10.000000)
+      ai( 1  0.000000 )
       
       )
      
@@ -231,20 +231,20 @@
       NAME(pickup)
      
      ai::MOVE(
-       pos(0.000000)
+       pos( 5.800000 )
       
       relnode(INPUT_NODE)
       
       )
      
      ai::ANIMATE(
-       anim("Return throw grenade" )
+       anim("Return throw grenade")
       
-      postwait(0.000000)
+      postwait( 0.560000 )
       
       )
      
-     VALVE(INPUT_VALVE=10.000000)
+     VALVE(INPUT_VALVE= 1  0.000000 )
      
      ai::SIGNAL()
      
@@ -263,14 +263,14 @@
       NAME(pickup)
      
      ai::MOVE(
-       pos(0.000000)
+       pos( 9.550000 )
       
       relnode(INPUT_NODE)
       
       )
      
      ai::ANIMATE(
-       anim("Get from ground" )
+       anim("Get from ground")
       
       )
      

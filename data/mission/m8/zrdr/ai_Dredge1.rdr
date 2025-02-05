@@ -23,25 +23,25 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
      END_WHILE()
      
      WHILE(
-       !VALVE(comerunning==10.000000)
+       !VALVE(comerunning== 1  0.000000 )
       
       )
      
      END_WHILE()
      
-     ai::PARAM(aware=20.000000)
+     ai::PARAM(aware= 2  0.000000 )
      
      WHILE(TRUE)
      
@@ -54,62 +54,62 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      WHILE(TRUE)
      
      ai::GOTO(
        node(Dredge1_start)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard_smoking anim set" )
+       name("Guard_smoking anim set")
       
       )
      
      ai::ANIMATE(
-       anim("Light cigarette" )
+       anim("Light cigarette")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Smoke drag01" )
+       anim("Smoke drag01")
       
-      postwait(0.000000)
+      postwait( 10.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Toss cigarete" )
+       anim("Toss cigarete")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
@@ -119,91 +119,91 @@
       blocking)
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::HOLD(
-       wait(30.000000)
+       wait( 3  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000150.000000)
+       wait( 10  0.000000  15  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1C)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard_smoking anim set" )
+       name("Guard_smoking anim set")
       
       )
      
      ai::ANIMATE(
-       anim("Light cigarette" )
+       anim("Light cigarette")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Smoke drag02" )
+       anim("Smoke drag02")
       
-      postwait(0.000000)
+      postwait( 10.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Toss cigarete" )
+       anim("Toss cigarete")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
@@ -213,91 +213,91 @@
       blocking)
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::HOLD(
-       wait(30.000000)
+       wait( 3  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000150.000000)
+       wait( 10  0.000000  15  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1B)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard_smoking anim set" )
+       name("Guard_smoking anim set")
       
       )
      
      ai::ANIMATE(
-       anim("Light cigarette" )
+       anim("Light cigarette")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Smoke drag03" )
+       anim("Smoke drag03")
       
-      postwait(0.000000)
+      postwait( 10.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Toss cigarete" )
+       anim("Toss cigarete")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
@@ -307,36 +307,36 @@
       blocking)
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::HOLD(
-       wait(30.000000)
+       wait( 3  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000150.000000)
+       wait( 10  0.000000  15  0.000000 )
       
       )
      
@@ -349,10 +349,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -368,10 +368,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -380,114 +380,114 @@
      ai::GOTO(
        node(Dredge1_start)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1C)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1B)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
@@ -500,10 +500,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -512,114 +512,114 @@
      ai::GOTO(
        node(Dredge1_start)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1C)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1B)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
      ai::GOTO(
        node(Dredge1A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(20.00000040.000000)
+       wait( 2  0.000000  4  0.000000 )
       
       )
      
@@ -632,14 +632,14 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
-     VALVE(Spotted=10.000000)
+     VALVE(Spotted= 1  0.000000 )
      
      ai::MACRO(
        anim(Battle_cry)
@@ -652,7 +652,7 @@
       blocking)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -662,12 +662,12 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -677,7 +677,7 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
@@ -702,10 +702,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -716,10 +716,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -735,17 +735,17 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

@@ -23,12 +23,12 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
@@ -40,13 +40,13 @@
       )
      
      WHILE(
-       !VALVE(comerunning==10.000000)
+       !VALVE(comerunning== 1  0.000000 )
       
       )
      
      END_WHILE()
      
-     ai::PARAM(aware=20.000000)
+     ai::PARAM(aware= 2  0.000000 )
      
      WHILE(TRUE)
      
@@ -59,7 +59,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      ai::STANCE(
        stance(prone)
@@ -73,7 +73,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      WHILE(TRUE)
      
@@ -81,7 +81,7 @@
        ai::INRANGE(
         entity(player)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -95,14 +95,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -120,7 +120,7 @@
        ai::INRANGE(
         entity(Hutchins)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -134,14 +134,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -159,7 +159,7 @@
        ai::INRANGE(
         entity(Bailey)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -173,14 +173,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -198,7 +198,7 @@
        ai::INRANGE(
         entity(DiMone)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -212,14 +212,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -244,7 +244,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      WHILE(TRUE)
      
@@ -252,7 +252,7 @@
        ai::INRANGE(
         entity(player)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -266,14 +266,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -291,7 +291,7 @@
        ai::INRANGE(
         entity(Hutchins)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -305,14 +305,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -330,7 +330,7 @@
        ai::INRANGE(
         entity(Bailey)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -344,14 +344,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -369,7 +369,7 @@
        ai::INRANGE(
         entity(DiMone)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -383,14 +383,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -415,7 +415,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      WHILE(TRUE)
      
@@ -423,7 +423,7 @@
        ai::INRANGE(
         entity(player)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -437,14 +437,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -462,7 +462,7 @@
        ai::INRANGE(
         entity(Hutchins)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -476,14 +476,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -501,7 +501,7 @@
        ai::INRANGE(
         entity(Bailey)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -515,14 +515,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -540,7 +540,7 @@
        ai::INRANGE(
         entity(DiMone)
        
-       range(0.000000)
+       range( 200.000000 )
        
        )
       
@@ -554,14 +554,14 @@
      ai::GOTO(
        node(SnipeHide2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(S)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -592,9 +592,9 @@
       )
      
      ai::FIREMODE(
-       weapon(00.000000)
+       weapon( 0  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  3.500000 )
       
       )
      
@@ -605,7 +605,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      )
     
@@ -614,7 +614,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::STANCE(
        stance(prone)
@@ -628,12 +628,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

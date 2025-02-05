@@ -23,25 +23,25 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
      END_WHILE()
      
      WHILE(
-       !VALVE(comerunning==10.000000)
+       !VALVE(comerunning== 1  0.000000 )
       
       )
      
      END_WHILE()
      
-     ai::PARAM(aware=20.000000)
+     ai::PARAM(aware= 2  0.000000 )
      
      WHILE(TRUE)
      
@@ -54,28 +54,28 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      WHILE(TRUE)
      
      ai::GOTO(
        node(Outp6A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::GOTO(
        node(Outp6B)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::ANIMATE(
-       anim("Cold shrug01" )
+       anim("Cold shrug01")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
@@ -85,66 +85,66 @@
       blocking)
      
      ai::HOLD(
-       wait(100.000000150.000000)
+       wait( 10  0.000000  15  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::GOTO(
        node(Outp6_start)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(70.00000090.000000)
+       wait( 7  0.000000  9  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6C)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::GOTO(
        node(Outp6D)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(70.00000090.000000)
+       wait( 7  0.000000  9  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6E)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
      IF(
-       VALVE(OutPatrol7_valve_alive==10.000000)
+       VALVE(OutPatrol7_valve_alive== 1  0.000000 )
       
-      &&VALVE(OutPatrol7_valve_aware==00.000000)
+      &&VALVE(OutPatrol7_valve_aware== 0  0.000000 )
       
       )
      
@@ -152,7 +152,7 @@
        !ai::INRANGE(
         entity(OutPatrol7)
        
-       range(0.000000)
+       range( 70.000000 )
        
        )
       
@@ -161,68 +161,68 @@
      END_WHILE()
      
      ai::HOLD(
-       wait(40.000000)
+       wait( 4  0.000000 )
       
       )
      
      IF(
-       VALVE(converse6==10.000000)
+       VALVE(converse6== 1  0.000000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_43)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
-     VALVE(converse7=10.000000)
+     VALVE(converse7= 1  0.000000 )
      
      ENDIF()
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
-     VALVE(converse7=00.000000)
+     VALVE(converse7= 0  0.000000 )
      
      ENDIF()
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6D)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(70.00000090.000000)
+       wait( 7  0.000000  9  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6C)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::GOTO(
        node(Outp6_start)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(70.00000090.000000)
+       wait( 7  0.000000  9  0.000000 )
       
       )
      
@@ -235,7 +235,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::MACRO(
        anim(Close_call)
@@ -249,12 +249,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      IF(
-       VALVE(comerunning==10.000000)
+       VALVE(comerunning== 1  0.000000 )
       
-      &&VALVE(Out6==00.000000)
+      &&VALVE(Out6== 0  0.000000 )
       
       )
      
@@ -266,53 +266,53 @@
      ai::GOTO(
        node(Alarm1)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::GOTO(
        node(Alarm2)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::GOTO(
        node(Alarm3)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::GOTO(
        node(Alarm4)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::GOTO(
        node(Alarm5)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::GOTO(
        node(Alarm6)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::GOTO(
        node(Alarm76)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
-     VALVE(Out6=10.000000)
+     VALVE(Out6= 1  0.000000 )
      
      ai::SIGNAL(
        signal(AISIG_ENDCRITICAL)
@@ -326,120 +326,120 @@
      ai::GOTO(
        node(Outp6A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6B)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6A)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6_start)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6C)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6D)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6E)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6D)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6C)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Outp6_start)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
@@ -454,7 +454,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      ai::MACRO(
        anim(Patrol_guns)
@@ -462,7 +462,7 @@
       blocking)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -472,12 +472,12 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 45.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -487,7 +487,7 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 45.000000 )
       
       )
      
@@ -512,7 +512,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      ai::MACRO(
        anim(Spot_shout)
@@ -525,7 +525,7 @@
       blocking)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -535,12 +535,12 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -550,7 +550,7 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
@@ -575,7 +575,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      )
     
@@ -584,7 +584,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::STANCE(
        stance(prone)
@@ -598,12 +598,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

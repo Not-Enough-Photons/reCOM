@@ -25,7 +25,7 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
@@ -40,12 +40,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      ai::LOOKAT(
        node(Dredge4C)
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
@@ -56,7 +56,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      )
     
@@ -65,12 +65,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      ai::LOOKAT(
        node(Dredge4C)
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
@@ -81,12 +81,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      ai::LOOKAT(
        node(Dredge4C)
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
@@ -97,7 +97,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      ai::MACRO(
        anim(Inside_guns)
@@ -111,7 +111,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      )
     
@@ -120,7 +120,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      )
     
@@ -129,7 +129,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      )
     

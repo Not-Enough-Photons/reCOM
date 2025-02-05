@@ -23,25 +23,25 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
      END_WHILE()
      
      WHILE(
-       !VALVE(comerunning==10.000000)
+       !VALVE(comerunning== 1  0.000000 )
       
       )
      
      END_WHILE()
      
-     ai::PARAM(aware=20.000000)
+     ai::PARAM(aware= 2  0.000000 )
      
      WHILE(TRUE)
      
@@ -54,98 +54,98 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      WHILE(TRUE)
      
      ai::GOTO(
        node(Leader_table)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(30.00000050.000000)
+       wait( 3  0.000000  5  0.000000 )
       
       )
      
      ai::GOTO(
        node(Leader_window)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim(Wipebrow00.000000)
+       anim(Wipebrow 0  0.000000 )
       
-      postwait(0.000000)
+      postwait( 4.000000 )
       
       )
      
      ai::HOLD(
-       wait(30.00000050.000000)
+       wait( 3  0.000000  5  0.000000 )
       
       )
      
      ai::GOTO(
        node(Leader_stairs)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard_smoking anim set" )
+       name("Guard_smoking anim set")
       
       )
      
      ai::ANIMATE(
-       anim("Light cigarette" )
+       anim("Light cigarette")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Smoke drag02" )
+       anim("Smoke drag02")
       
-      postwait(0.000000)
+      postwait( 10.000000 )
       
       )
      
      ai::HOLD(
-       wait(100.000000)
+       wait( 10  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Toss cigarete" )
+       anim("Toss cigarete")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
@@ -155,29 +155,29 @@
       blocking)
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
      ai::GOTO(
        node(Leader_start)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(30.00000050.000000)
+       wait( 3  0.000000  5  0.000000 )
       
       )
      
@@ -190,17 +190,17 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::SOUND(
        name(SND_VM08_09)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -211,24 +211,24 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      IF(
-       VALVE(Spotted==10.000000)
+       VALVE(Spotted== 1  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      ai::SIGNAL(BEGIN_CRITICAL_SECTION)
      
      IF(
-       VALVE(SinglePlay==00.000000)
+       VALVE(SinglePlay== 0  0.000000 )
       
       )
      
@@ -237,21 +237,21 @@
       
       )
      
-     VALVE(SinglePlay=10.000000)
+     VALVE(SinglePlay= 1  0.000000 )
      
      ENDIF()
      
      ai::GOTO(
        node(Leader_desk)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -270,9 +270,9 @@
      ELSE()
      
      ai::LOOKAT(
-       pos(17180.0000001210.00000014370.000000)
+       pos( 1718  0.000000  121  0.000000  1437  0.000000 )
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
@@ -285,24 +285,24 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      IF(
-       VALVE(Spotted==10.000000)
+       VALVE(Spotted== 1  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      ai::SIGNAL(BEGIN_CRITICAL_SECTION)
      
      IF(
-       VALVE(SinglePlay==00.000000)
+       VALVE(SinglePlay== 0  0.000000 )
       
       )
      
@@ -311,21 +311,21 @@
       
       )
      
-     VALVE(SinglePlay=10.000000)
+     VALVE(SinglePlay= 1  0.000000 )
      
      ENDIF()
      
      ai::GOTO(
        node(Leader_desk)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -344,9 +344,9 @@
      ELSE()
      
      ai::LOOKAT(
-       pos(17180.0000001210.00000014370.000000)
+       pos( 1718  0.000000  121  0.000000  1437  0.000000 )
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
@@ -359,10 +359,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -383,10 +383,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -397,10 +397,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -416,17 +416,17 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      
@@ -437,10 +437,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting looping_docs" )
+     ai::DEBUG("Starting looping_docs")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -455,7 +455,7 @@
       )
      
      ai::SETANIMSET(
-       name("computer anim set" )
+       name("computer anim set")
       
       )
      
@@ -469,11 +469,11 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      HUD_TRIGGER_MISSION_CAM(m8tut6)
      
-     WAIT(0.000000)
+     WAIT( 59.000000 )
      
      ui::UI_COMMAND(
        TYPE(PlayMPEG)
@@ -482,9 +482,9 @@
       
       )
      
-     VALVE(nodocs=10.000000)
+     VALVE(nodocs= 1  0.000000 )
      
-     WAIT(0.000000)
+     WAIT( 10.000000 )
      
      ai::ANIMATE(
        anim(seal_defusebomb_end)
@@ -492,7 +492,7 @@
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -508,13 +508,13 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting looping_docs" )
+     ai::DEBUG("Starting looping_docs")
      
      WHILE(
        !ai::INREGION(
         region(TopOStairs)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
@@ -528,30 +528,30 @@
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::LOOKAT(
-       pos(17180.0000001210.00000014370.000000)
+       pos( 1718  0.000000  121  0.000000  1437  0.000000 )
       
-      wait(0.000000)
+      wait( 1.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 15.000000 )
      
      ai::GOTO(
        node(Leader_desk)
       
-      speed(0.000000)
+      speed( 1.000000 )
       
       )
      
      ai::LOOKAT(
        dir(E)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      

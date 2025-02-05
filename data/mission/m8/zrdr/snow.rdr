@@ -12,55 +12,55 @@
       
       TEXTURES(effect_snow.tifeffect_snow02.tifeffect_snow03.tifeffect_snow04.tifeffect_snow05.tif)
       
-      TRANSLATION(0.0000000.000000-nan)
+      TRANSLATION( 0.000000  20.000000  -50.000000 )
       
       AT_NODE(camera)
       
       ACTIVE_STATE(ACTIVE)
       
-      TIME_INTERVAL(0.000000)
+      TIME_INTERVAL( 0.060000 )
       
-      NUMBER(20.000000)
+      NUMBER( 2  0.000000 )
       
-      LOCAL_VELOCITY(0.000000-nan0.000000)
+      LOCAL_VELOCITY( 0.000000  -4.000000  0.000000 )
       
-      WORLD_VELOCITY(0.000000-nan0.000000)
+      WORLD_VELOCITY( 0.000000  -12.000000  0.000000 )
       
-      PERTURB_VELOCITY(-nan0.000000)
+      PERTURB_VELOCITY( -10.000000  10.000000 )
       
-      PERTURB_VELOCITY_Y(-nan0.000000)
+      PERTURB_VELOCITY_Y( -35.000000  1.000000 )
       
       INHERIT_VELOCITY(TRUE)
       
-      PERTURB_POSITION_X(-nan0.000000)
+      PERTURB_POSITION_X( -50.000000  50.000000 )
       
-      PERTURB_POSITION_Y(-nan0.000000)
+      PERTURB_POSITION_Y( -15.000000  5.000000 )
       
-      PERTURB_POSITION_Z(-nan0.000000)
+      PERTURB_POSITION_Z( -25.000000  15.000000 )
       
-      RADIUS_RANGE(0.0000000.000000)
+      RADIUS_RANGE( 0.080000  0.400000 )
       
-      LIFESPAN_RANGE(0.0000000.000000)
+      LIFESPAN_RANGE( 1.500000  2.000000 )
       
-      WIND_FACTOR(0.000000)
+      WIND_FACTOR( 0.800000 )
       
-      FRICTION(0.000000)
+      FRICTION( 3.600000 )
       
-      WORLD_ACCELERATION(0.000000-nan0.000000)
+      WORLD_ACCELERATION( 0.000000  -30.000000  0.000000 )
       
-      MAX_VIEW_DISTANCE(2500.000000)
+      MAX_VIEW_DISTANCE( 250  0.000000 )
       
-      FADE_NEAR_RANGE(0.0000000.000000)
+      FADE_NEAR_RANGE( 3.000000  5.000000 )
       
-      FADE_FAR_RANGE(0.0000000.000000)
+      FADE_FAR_RANGE( 230.000000  235.000000 )
       
-      COLORS((0.0000000.0000000.0000000.0000000.000000)
+      COLORS(( 0.000000  0.700000  0.700000  0.700000  0.000000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 0.050000  0.700000  0.700000  0.700000  0.800000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 0.900000  0.700000  0.700000  0.700000  0.700000 )
        
-       (0.0000000.0000000.0000000.0000000.000000)
+       ( 1.000000  0.700000  0.700000  0.700000  0.000000 )
        
        )
       
@@ -71,7 +71,7 @@
     SEQUENCE_DEFINITION(
       WHILE(TRUE)
      
-     WAIT(0.000000)
+     WAIT( 0.500000 )
      
      IF(
        CAMERA_INDOORS()
@@ -85,7 +85,7 @@
       
       )
      
-     VALVE(indoor_outdoor=10.000000)
+     VALVE(indoor_outdoor= 1  0.000000 )
      
      ELSE()
      
@@ -96,7 +96,7 @@
       
       )
      
-     VALVE(indoor_outdoor=00.000000)
+     VALVE(indoor_outdoor= 0  0.000000 )
      
      ENDIF()
      
@@ -117,7 +117,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(lodLevel==10.000000)
+       VALVE(lodLevel== 1  0.000000 )
       
       )
      
@@ -127,7 +127,7 @@
       )
      
      ELSEIF(
-       VALVE(lodLevel==250.000000)
+       VALVE(lodLevel== 25  0.000000 )
       
       )
      
@@ -137,7 +137,7 @@
       )
      
      ELSEIF(
-       VALVE(lodLevel==500.000000)
+       VALVE(lodLevel== 50  0.000000 )
       
       )
      
@@ -147,7 +147,7 @@
       )
      
      ELSEIF(
-       VALVE(lodLevel==750.000000)
+       VALVE(lodLevel== 75  0.000000 )
       
       )
      
@@ -165,14 +165,14 @@
      
      ENDIF()
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      CALL_SEQUENCE(
        NAME(stop_all)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      END_WHILE()
      
@@ -218,13 +218,13 @@
      CAMERA(
        NAME(GLOBALcamera)
       
-      FAR_CLIP(12500.000000)
+      FAR_CLIP( 1250  0.000000 )
       
-      MID_CLIP(12400.000000)
+      MID_CLIP( 1240  0.000000 )
       
-      FOG_FAR(12000.000000)
+      FOG_FAR( 1200  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 18.000000 )
       
       )
      
@@ -238,13 +238,13 @@
      CAMERA(
        NAME(GLOBALcamera)
       
-      FAR_CLIP(9500.000000)
+      FAR_CLIP( 950  0.000000 )
       
-      MID_CLIP(9400.000000)
+      MID_CLIP( 940  0.000000 )
       
-      FOG_FAR(9000.000000)
+      FOG_FAR( 900  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 15.000000 )
       
       )
      
@@ -258,13 +258,13 @@
      CAMERA(
        NAME(GLOBALcamera)
       
-      FAR_CLIP(7500.000000)
+      FAR_CLIP( 750  0.000000 )
       
-      MID_CLIP(7400.000000)
+      MID_CLIP( 740  0.000000 )
       
-      FOG_FAR(7000.000000)
+      FOG_FAR( 700  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 7.000000 )
       
       )
      
@@ -278,13 +278,13 @@
      CAMERA(
        NAME(GLOBALcamera)
       
-      FAR_CLIP(6400.000000)
+      FAR_CLIP( 640  0.000000 )
       
-      MID_CLIP(6300.000000)
+      MID_CLIP( 630  0.000000 )
       
-      FOG_FAR(6000.000000)
+      FOG_FAR( 600  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 5.000000 )
       
       )
      
@@ -298,13 +298,13 @@
      CAMERA(
        NAME(GLOBALcamera)
       
-      FAR_CLIP(5100.000000)
+      FAR_CLIP( 510  0.000000 )
       
-      MID_CLIP(5000.000000)
+      MID_CLIP( 500  0.000000 )
       
-      FOG_FAR(4800.000000)
+      FOG_FAR( 480  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 4.000000 )
       
       )
      

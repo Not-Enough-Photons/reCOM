@@ -1,6 +1,6 @@
 ((
   ANIMATION_DEFINITIONS(
-   GRAVITY(-nan)
+   GRAVITY( -98.000000 )
   
   ANIMATION_LIST(
     ANIMATION_DEFINITION(
@@ -12,34 +12,34 @@
       NAME(seq_0)
      
      IF(
-       VALVE(INPUT_VALVE==10.000000)
+       VALVE(INPUT_VALVE== 1  0.000000 )
       
       )
      
      ai::DOOR(
        node(INPUT_NODE)
       
-      ofs(0.0000000.0000000.000000)
+      ofs( 0.000000  0.000000  0.000000 )
       
-      dist(0.000000)
+      dist( 14.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Flipswitch reverse" )
+       anim("Flipswitch reverse")
       
-      postwait(0.000000)
+      postwait( 0.000000 )
       
       )
      
      ai::EVENT(
        node(INPUT_NODE)
       
-      pos(0.0000000.000000-13-0.000000)
+      pos( 0.000000  0.000000  -13  -nan )
       
-      range(0.000000)
+      range( 100.000000 )
       
-      duration(0.000000)
+      duration( 0.250000 )
       
       )
      
@@ -48,23 +48,23 @@
       
       )
      
-     VALVE(INPUT_VALVE=00.000000)
+     VALVE(INPUT_VALVE= 0  0.000000 )
      
      ELSE()
      
      ai::DOOR(
        node(INPUT_NODE)
       
-      ofs(0.0000000.0000000.000000)
+      ofs( 0.000000  0.000000  0.000000 )
       
-      dist(0.000000)
+      dist( 14.000000 )
       
       )
      
      ai::ANIMATE(
        anim(Flipswitch)
       
-      postwait(0.000000)
+      postwait( 0.350000 )
       
       )
      
@@ -73,7 +73,7 @@
       
       )
      
-     VALVE(INPUT_VALVE=10.000000)
+     VALVE(INPUT_VALVE= 1  0.000000 )
      
      ENDIF()
      
@@ -92,11 +92,11 @@
       OBJECT_MOTION_FROM_TO(
        NAME(LOCALswitch)
       
-      ROTATE_FROM(0.0000000.0000000.000000)
+      ROTATE_FROM( 0.000000  0.000000  0.000000 )
       
-      ROTATE_TO(0.0000000.0000000.000000)
+      ROTATE_TO( 100.000000  0.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.400000 )
       
       )
      
@@ -110,7 +110,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(lighton)
@@ -176,20 +176,20 @@
     ACTIVATION(ON_STARTUP)
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 0.170000 )
      
      OBJECT_MOTION_FROM_TO(
        NAME(LOCALswitch)
       
-      ROTATE_FROM(0.0000000.0000000.000000)
+      ROTATE_FROM( 100.000000  0.000000  0.000000 )
       
-      ROTATE_TO(0.0000000.0000000.000000)
+      ROTATE_TO( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.500000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.100000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(lighton_green)
@@ -306,13 +306,13 @@
       
       type(ALARM)
       
-      duration(0.000000)
+      duration( 1.000000 )
       
-      range(0.000000)
+      range( 1000.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      END_WHILE()
      
@@ -324,7 +324,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      SOUND(
        NAME(SND_VM08_49)
@@ -333,7 +333,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      SOUND(
        NAME(MUS_M8_ALARM)
@@ -377,7 +377,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.500000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(hornlight)
@@ -407,7 +407,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.500000 )
      
      END_WHILE()
      
@@ -491,7 +491,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      OBJECT_ACTIVE_STATE(
        NAME(lighton)
@@ -514,7 +514,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      END_WHILE()
      
@@ -568,7 +568,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 35.000000 )
        
        )
       
@@ -593,7 +593,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 35.000000 )
        
        )
       
@@ -618,7 +618,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 35.000000 )
        
        )
       
@@ -643,7 +643,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 35.000000 )
        
        )
       
@@ -656,7 +656,7 @@
      
      ENDIF()
      
-     WAIT(0.000000)
+     WAIT( 0.500000 )
      
      END_WHILE()
      
@@ -667,7 +667,7 @@
      
      ACTIVATION(ON_CALL)
      
-     VALVE(comerunning=10.000000)
+     VALVE(comerunning= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(alarm_trip_test)
@@ -684,7 +684,7 @@
       
       )
      
-     VALVE(SinglePlay=10.000000)
+     VALVE(SinglePlay= 1  0.000000 )
      
      ui::UI_COMMAND(
        TYPE(PlayMPEG)
@@ -710,7 +710,7 @@
     SEQUENCE_DEFINITION(
       NAME(start_alarm)
      
-     VALVE(comerunning=10.000000)
+     VALVE(comerunning= 1  0.000000 )
      
      STOP_ANIMATION(
        NAME(single_alarm_range)
@@ -929,20 +929,20 @@
      OBJECT_ROTATE_STATE(
        NAME(mdbeam)
       
-      ROTATION(00.000000-7-0.00000000.000000)
+      ROTATION( 0  0.000000  -7  -nan  0  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.050000 )
      
      OBJECT_ROTATE_STATE(
        NAME(mdbeam)
       
-      ROTATION(00.00000070.00000000.000000)
+      ROTATION( 0  0.000000  7  0.000000  0  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.050000 )
      
      END_WHILE()
      
@@ -976,7 +976,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 250.000000 )
        
        )
       
@@ -1001,7 +1001,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 250.000000 )
        
        )
       
@@ -1026,7 +1026,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 250.000000 )
        
        )
       
@@ -1051,7 +1051,7 @@
        
        TEST(<)
        
-       RANGE(0.000000)
+       RANGE( 250.000000 )
        
        )
       
@@ -1064,7 +1064,7 @@
      
      ENDIF()
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      END_WHILE()
      

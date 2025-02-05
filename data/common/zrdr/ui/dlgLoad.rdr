@@ -20,16 +20,16 @@
      
      TYPE(TEXT)
      
-     XPOS(5200.000000)
+     XPOS( 520  0.000000 )
      
-     YPOS(3650.000000)
+     YPOS( 365  0.000000 )
      
      SPEC(
-       COLOR(80.000000600.0000001370.000000)
+       COLOR( 8  0.000000  60  0.000000  137  0.000000 )
       
-      CAPTION(" " )
+      CAPTION(" ")
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       )
      
@@ -40,14 +40,14 @@
      
      TYPE(IMAGE)
      
-     XPOS(200.000000)
+     XPOS( 20  0.000000 )
      
-     YPOS(1200.000000)
+     YPOS( 120  0.000000 )
      
      SPEC(
-       XSIZE(6000.000000)
+       XSIZE( 600  0.000000 )
       
-      YSIZE(2100.000000)
+      YSIZE( 210  0.000000 )
       
       UIVAR(
         NAME(LoadingScreenBackground)
@@ -63,9 +63,9 @@
      
      TYPE(PROGRESSBAR)
      
-     XPOS(200.000000)
+     XPOS( 20  0.000000 )
      
-     YPOS(1200.000000)
+     YPOS( 120  0.000000 )
      
      SPEC(
        LEADING_EDGE_NODE(LeadingEdge)
@@ -74,9 +74,9 @@
       
       FILENAME(load_progress_texture)
       
-      XSIZE(6000.000000)
+      XSIZE( 600  0.000000 )
       
-      YSIZE(2100.000000)
+      YSIZE( 210  0.000000 )
       
       UIVAR(
         NAME(Load_progress)
@@ -92,9 +92,9 @@
      
      TYPE(TEXT)
      
-     XPOS(3200.000000)
+     XPOS( 320  0.000000 )
      
-     YPOS(1000.000000)
+     YPOS( 100  0.000000 )
      
      SPEC(
        HCENTERED()
@@ -104,7 +104,7 @@
        
        )
       
-      SCALE(0.000000)
+      SCALE( 1.000000 )
       
       )
      
@@ -115,14 +115,14 @@
      
      TYPE(TEXT)
      
-     XPOS(3200.000000)
+     XPOS( 320  0.000000 )
      
-     YPOS(4000.000000)
+     YPOS( 400  0.000000 )
      
      SPEC(
-       WIDTH(6400.000000)
+       WIDTH( 640  0.000000 )
       
-      SPACING(150.000000)
+      SPACING( 15  0.000000 )
       
       HCENTERED()
       
@@ -131,7 +131,7 @@
        
        )
       
-      SCALE(0.000000)
+      SCALE( 0.600000 )
       
       )
      
@@ -142,16 +142,16 @@
      
      TYPE(IMAGE)
      
-     XPOS(00.000000)
+     XPOS( 0  0.000000 )
      
-     YPOS(00.000000)
+     YPOS( 0  0.000000 )
      
      SPEC(
-       FILENAME(" " )
+       FILENAME(" ")
       
-      XSIZE(00.000000)
+      XSIZE( 0  0.000000 )
       
-      YSIZE(00.000000)
+      YSIZE( 0  0.000000 )
       
       )
      
@@ -162,16 +162,16 @@
      
      TYPE(IMAGE)
      
-     XPOS(00.000000)
+     XPOS( 0  0.000000 )
      
-     YPOS(00.000000)
+     YPOS( 0  0.000000 )
      
      SPEC(
-       FILENAME(" " )
+       FILENAME(" ")
       
-      XSIZE(00.000000)
+      XSIZE( 0  0.000000 )
       
-      YSIZE(00.000000)
+      YSIZE( 0  0.000000 )
       
       )
      
@@ -182,18 +182,18 @@
      
      TYPE(IMAGE)
      
-     XPOS(00.000000)
+     XPOS( 0  0.000000 )
      
-     YPOS(00.000000)
+     YPOS( 0  0.000000 )
      
      SPEC(
        CHILDOF(Leader_follow)
       
       FILENAME(loading_cursor.tif)
       
-      XSIZE(60.000000)
+      XSIZE( 6  0.000000 )
       
-      YSIZE(1800.000000)
+      YSIZE( 180  0.000000 )
       
       )
      
@@ -276,7 +276,7 @@
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -293,27 +293,27 @@
       OBJECT_MOTION_FROM_TO(
        NAME(MENURedDown)
       
-      TRANSLATE_FROM(-nan-nan0.000000)
+      TRANSLATE_FROM( -4.000000  -50.000000  0.000000 )
       
-      TRANSLATE_TO(-nan0.0000000.000000)
+      TRANSLATE_TO( -4.000000  85.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
      OBJECT_MOTION_FROM_TO(
        NAME(MENURedDown)
       
-      TRANSLATE_FROM(-nan0.0000000.000000)
+      TRANSLATE_FROM( -4.000000  85.000000  0.000000 )
       
-      TRANSLATE_TO(-nan-nan0.000000)
+      TRANSLATE_TO( -4.000000  -50.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -336,7 +336,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      ui::UI_COMMAND(
        NODE(MENULoadingText)
@@ -345,7 +345,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      ui::UI_COMMAND(
        NODE(MENULoadingText)
@@ -354,7 +354,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      ui::UI_COMMAND(
        NODE(MENULoadingText)
@@ -363,7 +363,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      ui::UI_COMMAND(
        NODE(MENULoadingText)
@@ -372,7 +372,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      ui::UI_COMMAND(
        NODE(MENULoadingText)
@@ -381,7 +381,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 0.200000 )
      
      ui::UI_COMMAND(
        NODE(MENULoadingText)
@@ -390,10 +390,10 @@
       
       )
      
-     WAIT(EVENT_OFFSET0.000000)
+     WAIT(EVENT_OFFSET 0.200000 )
      
      LOOP(
-       LOOP_COUNT(-1-0.000000)
+       LOOP_COUNT( -1  -nan )
       
       )
      
@@ -408,15 +408,15 @@
     
     SEQUENCE_DEFINITION(
       IF(
-       VALVE(Did_SM_lock==10.000000)
+       VALVE(Did_SM_lock== 1  0.000000 )
       
       )
      
-     VALVE(mp_locked_game=10.000000)
+     VALVE(mp_locked_game= 1  0.000000 )
      
      ELSE()
      
-     VALVE(mp_locked_game=00.000000)
+     VALVE(mp_locked_game= 0  0.000000 )
      
      ENDIF()
      
@@ -481,7 +481,7 @@
     
     SEQUENCE_DEFINITION(
       IF(
-       VALVE(late_joiner==10.000000)
+       VALVE(late_joiner== 1  0.000000 )
       
       )
      

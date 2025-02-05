@@ -25,25 +25,25 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
      END_WHILE()
      
      WHILE(
-       !VALVE(comerunning==10.000000)
+       !VALVE(comerunning== 1  0.000000 )
       
       )
      
      END_WHILE()
      
-     ai::PARAM(aware=20.000000)
+     ai::PARAM(aware= 2  0.000000 )
      
      WHILE(TRUE)
      
@@ -56,18 +56,18 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting idling" )
+     ai::DEBUG("starting idling")
      
      WHILE(TRUE)
      
      IF(
-       VALVE(Bunk1_valve_alive==00.000000)
+       VALVE(Bunk1_valve_alive== 0  0.000000 )
       
-      ||VALVE(Bunk2_valve_alive==00.000000)
+      ||VALVE(Bunk2_valve_alive== 0  0.000000 )
       
       )
      
-     ai::DEBUG("IF passed" )
+     ai::DEBUG("IF passed")
      
      STOP_SEQUENCE(
        NAME(on_aware0)
@@ -77,14 +77,14 @@
      ai::GOTO(
        node(Bunk3B)
       
-      speed(0.000000)
+      speed( 0.500000 )
       
       )
      
      ai::GOTO(
        node(Bunk3C)
       
-      speed(0.000000)
+      speed( 0.500000 )
       
       )
      
@@ -104,7 +104,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      CALL_SEQUENCE(
        NAME(idling)
@@ -116,93 +116,93 @@
      ai::GOTO(
        node(Bunk3A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        node(Bunk3B)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim(Slouch00.000000)
+       anim(Slouch 0  0.000000 )
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000150.000000)
+       wait( 5  0.000000  15  0.000000 )
       
       )
      
      ai::GOTO(
        node(Bunk3_idle1)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        node(Bunk3B)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim(Checkwatch00.000000)
+       anim(Checkwatch 0  0.000000 )
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000150.000000)
+       wait( 5  0.000000  15  0.000000 )
       
       )
      
      ai::GOTO(
        node(Bunk3_idle2)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        node(Bunk3B)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Stand stretch" 00.000000)
+       anim("Stand stretch" 0  0.000000 )
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000150.000000)
+       wait( 5  0.000000  15  0.000000 )
       
       )
      
@@ -215,7 +215,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::MACRO(
        anim(Close_call)
@@ -229,12 +229,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      ai::GOTO(
        node(Bunk3_cover)
       
-      speed(0.000000)
+      speed( 0.900000 )
       
       )
      
@@ -246,11 +246,11 @@
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
-     VALVE(bunk3=10.000000)
+     VALVE(bunk3= 1  0.000000 )
      
      WHILE(TRUE)
      
@@ -260,7 +260,7 @@
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
@@ -270,7 +270,7 @@
       )
      
      ai::HOLD(
-       wait(50.00000070.000000)
+       wait( 5  0.000000  7  0.000000 )
       
       )
      
@@ -283,12 +283,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      ai::GOTO(
        node(Bunk3_cover)
       
-      speed(0.000000)
+      speed( 0.900000 )
       
       )
      
@@ -300,11 +300,11 @@
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
-     VALVE(bunk3=10.000000)
+     VALVE(bunk3= 1  0.000000 )
      
      WHILE(TRUE)
      
@@ -314,7 +314,7 @@
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
@@ -324,7 +324,7 @@
       )
      
      ai::HOLD(
-       wait(50.00000070.000000)
+       wait( 5  0.000000  7  0.000000 )
       
       )
      
@@ -337,10 +337,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      IF(
-       VALVE(bunk3==00.000000)
+       VALVE(bunk3== 0  0.000000 )
       
       )
      
@@ -355,7 +355,7 @@
       blocking)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -365,12 +365,12 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -380,7 +380,7 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
@@ -413,7 +413,7 @@
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
@@ -423,7 +423,7 @@
       )
      
      ai::HOLD(
-       wait(50.00000070.000000)
+       wait( 5  0.000000  7  0.000000 )
       
       )
      
@@ -438,7 +438,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      )
     
@@ -447,7 +447,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::STANCE(
        stance(prone)
@@ -461,12 +461,12 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

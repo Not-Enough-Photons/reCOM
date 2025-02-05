@@ -10,7 +10,7 @@
       NAME(start)
      
      IF(
-       VALVE(ReplayMissionMusic==00.000000)
+       VALVE(ReplayMissionMusic== 0  0.000000 )
       
       )
      
@@ -23,70 +23,70 @@
      
      ENDIF()
      
-     VALVE(ReplayMissionMusic=10.000000)
+     VALVE(ReplayMissionMusic= 1  0.000000 )
      
      HUD_TRIGGER_MISSION_CAM(m8bs)
      
      HUD_TRIGGER_MISSION_CAM(m8tut1)
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE: INSERT INTO THE MISSION AREA" )
+       MESSAGE("OBJECTIVE: INSERT INTO THE MISSION AREA")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      WHILE(TRUE)
      
      IF(
-       VALVE(computer==990.000000)
+       VALVE(computer== 99  0.000000 )
       
-      &&VALVE(extract==10.000000)
+      &&VALVE(extract== 1  0.000000 )
       
-      &&VALVE(cratecount>=30.000000)
+      &&VALVE(cratecount>= 3  0.000000 )
       
-      &&VALVE(POBJ5==10.000000)
+      &&VALVE(POBJ5== 1  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      MESSAGE(
-       MESSAGE("VICTORY: MISSION OBJECTIVES COMPLETED" )
+       MESSAGE("VICTORY: MISSION OBJECTIVES COMPLETED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -97,7 +97,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      CALL_SEQUENCE(
        NAME(success)
@@ -112,7 +112,7 @@
      ENDIF()
      
      IF(
-       VALVE(player_valve_alive==00.000000)
+       VALVE(player_valve_alive== 0  0.000000 )
       
       )
      
@@ -122,13 +122,13 @@
       )
      
      MESSAGE(
-       MESSAGE("FAILURE: PLAYER DEATH" )
+       MESSAGE("FAILURE: PLAYER DEATH")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -141,7 +141,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 12.000000 )
      
      CALL_SEQUENCE(
        NAME(failure)
@@ -154,7 +154,7 @@
       )
      
      ELSEIF(
-       VALVE(nodocs==10.000000)
+       VALVE(nodocs== 1  0.000000 )
       
       )
      
@@ -164,13 +164,13 @@
       )
      
      MESSAGE(
-       MESSAGE("FAILURE: DOCUMENTS DESTROYED" )
+       MESSAGE("FAILURE: DOCUMENTS DESTROYED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -181,7 +181,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      CALL_SEQUENCE(
        NAME(failure)
@@ -194,7 +194,7 @@
       )
      
      ELSEIF(
-       VALVE(aiteam_01==10.000000)
+       VALVE(aiteam_01== 1  0.000000 )
       
       )
      
@@ -203,7 +203,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      SOUND(
        NAME(SND_VOC_231)
@@ -213,17 +213,17 @@
       )
      
      MESSAGE(
-       MESSAGE("MISSION FAILURE: YOUR SEAL TEAM HAS BEEN INCAPACITATED" )
+       MESSAGE("MISSION FAILURE: YOUR SEAL TEAM HAS BEEN INCAPACITATED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      CALL_SEQUENCE(
        NAME(failure)
@@ -257,17 +257,17 @@
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: INSERTION ACHIEVED" )
+       MESSAGE("OBJECTIVE COMPLETED: INSERTION ACHIEVED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(POBJ4=10.000000)
+     VALVE(POBJ4= 1  0.000000 )
      
      SOUND(
        NAME(MUS_OBJ_COMPLETE)
@@ -278,47 +278,47 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      HUD_TRIGGER_MISSION_CAM(m8tut2)
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      IF(
-       VALVE(POBJ1==00.000000)
+       VALVE(POBJ1== 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("NEW OBJECTIVE: SECURE THE TERRORIST'S LAPTOP COMPUTER" )
+       MESSAGE("NEW OBJECTIVE: SECURE THE TERRORIST'S LAPTOP COMPUTER")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
-      
-      )
-     
-     MESSAGE(
-       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
-      
-      RED(00.000000)
-      
-      GREEN(00.000000)
-      
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION")
+      
+      RED( 0  0.000000 )
+      
+      GREEN( 0  0.000000 )
+      
+      BLUE( 0  0.000000 )
       
       )
      
@@ -341,7 +341,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(OutPatrol4_valve_alive==00.000000)
+       VALVE(OutPatrol4_valve_alive== 0  0.000000 )
       
       ||ai::INSTATE(
         state(restrained)
@@ -360,17 +360,17 @@
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: SENTRY NEUTRALIZED" )
+       MESSAGE("OBJECTIVE COMPLETED: SENTRY NEUTRALIZED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ1=10.000000)
+     VALVE(SOBJ1= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Sentry)
@@ -389,7 +389,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(OutPatrol4_valve_alive==00.000000)
+       VALVE(OutPatrol4_valve_alive== 0  0.000000 )
       
       ||ai::INSTATE(
         state(restrained)
@@ -407,7 +407,7 @@
       
       )
      
-     VALVE(SOBJ10Fail=10.000000)
+     VALVE(SOBJ10Fail= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Ambush_cover)
@@ -432,17 +432,17 @@
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: BRAVO MOVED TO CHARLIE" )
+       MESSAGE("OBJECTIVE COMPLETED: BRAVO MOVED TO CHARLIE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ10=10.000000)
+     VALVE(SOBJ10= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Ambush_cover)
@@ -461,14 +461,14 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(aiteam_04<=30.000000)
+       VALVE(aiteam_04<= 3  0.000000 )
       
-      &&VALVE(Snow3_valve_alive==10.000000)
+      &&VALVE(Snow3_valve_alive== 1  0.000000 )
       
       )
      
      IF(
-       VALVE(POBJ3==00.000000)
+       VALVE(POBJ3== 0  0.000000 )
       
       )
      
@@ -480,13 +480,13 @@
       broadcast)
      
      MESSAGE(
-       MESSAGE("NEW OBJECTIVE: CAPTURE TERRORIST FOR QUESTIONING" )
+       MESSAGE("NEW OBJECTIVE: CAPTURE TERRORIST FOR QUESTIONING")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -509,22 +509,22 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(computer==990.000000)
+       VALVE(computer== 99  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: INTEL RECOVERED" )
+       MESSAGE("OBJECTIVE COMPLETED: INTEL RECOVERED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(POBJ1=10.000000)
+     VALVE(POBJ1= 1  0.000000 )
      
      SOUND(
        NAME(MUS_OBJ_COMPLETE)
@@ -535,10 +535,10 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      IF(
-       VALVE(POBJ5==00.000000)
+       VALVE(POBJ5== 0  0.000000 )
       
       )
      
@@ -550,35 +550,35 @@
       broadcast)
      
      MESSAGE(
-       MESSAGE("NEW OBJECTIVE: SECURE COMPOUND" )
+       MESSAGE("NEW OBJECTIVE: SECURE COMPOUND")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
-      
-      )
-     
-     MESSAGE(
-       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
-      
-      RED(00.000000)
-      
-      GREEN(00.000000)
-      
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION")
+      
+      RED( 0  0.000000 )
+      
+      GREEN( 0  0.000000 )
+      
+      BLUE( 0  0.000000 )
       
       )
      
@@ -606,35 +606,35 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(cratecount==30.000000)
+       VALVE(cratecount== 3  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("THIRD SUPPLY CACHE DESTROYED" )
+       MESSAGE("THIRD SUPPLY CACHE DESTROYED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: SUPPLIES DESTROYED" )
+       MESSAGE("OBJECTIVE COMPLETED: SUPPLIES DESTROYED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(POBJ2=10.000000)
+     VALVE(POBJ2= 1  0.000000 )
      
      SOUND(
        NAME(MUS_OBJ_COMPLETE)
@@ -646,7 +646,7 @@
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -668,52 +668,52 @@
      
      ENDIF()
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      IF(
-       VALVE(POBJ3==00.000000)
+       VALVE(POBJ3== 0  0.000000 )
       
       )
      
      HUD_TRIGGER_MISSION_CAM(m8tut4)
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      IF(
-       VALVE(POBJ3==00.000000)
+       VALVE(POBJ3== 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("NEW OBJECTIVE: SECURE PINCUSHION" )
+       MESSAGE("NEW OBJECTIVE: SECURE PINCUSHION")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
-      
-      )
-     
-     MESSAGE(
-       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
-      
-      RED(00.000000)
-      
-      GREEN(00.000000)
-      
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION")
+      
+      RED( 0  0.000000 )
+      
+      GREEN( 0  0.000000 )
+      
+      BLUE( 0  0.000000 )
       
       )
      
@@ -738,7 +738,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(cratecount==10.000000)
+       VALVE(cratecount== 1  0.000000 )
       
       )
      
@@ -750,27 +750,27 @@
       )
      
      MESSAGE(
-       MESSAGE("FIRST SUPPLY CACHE DESTROYED" )
+       MESSAGE("FIRST SUPPLY CACHE DESTROYED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(Spotted=10.000000)
+     VALVE(Spotted= 1  0.000000 )
      
      ai::COMM(
-       team(130.000000)
+       team( 13  0.000000 )
       
       cmd(CMD_AWAKE)
       
       )
      
      ai::PARAM(
-       aware=20.000000entity(Leader)
+       aware= 2  0.000000 entity(Leader)
       
       )
      
@@ -791,7 +791,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(cratecount==20.000000)
+       VALVE(cratecount== 2  0.000000 )
       
       )
      
@@ -803,13 +803,13 @@
       )
      
      MESSAGE(
-       MESSAGE("SECOND SUPPLY CACHE DESTROYED" )
+       MESSAGE("SECOND SUPPLY CACHE DESTROYED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -830,33 +830,33 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(SOBJ2==10.000000)
+       VALVE(SOBJ2== 1  0.000000 )
       
-      &&VALVE(SOBJ3==10.000000)
+      &&VALVE(SOBJ3== 1  0.000000 )
       
-      &&VALVE(SOBJ4==10.000000)
+      &&VALVE(SOBJ4== 1  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: COMPOUND SECURE" )
+       MESSAGE("OBJECTIVE COMPLETED: COMPOUND SECURE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(POBJ5=10.000000)
+     VALVE(POBJ5= 1  0.000000 )
      
      IF(
-       !VALVE(cratecount==30.000000)
+       !VALVE(cratecount== 3  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      SOUND(
        NAME(SND_VM08_54)
@@ -866,35 +866,35 @@
       )
      
      MESSAGE(
-       MESSAGE("NEW OBJECTIVE: DESTROY SUPPLY CACHES" )
+       MESSAGE("NEW OBJECTIVE: DESTROY SUPPLY CACHES")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
-      
-      )
-     
-     MESSAGE(
-       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE" )
-      
-      RED(00.000000)
-      
-      GREEN(00.000000)
-      
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION" )
+       MESSAGE("PRESS THE SELECT BUTTON TO ACCESS THE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("TACMAP TO DISPLAY MORE INFORMATION")
+      
+      RED( 0  0.000000 )
+      
+      GREEN( 0  0.000000 )
+      
+      BLUE( 0  0.000000 )
       
       )
      
@@ -917,31 +917,31 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(aiteam_11==00.000000)
+       VALVE(aiteam_11== 0  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      MESSAGE(
-       MESSAGE("LODGE GUARDS ELIMINATED" )
+       MESSAGE("LODGE GUARDS ELIMINATED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE" )
+       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -969,22 +969,22 @@
        
        )
       
-      &&VALVE(aiteam_11==00.000000)
+      &&VALVE(aiteam_11== 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: BUILDING SECURE" )
+       MESSAGE("OBJECTIVE COMPLETED: BUILDING SECURE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ2=10.000000)
+     VALVE(SOBJ2= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(LodgePrompt)
@@ -1008,33 +1008,33 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(Snow1_valve_alive==00.000000)
+       VALVE(Snow1_valve_alive== 0  0.000000 )
       
-      &&VALVE(Snow2_valve_alive==00.000000)
-      
-      )
-     
-     WAIT(0.000000)
-     
-     MESSAGE(
-       MESSAGE("BOSLER BUILDING GUARDS ELIMINATED" )
-      
-      RED(00.000000)
-      
-      GREEN(00.000000)
-      
-      BLUE(00.000000)
+      &&VALVE(Snow2_valve_alive== 0  0.000000 )
       
       )
      
+     WAIT( 2.000000 )
+     
      MESSAGE(
-       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE" )
+       MESSAGE("BOSLER BUILDING GUARDS ELIMINATED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
+      
+      )
+     
+     MESSAGE(
+       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE")
+      
+      RED( 0  0.000000 )
+      
+      GREEN( 0  0.000000 )
+      
+      BLUE( 0  0.000000 )
       
       )
      
@@ -1062,24 +1062,24 @@
        
        )
       
-      &&VALVE(Snow1_valve_alive==00.000000)
+      &&VALVE(Snow1_valve_alive== 0  0.000000 )
       
-      &&VALVE(Snow2_valve_alive==00.000000)
+      &&VALVE(Snow2_valve_alive== 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: BUILDING SECURE" )
+       MESSAGE("OBJECTIVE COMPLETED: BUILDING SECURE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ3=10.000000)
+     VALVE(SOBJ3= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(SnowPrompt)
@@ -1103,22 +1103,22 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(CabinBreech==20.000000)
+       VALVE(CabinBreech== 2  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: BRAVO CLEARED CABIN" )
+       MESSAGE("OBJECTIVE COMPLETED: BRAVO CLEARED CABIN")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ4=10.000000)
+     VALVE(SOBJ4= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Cabin2Prompt)
@@ -1147,31 +1147,31 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(Shed1_valve_alive==00.000000)
+       VALVE(Shed1_valve_alive== 0  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      MESSAGE(
-       MESSAGE("CABIN BUILDING GUARD ELIMINATED" )
+       MESSAGE("CABIN BUILDING GUARD ELIMINATED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE" )
+       MESSAGE("CHECK INSIDE THE BUILDING TO INSURE THAT IT'S SECURE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -1199,22 +1199,22 @@
        
        )
       
-      &&VALVE(Shed1_valve_alive==00.000000)
+      &&VALVE(Shed1_valve_alive== 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: CABIN SECURE" )
+       MESSAGE("OBJECTIVE COMPLETED: CABIN SECURE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ4=10.000000)
+     VALVE(SOBJ4= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Cabin2Prompt)
@@ -1241,13 +1241,13 @@
       NAME(Hutchins_killed)
      
      WHILE(
-       VALVE(Hutchins_valve_alive!=00.000000)
+       VALVE(Hutchins_valve_alive!= 0  0.000000 )
       
       )
      
      END_WHILE()
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      SOUND(
        NAME(MUS_BUDDY_DEATH)
@@ -1269,13 +1269,13 @@
       NAME(Bailey_killed)
      
      WHILE(
-       VALVE(Bailey_valve_alive!=00.000000)
+       VALVE(Bailey_valve_alive!= 0  0.000000 )
       
       )
      
      END_WHILE()
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      SOUND(
        NAME(MUS_BUDDY_DEATH)
@@ -1297,13 +1297,13 @@
       NAME(DiMone_killed)
      
      WHILE(
-       VALVE(DiMone_valve_alive!=00.000000)
+       VALVE(DiMone_valve_alive!= 0  0.000000 )
       
       )
      
      END_WHILE()
      
-     WAIT(0.000000)
+     WAIT( 2.000000 )
      
      SOUND(
        NAME(MUS_BUDDY_DEATH)
@@ -1325,14 +1325,14 @@
       NAME(Leader_killed)
      
      WHILE(
-       VALVE(Leader_valve_alive!=00.000000)
+       VALVE(Leader_valve_alive!= 0  0.000000 )
       
       )
      
      END_WHILE()
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -1369,11 +1369,11 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(comerunning==10.000000)
+       VALVE(comerunning== 1  0.000000 )
       
       )
      
-     VALVE(SOBJ9Fail=10.000000)
+     VALVE(SOBJ9Fail= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Bravo_cover)
@@ -1381,13 +1381,13 @@
       )
      
      ELSEIF(
-       VALVE(Bailey_valve_alive==00.000000)
+       VALVE(Bailey_valve_alive== 0  0.000000 )
       
-      &&VALVE(DiMone_valve_alive==00.000000)
+      &&VALVE(DiMone_valve_alive== 0  0.000000 )
       
       )
      
-     VALVE(SOBJ9Fail=10.000000)
+     VALVE(SOBJ9Fail= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Bravo_cover)
@@ -1405,7 +1405,7 @@
         
         )
        
-       ||VALVE(Bailey_valve_alive==00.000000)
+       ||VALVE(Bailey_valve_alive== 0  0.000000 )
        
        )
       
@@ -1417,20 +1417,20 @@
         
         )
        
-       ||VALVE(DiMone_valve_alive==00.000000)
+       ||VALVE(DiMone_valve_alive== 0  0.000000 )
        
        )
       
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: BRAVO COVERING DREDGE ENTRY" )
+       MESSAGE("OBJECTIVE COMPLETED: BRAVO COVERING DREDGE ENTRY")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -1441,7 +1441,7 @@
       
       broadcast)
      
-     VALVE(SOBJ9=10.000000)
+     VALVE(SOBJ9= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(Bravo_cover)
@@ -1482,19 +1482,19 @@
       )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: PINCUSHION SECURED" )
+       MESSAGE("OBJECTIVE COMPLETED: PINCUSHION SECURED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(hostage=10.000000)
+     VALVE(hostage= 1  0.000000 )
      
-     VALVE(POBJ3=10.000000)
+     VALVE(POBJ3= 1  0.000000 )
      
      SOUND(
        NAME(MUS_OBJ_COMPLETE)
@@ -1512,7 +1512,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      SOUND(
        NAME(SND_VM08_53)
@@ -1522,13 +1522,13 @@
       )
      
      MESSAGE(
-       MESSAGE("ESCORT PINCUSHION TO THE EXTRACTION ZONE" )
+       MESSAGE("ESCORT PINCUSHION TO THE EXTRACTION ZONE")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -1565,7 +1565,7 @@
       
       )
      
-     VALVE(extract=10.000000)
+     VALVE(extract= 1  0.000000 )
      
      ui::UI_COMMAND(
        TYPE(PlayMPEG)
@@ -1575,13 +1575,13 @@
       )
      
      IF(
-       VALVE(computer==990.000000)
+       VALVE(computer== 99  0.000000 )
       
-      &&VALVE(extract==10.000000)
+      &&VALVE(extract== 1  0.000000 )
       
-      &&VALVE(cratecount>=30.000000)
+      &&VALVE(cratecount>= 3  0.000000 )
       
-      &&VALVE(POBJ5==10.000000)
+      &&VALVE(POBJ5== 1  0.000000 )
       
       )
      
@@ -1597,32 +1597,32 @@
      
      ENDIF()
      
-     VALVE(extractsync=10.000000)
+     VALVE(extractsync= 1  0.000000 )
      
-     VALVE(Spotted=10.000000)
+     VALVE(Spotted= 1  0.000000 )
      
      ai::COMM(
-       team(130.000000)
+       team( 13  0.000000 )
       
       cmd(CMD_AWAKE)
       
       )
      
      ai::PARAM(
-       aware=20.000000entity(Leader)
+       aware= 2  0.000000 entity(Leader)
       
       )
      
-     VALVE(SOBJ6=10.000000)
+     VALVE(SOBJ6= 1  0.000000 )
      
      MESSAGE(
-       MESSAGE("OBJECTIVE COMPLETED: TERRORIST EXTRACTED" )
+       MESSAGE("OBJECTIVE COMPLETED: TERRORIST EXTRACTED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -1643,27 +1643,27 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(Shed2_valve_alive==00.000000)
+       VALVE(Shed2_valve_alive== 0  0.000000 )
       
       )
      
      IF(
-       VALVE(outhouse1==10.000000)
+       VALVE(outhouse1== 1  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("BONUS OBJECTIVE COMPLETED: OUTHOUSE AMBUSH SUCCESSFUL" )
+       MESSAGE("BONUS OBJECTIVE COMPLETED: OUTHOUSE AMBUSH SUCCESSFUL")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
-     VALVE(SOBJ7=10.000000)
+     VALVE(SOBJ7= 1  0.000000 )
      
      ai::SOUND(
        name(SND_VM08_23)
@@ -1701,14 +1701,14 @@
        ai::INREGION(
         region(Crapper)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(100.000000)
+       team( 10  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -1748,14 +1748,14 @@
        ai::INREGION(
         region(Shed)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(100.000000)
+       team( 10  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -1795,14 +1795,14 @@
        ai::INREGION(
         region(Bunkhouse)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(110.000000)
+       team( 11  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -1837,14 +1837,14 @@
        ai::INREGION(
         region(Snowshed)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(120.000000)
+       team( 12  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -1879,28 +1879,28 @@
        ai::INREGION(
         region(Dredge)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(130.000000)
+       team( 13  0.000000 )
       
       cmd(CMD_AWAKE)
       
       )
      
      IF(
-       VALVE(Bailey_valve_alive==10.000000)
+       VALVE(Bailey_valve_alive== 1  0.000000 )
       
-      ||VALVE(DiMone_valve_alive==10.000000)
+      ||VALVE(DiMone_valve_alive== 1  0.000000 )
       
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -1923,18 +1923,18 @@
      ENDIF()
      
      IF(
-       VALVE(SOBJ9==00.000000)
+       VALVE(SOBJ9== 0  0.000000 )
       
       )
      
      MESSAGE(
-       MESSAGE("TACTICAL: ORDER BRAVO TO RUN TO ZULU" )
+       MESSAGE("TACTICAL: ORDER BRAVO TO RUN TO ZULU")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -1945,11 +1945,11 @@
       
       )
      
-     VALVE(SOBJ9Display=10.000000)
+     VALVE(SOBJ9Display= 1  0.000000 )
      
      ELSE()
      
-     VALVE(SOBJ9Fail=10.000000)
+     VALVE(SOBJ9Fail= 1  0.000000 )
      
      ENDIF()
      
@@ -1973,35 +1973,35 @@
        ai::INREGION(
         region(MidBottom)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       ||ai::INREGION(
         region(MidLink)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       ||ai::INREGION(
         region(MidLink2)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(90.000000)
+       team( 9  0.000000 )
       
       cmd(CMD_AWAKE)
       
       )
      
      ai::COMM(
-       team(140.000000)
+       team( 14  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -2036,21 +2036,21 @@
        ai::INREGION(
         region(Generator)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(130.000000)
+       team( 13  0.000000 )
       
       cmd(CMD_AWAKE)
       
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -2092,14 +2092,14 @@
        ai::INREGION(
         region(BottomOStairs)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(150.000000)
+       team( 15  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -2134,16 +2134,16 @@
        ai::INREGION(
         region(TopOStairs)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 20.000000 )
      
      ai::COMM(
-       team(60.000000)
+       team( 6  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -2166,7 +2166,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(Snow3_valve_alive==00.000000)
+       VALVE(Snow3_valve_alive== 0  0.000000 )
       
       )
      
@@ -2186,7 +2186,7 @@
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -2209,13 +2209,13 @@
      ENDIF()
      
      MESSAGE(
-       MESSAGE("INFO: PINCUSHION SPOTTED AND IDENTIFIED" )
+       MESSAGE("INFO: PINCUSHION SPOTTED AND IDENTIFIED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -2236,7 +2236,7 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(Snow3_valve_alive==00.000000)
+       VALVE(Snow3_valve_alive== 0  0.000000 )
       
       )
      
@@ -2246,13 +2246,13 @@
       )
      
      MESSAGE(
-       MESSAGE("MISSION FAILURE: PINCUSHION KILLED" )
+       MESSAGE("MISSION FAILURE: PINCUSHION KILLED")
       
-      RED(00.000000)
+      RED( 0  0.000000 )
       
-      GREEN(00.000000)
+      GREEN( 0  0.000000 )
       
-      BLUE(00.000000)
+      BLUE( 0  0.000000 )
       
       )
      
@@ -2263,7 +2263,7 @@
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      CALL_SEQUENCE(
        NAME(failure)
@@ -2292,11 +2292,11 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(out_count==10.000000)
+       VALVE(out_count== 1  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      ai::SOUND(
        name(SND_VM08_62)
@@ -2322,11 +2322,11 @@
      WHILE(TRUE)
      
      IF(
-       VALVE(out_count==20.000000)
+       VALVE(out_count== 2  0.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 3.000000 )
      
      ai::SOUND(
        name(SND_VM08_63)
@@ -2423,7 +2423,7 @@
       )
      
      ai::COMM(
-       team(70.000000)
+       team( 7  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -2458,21 +2458,21 @@
        ai::INREGION(
         region(MidTop)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       ||ai::INREGION(
         region(MidTop2)
        
-       team(10.000000)
+       team( 1  0.000000 )
        
        )
       
       )
      
      ai::COMM(
-       team(50.000000)
+       team( 5  0.000000 )
       
       cmd(CMD_AWAKE)
       
@@ -2494,9 +2494,9 @@
      
      ACTIVATION(ON_CALL)
      
-     VALVE(nofade=10.000000)
+     VALVE(nofade= 1  0.000000 )
      
-     VALVE(mission_complete=10.000000)
+     VALVE(mission_complete= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(start)
@@ -2510,7 +2510,7 @@
      
      ACTIVATION(ON_CALL)
      
-     VALVE(mission_failure=10.000000)
+     VALVE(mission_failure= 1  0.000000 )
      
      STOP_SEQUENCE(
        NAME(start)

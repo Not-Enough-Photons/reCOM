@@ -12,7 +12,7 @@
       NAME(seq_0)
      
      IF(
-       VALVE(INPUT_VALVE==00.000000)
+       VALVE(INPUT_VALVE== 0  0.000000 )
       
       )
      
@@ -35,16 +35,16 @@
      ai::MOVE(
        node(INPUT_NODE)
       
-      ofs(0.0000000.0000000.000000)
+      ofs( 0.000000  0.000000  0.000000 )
       
-      dist(0.000000)
+      dist( 8.000000 )
       
       )
      
      ai::ANIMATE(
        anim(Flipswitch)
       
-      postwait(0.000000)
+      postwait( 0.350000 )
       
       )
      
@@ -72,31 +72,31 @@
      OBJECT_MOTION_FROM_TO(
        NAME(laptopscreen)
       
-      ROTATE_FROM(00.00000000.00000000.000000)
+      ROTATE_FROM( 0  0.000000  0  0.000000  0  0.000000 )
       
-      ROTATE_TO(970.00000000.00000000.000000)
+      ROTATE_TO( 97  0.000000  0  0.000000  0  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.500000 )
       
       )
      
      ai::ANIMATE(
-       anim("Get from surface" )
+       anim("Get from surface")
       
-      postwait(0.000000)
+      postwait( 0.650000 )
       
       )
      
-     VALVE(INPUT_VALVE=990.000000)
+     VALVE(INPUT_VALVE= 99  0.000000 )
      
      ai::EVENT(
        node(INPUT_NODE)
       
-      pos(0.0000000.0000000.000000)
+      pos( 0.000000  0.000000  0.000000 )
       
-      range(0.000000)
+      range( 10.000000 )
       
-      duration(0.000000)
+      duration( 0.250000 )
       
       )
      
@@ -144,66 +144,66 @@
      OBJECT_MOTION_FROM_TO(
        NAME(screensaver)
       
-      TRANSLATE_FROM(0.0000000.000000-nan)
+      TRANSLATE_FROM( 1.532000  1.486000  -3.047000 )
       
-      TRANSLATE_TO(0.0000000.000000-nan)
+      TRANSLATE_TO( 0.124000  2.819000  -3.214000 )
       
-      RUN_TIME(0.000000)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(screensaver)
-      
-      TRANSLATE_FROM(0.0000000.000000-nan)
-      
-      TRANSLATE_TO(-nan0.000000-nan)
-      
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
       
       )
      
      OBJECT_MOTION_FROM_TO(
        NAME(screensaver)
       
-      TRANSLATE_FROM(-nan0.000000-nan)
+      TRANSLATE_FROM( 0.124000  2.819000  -3.214000 )
       
-      TRANSLATE_TO(0.0000000.000000-nan)
+      TRANSLATE_TO( -1.532000  2.151000  -3.130000 )
       
-      RUN_TIME(0.000000)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(screensaver)
-      
-      TRANSLATE_FROM(0.0000000.000000-nan)
-      
-      TRANSLATE_TO(0.0000000.000000-nan)
-      
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
       
       )
      
      OBJECT_MOTION_FROM_TO(
        NAME(screensaver)
       
-      TRANSLATE_FROM(0.0000000.000000-nan)
+      TRANSLATE_FROM( -1.532000  2.151000  -3.130000 )
       
-      TRANSLATE_TO(-nan0.000000-nan)
+      TRANSLATE_TO( -0.361000  0.966000  -2.980000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
       
       )
      
      OBJECT_MOTION_FROM_TO(
        NAME(screensaver)
       
-      TRANSLATE_FROM(-nan0.000000-nan)
+      TRANSLATE_FROM( -0.361000  0.966000  -2.980000 )
       
-      TRANSLATE_TO(0.0000000.000000-nan)
+      TRANSLATE_TO( 1.532000  1.486000  -3.047000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(screensaver)
+      
+      TRANSLATE_FROM( 1.532000  1.486000  -3.047000 )
+      
+      TRANSLATE_TO( -1.532000  2.151000  -3.130000 )
+      
+      RUN_TIME( 2.000000 )
+      
+      )
+     
+     OBJECT_MOTION_FROM_TO(
+       NAME(screensaver)
+      
+      TRANSLATE_FROM( -1.532000  2.151000  -3.130000 )
+      
+      TRANSLATE_TO( 1.532000  1.486000  -3.047000 )
+      
+      RUN_TIME( 2.000000 )
       
       )
      

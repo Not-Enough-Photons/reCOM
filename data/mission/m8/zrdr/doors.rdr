@@ -57,9 +57,9 @@
     
     HEALTH_ROOT_NAME(doordi)
     
-    HEALTH(10.000000)
+    HEALTH( 1  0.000000 )
     
-    SHIELD(100.000000)
+    SHIELD( 10  0.000000 )
     
     CREATE_CLONES()
     
@@ -69,7 +69,7 @@
       NAME(turnitoff)
      
      ai::MAP(
-       clear_action(10.000000)
+       clear_action( 1  0.000000 )
       
       )
      
@@ -248,29 +248,29 @@
       
       DO_INTERSECTIONS()
       
-      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MIN( 0.000000  35.000000  50.000000  -0.300000 )
       
-      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MAX( 350.000000  90.000000  130.000000  -0.500000 )
       
-      FORWARD_ROTATION(DISTANCE0.000000-nan)
+      FORWARD_ROTATION(DISTANCE 10.000000  -3.000000 )
       
-      RUN_TIME(80.000000)
+      RUN_TIME( 8  0.000000 )
       
       )
      
      )
     
     SEQUENCE_DEFINITION(
-      WAIT(0.000000)
+      WAIT( 2.000000 )
      
      OBJECT_OPACITY_FROM_TO(
        NAME(INPUT_NODE)
       
-      OPACITY_FROM(0.000000ON)
+      OPACITY_FROM( 1.000000 ON)
       
-      OPACITY_TO(0.000000ON)
+      OPACITY_TO( 0.000000 ON)
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
       
       )
      
@@ -284,11 +284,11 @@
      OBJECT_OPACITY_FROM_TO(
        NAME(INPUT_NODE)
       
-      OPACITY_FROM(0.000000ON)
+      OPACITY_FROM( 0.000000 ON)
       
-      OPACITY_TO(0.000000OFF)
+      OPACITY_TO( 1.000000 OFF)
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.000000 )
       
       )
      
@@ -307,7 +307,7 @@
       NAME(seq_0)
      
      IF(
-       VALVE(INPUT_VALVE==00.000000)
+       VALVE(INPUT_VALVE== 0  0.000000 )
       
       )
      
@@ -317,7 +317,7 @@
       )
      
      ELSEIF(
-       VALVE(INPUT_VALVE==10.000000)
+       VALVE(INPUT_VALVE== 1  0.000000 )
       
       )
      
@@ -338,36 +338,36 @@
      ai::MOVE(
        node(INPUT_NODE)
       
-      ofs(0.0000000.000000-13-0.000000)
+      ofs( 0.000000  0.000000  -13  -nan )
       
-      dist(0.000000)
+      dist( 18.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Open door" )
+       anim("Open door")
       
-      postwait(0.000000)
+      postwait( 0.250000 )
       
       )
      
-     VALVE(INPUT_VALVE=10.000000)
+     VALVE(INPUT_VALVE= 1  0.000000 )
      
      ai::EVENT(
        node(INPUT_NODE)
       
-      pos(0.0000000.000000-13-0.000000)
+      pos( 0.000000  0.000000  -13  -nan )
       
-      range(0.000000)
+      range( 100.000000 )
       
-      duration(0.000000)
+      duration( 0.250000 )
       
       )
      
      ai::MOVE(
-       selfpos(0.0000000.0000000.000000)
+       selfpos( 0.000000  0.000000  1.000000 )
       
-      dist(0.000000)
+      dist( 12.500000 )
       
       noblock)
      
@@ -385,11 +385,11 @@
       
       RELATIVE()
       
-      ROTATE_FROM(0.0000000.0000000.000000)
+      ROTATE_FROM( 0.000000  0.000000  0.000000 )
       
-      ROTATE_TO(0.000000-nan0.000000)
+      ROTATE_TO( 0.000000  -160.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.600000 )
       
       )
      
@@ -405,25 +405,25 @@
      ai::MOVE(
        node(INPUT_NODE)
       
-      ofs(0.0000000.000000-13-0.000000)
+      ofs( 0.000000  0.000000  -13  -nan )
       
-      dist(0.000000)
+      dist( 18.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Open door" )
+       anim("Open door")
       
-      postwait(0.000000)
+      postwait( 0.250000 )
       
       )
      
-     VALVE(INPUT_VALVE=00.000000)
+     VALVE(INPUT_VALVE= 0  0.000000 )
      
      ai::MOVE(
-       selfpos(0.0000000.0000000.000000)
+       selfpos( 0.000000  0.000000  1.000000 )
       
-      dist(0.000000)
+      dist( 10.500000 )
       
       noblock)
      
@@ -432,11 +432,11 @@
       
       RELATIVE()
       
-      ROTATE_FROM(0.0000000.0000000.000000)
+      ROTATE_FROM( 0.000000  0.000000  0.000000 )
       
-      ROTATE_TO(0.0000000.0000000.000000)
+      ROTATE_TO( 0.000000  160.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.600000 )
       
       )
      
@@ -466,7 +466,7 @@
       NAME(seq_0)
      
      IF(
-       VALVE(INPUT_VALVE==00.000000)
+       VALVE(INPUT_VALVE== 0  0.000000 )
       
       )
      
@@ -487,36 +487,36 @@
      ai::MOVE(
        node(INPUT_NODE)
       
-      ofs(0.0000000.000000-13-0.000000)
+      ofs( 0.000000  0.000000  -13  -nan )
       
-      dist(0.000000)
+      dist( 18.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Kick open door" )
+       anim("Kick open door")
       
-      postwait(0.000000)
+      postwait( 0.250000 )
       
       )
      
-     VALVE(INPUT_VALVE=10.000000)
+     VALVE(INPUT_VALVE= 1  0.000000 )
      
      ai::EVENT(
        node(INPUT_NODE)
       
-      pos(0.0000000.000000-13-0.000000)
+      pos( 0.000000  0.000000  -13  -nan )
       
-      range(0.000000)
+      range( 100.000000 )
       
-      duration(0.000000)
+      duration( 0.250000 )
       
       )
      
      ai::MOVE(
-       selfpos(0.0000000.0000000.000000)
+       selfpos( 0.000000  0.000000  1.000000 )
       
-      dist(0.000000)
+      dist( 12.500000 )
       
       noblock)
      
@@ -534,11 +534,11 @@
       
       RELATIVE()
       
-      ROTATE_FROM(0.0000000.0000000.000000)
+      ROTATE_FROM( 0.000000  0.000000  0.000000 )
       
-      ROTATE_TO(0.000000-nan0.000000)
+      ROTATE_TO( 0.000000  -170.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.500000 )
       
       )
      
@@ -547,11 +547,11 @@
       
       RELATIVE()
       
-      ROTATE_FROM(0.000000-nan0.000000)
+      ROTATE_FROM( 0.000000  -170.000000  0.000000 )
       
-      ROTATE_TO(0.000000-nan0.000000)
+      ROTATE_TO( 0.000000  -160.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 0.100000 )
       
       )
      

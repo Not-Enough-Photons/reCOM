@@ -7,7 +7,7 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      VALVE(OKValve=00.000000)
+      VALVE(OKValve= 0  0.000000 )
      
      ui::UI_COMMAND(
        TYPE(POPUPDIALOG)
@@ -21,54 +21,54 @@
       
       BACKGROUND(popupOp.tif)
       
-      POSITION(0.0000000.000000)
+      POSITION( 175.000000  230.000000 )
       
-      WIDTH(2560.000000)
+      WIDTH( 256  0.000000 )
       
-      HEIGHT(1280.000000)
+      HEIGHT( 128  0.000000 )
       
-      XOFFSET(200.000000)
+      XOFFSET( 20  0.000000 )
       
-      YOFFSET(300.000000)
+      YOFFSET( 30  0.000000 )
       
-      SCALE(0.000000)
+      SCALE( 0.400000 )
       
       YESNO(
         VALVE(OKValve)
        
        YES(
-         CAPTION("MAIN MENU" )
+         CAPTION("MAIN MENU")
         
-        POS(600.000000900.000000)
+        POS( 60  0.000000  90  0.000000 )
         
-        TEXTOFFSET(100.000000200.000000)
+        TEXTOFFSET( 10  0.000000  20  0.000000 )
         
-        WIDTH(1100.000000)
+        WIDTH( 110  0.000000 )
         
-        HEIGHT(250.000000)
+        HEIGHT( 25  0.000000 )
         
         PRESSED(
           IMAGE(brown_back.tif)
          
-         TEXT_COLOR(1000.00000000.00000000.000000)
+         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
          
          )
         
         ACTIVE(
           IMAGE(brown_back.tif)
          
-         TEXT_COLOR(2550.0000002040.000000510.000000)
+         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
          
          )
         
         NORMAL(
           IMAGE(brown_back.tif)
          
-         TEXT_COLOR(1280.0000001280.0000001280.000000)
+         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
          
          )
         
-        SCALE(0.000000)
+        SCALE( 0.350000 )
         
         )
        
@@ -77,7 +77,7 @@
       )
      
      WHILE(
-       VALVE(OKValve==00.000000)
+       VALVE(OKValve== 0  0.000000 )
       
       )
      
@@ -93,7 +93,7 @@
       
       )
      
-     VALVE(socom_online_initialized=00.000000)
+     VALVE(socom_online_initialized= 0  0.000000 )
      
      ui::UI_COMMAND(
        TYPE(NetCnfClose)

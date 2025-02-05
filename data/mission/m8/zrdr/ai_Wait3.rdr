@@ -25,12 +25,12 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
@@ -47,7 +47,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      ai::STANCE(
        stance(crouch)
@@ -57,38 +57,38 @@
      WHILE(TRUE)
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(N)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(SE)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(SW)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -101,10 +101,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -120,7 +120,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      ai::STANCE(
        stance(crouch)
@@ -130,38 +130,38 @@
      WHILE(TRUE)
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(N)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(SE)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(SW)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -182,38 +182,38 @@
      WHILE(TRUE)
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(N)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(SE)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(40.00000060.000000)
+       wait( 4  0.000000  6  0.000000 )
       
       )
      
      ai::LOOKAT(
        dir(SW)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
@@ -226,7 +226,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      ai::MACRO(
        anim(Inside_guns)
@@ -240,10 +240,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -254,10 +254,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -273,17 +273,17 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

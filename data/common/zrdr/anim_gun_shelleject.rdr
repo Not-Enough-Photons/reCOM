@@ -1,6 +1,6 @@
 ((
   ANIMATION_DEFINITIONS(
-   GRAVITY(-nan)
+   GRAVITY( -98.000000 )
   
   ANIMATION_LIST(
     ANIMATION_DEFINITION(
@@ -29,7 +29,7 @@
        
        TEST(>)
        
-       RANGE(0.000000)
+       RANGE( 100.000000 )
        
        )
       
@@ -57,7 +57,7 @@
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
@@ -72,20 +72,20 @@
       
       DO_INTERSECTIONS()
       
-      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MIN( 170.000000  50.000000  15.000000  0.000000 )
       
-      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MAX( 190.000000  70.000000  20.000000  0.000000 )
       
       INPUT_VELOCITY()
       
-      XYZ_ROTATION(0.0000000.0000000.0000000.0000000.0000000.000000)
+      XYZ_ROTATION( 0.000000  200.000000  30.000000  0.000000  0.000000  0.000000 )
       
       BOUNCE_MATERIAL(
         NAME(metal_thick)
        
        SOUND(SND_BULLET_CASING_METAL)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.350000 )
        
        )
       
@@ -94,7 +94,7 @@
        
        SOUND(SND_BULLET_CASING_METAL)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.350000 )
        
        )
       
@@ -103,7 +103,7 @@
        
        SOUND(SND_BULLET_CASING_STONE)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.250000 )
        
        )
       
@@ -112,7 +112,7 @@
        
        SOUND(SND_BULLET_CASING_STONE)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.250000 )
        
        )
       
@@ -121,7 +121,7 @@
        
        SOUND(SND_BULLET_CASING_DIRT)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.100000 )
        
        )
       
@@ -130,7 +130,7 @@
        
        SOUND(SND_BULLET_CASING_DIRT)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.150000 )
        
        )
       
@@ -139,7 +139,7 @@
        
        SOUND(SND_BULLET_CASING_SAND)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.150000 )
        
        )
       
@@ -148,7 +148,7 @@
        
        SOUND(SND_BULLET_CASING_WOOD)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.270000 )
        
        )
       
@@ -157,7 +157,7 @@
        
        SOUND(SND_BULLET_CASING_WOOD)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.270000 )
        
        )
       
@@ -166,7 +166,7 @@
        
        SOUND(SND_BULLET_CASING_METAL)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.350000 )
        
        )
       
@@ -175,11 +175,11 @@
        
        SOUND(SND_BULLET_CASING_METAL)
        
-       ELASTICITY(0.000000)
+       ELASTICITY( 0.350000 )
        
        )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 2.000000 )
       
       )
      
@@ -192,15 +192,15 @@
       
       GRAVITY()
       
-      TRANSLATION_RANGE_MIN(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MIN( 170.000000  50.000000  15.000000  0.000000 )
       
-      TRANSLATION_RANGE_MAX(0.0000000.0000000.0000000.000000)
+      TRANSLATION_RANGE_MAX( 190.000000  70.000000  20.000000  0.000000 )
       
       INPUT_VELOCITY()
       
-      XYZ_ROTATION(0.0000000.0000000.0000000.0000000.0000000.000000)
+      XYZ_ROTATION( 0.000000  200.000000  30.000000  0.000000  0.000000  0.000000 )
       
-      RUN_TIME(0.000000)
+      RUN_TIME( 1.000000 )
       
       )
      

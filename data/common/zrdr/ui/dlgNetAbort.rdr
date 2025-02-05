@@ -9,25 +9,25 @@
     
     )
    
-   FONT(myriad)
+   FONT(arialblack)
    
-   SCRIPT_LIBRARY(dlgNetBanned.rdr)
+   SCRIPT_LIBRARY(dlgNetAbort.rdr)
    
    OBJECTS((
-      NAME(banned)
+      NAME(title)
      
      TYPE(TEXT)
      
      XPOS( 320  0.000000 )
      
-     YPOS( 150  0.000000 )
+     YPOS( 100  0.000000 )
      
      SPEC(
        HCENTERED()
       
-      SCALE( 0.800000 )
+      SCALE( 1.600000 )
       
-      CAPTION("YOU HAVE BEEN KICKED FROM THIS GAME")
+      CAPTION("ABORTING MISSION.")
       
       )
      
@@ -40,34 +40,14 @@
      
      XPOS( 320  0.000000 )
      
-     YPOS( 236  0.000000 )
-     
-     SPEC(
-       HCENTERED()
-      
-      SCALE( 0.600000 )
-      
-      CAPTION("RETURNING TO BRIEFING ROOM...")
-      
-      )
-     
-     )
-    
-    (
-      NAME(title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 320  0.000000 )
-     
      YPOS( 200  0.000000 )
      
      SPEC(
        HCENTERED()
       
-      SCALE( 0.600000 )
+      SCALE( 0.900000 )
       
-      CAPTION("ABORTING MISSION")
+      CAPTION("RETURNING TO SOCOM ONLINE")
       
       )
      
@@ -119,7 +99,7 @@
       
       )
      
-     WAIT( 4.000000 )
+     WAIT( 3.000000 )
      
      CALL_ANIMATION(
        NAME(exit_lobby)

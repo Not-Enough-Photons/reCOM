@@ -23,25 +23,25 @@
     SEQUENCE_DEFINITION(
       NAME(startup)
      
-     ai::DEBUG("starting startup" )
+     ai::DEBUG("starting startup")
      
      ai::SETMODE(sleep)
      
      WHILE(
-       ai::PARAM(sleep==10.000000)
+       ai::PARAM(sleep== 1  0.000000 )
       
       )
      
      END_WHILE()
      
      WHILE(
-       !VALVE(comerunning==10.000000)
+       !VALVE(comerunning== 1  0.000000 )
       
       )
      
      END_WHILE()
      
-     ai::PARAM(aware=20.000000)
+     ai::PARAM(aware= 2  0.000000 )
      
      WHILE(TRUE)
      
@@ -52,12 +52,12 @@
     SEQUENCE_DEFINITION(
       NAME(outhouse)
      
-     ai::DEBUG("starting outhouse" )
+     ai::DEBUG("starting outhouse")
      
      WHILE(TRUE)
      
      IF(
-       VALVE(outhouse2==10.000000)
+       VALVE(outhouse2== 1  0.000000 )
       
       )
      
@@ -67,110 +67,110 @@
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::GOTO(
        node(Snow2_crap1Snow2_crap2Snow2_crap3)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       waypts)
      
      ai::SETANIMSET(
-       name("Guard_bored02 anim set" )
+       name("Guard_bored02 anim set")
       
       )
      
      IF(
-       VALVE(OutPatrol9_valve_alive==10.000000)
+       VALVE(OutPatrol9_valve_alive== 1  0.000000 )
       
       )
      
-     ai::DEBUG("OutPatrol9 alive" )
+     ai::DEBUG("OutPatrol9 alive")
      
      IF(
        ai::INRANGE(
         entity(OutPatrol9)
        
-       range(0.000000)
+       range( 50.000000 )
        
        )
       
       )
      
-     ai::DEBUG("INRANGE test passed" )
+     ai::DEBUG("INRANGE test passed")
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_68)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
-     VALVE(converse2=10.000000)
+     VALVE(converse2= 1  0.000000 )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_69)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
-     VALVE(converse2=10.000000)
+     VALVE(converse2= 1  0.000000 )
      
      ELSE()
      
      ai::SOUND(
        name(SND_VM08_70)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
-     VALVE(converse2=10.000000)
+     VALVE(converse2= 1  0.000000 )
      
      ENDIF()
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
-     VALVE(converse2=00.000000)
+     VALVE(converse2= 0  0.000000 )
      
      ENDIF()
      
      ENDIF()
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      ai::ANIMATE(
        anim(Shrug)
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
@@ -190,10 +190,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("starting on_aware0" )
+     ai::DEBUG("starting on_aware0")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -202,31 +202,31 @@
      ai::GOTO(
        node(Snow2_start)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::LOOKAT(
        dir(SE)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(10.00000020.000000)
+       wait( 1  0.000000  2  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard_warmhands anim set" )
+       name("Guard_warmhands anim set")
       
       )
      
      IF(
-       VALVE(Snow3_valve_alive==10.000000)
+       VALVE(Snow3_valve_alive== 1  0.000000 )
       
-      &&VALVE(Snow3_valve_aware==00.000000)
+      &&VALVE(Snow3_valve_aware== 0  0.000000 )
       
       )
      
@@ -234,7 +234,7 @@
        !ai::INRANGE(
         entity(Snow3)
        
-       range(0.000000)
+       range( 40.000000 )
        
        )
       
@@ -242,152 +242,152 @@
      
      END_WHILE()
      
-     VALVE(talkwait2=10.000000)
+     VALVE(talkwait2= 1  0.000000 )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_45)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
-     VALVE(converse11=10.000000)
+     VALVE(converse11= 1  0.000000 )
      
      ai::HOLD(
-       wait(70.000000)
+       wait( 7  0.000000 )
       
       )
      
      IF(
-       VALVE(converse12==10.000000)
+       VALVE(converse12== 1  0.000000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_47)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
-     VALVE(converse13=10.000000)
+     VALVE(converse13= 1  0.000000 )
      
      ENDIF()
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
-     VALVE(converse11=00.000000)
+     VALVE(converse11= 0  0.000000 )
      
-     VALVE(converse13=00.000000)
+     VALVE(converse13= 0  0.000000 )
      
-     VALVE(talkwait2=00.000000)
+     VALVE(talkwait2= 0  0.000000 )
      
      ENDIF()
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::GOTO(
        node(Snow2A)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(30.00000050.000000)
+       wait( 3  0.000000  5  0.000000 )
       
       )
      
      ai::GOTO(
        node(Snow2Out1)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::HOLD(
-       wait(30.00000050.000000)
+       wait( 3  0.000000  5  0.000000 )
       
       )
      
      ai::GOTO(
        node(Snow2Out2)
       
-      speed(0.000000)
+      speed( 0.300000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard_smoking anim set" )
+       name("Guard_smoking anim set")
       
       )
      
      ai::ANIMATE(
-       anim("Light cigarette" )
+       anim("Light cigarette")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Smoke drag01" )
+       anim("Smoke drag01")
       
-      postwait(0.000000)
+      postwait( 5.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Smoke drag03" )
+       anim("Smoke drag03")
       
-      postwait(0.000000)
+      postwait( 5.000000 )
       
       )
      
      ai::HOLD(
-       wait(50.000000)
+       wait( 5  0.000000 )
       
       )
      
      ai::ANIMATE(
-       anim("Toss cigarete" )
+       anim("Toss cigarete")
       
-      postwait(0.000000)
+      postwait( 2.000000 )
       
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::HOLD(
-       wait(30.00000050.000000)
+       wait( 3  0.000000  5  0.000000 )
       
       )
      
@@ -397,7 +397,7 @@
       blocking)
      
      ai::HOLD(
-       wait(50.000000100.000000)
+       wait( 5  0.000000  10  0.000000 )
       
       )
      
@@ -410,10 +410,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware1" )
+     ai::DEBUG("Starting on_aware1")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -429,7 +429,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware2" )
+     ai::DEBUG("Starting on_aware2")
      
      STOP_SEQUENCE(
        NAME(outhouse)
@@ -437,14 +437,14 @@
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::GOTO(
        node(Snow2_cover)
       
-      speed(0.000000)
+      speed( 0.900000 )
       
       )
      
@@ -456,11 +456,11 @@
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
-     VALVE(snow2=10.000000)
+     VALVE(snow2= 1  0.000000 )
      
      WHILE(TRUE)
      
@@ -470,7 +470,7 @@
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
@@ -480,7 +480,7 @@
       )
      
      ai::HOLD(
-       wait(50.00000070.000000)
+       wait( 5  0.000000  7  0.000000 )
       
       )
      
@@ -493,7 +493,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware3" )
+     ai::DEBUG("Starting on_aware3")
      
      STOP_SEQUENCE(
        NAME(outhouse)
@@ -501,14 +501,14 @@
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::GOTO(
        node(Snow2_cover)
       
-      speed(0.000000)
+      speed( 0.900000 )
       
       )
      
@@ -520,11 +520,11 @@
      ai::LOOKAT(
        dir(W)
       
-      wait(0.000000)
+      wait( 2.000000 )
       
       )
      
-     VALVE(snow2=10.000000)
+     VALVE(snow2= 1  0.000000 )
      
      WHILE(TRUE)
      
@@ -534,7 +534,7 @@
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
@@ -544,7 +544,7 @@
       )
      
      ai::HOLD(
-       wait(50.00000070.000000)
+       wait( 5  0.000000  7  0.000000 )
       
       )
      
@@ -557,7 +557,7 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_aware4" )
+     ai::DEBUG("Starting on_aware4")
      
      STOP_SEQUENCE(
        NAME(outhouse)
@@ -565,12 +565,12 @@
       )
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      IF(
-       VALVE(snow2==00.000000)
+       VALVE(snow2== 0  0.000000 )
       
       )
      
@@ -585,7 +585,7 @@
       blocking)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -595,12 +595,12 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -610,7 +610,7 @@
       )
      
      ai::PURSUE(
-       duration(0.000000)
+       duration( 15.000000 )
       
       )
      
@@ -643,7 +643,7 @@
       )
      
      ai::HOLD(
-       wait(20.000000)
+       wait( 2  0.000000 )
       
       )
      
@@ -653,7 +653,7 @@
       )
      
      ai::HOLD(
-       wait(50.00000070.000000)
+       wait( 5  0.000000  7  0.000000 )
       
       )
      
@@ -668,10 +668,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_lowhealth" )
+     ai::DEBUG("Starting on_lowhealth")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -682,10 +682,10 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_noammo" )
+     ai::DEBUG("Starting on_noammo")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
@@ -701,17 +701,17 @@
      
      ACTIVATION(ON_CALL)
      
-     ai::DEBUG("Starting on_corpse" )
+     ai::DEBUG("Starting on_corpse")
      
      ai::SETANIMSET(
-       name("Guard anim set" )
+       name("Guard anim set")
       
       )
      
      ai::ANIMATE(
        anim(Kicklow)
       
-      postwait(0.000000)
+      postwait( 1.000000 )
       
       )
      

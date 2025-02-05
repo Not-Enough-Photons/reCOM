@@ -1,6 +1,6 @@
 ((
   ANIMATION_DEFINITIONS(
-   GRAVITY(-nan)
+   GRAVITY( -98.000000 )
   
   ANIMATION_LIST(
     ANIMATION_DEFINITION(
@@ -14,9 +14,9 @@
       
       )
      
-     VALVE(windblowing=10.000000)
+     VALVE(windblowing= 1  0.000000 )
      
-     WAIT(80.000000)
+     WAIT( 8  0.000000 )
      
      WHILE(TRUE)
      
@@ -26,7 +26,7 @@
       )
      
      IF(
-       VALVE(windblowing==10.000000)
+       VALVE(windblowing== 1  0.000000 )
       
       )
      
@@ -40,14 +40,14 @@
       
       )
      
-     VALVE(windblowing=00.000000)
+     VALVE(windblowing= 0  0.000000 )
      
      ENDIF()
      
      ELSE()
      
      IF(
-       VALVE(windblowing==00.000000)
+       VALVE(windblowing== 0  0.000000 )
       
       )
      
@@ -61,7 +61,7 @@
       
       )
      
-     VALVE(windblowing=10.000000)
+     VALVE(windblowing= 1  0.000000 )
      
      ENDIF()
      

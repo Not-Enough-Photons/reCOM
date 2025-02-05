@@ -44,7 +44,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
         {
             if (_NeedQuotes(reader))
             {
-                fprintf_s(out, "\"%s\" ", reader->string);
+                fprintf_s(out, "\"%s\"", reader->string);
                 return true;
             }
 
@@ -59,10 +59,10 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
                 return true;
             }
 			
-            fprintf_s(out, "%d", reader->integer);
+            fprintf_s(out, " %i ", reader->integer);
         }
 
-        fprintf_s(out, "%f", (s64)reader->real);
+        fprintf_s(out, " %f ", reader->real);
         return true;
     }
 

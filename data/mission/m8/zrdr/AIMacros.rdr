@@ -12,38 +12,38 @@
       NAME(seq_70)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.700000 )
       
       )
      
-     ai::DEBUG("choosing rifle" )
+     ai::DEBUG("choosing rifle")
      
      ai::FIREMODE(
-       weapon(00.000000)
+       weapon( 0  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  2.000000 )
       
       )
      
-     ai::DEBUG("completed firemode" )
+     ai::DEBUG("completed firemode")
      
      ELSE()
      
-     ai::DEBUG("choosing grenade" )
+     ai::DEBUG("choosing grenade")
      
      ai::FIREMODE(
-       weapon(10.000000)
+       weapon( 1  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  10.000000 )
       
       )
      
-     WAIT(0.000000)
+     WAIT( 5.000000 )
      
      ai::FIREMODE(
-       weapon(00.000000)
+       weapon( 0  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  2.000000 )
       
       )
      
@@ -68,41 +68,41 @@
       NAME(seq_100)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
-     ai::DEBUG("choosing rifle" )
+     ai::DEBUG("choosing rifle")
      
      ai::FIREMODE(
-       weapon(00.000000)
+       weapon( 0  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  2.000000 )
       
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.200000 )
       
       )
      
-     ai::DEBUG("choosing rifle/burst" )
+     ai::DEBUG("choosing rifle/burst")
      
      ai::FIREMODE(
-       weapon(00.000000)
+       weapon( 0  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  2.000000 )
       
       burst)
      
      ELSE()
      
-     ai::DEBUG("choosing rifle" )
+     ai::DEBUG("choosing rifle")
      
      ai::FIREMODE(
-       weapon(00.000000)
+       weapon( 0  0.000000 )
       
-      trigger(0.0000000.000000)
+      trigger( 0.200000  1.000000 )
       
       )
      
@@ -124,17 +124,17 @@
     SEQUENCE_DEFINITION(
       NAME(shout)
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_07)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -143,7 +143,7 @@
      ai::SOUND(
        name(SND_VM08_08)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -165,17 +165,17 @@
     SEQUENCE_DEFINITION(
       NAME(shout2)
      
-     WAIT(0.000000)
+     WAIT( 1.000000 )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_27)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -184,7 +184,7 @@
      ai::SOUND(
        name(SND_VM08_28)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -209,16 +209,16 @@
      ai::EVENT(
        type(VOICE)
       
-      pos(00.00000000.00000000.000000)
+      pos( 0  0.000000  0  0.000000  0  0.000000 )
       
-      duration(0.000000)
+      duration( 1.000000 )
       
-      range(0.000000)
+      range( 70.000000 )
       
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -255,16 +255,16 @@
      ai::EVENT(
        type(VOICE)
       
-      pos(00.00000000.00000000.000000)
+      pos( 0  0.000000  0  0.000000  0  0.000000 )
       
-      duration(0.000000)
+      duration( 1.000000 )
       
-      range(0.000000)
+      range( 70.000000 )
       
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -301,16 +301,16 @@
      ai::EVENT(
        type(VOICE)
       
-      pos(00.00000000.00000000.000000)
+      pos( 0  0.000000  0  0.000000  0  0.000000 )
       
-      duration(0.000000)
+      duration( 1.000000 )
       
-      range(0.000000)
+      range( 70.000000 )
       
       )
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
@@ -345,14 +345,14 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_29)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -361,7 +361,7 @@
      ai::SOUND(
        name(SND_VM08_26)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -384,14 +384,14 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_64)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -400,7 +400,7 @@
      ai::SOUND(
        name(SND_VM08_65)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -423,26 +423,26 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_02)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_64)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -451,7 +451,7 @@
      ai::SOUND(
        name(SND_VM08_65)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -474,14 +474,14 @@
       NAME(banter2)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_64)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -490,7 +490,7 @@
      ai::SOUND(
        name(SND_VM08_65)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -513,14 +513,14 @@
       NAME(banter3)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_30)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -529,7 +529,7 @@
      ai::SOUND(
        name(SND_VM08_65)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -552,26 +552,26 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_20)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_21)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -580,7 +580,7 @@
      ai::SOUND(
        name(SND_VM08_22)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -603,26 +603,26 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.300000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_20)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_21)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -631,7 +631,7 @@
      ai::SOUND(
        name(SND_VM08_22)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -654,14 +654,14 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_02)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -670,7 +670,7 @@
      ai::SOUND(
        name(SND_VM08_03)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -693,14 +693,14 @@
       NAME(banter)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.500000 )
       
       )
      
      ai::SOUND(
        name(SND_VM08_24)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -709,7 +709,7 @@
      ai::SOUND(
        name(SND_VM08_25)
       
-      aware(10.000000)
+      aware( 1  0.000000 )
       
       )
      
@@ -732,7 +732,7 @@
       NAME(yell)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -742,7 +742,7 @@
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -777,7 +777,7 @@
       NAME(yell)
      
      IF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      
@@ -787,7 +787,7 @@
       )
      
      ELSEIF(
-       RANDOM_WEIGHT(0.000000)
+       RANDOM_WEIGHT( 0.400000 )
       
       )
      

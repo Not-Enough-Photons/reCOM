@@ -9,14 +9,14 @@
     ACTIVATION(ON_CALL)
     
     SEQUENCE_DEFINITION(
-      WAIT(50.000000)
+      WAIT( 5  0.000000 )
      
      CALL_SEQUENCE(
        NAME(camseq)
       
       )
      
-     WAIT(0.000000)
+     WAIT( 6.667000 )
      
      CALL_SEQUENCE(
        NAME(gosnomo)
@@ -39,7 +39,7 @@
      OBJECT_MOTION_SI_SCRIPT(
        NAME(GLOBALcamera)
       
-      SCRIPT_FRAME_RATE(200.000000)
+      SCRIPT_FRAME_RATE( 20  0.000000 )
       
       SCRIPT_FILENAME(data/m8/zrdr/envmodels/snomocam1.zan)
       
@@ -78,7 +78,7 @@
      OBJECT_MOTION_SI_SCRIPT(
        ALL_NAMES()
       
-      SCRIPT_FRAME_RATE(0.000000)
+      SCRIPT_FRAME_RATE( 90.000000 )
       
       SCRIPT_FILENAME(data/m8/zrdr/envmodels/snomo2.zan)
       
@@ -91,7 +91,7 @@
       
       )
      
-     WAIT(20.000000)
+     WAIT( 2  0.000000 )
      
      )
     
@@ -100,7 +100,7 @@
      
      ACTIVATION(ON_CALL)
      
-     WAIT(0.000000)
+     WAIT( 0.500000 )
      
      CALL_ANIMATION(
        NAME(Snowrider1)
@@ -134,7 +134,7 @@
      OBJECT_MOTION_SI_SCRIPT(
        ALL_NAMES()
       
-      SCRIPT_FRAME_RATE(0.000000)
+      SCRIPT_FRAME_RATE( 90.000000 )
       
       SCRIPT_FILENAME(data/m8/zrdr/envmodels/snomo1.zan)
       
@@ -169,7 +169,7 @@
      OBJECT_MOTION_SI_SCRIPT(
        ALL_NAMES()
       
-      SCRIPT_FRAME_RATE(0.000000)
+      SCRIPT_FRAME_RATE( 90.000000 )
       
       SCRIPT_FILENAME(data/m8/zrdr/envmodels/snowrider2.zan)
       
@@ -204,7 +204,7 @@
      OBJECT_MOTION_SI_SCRIPT(
        ALL_NAMES()
       
-      SCRIPT_FRAME_RATE(0.000000)
+      SCRIPT_FRAME_RATE( 90.000000 )
       
       SCRIPT_FILENAME(data/m8/zrdr/envmodels/snowrider1.zan)
       

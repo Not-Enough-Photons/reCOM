@@ -35,11 +35,11 @@
       OBJECT_OPACITY_FROM_TO(
         NAME(MENUMENUFADER)
        
-       RUN_TIME(0.000000)
+       RUN_TIME( 0.500000 )
        
-       OPACITY_FROM(0.000000)
+       OPACITY_FROM( 0.000000 )
        
-       OPACITY_TO(0.000000)
+       OPACITY_TO( 0.990000 )
        
        )
       
@@ -56,7 +56,7 @@
       ACTIVATION(ON_CALL)
       
       IF(
-        VALVE(uiDocChapter==10.000000)
+        VALVE(uiDocChapter== 1  0.000000 )
        
        )
       
@@ -68,7 +68,7 @@
        )
       
       ELSEIF(
-        VALVE(uiDocChapter==20.000000)
+        VALVE(uiDocChapter== 2  0.000000 )
        
        )
       
@@ -80,7 +80,7 @@
        )
       
       ELSEIF(
-        VALVE(uiDocChapter==30.000000)
+        VALVE(uiDocChapter== 3  0.000000 )
        
        )
       
@@ -92,7 +92,7 @@
        )
       
       ELSEIF(
-        VALVE(uiDocChapter==40.000000)
+        VALVE(uiDocChapter== 4  0.000000 )
        
        )
       
@@ -104,7 +104,7 @@
        )
       
       ELSEIF(
-        VALVE(uiDocChapter==50.000000)
+        VALVE(uiDocChapter== 5  0.000000 )
        
        )
       
@@ -116,7 +116,7 @@
        )
       
       ELSEIF(
-        VALVE(uiDocChapter==60.000000)
+        VALVE(uiDocChapter== 6  0.000000 )
        
        )
       
@@ -129,7 +129,7 @@
       
       ENDIF()
       
-      WAIT(0.000000)
+      WAIT( 0.300000 )
       
       ui::UI_COMMAND(
         TYPE(SWITCHMENU)
