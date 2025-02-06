@@ -1,10 +1,10 @@
 #include "zgame.h"
 
+#include <SDL3/SDL_time.h>
+
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zIMGUI/zimgui.h"
 #include "gamez/zVideo/zvid.h"
-#include "SDL3/SDL_time.h"
-#include "SDL3/SDL_timer.h"
 
 char* GetDatabase();
 
@@ -44,7 +44,7 @@ bool COurGame::StartEngine()
 		zVid_Swap(true);
 		zdb::CTexManager::m_texmanager->doAddBuffer("default", 0.0f, 0.0f);
 		
-		theMission.Init();
+		// theMission.Init();
 		
 		SDL_Time ticks;
 		srand(SDL_GetCurrentTime(&ticks));
@@ -57,7 +57,7 @@ bool COurGame::StartEngine()
 
 			if (dblen != 0)
 			{
-				theMission.PreOpen(db);
+				// theMission.PreOpen(db);
 			}
 		}
 	}

@@ -584,6 +584,49 @@ namespace zar
 		return false;
 	}
 
+	bool CZAR::ReOpen_V2(s32 appver, s32 mode)
+	{
+		if (m_pFileAlloc == NULL)
+		{
+			return false;
+		}
+		
+		if (m_pFileAlloc->IsOpen())
+		{
+			char* name = m_filename;
+
+			if (name)
+			{
+				if (!m_pFileAlloc)
+				{
+					m_pFileAlloc = new CFileIO();
+					m_pFile = new CBufferIO();
+				}
+
+				if (m_pFileAlloc->Open(name))
+				{
+					SetFilename(name);
+					m_data_padded = 16;
+
+					if (ReadDirectory_V2(appver, mode))
+					{
+						m_tail.appversion = appver;
+					}
+					else
+					{
+						Close();
+					}
+				}
+			}
+		}
+		else
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	void CZAR::CloseKey(CKey* key)
 	{
 		if (key != NULL && !m_keys.empty())
@@ -713,7 +756,7 @@ namespace zar
 		return newKey;
 	}
 
-	bool CZAR::	ReadDirectory(s32 appver, u32 mode)
+	bool CZAR::ReadDirectory(s32 appver, u32 mode)
 	{
 		bool success = false;
 
@@ -726,7 +769,6 @@ namespace zar
 		{
 			return false;
 		}
-		
 
 		size_t position = m_pFileAlloc->fseek(-96, SEEK_END);
 		size_t size = 0;
@@ -740,7 +782,7 @@ namespace zar
 			return false;
 		}
 
-		if (size == sizeof(TAIL) && m_tail.version == 0x20001)
+		if (size == sizeof(TAIL) && m_tail.version == ZAR_VERSION_1)
 		{
 			position = m_pFileAlloc->fseek(m_tail.offset, SEEK_SET);
 
@@ -806,6 +848,118 @@ namespace zar
 		else
 		{
 			success = false;
+		}
+
+		return success;
+	}
+
+	bool CZAR::ReadDirectory_V2(s32 appver, u32 mode)
+	{
+		s32 alignment = 0;
+		s32 key_ofs = 0;
+		
+		bool success = false;
+
+		if (m_pFileAlloc == NULL)
+		{
+			return false;
+		}
+
+		if (!m_pFileAlloc->IsOpen())
+		{
+			return false;
+		}
+
+		size_t position = m_pFileAlloc->fseek(0, SEEK_SET);
+		size_t size = 0;
+
+		if (position != -1)
+		{
+			size = m_pFileAlloc->fread(&m_head, sizeof(HEAD));
+		}
+		else if (position == -1)
+		{
+			return false;
+		}
+
+		Unsecurify(&m_head, sizeof(HEAD));
+		
+		if (size == sizeof(HEAD) && m_head.version == ZAR_VERSION_2)
+		{
+			s32 stable_size = m_head.stable_size;
+			void* stable_ptr = malloc(stable_size);
+
+			m_pFileAlloc->fread(stable_ptr, stable_size);
+
+			Unsecurify(stable_ptr, stable_size);
+
+			m_stable->Destroy();
+			m_stable->LoadTable(stable_ptr, stable_size, true);
+
+			s32 ofs = m_head.stable_ofs;
+			m_key_buffer.clear();
+			m_key_buffer.reserve(m_head.key_count);
+
+			CKey* root_key = m_root;
+			root_key->erase(root_key->begin(), root_key->end());
+
+			CBufferIO bufferIO;
+
+			size_t key_size = (s64)m_head.key_count * 16;
+			void* key_ptr = malloc(key_size);
+
+			m_pFileAlloc->fread(key_ptr, key_size);
+			Unsecurify(key_ptr, key_size);
+
+			bufferIO.Open(key_ptr, key_size);
+
+			success = m_root->Read(this, &bufferIO, (s64)stable_ptr - ofs);
+			bufferIO.Close();
+
+			alignment = m_head.alignment;
+			key_ofs = key_size + stable_size + sizeof(HEAD);
+			s32 calc_alignment = key_ofs % alignment;
+
+			if (calc_alignment == 0)
+			{
+				alignment = 0;
+			}
+			else
+			{
+				alignment = alignment - calc_alignment;
+			}
+
+			m_pFileAlloc->fseek(alignment, SEEK_CUR);
+			
+			m_databuffer_size = m_head.offset;
+			size = m_databuffer_size;
+			
+			if (size != 0)
+			{
+				m_databuffer = malloc(size);
+				m_rootOffset = alignment + key_ofs;
+				m_pFileAlloc->fread(m_databuffer, m_databuffer_size);
+				Unsecurify(m_databuffer, m_databuffer_size);
+			
+				if (m_pFileAlloc != NULL)
+				{
+					m_pFileAlloc->Close();
+					delete m_pFileAlloc;
+			
+					m_pFile = NULL;
+					m_pFileAlloc = NULL;
+			
+					m_pFileAlloc = new CFileIO();
+					m_pFile = new CBufferIO();
+			
+					m_pFile->Open(m_databuffer, m_databuffer_size);
+					m_rootOffset = 0;
+				}
+			}
+		}
+		else
+		{
+			m_rootOffset = alignment + key_ofs;
 		}
 
 		return success;

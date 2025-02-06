@@ -61,8 +61,11 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 			
             fprintf_s(out, " %i ", reader->integer);
         }
+        else
+        {
+            fprintf_s(out, " %f ", reader->real);
+        }
 
-        fprintf_s(out, " %f ", reader->real);
         return true;
     }
 

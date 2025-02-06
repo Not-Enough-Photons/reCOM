@@ -6,6 +6,9 @@
 #include "gamez/zutil/util_stable.h"
 #include "gamez/zutil/util_systemio.h"
 
+#define ZAR_VERSION_1 0x20001
+#define ZAR_VERSION_2 0x20002
+
 #define ZAR_SECURE(secure, buf, size)\
 	int line = 0; \
 	if (secure && 0 < size)\
@@ -45,6 +48,20 @@ namespace zar
 	class CKeyVec : public std::vector<CKey*> {};
 	class CKeyRing : public std::list<CKey*> {};
 
+	struct HEAD
+	{
+		s32 flags;
+		s32 key_count;
+		s32 stable_size;
+		s32 stable_ofs;
+		s32 alignment;
+		s32 reserved[16];
+		s32 offset;
+		s32 crc;
+		s32 appversion;
+		s32 version;
+	};
+	
 	struct TAIL
 	{
 		s32 flags;
@@ -135,6 +152,14 @@ namespace zar
 		/// <returns>Whether or not the operation was successful.</returns>
 		bool ReOpen(s32 appver, s32 mode);
 
+		/// <summary>
+		/// Re-opens a previously closed ZAR file. Will read ZAR version 2.
+		/// </summary>
+		/// <param name="count"> - The size of the archive.</param>
+		/// <param name="mode"> - The read mode.</param>
+		/// <returns>Whether or not the operation was successful.</returns>
+		bool ReOpen_V2(s32 appver, s32 mode);
+
 		CKey* CreateKey(const char* name);
 
 		/// <summary>
@@ -177,6 +202,7 @@ namespace zar
 		CKey* Insert(const char* name, s32 value);
 
 		bool ReadDirectory(int appver, u32 mode);
+		bool ReadDirectory_V2(s32 appver, u32 mode);
 		bool WriteDirectory() { return false; }
 
 		void SetFilename(const char* name);
@@ -253,6 +279,8 @@ namespace zar
 
 		bool FetchLIP(CKey* key, void** buf);
 
+		bool Fetch_V2(CKey* key, void* buf, size_t size);
+		
 		size_t FetchString(const char* name, char* buf, size_t length);
 
 		CKey* GetOpenKey() const;
@@ -274,6 +302,9 @@ namespace zar
 		bool m_modified;
 		bool m_data_padded;
 
+		s32 m_rootOffset;
+		
+		HEAD m_head;
 		TAIL m_tail;
 
 		CKey* m_root;
