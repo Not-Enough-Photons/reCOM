@@ -7,7 +7,7 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 
 # ROM Information
 - Name: **SCUS_972.05**
-- Build Date: **March 19th, 2002**
+- Build Date: **May 13th, 2002 at 9:10:36 AM PST**
 - sha256: **00c9cee7f75b921fda1e848d04f64881b5a0b7841300591cac91371bb23d4f8a**
 - Compiler: **Metrowerks MIPS C Compiler v2.4.1.01**
 
