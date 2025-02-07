@@ -1,561 +1,561 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/ui2d)
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
   
-  BACKGROUND(
-    TYPE(IMAGE)
+   BACKGROUND (
+     TYPE ( IMAGE )
    
-   FILENAME(multplay_back.tif)
+    FILENAME ( multplay_back.tif )
    
    )
   
-  FONT(myriad)
+   FONT ( myriad )
   
-  SCRIPT_LIBRARY(dlgControllerSelection.rdr)
+   SCRIPT_LIBRARY ( dlgControllerSelection.rdr )
   
-  OBJECTS((
-     NAME(letterbar_bottom)
+   OBJECTS ((
+      NAME ( letterbar_bottom )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 384  0.000000 )
+     YPOS ( 384 )
     
-    SPEC(
-      FILENAME(common_bar_bottom.tif)
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
      
-     SIZE( 640  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(dogtags)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 360  0.000000 )
-    
-    YPOS( 320  0.000000 )
-    
-    SPEC(
-      FILENAME(dogtags.tif)
-     
-     SIZE( 256  0.000000  128  0.000000 )
+      SIZE ( 640  64 )
      
      )
     
     )
    
    (
-     NAME(letterbar)
+      NAME ( dogtags )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 360 )
     
-    YPOS( 0  0.000000 )
+     YPOS ( 320 )
     
-    SPEC(
-      FILENAME(blank_top_bar.tif)
+     SPEC (
+       FILENAME ( dogtags.tif )
      
-     XSIZE( 640  0.000000 )
-     
-     YSIZE( 64  0.000000 )
+      SIZE ( 256  128 )
      
      )
     
     )
    
    (
-     NAME(bar_title)
+      NAME ( letterbar )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 20  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 50  0.000000 )
+     YPOS ( 0 )
     
-    SPEC(
-      FONT(Gothic_13)
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
      
-     CHILDOF(letterbar)
+      XSIZE ( 640 )
      
-     CAPTION("CONTROLLER OPTIONS")
-     
-     SCALE( 0.950000 )
+      YSIZE ( 64 )
      
      )
     
     )
    
    (
-     NAME(InfoWin)
+      NAME ( bar_title )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 25  0.000000 )
+     XPOS ( 20 )
     
-    YPOS( 77  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      FILENAME(brown_back_50.tif)
+     SPEC (
+       FONT ( Gothic_13 )
      
-     SIZE( 580  0.000000  18  0.000000 )
+      CHILDOF ( letterbar )
      
-     )
-    
-    )
-   
-   (
-     NAME(TabDivHorTop)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 22  0.000000 )
-    
-    YPOS( 90  0.000000 )
-    
-    SPEC(
-      XSIZE( 590  0.000000 )
+      CAPTION ( "CONTROLLER OPTIONS" )
      
-     YSIZE( 10  0.000000 )
-     
-     FILENAME(Tab_HorGold_Divider.tif)
+      SCALE ( 0.950000 )
      
      )
     
     )
    
    (
-     NAME(instText)
+      NAME ( InfoWin )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 310  0.000000 )
+     XPOS ( 25 )
     
-    YPOS( 90  0.000000 )
+     YPOS ( 77 )
     
-    SPEC(
-      HCENTERED()
+     SPEC (
+       FILENAME ( brown_back_50.tif )
      
-     COLOR( 255.000000  104.000000  51.000000 )
-     
-     SCALE( 0.400000 )
-     
-     CAPTION("ENABLE OR DISABLE CONTROLLER VIBRATION")
+      SIZE ( 580  18 )
      
      )
     
     )
    
-   )
-  
-  ANIMATIONS((
-     EVENT(ONSTART)
+   (
+      NAME ( TabDivHorTop )
     
-    ANIMATION(bottom_bar_slide_up)
+     TYPE ( IMAGE )
+    
+     XPOS ( 22 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       XSIZE ( 590 )
+     
+      YSIZE ( 10 )
+     
+      FILENAME ( Tab_HorGold_Divider.tif )
+     
+     )
     
     )
    
    (
-     BUTTON(TRIANGLE)
+      NAME ( instText )
     
-    ANIMATION(goto_menu)
+     TYPE ( TEXT )
     
-    ARGUMENT(dlgOptions_Menu.rdr)
+     XPOS ( 310 )
     
-    )
-   
-   (
-     EVENT(ONSTART)
+     YPOS ( 90 )
     
-    ANIMATION(Initialize_Controller_Options_Stuff)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(letterbar_slide_down)
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "ENABLE OR DISABLE CONTROLLER VIBRATION" )
+     
+     )
     
     )
    
    )
   
-  CONTROLS((
-     NAME(MainWindow)
+   ANIMATIONS ((
+      EVENT ( ONSTART )
     
-    TYPE(IMAGE)
+     ANIMATION ( bottom_bar_slide_up )
     
-    XPOS( 15  0.000000 )
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
     
-    YPOS( 70  0.000000 )
+     ANIMATION ( goto_menu )
     
-    SPEC(
-      XSIZE( 600  0.000000 )
+     ARGUMENT ( dlgOptions_Menu.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Initialize_Controller_Options_Stuff )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( MainWindow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 70 )
+    
+     SPEC (
+       XSIZE ( 600 )
      
-     YSIZE( 300  0.000000 )
+      YSIZE ( 300 )
      
-     FILENAME(eq_CharWinInv.tif)
+      FILENAME ( eq_CharWinInv.tif )
      
      )
     
     )
    
    (
-     NAME(SPassBack)
+      NAME ( SPassBack )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 210  0.000000 )
+     YPOS ( 210 )
     
-    SPEC(
-      XSIZE( 155  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(brown_back.tif)
-     
-     )
-    
-    )
-   
-   (
-     NAME(SPassBack2)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 240  0.000000 )
-    
-    SPEC(
-      XSIZE( 155  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     FILENAME(brown_back.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(SPassBack3)
+      NAME ( SPassBack2 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 270  0.000000 )
+     YPOS ( 240 )
     
-    SPEC(
-      XSIZE( 155  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(brown_back.tif)
-     
-     )
-    
-    )
-   
-   (
-     NAME(SPassBackSel)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 210  0.000000 )
-    
-    SPEC(
-      XSIZE( 155  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     FILENAME(brown_back_real.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(SPassBackSel2)
+      NAME ( SPassBack3 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 240  0.000000 )
+     YPOS ( 270 )
     
-    SPEC(
-      XSIZE( 155  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(brown_back_real.tif)
-     
-     )
-    
-    )
-   
-   (
-     NAME(SPassBackSel3)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 270  0.000000 )
-    
-    SPEC(
-      XSIZE( 155  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     FILENAME(brown_back_real.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(sensitivityslider)
+      NAME ( SPassBackSel )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 190  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 217  0.000000 )
+     YPOS ( 210 )
     
-    SPEC(
-      XSIZE( 336  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 16  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(op_slider.tif)
-     
-     )
-    
-    )
-   
-   (
-     NAME(accelerationslider)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 190  0.000000 )
-    
-    YPOS( 248  0.000000 )
-    
-    SPEC(
-      XSIZE( 336  0.000000 )
-     
-     YSIZE( 16  0.000000 )
-     
-     FILENAME(op_slider.tif)
+      FILENAME ( brown_back_real.tif )
      
      )
     
     )
    
    (
-     NAME(deadzoneslider)
+      NAME ( SPassBackSel2 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 190  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 277  0.000000 )
+     YPOS ( 240 )
     
-    SPEC(
-      XSIZE( 336  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 16  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(op_slider.tif)
+      FILENAME ( brown_back_real.tif )
      
      )
     
     )
    
    (
-     NAME(Vibration)
+      NAME ( SPassBackSel3 )
     
-    TYPE(RADIOSTRIP)
+     TYPE ( IMAGE )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 120  0.000000 )
+     YPOS ( 270 )
     
-    SPEC(
-      XSIZE( 155  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     CAPTION(VIBRATION)
+      FILENAME ( brown_back_real.tif )
      
-     SCALE( 0.400000 )
+     )
+    
+    )
+   
+   (
+      NAME ( sensitivityslider )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 190 )
+    
+     YPOS ( 217 )
+    
+     SPEC (
+       XSIZE ( 336 )
      
-     XOFFSET( 10  0.000000 )
+      YSIZE ( 16 )
      
-     YOFFSET( 20  0.000000 )
+      FILENAME ( op_slider.tif )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+     )
+    
+    )
+   
+   (
+      NAME ( accelerationslider )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 190 )
+    
+     YPOS ( 248 )
+    
+     SPEC (
+       XSIZE ( 336 )
+     
+      YSIZE ( 16 )
+     
+      FILENAME ( op_slider.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( deadzoneslider )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 190 )
+    
+     YPOS ( 277 )
+    
+     SPEC (
+       XSIZE ( 336 )
+     
+      YSIZE ( 16 )
+     
+      FILENAME ( op_slider.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Vibration )
+    
+     TYPE ( RADIOSTRIP )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 120 )
+    
+     SPEC (
+       XSIZE ( 155 )
+     
+      YSIZE ( 30 )
+     
+      CAPTION ( VIBRATION )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 20 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     SUBORDINATES((
-        NAME(Viboff)
+      SUBORDINATES ((
+         NAME ( Viboff )
        
-       XPOS( 180  0.000000 )
+        XPOS ( 180 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(Vibration)
+        SPEC (
+          CHILDOF ( Vibration )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(disable_vibration)
+          ANIMATION ( disable_vibration )
          
          )
         
-        CAPTION(OFF)
+         CAPTION ( OFF )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(Vibon)
+         NAME ( Vibon )
        
-       XPOS( 285  0.000000 )
+        XPOS ( 285 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(Vibration)
+        SPEC (
+          CHILDOF ( Vibration )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(enable_vibration)
+          ANIMATION ( enable_vibration )
          
          )
         
-        CAPTION(ON)
+         CAPTION ( ON )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnVibAct)
+           ANIMATION ( OnVibAct )
           
           )
          
@@ -572,481 +572,181 @@
     )
    
    (
-     NAME(invert_pitch)
+      NAME ( invert_pitch )
     
-    TYPE(RADIOSTRIP)
+     TYPE ( RADIOSTRIP )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 150  0.000000 )
+     YPOS ( 150 )
     
-    SPEC(
-      XSIZE( 155  0.000000 )
+     SPEC (
+       XSIZE ( 155 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     CAPTION(PITCH)
+      CAPTION ( PITCH )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 20  0.000000 )
+      YOFFSET ( 20 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     SUBORDINATES((
-        NAME(Invert_On)
+      SUBORDINATES ((
+         NAME ( Invert_On )
        
-       XPOS( 180  0.000000 )
+        XPOS ( 180 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(invert_pitch)
+        SPEC (
+          CHILDOF ( invert_pitch )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(enable_inverted_pitch)
+          ANIMATION ( enable_inverted_pitch )
          
          )
         
-        CAPTION(INVERT)
+         CAPTION ( INVERT )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(Invert_Off)
+         NAME ( Invert_Off )
        
-       XPOS( 285  0.000000 )
+        XPOS ( 285 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(invert_pitch)
+        SPEC (
+          CHILDOF ( invert_pitch )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(disable_inverted_pitch)
-         
-         )
-        
-        CAPTION(NORMAL)
-        
-        SCALE( 0.400000 )
-        
-        XOFFSET( 35  0.000000 )
-        
-        YOFFSET( 25  0.000000 )
-        
-        PRESSED(op_checkbox.tif)
-        
-        NORMAL(op_checkbox.tif)
-        
-        ACTIVE(op_checkbox.tif)
-        
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-        
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-        
-        ACTIVE_COLOR(
-           255.000000  104.000000  51.000000 RANGE( 0.500000  1.000000 )
-         
-         TIME( 0.750000 )
+          ANIMATION ( disable_inverted_pitch )
          
          )
         
-        XSIZE( 35  0.000000 )
+         CAPTION ( NORMAL )
         
-        YSIZE( 35  0.000000 )
+         SCALE ( 0.400000 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         XOFFSET ( 35 )
+        
+         YOFFSET ( 25 )
+        
+         PRESSED ( op_checkbox.tif )
+        
+         NORMAL ( op_checkbox.tif )
+        
+         ACTIVE ( op_checkbox.tif )
+        
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+        
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+        
+         ACTIVE_COLOR (
+           255.000000  104.000000  51.000000  RANGE ( 0.500000  1.000000 )
+         
+          TIME ( 0.750000 )
+         
+         )
+        
+         XSIZE ( 35 )
+        
+         YSIZE ( 35 )
+        
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnInvOffAct)
-          
-          )
-         
-         )
-        
-        )
-       
-       )
-      
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(stick_presets)
-    
-    TYPE(RADIOSTRIP)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    SPEC(
-      XSIZE( 155  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     CAPTION(PRESETS)
-     
-     SCALE( 0.400000 )
-     
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 20  0.000000 )
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     SUBORDINATES((
-        NAME(Custom)
-       
-       XPOS( 460  0.000000 )
-       
-       YPOS( 0  0.000000 )
-       
-       TYPE(CHECKBOX)
-       
-       SPEC(
-         CHILDOF(stick_presets)
-        
-        CHECK_X( 7  0.000000 )
-        
-        CHECK_Y( 7  0.000000 )
-        
-        CHECKSIZE_X( 25  0.000000 )
-        
-        CHECKSIZE_Y( 25  0.000000 )
-        
-        CHECK_TEXTURE(op_check.tif)
-        
-        ONCHECK(
-          BUTTON(NONE)
-         
-         ANIMATION(StickPresetCustom)
-         
-         )
-        
-        CAPTION(CUSTOM)
-        
-        SCALE( 0.400000 )
-        
-        XOFFSET( 35  0.000000 )
-        
-        YOFFSET( 25  0.000000 )
-        
-        PRESSED(op_checkbox.tif)
-        
-        NORMAL(op_checkbox.tif)
-        
-        ACTIVE(op_checkbox.tif)
-        
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-        
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-        
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-        
-        XSIZE( 35  0.000000 )
-        
-        YSIZE( 35  0.000000 )
-        
-        )
-       
-       )
-      
-      (
-        NAME(Trainee)
-       
-       XPOS( 180  0.000000 )
-       
-       YPOS( 0  0.000000 )
-       
-       TYPE(CHECKBOX)
-       
-       SPEC(
-         CHILDOF(stick_presets)
-        
-        CHECK_X( 7  0.000000 )
-        
-        CHECK_Y( 7  0.000000 )
-        
-        CHECKSIZE_X( 25  0.000000 )
-        
-        CHECKSIZE_Y( 25  0.000000 )
-        
-        CHECK_TEXTURE(op_check.tif)
-        
-        ONCHECK(
-          BUTTON(NONE)
-         
-         ANIMATION(StickPresetTrainee)
-         
-         )
-        
-        CAPTION(TRAINEE)
-        
-        SCALE( 0.400000 )
-        
-        XOFFSET( 35  0.000000 )
-        
-        YOFFSET( 25  0.000000 )
-        
-        PRESSED(op_checkbox.tif)
-        
-        NORMAL(op_checkbox.tif)
-        
-        ACTIVE(op_checkbox.tif)
-        
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-        
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-        
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-        
-        XSIZE( 35  0.000000 )
-        
-        YSIZE( 35  0.000000 )
-        
-        )
-       
-       )
-      
-      (
-        NAME(Soldier)
-       
-       XPOS( 285  0.000000 )
-       
-       YPOS( 0  0.000000 )
-       
-       TYPE(CHECKBOX)
-       
-       SPEC(
-         CHILDOF(stick_presets)
-        
-        CHECK_X( 7  0.000000 )
-        
-        CHECK_Y( 7  0.000000 )
-        
-        CHECKSIZE_X( 25  0.000000 )
-        
-        CHECKSIZE_Y( 25  0.000000 )
-        
-        CHECK_TEXTURE(op_check.tif)
-        
-        ONCHECK(
-          BUTTON(NONE)
-         
-         ANIMATION(StickPresetSoldier)
-         
-         )
-        
-        CAPTION(SOLDIER)
-        
-        SCALE( 0.400000 )
-        
-        XOFFSET( 35  0.000000 )
-        
-        YOFFSET( 25  0.000000 )
-        
-        PRESSED(op_checkbox.tif)
-        
-        NORMAL(op_checkbox.tif)
-        
-        ACTIVE(op_checkbox.tif)
-        
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-        
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-        
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-        
-        XSIZE( 35  0.000000 )
-        
-        YSIZE( 35  0.000000 )
-        
-        )
-       
-       )
-      
-      (
-        NAME(Seal)
-       
-       XPOS( 390  0.000000 )
-       
-       YPOS( 0  0.000000 )
-       
-       TYPE(CHECKBOX)
-       
-       SPEC(
-         CHILDOF(stick_presets)
-        
-        CHECK_X( 7  0.000000 )
-        
-        CHECK_Y( 7  0.000000 )
-        
-        CHECKSIZE_X( 25  0.000000 )
-        
-        CHECKSIZE_Y( 25  0.000000 )
-        
-        CHECK_TEXTURE(op_check.tif)
-        
-        ONCHECK(
-          BUTTON(NONE)
-         
-         ANIMATION(StickPresetSeal)
-         
-         )
-        
-        CAPTION(SEAL)
-        
-        SCALE( 0.400000 )
-        
-        XOFFSET( 35  0.000000 )
-        
-        YOFFSET( 25  0.000000 )
-        
-        PRESSED(op_checkbox.tif)
-        
-        NORMAL(op_checkbox.tif)
-        
-        ACTIVE(op_checkbox.tif)
-        
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-        
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-        
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-        
-        XSIZE( 35  0.000000 )
-        
-        YSIZE( 35  0.000000 )
-        
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
-          
-          ANIMATION(OnPresetAct)
+           ANIMATION ( OnInvOffAct )
           
           )
          
@@ -1063,304 +763,604 @@
     )
    
    (
-     NAME(StickSensitivity)
+      NAME ( stick_presets )
     
-    XPOS( 200  0.000000 )
+     TYPE ( RADIOSTRIP )
     
-    YPOS( 212  0.000000 )
+     XPOS ( 30 )
     
-    TYPE(SLIDERBAR)
+     YPOS ( 180 )
     
-    SPEC(
-      UIVAR(
-       NAME(STICK_SENSITIVITY)
+     SPEC (
+       XSIZE ( 155 )
+     
+      YSIZE ( 30 )
+     
+      CAPTION ( PRESETS )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 20 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      VALUE( 0.500000 )
-      
-      LONGEVITY(PERSISTENT)
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     XSIZE( 280  0.000000 )
-     
-     YSIZE( 8  0.000000 )
-     
-     PRESSED(
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     NORMAL(
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      )
-     
-     ACTIVE(
-       TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     KNOB_TEXTURE(op_knob.tif)
-     
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
-     
-     NUM_INTERVALS( 20  0.000000 )
-     
-     CAPTION(SENSITIVITY)
-     
-     SCALE( 0.400000 )
-     
-     XOFFSET( -160  -nan )
-     
-     YOFFSET( 18  0.000000 )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(OnSensAct)
+        TIME ( 0.500000 )
        
        )
       
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(StickAcceleration)
-    
-    XPOS( 200  0.000000 )
-    
-    YPOS( 242  0.000000 )
-    
-    TYPE(SLIDERBAR)
-    
-    SPEC(
-      UIVAR(
-       NAME(STICK_ACCELERATION)
-      
-      VALUE( 0.500000 )
-      
-      LONGEVITY(PERSISTENT)
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     XSIZE( 280  0.000000 )
-     
-     YSIZE( 8  0.000000 )
-     
-     PRESSED(
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     NORMAL(
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+      SUBORDINATES ((
+         NAME ( Custom )
        
-       TIME( 0.500000 )
+        XPOS ( 460 )
        
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     KNOB_TEXTURE(op_knob.tif)
-     
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
-     
-     NUM_INTERVALS( 20  0.000000 )
-     
-     CAPTION(ACCELERATION)
-     
-     SCALE( 0.400000 )
-     
-     XOFFSET( -160  -nan )
-     
-     YOFFSET( 18  0.000000 )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
+        YPOS ( 0 )
        
-       ANIMATION(OnAccelAct)
+        TYPE ( CHECKBOX )
        
-       )
-      
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(StickDeadZone)
-    
-    XPOS( 200  0.000000 )
-    
-    YPOS( 272  0.000000 )
-    
-    TYPE(SLIDERBAR)
-    
-    SPEC(
-      UIVAR(
-       NAME(STICK_DEADZONE)
-      
-      VALUE( 0.500000 )
-      
-      LONGEVITY(PERSISTENT)
-      
-      )
-     
-     XSIZE( 280  0.000000 )
-     
-     YSIZE( 8  0.000000 )
-     
-     PRESSED(
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     KNOB_TEXTURE(op_knob.tif)
-     
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
-     
-     NUM_INTERVALS( 20  0.000000 )
-     
-     CAPTION("DEAD ZONE")
-     
-     SCALE( 0.400000 )
-     
-     XOFFSET( -160  -nan )
-     
-     YOFFSET( 18  0.000000 )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(OnDeadAct)
-       
-       )
-      
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Default)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 320  0.000000 )
-    
-    TYPE(BUTTON)
-    
-    SPEC(
-      XSIZE( 155  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 22  0.000000 )
-     
-     CAPTION("DEFAULT SETTINGS")
-     
-     SCALE( 0.400000 )
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(OnDefAct)
+        SPEC (
+          CHILDOF ( stick_presets )
+        
+         CHECK_X ( 7 )
+        
+         CHECK_Y ( 7 )
+        
+         CHECKSIZE_X ( 25 )
+        
+         CHECKSIZE_Y ( 25 )
+        
+         CHECK_TEXTURE ( op_check.tif )
+        
+         ONCHECK (
+           BUTTON ( NONE )
+         
+          ANIMATION ( StickPresetCustom )
+         
+         )
+        
+         CAPTION ( CUSTOM )
+        
+         SCALE ( 0.400000 )
+        
+         XOFFSET ( 35 )
+        
+         YOFFSET ( 25 )
+        
+         PRESSED ( op_checkbox.tif )
+        
+         NORMAL ( op_checkbox.tif )
+        
+         ACTIVE ( op_checkbox.tif )
+        
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+        
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+        
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+        
+         XSIZE ( 35 )
+        
+         YSIZE ( 35 )
+        
+        )
        
        )
       
       (
-        BUTTON(CROSS)
+         NAME ( Trainee )
        
-       ANIMATION(do_controller_default)
+        XPOS ( 180 )
+       
+        YPOS ( 0 )
+       
+        TYPE ( CHECKBOX )
+       
+        SPEC (
+          CHILDOF ( stick_presets )
+        
+         CHECK_X ( 7 )
+        
+         CHECK_Y ( 7 )
+        
+         CHECKSIZE_X ( 25 )
+        
+         CHECKSIZE_Y ( 25 )
+        
+         CHECK_TEXTURE ( op_check.tif )
+        
+         ONCHECK (
+           BUTTON ( NONE )
+         
+          ANIMATION ( StickPresetTrainee )
+         
+         )
+        
+         CAPTION ( TRAINEE )
+        
+         SCALE ( 0.400000 )
+        
+         XOFFSET ( 35 )
+        
+         YOFFSET ( 25 )
+        
+         PRESSED ( op_checkbox.tif )
+        
+         NORMAL ( op_checkbox.tif )
+        
+         ACTIVE ( op_checkbox.tif )
+        
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+        
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+        
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+        
+         XSIZE ( 35 )
+        
+         YSIZE ( 35 )
+        
+        )
+       
+       )
+      
+      (
+         NAME ( Soldier )
+       
+        XPOS ( 285 )
+       
+        YPOS ( 0 )
+       
+        TYPE ( CHECKBOX )
+       
+        SPEC (
+          CHILDOF ( stick_presets )
+        
+         CHECK_X ( 7 )
+        
+         CHECK_Y ( 7 )
+        
+         CHECKSIZE_X ( 25 )
+        
+         CHECKSIZE_Y ( 25 )
+        
+         CHECK_TEXTURE ( op_check.tif )
+        
+         ONCHECK (
+           BUTTON ( NONE )
+         
+          ANIMATION ( StickPresetSoldier )
+         
+         )
+        
+         CAPTION ( SOLDIER )
+        
+         SCALE ( 0.400000 )
+        
+         XOFFSET ( 35 )
+        
+         YOFFSET ( 25 )
+        
+         PRESSED ( op_checkbox.tif )
+        
+         NORMAL ( op_checkbox.tif )
+        
+         ACTIVE ( op_checkbox.tif )
+        
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+        
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+        
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+        
+         XSIZE ( 35 )
+        
+         YSIZE ( 35 )
+        
+        )
+       
+       )
+      
+      (
+         NAME ( Seal )
+       
+        XPOS ( 390 )
+       
+        YPOS ( 0 )
+       
+        TYPE ( CHECKBOX )
+       
+        SPEC (
+          CHILDOF ( stick_presets )
+        
+         CHECK_X ( 7 )
+        
+         CHECK_Y ( 7 )
+        
+         CHECKSIZE_X ( 25 )
+        
+         CHECKSIZE_Y ( 25 )
+        
+         CHECK_TEXTURE ( op_check.tif )
+        
+         ONCHECK (
+           BUTTON ( NONE )
+         
+          ANIMATION ( StickPresetSeal )
+         
+         )
+        
+         CAPTION ( SEAL )
+        
+         SCALE ( 0.400000 )
+        
+         XOFFSET ( 35 )
+        
+         YOFFSET ( 25 )
+        
+         PRESSED ( op_checkbox.tif )
+        
+         NORMAL ( op_checkbox.tif )
+        
+         ACTIVE ( op_checkbox.tif )
+        
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+        
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+        
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+        
+         XSIZE ( 35 )
+        
+         YSIZE ( 35 )
+        
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
+          
+           ANIMATION ( OnPresetAct )
+          
+          )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( StickSensitivity )
+    
+     XPOS ( 200 )
+    
+     YPOS ( 212 )
+    
+     TYPE ( SLIDERBAR )
+    
+     SPEC (
+       UIVAR (
+        NAME ( STICK_SENSITIVITY )
+      
+       VALUE ( 0.500000 )
+      
+       LONGEVITY ( PERSISTENT )
+      
+      )
+     
+      XSIZE ( 280 )
+     
+      YSIZE ( 8 )
+     
+      PRESSED (
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      KNOB_TEXTURE ( op_knob.tif )
+     
+      KNOB_SIZE ( 30  30 )
+     
+      NUM_INTERVALS ( 20 )
+     
+      CAPTION ( SENSITIVITY )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( -160 )
+     
+      YOFFSET ( 18 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnSensAct )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( StickAcceleration )
+    
+     XPOS ( 200 )
+    
+     YPOS ( 242 )
+    
+     TYPE ( SLIDERBAR )
+    
+     SPEC (
+       UIVAR (
+        NAME ( STICK_ACCELERATION )
+      
+       VALUE ( 0.500000 )
+      
+       LONGEVITY ( PERSISTENT )
+      
+      )
+     
+      XSIZE ( 280 )
+     
+      YSIZE ( 8 )
+     
+      PRESSED (
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      KNOB_TEXTURE ( op_knob.tif )
+     
+      KNOB_SIZE ( 30  30 )
+     
+      NUM_INTERVALS ( 20 )
+     
+      CAPTION ( ACCELERATION )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( -160 )
+     
+      YOFFSET ( 18 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnAccelAct )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( StickDeadZone )
+    
+     XPOS ( 200 )
+    
+     YPOS ( 272 )
+    
+     TYPE ( SLIDERBAR )
+    
+     SPEC (
+       UIVAR (
+        NAME ( STICK_DEADZONE )
+      
+       VALUE ( 0.500000 )
+      
+       LONGEVITY ( PERSISTENT )
+      
+      )
+     
+      XSIZE ( 280 )
+     
+      YSIZE ( 8 )
+     
+      PRESSED (
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      KNOB_TEXTURE ( op_knob.tif )
+     
+      KNOB_SIZE ( 30  30 )
+     
+      NUM_INTERVALS ( 20 )
+     
+      CAPTION ( "DEAD ZONE" )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( -160 )
+     
+      YOFFSET ( 18 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnDeadAct )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Default )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 320 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 155 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 22 )
+     
+      CAPTION ( "DEFAULT SETTINGS" )
+     
+      SCALE ( 0.400000 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnDefAct )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( do_controller_default )
        
        )
       
@@ -1372,59 +1372,59 @@
    
    )
   
-  MODELS()
+   MODELS ()
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_states)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_states )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack2)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack2 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack3 )
       
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel3 )
+      
+       STATE ( INACTIVE )
       
       )
      
@@ -1432,103 +1432,86 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_inverted_pitch)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_inverted_pitch )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     VALVE(INVERT_PITCH_CONTROLLER= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_inverted_pitch)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(INVERT_PITCH_CONTROLLER= 0  0.000000 )
+      VALVE ( INVERT_PITCH_CONTROLLER  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnDefAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_inverted_pitch )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack)
-      
-      STATE(ACTIVE)
-      
-      )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack2)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack3)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUinstText)
-      
-      CAPTION("Press the X button to return to default settings")
-      
-      )
+      VALVE ( INVERT_PITCH_CONTROLLER  =  0 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnInvOffAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnDefAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack )
       
-      CAPTION("Press the X button to toggle invert pitch mode")
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to return to default settings" )
       
       )
      
@@ -1536,16 +1519,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnVibAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnInvOffAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Enable or disable controller vibration")
+       CAPTION ( "Press the X button to toggle invert pitch mode" )
       
       )
      
@@ -1553,58 +1536,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnPresetAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnVibAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack2)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack3)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUinstText)
-      
-      CAPTION("Use stick presets, or choose from a custom configuration.")
+       CAPTION ( "Enable or disable controller vibration" )
       
       )
      
@@ -1612,117 +1553,58 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnSensAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPresetAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack2)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack2 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel3)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUinstText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel )
       
-      CAPTION("Adjust stick sensitivity")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnAccelAct)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack3)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel2)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel3)
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUinstText)
-      
-      CAPTION("Adjust stick acceleration")
+       CAPTION ( "Use stick presets, or choose from a custom configuration." )
       
       )
      
@@ -1730,58 +1612,58 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnDeadAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSensAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack2)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBack3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSPassBackSel3)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUinstText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel )
       
-      CAPTION("Adjust deadstick mode")
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Adjust stick sensitivity" )
       
       )
      
@@ -1789,299 +1671,393 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_stickswap)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnAccelAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(STICK_SWAP_CONTROLLER= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_stickswap)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(STICK_SWAP_CONTROLLER= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_vibration)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(VIBRATION_CONTROLLER= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_vibration)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(VIBRATION_CONTROLLER= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Initialize_Controller_Options_Stuff)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(VIBRATION_CONTROLLER== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack )
+      
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUVibration)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack2 )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Adjust stick acceleration" )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnDeadAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBack3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SPassBackSel3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Adjust deadstick mode" )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_stickswap )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( STICK_SWAP_CONTROLLER  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_stickswap )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( STICK_SWAP_CONTROLLER  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_vibration )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( VIBRATION_CONTROLLER  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_vibration )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( VIBRATION_CONTROLLER  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Initialize_Controller_Options_Stuff )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( VIBRATION_CONTROLLER  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Vibration )
+      
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUVibration)
+      ui::UI_COMMAND (
+        NODE ( MENU  Vibration )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(INVERT_PITCH_CONTROLLER== 0  0.000000 )
+      IF (
+        VALVE ( INVERT_PITCH_CONTROLLER  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUinvert_pitch)
+      ui::UI_COMMAND (
+        NODE ( MENU  invert_pitch )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUinvert_pitch)
+      ui::UI_COMMAND (
+        NODE ( MENU  invert_pitch )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(stick_preset== 0  0.000000 )
+      IF (
+        VALVE ( stick_preset  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUstick_presets)
+      ui::UI_COMMAND (
+        NODE ( MENU  stick_presets )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSEIF(
-       VALVE(stick_preset== 1  0.000000 )
+      ELSEIF (
+        VALVE ( stick_preset  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUstick_presets)
+      ui::UI_COMMAND (
+        NODE ( MENU  stick_presets )
       
-      SELECTION(
-        INDEX( 2  0.000000 )
+       SELECTION (
+         INDEX ( 2 )
        
        )
       
       )
      
-     ELSEIF(
-       VALVE(stick_preset== 2  0.000000 )
+      ELSEIF (
+        VALVE ( stick_preset  ==  2 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUstick_presets)
+      ui::UI_COMMAND (
+        NODE ( MENU  stick_presets )
       
-      SELECTION(
-        INDEX( 3  0.000000 )
+       SELECTION (
+         INDEX ( 3 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     VALVE(stick_preset= 3  0.000000 )
+      VALVE ( stick_preset  =  3 )
      
-     ui::UI_COMMAND(
-       NODE(MENUstick_presets)
+      ui::UI_COMMAND (
+        NODE ( MENU  stick_presets )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(stick_preset== 3  0.000000 )
+      IF (
+        VALVE ( stick_preset  ==  3 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      ARGUMENT(StickDeadZone)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(StickSensitivity)
+       ARGUMENT ( StickDeadZone )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      ARGUMENT(StickAcceleration)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(StickDeadZone)
+       ARGUMENT ( StickSensitivity )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      ARGUMENT(StickSensitivity)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(StickAcceleration)
+       ARGUMENT ( StickAcceleration )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     IF(
-       VALVE(FirstController== 0  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( StickDeadZone )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(Vibration)
+       ARGUMENT ( StickSensitivity )
       
       )
      
-     VALVE(FirstController= 1  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( StickAcceleration )
+      
+      )
      
-     ENDIF()
+      ENDIF ()
+     
+      IF (
+        VALVE ( FirstController  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Vibration )
+      
+      )
+     
+      VALVE ( FirstController  =  1 )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(stickPresetTrainee)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( stickPresetTrainee )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     VALVE(stick_preset= 0  0.000000 )
+      VALVE ( stick_preset  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(SetStickPreset)
+      ui::UI_COMMAND (
+        TYPE ( SetStickPreset )
       
       )
      
-     CALL_ANIMATION(
-       NAME(Initialize_Controller_Options_Stuff)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(stickPresetSoldier)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(stick_preset= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(SetStickPreset)
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(Initialize_Controller_Options_Stuff)
+      CALL_ANIMATION (
+        NAME ( Initialize_Controller_Options_Stuff )
       
       )
      
@@ -2089,42 +2065,23 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(stickPresetSeal)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( stickPresetSoldier )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     VALVE(stick_preset= 2  0.000000 )
+      VALVE ( stick_preset  =  1 )
      
-     ui::UI_COMMAND(
-       TYPE(SetStickPreset)
+      ui::UI_COMMAND (
+        TYPE ( SetStickPreset )
       
       )
      
-     CALL_ANIMATION(
-       NAME(Initialize_Controller_Options_Stuff)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(stickPresetCustom)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(stick_preset= 3  0.000000 )
-     
-     CALL_ANIMATION(
-       NAME(Initialize_Controller_Options_Stuff)
+      CALL_ANIMATION (
+        NAME ( Initialize_Controller_Options_Stuff )
       
       )
      
@@ -2132,31 +2089,23 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(do_controller_default)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( stickPresetSeal )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     VALVE(VIBRATION_CONTROLLER= 1  0.000000 )
+      VALVE ( stick_preset  =  2 )
      
-     VALVE(INVERT_PITCH_CONTROLLER= 0  0.000000 )
-     
-     VALVE(STICK_SWAP_CONTROLLER= 0  0.000000 )
-     
-     CALL_ANIMATION(
-       NAME(stickPresetSeal)
-      
-      WAIT_FOR_COMPLETION()
+      ui::UI_COMMAND (
+        TYPE ( SetStickPreset )
       
       )
      
-     CALL_ANIMATION(
-       NAME(OnDefAct)
-      
-      WAIT_FOR_COMPLETION()
+      CALL_ANIMATION (
+        NAME ( Initialize_Controller_Options_Stuff )
       
       )
      
@@ -2164,36 +2113,18 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( stickPresetCustom )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(INACTIVE)
-      
-      )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     WAIT( 0.400000 )
+      VALVE ( stick_preset  =  3 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
-      
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+      CALL_ANIMATION (
+        NAME ( Initialize_Controller_Options_Stuff )
       
       )
      
@@ -2201,43 +2132,112 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_controller_default )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( VIBRATION_CONTROLLER  =  1 )
+     
+      VALVE ( INVERT_PITCH_CONTROLLER  =  0 )
+     
+      VALVE ( STICK_SWAP_CONTROLLER  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( stickPresetSeal )
       
-      STATE(INACTIVE)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+      CALL_ANIMATION (
+        NAME ( OnDefAct )
       
-      STATE(ACTIVE)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      START()
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
       
       )
      

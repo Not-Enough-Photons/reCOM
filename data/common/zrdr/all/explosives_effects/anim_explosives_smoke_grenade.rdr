@@ -1,94 +1,94 @@
 ((
-  ANIMATION_DEFINITIONS(
-   GRAVITY( -98.000000 )
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
   
-  ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(smoke_grenade_start)
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( smoke_grenade_start )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_THROW_OBJECT_WHOOSH)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_THROW_OBJECT_WHOOSH )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
+       START ()
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_MALE_GRUNT)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_MALE_GRUNT )
       
-      START()
+       START ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(party_starter)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( party_starter )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      DRAW_TYPE(STREAK)
+       DRAW_TYPE ( STREAK )
       
-      STREAK_LENGTH( 3  0.000000 )
+       STREAK_LENGTH ( 3 )
       
-      STREAK_OPACITY( 0.800000 )
+       STREAK_OPACITY ( 0.800000 )
       
-      DISTANCE_INTERVAL( 1.500000 )
+       DISTANCE_INTERVAL ( 1.500000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  16.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  16.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -4.000000  4.000000 )
+       PERTURB_VELOCITY_X ( -4.000000  4.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( -4.000000  4.000000 )
+       PERTURB_VELOCITY_Z ( -4.000000  4.000000 )
       
-      RADIUS_RANGE( 1.000000  1.200000 )
+       RADIUS_RANGE ( 1.000000  1.200000 )
       
-      LIFESPAN_RANGE( 1.500000  2.000000 )
+       LIFESPAN_RANGE ( 1.500000  2.000000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 2.600000 )
+       WIND_FACTOR ( 2.600000 )
       
-      FRICTION( 2.000000 )
+       FRICTION ( 2.000000 )
       
-      WORLD_ACCELERATION( 0.000000  -1.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -1.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      COLORS(( 0.000000  0.500000  0.500000  0.500000  0.500000 )
+       COLORS (( 0.000000  0.500000  0.500000  0.500000  0.500000 )
        
        ( 0.100000  0.500000  0.500000  0.500000  0.100000 )
        
@@ -96,7 +96,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.000000 )
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
        
        ( 1.000000  4.000000 )
        
@@ -104,59 +104,59 @@
       
       )
      
-     WAIT(EVENT_OFFSET 3.000000 )
+      WAIT ( EVENT_OFFSET  3.000000 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(party_starter2)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( party_starter2 )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.250000 )
+       TIME_INTERVAL ( 0.250000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  16.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  16.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -4.000000  4.000000 )
+       PERTURB_VELOCITY_X ( -4.000000  4.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( -4.000000  4.000000 )
+       PERTURB_VELOCITY_Z ( -4.000000  4.000000 )
       
-      RADIUS_RANGE( 0.500000  0.600000 )
+       RADIUS_RANGE ( 0.500000  0.600000 )
       
-      LIFESPAN_RANGE( 3.000000  4.000000 )
+       LIFESPAN_RANGE ( 3.000000  4.000000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.600000 )
+       WIND_FACTOR ( 0.600000 )
       
-      FRICTION( 0.300000 )
+       FRICTION ( 0.300000 )
       
-      WORLD_ACCELERATION( 0.000000  -1.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -1.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      COLORS(( 0.000000  0.750000  0.620000  0.440000  0.500000 )
+       COLORS (( 0.000000  0.750000  0.620000  0.440000  0.500000 )
        
        ( 0.020000  0.600000  0.630000  0.800000  0.400000 )
        
@@ -166,7 +166,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  0.500000 )
+       SCALE_SEQUENCE (( 0.000000  0.500000 )
        
        ( 1.000000  7.000000 )
        
@@ -174,88 +174,88 @@
       
       )
      
-     WAIT(EVENT_OFFSET 3.000000 )
+      WAIT ( EVENT_OFFSET  3.000000 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(smoke_grenade)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( smoke_grenade )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(smoke_spittin_fool)
+     SEQUENCE_DEFINITION (
+       NAME ( smoke_spittin_fool )
      
-     CALL_ANIMATION(
-       NAME(smoke_stream)
+      CALL_ANIMATION (
+        NAME ( smoke_stream )
       
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(sparks_a_flyin)
+     SEQUENCE_DEFINITION (
+       NAME ( sparks_a_flyin )
      
-     PARTICLE_SOURCE(
-       NAME(sparkys_fli)
+      PARTICLE_SOURCE (
+        NAME ( sparkys_fli )
       
-      TEXTURES(effect_spark01.tif)
+       TEXTURES ( effect_spark01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      DRAW_TYPE(STREAK)
+       DRAW_TYPE ( STREAK )
       
-      STREAK_LENGTH( 2  0.000000 )
+       STREAK_LENGTH ( 2 )
       
-      STREAK_OPACITY( 0.800000 )
+       STREAK_OPACITY ( 0.800000 )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 2  0.000000 )
+       NUMBER ( 2 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -30.000000  30.000000 )
+       PERTURB_VELOCITY_X ( -30.000000  30.000000 )
       
-      PERTURB_VELOCITY_Y( 10.000000  50.000000 )
+       PERTURB_VELOCITY_Y ( 10.000000  50.000000 )
       
-      PERTURB_VELOCITY_Z( -30.000000  30.000000 )
+       PERTURB_VELOCITY_Z ( -30.000000  30.000000 )
       
-      RADIUS_RANGE( 0.100000  0.200000 )
+       RADIUS_RANGE ( 0.100000  0.200000 )
       
-      LIFESPAN_RANGE( 0.200000  0.300000 )
+       LIFESPAN_RANGE ( 0.200000  0.300000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 2.500000 )
+       FRICTION ( 2.500000 )
       
-      WORLD_ACCELERATION( 0.000000  -100.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -100.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  1.000000  0.300000 )
+       COLORS (( 0.000000  1.000000  1.000000  1.000000  0.300000 )
        
        ( 0.500000  1.000000  1.000000  0.000000  0.180000 )
        
@@ -267,81 +267,81 @@
       
       )
      
-     WAIT(EVENT_OFFSET 3.000000 )
+      WAIT ( EVENT_OFFSET  3.000000 )
      
-     PARTICLE_SOURCE(
-       NAME(sparkys_fli)
+      PARTICLE_SOURCE (
+        NAME ( sparkys_fli )
       
-      ACTIVE_STATE(INACTIVE)
+       ACTIVE_STATE ( INACTIVE )
       
       )
      
-     CALL_SEQUENCE(
-       NAME(sparks_a_flyin2)
+      CALL_SEQUENCE (
+        NAME ( sparks_a_flyin2 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(sparks_a_flyin2)
+     SEQUENCE_DEFINITION (
+       NAME ( sparks_a_flyin2 )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     PARTICLE_SOURCE(
-       NAME(sparkys_fli2)
+      PARTICLE_SOURCE (
+        NAME ( sparkys_fli2 )
       
-      TEXTURES(effect_spark01.tif)
+       TEXTURES ( effect_spark01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      DRAW_TYPE(STREAK)
+       DRAW_TYPE ( STREAK )
       
-      STREAK_LENGTH( 2  0.000000 )
+       STREAK_LENGTH ( 2 )
       
-      STREAK_OPACITY( 0.800000 )
+       STREAK_OPACITY ( 0.800000 )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -30.000000  30.000000 )
+       PERTURB_VELOCITY_X ( -30.000000  30.000000 )
       
-      PERTURB_VELOCITY_Y( 10.000000  50.000000 )
+       PERTURB_VELOCITY_Y ( 10.000000  50.000000 )
       
-      PERTURB_VELOCITY_Z( -30.000000  30.000000 )
+       PERTURB_VELOCITY_Z ( -30.000000  30.000000 )
       
-      RADIUS_RANGE( 0.100000  0.300000 )
+       RADIUS_RANGE ( 0.100000  0.300000 )
       
-      LIFESPAN_RANGE( 0.200000  0.300000 )
+       LIFESPAN_RANGE ( 0.200000  0.300000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 2.500000 )
+       FRICTION ( 2.500000 )
       
-      WORLD_ACCELERATION( 0.000000  -100.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -100.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  1.000000  0.300000 )
+       COLORS (( 0.000000  1.000000  1.000000  1.000000  0.300000 )
        
        ( 0.500000  1.000000  1.000000  0.000000  0.180000 )
        
@@ -353,81 +353,81 @@
       
       )
      
-     WAIT(EVENT_OFFSET 3.000000 )
+      WAIT ( EVENT_OFFSET  3.000000 )
      
-     PARTICLE_SOURCE(
-       NAME(sparkys_fli2)
+      PARTICLE_SOURCE (
+        NAME ( sparkys_fli2 )
       
-      ACTIVE_STATE(INACTIVE)
+       ACTIVE_STATE ( INACTIVE )
       
       )
      
-     CALL_SEQUENCE(
-       NAME(sparks_a_flyin3)
+      CALL_SEQUENCE (
+        NAME ( sparks_a_flyin3 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(sparks_a_flyin3)
+     SEQUENCE_DEFINITION (
+       NAME ( sparks_a_flyin3 )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     PARTICLE_SOURCE(
-       NAME(sparkys_fli3)
+      PARTICLE_SOURCE (
+        NAME ( sparkys_fli3 )
       
-      TEXTURES(effect_spark01.tif)
+       TEXTURES ( effect_spark01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      DRAW_TYPE(STREAK)
+       DRAW_TYPE ( STREAK )
       
-      STREAK_LENGTH( 2  0.000000 )
+       STREAK_LENGTH ( 2 )
       
-      STREAK_OPACITY( 0.800000 )
+       STREAK_OPACITY ( 0.800000 )
       
-      TIME_INTERVAL( 0.020000 )
+       TIME_INTERVAL ( 0.020000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -30.000000  30.000000 )
+       PERTURB_VELOCITY_X ( -30.000000  30.000000 )
       
-      PERTURB_VELOCITY_Y( 10.000000  50.000000 )
+       PERTURB_VELOCITY_Y ( 10.000000  50.000000 )
       
-      PERTURB_VELOCITY_Z( -30.000000  30.000000 )
+       PERTURB_VELOCITY_Z ( -30.000000  30.000000 )
       
-      RADIUS_RANGE( 0.100000  0.200000 )
+       RADIUS_RANGE ( 0.100000  0.200000 )
       
-      LIFESPAN_RANGE( 0.200000  0.300000 )
+       LIFESPAN_RANGE ( 0.200000  0.300000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 2.500000 )
+       FRICTION ( 2.500000 )
       
-      WORLD_ACCELERATION( 0.000000  -100.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -100.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  1.000000  0.300000 )
+       COLORS (( 0.000000  1.000000  1.000000  1.000000  0.300000 )
        
        ( 0.500000  1.000000  1.000000  0.000000  0.180000 )
        
@@ -439,47 +439,47 @@
       
       )
      
-     WAIT(EVENT_OFFSET 3.000000 )
+      WAIT ( EVENT_OFFSET  3.000000 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_flash)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_flash )
      
-     PARTICLE_SOURCE(
-       NAME(firepuff)
+      PARTICLE_SOURCE (
+        NAME ( firepuff )
       
-      TEXTURES(explosion2.tif)
+       TEXTURES ( explosion2.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.070000 )
+       TIME_INTERVAL ( 0.070000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      WORLD_VELOCITY( 0.000000  20.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  20.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -5.000000  5.000000 )
+       PERTURB_VELOCITY_X ( -5.000000  5.000000 )
       
-      PERTURB_VELOCITY_Y( -5.000000  5.000000 )
+       PERTURB_VELOCITY_Y ( -5.000000  5.000000 )
       
-      PERTURB_VELOCITY_Z( -5.000000  5.000000 )
+       PERTURB_VELOCITY_Z ( -5.000000  5.000000 )
       
-      RADIUS_RANGE( 0.500000  0.700000 )
+       RADIUS_RANGE ( 0.500000  0.700000 )
       
-      LIFESPAN_RANGE( 0.320000  0.400000 )
+       LIFESPAN_RANGE ( 0.320000  0.400000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 5  0.000000 )
+       FRICTION ( 5 )
       
-      FADE_FAR_RANGE( 200.000000  440.000000 )
+       FADE_FAR_RANGE ( 200.000000  440.000000 )
       
-      FADE_NEAR_RANGE( 0.500000  1.000000 )
+       FADE_NEAR_RANGE ( 0.500000  1.000000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  1.000000  1.000000 )
+       COLORS (( 0.000000  1.000000  1.000000  1.000000  1.000000 )
        
        ( 0.100000  1.000000  1.000000  1.000000  0.400000 )
        
@@ -489,7 +489,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.000000 )
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
        
        ( 1.000000  10.000000 )
        

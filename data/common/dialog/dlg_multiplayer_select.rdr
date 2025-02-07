@@ -1,288 +1,161 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/ui2d)
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
   
-  BACKGROUND(
-    TYPE(IMAGE)
+   BACKGROUND (
+     TYPE ( IMAGE )
    
-   FILENAME(background_multiplayer_select.tif)
+    FILENAME ( background_multiplayer_select.tif )
    
    )
   
-  FONT(arialblack)
+   FONT ( arialblack )
   
-  SCRIPT_LIBRARY(dlg_multiplayer_select.rdr)
+   SCRIPT_LIBRARY ( dlg_multiplayer_select.rdr )
   
-  OBJECTS()
+   OBJECTS ()
   
-  ANIMATIONS((
-     BUTTON(TRIANGLE)
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
     
-    ANIMATION(goto_menu)
+     ANIMATION ( goto_menu )
     
-    ARGUMENT(PREVIOUS_SCREEN)
+     ARGUMENT ( PREVIOUS_SCREEN )
     
     )
    
    (
-     BUTTON(CROSS)
+      BUTTON ( CROSS )
     
-    ANIMATION(goto_multiplayer)
+     ANIMATION ( goto_multiplayer )
     
     )
    
    (
-     BUTTON(SQUARE)
+      BUTTON ( SQUARE )
     
-    ANIMATION(Cooperative_Process)
+     ANIMATION ( Cooperative_Process )
     
     )
    
    )
   
-  CONTROLS()
+   CONTROLS ()
   
-  MODELS()
+   MODELS ()
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Cooperative_Process)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Cooperative_Process )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(MC_Init)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( MC_Init )
       
       )
      
-     VALVE(Single_or_Campaign= 0  0.000000 )
+      VALVE ( Single_or_Campaign  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUPOPUP)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  POPUP )
       
-      TRANSLATE_FROM( -500.000000  -500.000000  -500.000000 )
+       TRANSLATE_FROM ( -500.000000  -500.000000  -500.000000 )
       
-      TRANSLATE_TO( 130.000000  20.000000  0.000000 )
+       TRANSLATE_TO ( 130.000000  20.000000  0.000000 )
       
-      RUN_TIME( 0.000500 )
+       RUN_TIME ( 0.000500 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Campaign or Single Mission")
+       CAPTION ( "Campaign or Single Mission" )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 200  0.000000 )
+       HEIGHT ( 200 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 10  0.000000 )
+       YOFFSET ( 10 )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
       
-      YESNO(
-        VALVE(Single_or_Campaign)
+       YESNO (
+         VALVE ( Single_or_Campaign )
        
-       YES(
-         CAPTION(Campaign)
+        YES (
+          CAPTION ( Campaign )
         
-        POS( 50  0.000000  100  0.000000 )
+         POS ( 50  100 )
         
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
+         TEXTOFFSET ( 10  30 )
         
-        WIDTH( 100  0.000000 )
+         WIDTH ( 100 )
         
-        HEIGHT( 50  0.000000 )
+         HEIGHT ( 50 )
         
-        PRESSED(
-          IMAGE(blue_back.tif)
+         PRESSED (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
+         
+         )
+        
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
          
          )
         
         )
        
-       NO(
-         CAPTION(Single)
+        NO (
+          CAPTION ( Single )
         
-        POS( 250  0.000000  100  0.000000 )
+         POS ( 250  100 )
         
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
+         TEXTOFFSET ( 10  30 )
         
-        WIDTH( 100  0.000000 )
+         WIDTH ( 100 )
         
-        HEIGHT( 50  0.000000 )
+         HEIGHT ( 50 )
         
-        PRESSED(
-          IMAGE(blue_back.tif)
+         PRESSED (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
          
          )
         
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(Single_or_Campaign== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     IF(
-       VALVE(Single_or_Campaign== 2  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SwitchMenu)
-      
-      ARGUMENT(dlgCooperativeMissionSelection.rdr)
-      
-      )
-     
-     ELSE()
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
-       
-       )
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(CoopMissionExists)
-      
-      )
-     
-     VALVE(Single_or_Campaign= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Continue Saved Game or Start Over?")
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 200  0.000000 )
-      
-      XOFFSET( 10  0.000000 )
-      
-      YOFFSET( 10  0.000000 )
-      
-      SCALE( 1.000000 )
-      
-      YESNO(
-        VALVE(Single_or_Campaign)
-       
-       YES(
-         CAPTION(Continue)
-        
-        POS( 50  0.000000  100  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
-        
-        WIDTH( 100  0.000000 )
-        
-        HEIGHT( 50  0.000000 )
-        
-        PRESSED(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
-         
-         )
-        
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
-         
-         )
-        
-        )
-       
-       NO(
-         CAPTION(Restart)
-        
-        POS( 250  0.000000  100  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
-        
-        WIDTH( 100  0.000000 )
-        
-        HEIGHT( 50  0.000000 )
-        
-        PRESSED(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
-         
-         )
-        
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
          
          )
         
@@ -292,102 +165,124 @@
       
       )
      
-     WHILE(
-       VALVE(Single_or_Campaign== 0  0.000000 )
+      WHILE (
+        VALVE ( Single_or_Campaign  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(Single_or_Campaign== 1  0.000000 )
+      IF (
+        VALVE ( Single_or_Campaign  ==  2 )
       
       )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( SwitchMenu )
+      
+       ARGUMENT ( dlgCooperativeMissionSelection.rdr )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Delete Saved Game and start campaign over?")
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 200  0.000000 )
-      
-      XOFFSET( 10  0.000000 )
-      
-      YOFFSET( 10  0.000000 )
-      
-      SCALE( 1.000000 )
-      
-      YESNO(
-        VALVE(Single_or_Campaign)
+      ELSE ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
-       YES(
-         CAPTION(Delete)
+       )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND ( CoopMissionExists )
+      
+      )
+     
+      VALVE ( Single_or_Campaign  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Continue Saved Game or Start Over?" )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 200 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 10 )
+      
+       SCALE ( 1.000000 )
+      
+       YESNO (
+         VALVE ( Single_or_Campaign )
+       
+        YES (
+          CAPTION ( Continue )
         
-        POS( 50  0.000000  100  0.000000 )
+         POS ( 50  100 )
         
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
+         TEXTOFFSET ( 10  30 )
         
-        WIDTH( 100  0.000000 )
+         WIDTH ( 100 )
         
-        HEIGHT( 50  0.000000 )
+         HEIGHT ( 50 )
         
-        PRESSED(
-          IMAGE(blue_back.tif)
+         PRESSED (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(blue_back.tif)
+         ACTIVE (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+          TEXT_COLOR ( 100  100  100 )
          
          )
         
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
          
          )
         
         )
        
-       NO(
-         CAPTION(Abort)
+        NO (
+          CAPTION ( Restart )
         
-        POS( 250  0.000000  100  0.000000 )
+         POS ( 250  100 )
         
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
+         TEXTOFFSET ( 10  30 )
         
-        WIDTH( 100  0.000000 )
+         WIDTH ( 100 )
         
-        HEIGHT( 50  0.000000 )
+         HEIGHT ( 50 )
         
-        PRESSED(
-          IMAGE(blue_back.tif)
+         PRESSED (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
+         
+         )
+        
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
          
          )
         
@@ -397,114 +292,102 @@
       
       )
      
-     WHILE(
-       VALVE(Single_or_Campaign== 0  0.000000 )
+      WHILE (
+        VALVE ( Single_or_Campaign  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(Single_or_Campaign== 1  0.000000 )
+      IF (
+        VALVE ( Single_or_Campaign  ==  1 )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ENDIF()
-     
-     ENDIF()
-     
-     ELSE()
-     
-     ENDIF()
-     
-     ELSE()
-     
-     VALVE(Single_or_Campaign= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("No MemCard Inserted. Continue Anyways?")
+       CAPTION ( "Delete Saved Game and start campaign over?" )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 200  0.000000 )
+       HEIGHT ( 200 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 10  0.000000 )
+       YOFFSET ( 10 )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
       
-      YESNO(
-        VALVE(Single_or_Campaign)
+       YESNO (
+         VALVE ( Single_or_Campaign )
        
-       YES(
-         CAPTION(Continue)
+        YES (
+          CAPTION ( Delete )
         
-        POS( 50  0.000000  100  0.000000 )
+         POS ( 50  100 )
         
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
+         TEXTOFFSET ( 10  30 )
         
-        WIDTH( 100  0.000000 )
+         WIDTH ( 100 )
         
-        HEIGHT( 50  0.000000 )
+         HEIGHT ( 50 )
         
-        PRESSED(
-          IMAGE(blue_back.tif)
+         PRESSED (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
+         
+         )
+        
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
          
          )
         
         )
        
-       NO(
-         CAPTION(Abort)
+        NO (
+          CAPTION ( Abort )
         
-        POS( 250  0.000000  100  0.000000 )
+         POS ( 250  100 )
         
-        TEXTOFFSET( 10  0.000000  30  0.000000 )
+         TEXTOFFSET ( 10  30 )
         
-        WIDTH( 100  0.000000 )
+         WIDTH ( 100 )
         
-        HEIGHT( 50  0.000000 )
+         HEIGHT ( 50 )
         
-        PRESSED(
-          IMAGE(blue_back.tif)
+         PRESSED (
+           IMAGE ( blue_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(blue_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          TEXT_COLOR( 100  0.000000  0  0.000000  100  0.000000 )
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
+         
+         )
+        
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
          
          )
         
@@ -514,26 +397,143 @@
       
       )
      
-     WHILE(
-       VALVE(Single_or_Campaign== 0  0.000000 )
+      WHILE (
+        VALVE ( Single_or_Campaign  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(Single_or_Campaign== 1  0.000000 )
+      IF (
+        VALVE ( Single_or_Campaign  ==  1 )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     ENDIF()
+      ENDIF ()
      
-     ENDIF()
+      ENDIF ()
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ELSE ()
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      VALVE ( Single_or_Campaign  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "No MemCard Inserted. Continue Anyways?" )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 200 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 10 )
+      
+       SCALE ( 1.000000 )
+      
+       YESNO (
+         VALVE ( Single_or_Campaign )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 50  100 )
+        
+         TEXTOFFSET ( 10  30 )
+        
+         WIDTH ( 100 )
+        
+         HEIGHT ( 50 )
+        
+         PRESSED (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
+         
+         )
+        
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( Abort )
+        
+         POS ( 250  100 )
+        
+         TEXTOFFSET ( 10  30 )
+        
+         WIDTH ( 100 )
+        
+         HEIGHT ( 50 )
+        
+         PRESSED (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( blue_back.tif )
+         
+          TEXT_COLOR ( 100  100  100 )
+         
+         )
+        
+         NORMAL (
+           TEXT_COLOR ( 100  0  100 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( Single_or_Campaign  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( Single_or_Campaign  ==  1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      

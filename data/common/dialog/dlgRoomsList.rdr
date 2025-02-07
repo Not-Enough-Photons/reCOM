@@ -1,99 +1,99 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(undefined.tif)
+     FILENAME ( undefined.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(uianim.rdr)
+    SCRIPT_LIBRARY ( uianim.rdr )
    
-   OBJECTS((
-      NAME(STANDIN)
+    OBJECTS ((
+       NAME ( STANDIN )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 350  0.000000 )
+      XPOS ( 350 )
      
-     YPOS( 15  0.000000 )
+      YPOS ( 15 )
      
-     SPEC(
-       CAPTION("STANDIN ROOM LIST SCREEN")
+      SPEC (
+        CAPTION ( "STANDIN ROOM LIST SCREEN" )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
       )
      
      )
     
     (
-      NAME(DIRECTIONS)
+       NAME ( DIRECTIONS )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 70  0.000000 )
+      YPOS ( 70 )
      
-     SPEC(
-       CAPTION("This is the Room List Screen")
+      SPEC (
+        CAPTION ( "This is the Room List Screen" )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
       
       )
-     
-     )
-    
-    )
-   
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(dlgOnlineRooms.rdr)
      
      )
     
     )
    
-   CONTROLS((
-      NAME(forward)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     XPOS( 163  0.000000 )
+      ANIMATION ( goto_menu )
      
-     YPOS( 150  0.000000 )
+      ARGUMENT ( dlgOnlineRooms.rdr )
      
-     TYPE(BUTTON)
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( forward )
      
-     SPEC(
-       XSIZE( 200  0.000000 )
+      XPOS ( 163 )
+     
+      YPOS ( 150 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 200 )
       
-      YSIZE( 40  0.000000 )
+       YSIZE ( 40 )
       
-      CAPTION("Tournament Rooms")
+       CAPTION ( "Tournament Rooms" )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 15  0.000000 )
+       YOFFSET ( 15 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
+       ACTIVE ( Menu050_CreateGame_MissionPressed.tif )
       
-      PRESSED(Menu050_CreateGame_MissionPressed.tif)
+       PRESSED ( Menu050_CreateGame_MissionPressed.tif )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgTournamentRooms.rdr)
+         ARGUMENT ( dlgTournamentRooms.rdr )
         
         )
        
@@ -104,78 +104,37 @@
      )
     
     (
-      NAME(forward1)
+       NAME ( forward1 )
      
-     XPOS( 163  0.000000 )
+      XPOS ( 163 )
      
-     YPOS( 200  0.000000 )
+      YPOS ( 200 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 200  0.000000 )
+      SPEC (
+        XSIZE ( 200 )
       
-      YSIZE( 40  0.000000 )
+       YSIZE ( 40 )
       
-      CAPTION("Chat Rooms")
+       CAPTION ( "Chat Rooms" )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 15  0.000000 )
+       YOFFSET ( 15 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
+       ACTIVE ( Menu050_CreateGame_MissionPressed.tif )
       
-      PRESSED(Menu050_CreateGame_MissionPressed.tif)
+       PRESSED ( Menu050_CreateGame_MissionPressed.tif )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgChatRooms.rdr)
-        
-        )
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(forward2)
-     
-     XPOS( 163  0.000000 )
-     
-     YPOS( 250  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     SPEC(
-       XSIZE( 200  0.000000 )
-      
-      YSIZE( 40  0.000000 )
-      
-      CAPTION("Clan Rooms")
-      
-      XOFFSET( 15  0.000000 )
-      
-      YOFFSET( 15  0.000000 )
-      
-      SCALE( 0.800000 )
-      
-      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
-      
-      PRESSED(Menu050_CreateGame_MissionPressed.tif)
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(goto_menu)
-        
-        ARGUMENT(dlgClanRooms.rdr)
+         ARGUMENT ( dlgChatRooms.rdr )
         
         )
        
@@ -186,37 +145,37 @@
      )
     
     (
-      NAME(forward3)
+       NAME ( forward2 )
      
-     XPOS( 163  0.000000 )
+      XPOS ( 163 )
      
-     YPOS( 300  0.000000 )
+      YPOS ( 250 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 200  0.000000 )
+      SPEC (
+        XSIZE ( 200 )
       
-      YSIZE( 40  0.000000 )
+       YSIZE ( 40 )
       
-      CAPTION("Ladder Rooms")
+       CAPTION ( "Clan Rooms" )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 15  0.000000 )
+       YOFFSET ( 15 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
+       ACTIVE ( Menu050_CreateGame_MissionPressed.tif )
       
-      PRESSED(Menu050_CreateGame_MissionPressed.tif)
+       PRESSED ( Menu050_CreateGame_MissionPressed.tif )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgLadderRooms.rdr)
+         ARGUMENT ( dlgClanRooms.rdr )
         
         )
        
@@ -226,7 +185,48 @@
      
      )
     
-    ````````)
+    (
+       NAME ( forward3 )
+     
+      XPOS ( 163 )
+     
+      YPOS ( 300 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 200 )
+      
+       YSIZE ( 40 )
+      
+       CAPTION ( "Ladder Rooms" )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 15 )
+      
+       SCALE ( 0.800000 )
+      
+       ACTIVE ( Menu050_CreateGame_MissionPressed.tif )
+      
+       PRESSED ( Menu050_CreateGame_MissionPressed.tif )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( goto_menu )
+        
+         ARGUMENT ( dlgLadderRooms.rdr )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+     ```````` )
    
    )
   

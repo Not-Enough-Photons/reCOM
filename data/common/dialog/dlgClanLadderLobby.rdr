@@ -1,207 +1,121 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgClanLadderLobby.rdr)
+    SCRIPT_LIBRARY ( dlgClanLadderLobby.rdr )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("WORLD CLAN RANK")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 384  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SIZE( 640  0.000000  64  0.000000 )
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "WORLD CLAN RANK" )
+      
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(playername)
+       NAME ( letterbar_bottom )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 380  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 384 )
      
-     CHILDOF(letterbar)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
      
-     SPEC(
-       UIVAR(
-        NAME(PLAYERNAMEVAR)
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 380 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
        
-       LONGEVITY(PERSISTENT)
-       
-       )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(txtClanName)
-     
-     TYPE(TEXT)
-     
-     XPOS( 380  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
-      
-      SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(CLANNAMEVAR)
-       
-       VALUE(TALICLAN)
+        LONGEVITY ( PERSISTENT )
        
        )
       
+       SCALE ( 0.400000 )
+      
       )
      
      )
     
     (
-      NAME(LadderRating)
+       NAME ( txtClanName )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 570  0.000000 )
+      XPOS ( 380 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 45 )
      
-     CHILDOF(letterbar)
-     
-     SPEC(
-       UIVAR(
-        NAME(LadderRating)
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( CLANNAMEVAR )
        
-       )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(LadderRatingDesc)
-     
-     TYPE(TEXT)
-     
-     XPOS( 500  0.000000 )
-     
-     YPOS( 25  0.000000 )
-     
-     CHILDOF(letterbar)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      CAPTION(RATING:)
-      
-      )
-     
-     )
-    
-    (
-      NAME(LadderRankingDesc)
-     
-     TYPE(TEXT)
-     
-     XPOS( 500  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     CHILDOF(letterbar)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      CAPTION(RANKING:)
-      
-      )
-     
-     )
-    
-    (
-      NAME(LadderRanking)
-     
-     TYPE(TEXT)
-     
-     XPOS( 570  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     CHILDOF(letterbar)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(LadderRanking)
+        VALUE ( TALICLAN )
        
        )
       
@@ -210,377 +124,463 @@
      )
     
     (
-      NAME(eq_Titlebar)
+       NAME ( LadderRating )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 23  0.000000 )
+      XPOS ( 570 )
      
-     YPOS( 75  0.000000 )
+      YPOS ( 25 )
      
-     SPEC(
-       FILENAME(blue_back_plate.tif)
+      CHILDOF ( letterbar )
+     
+      SPEC (
+        UIVAR (
+         NAME ( LadderRating )
+       
+       )
       
-      SIZE( 585  0.000000  25  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(eq_Titlebar)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 23  0.000000 )
-     
-     YPOS( 343  0.000000 )
-     
-     SPEC(
-       FILENAME(blue_back_plate.tif)
-      
-      SIZE( 585  0.000000  22  0.000000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(eq_Titlebar)
+       NAME ( LadderRatingDesc )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 23  0.000000 )
+      XPOS ( 500 )
      
-     YPOS( 180  0.000000 )
+      YPOS ( 25 )
      
-     SPEC(
-       FILENAME(blue_back_plate.tif)
+      CHILDOF ( letterbar )
+     
+      SPEC (
+        SCALE ( 0.400000 )
       
-      SIZE( 585  0.000000  20  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(TopTenText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 45  0.000000 )
-     
-     YPOS( 95  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.500000 )
-      
-      CAPTION("THE PODIUM")
+       CAPTION ( RATING: )
       
       )
      
      )
     
     (
-      NAME(TopTenText)
+       NAME ( LadderRankingDesc )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 45  0.000000 )
+      XPOS ( 500 )
      
-     YPOS( 195  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      CHILDOF ( letterbar )
+     
+      SPEC (
+        SCALE ( 0.400000 )
       
-      SCALE( 0.400000 )
-      
-      CAPTION("THE REST")
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabDivHor)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 22  0.000000 )
-     
-     YPOS( 94  0.000000 )
-     
-     SPEC(
-       XSIZE( 586  0.000000 )
-      
-      YSIZE( 15  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
+       CAPTION ( RANKING: )
       
       )
      
      )
     
     (
-      NAME(TabDivHor)
+       NAME ( LadderRanking )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 22  0.000000 )
+      XPOS ( 570 )
      
-     YPOS( 335  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       XSIZE( 586  0.000000 )
+      CHILDOF ( letterbar )
+     
+      SPEC (
+        SCALE ( 0.400000 )
       
-      YSIZE( 15  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabDivHor)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 22  0.000000 )
-     
-     YPOS( 170  0.000000 )
-     
-     SPEC(
-       XSIZE( 586  0.000000 )
-      
-      YSIZE( 15  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
+       UIVAR (
+         NAME ( LadderRanking )
+       
+       )
       
       )
      
      )
     
     (
-      NAME(arrow_up)
+       NAME ( eq_Titlebar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 180  0.000000 )
+      XPOS ( 23 )
      
-     YPOS( 172  0.000000 )
+      YPOS ( 75 )
      
-     SPEC(
-       FILENAME(arrow_top.tif)
+      SPEC (
+        FILENAME ( blue_back_plate.tif )
       
-      XSIZE( 35  0.000000 )
-      
-      YSIZE( 35  0.000000 )
+       SIZE ( 585  25 )
       
       )
      
      )
     
     (
-      NAME(arrow_dwn)
+       NAME ( eq_Titlebar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 180  0.000000 )
+      XPOS ( 23 )
      
-     YPOS( 337  0.000000 )
+      YPOS ( 343 )
      
-     SPEC(
-       FILENAME(arrow_botm.tif)
+      SPEC (
+        FILENAME ( blue_back_plate.tif )
       
-      XSIZE( 35  0.000000 )
-      
-      YSIZE( 35  0.000000 )
+       SIZE ( 585  22 )
       
       )
      
      )
     
     (
-      NAME(dogtags)
+       NAME ( eq_Titlebar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 370  0.000000 )
+      XPOS ( 23 )
      
-     YPOS( 330  0.000000 )
+      YPOS ( 180 )
      
-     SPEC(
-       FILENAME(dogtags.tif)
+      SPEC (
+        FILENAME ( blue_back_plate.tif )
       
-      SIZE( 256  0.000000  128  0.000000 )
+       SIZE ( 585  20 )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      EVENT(ONSTART)
+    (
+       NAME ( TopTenText )
      
-     ANIMATION(letterbar_slide_down)
+      TYPE ( TEXT )
+     
+      XPOS ( 45 )
+     
+      YPOS ( 95 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.500000 )
+      
+       CAPTION ( "THE PODIUM" )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( TopTenText )
      
-     ANIMATION(bottom_bar_slide_up)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      BUTTON(TRIANGLE)
+      XPOS ( 45 )
      
-     ANIMATION(goto_menu)
+      YPOS ( 195 )
      
-     ARGUMENT(PREVIOUS_SCREEN)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(get_ladder_top_10)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( "THE REST" )
+      
+      )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       NAME ( TabDivHor )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      TYPE ( IMAGE )
+     
+      XPOS ( 22 )
+     
+      YPOS ( 94 )
+     
+      SPEC (
+        XSIZE ( 586 )
+      
+       YSIZE ( 15 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
      
      )
     
     (
-      EVENT(ON_LADDER_REFRESH)
+       NAME ( TabDivHor )
      
-     ANIMATION(RefreshArrows)
+      TYPE ( IMAGE )
+     
+      XPOS ( 22 )
+     
+      YPOS ( 335 )
+     
+      SPEC (
+        XSIZE ( 586 )
+      
+       YSIZE ( 15 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHor )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 22 )
+     
+      YPOS ( 170 )
+     
+      SPEC (
+        XSIZE ( 586 )
+      
+       YSIZE ( 15 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( arrow_up )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 172 )
+     
+      SPEC (
+        FILENAME ( arrow_top.tif )
+      
+       XSIZE ( 35 )
+      
+       YSIZE ( 35 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( arrow_dwn )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 337 )
+     
+      SPEC (
+        FILENAME ( arrow_botm.tif )
+      
+       XSIZE ( 35 )
+      
+       YSIZE ( 35 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 330 )
+     
+      SPEC (
+        FILENAME ( dogtags.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(MainWindow)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     TYPE(IMAGE)
+      ANIMATION ( letterbar_slide_down )
      
-     XPOS( 15  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     YPOS( 70  0.000000 )
+      ANIMATION ( bottom_bar_slide_up )
      
-     SPEC(
-       XSIZE( 600  0.000000 )
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( get_ladder_top_10 )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    (
+       EVENT ( ON_LADDER_REFRESH )
+     
+      ANIMATION ( RefreshArrows )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( MainWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 15 )
+     
+      YPOS ( 70 )
+     
+      SPEC (
+        XSIZE ( 600 )
       
-      YSIZE( 300  0.000000 )
+       YSIZE ( 300 )
       
-      FILENAME(eq_CharWinInv.tif)
+       FILENAME ( eq_CharWinInv.tif )
       
       )
      
      )
     
     (
-      NAME(LadderList)
+       NAME ( LadderList )
      
-     XPOS( 35  0.000000 )
+      XPOS ( 35 )
      
-     YPOS( 187  0.000000 )
+      YPOS ( 187 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       ACTIVE_COLOR( 255.000000  74.000000  8.000000 )
+      SPEC (
+        ACTIVE_COLOR ( 255.000000  74.000000  8.000000 )
       
-      NORMAL_COLOR( 168.000000  168.000000  168.000000 )
+       NORMAL_COLOR ( 168.000000  168.000000  168.000000 )
       
-      PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+       PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
       
-      XSIZE( 350  0.000000 )
+       XSIZE ( 350 )
       
-      YSIZE( 170  0.000000 )
+       YSIZE ( 170 )
       
-      PADHOG()
+       PADHOG ()
       
-      NOSELECT()
+       NOSELECT ()
       
-      SPACING( 16  0.000000 )
+       SPACING ( 16 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      LEFT_MARGIN( 10  0.000000 )
+       LEFT_MARGIN ( 10 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      OPTIONS((
-         CAPTION("ZIPPER CHUCKERS")
+       OPTIONS ((
+          CAPTION ( "ZIPPER CHUCKERS" )
         
         )
        
        (
-         CAPTION(TALICLAN)
+          CAPTION ( TALICLAN )
         
         )
        
        (
-         CAPTION("MICROSOFT WIMPS")
+          CAPTION ( "MICROSOFT WIMPS" )
         
         )
        
        (
-         CAPTION("ARRAKEEN FARMERS")
+          CAPTION ( "ARRAKEEN FARMERS" )
         
         )
        
        (
-         CAPTION("FAIRE DINKUM")
+          CAPTION ( "FAIRE DINKUM" )
         
         )
        
        (
-         CAPTION("GREGG'S EGGS")
+          CAPTION ( "GREGG'S EGGS" )
         
         )
        
        (
-         CAPTION("KIMOCK'S CRUSADERS")
+          CAPTION ( "KIMOCK'S CRUSADERS" )
         
         )
        
        )
       
-      ANIMATIONS((
-         BUTTON(UP)
+       ANIMATIONS ((
+          BUTTON ( UP )
         
-        ANIMATION(ladder_up)
+         ANIMATION ( ladder_up )
         
         )
        
        (
-         BUTTON(DOWN)
+          BUTTON ( DOWN )
         
-        ANIMATION(ladder_down)
+         ANIMATION ( ladder_down )
         
         )
        
        )
       
-      COLUMNS((
-         POSITION( 0  0.000000 )
+       COLUMNS ((
+          POSITION ( 0 )
         
         )
        
        (
-         POSITION( 35  0.000000 )
+          POSITION ( 35 )
         
         )
        
@@ -591,62 +591,62 @@
      )
     
     (
-      NAME(LadderTop10)
+       NAME ( LadderTop10 )
      
-     XPOS( 35  0.000000 )
+      XPOS ( 35 )
      
-     YPOS( 95  0.000000 )
+      YPOS ( 95 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       NORMAL_COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        NORMAL_COLOR ( 255.000000  104.000000  51.000000 )
       
-      XSIZE( 250  0.000000 )
+       XSIZE ( 250 )
       
-      YSIZE( 100  0.000000 )
+       YSIZE ( 100 )
       
-      PADHOG()
+       PADHOG ()
       
-      NOSELECT()
+       NOSELECT ()
       
-      SPACING( 21  0.000000 )
+       SPACING ( 21 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      LEFT_MARGIN( 10  0.000000 )
+       LEFT_MARGIN ( 10 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      OPTIONS((
-         CAPTION("ZIPPER CHUCKERS")
+       OPTIONS ((
+          CAPTION ( "ZIPPER CHUCKERS" )
         
         )
        
        (
-         CAPTION(TALICLAN)
+          CAPTION ( TALICLAN )
         
         )
        
        (
-         CAPTION("ARRAKEEN FARMERS")
+          CAPTION ( "ARRAKEEN FARMERS" )
         
         )
        
        )
       
-      COLUMNS((
-         POSITION( 0  0.000000 )
+       COLUMNS ((
+          POSITION ( 0 )
         
         )
        
        (
-         POSITION( 35  0.000000 )
+          POSITION ( 35 )
         
         )
        
        (
-         POSITION( 150  0.000000 )
+          POSITION ( 150 )
         
         )
        
@@ -662,18 +662,18 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(get_ladder_top_10)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( get_ladder_top_10 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetLadderInfo)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetLadderInfo )
       
       )
      
@@ -681,14 +681,14 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ladder_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ladder_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(LadderUp)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( LadderUp )
       
       )
      
@@ -696,14 +696,14 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ladder_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ladder_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(LadderDown)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( LadderDown )
       
       )
      
@@ -711,105 +711,105 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(RefreshArrows)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RefreshArrows )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       ui::UI_COMMAND(
-        TYPE(CanLadderPressDown)
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( CanLadderPressDown )
        
        )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULadderDownArrow)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  LadderDownArrow )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     ELSE()
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULadderDownArrow)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(CanLadderPressUp)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  LadderDownArrow )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( CanLadderPressUp )
        
        )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULadderUpArrow)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  LadderUpArrow )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     ELSE()
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULadderUpArrow)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  LadderUpArrow )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( ACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      START()
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
       
       )
      
@@ -817,36 +817,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
       
       )
      

@@ -151,7 +151,7 @@ CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 		{
 			void* zrdr_buf = zmalloc(keySize);
 
-			if (archive->Fetch_V2(key, zrdr_buf, keySize))
+			if (archive->Fetch(key, zrdr_buf, keySize))
 			{
 				CSTable stable = CSTable(0, 1024);
 				rdrFile->m_strings = stable;

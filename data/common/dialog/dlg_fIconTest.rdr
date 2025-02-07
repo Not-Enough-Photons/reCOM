@@ -1,620 +1,620 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/test)
+   SCREENS (
+    LIBRARY ( ui/assetlib/test )
   
-  BACKGROUND(
-    TYPE(IMAGE)
+   BACKGROUND (
+     TYPE ( IMAGE )
    
-   FILENAME(singleplay_back.tif)
+    FILENAME ( singleplay_back.tif )
    
    )
   
-  FONT(myriad)
+   FONT ( myriad )
   
-  SCRIPT_LIBRARY(dlg_fIconTest.rdr)
+   SCRIPT_LIBRARY ( dlg_fIconTest.rdr )
   
-  OBJECTS((
-     NAME(action_icon_mpbomb)
+   OBJECTS ((
+      NAME ( action_icon_mpbomb )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 10  0.000000 )
+     XPOS ( 10 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_MP_Bomb.tif)
+     SPEC (
+       FILENAME ( action_MP_Bomb.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_knife)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 80  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      FILENAME(action_knife.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_pickupbody)
+      NAME ( action_icon_knife )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 150  0.000000 )
+     XPOS ( 80 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_conceal_body.tif)
+     SPEC (
+       FILENAME ( action_knife.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_pickupitem)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 220  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      FILENAME(action_pickup_item.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_lever)
+      NAME ( action_icon_pickupbody )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 290  0.000000 )
+     XPOS ( 150 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_pull_lever.tif)
+     SPEC (
+       FILENAME ( action_conceal_body.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_pressbutton)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 360  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      FILENAME(action_button.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_ladderdown)
+      NAME ( action_icon_pickupitem )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 430  0.000000 )
+     XPOS ( 220 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_descend.tif)
+     SPEC (
+       FILENAME ( action_pickup_item.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_ladderup)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 500  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      FILENAME(action_climb.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_defuse)
+      NAME ( action_icon_lever )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 570  0.000000 )
+     XPOS ( 290 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_defuse.tif)
+     SPEC (
+       FILENAME ( action_pull_lever.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_gunbutt)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 10  0.000000 )
-    
-    YPOS( 100  0.000000 )
-    
-    SPEC(
-      FILENAME(action_close_combat.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_c4)
+      NAME ( action_icon_pressbutton )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 80  0.000000 )
+     XPOS ( 360 )
     
-    YPOS( 100  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_c4.tif)
+     SPEC (
+       FILENAME ( action_button.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_restrain)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 150  0.000000 )
-    
-    YPOS( 100  0.000000 )
-    
-    SPEC(
-      FILENAME(action_restrain.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_door_open)
+      NAME ( action_icon_ladderdown )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 220  0.000000 )
+     XPOS ( 430 )
     
-    YPOS( 100  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_door_open.tif)
+     SPEC (
+       FILENAME ( action_descend.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_door_close)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 290  0.000000 )
-    
-    YPOS( 100  0.000000 )
-    
-    SPEC(
-      FILENAME(action_door_close.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_talk)
+      NAME ( action_icon_ladderup )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 360  0.000000 )
+     XPOS ( 500 )
     
-    YPOS( 100  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_talk.tif)
+     SPEC (
+       FILENAME ( action_climb.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_tune_offense)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 430  0.000000 )
-    
-    YPOS( 100  0.000000 )
-    
-    SPEC(
-      FILENAME(action_tune_offense.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_tune_defense)
+      NAME ( action_icon_defuse )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 500  0.000000 )
+     XPOS ( 570 )
     
-    YPOS( 100  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      FILENAME(action_tune_defense.tif)
+     SPEC (
+       FILENAME ( action_defuse.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_tune_team)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 570  0.000000 )
-    
-    YPOS( 100  0.000000 )
-    
-    SPEC(
-      FILENAME(action_tune_team.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_no_talk)
+      NAME ( action_icon_gunbutt )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 10  0.000000 )
+     XPOS ( 10 )
     
-    YPOS( 180  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FILENAME(action_no_talk.tif)
+     SPEC (
+       FILENAME ( action_close_combat.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_no_talk2)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 80  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    SPEC(
-      FILENAME(action_no_talk2.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_ok_talk)
+      NAME ( action_icon_c4 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 150  0.000000 )
+     XPOS ( 80 )
     
-    YPOS( 180  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FILENAME(action_ok_talk.tif)
+     SPEC (
+       FILENAME ( action_c4.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_icon_ok_talk2)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 220  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    SPEC(
-      FILENAME(action_ok_talk2.tif)
-     
-     SIZE( 64  0.000000  64  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_icon_busy)
+      NAME ( action_icon_restrain )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 220  0.000000 )
+     XPOS ( 150 )
     
-    YPOS( 180  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FILENAME(action_channel_busy.tif)
+     SPEC (
+       FILENAME ( action_restrain.tif )
      
-     SIZE( 64  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_x)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 380  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    SPEC(
-      FILENAME(action_x.tif)
-     
-     SIZE( 32  0.000000  32  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_triangle)
+      NAME ( action_icon_door_open )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 440  0.000000 )
+     XPOS ( 220 )
     
-    YPOS( 180  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FILENAME(action_triangle.tif)
+     SPEC (
+       FILENAME ( action_door_open.tif )
      
-     SIZE( 32  0.000000  32  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(action_square)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 500  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    SPEC(
-      FILENAME(action_square.tif)
-     
-     SIZE( 32  0.000000  32  0.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(action_circle)
+      NAME ( action_icon_door_close )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 560  0.000000 )
+     XPOS ( 290 )
     
-    YPOS( 180  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FILENAME(action_circle.tif)
+     SPEC (
+       FILENAME ( action_door_close.tif )
      
-     SIZE( 32  0.000000  32  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(arial_allcaps)
-    
-    TYPE(TEXT)
-    
-    XPOS( 60  0.000000 )
-    
-    YPOS( 280  0.000000 )
-    
-    SPEC(
-      FONT(myriad_load)
-     
-     CAPTION("BATTLE FOR THE CRUDE")
-     
-     SCALE( 0.850000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(arial_allcaps)
+      NAME ( action_icon_talk )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 60  0.000000 )
+     XPOS ( 360 )
     
-    YPOS( 310  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FONT(myriad_load)
+     SPEC (
+       FILENAME ( action_talk.tif )
      
-     CAPTION("GOLDEN TRIANGLE HOLIDAY")
-     
-     SCALE( 1.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(arial_lowercase_chars)
+      NAME ( action_icon_tune_offense )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 20  0.000000 )
+     XPOS ( 430 )
     
-    YPOS( 350  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FONT(myriad_load)
+     SPEC (
+       FILENAME ( action_tune_offense.tif )
      
-     CAPTION("MERCENARY STAGING AREA TEMPLE AT HOHN KHEN")
-     
-     SCALE( 0.850000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(arial_just_chars)
+      NAME ( action_icon_tune_defense )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 80  0.000000 )
+     XPOS ( 500 )
     
-    YPOS( 380  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FONT(myriad_load)
+     SPEC (
+       FILENAME ( action_tune_defense.tif )
      
-     CAPTION("MOUNTAIN ASSAULT MOUTH OF THE BEAST")
-     
-     SCALE( 1.000000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
    (
-     NAME(arial_just_chars)
+      NAME ( action_icon_tune_team )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 80  0.000000 )
+     XPOS ( 570 )
     
-    YPOS( 410  0.000000 )
+     YPOS ( 100 )
     
-    SPEC(
-      FONT(myriad_load)
+     SPEC (
+       FILENAME ( action_tune_team.tif )
      
-     CAPTION("NUCLEAR EXTRACTION GHOSTTOWN")
-     
-     SCALE( 0.850000 )
+      SIZE ( 64  64 )
      
      )
     
     )
    
-   )
-  
-  ANIMATIONS((
-     BUTTON(TRIANGLE)
+   (
+      NAME ( action_icon_no_talk )
     
-    ANIMATION(goto_menu)
+     TYPE ( IMAGE )
     
-    ARGUMENT(dlgMenu.rdr)
+     XPOS ( 10 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_no_talk.tif )
+     
+      SIZE ( 64  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_icon_no_talk2 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 80 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_no_talk2.tif )
+     
+      SIZE ( 64  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_icon_ok_talk )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 150 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_ok_talk.tif )
+     
+      SIZE ( 64  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_icon_ok_talk2 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 220 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_ok_talk2.tif )
+     
+      SIZE ( 64  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_icon_busy )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 220 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_channel_busy.tif )
+     
+      SIZE ( 64  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_x )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 380 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_x.tif )
+     
+      SIZE ( 32  32 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_triangle )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 440 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_triangle.tif )
+     
+      SIZE ( 32  32 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_square )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 500 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_square.tif )
+     
+      SIZE ( 32  32 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( action_circle )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 560 )
+    
+     YPOS ( 180 )
+    
+     SPEC (
+       FILENAME ( action_circle.tif )
+     
+      SIZE ( 32  32 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arial_allcaps )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 60 )
+    
+     YPOS ( 280 )
+    
+     SPEC (
+       FONT ( myriad_load )
+     
+      CAPTION ( "BATTLE FOR THE CRUDE" )
+     
+      SCALE ( 0.850000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arial_allcaps )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 60 )
+    
+     YPOS ( 310 )
+    
+     SPEC (
+       FONT ( myriad_load )
+     
+      CAPTION ( "GOLDEN TRIANGLE HOLIDAY" )
+     
+      SCALE ( 1.000000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arial_lowercase_chars )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 350 )
+    
+     SPEC (
+       FONT ( myriad_load )
+     
+      CAPTION ( "MERCENARY STAGING AREA TEMPLE AT HOHN KHEN" )
+     
+      SCALE ( 0.850000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arial_just_chars )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 80 )
+    
+     YPOS ( 380 )
+    
+     SPEC (
+       FONT ( myriad_load )
+     
+      CAPTION ( "MOUNTAIN ASSAULT MOUTH OF THE BEAST" )
+     
+      SCALE ( 1.000000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arial_just_chars )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 80 )
+    
+     YPOS ( 410 )
+    
+     SPEC (
+       FONT ( myriad_load )
+     
+      CAPTION ( "NUCLEAR EXTRACTION GHOSTTOWN" )
+     
+      SCALE ( 0.850000 )
+     
+     )
     
     )
    
    )
   
-  ANIMATION_DEFINITIONS(
-    ANIMATION_LIST(
-     ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgMenu.rdr )
+    
+    )
+   
+   )
+  
+   ANIMATION_DEFINITIONS (
+     ANIMATION_LIST (
+      ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
     
     )
    

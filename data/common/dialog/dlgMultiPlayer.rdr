@@ -1,187 +1,187 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(Menu036_CreateGame_Background.tif)
+     FILENAME ( Menu036_CreateGame_Background.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(dlgMultiPlayer.rdr)
+    SCRIPT_LIBRARY ( dlgMultiPlayer.rdr )
    
-   ANIMATIONS((
-      BUTTON(SELECT)
+    ANIMATIONS ((
+       BUTTON ( SELECT )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(dlgMenu.rdr)
+      ARGUMENT ( dlgMenu.rdr )
      
      )
     
     (
-      EVENT(ONSTART)
+       EVENT ( ONSTART )
      
-     ANIMATION(entering_multiplayer_select)
+      ANIMATION ( entering_multiplayer_select )
      
      )
     
     )
    
-   CONTROLS((
-      NAME("Multi Player Mission Select")
+    CONTROLS ((
+       NAME ( "Multi Player Mission Select" )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 105  0.000000 )
+      YPOS ( 105 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       FILENAME(Menu050_CreateGame_MissionPressed.tif)
+      SPEC (
+        FILENAME ( Menu050_CreateGame_MissionPressed.tif )
       
-      XSIZE( 170  0.000000 )
+       XSIZE ( 170 )
       
-      YSIZE( 220  0.000000 )
+       YSIZE ( 220 )
       
-      SPACING( 30  0.000000 )
+       SPACING ( 30 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      OPTIONS((
-         TYPE(TEXT)
+       OPTIONS ((
+          TYPE ( TEXT )
         
-        CAPTION(mp1)
+         CAPTION ( mp1 )
         
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
         
-        ANIMATION(select_and_switch)
+         ANIMATION ( select_and_switch )
         
-        ARGUMENT(mp1)
-        
-        )
-       
-       (
-         TYPE(TEXT)
-        
-        CAPTION(mp2)
-        
-        BUTTON(CROSS)
-        
-        ANIMATION(select_and_switch)
-        
-        ARGUMENT(mp2)
+         ARGUMENT ( mp1 )
         
         )
        
        (
-         TYPE(TEXT)
+          TYPE ( TEXT )
         
-        CAPTION(mp3)
+         CAPTION ( mp2 )
         
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
         
-        ANIMATION(select_and_switch)
+         ANIMATION ( select_and_switch )
         
-        ARGUMENT(mp3)
-        
-        )
-       
-       (
-         TYPE(TEXT)
-        
-        CAPTION(mp4)
-        
-        BUTTON(CROSS)
-        
-        ANIMATION(select_and_switch)
-        
-        ARGUMENT(mp4)
+         ARGUMENT ( mp2 )
         
         )
        
        (
-         TYPE(TEXT)
+          TYPE ( TEXT )
         
-        CAPTION(mp5)
+         CAPTION ( mp3 )
         
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
         
-        ANIMATION(select_and_switch)
+         ANIMATION ( select_and_switch )
         
-        ARGUMENT(mp5)
-        
-        )
-       
-       (
-         TYPE(TEXT)
-        
-        CAPTION(mp6)
-        
-        BUTTON(CROSS)
-        
-        ANIMATION(select_and_switch)
-        
-        ARGUMENT(mp6)
+         ARGUMENT ( mp3 )
         
         )
        
        (
-         TYPE(TEXT)
+          TYPE ( TEXT )
         
-        CAPTION(mp7)
+         CAPTION ( mp4 )
         
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
         
-        ANIMATION(select_and_switch)
+         ANIMATION ( select_and_switch )
         
-        ARGUMENT(mp7)
-        
-        )
-       
-       (
-         TYPE(TEXT)
-        
-        CAPTION(mp8)
-        
-        BUTTON(CROSS)
-        
-        ANIMATION(select_and_switch)
-        
-        ARGUMENT(mp8)
+         ARGUMENT ( mp4 )
         
         )
        
        (
-         TYPE(TEXT)
+          TYPE ( TEXT )
         
-        CAPTION(mp9)
+         CAPTION ( mp5 )
         
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
         
-        ANIMATION(select_and_switch)
+         ANIMATION ( select_and_switch )
         
-        ARGUMENT(mp9)
+         ARGUMENT ( mp5 )
         
         )
        
        (
-         TYPE(TEXT)
+          TYPE ( TEXT )
         
-        CAPTION(mp10)
+         CAPTION ( mp6 )
         
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
         
-        ANIMATION(select_and_switch)
+         ANIMATION ( select_and_switch )
         
-        ARGUMENT(mp10)
+         ARGUMENT ( mp6 )
+        
+        )
+       
+       (
+          TYPE ( TEXT )
+        
+         CAPTION ( mp7 )
+        
+         BUTTON ( CROSS )
+        
+         ANIMATION ( select_and_switch )
+        
+         ARGUMENT ( mp7 )
+        
+        )
+       
+       (
+          TYPE ( TEXT )
+        
+         CAPTION ( mp8 )
+        
+         BUTTON ( CROSS )
+        
+         ANIMATION ( select_and_switch )
+        
+         ARGUMENT ( mp8 )
+        
+        )
+       
+       (
+          TYPE ( TEXT )
+        
+         CAPTION ( mp9 )
+        
+         BUTTON ( CROSS )
+        
+         ANIMATION ( select_and_switch )
+        
+         ARGUMENT ( mp9 )
+        
+        )
+       
+       (
+          TYPE ( TEXT )
+        
+         CAPTION ( mp10 )
+        
+         BUTTON ( CROSS )
+        
+         ANIMATION ( select_and_switch )
+        
+         ARGUMENT ( mp10 )
         
         )
        
@@ -197,27 +197,27 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(select_and_switch)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( select_and_switch )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(SETMISSION)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(INPUT_STRING)
+       ARGUMENT ( INPUT_STRING )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgGameLobby.rdr)
+       ARGUMENT ( dlgGameLobby.rdr )
       
       )
      

@@ -1,247 +1,220 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgSetTaunts.rdr)
+    SCRIPT_LIBRARY ( dlgSetTaunts.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("INPUT TAUNTS")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(net_conn_ind_Yel)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 572  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      FILENAME(NetMonY.tif)
+       CHILDOF ( letterbar )
       
-      SIZE( 28  0.000000  28  0.000000 )
+       CAPTION ( "INPUT TAUNTS" )
       
-      )
-     
-     )
-    
-    (
-      NAME(net_conn_ind_blue)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 581  0.000000 )
-     
-     YPOS( 34  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
-      
-      FILENAME(NetMonB.tif)
-      
-      SIZE( 10  0.000000  12  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( net_conn_ind_Yel )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 160  0.000000 )
+      XPOS ( 572 )
      
-     YPOS( 67  0.000000 )
+      YPOS ( 25 )
      
-     SPEC(
-       XSIZE( 445  0.000000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      YSIZE( 30  0.000000 )
+       FILENAME ( NetMonY.tif )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 160  0.000000 )
-     
-     YPOS( 97  0.000000 )
-     
-     SPEC(
-       XSIZE( 445  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       SIZE ( 28  28 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( net_conn_ind_blue )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 160  0.000000 )
+      XPOS ( 581 )
      
-     YPOS( 127  0.000000 )
+      YPOS ( 34 )
      
-     SPEC(
-       XSIZE( 445  0.000000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      YSIZE( 30  0.000000 )
+       FILENAME ( NetMonB.tif )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 160  0.000000 )
-     
-     YPOS( 157  0.000000 )
-     
-     SPEC(
-       XSIZE( 445  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       SIZE ( 10  12 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( TabSmWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 160  0.000000 )
+      XPOS ( 160 )
      
-     YPOS( 187  0.000000 )
+      YPOS ( 67 )
      
-     SPEC(
-       XSIZE( 445  0.000000 )
+      SPEC (
+        XSIZE ( 445 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(SOP1)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 185  0.000000 )
+      XPOS ( 160 )
      
-     YPOS( 87  0.000000 )
+      YPOS ( 97 )
      
-     SPEC(
-       CAPTION("SET ME")
+      SPEC (
+        XSIZE ( 445 )
       
-      SCALE( 0.400000 )
+       YSIZE ( 30 )
       
-      UIVAR(
-        NAME(MPLOCALSOP1)
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 160 )
+     
+      YPOS ( 127 )
+     
+      SPEC (
+        XSIZE ( 445 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 160 )
+     
+      YPOS ( 157 )
+     
+      SPEC (
+        XSIZE ( 445 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 160 )
+     
+      YPOS ( 187 )
+     
+      SPEC (
+        XSIZE ( 445 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SOP1 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 87 )
+     
+      SPEC (
+        CAPTION ( "SET ME" )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( MPLOCALSOP1 )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
-       VALUE(ONE)
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(SOP2)
-     
-     TYPE(TEXT)
-     
-     XPOS( 185  0.000000 )
-     
-     YPOS( 117  0.000000 )
-     
-     SPEC(
-       CAPTION("SET ME")
-      
-      SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(MPLOCALSOP2)
-       
-       LONGEVITY(PERSISTENT)
-       
-       VALUE("TWO NOT SET")
+        VALUE ( ONE )
        
        )
       
@@ -250,52 +223,25 @@
      )
     
     (
-      NAME(SOP3)
+       NAME ( SOP2 )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 185  0.000000 )
+      XPOS ( 185 )
      
-     YPOS( 147  0.000000 )
+      YPOS ( 117 )
      
-     SPEC(
-       CAPTION("SET ME")
+      SPEC (
+        CAPTION ( "SET ME" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(MPLOCALSOP3)
+       UIVAR (
+         NAME ( MPLOCALSOP2 )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
-       VALUE("NOT SET")
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(SOP4)
-     
-     TYPE(TEXT)
-     
-     XPOS( 185  0.000000 )
-     
-     YPOS( 177  0.000000 )
-     
-     SPEC(
-       CAPTION("SET ME")
-      
-      SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(MPLOCALSOP4)
-       
-       LONGEVITY(PERSISTENT)
-       
-       VALUE("NOT SET")
+        VALUE ( "TWO NOT SET" )
        
        )
       
@@ -304,25 +250,25 @@
      )
     
     (
-      NAME(SOP5)
+       NAME ( SOP3 )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 185  0.000000 )
+      XPOS ( 185 )
      
-     YPOS( 207  0.000000 )
+      YPOS ( 147 )
      
-     SPEC(
-       CAPTION("SET ME")
+      SPEC (
+        CAPTION ( "SET ME" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(MPLOCALSOP5)
+       UIVAR (
+         NAME ( MPLOCALSOP3 )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
-       VALUE("FIVE NOT SET")
+        VALUE ( "NOT SET" )
        
        )
       
@@ -331,145 +277,199 @@
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( SOP4 )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 185 )
      
-     YPOS( 361  0.000000 )
+      YPOS ( 177 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        CAPTION ( "SET ME" )
       
-      SIZE( 640  0.000000  86  0.000000 )
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( MPLOCALSOP4 )
+       
+        LONGEVITY ( PERSISTENT )
+       
+        VALUE ( "NOT SET" )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SOP5 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 207 )
+     
+      SPEC (
+        CAPTION ( "SET ME" )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( MPLOCALSOP5 )
+       
+        LONGEVITY ( PERSISTENT )
+       
+        VALUE ( "FIVE NOT SET" )
+       
+       )
       
       )
      
      )
     
     (
-      NAME(dogtags)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 370  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 325  0.000000 )
+      YPOS ( 361 )
      
-     SPEC(
-       FILENAME(dogtags.tif)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      SIZE( 256  0.000000  128  0.000000 )
+       SIZE ( 640  86 )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      EVENT(ONSTART)
-     
-     ANIMATION(net_monitor)
-     
-     )
-    
     (
-      EVENT(ONSTART)
+       NAME ( dogtags )
      
-     ANIMATION(letterbar_slide_down)
+      TYPE ( IMAGE )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 370 )
      
-     ANIMATION(bottom_bar_slide_up)
+      YPOS ( 325 )
      
-     )
-    
-    (
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(PREVIOUS_SCREEN)
-     
-     )
-    
-    (
-      EVENT(MP_MEDIUS_ERROR)
-     
-     ANIMATION(OnMultiplayerDisconnect)
+      SPEC (
+        FILENAME ( dogtags.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(SetSOP1)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     XPOS( 10  0.000000 )
+      ANIMATION ( net_monitor )
      
-     YPOS( 67  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     TYPE(BUTTON)
+      ANIMATION ( letterbar_slide_down )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( SetSOP1 )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 67 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      CAPTION("TAUNT 1")
+       CAPTION ( "TAUNT 1" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(do_chat)
+         ANIMATION ( do_chat )
         
-        ARGUMENT(MPLOCALSOP1)
+         ARGUMENT ( MPLOCALSOP1 )
         
         )
        
@@ -480,140 +480,68 @@
      )
     
     (
-      NAME(SetSOP2)
+       NAME ( SetSOP2 )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 97  0.000000 )
+      YPOS ( 97 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      CAPTION("TAUNT 2")
+       CAPTION ( "TAUNT 2" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
-       
-       )
-      
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
-       
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
-        
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        ANIMATION(do_chat)
-        
-        ARGUMENT(MPLOCALSOP2)
+         TIME ( 0.500000 )
         
         )
        
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(SetSOP3)
-     
-     XPOS( 10  0.000000 )
-     
-     YPOS( 127  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     SPEC(
-       XSIZE( 145  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      XOFFSET( 15  0.000000 )
-      
-      YOFFSET( 22  0.000000 )
-      
-      CAPTION("TAUNT 3")
-      
-      SCALE( 0.400000 )
-      
-      PRESSED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
-       
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        TIME( 0.500000 )
+         ANIMATION ( do_chat )
         
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(do_chat)
-        
-        ARGUMENT(MPLOCALSOP3)
+         ARGUMENT ( MPLOCALSOP2 )
         
         )
        
@@ -624,68 +552,68 @@
      )
     
     (
-      NAME(SetSOP4)
+       NAME ( SetSOP3 )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 157  0.000000 )
+      YPOS ( 127 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      CAPTION("TAUNT 4")
+       CAPTION ( "TAUNT 3" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(do_chat)
+         ANIMATION ( do_chat )
         
-        ARGUMENT(MPLOCALSOP4)
+         ARGUMENT ( MPLOCALSOP3 )
         
         )
        
@@ -696,68 +624,140 @@
      )
     
     (
-      NAME(SetSOP5)
+       NAME ( SetSOP4 )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 187  0.000000 )
+      YPOS ( 157 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      CAPTION("TAUNT 5")
+       CAPTION ( "TAUNT 4" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(do_chat)
+         ANIMATION ( do_chat )
         
-        ARGUMENT(MPLOCALSOP5)
+         ARGUMENT ( MPLOCALSOP4 )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SetSOP5 )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 187 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 145 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 22 )
+      
+       CAPTION ( "TAUNT 5" )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( do_chat )
+        
+         ARGUMENT ( MPLOCALSOP5 )
         
         )
        
@@ -773,20 +773,20 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SaveReturn)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SaveReturn )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(save_and_leave)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( save_and_leave )
       
       )
      
@@ -794,43 +794,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(do_chat)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_chat )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(SetSkbPurpose)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
       
-      ARGUMENT("Enter a Taunt")
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(GetTextInput)
-      
-      NODE(MENUMPPLAYERNAME)
-      
-      ARGUMENT($1)
+       ARGUMENT ( "Enter a Taunt" )
       
       )
      
-     VALVE(SkbMaxChars= 35  0.000000 )
-     
-     WHILE(
-       VALVE(skb_done== 0  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( $1 )
       
       )
      
-     END_WHILE()
+      VALVE ( SkbMaxChars  =  35 )
      
-     VALVE(OptionsChanged= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(NetCensorText)
+      WHILE (
+        VALVE ( skb_done  ==  0 )
       
-      ARGUMENT($1)
+      )
+     
+      END_WHILE ()
+     
+      VALVE ( OptionsChanged  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCensorText )
+      
+       ARGUMENT ( $1 )
       
       )
      
@@ -838,43 +838,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( ACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      START()
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
       
       )
      
@@ -882,36 +882,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
       
       )
      

@@ -1,32 +1,32 @@
 ((
-  ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(run_mission)
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( run_mission )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      START()
+       START ()
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(INPUT_STRING)
+       ARGUMENT ( INPUT_STRING )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(LOAD_SCREEN)
+       ARGUMENT ( LOAD_SCREEN )
       
       )
      

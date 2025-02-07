@@ -1,264 +1,264 @@
 ((
-  ANIMATION_DEFINITIONS(
-   GRAVITY( -98.000000 )
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
   
-  ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_stone)
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_stone )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_STONE_5_L)
+      SOUND (
+        NAME ( SND_STEP_STONE_5_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_STONE_5_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_STONE_5_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_asphalt)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_asphalt )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_CONCRETE_L)
+      SOUND (
+        NAME ( SND_STEP_CONCRETE_L )
       
-      VOLUME( 0.500000 )
+       VOLUME ( 0.500000 )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_CONCRETE_R)
-      
-      VOLUME( 0.500000 )
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_CONCRETE_R )
+      
+       VOLUME ( 0.500000 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_wood_thin)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_wood_thin )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_WOOD_L)
+      SOUND (
+        NAME ( SND_STEP_WOOD_L )
       
-      VOLUME( 0.500000 )
+       VOLUME ( 0.500000 )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_WOOD_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_WOOD_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_wood_thick)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_wood_thick )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_WOOD_L)
+      SOUND (
+        NAME ( SND_STEP_WOOD_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_WOOD_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_WOOD_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_sand)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_sand )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_SAND_L)
+      SOUND (
+        NAME ( SND_STEP_SAND_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      VOLUME( 0.200000 )
+       VOLUME ( 0.200000 )
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_SAND_R)
-      
-      INPUT_TRANSLATION()
-      
-      VOLUME( 0.200000 )
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_SAND_R )
+      
+       INPUT_TRANSLATION ()
+      
+       VOLUME ( 0.200000 )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(sand_puffy_combs)
+     SEQUENCE_DEFINITION (
+       NAME ( sand_puffy_combs )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     PARTICLE_SOURCE(
-       NAME(footfall_sand1_puff)
+      PARTICLE_SOURCE (
+        NAME ( footfall_sand1_puff )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -5.000000  5.000000 )
+       PERTURB_VELOCITY_X ( -5.000000  5.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  5.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  5.000000 )
       
-      PERTURB_VELOCITY_Z( -5.000000  5.000000 )
+       PERTURB_VELOCITY_Z ( -5.000000  5.000000 )
       
-      RADIUS_RANGE( 1.000000  2.200000 )
+       RADIUS_RANGE ( 1.000000  2.200000 )
       
-      LIFESPAN_RANGE( 0.600000  1.000000 )
+       LIFESPAN_RANGE ( 0.600000  1.000000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.400000 )
+       WIND_FACTOR ( 0.400000 )
       
-      FRICTION( 0.300000 )
+       FRICTION ( 0.300000 )
       
-      WORLD_ACCELERATION( 0.000000  -18.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -18.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 50.000000  500.000000 )
+       FADE_FAR_RANGE ( 50.000000  500.000000 )
       
-      COLORS(( 0.000000  0.600000  0.550000  0.430000  1.000000 )
+       COLORS (( 0.000000  0.600000  0.550000  0.430000  1.000000 )
        
        ( 0.300000  0.600000  0.550000  0.430000  0.500000 )
        
@@ -266,7 +266,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.000000 )
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
        
        ( 1.000000  3.000000 )
        
@@ -274,176 +274,176 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_grass)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_grass )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_LEAVES_L)
+      SOUND (
+        NAME ( SND_STEP_LEAVES_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_LEAVES_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_LEAVES_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_thatch)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_thatch )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_LEAVES_L)
+      SOUND (
+        NAME ( SND_STEP_LEAVES_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_LEAVES_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_LEAVES_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_water)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_water )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_WATER_L)
+      SOUND (
+        NAME ( SND_STEP_WATER_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_WATER_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_WATER_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(footfall_water1_out)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( footfall_water1_out )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.004000 )
+       TIME_INTERVAL ( 0.004000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -20.000000  20.000000 )
+       PERTURB_VELOCITY_X ( -20.000000  20.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  30.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  30.000000 )
       
-      PERTURB_VELOCITY_Z( -20.000000  20.000000 )
+       PERTURB_VELOCITY_Z ( -20.000000  20.000000 )
       
-      RADIUS_RANGE( 0.350000  0.800000 )
+       RADIUS_RANGE ( 0.350000  0.800000 )
       
-      LIFESPAN_RANGE( 0.400000  0.900000 )
+       LIFESPAN_RANGE ( 0.400000  0.900000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0.000000 )
+       FRICTION ( 0.000000 )
       
-      WORLD_ACCELERATION( 0.000000  -60.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -60.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 50.000000  500.000000 )
+       FADE_FAR_RANGE ( 50.000000  500.000000 )
       
-      COLORS(( 0.000000  0.500000  0.550000  0.490000  0.300000 )
+       COLORS (( 0.000000  0.500000  0.550000  0.490000  0.300000 )
        
        ( 0.300000  0.600000  0.650000  0.590000  0.200000 )
        
@@ -453,59 +453,59 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(footfall_water2_puff)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( footfall_water2_puff )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.030000 )
+       TIME_INTERVAL ( 0.030000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -6.000000  6.000000 )
+       PERTURB_VELOCITY_X ( -6.000000  6.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  20.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  20.000000 )
       
-      PERTURB_VELOCITY_Z( -6.000000  6.000000 )
+       PERTURB_VELOCITY_Z ( -6.000000  6.000000 )
       
-      RADIUS_RANGE( 2.000000  6.000000 )
+       RADIUS_RANGE ( 2.000000  6.000000 )
       
-      LIFESPAN_RANGE( 1.750000  2.500000 )
+       LIFESPAN_RANGE ( 1.750000  2.500000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0.000000 )
+       FRICTION ( 0.000000 )
       
-      WORLD_ACCELERATION( 0.000000  -15.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -15.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 50.000000  500.000000 )
+       FADE_FAR_RANGE ( 50.000000  500.000000 )
       
-      COLORS(( 0.000000  0.500000  0.550000  0.490000  0.200000 )
+       COLORS (( 0.000000  0.500000  0.550000  0.490000  0.200000 )
        
        ( 0.300000  0.600000  0.650000  0.590000  0.100000 )
        
@@ -515,98 +515,98 @@
       
       )
      
-     WAIT(FRAME_COUNT 3  0.000000 )
+      WAIT ( FRAME_COUNT  3 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_underwater)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_underwater )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_WATER_L)
+      SOUND (
+        NAME ( SND_STEP_WATER_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_WATER_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_WATER_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(footfall_underwater1_out)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( footfall_underwater1_out )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.004000 )
+       TIME_INTERVAL ( 0.004000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -20.000000  20.000000 )
+       PERTURB_VELOCITY_X ( -20.000000  20.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  30.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  30.000000 )
       
-      PERTURB_VELOCITY_Z( -20.000000  20.000000 )
+       PERTURB_VELOCITY_Z ( -20.000000  20.000000 )
       
-      RADIUS_RANGE( 0.350000  0.800000 )
+       RADIUS_RANGE ( 0.350000  0.800000 )
       
-      LIFESPAN_RANGE( 0.400000  0.900000 )
+       LIFESPAN_RANGE ( 0.400000  0.900000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0.000000 )
+       FRICTION ( 0.000000 )
       
-      WORLD_ACCELERATION( 0.000000  -60.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -60.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 50.000000  500.000000 )
+       FADE_FAR_RANGE ( 50.000000  500.000000 )
       
-      COLORS(( 0.000000  0.500000  0.550000  0.490000  0.300000 )
+       COLORS (( 0.000000  0.500000  0.550000  0.490000  0.300000 )
        
        ( 0.300000  0.600000  0.650000  0.590000  0.200000 )
        
@@ -616,59 +616,59 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(footfall_underwater2_puff)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( footfall_underwater2_puff )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.030000 )
+       TIME_INTERVAL ( 0.030000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -6.000000  6.000000 )
+       PERTURB_VELOCITY_X ( -6.000000  6.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  20.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  20.000000 )
       
-      PERTURB_VELOCITY_Z( -6.000000  6.000000 )
+       PERTURB_VELOCITY_Z ( -6.000000  6.000000 )
       
-      RADIUS_RANGE( 2.000000  6.000000 )
+       RADIUS_RANGE ( 2.000000  6.000000 )
       
-      LIFESPAN_RANGE( 1.750000  2.500000 )
+       LIFESPAN_RANGE ( 1.750000  2.500000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0.000000 )
+       FRICTION ( 0.000000 )
       
-      WORLD_ACCELERATION( 0.000000  -15.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -15.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 50.000000  500.000000 )
+       FADE_FAR_RANGE ( 50.000000  500.000000 )
       
-      COLORS(( 0.000000  0.500000  0.550000  0.490000  0.200000 )
+       COLORS (( 0.000000  0.500000  0.550000  0.490000  0.200000 )
        
        ( 0.300000  0.600000  0.650000  0.590000  0.100000 )
        
@@ -678,104 +678,104 @@
       
       )
      
-     WAIT(FRAME_COUNT 3  0.000000 )
+      WAIT ( FRAME_COUNT  3 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_snow)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_snow )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_SNOW_L)
+      SOUND (
+        NAME ( SND_STEP_SNOW_L )
       
-      VOLUME( 0.150000 )
+       VOLUME ( 0.150000 )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_SNOW_R)
-      
-      VOLUME( 0.150000 )
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_SNOW_R )
+      
+       VOLUME ( 0.150000 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(footfall_snow1_out)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( footfall_snow1_out )
       
-      TEXTURES(effect_spark02.tif)
+       TEXTURES ( effect_spark02.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.003000 )
+       TIME_INTERVAL ( 0.003000 )
       
-      NUM_PERIODS( 1  0.000000 )
+       NUM_PERIODS ( 1 )
       
-      NUMBER( 8  0.000000 )
+       NUMBER ( 8 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -5.000000  5.000000 )
+       PERTURB_VELOCITY_X ( -5.000000  5.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  10.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  10.000000 )
       
-      PERTURB_VELOCITY_Z( -5.000000  5.000000 )
+       PERTURB_VELOCITY_Z ( -5.000000  5.000000 )
       
-      RADIUS_RANGE( 0.500000  0.700000 )
+       RADIUS_RANGE ( 0.500000  0.700000 )
       
-      LIFESPAN_RANGE( 0.750000  1.500000 )
+       LIFESPAN_RANGE ( 0.750000  1.500000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0.000000 )
+       FRICTION ( 0.000000 )
       
-      WORLD_ACCELERATION( 0.000000  -40.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -40.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 2.000000  5.000000 )
+       FADE_NEAR_RANGE ( 2.000000  5.000000 )
       
-      FADE_FAR_RANGE( 50.000000  500.000000 )
+       FADE_FAR_RANGE ( 50.000000  500.000000 )
       
-      COLORS(( 0.000000  0.600000  0.600000  0.650000  0.500000 )
+       COLORS (( 0.000000  0.600000  0.600000  0.650000  0.500000 )
        
        ( 0.300000  0.600000  0.600000  0.650000  0.300000 )
        
@@ -783,7 +783,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.000000 )
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
        
        ( 1.000000  3.000000 )
        
@@ -791,89 +791,89 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_metal_thin)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_metal_thin )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_TIN_L)
+      SOUND (
+        NAME ( SND_STEP_TIN_L )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_TIN_R)
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_TIN_R )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(seal_footfall_metal_thick)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( seal_footfall_metal_thick )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       RANDOM_WEIGHT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     SOUND(
-       NAME(SND_STEP_METAL_L)
+      SOUND (
+        NAME ( SND_STEP_METAL_L )
       
-      VOLUME( 0.500000 )
+       VOLUME ( 0.500000 )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
-      
-      )
-     
-     ELSE()
-     
-     SOUND(
-       NAME(SND_STEP_METAL_R)
-      
-      VOLUME( 0.500000 )
-      
-      INPUT_TRANSLATION()
-      
-      START()
+       START ()
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_STEP_METAL_R )
+      
+       VOLUME ( 0.500000 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
      
      )
     

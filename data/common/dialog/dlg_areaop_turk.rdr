@@ -1,765 +1,688 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/ui2d)
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
   
-  BACKGROUND(
-    TYPE(MPEG)
+   BACKGROUND (
+     TYPE ( MPEG )
    
-   FILENAME(run/movies/common/radar.pss)
+    FILENAME ( run/movies/common/radar.pss )
    
    )
   
-  FONT(myriad)
+   FONT ( myriad )
   
-  SCRIPT_LIBRARY(dlg_areaop_turk.rdr)
+   SCRIPT_LIBRARY ( dlg_areaop_turk.rdr )
   
-  OBJECTS((
-     NAME(letterbar)
+   OBJECTS ((
+      NAME ( letterbar )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 0  0.000000 )
+     YPOS ( 0 )
     
-    SPEC(
-      FILENAME(blank_top_bar.tif)
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
      
-     XSIZE( 640  0.000000 )
+      XSIZE ( 640 )
      
-     YSIZE( 64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(bar_title)
-    
-    TYPE(TEXT)
-    
-    XPOS( 20  0.000000 )
-    
-    YPOS( 50  0.000000 )
-    
-    SPEC(
-      FONT(Gothic_13)
-     
-     CHILDOF(letterbar)
-     
-     CAPTION("MISSION SELECTION")
-     
-     SCALE( 0.950000 )
+      YSIZE ( 64 )
      
      )
     
     )
    
    (
-     NAME(letterbar_bottom)
+      NAME ( bar_title )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 20 )
     
-    YPOS( 361  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      FILENAME(common_bar_bottom.tif)
+     SPEC (
+       FONT ( Gothic_13 )
      
-     SIZE( 640  0.000000  64  0.000000 )
+      CHILDOF ( letterbar )
      
-     )
-    
-    )
-   
-   (
-     NAME(teletype_plate)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 285  0.000000 )
-    
-    YPOS( 105  0.000000 )
-    
-    SPEC(
-      FILENAME(common_teletype_plate.tif)
+      CAPTION ( "MISSION SELECTION" )
      
-     XSIZE( 350  0.000000 )
-     
-     YSIZE( 245  0.000000 )
+      SCALE ( 0.950000 )
      
      )
     
     )
    
    (
-     NAME(teletype_text)
+      NAME ( letterbar_bottom )
     
-    TYPE(TELETYPE)
+     TYPE ( IMAGE )
     
-    XPOS( 10  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 50  0.000000 )
+     YPOS ( 361 )
     
-    SPEC(
-      CHILDOF(teletype_plate)
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
      
-     PULSERATE( 10.000000 )
-     
-     MAXLENGTH( 230  0.000000 )
-     
-     MAXHEIGHT( 170  0.000000 )
-     
-     CAPTION(" ")
-     
-     SCALE( 0.400000 )
-     
-     INTERVAL( 800.000000 )
-     
-     SPACING( 20  0.000000 )
+      SIZE ( 640  64 )
      
      )
     
     )
    
    (
-     NAME(DescriptionText)
+      NAME ( teletype_plate )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 300  0.000000 )
+     XPOS ( 285 )
     
-    YPOS( 125  0.000000 )
+     YPOS ( 105 )
     
-    SPEC(
-      COLOR( 255.000000  204.000000  51.000000 )
+     SPEC (
+       FILENAME ( common_teletype_plate.tif )
      
-     SCALE( 0.450000 )
+      XSIZE ( 350 )
      
-     CAPTION(" ")
-     
-     )
-    
-    )
-   
-   (
-     NAME(title_bar)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 60  0.000000 )
-    
-    SPEC(
-      FILENAME(undefined.tif)
-     
-     SIZE( 700  0.000000  32  0.000000 )
+      YSIZE ( 245 )
      
      )
     
     )
    
    (
-     NAME(Mission_title)
+      NAME ( teletype_text )
     
-    TYPE(TEXT)
+     TYPE ( TELETYPE )
     
-    XPOS( 80  0.000000 )
+     XPOS ( 10 )
     
-    YPOS( 23  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      COLOR( 73.000000  76.000000  81.000000 )
+     SPEC (
+       CHILDOF ( teletype_plate )
      
-     CHILDOF(title_bar)
+      PULSERATE ( 10.000000 )
      
-     CAPTION("TURKMENISTAN: OPERATION SERPENT STRIKE")
+      MAXLENGTH ( 230 )
      
-     SCALE( 0.700000 )
+      MAXHEIGHT ( 170 )
      
-     )
-    
-    )
-   
-   (
-     NAME(dogtags)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 370  0.000000 )
-    
-    YPOS( 320  0.000000 )
-    
-    SPEC(
-      FILENAME(dogtags.tif)
+      CAPTION ( " " )
      
-     SIZE( 256  0.000000  128  0.000000 )
+      SCALE ( 0.400000 )
+     
+      INTERVAL ( 800.000000 )
+     
+      SPACING ( 20 )
      
      )
     
     )
    
    (
-     NAME(Star1)
+      NAME ( DescriptionText )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 65  0.000000 )
+     XPOS ( 300 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 125 )
     
-    SPEC(
-      CHILDOF(alaska_mission1_button)
+     SPEC (
+       COLOR ( 255.000000  204.000000  51.000000 )
      
-     FILENAME(GoldStar.tif)
+      SCALE ( 0.450000 )
      
-     SIZE( 35  0.000000  35  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Star2)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 65  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      CHILDOF(alaska_mission2_button)
-     
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      CAPTION ( " " )
      
      )
     
     )
    
    (
-     NAME(Star3)
+      NAME ( title_bar )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 65  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 60 )
     
-    SPEC(
-      CHILDOF(alaska_mission3_button)
+     SPEC (
+       FILENAME ( undefined.tif )
      
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 700  32 )
      
      )
     
     )
    
    (
-     NAME(Star4)
+      NAME ( Mission_title )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 115  0.000000 )
+     XPOS ( 80 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 23 )
     
-    SPEC(
-      CHILDOF(alaska_mission1_button)
+     SPEC (
+       COLOR ( 73.000000  76.000000  81.000000 )
      
-     FILENAME(GoldStar.tif)
+      CHILDOF ( title_bar )
      
-     SIZE( 35  0.000000  35  0.000000 )
+      CAPTION ( "TURKMENISTAN: OPERATION SERPENT STRIKE" )
      
-     )
-    
-    )
-   
-   (
-     NAME(Star5)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 115  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      CHILDOF(alaska_mission2_button)
-     
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SCALE ( 0.700000 )
      
      )
     
     )
    
    (
-     NAME(Star6)
+      NAME ( dogtags )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 115  0.000000 )
+     XPOS ( 370 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 320 )
     
-    SPEC(
-      CHILDOF(alaska_mission3_button)
+     SPEC (
+       FILENAME ( dogtags.tif )
      
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 256  128 )
      
      )
     
     )
    
    (
-     NAME(Star7)
+      NAME ( Star1 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 165  0.000000 )
+     XPOS ( 65 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      CHILDOF(alaska_mission1_button)
+     SPEC (
+       CHILDOF ( alaska_mission1_button )
      
-     FILENAME(GoldStar.tif)
+      FILENAME ( GoldStar.tif )
      
-     SIZE( 35  0.000000  35  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Star8)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 165  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      CHILDOF(alaska_mission2_button)
-     
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 35  35 )
      
      )
     
     )
    
    (
-     NAME(Star9)
+      NAME ( Star2 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 165  0.000000 )
+     XPOS ( 65 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      CHILDOF(alaska_mission3_button)
+     SPEC (
+       CHILDOF ( alaska_mission2_button )
      
-     FILENAME(GoldStar.tif)
+      FILENAME ( GoldStar.tif )
      
-     SIZE( 35  0.000000  35  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Star10)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 15  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      CHILDOF(alaska_mission1_button)
-     
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 35  35 )
      
      )
     
     )
    
    (
-     NAME(Star11)
+      NAME ( Star3 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 15  0.000000 )
+     XPOS ( 65 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      CHILDOF(alaska_mission2_button)
+     SPEC (
+       CHILDOF ( alaska_mission3_button )
      
-     FILENAME(GoldStar.tif)
+      FILENAME ( GoldStar.tif )
      
-     SIZE( 35  0.000000  35  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Star12)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 15  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      CHILDOF(alaska_mission3_button)
-     
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 35  35 )
      
      )
     
     )
    
    (
-     NAME(Star13)
+      NAME ( Star4 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 215  0.000000 )
+     XPOS ( 115 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      CHILDOF(alaska_mission1_button)
+     SPEC (
+       CHILDOF ( alaska_mission1_button )
      
-     FILENAME(GoldStar.tif)
+      FILENAME ( GoldStar.tif )
      
-     SIZE( 35  0.000000  35  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Star14)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 215  0.000000 )
-    
-    YPOS( 20  0.000000 )
-    
-    SPEC(
-      CHILDOF(alaska_mission2_button)
-     
-     FILENAME(GoldStar.tif)
-     
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 35  35 )
      
      )
     
     )
    
    (
-     NAME(Star15)
+      NAME ( Star5 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 215  0.000000 )
+     XPOS ( 115 )
     
-    YPOS( 20  0.000000 )
+     YPOS ( 20 )
     
-    SPEC(
-      CHILDOF(alaska_mission3_button)
+     SPEC (
+       CHILDOF ( alaska_mission2_button )
      
-     FILENAME(GoldStar.tif)
+      FILENAME ( GoldStar.tif )
      
-     SIZE( 35  0.000000  35  0.000000 )
+      SIZE ( 35  35 )
      
      )
     
     )
    
-   )
-  
-  ANIMATIONS((
-     BUTTON(SELECT)
+   (
+      NAME ( Star6 )
     
-    ANIMATION(goto_menu)
+     TYPE ( IMAGE )
     
-    ARGUMENT(dlgMenu.rdr)
+     XPOS ( 115 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission3_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
     
     )
    
    (
-     BUTTON(TRIANGLE)
+      NAME ( Star7 )
     
-    ANIMATION(goto_menu)
+     TYPE ( IMAGE )
     
-    ARGUMENT(dlgMISSIONSELECTION.rdr)
+     XPOS ( 165 )
     
-    )
-   
-   (
-     EVENT(ONSTART)
+     YPOS ( 20 )
     
-    ANIMATION(PlaceStars)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(mission1_button_slide)
+     SPEC (
+       CHILDOF ( alaska_mission1_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
     
     )
    
    (
-     EVENT(ONSTART)
+      NAME ( Star8 )
     
-    ANIMATION(mission2_button_slide)
+     TYPE ( IMAGE )
     
-    )
-   
-   (
-     EVENT(ONSTART)
+     XPOS ( 165 )
     
-    ANIMATION(mission3_button_slide)
+     YPOS ( 20 )
     
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(mission4_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(title_oilplatform_slide)
+     SPEC (
+       CHILDOF ( alaska_mission2_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
     
     )
    
    (
-     EVENT(ONSTART)
+      NAME ( Star9 )
     
-    ANIMATION(letterbar_slide)
+     TYPE ( IMAGE )
+    
+     XPOS ( 165 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission3_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
     
     )
    
    (
-     EVENT(ONSTART)
+      NAME ( Star10 )
     
-    ANIMATION(bottom_bar_slide_up)
+     TYPE ( IMAGE )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission1_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Star11 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission2_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Star12 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission3_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Star13 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 215 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission1_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Star14 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 215 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission2_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Star15 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 215 )
+    
+     YPOS ( 20 )
+    
+     SPEC (
+       CHILDOF ( alaska_mission3_button )
+     
+      FILENAME ( GoldStar.tif )
+     
+      SIZE ( 35  35 )
+     
+     )
     
     )
    
    )
   
-  CONTROLS((
-     NAME(anchor)
+   ANIMATIONS ((
+      BUTTON ( SELECT )
     
-    TYPE(IMAGE)
+     ANIMATION ( goto_menu )
     
-    XPOS( 0  0.000000 )
+     ARGUMENT ( dlgMenu.rdr )
     
-    YPOS( 100  0.000000 )
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
     
-    SPEC(
-      FILENAME(anchor_turkmenistan.tif)
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgMISSIONSELECTION.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( PlaceStars )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( mission1_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( mission2_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( mission3_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( mission4_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( title_oilplatform_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( anchor )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       FILENAME ( anchor_turkmenistan.tif )
      
-     SIZE( 145  0.000000  286  0.000000 )
+      SIZE ( 145  286 )
      
      )
     
     )
    
    (
-     NAME(anchor)
+      NAME ( anchor )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 45  0.000000 )
+     XPOS ( 45 )
     
-    YPOS( 312  0.000000 )
+     YPOS ( 312 )
     
-    SPEC(
-      FILENAME(anchor_rocks.tif)
+     SPEC (
+       FILENAME ( anchor_rocks.tif )
      
-     SIZE( 336  0.000000  76  0.000000 )
+      SIZE ( 336  76 )
      
      )
     
     )
    
    (
-     NAME(alaska_mission1_button)
+      NAME ( alaska_mission1_button )
     
-    TYPE(BUTTON)
+     TYPE ( BUTTON )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 176  0.000000 )
+     YPOS ( 176 )
     
-    SPEC(
-      XSIZE( 255  0.000000 )
+     SPEC (
+       XSIZE ( 255 )
      
-     YSIZE( 36  0.000000 )
+      YSIZE ( 36 )
      
-     XOFFSET( 20  0.000000 )
+      XOFFSET ( 20 )
      
-     YOFFSET( 25  0.000000 )
+      YOFFSET ( 25 )
      
-     SCALE( 0.500000 )
+      SCALE ( 0.500000 )
      
-     CAPTION("PRISON BREAK")
+      CAPTION ( "PRISON BREAK" )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     ANIMATIONS((
-        BUTTON(CROSS)
+      ANIMATIONS ((
+         BUTTON ( CROSS )
        
-       ANIMATION(UiTopTkOnMission1)
+        ANIMATION ( UiTopTkOnMission1 )
        
        )
       
       (
-        EVENT(ONACTIVATE)
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(teletype_mission1_overview)
-       
-       )
-      
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(alaska_mission2_button)
-    
-    TYPE(BUTTON)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 245  0.000000 )
-    
-    SPEC(
-      XSIZE( 255  0.000000 )
-     
-     YSIZE( 36  0.000000 )
-     
-     XOFFSET( 20  0.000000 )
-     
-     YOFFSET( 25  0.000000 )
-     
-     SCALE( 0.500000 )
-     
-     CAPTION("MOUTH OF THE BEAST")
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        BUTTON(CROSS)
-       
-       ANIMATION(UiTopTkOnMission2)
-       
-       )
-      
-      (
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(teletype_mission2_overview)
+        ANIMATION ( teletype_mission1_overview )
        
        )
       
@@ -770,73 +693,150 @@
     )
    
    (
-     NAME(alaska_mission3_button)
+      NAME ( alaska_mission2_button )
     
-    TYPE(BUTTON)
+     TYPE ( BUTTON )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 279  0.000000 )
+     YPOS ( 245 )
     
-    SPEC(
-      XSIZE( 255  0.000000 )
+     SPEC (
+       XSIZE ( 255 )
      
-     YSIZE( 36  0.000000 )
+      YSIZE ( 36 )
      
-     XOFFSET( 20  0.000000 )
+      XOFFSET ( 20 )
      
-     YOFFSET( 25  0.000000 )
+      YOFFSET ( 25 )
      
-     SCALE( 0.500000 )
+      SCALE ( 0.500000 )
      
-     CAPTION("NUCLEAR INTERCEPTION")
+      CAPTION ( "MOUTH OF THE BEAST" )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     ANIMATIONS((
-        BUTTON(CROSS)
+      ANIMATIONS ((
+         BUTTON ( CROSS )
        
-       ANIMATION(UiTopTkOnMission3)
+        ANIMATION ( UiTopTkOnMission2 )
        
        )
       
       (
-        EVENT(ONACTIVATE)
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(teletype_mission3_overview)
+        ANIMATION ( teletype_mission2_overview )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( alaska_mission3_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 279 )
+    
+     SPEC (
+       XSIZE ( 255 )
+     
+      YSIZE ( 36 )
+     
+      XOFFSET ( 20 )
+     
+      YOFFSET ( 25 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "NUCLEAR INTERCEPTION" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( UiTopTkOnMission3 )
+       
+       )
+      
+      (
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( teletype_mission3_overview )
        
        )
       
@@ -850,765 +850,704 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(PlaceStars)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PlaceStars )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENU100Addition1)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  100Addition1 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENU100Addition2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  100Addition2 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENU100Addition3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  100Addition3 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star4 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star5 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star6 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar7)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star7 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar8)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star8 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar9)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star9 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar10)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star10 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar11)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star11 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar12)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star12 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar13)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star13 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar14)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star14 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar15)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star15 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     IF(
-       VALVE(incr_miss_13== 1  0.000000 )
+      IF (
+        VALVE ( incr_miss_13  ==  1 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_15== 1  0.000000 )
+      IF (
+        VALVE ( incr_miss_15  ==  1 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_16== 1  0.000000 )
+      IF (
+        VALVE ( incr_miss_16  ==  1 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_13== 2  0.000000 )
+      IF (
+        VALVE ( incr_miss_13  ==  2 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star4 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_15== 2  0.000000 )
+      IF (
+        VALVE ( incr_miss_15  ==  2 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star5 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_16== 2  0.000000 )
+      IF (
+        VALVE ( incr_miss_16  ==  2 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star6 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_13== 3  0.000000 )
+      IF (
+        VALVE ( incr_miss_13  ==  3 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star4 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar7)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star7 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_15== 3  0.000000 )
+      IF (
+        VALVE ( incr_miss_15  ==  3 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star5 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar8)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star8 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_16== 3  0.000000 )
+      IF (
+        VALVE ( incr_miss_16  ==  3 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star6 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar9)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star9 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_13== 4  0.000000 )
+      IF (
+        VALVE ( incr_miss_13  ==  4 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star4 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar7)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star7 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_15== 4  0.000000 )
+      IF (
+        VALVE ( incr_miss_15  ==  4 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star5 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar8)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star8 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_16== 4  0.000000 )
+      IF (
+        VALVE ( incr_miss_16  ==  4 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star6 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar9)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star9 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_13== 5  0.000000 )
+      IF (
+        VALVE ( incr_miss_13  ==  5 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star4 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar7)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star7 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar10)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star10 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_15== 5  0.000000 )
+      IF (
+        VALVE ( incr_miss_15  ==  5 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star5 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar8)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star8 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar11)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star11 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_16== 5  0.000000 )
+      IF (
+        VALVE ( incr_miss_16  ==  5 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star6 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar9)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star9 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar12)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star12 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_13>= 6  0.000000 )
+      IF (
+        VALVE ( incr_miss_13  >=  6 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star1 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star4 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar7)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star7 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar10)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star10 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar13)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star13 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_15>= 6  0.000000 )
+      IF (
+        VALVE ( incr_miss_15  >=  6 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star5 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar8)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star8 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar11)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star11 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar14)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star14 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_16>= 6  0.000000 )
+      IF (
+        VALVE ( incr_miss_16  >=  6 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star6 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar9)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star9 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar12)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star12 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUStar15)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Star15 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(teletype_mission1_overview)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission1_overview )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_Div)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_Div )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUarrow_up)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUmap_alaska_mission1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_up )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("PRISON BREAK OVERVIEW")
+       STATE ( INACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUInstructionText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  map_alaska_mission1 )
       
-      CAPTION(" ")
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_text)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.200000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("PLACEHOLDER GOOD MORNING, TEAM. ONE OF OUR INDIGENOUS INFORMANTS IN TURKMENISTAN, BASIM MACCEK, WENT SILENT LAST WEEK; THIS WEEK WE KNOW WHY. HE IS IMPRISONED IN A TURKMEN DETENTION CENTER IN THE MOUNTAINS.  MACCEK'S NOT THE BEST MAN IN THE WORLD, BUT YOU'VE GOT TO PROTECT HIM, SEALS.")
+       CAPTION ( "PRISON BREAK OVERVIEW" )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(teletype_mission2_overview)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_Div)
+      ui::UI_COMMAND (
+        NODE ( MENU  InstructionText )
       
-      STATE(INACTIVE)
+       CAPTION ( " " )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUarrow_up)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUmap_alaska_mission1)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("THE MOUTH OF THE BEAST OVERVIEW")
-      
-      )
+      WAIT ( 0.200000 )
      
-     ui::UI_COMMAND(
-       NODE(MENUInstructionText)
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
       
-      CAPTION(" ")
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_text)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
-      
-      CAPTION("PLACEHOLDER THE MEN HOLDING HIM WERE MEMBERS OF A TERRORIST ORGANIZATION, THE ALLAH SADIKAHU.   WE KNOW THEIR LEADER, MULLAH PASANI. THE SADIKAHU HAVE CONCEALED PORTABLE NUCLEAR DEVICES IN A DESERT CAVE NETWORK CLOSE TO THE AFGHANI BORDER.  LOCATE AND DESTROY THE NUKES.  WE BELIEVE PASANI IS ALSO AT THIS LOCATION. HE IS TO BE NEUTRALIZED, BUT ELIMINATE ALL OTHER HOSTILE THREATS. SHOW THEM WHAT WE'RE MADE OF, TEAM.")
+       CAPTION ( "PLACEHOLDER GOOD MORNING, TEAM. ONE OF OUR INDIGENOUS INFORMANTS IN TURKMENISTAN, BASIM MACCEK, WENT SILENT LAST WEEK; THIS WEEK WE KNOW WHY. HE IS IMPRISONED IN A TURKMEN DETENTION CENTER IN THE MOUNTAINS.  MACCEK'S NOT THE BEST MAN IN THE WORLD, BUT YOU'VE GOT TO PROTECT HIM, SEALS." )
       
       )
      
@@ -1616,60 +1555,60 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(teletype_mission3_overview)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission2_overview )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_Div)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_Div )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUarrow_up)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUmap_alaska_mission1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_up )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("NUCLEAR INTERCEPTION OVERVIEW")
+       STATE ( INACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUInstructionText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  map_alaska_mission1 )
       
-      CAPTION(" ")
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_text)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.200000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("PLACEHOLDER! USING OUR INFORMANT'S INFORMATION AND THE MAP OBTAINED FROM THE PRISON, WE'VE LOCATED THE LOCATION OF THE NUKES. WE'VE KNOWN OF THIS CAVE NETWORK, AND IT'S TERRORIST ASSOCIATIONS, FOR SOME TIME.  NOW WE HAVE A REASON TO STRIKE.")
+       CAPTION ( "THE MOUTH OF THE BEAST OVERVIEW" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  InstructionText )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "PLACEHOLDER THE MEN HOLDING HIM WERE MEMBERS OF A TERRORIST ORGANIZATION, THE ALLAH SADIKAHU.   WE KNOW THEIR LEADER, MULLAH PASANI. THE SADIKAHU HAVE CONCEALED PORTABLE NUCLEAR DEVICES IN A DESERT CAVE NETWORK CLOSE TO THE AFGHANI BORDER.  LOCATE AND DESTROY THE NUKES.  WE BELIEVE PASANI IS ALSO AT THIS LOCATION. HE IS TO BE NEUTRALIZED, BUT ELIMINATE ALL OTHER HOSTILE THREATS. SHOW THEM WHAT WE'RE MADE OF, TEAM." )
       
       )
      
@@ -1677,50 +1616,60 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(mission1_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission3_overview )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUalaska_mission1_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_Div )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.150000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUalaska_mission1_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_up )
       
-      START()
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUalaska_mission1_button)
-      
-      TRANSLATE_FROM( -256.000000  130.000000  0.000000 )
-      
-      TRANSLATE_TO( 25.000000  130.000000  0.000000 )
-      
-      RUN_TIME( 0.150000 )
+       STATE ( INACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  map_alaska_mission1 )
       
-      ARGUMENT(alaska_mission1_button)
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "NUCLEAR INTERCEPTION OVERVIEW" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  InstructionText )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "PLACEHOLDER! USING OUR INFORMANT'S INFORMATION AND THE MAP OBTAINED FROM THE PRISON, WE'VE LOCATED THE LOCATION OF THE NUKES. WE'VE KNOWN OF THIS CAVE NETWORK, AND IT'S TERRORIST ASSOCIATIONS, FOR SOME TIME.  NOW WE HAVE A REASON TO STRIKE." )
       
       )
      
@@ -1728,43 +1677,50 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(mission2_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mission1_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUalaska_mission2_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  alaska_mission1_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUalaska_mission2_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      WAIT ( 0.150000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  alaska_mission1_button )
       
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUalaska_mission2_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -256.000000  208.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( 25.000000  208.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  alaska_mission1_button )
       
-      RUN_TIME( 0.150000 )
+       TRANSLATE_FROM ( -256.000000  130.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  130.000000  0.000000 )
+      
+       RUN_TIME ( 0.150000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( alaska_mission1_button )
       
       )
      
@@ -1772,43 +1728,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(mission3_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mission2_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUalaska_mission3_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  alaska_mission2_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.450000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUalaska_mission3_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      WAIT ( 0.300000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  alaska_mission2_button )
       
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUalaska_mission3_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -256.000000  286.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( 25.000000  286.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  alaska_mission2_button )
       
-      RUN_TIME( 0.150000 )
+       TRANSLATE_FROM ( -256.000000  208.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  208.000000  0.000000 )
+      
+       RUN_TIME ( 0.150000 )
       
       )
      
@@ -1816,34 +1772,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(title_oilplatform_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mission3_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUtitle_bar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  alaska_mission3_button )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUtitle_bar)
+      WAIT ( 0.450000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  alaska_mission3_button )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUtitle_bar)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( 640.000000  65.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( -60.000000  65.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  alaska_mission3_button )
       
-      RUN_TIME( 0.400000 )
+       TRANSLATE_FROM ( -256.000000  286.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  286.000000  0.000000 )
+      
+       RUN_TIME ( 0.150000 )
       
       )
      
@@ -1851,36 +1816,34 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( title_oilplatform_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  title_bar )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  title_bar )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  title_bar )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 640.000000  65.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( -60.000000  65.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.400000 )
       
       )
      
@@ -1888,43 +1851,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( ACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
       
-      START()
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      
@@ -1932,46 +1888,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(UiTopTkOnMission1)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      START()
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
-      
-      ARGUMENT(m13)
+       STATE ( INACTIVE )
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      RUN_TIME( 0.500000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      OPACITY_FROM( 0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       RUN_TIME ( 0.250000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      SOUND (
+        NAME ( SND_METAL )
       
-      ARGUMENT(dlg_Turk_mission1.rdr)
+       START ()
       
       )
      
@@ -1979,46 +1932,46 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(UiTopTkOnMission2)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiTopTkOnMission1 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      START()
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
-      
-      ARGUMENT(m15)
+       START ()
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m13 )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      ARGUMENT(dlg_Turk_mission2.rdr)
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_Turk_mission1.rdr )
       
       )
      
@@ -2026,46 +1979,93 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(UiTopTkOnMission3)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiTopTkOnMission2 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      START()
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
-      
-      ARGUMENT(m16)
+       START ()
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m15 )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      ARGUMENT(dlg_Turk_mission3.rdr)
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_Turk_mission2.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiTopTkOnMission3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m16 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_Turk_mission3.rdr )
       
       )
      

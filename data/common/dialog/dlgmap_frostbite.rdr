@@ -1,31 +1,31 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/ui2d)
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
   
-  BACKGROUND(
-    TYPE(IMAGE)
+   BACKGROUND (
+     TYPE ( IMAGE )
    
-   FILENAME(map_frostbite.tif)
+    FILENAME ( map_frostbite.tif )
    
    )
   
-  FONT(arialblack)
+   FONT ( arialblack )
   
-  SCRIPT_LIBRARY(uianim.rdr)
+   SCRIPT_LIBRARY ( uianim.rdr )
   
-  OBJECTS((
-     NAME(STANDIN)
+   OBJECTS ((
+      NAME ( STANDIN )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 192  0.000000 )
+     XPOS ( 192 )
     
-    YPOS( 31  0.000000 )
+     YPOS ( 31 )
     
-    SPEC(
-      XSIZE( 256  0.000000 )
+     SPEC (
+       XSIZE ( 256 )
      
-     YSIZE( 64  0.000000 )
+      YSIZE ( 64 )
      
      )
     
@@ -33,51 +33,51 @@
    
    )
   
-  ANIMATIONS((
-     BUTTON(SELECT)
+   ANIMATIONS ((
+      BUTTON ( SELECT )
     
-    ANIMATION(goto_menu)
+     ANIMATION ( goto_menu )
     
-    ARGUMENT(dlgMenu.rdr)
+     ARGUMENT ( dlgMenu.rdr )
     
     )
    
    )
   
-  CONTROLS((
-     NAME(overview)
+   CONTROLS ((
+      NAME ( overview )
     
-    TYPE(BUTTON)
+     TYPE ( BUTTON )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 125  0.000000 )
+     YPOS ( 125 )
     
-    SPEC(
-      XSIZE( 256  0.000000 )
+     SPEC (
+       XSIZE ( 256 )
      
-     YSIZE( 32  0.000000 )
+      YSIZE ( 32 )
      
-     XOFFSET( 0  0.000000 )
+      XOFFSET ( 0 )
      
-     YOFFSET( 0  0.000000 )
+      YOFFSET ( 0 )
      
-     SCALE( 0.000000 )
+      SCALE ( 0.000000 )
      
-     CAPTION(" ")
+      CAPTION ( " " )
      
-     NORMAL(" ")
+      NORMAL ( " " )
      
-     ACTIVE(A_common_highlight.tif)
+      ACTIVE ( A_common_highlight.tif )
      
-     PRESSED(A_common_highlight.tif)
+      PRESSED ( A_common_highlight.tif )
      
-     ANIMATIONS((
-        BUTTON(CROSS)
+      ANIMATIONS ((
+         BUTTON ( CROSS )
        
-       ANIMATION(goto_menu)
+        ANIMATION ( goto_menu )
        
-       ARGUMENT(dlgSingle_alaska.rdr)
+        ARGUMENT ( dlgSingle_alaska.rdr )
        
        )
       

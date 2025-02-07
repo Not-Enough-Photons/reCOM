@@ -1,61 +1,61 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgNetError.rdr)
+    SCRIPT_LIBRARY ( dlgNetError.rdr )
    
-   OBJECTS()
+    OBJECTS ()
    
-   ANIMATIONS((
-      EVENT(ONSTART)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     ANIMATION(displayNews)
+      ANIMATION ( displayNews )
      
      )
     
     (
-      EVENT(ONSTART)
+       EVENT ( ONSTART )
      
-     ANIMATION(onstart_handler)
+      ANIMATION ( onstart_handler )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       EVENT ( MP_MEDIUS_ERROR )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      ANIMATION ( OnMultiplayerDisconnect )
      
      )
     
     )
    
-   CONTROLS()
+    CONTROLS ()
    
    )
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(onstart_handler)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( onstart_handler )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(DisconnectFromGameServer)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
       
       )
      
@@ -63,44 +63,44 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(displayNews)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( displayNews )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Disconnected due to a network error. Press the X button.")
+       CAPTION ( "Disconnected due to a network error. Press the X button." )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  285.000000 )
+       POSITION ( 170.000000  285.000000 )
       
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 100  0.000000 )
+       HEIGHT ( 100 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(exit_lobby)
+      CALL_ANIMATION (
+        NAME ( exit_lobby )
       
       )
      
@@ -108,27 +108,27 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(exit_lobby)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_lobby )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      DEBUG(
-       PREFIX_STRING("Debug: ")
+     SEQUENCE_DEFINITION (
+       DEBUG (
+        PREFIX_STRING ( "Debug: " )
       
-      ANIM_NAME(": ")
+       ANIM_NAME ( ": " )
       
-      SEQ_NAME(": ")
+       SEQ_NAME ( ": " )
       
-      STRING("Exit Lobby")
+       STRING ( "Exit Lobby" )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgWorldOfSOCOM.rdr)
+       ARGUMENT ( dlgWorldOfSOCOM.rdr )
       
       )
      

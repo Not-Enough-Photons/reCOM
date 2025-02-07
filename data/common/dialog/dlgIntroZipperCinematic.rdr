@@ -1,24 +1,24 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(MPEG)
+    BACKGROUND (
+      TYPE ( MPEG )
     
-    FILENAME(run/movies/common/Zipper02.pss)
+     FILENAME ( run/movies/common/Zipper02.pss )
     
     )
    
-   SCRIPT_LIBRARY(uianim.rdr)
+    SCRIPT_LIBRARY ( uianim.rdr )
    
-   OBJECTS()
+    OBJECTS ()
    
-   ANIMATIONS((
-      EVENT(ONMPEGEND)
+    ANIMATIONS ((
+       EVENT ( ONMPEGEND )
      
-     ANIMATION(switch_menu)
+      ANIMATION ( switch_menu )
      
-     ARGUMENT(dlgMenu.rdr)
+      ARGUMENT ( dlgMenu.rdr )
      
      )
     

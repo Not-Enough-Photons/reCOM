@@ -1,180 +1,180 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(undefined.tif)
+     FILENAME ( undefined.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(dlgRosterManagement.rdr)
+    SCRIPT_LIBRARY ( dlgRosterManagement.rdr )
    
-   OBJECTS((
-      NAME(STANDIN)
+    OBJECTS ((
+       NAME ( STANDIN )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 30 )
      
-     YPOS( 28.000000 )
+      YPOS ( 28.000000 )
      
-     SPEC(
-       CAPTION("ROSTER MANAGEMENT SCREEN")
+      SPEC (
+        CAPTION ( "ROSTER MANAGEMENT SCREEN" )
       
-      SCALE( 1.500000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(STANDIN)
-     
-     TYPE(TEXT)
-     
-     XPOS( 55  0.000000 )
-     
-     YPOS( 100  0.000000 )
-     
-     SPEC(
-       CAPTION("Clan Roster")
-      
-      SCALE( 1.000000 )
+       SCALE ( 1.500000 )
       
       )
      
      )
     
     (
-      NAME(STANDIN)
+       NAME ( STANDIN )
      
-     TYPE(WRAPPEDTEXT)
+      TYPE ( TEXT )
      
-     XPOS( 300  0.000000 )
+      XPOS ( 55 )
      
-     YPOS( 100  0.000000 )
+      YPOS ( 100 )
      
-     SPEC(
-       CAPTION("Clan Statistics go here. Things like challenges won, enemies killed, average win time, number of losses, leader name, number of members, that sort of thing.")
+      SPEC (
+        CAPTION ( "Clan Roster" )
       
-      SCALE( 1.000000 )
-      
-      WIDTH( 200  0.000000 )
-      
-      SPACING( 20  0.000000 )
+       SCALE ( 1.000000 )
       
       )
      
      )
     
     (
-      NAME(STANDIN)
+       NAME ( STANDIN )
      
-     TYPE(TEXT)
+      TYPE ( WRAPPEDTEXT )
      
-     XPOS( 100  0.000000 )
+      XPOS ( 300 )
      
-     YPOS( 300  0.000000 )
+      YPOS ( 100 )
      
-     SPEC(
-       CAPTION("CLAN CHALLENGES LISTED HERE")
+      SPEC (
+        CAPTION ( "Clan Statistics go here. Things like challenges won, enemies killed, average win time, number of losses, leader name, number of members, that sort of thing." )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
+      
+       WIDTH ( 200 )
+      
+       SPACING ( 20 )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(PREVIOUS_SCREEN)
-     
-     )
-    
     (
-      BUTTON(SELECT)
+       NAME ( STANDIN )
      
-     ANIMATION(goto_menu)
+      TYPE ( TEXT )
      
-     ARGUMENT(dlgRosterManagement.rdr)
+      XPOS ( 100 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      YPOS ( 300 )
      
-     ANIMATION(get_clan_roster)
-     
-     )
-    
-    (
-      EVENT(MP_MEDIUS_ERROR)
-     
-     ANIMATION(OnMultiplayerDisconnect)
+      SPEC (
+        CAPTION ( "CLAN CHALLENGES LISTED HERE" )
+      
+       SCALE ( 1.000000 )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(acceptchallenge)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     XPOS( 30  0.000000 )
+      ANIMATION ( goto_menu )
      
-     YPOS( 380  0.000000 )
+      ARGUMENT ( PREVIOUS_SCREEN )
      
-     TYPE(BUTTON)
+     )
+    
+    (
+       BUTTON ( SELECT )
      
-     SPEC(
-       NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( dlgRosterManagement.rdr )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( get_clan_roster )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( acceptchallenge )
+     
+      XPOS ( 30 )
+     
+      YPOS ( 380 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        NORMAL_COLOR ( 100  100  100 )
       
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
-      CAPTION("Accept Challenge")
+       CAPTION ( "Accept Challenge" )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
       )
      
      )
     
     (
-      NAME(inviteplyr)
+       NAME ( inviteplyr )
      
-     XPOS( 150  0.000000 )
+      XPOS ( 150 )
      
-     YPOS( 380  0.000000 )
+      YPOS ( 380 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+      SPEC (
+        NORMAL_COLOR ( 100  100  100 )
       
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
-      CAPTION("Invite Player ")
+       CAPTION ( "Invite Player " )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgInvitedPlayers.rdr)
+         ARGUMENT ( dlgInvitedPlayers.rdr )
         
         )
        
@@ -185,66 +185,31 @@
      )
     
     (
-      NAME(removeplyr)
+       NAME ( removeplyr )
      
-     XPOS( 245  0.000000 )
+      XPOS ( 245 )
      
-     YPOS( 380  0.000000 )
+      YPOS ( 380 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+      SPEC (
+        NORMAL_COLOR ( 100  100  100 )
       
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
-      CAPTION("Remove Player")
+       CAPTION ( "Remove Player" )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgRemovePlayer.rdr)
-        
-        )
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(templeader)
-     
-     XPOS( 350  0.000000 )
-     
-     YPOS( 380  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     SPEC(
-       NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
-      
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
-      
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-      
-      CAPTION("Temp. Leader")
-      
-      SCALE( 0.800000 )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(goto_menu)
-        
-        ARGUMENT(dlgLeadershipChange.rdr)
+         ARGUMENT ( dlgRemovePlayer.rdr )
         
         )
        
@@ -255,66 +220,31 @@
      )
     
     (
-      NAME(chngleader)
+       NAME ( templeader )
      
-     XPOS( 441  0.000000 )
+      XPOS ( 350 )
      
-     YPOS( 380  0.000000 )
+      YPOS ( 380 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+      SPEC (
+        NORMAL_COLOR ( 100  100  100 )
       
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
-      CAPTION("Change Leader")
+       CAPTION ( "Temp. Leader" )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgLeadershipChange.rdr)
-        
-        )
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(exit)
-     
-     XPOS( 546  0.000000 )
-     
-     YPOS( 380  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     SPEC(
-       NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
-      
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
-      
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-      
-      CAPTION(Exit)
-      
-      SCALE( 1.000000 )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(goto_menu)
-        
-        ARGUMENT(PREVIOUS_SCREEN)
+         ARGUMENT ( dlgLeadershipChange.rdr )
         
         )
        
@@ -325,49 +255,119 @@
      )
     
     (
-      NAME("Clan Roster")
+       NAME ( chngleader )
      
-     XPOS( 55  0.000000 )
+      XPOS ( 441 )
      
-     YPOS( 120  0.000000 )
+      YPOS ( 380 )
      
-     TYPE(LISTBOX)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        NORMAL_COLOR ( 100  100  100 )
       
-      YSIZE( 55  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      SPACING( 17  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
-      SCALE( 0.700000 )
+       CAPTION ( "Change Leader" )
       
-      LEFT_MARGIN( 30  0.000000 )
+       SCALE ( 0.800000 )
       
-      TOP_MARGIN( 0  0.000000 )
-      
-      UIVAR(
-        NAME(CLAN_ROSTER)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( goto_menu )
+        
+         ARGUMENT ( dlgLeadershipChange.rdr )
+        
+        )
        
        )
       
-      OPTIONS((
-         CAPTION(Bob)
+      )
+     
+     )
+    
+    (
+       NAME ( exit )
+     
+      XPOS ( 546 )
+     
+      YPOS ( 380 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        NORMAL_COLOR ( 100  100  100 )
+      
+       ACTIVE_COLOR ( 0  100  100 )
+      
+       PRESSED_COLOR ( 100  0  0 )
+      
+       CAPTION ( Exit )
+      
+       SCALE ( 1.000000 )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( goto_menu )
+        
+         ARGUMENT ( PREVIOUS_SCREEN )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( "Clan Roster" )
+     
+      XPOS ( 55 )
+     
+      YPOS ( 120 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        XSIZE ( 128 )
+      
+       YSIZE ( 55 )
+      
+       SPACING ( 17 )
+      
+       SCALE ( 0.700000 )
+      
+       LEFT_MARGIN ( 30 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( CLAN_ROSTER )
+       
+       )
+      
+       OPTIONS ((
+          CAPTION ( Bob )
         
         )
        
        (
-         CAPTION(Dave)
+          CAPTION ( Dave )
         
         )
        
        (
-         CAPTION(Conrad)
+          CAPTION ( Conrad )
         
         )
        
        (
-         CAPTION(Tom)
+          CAPTION ( Tom )
         
         )
        
@@ -383,18 +383,18 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(get_clan_roster)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( get_clan_roster )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetClanRoster)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetClanRoster )
       
       )
      

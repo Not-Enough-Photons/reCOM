@@ -1,289 +1,289 @@
 ((
-  ANIMATION_DEFINITIONS(
-   GRAVITY( -98.000000 )
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
   
-  ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(m203_red_flare)
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m203_red_flare )
     
-    ANIMATION_ROOT_NAME(flare_illum_red)
+     ANIMATION_ROOT_NAME ( flare_illum_red )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+     SEQUENCE_DEFINITION (
+       OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
       )
      
-     OBJECT_MOTION(
-       NAME(ROOT_NODE)
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
       
-      RELATIVE_NODE(INPUT_NODE)
+       RELATIVE_NODE ( INPUT_NODE )
       
-      GRAVITY(
-        MULTIPLIER( 0.005000 )
+       GRAVITY (
+         MULTIPLIER ( 0.005000 )
        
        )
       
-      DO_ALTITUDES()
+       DO_ALTITUDES ()
       
-      TRANSLATION( 0.000000  -90.000000  0.000000  0.000000 )
+       TRANSLATION ( 0.000000  -90.000000  0.000000  0.000000 )
       
-      RUN_TIME( 23.000000 )
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(m203ill_flare)
-      
-      TEXTURES(flare_red.tif)
-      
-      AT_NODE(ROOT_NODE)
-      
-      ACTIVE_STATE(ACTIVE)
-      
-      TIME_INTERVAL( 0.100000 )
-      
-      NUMBER( 1  0.000000 )
-      
-      PERTURB_POSITION_X( 0.000000  0.000000 )
-      
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
-      
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
-      
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
-      
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
-      
-      PERTURB_VELOCITY_X( 0.000000  0.000000 )
-      
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
-      
-      PERTURB_VELOCITY_Z( 0.000000  0.000000 )
-      
-      RADIUS_RANGE( 24.000000  38.000000 )
-      
-      LIFESPAN_RANGE( 0.100000  0.150000 )
-      
-      START_AGE_RANGE( 0.000000  0.000000 )
-      
-      PRIORITY( 0.000000 )
-      
-      WIND_FACTOR( 0.400000 )
-      
-      FRICTION( 0.200000 )
-      
-      WORLD_ACCELERATION( 0.000000  0.000000  0.000000 )
-      
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
-      
-      FADE_FAR_RANGE( 200.000000  700.000000 )
-      
-      )
-     
-     WAIT(EVENT_OFFSET 20.000000 )
-     
-     PARTICLE_SOURCE(
-       NAME(m203ill_flare)
-      
-      ACTIVE_STATE(INACTIVE)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(finish_off)
+       RUN_TIME ( 23.000000 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(finish_off)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( m203ill_flare )
+      
+       TEXTURES ( flare_red.tif )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.100000 )
+      
+       NUMBER ( 1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
+      
+       RADIUS_RANGE ( 24.000000  38.000000 )
+      
+       LIFESPAN_RANGE ( 0.100000  0.150000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.400000 )
+      
+       FRICTION ( 0.200000 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 200.000000  700.000000 )
+      
+      )
      
-     ACTIVATION(ON_CALL)
+      WAIT ( EVENT_OFFSET  20.000000 )
      
-     PARTICLE_SOURCE(
-       NAME(m203ill_flare_finish)
+      PARTICLE_SOURCE (
+        NAME ( m203ill_flare )
       
-      TEXTURES(flare_red.tif)
+       ACTIVE_STATE ( INACTIVE )
       
-      AT_NODE(ROOT_NODE)
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( finish_off )
       
-      ACTIVE_STATE(ACTIVE)
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( finish_off )
+     
+      ACTIVATION ( ON_CALL )
+     
+      PARTICLE_SOURCE (
+        NAME ( m203ill_flare_finish )
       
-      TIME_INTERVAL( 0.100000 )
+       TEXTURES ( flare_red.tif )
       
-      NUMBER( 1  0.000000 )
+       AT_NODE ( ROOT_NODE )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       ACTIVE_STATE ( ACTIVE )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       TIME_INTERVAL ( 0.100000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       NUMBER ( 1 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( 0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      RADIUS_RANGE( 6.000000  12.000000 )
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
       
-      LIFESPAN_RANGE( 0.100000  0.150000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       RADIUS_RANGE ( 6.000000  12.000000 )
       
-      WIND_FACTOR( 0.400000 )
+       LIFESPAN_RANGE ( 0.100000  0.150000 )
       
-      FRICTION( 0.200000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      WORLD_ACCELERATION( 0.000000  0.000000  0.000000 )
+       PRIORITY ( 0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       WIND_FACTOR ( 0.400000 )
       
-      FADE_FAR_RANGE( 200.000000  700.000000 )
+       FRICTION ( 0.200000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  1.000000  0.700000 )
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 200.000000  700.000000 )
+      
+       COLORS (( 0.000000  1.000000  1.000000  1.000000  0.700000 )
        
        )
       
       )
      
-     WAIT(EVENT_OFFSET 2.500000 )
+      WAIT ( EVENT_OFFSET  2.500000 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(m203ill_flare_sparks)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( m203ill_flare_sparks )
       
-      TEXTURES(flare_red.tif)
+       TEXTURES ( flare_red.tif )
       
-      AT_NODE(ROOT_NODE)
+       AT_NODE ( ROOT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TRANSLATION( 0.000000  -10.000000  0.000000 )
+       TRANSLATION ( 0.000000  -10.000000  0.000000 )
       
-      TIME_INTERVAL( 0.080000 )
+       TIME_INTERVAL ( 0.080000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  -10.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  -10.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -6.000000  6.000000 )
+       PERTURB_VELOCITY_X ( -6.000000  6.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( -6.000000  6.000000 )
+       PERTURB_VELOCITY_Z ( -6.000000  6.000000 )
       
-      RADIUS_RANGE( 1.200000  2.000000 )
+       RADIUS_RANGE ( 1.200000  2.000000 )
       
-      LIFESPAN_RANGE( 2.200000  3.400000 )
+       LIFESPAN_RANGE ( 2.200000  3.400000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.400000 )
+       WIND_FACTOR ( 0.400000 )
       
-      FRICTION( 0.200000 )
+       FRICTION ( 0.200000 )
       
-      WORLD_ACCELERATION( 0.000000  -35.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  -35.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  700.000000 )
+       FADE_FAR_RANGE ( 200.000000  700.000000 )
       
       )
      
-     WAIT(EVENT_OFFSET 20.000000 )
+      WAIT ( EVENT_OFFSET  20.000000 )
      
-     PARTICLE_SOURCE(
-       NAME(m203ill_flare_sparks)
+      PARTICLE_SOURCE (
+        NAME ( m203ill_flare_sparks )
       
-      ACTIVE_STATE(INACTIVE)
+       ACTIVE_STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      PARTICLE_SOURCE(
-       NAME(m203ill_flare_smoker)
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( m203ill_flare_smoker )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      AT_NODE(ROOT_NODE)
+       AT_NODE ( ROOT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TRANSLATION( 0.000000  -2.000000  0.000000 )
+       TRANSLATION ( 0.000000  -2.000000  0.000000 )
       
-      TIME_INTERVAL( 0.100000 )
+       TIME_INTERVAL ( 0.100000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 2.000000  -1.000000  0.000000 )
+       LOCAL_VELOCITY ( 2.000000  -1.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -1.000000  1.000000 )
+       PERTURB_VELOCITY_X ( -1.000000  1.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( -1.000000  1.000000 )
+       PERTURB_VELOCITY_Z ( -1.000000  1.000000 )
       
-      RADIUS_RANGE( 2.000000  3.000000 )
+       RADIUS_RANGE ( 2.000000  3.000000 )
       
-      LIFESPAN_RANGE( 6.000000  7.200000 )
+       LIFESPAN_RANGE ( 6.000000  7.200000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.500000 )
+       WIND_FACTOR ( 0.500000 )
       
-      FRICTION( 0.300000 )
+       FRICTION ( 0.300000 )
       
-      WORLD_ACCELERATION( 0.000000  7.000000  3.000000 )
+       WORLD_ACCELERATION ( 0.000000  7.000000  3.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  700.000000 )
+       FADE_FAR_RANGE ( 200.000000  700.000000 )
       
-      COLORS(( 0.000000  0.700000  0.700000  0.700000  0.200000 )
+       COLORS (( 0.000000  0.700000  0.700000  0.700000  0.200000 )
        
        ( 0.200000  0.800000  0.800000  0.800000  0.100000 )
        
@@ -295,7 +295,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.400000  1.500000 )
+       SCALE_SEQUENCE (( 0.400000  1.500000 )
        
        ( 1.000000  3.000000 )
        
@@ -303,34 +303,34 @@
       
       )
      
-     WAIT(EVENT_OFFSET 19.000000 )
+      WAIT ( EVENT_OFFSET  19.000000 )
      
-     PARTICLE_SOURCE(
-       NAME(m203ill_flare_smoker)
+      PARTICLE_SOURCE (
+        NAME ( m203ill_flare_smoker )
       
-      ACTIVE_STATE(INACTIVE)
+       ACTIVE_STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      LIGHT(
-       NAME(flare_red_light)
+     SEQUENCE_DEFINITION (
+       LIGHT (
+        NAME ( flare_red_light )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      AT_NODE(ROOT_NODE)
+       AT_NODE ( ROOT_NODE )
       
-      DIFFUSE( 1.000000  0.000000  0.000000 )
+       DIFFUSE ( 1.000000  0.000000  0.000000 )
       
-      OPACITY( 0.800000 )
+       OPACITY ( 0.800000 )
       
-      BLENDMODE(FBZEROSRCFB)
+       BLENDMODE ( FB  ZERO  SRC  FB )
       
-      RANGE_SEQUENCE(( 0.000000  60.000000  90.000000 )
+       RANGE_SEQUENCE (( 0.000000  60.000000  90.000000 )
        
        ( 20.000000  60.000000  90.000000 )
        

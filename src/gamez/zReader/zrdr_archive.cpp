@@ -116,7 +116,7 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 
 		if (!open)
 		{
-			archive->ReOpen_V2(1, OpenFlags::READ);
+			archive->ReOpen(1, OpenFlags::READ);
 		}
 
 		rdr = NULL;
@@ -138,16 +138,16 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 
 void CRdrArchive::OpenAll()
 {
-	for (auto it = m_list.begin(); it != m_list.end(); ++it)
+	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{
 		CZAR* archive = *it;
-		archive->ReOpen_V2(1, OpenFlags::READ);
+		archive->ReOpen(1, OpenFlags::READ);
 	}
 }
 
 void CRdrArchive::CloseAll()
 {
-	for (auto it = m_list.begin(); it != m_list.end(); ++it)
+	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{
 		zar::CZAR* archive = *it;
 		archive->Close();

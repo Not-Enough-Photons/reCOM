@@ -1,671 +1,119 @@
 ((
-  SCREENS(
-   BACKGROUND(
-    TYPE(MPEG)
+   SCREENS (
+    BACKGROUND (
+     TYPE ( MPEG )
    
-   FILENAME(run/movies/common/radar.pss)
-   
-   )
-  
-  LIBRARY(ui/assetlib/ui2d)
-  
-  FONT(myriad)
-  
-  SCRIPT_LIBRARY(dlg_tutorial.rdr)
-  
-  OBJECTS((
-     NAME(letterbar)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 0  0.000000 )
-    
-    SPEC(
-      FILENAME(blank_top_bar.tif)
-     
-     XSIZE( 640  0.000000 )
-     
-     YSIZE( 64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(bar_title)
-    
-    TYPE(TEXT)
-    
-    XPOS( 20  0.000000 )
-    
-    YPOS( 50  0.000000 )
-    
-    SPEC(
-      FONT(Gothic_13)
-     
-     CHILDOF(letterbar)
-     
-     CAPTION(TUTORIALS)
-     
-     SCALE( 0.900000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(letterbar_bottom)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 361  0.000000 )
-    
-    SPEC(
-      FILENAME(common_bar_bottom.tif)
-     
-     SIZE( 640  0.000000  64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(dogtags)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 340  0.000000 )
-    
-    YPOS( 280  0.000000 )
-    
-    SPEC(
-      FILENAME(common_dogtags.tif)
-     
-     SIZE( 296  0.000000  158  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(teletype_text)
-    
-    TYPE(TELETYPE)
-    
-    XPOS( 10  0.000000 )
-    
-    YPOS( 40  0.000000 )
-    
-    SPEC(
-      CHILDOF(teletype_plate)
-     
-     MAXLENGTH( 240  0.000000 )
-     
-     MAXHEIGHT( 170  0.000000 )
-     
-     CAPTION(" ")
-     
-     SCALE( 0.800000 )
-     
-     INTERVAL( 330.000000 )
-     
-     SPACING( 20  0.000000 )
-     
-     )
-    
-    )
+    FILENAME ( run/movies/common/radar.pss )
    
    )
   
-  ANIMATIONS((
-     BUTTON(TRIANGLE)
-    
-    ANIMATION(goto_menu)
-    
-    ARGUMENT(dlgMenu.rdr)
-    
-    )
-   
-   (
-     BUTTON(SQUARE)
-    
-    ANIMATION(switch_menu)
-    
-    ARGUMENT(dlgReplayCinematic.rdr)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Chap1_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Chap2_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Chap3_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Chap4_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Chap5_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Chap6_button_slide)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(letterbar_slide_down)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(bottom_bar_slide_up)
-    
-    )
-   
-   )
+   LIBRARY ( ui/assetlib/ui2d )
   
-  CONTROLS((
-     NAME(Chap1_button)
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlg_tutorial.rdr )
+  
+   OBJECTS ((
+      NAME ( letterbar )
     
-    TYPE(BUTTON)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 140  0.000000 )
+     YPOS ( 0 )
     
-    SPEC(
-      XSIZE( 175  0.000000 )
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
      
-     YSIZE( 32  0.000000 )
+      XSIZE ( 640 )
      
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 23  0.000000 )
-     
-     SCALE( 0.500000 )
-     
-     CAPTION("TUTORIAL 1")
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(Set_Chap1_Valve)
-       
-       )
-      
-      (
-        BUTTON(CROSS)
-       
-       ANIMATION(goto_menu)
-       
-       ARGUMENT(dlgPlayTutMovies.rdr)
-       
-       )
-      
-      )
+      YSIZE ( 64 )
      
      )
     
     )
    
    (
-     NAME(Chap2_button)
+      NAME ( bar_title )
     
-    TYPE(BUTTON)
+     TYPE ( TEXT )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 20 )
     
-    YPOS( 190  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      XSIZE( 175  0.000000 )
+     SPEC (
+       FONT ( Gothic_13 )
      
-     YSIZE( 32  0.000000 )
+      CHILDOF ( letterbar )
      
-     XOFFSET( 10  0.000000 )
+      CAPTION ( TUTORIALS )
      
-     YOFFSET( 23  0.000000 )
-     
-     SCALE( 0.500000 )
-     
-     CAPTION("TUTORIAL 2")
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(Set_Chap2_Valve)
-       
-       )
-      
-      (
-        BUTTON(CROSS)
-       
-       ANIMATION(goto_menu)
-       
-       ARGUMENT(dlgPlayTutMovies.rdr)
-       
-       )
-      
-      )
+      SCALE ( 0.900000 )
      
      )
     
     )
    
    (
-     NAME(Chap3_button)
+      NAME ( letterbar_bottom )
     
-    TYPE(BUTTON)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 240  0.000000 )
+     YPOS ( 361 )
     
-    SPEC(
-      XSIZE( 175  0.000000 )
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
      
-     YSIZE( 32  0.000000 )
-     
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 23  0.000000 )
-     
-     SCALE( 0.500000 )
-     
-     CAPTION("TUTORIAL 3")
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(Set_Chap3_Valve)
-       
-       )
-      
-      (
-        BUTTON(CROSS)
-       
-       ANIMATION(goto_menu)
-       
-       ARGUMENT(dlgPlayTutMovies.rdr)
-       
-       )
-      
-      )
+      SIZE ( 640  64 )
      
      )
     
     )
    
    (
-     NAME(Chap4_button)
+      NAME ( dogtags )
     
-    TYPE(BUTTON)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 340 )
     
-    YPOS( 290  0.000000 )
+     YPOS ( 280 )
     
-    SPEC(
-      XSIZE( 175  0.000000 )
+     SPEC (
+       FILENAME ( common_dogtags.tif )
      
-     YSIZE( 32  0.000000 )
-     
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 23  0.000000 )
-     
-     SCALE( 0.500000 )
-     
-     CAPTION("TUTORIAL 4")
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(Set_Chap4_Valve)
-       
-       )
-      
-      (
-        BUTTON(CROSS)
-       
-       ANIMATION(goto_menu)
-       
-       ARGUMENT(dlgPlayTutMovies.rdr)
-       
-       )
-      
-      )
+      SIZE ( 296  158 )
      
      )
     
     )
    
    (
-     NAME(Chap5_button)
+      NAME ( teletype_text )
     
-    TYPE(BUTTON)
+     TYPE ( TELETYPE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 10 )
     
-    YPOS( 340  0.000000 )
+     YPOS ( 40 )
     
-    SPEC(
-      XSIZE( 175  0.000000 )
+     SPEC (
+       CHILDOF ( teletype_plate )
      
-     YSIZE( 32  0.000000 )
+      MAXLENGTH ( 240 )
      
-     XOFFSET( 10  0.000000 )
+      MAXHEIGHT ( 170 )
      
-     YOFFSET( 23  0.000000 )
+      CAPTION ( " " )
      
-     SCALE( 0.500000 )
+      SCALE ( 0.800000 )
      
-     CAPTION("TUTORIAL 5")
+      INTERVAL ( 330.000000 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(Set_Chap5_Valve)
-       
-       )
-      
-      (
-        BUTTON(CROSS)
-       
-       ANIMATION(goto_menu)
-       
-       ARGUMENT(dlgPlayTutMovies.rdr)
-       
-       )
-      
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(Chap6_button)
-    
-    TYPE(BUTTON)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 390  0.000000 )
-    
-    SPEC(
-      XSIZE( 175  0.000000 )
-     
-     YSIZE( 32  0.000000 )
-     
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 23  0.000000 )
-     
-     SCALE( 0.500000 )
-     
-     CAPTION("TUTORIAL 6")
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
-      
-      )
-     
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
-      
-      )
-     
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
-       
-       TIME( 0.500000 )
-       
-       )
-      
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
-      
-      )
-     
-     DISABLED(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(Set_Chap6_Valve)
-       
-       )
-      
-      (
-        BUTTON(CROSS)
-       
-       ANIMATION(goto_menu)
-       
-       ARGUMENT(dlgPlayTutMovies.rdr)
-       
-       )
-      
-      )
+      SPACING ( 20 )
      
      )
     
@@ -673,167 +121,675 @@
    
    )
   
-  MODELS()
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgMenu.rdr )
+    
+    )
+   
+   (
+      BUTTON ( SQUARE )
+    
+     ANIMATION ( switch_menu )
+    
+     ARGUMENT ( dlgReplayCinematic.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap1_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap2_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap3_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap4_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap5_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap6_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( Chap1_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 140 )
+    
+     SPEC (
+       XSIZE ( 175 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "TUTORIAL 1" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap1_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgPlayTutMovies.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap2_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 190 )
+    
+     SPEC (
+       XSIZE ( 175 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "TUTORIAL 2" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap2_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgPlayTutMovies.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap3_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 240 )
+    
+     SPEC (
+       XSIZE ( 175 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "TUTORIAL 3" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap3_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgPlayTutMovies.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap4_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 290 )
+    
+     SPEC (
+       XSIZE ( 175 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "TUTORIAL 4" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap4_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgPlayTutMovies.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap5_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 340 )
+    
+     SPEC (
+       XSIZE ( 175 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "TUTORIAL 5" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap5_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgPlayTutMovies.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap6_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 390 )
+    
+     SPEC (
+       XSIZE ( 175 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "TUTORIAL 6" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap6_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgPlayTutMovies.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Set_Chap1_Valve)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap1_Valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(uiDocChapter= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Set_Chap2_Valve)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap2_Valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(uiDocChapter= 2  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  2 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Set_Chap3_Valve)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap3_Valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(uiDocChapter= 3  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  3 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Set_Chap4_Valve)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap4_Valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(uiDocChapter= 4  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  4 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Set_Chap5_Valve)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap5_Valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(uiDocChapter= 5  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  5 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Set_Chap6_Valve)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap6_Valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(uiDocChapter= 6  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  6 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Chap1_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap1_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(CameFromOther= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromOther  =  1 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap1_button)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap1_button )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap1_button)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap1_button )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     SOUND(
-       NAME(SND_SLIDE)
-      
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUChap1_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -50.000000  110.000000  0.000000 )
-      
-      TRANSLATE_TO( 20.000000  110.000000  0.000000 )
-      
-      RUN_TIME( 0.100000 )
+       START ()
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Chap2_button_slide)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUChap2_button)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap1_button )
       
-      STATE(INACTIVE)
+       TRANSLATE_FROM ( -50.000000  110.000000  0.000000 )
       
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap2_button)
+       TRANSLATE_TO ( 20.000000  110.000000  0.000000 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     SOUND(
-       NAME(SND_SLIDE)
-      
-      START()
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUChap2_button)
-      
-      TRANSLATE_FROM( -50.000000  150.000000  0.000000 )
-      
-      TRANSLATE_TO( 20.000000  150.000000  0.000000 )
-      
-      RUN_TIME( 0.100000 )
+       RUN_TIME ( 0.100000 )
       
       )
      
@@ -841,43 +797,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Chap3_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap2_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUChap3_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap2_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap3_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap2_button )
       
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUChap3_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -50.000000  190.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( 20.000000  190.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap2_button )
       
-      RUN_TIME( 0.100000 )
+       TRANSLATE_FROM ( -50.000000  150.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  150.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
       
       )
      
@@ -885,43 +841,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Chap4_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap3_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUChap4_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap3_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap4_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap3_button )
       
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUChap4_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -50.000000  230.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( 20.000000  230.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap3_button )
       
-      RUN_TIME( 0.100000 )
+       TRANSLATE_FROM ( -50.000000  190.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  190.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
       
       )
      
@@ -929,43 +885,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Chap5_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap4_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUChap5_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap4_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap5_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      WAIT ( 0.300000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap4_button )
       
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUChap5_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -50.000000  270.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( 20.000000  270.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap4_button )
       
-      RUN_TIME( 0.100000 )
+       TRANSLATE_FROM ( -50.000000  230.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  230.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
       
       )
      
@@ -973,43 +929,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Chap6_button_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap5_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUChap6_button)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap5_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.500000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUChap6_button)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_SLIDE)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap5_button )
       
-      START()
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUChap6_button)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      TRANSLATE_FROM( -50.000000  310.000000  0.000000 )
+       START ()
       
-      TRANSLATE_TO( 20.000000  310.000000  0.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap5_button )
       
-      RUN_TIME( 0.100000 )
+       TRANSLATE_FROM ( -50.000000  270.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  270.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
       
       )
      
@@ -1017,43 +973,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap6_button_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap6_button )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      WAIT ( 0.500000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap6_button )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( ACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      SOUND (
+        NAME ( SND_SLIDE )
       
-      START()
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap6_button )
+      
+       TRANSLATE_FROM ( -50.000000  310.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  310.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
       
       )
      
@@ -1061,36 +1017,80 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

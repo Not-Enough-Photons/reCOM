@@ -1,268 +1,203 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgOnlineOptions.rdr)
+    SCRIPT_LIBRARY ( dlgOnlineOptions.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("ONLINE OPTIONS")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 384  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SIZE( 640  0.000000  64  0.000000 )
+       CHILDOF ( letterbar )
       
-      )
-     
-     )
-    
-    (
-      NAME(net_conn_ind_Yel)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 572  0.000000 )
-     
-     YPOS( 25  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
+       CAPTION ( "ONLINE OPTIONS" )
       
-      FILENAME(NetMonY.tif)
-      
-      SIZE( 28  0.000000  28  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(net_conn_ind_blue)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 581  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 34  0.000000 )
+      YPOS ( 384 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      FILENAME(NetMonB.tif)
-      
-      SIZE( 10  0.000000  12  0.000000 )
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(playertext)
+       NAME ( net_conn_ind_Yel )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 572 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 25 )
      
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      CAPTION(Player:)
+       FILENAME ( NetMonY.tif )
       
-      )
-     
-     )
-    
-    (
-      NAME(clantext)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      CAPTION(Clan:)
+       SIZE ( 28  28 )
       
       )
      
      )
     
     (
-      NAME(playername)
+       NAME ( net_conn_ind_blue )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 581 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 34 )
      
-     CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
      
-     SPEC(
-       UIVAR(
-        NAME(PLAYERNAMEVAR)
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(txtClanName)
+       NAME ( txtClanName )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 45  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar_bottom )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(CLANNAMEVAR)
+       UIVAR (
+         NAME ( CLANNAMEVAR )
        
-       VALUE(Unaffiliated)
+        VALUE ( Unaffiliated )
        
-       TYPE(PERMANENT)
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 187  0.000000 )
-     
-     YPOS( 65  0.000000 )
-     
-     SPEC(
-       XSIZE( 445  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 187  0.000000 )
-     
-     YPOS( 97  0.000000 )
-     
-     SPEC(
-       XSIZE( 445  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(PlayerDescription)
-     
-     TYPE(WRAPPEDTEXT)
-     
-     XPOS( 200  0.000000 )
-     
-     YPOS( 117  0.000000 )
-     
-     SPEC(
-       SCALE( 0.350000 )
-      
-      WIDTH( 200  0.000000 )
-      
-      SPACING( 15  0.000000 )
-      
-      UIVAR(
-        NAME(PlayerDescription)
+        TYPE ( PERMANENT )
        
        )
       
@@ -271,175 +206,240 @@
      )
     
     (
-      NAME(DescriptionText)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 187 )
      
-     YPOS( 85  0.000000 )
+      YPOS ( 65 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 445 )
       
-      SCALE( 0.350000 )
+       YSIZE ( 30 )
       
-      CAPTION(" ")
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 220  0.000000 )
-     
-     YPOS( 105  0.000000 )
-     
-     SPEC(
-       CAPTION(" ")
-      
-      SCALE( 0.850000 )
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(dogtags)
+       NAME ( TabSmWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 370  0.000000 )
+      XPOS ( 187 )
      
-     YPOS( 325  0.000000 )
+      YPOS ( 97 )
      
-     SPEC(
-       FILENAME(dogtags.tif)
+      SPEC (
+        XSIZE ( 445 )
       
-      SIZE( 256  0.000000  128  0.000000 )
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
+    (
+       NAME ( PlayerDescription )
      
-     ANIMATION(check_then_save_and_leave)
+      TYPE ( WRAPPEDTEXT )
+     
+      XPOS ( 200 )
+     
+      YPOS ( 117 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       WIDTH ( 200 )
+      
+       SPACING ( 15 )
+      
+       UIVAR (
+         NAME ( PlayerDescription )
+       
+       )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( DescriptionText )
      
-     ANIMATION(net_monitor)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 200 )
      
-     ANIMATION(OnStartAct)
+      YPOS ( 85 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(bottom_bar_slide_up)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(letterbar_slide_down)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       NAME ( TabText )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      TYPE ( TEXT )
+     
+      XPOS ( 220 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        CAPTION ( " " )
+      
+       SCALE ( 0.850000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(playerdesc)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     XPOS( 10  0.000000 )
+      ANIMATION ( check_then_save_and_leave )
      
-     YPOS( 97  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     TYPE(BUTTON)
+      ANIMATION ( net_monitor )
      
-     SPEC(
-       XSIZE( 175  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnStartAct )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( playerdesc )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 97 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 175 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      CAPTION("PLAYER DESCRIPTION")
+       CAPTION ( "PLAYER DESCRIPTION" )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(playerdescAct)
+         ANIMATION ( playerdescAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(SetPlayerDescription)
+         ANIMATION ( SetPlayerDescription )
         
         )
        
@@ -450,75 +450,75 @@
      )
     
     (
-      NAME(Messaging)
+       NAME ( Messaging )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 127  0.000000 )
+      YPOS ( 127 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       CAPTION("SETUP MESSAGING")
+      SPEC (
+        CAPTION ( "SETUP MESSAGING" )
       
-      XSIZE( 175  0.000000 )
+       XSIZE ( 175 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(SetSOPAct)
+         ANIMATION ( SetSOPAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgSetSOP.rdr)
+         ARGUMENT ( dlgSetSOP.rdr )
         
         )
        
@@ -529,75 +529,75 @@
      )
     
     (
-      NAME(Taunts)
+       NAME ( Taunts )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 157  0.000000 )
+      YPOS ( 157 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       CAPTION("SETUP TAUNTS")
+      SPEC (
+        CAPTION ( "SETUP TAUNTS" )
       
-      XSIZE( 175  0.000000 )
+       XSIZE ( 175 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(SetTauntAct)
+         ANIMATION ( SetTauntAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgSetTaunts.rdr)
+         ARGUMENT ( dlgSetTaunts.rdr )
         
         )
        
@@ -608,75 +608,75 @@
      )
     
     (
-      NAME(filters)
+       NAME ( filters )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 187  0.000000 )
+      YPOS ( 187 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 175  0.000000 )
+      SPEC (
+        XSIZE ( 175 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      CAPTION("INPUT FILTERS")
+       CAPTION ( "INPUT FILTERS" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(InputFilterAct)
+         ANIMATION ( InputFilterAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgOnlineFilters.rdr)
+         ARGUMENT ( dlgOnlineFilters.rdr )
         
         )
        
@@ -692,79 +692,62 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(check_then_save_and_leave)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_then_save_and_leave )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(OptionsChanged== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( OptionsChanged  ==  1 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(save_and_leave)
+      CALL_ANIMATION (
+        NAME ( save_and_leave )
       
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     VALVE(OptionsChanged= 0  0.000000 )
-     
-     ELSE()
-     
-     CALL_ANIMATION(
-       NAME(menu_fade_down)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgWorldOfSOCOM.rdr)
+      VALVE ( OptionsChanged  =  0 )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgWorldOfSOCOM.rdr )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnStartAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnStartAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(DisableButton)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(responsetime)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(playerdescAct)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("Press the X button to enter your player description.")
+       ARGUMENT ( responsetime )
       
       )
      
@@ -772,16 +755,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SetSOPAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( playerdescAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Press the X button to enter your standard operating procedures.")
+       CAPTION ( "Press the X button to enter your player description." )
       
       )
      
@@ -789,16 +772,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SetTauntAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetSOPAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Press the X button to enter your taunts.")
+       CAPTION ( "Press the X button to enter your standard operating procedures." )
       
       )
      
@@ -806,16 +789,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(InputFilterAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetTauntAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Press the X button to set your game filters.")
+       CAPTION ( "Press the X button to enter your taunts." )
       
       )
      
@@ -823,102 +806,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(toggle_automsg)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( InputFilterAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(ToggleAutoMessages)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      )
-     
-     VALVE(OptionsChanged= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SetPlayerDescription)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(SetSkbPurpose)
-      
-      ARGUMENT("Enter Your Player Description")
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(GetTextInput)
-      
-      NODE(MENUMPPLAYERNAME)
-      
-      ARGUMENT(PlayerDescription)
-      
-      )
-     
-     VALVE(SkbMaxChars= 25  0.000000 )
-     
-     WHILE(
-       VALVE(skb_done!= 1  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     ui::UI_COMMAND(
-       TYPE(SetPlayerDescription)
-      
-      )
-     
-     VALVE(OptionsChanged= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       CAPTION ( "Press the X button to set your game filters." )
       
       )
      
@@ -926,36 +823,139 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( toggle_automsg )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(INACTIVE)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ToggleAutoMessages )
       
       )
      
-     WAIT( 0.400000 )
+      VALVE ( OptionsChanged  =  1 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetPlayerDescription )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
       
-      STATE(ACTIVE)
+       ARGUMENT ( "Enter Your Player Description" )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       NODE ( MENU  MPPLAYERNAME )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       ARGUMENT ( PlayerDescription )
       
-      RUN_TIME( 0.250000 )
+      )
+     
+      VALVE ( SkbMaxChars  =  25 )
+     
+      WHILE (
+        VALVE ( skb_done  !=  1 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SetPlayerDescription )
+      
+      )
+     
+      VALVE ( OptionsChanged  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

@@ -1,34 +1,34 @@
 ((
-  ANIMATION_DEFINITIONS(
-   GRAVITY( -98.000000 )
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
   
-  ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(flashbang_start)
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flashbang_start )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_THROW_OBJECT_WHOOSH)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_THROW_OBJECT_WHOOSH )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
+       START ()
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_MALE_GRUNT)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_MALE_GRUNT )
       
-      START()
+       START ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
       )
      
@@ -36,91 +36,91 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flashcrash_grenade)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flashcrash_grenade )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_MARK_141_FLASHCRASH)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_MARK_141_FLASHCRASH )
       
-      VOLUME( 2.000000 )
+       VOLUME ( 2.000000 )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      START()
+       START ()
       
       )
      
-     CALL_ANIMATION(
-       NAME(camera_shake)
+      CALL_ANIMATION (
+        NAME ( camera_shake )
       
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(smoke_a_puffin1)
+     SEQUENCE_DEFINITION (
+       NAME ( smoke_a_puffin1 )
      
-     PARTICLE_SOURCE(
-       NAME(flashcrash_smoke)
+      PARTICLE_SOURCE (
+        NAME ( flashcrash_smoke )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.040000 )
+       TIME_INTERVAL ( 0.040000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -60.000000  60.000000 )
+       PERTURB_VELOCITY_X ( -60.000000  60.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  25.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  25.000000 )
       
-      PERTURB_VELOCITY_Z( -60.000000  60.000000 )
+       PERTURB_VELOCITY_Z ( -60.000000  60.000000 )
       
-      RADIUS_RANGE( 9.000000  18.000000 )
+       RADIUS_RANGE ( 9.000000  18.000000 )
       
-      LIFESPAN_RANGE( 0.200000  0.300000 )
+       LIFESPAN_RANGE ( 0.200000  0.300000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.500000 )
+       WIND_FACTOR ( 0.500000 )
       
-      FRICTION( 0.400000 )
+       FRICTION ( 0.400000 )
       
-      WORLD_ACCELERATION( 0.000000  0.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      COLORS(( 0.000000  0.400000  0.400000  0.400000  0.800000 )
+       COLORS (( 0.000000  0.400000  0.400000  0.400000  0.800000 )
        
        ( 1.000000  0.400000  0.400000  0.400000  0.000000 )
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.000000 )
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
        
        ( 0.200000  10.000000 )
        
@@ -128,25 +128,25 @@
       
       )
      
-     WAIT(FRAME_COUNT 1  0.000000 )
+      WAIT ( FRAME_COUNT  1 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      LIGHT(
-       NAME(explosion_light)
+     SEQUENCE_DEFINITION (
+       LIGHT (
+        NAME ( explosion_light )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      TRANSLATION( 0.000000  2.000000  0.000000 )
+       TRANSLATION ( 0.000000  2.000000  0.000000 )
       
-      DIFFUSE( 0.990000  0.990000  0.990000 )
+       DIFFUSE ( 0.990000  0.990000  0.990000 )
       
-      RANGE_SEQUENCE(( 0.000000  0.000000  0.000000 )
+       RANGE_SEQUENCE (( 0.000000  0.000000  0.000000 )
        
        ( 0.100000  150.000000  180.000000 )
        
@@ -162,57 +162,57 @@
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(explosion)
+     SEQUENCE_DEFINITION (
+       NAME ( explosion )
      
-     PARTICLE_SOURCE(
-       NAME(party_grenade1)
+      PARTICLE_SOURCE (
+        NAME ( party_grenade1 )
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      PERTURB_POSITION_X( -2.000000  2.000000 )
+       PERTURB_POSITION_X ( -2.000000  2.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  4.000000 )
+       PERTURB_POSITION_Y ( 0.000000  4.000000 )
       
-      PERTURB_POSITION_Z( -2.000000  2.000000 )
+       PERTURB_POSITION_Z ( -2.000000  2.000000 )
       
-      LOCAL_VELOCITY( 0.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( 0.000000  0.000000 )
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
       
-      RADIUS_RANGE( 7.000000  9.000000 )
+       RADIUS_RANGE ( 7.000000  9.000000 )
       
-      LIFESPAN_RANGE( 0.050000  0.070000 )
+       LIFESPAN_RANGE ( 0.050000  0.070000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.750000 )
+       WIND_FACTOR ( 0.750000 )
       
-      FRICTION( 0.500000 )
+       FRICTION ( 0.500000 )
       
-      WORLD_ACCELERATION( 0.000000  0.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 100.000000  500.000000 )
+       FADE_FAR_RANGE ( 100.000000  500.000000 )
       
-      TEXTURES(explosion2.tif)
+       TEXTURES ( explosion2.tif )
       
-      COLORS(( 0.000000  1.000000  0.900000  0.900000  0.400000 )
+       COLORS (( 0.000000  1.000000  0.900000  0.900000  0.400000 )
        
        ( 0.100000  1.000000  1.000000  1.000000  0.200000 )
        
@@ -222,7 +222,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.500000 )
+       SCALE_SEQUENCE (( 0.000000  1.500000 )
        
        ( 0.100000  5.500000 )
        
@@ -234,7 +234,7 @@
       
       )
      
-     WAIT(FRAME_COUNT 1  0.000000 )
+      WAIT ( FRAME_COUNT  1 )
      
      )
     

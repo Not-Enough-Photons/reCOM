@@ -1,146 +1,146 @@
 ((
-  SCREENS((
-    LIBRARIES(ui/assetlib/ui2dui/assetlib/hype)
+   SCREENS ((
+     LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/hype )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgHype.rdr)
+    SCRIPT_LIBRARY ( dlgHype.rdr )
    
-   OBJECTS((
-      NAME(Hype5)
+    OBJECTS ((
+       NAME ( Hype5 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       XSIZE( 640  0.000000 )
+      SPEC (
+        XSIZE ( 640 )
       
-      YSIZE( 448  0.000000 )
+       YSIZE ( 448 )
       
-      FILENAME(hype_screen5.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(Hype4)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 0  0.000000 )
-     
-     YPOS( 0  0.000000 )
-     
-     SPEC(
-       XSIZE( 640  0.000000 )
-      
-      YSIZE( 448  0.000000 )
-      
-      FILENAME(hype_screen4.tif)
+       FILENAME ( hype_screen5.tif )
       
       )
      
      )
     
     (
-      NAME(Hype3)
+       NAME ( Hype4 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       XSIZE( 640  0.000000 )
+      SPEC (
+        XSIZE ( 640 )
       
-      YSIZE( 448  0.000000 )
+       YSIZE ( 448 )
       
-      FILENAME(hype_screen3.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(Hype2)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 0  0.000000 )
-     
-     YPOS( 0  0.000000 )
-     
-     SPEC(
-       XSIZE( 640  0.000000 )
-      
-      YSIZE( 448  0.000000 )
-      
-      FILENAME(hype_screen2.tif)
+       FILENAME ( hype_screen4.tif )
       
       )
      
      )
     
     (
-      NAME(Hype1)
+       NAME ( Hype3 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       XSIZE( 640  0.000000 )
+      SPEC (
+        XSIZE ( 640 )
       
-      YSIZE( 448  0.000000 )
+       YSIZE ( 448 )
       
-      FILENAME(hype_screen1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(HypeText)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 0  0.000000 )
-     
-     YPOS( -10  -nan )
-     
-     SPEC(
-       XSIZE( 640  0.000000 )
-      
-      YSIZE( 448  0.000000 )
-      
-      FILENAME(hype_scrn.tif)
+       FILENAME ( hype_screen3.tif )
       
       )
      
      )
     
     (
-      NAME(SplashLogo)
+       NAME ( Hype2 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 45  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 20  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       XSIZE( 200  0.000000 )
+      SPEC (
+        XSIZE ( 640 )
       
-      YSIZE( 100  0.000000 )
+       YSIZE ( 448 )
       
-      FILENAME(SplashLogo.tif)
+       FILENAME ( hype_screen2.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Hype1 )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        XSIZE ( 640 )
+      
+       YSIZE ( 448 )
+      
+       FILENAME ( hype_screen1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( HypeText )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( -10 )
+     
+      SPEC (
+        XSIZE ( 640 )
+      
+       YSIZE ( 448 )
+      
+       FILENAME ( hype_scrn.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SplashLogo )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 45 )
+     
+      YPOS ( 20 )
+     
+      SPEC (
+        XSIZE ( 200 )
+      
+       YSIZE ( 100 )
+      
+       FILENAME ( SplashLogo.tif )
       
       )
      
@@ -148,362 +148,362 @@
     
     )
    
-   ANIMATIONS((
-      EVENT(ONSTART)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     ANIMATION(CallMusic)
-     
-     )
-    
-    (
-      BUTTON(CROSS)
-     
-     ANIMATION(BackOutWithMusic)
+      ANIMATION ( CallMusic )
      
      )
     
     (
-      BUTTON(TRIANGLE)
+       BUTTON ( CROSS )
      
-     ANIMATION(BackOutWithMusic)
-     
-     )
-    
-    (
-      BUTTON(DOWN)
-     
-     ANIMATION(BackOutWithMusic)
+      ANIMATION ( BackOutWithMusic )
      
      )
     
     (
-      BUTTON(UP)
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(BackOutWithMusic)
-     
-     )
-    
-    (
-      BUTTON(LEFT)
-     
-     ANIMATION(BackOutWithMusic)
+      ANIMATION ( BackOutWithMusic )
      
      )
     
     (
-      BUTTON(RIGHT)
+       BUTTON ( DOWN )
      
-     ANIMATION(BackOutWithMusic)
+      ANIMATION ( BackOutWithMusic )
      
      )
     
     (
-      EVENT(ONSTART)
+       BUTTON ( UP )
      
-     ANIMATION(EnterSlideShow)
+      ANIMATION ( BackOutWithMusic )
+     
+     )
+    
+    (
+       BUTTON ( LEFT )
+     
+      ANIMATION ( BackOutWithMusic )
+     
+     )
+    
+    (
+       BUTTON ( RIGHT )
+     
+      ANIMATION ( BackOutWithMusic )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( EnterSlideShow )
      
      )
     
     )
    
-   CONTROLS()
+    CONTROLS ()
    
    )
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(EnterSlideShow)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( EnterSlideShow )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(CameFromOther= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromOther  =  1 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHypeText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  HypeText )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype1 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype2)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype4)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHypeText)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype4 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype2)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype5 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype4)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  HypeText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 5  0.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype2)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUHype1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype1 )
       
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.990000 )
-      
-      OPACITY_TO( 0.000000 )
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype3)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype5)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 5  0.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype4 )
       
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUHype2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype5 )
       
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.990000 )
-      
-      OPACITY_TO( 0.000000 )
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype1)
+      WAIT ( 5 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype2 )
       
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype2)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  Hype1 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 0.500000 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype4)
+       OPACITY_FROM ( 0.990000 )
       
-      STATE(INACTIVE)
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype1 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 5  0.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype4)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUHype3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype3 )
       
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.990000 )
-      
-      OPACITY_TO( 0.000000 )
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype4 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype2)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype5 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype5)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 5  0.000000 )
+      WAIT ( 5 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype3 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUHype4)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  Hype2 )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.990000 )
+       OPACITY_FROM ( 0.990000 )
       
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype1)
-      
-      STATE(INACTIVE)
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype1 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype3)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUHype4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype2 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 5  0.000000 )
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype4 )
+      
+       STATE ( INACTIVE )
+      
+      )
      
-     CALL_ANIMATION(
-       NAME(BackOutWithMusic)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype4 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  Hype3 )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.990000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype5 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  Hype4 )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.990000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Hype4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      CALL_ANIMATION (
+        NAME ( BackOutWithMusic )
       
       )
      
@@ -511,71 +511,71 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(CallMusic)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallMusic )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(CameFromDebriefing= 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromDebriefing  =  0 )
      
-     VALVE(CameFromOther= 0  0.000000 )
+      VALVE ( CameFromOther  =  0 )
      
-     SOUND(
-       NAME(MUS_MENU_THEME)
+      SOUND (
+        NAME ( MUS_MENU_THEME )
       
-      START()
+       START ()
       
       )
      
-     WHILE(TRUE)
+      WHILE ( TRUE )
      
-     END_WHILE()
+      END_WHILE ()
      
-     VALVE(BackFromBrief= 0  0.000000 )
+      VALVE ( BackFromBrief  =  0 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(BackOutWithMusic)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( BackOutWithMusic )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      STOP_ANIMATION(
-       NAME(menu_fade_up)
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.750000 )
+       RUN_TIME ( 0.750000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(StopAllSounds)
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(VagStreaming)
-      
-      ARGUMENT(OFF)
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
       
-      ARGUMENT(dlgMenu.rdr)
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMenu.rdr )
       
       )
      

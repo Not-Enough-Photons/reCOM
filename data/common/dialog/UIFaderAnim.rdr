@@ -1,20 +1,20 @@
 ((
-  ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(menu_fade_up)
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( menu_fade_up )
     
-    ACTIVATION(ON_STARTUP)
+     ACTIVATION ( ON_STARTUP )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+     SEQUENCE_DEFINITION (
+       OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 1.500000 )
+       RUN_TIME ( 1.500000 )
       
-      OPACITY_FROM( 1.000000 )
+       OPACITY_FROM ( 1.000000 )
       
-      OPACITY_TO( 0.000000 )
+       OPACITY_TO ( 0.000000 )
       
       )
      
@@ -22,25 +22,25 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(menu_fade_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( menu_fade_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      STOP_ANIMATION(
-       NAME(menu_fade_up)
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 1.500000 )
+       RUN_TIME ( 1.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      

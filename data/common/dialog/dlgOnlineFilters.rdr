@@ -1,203 +1,203 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgOnlineFilters.rdr)
+    SCRIPT_LIBRARY ( dlgOnlineFilters.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("ONLINE FILTERS")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 384  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SIZE( 640  0.000000  64  0.000000 )
+       CHILDOF ( letterbar )
       
-      )
-     
-     )
-    
-    (
-      NAME(net_conn_ind_Yel)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 572  0.000000 )
-     
-     YPOS( 25  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
+       CAPTION ( "ONLINE FILTERS" )
       
-      FILENAME(NetMonY.tif)
-      
-      SIZE( 28  0.000000  28  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(net_conn_ind_blue)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 581  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 34  0.000000 )
+      YPOS ( 384 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      FILENAME(NetMonB.tif)
-      
-      SIZE( 10  0.000000  12  0.000000 )
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(playertext)
+       NAME ( net_conn_ind_Yel )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 572 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 25 )
      
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      CAPTION(Player:)
+       FILENAME ( NetMonY.tif )
       
-      )
-     
-     )
-    
-    (
-      NAME(clantext)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      CAPTION(Clan:)
+       SIZE ( 28  28 )
       
       )
      
      )
     
     (
-      NAME(playername)
+       NAME ( net_conn_ind_blue )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 581 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 34 )
      
-     CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
      
-     SPEC(
-       UIVAR(
-        NAME(PLAYERNAMEVAR)
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(txtClanName)
+       NAME ( txtClanName )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 45  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar_bottom )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(CLANNAMEVAR)
+       UIVAR (
+         NAME ( CLANNAMEVAR )
        
-       VALUE(Unaffiliated)
+        VALUE ( Unaffiliated )
        
-       TYPE(PERMANENT)
+        TYPE ( PERMANENT )
        
        )
       
@@ -206,307 +206,307 @@
      )
     
     (
-      NAME(dogtags)
+       NAME ( dogtags )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 370  0.000000 )
+      XPOS ( 370 )
      
-     YPOS( 325  0.000000 )
+      YPOS ( 325 )
      
-     SPEC(
-       FILENAME(dogtags.tif)
+      SPEC (
+        FILENAME ( dogtags.tif )
       
-      SIZE( 256  0.000000  128  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 160  0.000000 )
-     
-     YPOS( 67  0.000000 )
-     
-     SPEC(
-       XSIZE( 445  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       SIZE ( 256  128 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( TabSmWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 160  0.000000 )
+      XPOS ( 160 )
      
-     YPOS( 97  0.000000 )
+      YPOS ( 67 )
      
-     SPEC(
-       XSIZE( 445  0.000000 )
+      SPEC (
+        XSIZE ( 445 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 160  0.000000 )
-     
-     YPOS( 127  0.000000 )
-     
-     SPEC(
-       XSIZE( 445  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( TabSmWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 160  0.000000 )
+      XPOS ( 160 )
      
-     YPOS( 157  0.000000 )
+      YPOS ( 97 )
      
-     SPEC(
-       XSIZE( 445  0.000000 )
+      SPEC (
+        XSIZE ( 445 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(DescriptionText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 170  0.000000 )
-     
-     YPOS( 87  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.400000 )
-      
-      CAPTION(" ")
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(game_type_desc)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 170  0.000000 )
+      XPOS ( 160 )
      
-     YPOS( 117  0.000000 )
+      YPOS ( 127 )
      
-     SPEC(
-       CAPTION("ONLINE FILTERS")
+      SPEC (
+        XSIZE ( 445 )
       
-      SCALE( 0.350000 )
+       YSIZE ( 30 )
       
-      )
-     
-     )
-    
-    (
-      NAME(game_player_desc)
-     
-     TYPE(TEXT)
-     
-     XPOS( 170  0.000000 )
-     
-     YPOS( 147  0.000000 )
-     
-     SPEC(
-       CAPTION("ONLINE FILTERS")
-      
-      SCALE( 0.350000 )
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(game_speed_desc)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 170  0.000000 )
+      XPOS ( 160 )
      
-     YPOS( 177  0.000000 )
+      YPOS ( 157 )
      
-     SPEC(
-       CAPTION("ONLINE FILTERS")
+      SPEC (
+        XSIZE ( 445 )
       
-      SCALE( 0.350000 )
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      EVENT(ONSTART)
+    (
+       NAME ( DescriptionText )
      
-     ANIMATION(net_monitor)
+      TYPE ( TEXT )
+     
+      XPOS ( 170 )
+     
+      YPOS ( 87 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( game_type_desc )
      
-     ANIMATION(bottom_bar_slide_up)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 170 )
      
-     ANIMATION(letterbar_slide_down)
+      YPOS ( 117 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(ActivateGames)
+      SPEC (
+        CAPTION ( "ONLINE FILTERS" )
+      
+       SCALE ( 0.350000 )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( game_player_desc )
      
-     ANIMATION(letterbar_slide)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 170 )
      
-     ANIMATION(refresh_filter_screen)
+      YPOS ( 147 )
      
-     )
-    
-    (
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(PREVIOUS_SCREEN)
+      SPEC (
+        CAPTION ( "ONLINE FILTERS" )
+      
+       SCALE ( 0.350000 )
+      
+      )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       NAME ( game_speed_desc )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      TYPE ( TEXT )
+     
+      XPOS ( 170 )
+     
+      YPOS ( 177 )
+     
+      SPEC (
+        CAPTION ( "ONLINE FILTERS" )
+      
+       SCALE ( 0.350000 )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(gamestype)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     XPOS( 10  0.000000 )
+      ANIMATION ( net_monitor )
      
-     YPOS( 97  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     TYPE(BUTTON)
+      ANIMATION ( bottom_bar_slide_up )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ActivateGames )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( refresh_filter_screen )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( gamestype )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 97 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      CAPTION("MAP TYPE")
+       CAPTION ( "MAP TYPE" )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnGameTypeBtnAct)
+         ANIMATION ( OnGameTypeBtnAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(increment_game_filter)
+         ANIMATION ( increment_game_filter )
         
         )
        
@@ -517,73 +517,73 @@
      )
     
     (
-      NAME(NumPlayersTab)
+       NAME ( NumPlayersTab )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 127  0.000000 )
+      YPOS ( 127 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      CAPTION("# OF PLAYERS")
+       CAPTION ( "# OF PLAYERS" )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnNumPlayBtnAct)
+         ANIMATION ( OnNumPlayBtnAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(increment_player_filter)
+         ANIMATION ( increment_player_filter )
         
         )
        
@@ -594,73 +594,73 @@
      )
     
     (
-      NAME(responsetime)
+       NAME ( responsetime )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 157  0.000000 )
+      YPOS ( 157 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      CAPTION("RESPONSE TIME")
+       CAPTION ( "RESPONSE TIME" )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnResTimeBtnAct)
+         ANIMATION ( OnResTimeBtnAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(increment_speed_filter)
+         ANIMATION ( increment_speed_filter )
         
         )
        
@@ -671,119 +671,119 @@
      )
     
     (
-      NAME(FF)
+       NAME ( FF )
      
-     TYPE(RADIOSTRIP)
+      TYPE ( RADIOSTRIP )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 187  0.000000 )
+      YPOS ( 187 )
      
-     SPEC(
-       CAPTION("FRIENDLY FIRE")
+      SPEC (
+        CAPTION ( "FRIENDLY FIRE" )
       
-      XSIZE( 145  0.000000 )
+       XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SUBORDINATES((
-         NAME(FF_ON)
+       SUBORDINATES ((
+          NAME ( FF_ON )
         
-        XPOS( 160  0.000000 )
+         XPOS ( 160 )
         
-        YPOS( 0  0.000000 )
+         YPOS ( 0 )
         
-        TYPE(CHECKBOX)
+         TYPE ( CHECKBOX )
         
-        SPEC(
-          CHILDOF(FF)
+         SPEC (
+           CHILDOF ( FF )
          
-         CHECK_X( 7  0.000000 )
+          CHECK_X ( 7 )
          
-         CHECK_Y( 7  0.000000 )
+          CHECK_Y ( 7 )
          
-         CHECKSIZE_X( 25  0.000000 )
+          CHECKSIZE_X ( 25 )
          
-         CHECKSIZE_Y( 25  0.000000 )
+          CHECKSIZE_Y ( 25 )
          
-         CHECK_TEXTURE(op_check.tif)
+          CHECK_TEXTURE ( op_check.tif )
          
-         ONCHECK(
-           BUTTON(NONE)
+          ONCHECK (
+            BUTTON ( NONE )
           
-          ANIMATION(enable_FF)
+           ANIMATION ( enable_FF )
           
           )
          
-         CAPTION(ENABLED)
+          CAPTION ( ENABLED )
          
-         SCALE( 0.400000 )
+          SCALE ( 0.400000 )
          
-         XOFFSET( 35  0.000000 )
+          XOFFSET ( 35 )
          
-         YOFFSET( 25  0.000000 )
+          YOFFSET ( 25 )
          
-         PRESSED(op_checkbox.tif)
+          PRESSED ( op_checkbox.tif )
          
-         NORMAL(op_checkbox.tif)
+          NORMAL ( op_checkbox.tif )
          
-         ACTIVE(op_checkbox.tif)
+          ACTIVE ( op_checkbox.tif )
          
-         PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
          
-         NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
          
-         ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
          
-         XSIZE( 35  0.000000 )
+          XSIZE ( 35 )
          
-         YSIZE( 35  0.000000 )
+          YSIZE ( 35 )
          
-         ANIMATIONS((
-            EVENT(ONACTIVATE)
+          ANIMATIONS ((
+             EVENT ( ONACTIVATE )
            
-           ANIMATION(OnFFBtnAct)
+            ANIMATION ( OnFFBtnAct )
            
            )
           
@@ -794,62 +794,62 @@
         )
        
        (
-         NAME(FF_OFF)
+          NAME ( FF_OFF )
         
-        XPOS( 260  0.000000 )
+         XPOS ( 260 )
         
-        YPOS( 0  0.000000 )
+         YPOS ( 0 )
         
-        TYPE(CHECKBOX)
+         TYPE ( CHECKBOX )
         
-        SPEC(
-          CHILDOF(FF)
+         SPEC (
+           CHILDOF ( FF )
          
-         CHECK_X( 7  0.000000 )
+          CHECK_X ( 7 )
          
-         CHECK_Y( 7  0.000000 )
+          CHECK_Y ( 7 )
          
-         CHECKSIZE_X( 25  0.000000 )
+          CHECKSIZE_X ( 25 )
          
-         CHECKSIZE_Y( 25  0.000000 )
+          CHECKSIZE_Y ( 25 )
          
-         CHECK_TEXTURE(op_check.tif)
+          CHECK_TEXTURE ( op_check.tif )
          
-         ONCHECK(
-           BUTTON(NONE)
+          ONCHECK (
+            BUTTON ( NONE )
           
-          ANIMATION(disable_FF)
+           ANIMATION ( disable_FF )
           
           )
          
-         CAPTION(DISABLED)
+          CAPTION ( DISABLED )
          
-         SCALE( 0.400000 )
+          SCALE ( 0.400000 )
          
-         XOFFSET( 35  0.000000 )
+          XOFFSET ( 35 )
          
-         YOFFSET( 25  0.000000 )
+          YOFFSET ( 25 )
          
-         PRESSED(op_checkbox.tif)
+          PRESSED ( op_checkbox.tif )
          
-         NORMAL(op_checkbox.tif)
+          NORMAL ( op_checkbox.tif )
          
-         ACTIVE(op_checkbox.tif)
+          ACTIVE ( op_checkbox.tif )
          
-         PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
          
-         NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
          
-         ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
          
-         XSIZE( 35  0.000000 )
+          XSIZE ( 35 )
          
-         YSIZE( 35  0.000000 )
+          YSIZE ( 35 )
          
-         ANIMATIONS((
-            EVENT(ONACTIVATE)
+          ANIMATIONS ((
+             EVENT ( ONACTIVATE )
            
-           ANIMATION(OnFFBtnAct)
+            ANIMATION ( OnFFBtnAct )
            
            )
           
@@ -860,62 +860,62 @@
         )
        
        (
-         NAME(FF_NOPREF)
+          NAME ( FF_NOPREF )
         
-        XPOS( 380  0.000000 )
+         XPOS ( 380 )
         
-        YPOS( 0  0.000000 )
+         YPOS ( 0 )
         
-        TYPE(CHECKBOX)
+         TYPE ( CHECKBOX )
         
-        SPEC(
-          CHILDOF(FF)
+         SPEC (
+           CHILDOF ( FF )
          
-         CHECK_X( 7  0.000000 )
+          CHECK_X ( 7 )
          
-         CHECK_Y( 7  0.000000 )
+          CHECK_Y ( 7 )
          
-         CHECKSIZE_X( 25  0.000000 )
+          CHECKSIZE_X ( 25 )
          
-         CHECKSIZE_Y( 25  0.000000 )
+          CHECKSIZE_Y ( 25 )
          
-         CHECK_TEXTURE(op_check.tif)
+          CHECK_TEXTURE ( op_check.tif )
          
-         ONCHECK(
-           BUTTON(NONE)
+          ONCHECK (
+            BUTTON ( NONE )
           
-          ANIMATION(nopref_FF)
+           ANIMATION ( nopref_FF )
           
           )
          
-         CAPTION("DON'T CARE")
+          CAPTION ( "DON'T CARE" )
          
-         SCALE( 0.400000 )
+          SCALE ( 0.400000 )
          
-         XOFFSET( 35  0.000000 )
+          XOFFSET ( 35 )
          
-         YOFFSET( 25  0.000000 )
+          YOFFSET ( 25 )
          
-         PRESSED(op_checkbox.tif)
+          PRESSED ( op_checkbox.tif )
          
-         NORMAL(op_checkbox.tif)
+          NORMAL ( op_checkbox.tif )
          
-         ACTIVE(op_checkbox.tif)
+          ACTIVE ( op_checkbox.tif )
          
-         PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
          
-         NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
          
-         ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
          
-         XSIZE( 35  0.000000 )
+          XSIZE ( 35 )
          
-         YSIZE( 35  0.000000 )
+          YSIZE ( 35 )
          
-         ANIMATIONS((
-            EVENT(ONACTIVATE)
+          ANIMATIONS ((
+             EVENT ( ONACTIVATE )
            
-           ANIMATION(OnFFBtnAct)
+            ANIMATION ( OnFFBtnAct )
            
            )
           
@@ -932,176 +932,176 @@
      )
     
     (
-      NAME(locked)
+       NAME ( locked )
      
-     TYPE(RADIOSTRIP)
+      TYPE ( RADIOSTRIP )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 217  0.000000 )
+      YPOS ( 217 )
      
-     SPEC(
-       CAPTION(LOCKED)
+      SPEC (
+        CAPTION ( LOCKED )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      XSIZE( 145  0.000000 )
+       XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SUBORDINATES((
-         NAME(EN)
+       SUBORDINATES ((
+          NAME ( EN )
         
-        XPOS( 160  0.000000 )
+         XPOS ( 160 )
         
-        YPOS( 0  0.000000 )
+         YPOS ( 0 )
         
-        TYPE(CHECKBOX)
+         TYPE ( CHECKBOX )
         
-        SPEC(
-          CHILDOF(locked)
+         SPEC (
+           CHILDOF ( locked )
          
-         CHECK_X( 7  0.000000 )
+          CHECK_X ( 7 )
          
-         CHECK_Y( 7  0.000000 )
+          CHECK_Y ( 7 )
          
-         CHECKSIZE_X( 25  0.000000 )
+          CHECKSIZE_X ( 25 )
          
-         CHECKSIZE_Y( 25  0.000000 )
+          CHECKSIZE_Y ( 25 )
          
-         CHECK_TEXTURE(op_check.tif)
+          CHECK_TEXTURE ( op_check.tif )
          
-         ONCHECK(
-           BUTTON(NONE)
+          ONCHECK (
+            BUTTON ( NONE )
           
-          ANIMATION(enable_locked_filter)
+           ANIMATION ( enable_locked_filter )
           
           )
          
-         CAPTION(ON)
+          CAPTION ( ON )
          
-         SCALE( 0.400000 )
+          SCALE ( 0.400000 )
          
-         XOFFSET( 35  0.000000 )
+          XOFFSET ( 35 )
          
-         YOFFSET( 25  0.000000 )
+          YOFFSET ( 25 )
          
-         PRESSED(op_checkbox.tif)
+          PRESSED ( op_checkbox.tif )
          
-         NORMAL(op_checkbox.tif)
+          NORMAL ( op_checkbox.tif )
          
-         ACTIVE(op_checkbox.tif)
+          ACTIVE ( op_checkbox.tif )
          
-         PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
          
-         NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
          
-         ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
          
-         XSIZE( 35  0.000000 )
+          XSIZE ( 35 )
          
-         YSIZE( 35  0.000000 )
+          YSIZE ( 35 )
          
          )
         
         )
        
        (
-         NAME(DIS)
+          NAME ( DIS )
         
-        XPOS( 260  0.000000 )
+         XPOS ( 260 )
         
-        YPOS( 0  0.000000 )
+         YPOS ( 0 )
         
-        TYPE(CHECKBOX)
+         TYPE ( CHECKBOX )
         
-        SPEC(
-          CHILDOF(locked)
+         SPEC (
+           CHILDOF ( locked )
          
-         CHECK_X( 7  0.000000 )
+          CHECK_X ( 7 )
          
-         CHECK_Y( 7  0.000000 )
+          CHECK_Y ( 7 )
          
-         CHECKSIZE_X( 25  0.000000 )
+          CHECKSIZE_X ( 25 )
          
-         CHECKSIZE_Y( 25  0.000000 )
+          CHECKSIZE_Y ( 25 )
          
-         CHECK_TEXTURE(op_check.tif)
+          CHECK_TEXTURE ( op_check.tif )
          
-         ONCHECK(
-           BUTTON(NONE)
+          ONCHECK (
+            BUTTON ( NONE )
           
-          ANIMATION(disable_locked_filter)
+           ANIMATION ( disable_locked_filter )
           
           )
          
-         CAPTION(OFF)
+          CAPTION ( OFF )
          
-         SCALE( 0.400000 )
+          SCALE ( 0.400000 )
          
-         XOFFSET( 35  0.000000 )
+          XOFFSET ( 35 )
          
-         YOFFSET( 25  0.000000 )
+          YOFFSET ( 25 )
          
-         PRESSED(op_checkbox.tif)
+          PRESSED ( op_checkbox.tif )
          
-         NORMAL(op_checkbox.tif)
+          NORMAL ( op_checkbox.tif )
          
-         ACTIVE(op_checkbox.tif)
+          ACTIVE ( op_checkbox.tif )
          
-         PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
          
-         NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
          
-         ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
          
-         XSIZE( 35  0.000000 )
+          XSIZE ( 35 )
          
-         YSIZE( 35  0.000000 )
+          YSIZE ( 35 )
          
-         ANIMATIONS((
-            EVENT(ONACTIVATE)
+          ANIMATIONS ((
+             EVENT ( ONACTIVATE )
            
-           ANIMATION(OnLockBtnAct)
+            ANIMATION ( OnLockBtnAct )
            
            )
           
@@ -1112,57 +1112,57 @@
         )
        
        (
-         NAME(NoPref)
+          NAME ( NoPref )
         
-        XPOS( 380  0.000000 )
+         XPOS ( 380 )
         
-        YPOS( 0  0.000000 )
+         YPOS ( 0 )
         
-        TYPE(CHECKBOX)
+         TYPE ( CHECKBOX )
         
-        SPEC(
-          CHILDOF(locked)
+         SPEC (
+           CHILDOF ( locked )
          
-         CHECK_X( 7  0.000000 )
+          CHECK_X ( 7 )
          
-         CHECK_Y( 7  0.000000 )
+          CHECK_Y ( 7 )
          
-         CHECKSIZE_X( 25  0.000000 )
+          CHECKSIZE_X ( 25 )
          
-         CHECKSIZE_Y( 25  0.000000 )
+          CHECKSIZE_Y ( 25 )
          
-         CHECK_TEXTURE(op_check.tif)
+          CHECK_TEXTURE ( op_check.tif )
          
-         ONCHECK(
-           BUTTON(NONE)
+          ONCHECK (
+            BUTTON ( NONE )
           
-          ANIMATION(nopref_locked_filter)
+           ANIMATION ( nopref_locked_filter )
           
           )
          
-         CAPTION("DON'T CARE")
+          CAPTION ( "DON'T CARE" )
          
-         SCALE( 0.400000 )
+          SCALE ( 0.400000 )
          
-         XOFFSET( 35  0.000000 )
+          XOFFSET ( 35 )
          
-         YOFFSET( 25  0.000000 )
+          YOFFSET ( 25 )
          
-         PRESSED(op_checkbox.tif)
+          PRESSED ( op_checkbox.tif )
          
-         NORMAL(op_checkbox.tif)
+          NORMAL ( op_checkbox.tif )
          
-         ACTIVE(op_checkbox.tif)
+          ACTIVE ( op_checkbox.tif )
          
-         PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
          
-         NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
          
-         ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
          
-         XSIZE( 35  0.000000 )
+          XSIZE ( 35 )
          
-         YSIZE( 35  0.000000 )
+          YSIZE ( 35 )
          
          )
         
@@ -1175,73 +1175,73 @@
      )
     
     (
-      NAME(resetFilters)
+       NAME ( resetFilters )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 247  0.000000 )
+      YPOS ( 247 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 145  0.000000 )
+      SPEC (
+        XSIZE ( 145 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 22  0.000000 )
+       YOFFSET ( 22 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      CAPTION("RESET FILTERS")
+       CAPTION ( "RESET FILTERS" )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnResetBtnAct)
+         ANIMATION ( OnResetBtnAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(OnResetBtnDwn)
+         ANIMATION ( OnResetBtnDwn )
         
         )
        
@@ -1257,27 +1257,27 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ActivateGames)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ActivateGames )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Set your filter preferences.")
+       CAPTION ( "Set your filter preferences." )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(gamestype)
+       ARGUMENT ( gamestype )
       
       )
      
@@ -1285,16 +1285,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnResetBtnAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnResetBtnAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Reset filters")
+       CAPTION ( "Reset filters" )
       
       )
      
@@ -1302,16 +1302,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnResTimeBtnAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnResTimeBtnAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Filter response times")
+       CAPTION ( "Filter response times" )
       
       )
      
@@ -1319,16 +1319,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnNumPlayBtnAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnNumPlayBtnAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Filter number of players")
+       CAPTION ( "Filter number of players" )
       
       )
      
@@ -1336,16 +1336,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnFFBtnAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnFFBtnAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Filter friendly fire games")
+       CAPTION ( "Filter friendly fire games" )
       
       )
      
@@ -1353,16 +1353,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnLockBtnAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnLockBtnAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Filter locked games")
+       CAPTION ( "Filter locked games" )
       
       )
      
@@ -1370,16 +1370,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnGameTypeBtnAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameTypeBtnAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Filter map types")
+       CAPTION ( "Filter map types" )
       
       )
      
@@ -1387,31 +1387,31 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnResetBtnDwn)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnResetBtnDwn )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(GameTypeFilter= 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( GameTypeFilter  =  0 )
      
-     VALVE(GamePlayerFilter= 0  0.000000 )
+      VALVE ( GamePlayerFilter  =  0 )
      
-     VALVE(GameSpeedFilter= 65000  0.000000 )
+      VALVE ( GameSpeedFilter  =  65000 )
      
-     VALVE(FF_FILTER= 2  0.000000 )
+      VALVE ( FF_FILTER  =  2 )
      
-     VALVE(LockedFilter= 2  0.000000 )
+      VALVE ( LockedFilter  =  2 )
      
-     CALL_ANIMATION(
-       NAME(refresh_filter_screen)
+      CALL_ANIMATION (
+        NAME ( refresh_filter_screen )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Filters reset")
+       CAPTION ( "Filters reset" )
       
       )
      
@@ -1419,763 +1419,763 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(increment_game_filter)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( increment_game_filter )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      START()
-      
-      )
-     
-     IF(
-       VALVE(GameTypeFilter== 0  0.000000 )
+       START ()
       
       )
      
-     VALVE(GameTypeFilter= 1  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameTypeFilter== 1  0.000000 )
+      IF (
+        VALVE ( GameTypeFilter  ==  0 )
       
       )
      
-     VALVE(GameTypeFilter= 2  0.000000 )
+      VALVE ( GameTypeFilter  =  1 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 2  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  1 )
       
       )
      
-     VALVE(GameTypeFilter= 4  0.000000 )
+      VALVE ( GameTypeFilter  =  2 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 4  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  2 )
       
       )
      
-     VALVE(GameTypeFilter= 5  0.000000 )
+      VALVE ( GameTypeFilter  =  4 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 5  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  4 )
       
       )
      
-     VALVE(GameTypeFilter= 6  0.000000 )
+      VALVE ( GameTypeFilter  =  5 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 6  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  5 )
       
       )
      
-     VALVE(GameTypeFilter= 7  0.000000 )
+      VALVE ( GameTypeFilter  =  6 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 7  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  6 )
       
       )
      
-     VALVE(GameTypeFilter= 9  0.000000 )
+      VALVE ( GameTypeFilter  =  7 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 9  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  7 )
       
       )
      
-     VALVE(GameTypeFilter= 10  0.000000 )
+      VALVE ( GameTypeFilter  =  9 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 10  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  9 )
       
       )
      
-     VALVE(GameTypeFilter= 101  0.000000 )
+      VALVE ( GameTypeFilter  =  10 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 101  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  10 )
       
       )
      
-     VALVE(GameTypeFilter= 102  0.000000 )
+      VALVE ( GameTypeFilter  =  101 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 102  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  101 )
       
       )
      
-     VALVE(GameTypeFilter= 103  0.000000 )
+      VALVE ( GameTypeFilter  =  102 )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 103  0.000000 )
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  102 )
       
       )
      
-     VALVE(GameTypeFilter= 0  0.000000 )
+      VALVE ( GameTypeFilter  =  103 )
      
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_filter_screen)
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  103 )
       
       )
      
-     VALVE(OptionsChanged= 1  0.000000 )
+      VALVE ( GameTypeFilter  =  0 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_filter_screen )
+      
+      )
+     
+      VALVE ( OptionsChanged  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(increment_player_filter)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( increment_player_filter )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      START()
-      
-      )
-     
-     IF(
-       VALVE(GamePlayerFilter== 0  0.000000 )
+       START ()
       
       )
      
-     VALVE(GamePlayerFilter= 2  0.000000 )
-     
-     ELSEIF(
-       VALVE(GamePlayerFilter== 2  0.000000 )
+      IF (
+        VALVE ( GamePlayerFilter  ==  0 )
       
       )
      
-     VALVE(GamePlayerFilter= 4  0.000000 )
+      VALVE ( GamePlayerFilter  =  2 )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 4  0.000000 )
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  2 )
       
       )
      
-     VALVE(GamePlayerFilter= 6  0.000000 )
+      VALVE ( GamePlayerFilter  =  4 )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 6  0.000000 )
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  4 )
       
       )
      
-     VALVE(GamePlayerFilter= 8  0.000000 )
+      VALVE ( GamePlayerFilter  =  6 )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 8  0.000000 )
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  6 )
       
       )
      
-     VALVE(GamePlayerFilter= 10  0.000000 )
+      VALVE ( GamePlayerFilter  =  8 )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 10  0.000000 )
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  8 )
       
       )
      
-     VALVE(GamePlayerFilter= 12  0.000000 )
+      VALVE ( GamePlayerFilter  =  10 )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 12  0.000000 )
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  10 )
       
       )
      
-     VALVE(GamePlayerFilter= 14  0.000000 )
+      VALVE ( GamePlayerFilter  =  12 )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 14  0.000000 )
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  12 )
       
       )
      
-     VALVE(GamePlayerFilter= 0  0.000000 )
+      VALVE ( GamePlayerFilter  =  14 )
      
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_filter_screen)
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  14 )
       
       )
      
-     VALVE(OptionsChanged= 1  0.000000 )
+      VALVE ( GamePlayerFilter  =  0 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_filter_screen )
+      
+      )
+     
+      VALVE ( OptionsChanged  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(increment_speed_filter)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( increment_speed_filter )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      START()
-      
-      )
-     
-     IF(
-       VALVE(GameSpeedFilter== 65000  0.000000 )
+       START ()
       
       )
      
-     VALVE(GameSpeedFilter= 300  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameSpeedFilter== 300  0.000000 )
+      IF (
+        VALVE ( GameSpeedFilter  ==  65000 )
       
       )
      
-     VALVE(GameSpeedFilter= 600  0.000000 )
+      VALVE ( GameSpeedFilter  =  300 )
      
-     ELSEIF(
-       VALVE(GameSpeedFilter== 600  0.000000 )
+      ELSEIF (
+        VALVE ( GameSpeedFilter  ==  300 )
       
       )
      
-     VALVE(GameSpeedFilter= 1200  0.000000 )
+      VALVE ( GameSpeedFilter  =  600 )
      
-     ELSEIF(
-       VALVE(GameSpeedFilter== 1200  0.000000 )
+      ELSEIF (
+        VALVE ( GameSpeedFilter  ==  600 )
       
       )
      
-     VALVE(GameSpeedFilter= 65000  0.000000 )
+      VALVE ( GameSpeedFilter  =  1200 )
      
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_filter_screen)
+      ELSEIF (
+        VALVE ( GameSpeedFilter  ==  1200 )
       
       )
      
-     VALVE(OptionsChanged= 1  0.000000 )
+      VALVE ( GameSpeedFilter  =  65000 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_filter_screen )
+      
+      )
+     
+      VALVE ( OptionsChanged  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(refresh_filter_screen)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( refresh_filter_screen )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(GameTypeFilter== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GameTypeFilter  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
       
-      CAPTION("ANY MAP")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameTypeFilter== 1  0.000000 )
+       CAPTION ( "ANY MAP" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP1 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  1 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 2  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP1 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP2 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  2 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 4  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP2 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP4 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  4 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 5  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP4 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP5 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  5 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 6  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP5 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP6 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  6 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 7  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP6 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP7 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  7 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 9  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP7 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP9 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  9 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 10  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP9 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("MP10 ONLY")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  10 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 101  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "MP10 ONLY" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("Deathmatch ONLY (MP2 MP5)")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  101 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 102  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "Deathmatch ONLY (MP2 MP5)" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("Footbomb ONLY (MP1 MP7 MP9)")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  102 )
       
       )
      
-     ELSEIF(
-       VALVE(GameTypeFilter== 103  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "Footbomb ONLY (MP1 MP7 MP9)" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_type_desc)
-      
-      CAPTION("Hostage ONLY (MP4 MP6 MP10)")
+      ELSEIF (
+        VALVE ( GameTypeFilter  ==  103 )
       
       )
      
-     ENDIF()
-     
-     IF(
-       VALVE(GamePlayerFilter== 0  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_type_desc )
+      
+       CAPTION ( "Hostage ONLY (MP4 MP6 MP10)" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("ANY NUMBER OF PLAYERS")
+      ENDIF ()
+     
+      IF (
+        VALVE ( GamePlayerFilter  ==  0 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 2  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "ANY NUMBER OF PLAYERS" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 2 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  2 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 4  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 2 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 4 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  4 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 6  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 4 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 6 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  6 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 8  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 6 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 8 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  8 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 10  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 8 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 10 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  10 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 12  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 10 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 12 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  12 )
       
       )
      
-     ELSEIF(
-       VALVE(GamePlayerFilter== 14  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 12 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_player_desc)
-      
-      CAPTION("More than 14 players")
+      ELSEIF (
+        VALVE ( GamePlayerFilter  ==  14 )
       
       )
      
-     ENDIF()
-     
-     IF(
-       VALVE(GameSpeedFilter== 65000  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_player_desc )
+      
+       CAPTION ( "More than 14 players" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_speed_desc)
-      
-      CAPTION("Any Speed ( 65000 )")
+      ENDIF ()
+     
+      IF (
+        VALVE ( GameSpeedFilter  ==  65000 )
       
       )
      
-     ELSEIF(
-       VALVE(GameSpeedFilter== 300  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_speed_desc )
+      
+       CAPTION ( "Any Speed ( 65000 )" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_speed_desc)
-      
-      CAPTION("Fast ( 300 )")
+      ELSEIF (
+        VALVE ( GameSpeedFilter  ==  300 )
       
       )
      
-     ELSEIF(
-       VALVE(GameSpeedFilter== 600  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_speed_desc )
+      
+       CAPTION ( "Fast ( 300 )" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_speed_desc)
-      
-      CAPTION("AVERAGE ( 600 )")
+      ELSEIF (
+        VALVE ( GameSpeedFilter  ==  600 )
       
       )
      
-     ELSEIF(
-       VALVE(GameSpeedFilter== 1200  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_speed_desc )
+      
+       CAPTION ( "AVERAGE ( 600 )" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUgame_speed_desc)
-      
-      CAPTION("SLOW ( 1200 )")
+      ELSEIF (
+        VALVE ( GameSpeedFilter  ==  1200 )
       
       )
      
-     ENDIF()
-     
-     IF(
-       VALVE(FF_FILTER== 0  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  game_speed_desc )
+      
+       CAPTION ( "SLOW ( 1200 )" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFF)
+      ENDIF ()
+     
+      IF (
+        VALVE ( FF_FILTER  ==  0 )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FF )
+      
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSEIF(
-       VALVE(FF_FILTER== 1  0.000000 )
+      ELSEIF (
+        VALVE ( FF_FILTER  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFF)
+      ui::UI_COMMAND (
+        NODE ( MENU  FF )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     VALVE(FF_FILTER= 2  0.000000 )
+      VALVE ( FF_FILTER  =  2 )
      
-     ui::UI_COMMAND(
-       NODE(MENUFF)
+      ui::UI_COMMAND (
+        NODE ( MENU  FF )
       
-      SELECTION(
-        INDEX( 2  0.000000 )
+       SELECTION (
+         INDEX ( 2 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(LockedFilter== 0  0.000000 )
+      IF (
+        VALVE ( LockedFilter  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUlocked)
+      ui::UI_COMMAND (
+        NODE ( MENU  locked )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ELSEIF(
-       VALVE(LockedFilter== 1  0.000000 )
+      ELSEIF (
+        VALVE ( LockedFilter  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUlocked)
+      ui::UI_COMMAND (
+        NODE ( MENU  locked )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     VALVE(LockedFitler= 2  0.000000 )
+      VALVE ( LockedFitler  =  2 )
      
-     ui::UI_COMMAND(
-       NODE(MENUlocked)
+      ui::UI_COMMAND (
+        NODE ( MENU  locked )
       
-      SELECTION(
-        INDEX( 2  0.000000 )
+       SELECTION (
+         INDEX ( 2 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_FF)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_FF )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(FF_FILTER= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( FF_FILTER  =  1 )
      
-     VALVE(OptionsChanged= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_FF)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(FF_FILTER= 0  0.000000 )
-     
-     VALVE(OptionsChanged= 1  0.000000 )
+      VALVE ( OptionsChanged  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(nopref_FF)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_FF )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(FF_FILTER= 2  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( FF_FILTER  =  0 )
      
-     VALVE(OptionsChanged= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_locked_filter)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(LockedFilter= 0  0.000000 )
+      VALVE ( OptionsChanged  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_locked_filter)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( nopref_FF )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(LockedFilter= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( FF_FILTER  =  2 )
+     
+      VALVE ( OptionsChanged  =  1 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(nopref_locked_filter)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_locked_filter )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(LockedFilter= 2  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( LockedFilter  =  0 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_locked_filter )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       VALVE ( LockedFilter  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( nopref_locked_filter )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( LockedFilter  =  2 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      SOUND (
+        NAME ( SND_METAL )
       
-      START()
+       START ()
       
       )
      
@@ -2183,36 +2183,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
       
       )
      

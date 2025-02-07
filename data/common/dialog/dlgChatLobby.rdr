@@ -1,33 +1,33 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(undefined.tif)
+     FILENAME ( undefined.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(uianim.rdr)
+    SCRIPT_LIBRARY ( uianim.rdr )
    
-   OBJECTS((
-      NAME(STANDIN)
+    OBJECTS ((
+       NAME ( STANDIN )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 30 )
      
-     YPOS( 170.800003 )
+      YPOS ( 170.800003 )
      
-     SPEC(
-       FILENAME(Menu500_chatlobby.tif)
+      SPEC (
+        FILENAME ( Menu500_chatlobby.tif )
       
-      XSIZE( 256  0.000000 )
+       XSIZE ( 256 )
       
-      YSIZE( 64  0.000000 )
+       YSIZE ( 64 )
       
       )
      
@@ -35,45 +35,45 @@
     
     )
    
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(dlgRoomsList.rdr)
+      ARGUMENT ( dlgRoomsList.rdr )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(exit)
+    CONTROLS ((
+       NAME ( exit )
      
-     XPOS( 481  0.000000 )
+      XPOS ( 481 )
      
-     YPOS( 109.199997 )
+      YPOS ( 109.199997 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      NORMAL(Menu501_exit.tif)
+       NORMAL ( Menu501_exit.tif )
       
-      ACTIVE(A_Menu501_exit.tif)
+       ACTIVE ( A_Menu501_exit.tif )
       
-      PRESSED(Menu502_exit_GLOW.tif)
+       PRESSED ( Menu502_exit_GLOW.tif )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgSocomOnline.rdr)
+         ARGUMENT ( dlgSocomOnline.rdr )
         
         )
        
@@ -84,31 +84,31 @@
      )
     
     (
-      NAME(join)
+       NAME ( join )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 30 )
      
-     YPOS( 389.200012 )
+      YPOS ( 389.200012 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      NORMAL(Menu503_join.tif)
+       NORMAL ( Menu503_join.tif )
       
-      ACTIVE(A_Menu503_join.tif)
+       ACTIVE ( A_Menu503_join.tif )
       
-      PRESSED(Menu504_join_GLOW.tif)
+       PRESSED ( Menu504_join_GLOW.tif )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
         )
        
@@ -119,61 +119,61 @@
      )
     
     (
-      NAME(refresh_list)
+       NAME ( refresh_list )
      
-     XPOS( 117  0.000000 )
+      XPOS ( 117 )
      
-     YPOS( 389.200012 )
+      YPOS ( 389.200012 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      NORMAL(Menu505_refresh_list.tif)
+       NORMAL ( Menu505_refresh_list.tif )
       
-      ACTIVE(A_Menu505_refresh_list.tif)
+       ACTIVE ( A_Menu505_refresh_list.tif )
       
-      PRESSED(Menu506_refresh_list_GLOW.tif)
+       PRESSED ( Menu506_refresh_list_GLOW.tif )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
-      ANIMATIONS()
+       ANIMATIONS ()
       
       )
      
      )
     
     (
-      NAME(options)
+       NAME ( options )
      
-     XPOS( 334  0.000000 )
+      XPOS ( 334 )
      
-     YPOS( 109.199997 )
+      YPOS ( 109.199997 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      NORMAL(Menu507_options.tif)
+       NORMAL ( Menu507_options.tif )
       
-      ACTIVE(A_Menu507_options.tif)
+       ACTIVE ( A_Menu507_options.tif )
       
-      PRESSED(Menu508_options_GLOW.tif)
+       PRESSED ( Menu508_options_GLOW.tif )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgOnlineOptions.rdr)
+         ARGUMENT ( dlgOnlineOptions.rdr )
         
         )
        

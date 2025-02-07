@@ -1,140 +1,140 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgGameLobby.rdr)
+    SCRIPT_LIBRARY ( dlgGameLobby.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 15  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("GAME LOBBY")
-      
-      SCALE( 0.850000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(MissionText)
+       NAME ( bar_title )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 210  0.000000 )
+      XPOS ( 15 )
      
-     YPOS( 50  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      FONT(Gothic_13)
+       CHILDOF ( letterbar )
       
-      SCALE( 0.600000 )
+       CAPTION ( "GAME LOBBY" )
       
-      CAPTION(" ")
-      
-      )
-     
-     )
-    
-    (
-      NAME(net_conn_ind_Yel)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 572  0.000000 )
-     
-     YPOS( 25  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
-      
-      FILENAME(NetMonY.tif)
-      
-      SIZE( 28  0.000000  28  0.000000 )
+       SCALE ( 0.850000 )
       
       )
      
      )
     
     (
-      NAME(net_conn_ind_blue)
+       NAME ( MissionText )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 581  0.000000 )
+      XPOS ( 210 )
      
-     YPOS( 34  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        CHILDOF ( letterbar )
       
-      FILENAME(NetMonB.tif)
+       FONT ( Gothic_13 )
       
-      SIZE( 10  0.000000  12  0.000000 )
+       SCALE ( 0.600000 )
+      
+       CAPTION ( " " )
       
       )
      
      )
     
     (
-      NAME(gamename_val)
+       NAME ( net_conn_ind_Yel )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 195  0.000000 )
+      XPOS ( 572 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 25 )
      
-     SPEC(
-       COLOR( 0  0.000000  6  0.000000  13  0.000000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      CHILDOF(bar_title)
+       FILENAME ( NetMonY.tif )
       
-      SCALE( 0.600000 )
+       SIZE ( 28  28 )
       
-      UIVAR(
-        NAME(GAMENAMEVAR)
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_blue )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 581 )
+     
+      YPOS ( 34 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( gamename_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 195 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        COLOR ( 0  6  13 )
+      
+       CHILDOF ( bar_title )
+      
+       SCALE ( 0.600000 )
+      
+       UIVAR (
+         NAME ( GAMENAMEVAR )
        
        )
       
@@ -143,23 +143,23 @@
      )
     
     (
-      NAME(roomname)
+       NAME ( roomname )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( -20  -nan )
+      YPOS ( -20 )
      
-     SPEC(
-       FONT(Gothic_13)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      CHILDOF(MissionText)
+       CHILDOF ( MissionText )
       
-      SCALE( 0.600000 )
+       SCALE ( 0.600000 )
       
-      UIVAR(
-        NAME(MEDIUS_LOBBY_NAME)
+       UIVAR (
+         NAME ( MEDIUS_LOBBY_NAME )
        
        )
       
@@ -168,674 +168,674 @@
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 361  0.000000 )
+      YPOS ( 361 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      SIZE( 640  0.000000  64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(dogtags)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 370  0.000000 )
-     
-     YPOS( 325  0.000000 )
-     
-     SPEC(
-       FILENAME(dogtags2.tif)
-      
-      SIZE( 256  0.000000  128  0.000000 )
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(playertext)
+       NAME ( dogtags )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 370 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 325 )
      
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
+      SPEC (
+        FILENAME ( dogtags2.tif )
       
-      CAPTION(Player:)
+       SIZE ( 256  128 )
       
       )
      
      )
     
     (
-      NAME(clantext)
+       NAME ( playertext )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 45  0.000000 )
+      YPOS ( 25 )
      
-     CHILDOF(letterbar_bottom)
+      CHILDOF ( letterbar_bottom )
      
-     SPEC(
-       SCALE( 0.400000 )
+      SPEC (
+        SCALE ( 0.400000 )
       
-      CAPTION(Clan:)
+       CAPTION ( Player: )
       
       )
      
      )
     
     (
-      NAME(playername)
+       NAME ( clantext )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 45 )
      
-     CHILDOF(letterbar_bottom)
+      CHILDOF ( letterbar_bottom )
      
-     SPEC(
-       UIVAR(
-        NAME(PLAYERNAMEVAR)
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
        
-       LONGEVITY(PERSISTENT)
-       
-       )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(txtClanName)
-     
-     TYPE(TEXT)
-     
-     XPOS( 80  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar_bottom)
-      
-      SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(CLANNAMEVAR)
-       
-       VALUE(Unaffiliated)
-       
-       TYPE(PERMANENT)
+        LONGEVITY ( PERSISTENT )
        
        )
       
-      )
-     
-     )
-    
-    (
-      NAME(MainWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 170  0.000000 )
-     
-     YPOS( 70  0.000000 )
-     
-     SPEC(
-       XSIZE( 460  0.000000 )
-      
-      YSIZE( 295  0.000000 )
-      
-      FILENAME(eq_CharWinInv.tif)
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(TerrRed)
+       NAME ( txtClanName )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 402  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 96  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       XSIZE( 16  0.000000 )
+      SPEC (
+        CHILDOF ( letterbar_bottom )
       
-      YSIZE( 128  0.000000 )
+       SCALE ( 0.400000 )
       
-      FILENAME(TerrRed.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(SealBlue)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 177  0.000000 )
-     
-     YPOS( 96  0.000000 )
-     
-     SPEC(
-       XSIZE( 16  0.000000 )
-      
-      YSIZE( 128  0.000000 )
-      
-      FILENAME(SealBlue.tif)
+       UIVAR (
+         NAME ( CLANNAMEVAR )
+       
+        VALUE ( Unaffiliated )
+       
+        TYPE ( PERMANENT )
+       
+       )
       
       )
      
      )
     
     (
-      NAME(TabDivHorTop)
+       NAME ( MainWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 175  0.000000 )
+      XPOS ( 170 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 70 )
      
-     SPEC(
-       XSIZE( 450  0.000000 )
+      SPEC (
+        XSIZE ( 460 )
       
-      YSIZE( 8  0.000000 )
+       YSIZE ( 295 )
       
-      FILENAME(Tab_HorGold_Divider.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabDivHorLow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 175  0.000000 )
-     
-     YPOS( 335  0.000000 )
-     
-     SPEC(
-       XSIZE( 450  0.000000 )
-      
-      YSIZE( 8  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
+       FILENAME ( eq_CharWinInv.tif )
       
       )
      
      )
     
     (
-      NAME(DescFieldTop)
+       NAME ( TerrRed )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 177  0.000000 )
+      XPOS ( 402 )
      
-     YPOS( 75  0.000000 )
+      YPOS ( 96 )
      
-     SPEC(
-       XSIZE( 446  0.000000 )
+      SPEC (
+        XSIZE ( 16 )
       
-      YSIZE( 16  0.000000 )
+       YSIZE ( 128 )
       
-      FILENAME(blue_back_plate.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(DescFieldMid)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 178  0.000000 )
-     
-     YPOS( 231  0.000000 )
-     
-     SPEC(
-       XSIZE( 446  0.000000 )
-      
-      YSIZE( 15  0.000000 )
-      
-      FILENAME(blue_back_plate.tif)
+       FILENAME ( TerrRed.tif )
       
       )
      
      )
     
     (
-      NAME(DescFieldLow)
+       NAME ( SealBlue )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 178  0.000000 )
+      XPOS ( 177 )
      
-     YPOS( 340  0.000000 )
+      YPOS ( 96 )
      
-     SPEC(
-       XSIZE( 446  0.000000 )
+      SPEC (
+        XSIZE ( 16 )
       
-      YSIZE( 20  0.000000 )
+       YSIZE ( 128 )
       
-      FILENAME(blue_back_plate.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(DescriptionText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 190  0.000000 )
-     
-     YPOS( 357  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.400000 )
-      
-      CAPTION(" ")
+       FILENAME ( SealBlue.tif )
       
       )
      
      )
     
     (
-      NAME(DescriptionTextLow)
+       NAME ( TabDivHorTop )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 175 )
      
-     YPOS( 382  0.000000 )
+      YPOS ( 88 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 450 )
       
-      SCALE( 0.400000 )
+       YSIZE ( 8 )
       
-      CAPTION(" ")
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabDivHorChatTop)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 175  0.000000 )
-     
-     YPOS( 225  0.000000 )
-     
-     SPEC(
-       XSIZE( 450  0.000000 )
-      
-      YSIZE( 8  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
+       FILENAME ( Tab_HorGold_Divider.tif )
       
       )
      
      )
     
     (
-      NAME(TabDivHorChatLow)
+       NAME ( TabDivHorLow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 175  0.000000 )
+      XPOS ( 175 )
      
-     YPOS( 242  0.000000 )
+      YPOS ( 335 )
      
-     SPEC(
-       XSIZE( 450  0.000000 )
+      SPEC (
+        XSIZE ( 450 )
       
-      YSIZE( 8  0.000000 )
+       YSIZE ( 8 )
       
-      FILENAME(Tab_HorGold_Divider.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(FLcount)
-     
-     TYPE(TEXT)
-     
-     XPOS( 15  0.000000 )
-     
-     YPOS( 382  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      CAPTION(" ")
-      
-      SCALE( 0.500000 )
+       FILENAME ( Tab_HorGold_Divider.tif )
       
       )
      
      )
     
     (
-      NAME(ChatFieldText)
+       NAME ( DescFieldTop )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 187  0.000000 )
+      XPOS ( 177 )
      
-     YPOS( 242  0.000000 )
+      YPOS ( 75 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 446 )
       
-      SCALE( 0.350000 )
+       YSIZE ( 16 )
       
-      CAPTION("Press the Circle button to chat")
-      
-      )
-     
-     )
-    
-    (
-      NAME(CountDownFrame)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 10  0.000000 )
-     
-     YPOS( 245  0.000000 )
-     
-     SPEC(
-       XSIZE( 150  0.000000 )
-      
-      YSIZE( 120  0.000000 )
-      
-      FILENAME(popupOp.tif)
+       FILENAME ( blue_back_plate.tif )
       
       )
      
      )
     
     (
-      NAME(CountDown)
+       NAME ( DescFieldMid )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 70  0.000000 )
+      XPOS ( 178 )
      
-     YPOS( 320  0.000000 )
+      YPOS ( 231 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 446 )
       
-      CAPTION(" ")
+       YSIZE ( 15 )
       
-      SCALE( 1.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(LaunchText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 12  0.000000 )
-     
-     YPOS( -45  -nan )
-     
-     SPEC(
-       CHILDOF(CountDown)
-      
-      HCENTERED()
-      
-      COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.400000 )
-      
-      CAPTION(" ")
+       FILENAME ( blue_back_plate.tif )
       
       )
      
      )
     
     (
-      NAME(SecondText)
+       NAME ( DescFieldLow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 12  0.000000 )
+      XPOS ( 178 )
      
-     YPOS( 30  0.000000 )
+      YPOS ( 340 )
      
-     SPEC(
-       HCENTERED()
+      SPEC (
+        XSIZE ( 446 )
       
-      CHILDOF(CountDown)
+       YSIZE ( 20 )
       
-      COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.400000 )
-      
-      CAPTION(" ")
+       FILENAME ( blue_back_plate.tif )
       
       )
      
      )
     
     (
-      NAME(Category2Text)
+       NAME ( DescriptionText )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 195  0.000000 )
+      XPOS ( 190 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 357 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.400000 )
       
-      CAPTION(SEALs)
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionTextLow )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 382 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
       
       )
      
      )
     
     (
-      NAME(Category3Text)
+       NAME ( TabDivHorChatTop )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 420  0.000000 )
+      XPOS ( 175 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 225 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 450 )
       
-      SCALE( 0.350000 )
+       YSIZE ( 8 )
       
-      CAPTION(TERRORISTS)
+       FILENAME ( Tab_HorGold_Divider.tif )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      BUTTON(TRIGGER_R2)
+    (
+       NAME ( TabDivHorChatLow )
      
-     ANIMATION(ForceUsagePolicy)
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 242 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( FLcount )
      
-     ANIMATION(net_monitor)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 15 )
      
-     ANIMATION(OnStartGameLock)
+      YPOS ( 382 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(Session_master_migration)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(bottom_bar_slide_up)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.500000 )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( ChatFieldText )
      
-     ANIMATION(Enable_SM_Launch)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(ON_SKB_APPLY)
+      XPOS ( 187 )
      
-     ANIMATION(send_chat)
+      YPOS ( 242 )
      
-     )
-    
-    (
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(exit_lobby)
-     
-     )
-    
-    (
-      BUTTON(CIRCLE)
-     
-     ANIMATION(do_chat)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( "Press the Circle button to chat" )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( CountDownFrame )
      
-     ANIMATION(check_loop)
+      TYPE ( IMAGE )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 10 )
      
-     ANIMATION(FromBriefing)
+      YPOS ( 245 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(letterbar_slide_down)
-     
-     )
-    
-    (
-      EVENT(ON_FORCE_NEW_DB)
-     
-     ANIMATION(force_new_db)
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 120 )
+      
+       FILENAME ( popupOp.tif )
+      
+      )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       NAME ( CountDown )
      
-     ANIMATION(OnNetError)
+      TYPE ( TEXT )
+     
+      XPOS ( 70 )
+     
+      YPOS ( 320 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 1.000000 )
+      
+      )
      
      )
     
     (
-      EVENT(MP_VERSION_NUMBER_ERROR)
+       NAME ( LaunchText )
      
-     ANIMATION(version_failure_2)
+      TYPE ( TEXT )
+     
+      XPOS ( 12 )
+     
+      YPOS ( -45 )
+     
+      SPEC (
+        CHILDOF ( CountDown )
+      
+       HCENTERED ()
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SecondText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 12 )
+     
+      YPOS ( 30 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( CountDown )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Category2Text )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 195 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( SEALs )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Category3Text )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 420 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( TERRORISTS )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(B_SEALLIST)
+    ANIMATIONS ((
+       BUTTON ( TRIGGER_R2 )
      
-     XPOS( 165  0.000000 )
+      ANIMATION ( ForceUsagePolicy )
      
-     YPOS( 77  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     TYPE(LISTBOX)
+      ANIMATION ( net_monitor )
      
-     SPEC(
-       NOSELECTAUTOSCROLLXSIZE( 256  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnStartGameLock )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Session_master_migration )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Enable_SM_Launch )
+     
+     )
+    
+    (
+       EVENT ( ON_SKB_APPLY )
+     
+      ANIMATION ( send_chat )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( exit_lobby )
+     
+     )
+    
+    (
+       BUTTON ( CIRCLE )
+     
+      ANIMATION ( do_chat )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( check_loop )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( FromBriefing )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ON_FORCE_NEW_DB )
+     
+      ANIMATION ( force_new_db )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnNetError )
+     
+     )
+    
+    (
+       EVENT ( MP_VERSION_NUMBER_ERROR )
+     
+      ANIMATION ( version_failure_2 )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( B_SEALLIST )
+     
+      XPOS ( 165 )
+     
+      YPOS ( 77 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        NOSELECT  AUTOSCROLL  XSIZE ( 256 )
       
-      YSIZE( 170  0.000000 )
+       YSIZE ( 170 )
       
-      SPACING( 16  0.000000 )
+       SPACING ( 16 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      UIVAR(
-        NAME(BSEALLISTVAR)
+       UIVAR (
+         NAME ( BSEALLISTVAR )
        
        )
       
@@ -844,29 +844,29 @@
      )
     
     (
-      NAME(B_REDLIST)
+       NAME ( B_REDLIST )
      
-     XPOS( 390  0.000000 )
+      XPOS ( 390 )
      
-     YPOS( 77  0.000000 )
+      YPOS ( 77 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       NOSELECTAUTOSCROLLXSIZE( 256  0.000000 )
+      SPEC (
+        NOSELECT  AUTOSCROLL  XSIZE ( 256 )
       
-      YSIZE( 170  0.000000 )
+       YSIZE ( 170 )
       
-      SPACING( 16  0.000000 )
+       SPACING ( 16 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      UIVAR(
-        NAME(BTERRLISTVAR)
+       UIVAR (
+         NAME ( BTERRLISTVAR )
        
        )
       
@@ -875,33 +875,33 @@
      )
     
     (
-      NAME(B_CHATLIST)
+       NAME ( B_CHATLIST )
      
-     XPOS( 155  0.000000 )
+      XPOS ( 155 )
      
-     YPOS( 263  0.000000 )
+      YPOS ( 263 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       NOSELECT()
+      SPEC (
+        NOSELECT ()
       
-      AUTOSCROLL()
+       AUTOSCROLL ()
       
-      XSIZE( 256  0.000000 )
+       XSIZE ( 256 )
       
-      YSIZE( 105  0.000000 )
+       YSIZE ( 105 )
       
-      SPACING( 15  0.000000 )
+       SPACING ( 15 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 0  0.000000 )
+       TOP_MARGIN ( 0 )
       
-      UIVAR(
-        NAME(BCHATLISTVAR)
+       UIVAR (
+         NAME ( BCHATLISTVAR )
        
        )
       
@@ -910,152 +910,75 @@
      )
     
     (
-      NAME(weaponselect)
+       NAME ( weaponselect )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 67  0.000000 )
+      YPOS ( 67 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 150  0.000000 )
+      SPEC (
+        XSIZE ( 150 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION(ARMORY)
+       CAPTION ( ARMORY )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnGameweaponstart)
+         ANIMATION ( OnGameweaponstart )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_eq_mp_set_return_valve)
+         ANIMATION ( goto_eq_mp_set_return_valve )
         
-        ARGUMENT(dlg_equipment_mp.rdr)
-        
-        )
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(Glswitchteams)
-     
-     XPOS( 10  0.000000 )
-     
-     YPOS( 97  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     SPEC(
-       XSIZE( 150  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      XOFFSET( 15  0.000000 )
-      
-      YOFFSET( 21  0.000000 )
-      
-      CAPTION("SWITCH TEAMS")
-      
-      SCALE( 0.400000 )
-      
-      PRESSED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
-       
-       )
-      
-      NORMAL(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
-       
-       )
-      
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
-       
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
-        
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
-        
-        ANIMATION(OnSteamStart)
-        
-        )
-       
-       (
-         BUTTON(CROSS)
-        
-        ANIMATION(switch_teams_anim)
+         ARGUMENT ( dlg_equipment_mp.rdr )
         
         )
        
@@ -1066,73 +989,73 @@
      )
     
     (
-      NAME(PlayerReady)
+       NAME ( Glswitchteams )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 127  0.000000 )
+      YPOS ( 97 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 150  0.000000 )
+      SPEC (
+        XSIZE ( 150 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION(READY)
+       CAPTION ( "SWITCH TEAMS" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnReadystart)
+         ANIMATION ( OnSteamStart )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(ready_anim)
+         ANIMATION ( switch_teams_anim )
         
         )
        
@@ -1143,73 +1066,73 @@
      )
     
     (
-      NAME(Lock)
+       NAME ( PlayerReady )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 180  0.000000 )
+      YPOS ( 127 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 150  0.000000 )
+      SPEC (
+        XSIZE ( 150 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION("LOCK GAME")
+       CAPTION ( READY )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnGameLockstart)
+         ANIMATION ( OnReadystart )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(OnGameLockPress)
+         ANIMATION ( ready_anim )
         
         )
        
@@ -1220,73 +1143,150 @@
      )
     
     (
-      NAME(ForceLaunch)
+       NAME ( Lock )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 210  0.000000 )
+      YPOS ( 180 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 150  0.000000 )
+      SPEC (
+        XSIZE ( 150 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION("FORCE LAUNCH")
+       CAPTION ( "LOCK GAME" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnSMlaunchstart)
+         ANIMATION ( OnGameLockstart )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(launch_10sec_anim)
+         ANIMATION ( OnGameLockPress )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ForceLaunch )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 210 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( "FORCE LAUNCH" )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnSMlaunchstart )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( launch_10sec_anim )
         
         )
        
@@ -1302,82 +1302,82 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(check_loop)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_loop )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(GoneToArmory== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GoneToArmory  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(AdvanceMPMission)
+      ui::UI_COMMAND (
+        TYPE ( AdvanceMPMission )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     VALVE(GoneToArmory= 0  0.000000 )
+      VALVE ( GoneToArmory  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(ForceMediusStatusReport)
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMENUSTATE)
+      ui::UI_COMMAND (
+        TYPE ( SETMENUSTATE )
       
       )
      
-     WHILE(
-       VALVE(mp_major_game_state!= 2  0.000000 )
+      WHILE (
+        VALVE ( mp_major_game_state  !=  2 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(CheckForcedLaunch)
+      ui::UI_COMMAND (
+        TYPE ( CheckForcedLaunch )
       
       )
      
-     CALL_ANIMATION(
-       NAME(CountDown)
+      CALL_ANIMATION (
+        NAME ( CountDown )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(ForceMediusStatusReport)
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(LOAD_SCREEN)
+       ARGUMENT ( LOAD_SCREEN )
       
       )
      
@@ -1385,15 +1385,15 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Enable_SM_Launch)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Enable_SM_Launch )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF((
-        ui::UI_COMMAND(
-         TYPE(IsSessionMaster)
+     SEQUENCE_DEFINITION (
+       IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
         
         )
        
@@ -1401,146 +1401,146 @@
       
       )
      
-     IF(
-       VALVE(SeenPopup== 0  0.000000 )
+      IF (
+        VALVE ( SeenPopup  ==  0 )
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.700000 )
-      
-      )
-     
-     VALVE(HostValve= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+       OPACITY_TO ( 0.700000 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      VALVE ( HostValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      CAPTION("You are the Host of this game. As soon as we get word from the Pentagon, The FORCE LAUNCH and READY buttons will be available. Press the X button to continue.")
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      BACKGROUND(popupOp.tif)
+       CAPTION ( "You are the Host of this game. As soon as we get word from the Pentagon, The FORCE LAUNCH and READY buttons will be available. Press the X button to continue." )
       
-      POSITION( 195.000000  230.000000 )
+       BACKGROUND ( popupOp.tif )
       
-      WIDTH( 280  0.000000 )
+       POSITION ( 195.000000  230.000000 )
       
-      HEIGHT( 130  0.000000 )
+       WIDTH ( 280 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 130 )
       
-      YOFFSET( 30  0.000000 )
+       XOFFSET ( 20 )
       
-      SCALE( 0.400000 )
+       YOFFSET ( 30 )
       
-      YESNO(
-        VALVE(HostValve)
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( HostValve )
        
        )
       
       )
      
-     WHILE(
-       VALVE(HostValve== 0  0.000000 )
+      WHILE (
+        VALVE ( HostValve  ==  0 )
       
       )
      
-     WAIT( 0.500000 )
+      WAIT ( 0.500000 )
      
-     END_WHILE()
+      END_WHILE ()
      
-     VALVE(SeenPopup= 1  0.000000 )
+      VALVE ( SeenPopup  =  1 )
      
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.700000 )
+       OPACITY_FROM ( 0.700000 )
       
-      OPACITY_TO( 0.000000 )
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     ENDIF()
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENULock)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(Lock)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCountDownFrame)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(ForceLaunch)
+       ARGUMENT ( Lock )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
       
-      ARGUMENT(B_CHATLIST)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(B_REDLIST)
+       STATE ( INACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(B_SEALLIST)
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     IF((
-        ui::UI_COMMAND(
-         TYPE(IsSessionMaster)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( B_CHATLIST )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( B_REDLIST )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( B_SEALLIST )
+      
+      )
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
         
         )
        
@@ -1548,810 +1548,810 @@
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(weaponselect)
+       ARGUMENT ( PlayerReady )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUMasterText)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUForceLaunch)
-      
-      STATE(ACTIVE)
+       ARGUMENT ( weaponselect )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionTextLow)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MasterText )
       
-      CAPTION("   Seconds until the Force launch and ready buttons are available")
-      
-      )
-     
-     WAIT( 1  0.000000 )
-     
-     IF(
-       VALVE(mp_persistent== 0  0.000000 )
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
       
-      ARGUMENT(Lock)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULock)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ENDIF()
-     
-     WHILE(
-       VALVE(mp_45_sec_clock!= 0  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "   Seconds until the Force launch and ready buttons are available" )
       
       )
      
-     CALL_ANIMATION(
-       NAME(Watch45SecClock)
+      WAIT ( 1 )
+     
+      IF (
+        VALVE ( mp_persistent  ==  0 )
       
       )
      
-     WAIT( 1  0.000000 )
-     
-     END_WHILE()
-     
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionTextLow)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      CAPTION(" ")
+       ARGUMENT ( Lock )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
       
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(PlayerReady)
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(ForceLaunch)
+      ENDIF ()
+     
+      WHILE (
+        VALVE ( mp_45_sec_clock  !=  0 )
       
       )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(ForceLaunch)
+      CALL_ANIMATION (
+        NAME ( Watch45SecClock )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUForceLaunch)
+      WAIT ( 1 )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
       
-      STATE(INACTIVE)
+       CAPTION ( " " )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(PlayerReady)
+       ARGUMENT ( PlayerReady )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Watch45SecClock)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Watch45SecClock )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(mp_45_sec_clock== 45  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_45_sec_clock  ==  45 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("45")
+       CAPTION ( "45" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 44  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  44 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("44")
+       CAPTION ( "44" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 43  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  43 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("43")
+       CAPTION ( "43" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 42  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  42 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("42")
+       CAPTION ( "42" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 41  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  41 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("41")
+       CAPTION ( "41" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 40  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  40 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("40")
+       CAPTION ( "40" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 39  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  39 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("39")
+       CAPTION ( "39" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 38  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  38 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("38")
+       CAPTION ( "38" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 37  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  37 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("37")
+       CAPTION ( "37" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 36  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  36 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("36")
+       CAPTION ( "36" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 35  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  35 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("35")
+       CAPTION ( "35" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 34  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  34 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("34")
+       CAPTION ( "34" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 33  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  33 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("33")
+       CAPTION ( "33" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 32  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  32 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("32")
+       CAPTION ( "32" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 31  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  31 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("31")
+       CAPTION ( "31" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 30  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  30 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("30")
+       CAPTION ( "30" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 29  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  29 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("29")
+       CAPTION ( "29" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 28  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  28 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("28")
+       CAPTION ( "28" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 27  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  27 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("27")
+       CAPTION ( "27" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 26  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  26 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("26")
+       CAPTION ( "26" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 25  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  25 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("25")
+       CAPTION ( "25" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 24  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  24 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("24")
+       CAPTION ( "24" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 23  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  23 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("23")
+       CAPTION ( "23" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 22  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  22 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("22")
+       CAPTION ( "22" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 21  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  21 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("21")
+       CAPTION ( "21" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 20  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  20 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("20")
+       CAPTION ( "20" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 19  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  19 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("19")
+       CAPTION ( "19" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 18  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  18 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("18")
+       CAPTION ( "18" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 17  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  17 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("17")
+       CAPTION ( "17" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 16  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  16 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("16")
+       CAPTION ( "16" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 15  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  15 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("15")
+       CAPTION ( "15" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 14  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  14 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("14")
+       CAPTION ( "14" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 13  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  13 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("13")
+       CAPTION ( "13" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 12  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  12 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("12")
+       CAPTION ( "12" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 11  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  11 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("11")
+       CAPTION ( "11" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 10  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  10 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("10")
+       CAPTION ( "10" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 9  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  9 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("9")
+       CAPTION ( "9" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 8  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  8 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("8")
+       CAPTION ( "8" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 7  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  7 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("7")
+       CAPTION ( "7" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 6  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  6 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("6")
+       CAPTION ( "6" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 5  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  5 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("5")
+       CAPTION ( "5" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 4  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  4 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("4")
+       CAPTION ( "4" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 3  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  3 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("3")
+       CAPTION ( "3" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 2  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  2 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION("2")
+       CAPTION ( "2" )
       
       )
      
-     ELSEIF(
-       VALVE(mp_45_sec_clock== 1  0.000000 )
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUFLcount)
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(CycleReadyButton)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CycleReadyButton )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      WAIT( 0.500000 )
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.500000 )
      
-     IF(
-       VALVE(mp_minor_game_state== 2  0.000000 )
+      IF (
+        VALVE ( mp_minor_game_state  ==  2 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPlayerReady)
-      
-      CAPTION("NOT READY")
+       ARGUMENT ( PlayerReady )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        NODE ( MENU  PlayerReady )
       
-      ARGUMENT(Glswitchteams)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(weaponselect)
+       CAPTION ( "NOT READY" )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(ForceLaunch)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(Lock)
+       ARGUMENT ( Glswitchteams )
       
       )
      
-     WAIT( 4.500000 )
-     
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(PlayerReady)
+       ARGUMENT ( weaponselect )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_minor_game_state== 1  0.000000 )
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPlayerReady)
-      
-      CAPTION(READY)
+       ARGUMENT ( Lock )
       
       )
      
-     WAIT( 4.500000 )
+      WAIT ( 4.500000 )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(PlayerReady)
+       ARGUMENT ( PlayerReady )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(Glswitchteams)
+       ARGUMENT ( PlayerReady )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(weaponselect)
+      ELSEIF (
+        VALVE ( mp_minor_game_state  ==  1 )
       
       )
      
-     IF((
-        ui::UI_COMMAND(
-         TYPE(IsSessionMaster)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  PlayerReady )
+      
+       CAPTION ( READY )
+      
+      )
+     
+      WAIT ( 4.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
         
         )
        
@@ -2359,50 +2359,50 @@
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      ARGUMENT(ForceLaunch)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(Lock)
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
      
-     ENDIF()
+      ENDIF ()
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ready_anim)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ready_anim )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      AT_NODE(ROOT_NODE)
+       AT_NODE ( ROOT_NODE )
       
-      START()
+       START ()
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ReadyToLoad)
+      ui::UI_COMMAND (
+        TYPE ( ReadyToLoad )
       
       )
      
-     CALL_ANIMATION(
-       NAME(CycleReadyButton)
+      CALL_ANIMATION (
+        NAME ( CycleReadyButton )
       
       )
      
@@ -2410,18 +2410,18 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Session_master_migration)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Session_master_migration )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      NAME(watch_for_switch_to_master)
+     SEQUENCE_DEFINITION (
+       NAME ( watch_for_switch_to_master )
      
-     IF(
-       !(
-        ui::UI_COMMAND(
-         TYPE(IsSessionMaster)
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
         
         )
        
@@ -2429,10 +2429,10 @@
       
       )
      
-     WHILE(
-       !(
-        ui::UI_COMMAND(
-         TYPE(IsSessionMaster)
+      WHILE (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
         
         )
        
@@ -2440,532 +2440,532 @@
       
       )
      
-     WAIT( 1.000000 )
+      WAIT ( 1.000000 )
      
-     END_WHILE()
+      END_WHILE ()
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUForceLaunch)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(ForceLaunch)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(ForceLaunch)
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULock)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(Lock)
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     CALL_ANIMATION(
-       NAME(OnStartGameLock)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
+      
+       STATE ( ACTIVE )
       
       )
      
-     VALVE(HostMigValve= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Lock )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      CALL_ANIMATION (
+        NAME ( OnStartGameLock )
       
-      CAPTION("You are the new Host of this game. The previous Host was disconnected or backed out to the briefing room. Press the X button to continue")
+      )
+     
+      VALVE ( HostMigValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      BACKGROUND(popupOp.tif)
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      POSITION( 195.000000  230.000000 )
+       CAPTION ( "You are the new Host of this game. The previous Host was disconnected or backed out to the briefing room. Press the X button to continue" )
       
-      WIDTH( 280  0.000000 )
+       BACKGROUND ( popupOp.tif )
       
-      HEIGHT( 130  0.000000 )
+       POSITION ( 195.000000  230.000000 )
       
-      XOFFSET( 20  0.000000 )
+       WIDTH ( 280 )
       
-      YOFFSET( 30  0.000000 )
+       HEIGHT ( 130 )
       
-      SCALE( 0.400000 )
+       XOFFSET ( 20 )
       
-      YESNO(
-        VALVE(HostMigValve)
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( HostMigValve )
        
        )
       
       )
      
-     WHILE(
-       VALVE(HostMigValve== 0  0.000000 )
+      WHILE (
+        VALVE ( HostMigValve  ==  0 )
       
       )
      
-     WAIT( 0.500000 )
+      WAIT ( 0.500000 )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
       
       )
      
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(CountDown)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(mp_x_sec_clock== 11  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION(" ")
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 10  0.000000 )
-      
-      )
-     
-     VALVE(NoTriangle= 1  0.000000 )
-     
-     STOP_ANIMATION(
-       NAME(CycleReadyButton)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(weaponselect)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(Glswitchteams)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(PlayerReady)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCountDownFrame)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("10")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 9  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("9")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 8  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("8")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 7  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("7")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 6  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("6")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 5  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("5")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 4  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("4")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 3  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("3")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 2  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("2")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_x_sec_clock== 1  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION("1")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENULaunchText)
-      
-      CAPTION("GAME STARTS IN")
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUSecondText)
-      
-      CAPTION(SECONDS)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       NODE(MENUCountDown)
-      
-      CAPTION(" ")
-      
-      )
-     
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(FromBriefing)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CountDown )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(OnGameLobbystart)
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_x_sec_clock  ==  11 )
       
       )
      
-     IF(
-       VALVE(IDFromBriefing== 0  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( " " )
       
       )
      
-     IF(
-       VALVE(player_team== 0  0.000000 )
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  10 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ChangeCharacterType)
-      
-      ARGUMENT("1")
-      
-      )
+      VALVE ( NoTriangle  =  1 )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(ChangeCharacterType)
-      
-      ARGUMENT("5")
+      STOP_ANIMATION (
+        NAME ( CycleReadyButton )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "10" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "9" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(launch_10sec_anim)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( FromBriefing )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
-      
-      AT_NODE(ROOT_NODE)
-      
-      START()
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( OnGameLobbystart )
       
       )
      
-     VALVE(NoTriangle= 1  0.000000 )
-     
-     VALVE(mp_locked_game= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(ForceMPLaunch)
+      IF (
+        VALVE ( IDFromBriefing  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(Lock)
+      IF (
+        VALVE ( player_team  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( ChangeCharacterType )
       
-      ARGUMENT(Glswitchteams)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(weaponselect)
+       ARGUMENT ( "1" )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ChangeCharacterType )
       
-      ARGUMENT(ForceLaunch)
+       ARGUMENT ( "5" )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( launch_10sec_anim )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
       
-      ARGUMENT(PlayerReady)
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      VALVE ( NoTriangle  =  1 )
+     
+      VALVE ( mp_locked_game  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMPLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
       
       )
      
@@ -2973,522 +2973,223 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnGameLobbystart)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameLobbystart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(NoTriangle= 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( NoTriangle  =  0 )
      
-     VALVE(AlreadyHandlingError= 0  0.000000 )
+      VALVE ( AlreadyHandlingError  =  0 )
      
-     VALVE(NoExitState= 0  0.000000 )
+      VALVE ( NoExitState  =  0 )
      
-     IF(
-       VALVE(ComeFromBriefing== 0  0.000000 )
+      IF (
+        VALVE ( ComeFromBriefing  ==  0 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(MpSTeamsWeaponUpdate)
+      CALL_ANIMATION (
+        NAME ( MpSTeamsWeaponUpdate )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(NotOnCorrectClanTeam)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( NotOnCorrectClanTeam )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SwitchSides)
+      ui::UI_COMMAND (
+        TYPE ( SwitchSides )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsTeamGame)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsTeamGame )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(Glswitchteams)
-      
-      )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(late_joiner== 1  0.000000 )
+       ARGUMENT ( Glswitchteams )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUChatFieldText)
-      
-      CAPTION("Chat disabled for late joiners")
+      ENDIF ()
+     
+      IF (
+        VALVE ( late_joiner  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        NODE ( MENU  ChatFieldText )
       
-      ARGUMENT(Glswitchteams)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(Lock)
+       CAPTION ( "Chat disabled for late joiners" )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENULock)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(ForceLaunch)
+       ARGUMENT ( Glswitchteams )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUForceLaunch)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+       ARGUMENT ( Lock )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
       
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.700000 )
+       STATE ( INACTIVE )
       
       )
      
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
       
-      CAPTION("This game has already started. Would you like to appear as a ghost in the current game, and wait until the next round to join?")
+       STATE ( INACTIVE )
       
-      BACKGROUND(popupOp.tif)
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
-      POSITION( 170.000000  200.000000 )
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       RUN_TIME ( 0.050000 )
       
-      WIDTH( 300  0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      HEIGHT( 150  0.000000 )
+       OPACITY_TO ( 0.700000 )
       
-      XOFFSET( 20  0.000000 )
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      YOFFSET( 35  0.000000 )
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      SPACING( 20  0.000000 )
+       CAPTION ( "This game has already started. Would you like to appear as a ghost in the current game, and wait until the next round to join?" )
       
-      SCALE( 0.400000 )
+       BACKGROUND ( popupOp.tif )
       
-      YESNO(
-        VALVE(AreYouSure)
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 150 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
        
-       YES(
-         CAPTION(Yes)
+        YES (
+          CAPTION ( Yes )
         
-        POS( 50  0.000000  115  0.000000 )
+         POS ( 50  115 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         NORMAL (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
         )
        
-       NO(
-         CAPTION(No)
+        NO (
+          CAPTION ( No )
         
-        POS( 190  0.000000  115  0.000000 )
+         POS ( 190  115 )
         
-        TEXTOFFSET( 15  0.000000  18  0.000000 )
+         TEXTOFFSET ( 15  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
-      
-      )
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.700000 )
-      
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     ELSE()
-     
-     VALVE(NoExitState= 0  0.000000 )
-     
-     CALL_ANIMATION(
-       NAME(exit_lobby)
-      
-      )
-     
-     ENDIF()
-     
-     WHILE(
-       VALVE(late_joiner== 1  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(RefreshGamePlayerList)
-      
-      )
-     
-     WAIT( 5.000000 )
-     
-     END_WHILE()
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnStartGameLock)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(mp_locked_game== 0  0.000000 )
-      
-      )
-     
-     VALVE(Did_SM_lock= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENULock)
-      
-      CAPTION(UNLOCKED)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_locked_game== 1  0.000000 )
-      
-      )
-     
-     VALVE(Did_SM_lock= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENULock)
-      
-      CAPTION(LOCKED)
-      
-      )
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnGameLockPress)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
-      
-      AT_NODE(ROOT_NODE)
-      
-      START()
-      
-      )
-     
-     IF(
-       VALVE(mp_locked_game== 0  0.000000 )
-      
-      )
-     
-     VALVE(mp_locked_game= 1  0.000000 )
-     
-     VALVE(Did_SM_lock= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENULock)
-      
-      CAPTION(LOCKED)
-      
-      )
-     
-     ELSEIF(
-       VALVE(mp_locked_game== 1  0.000000 )
-      
-      )
-     
-     VALVE(mp_locked_game= 0  0.000000 )
-     
-     VALVE(Did_SM_lock= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENULock)
-      
-      CAPTION(UNLOCKED)
-      
-      )
-     
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       TYPE(ForceMediusStatusReport)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(goto_eq_mp_set_return_valve)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(GoneToArmory= 1  0.000000 )
-     
-     VALVE(ComeFromBriefing= 1  0.000000 )
-     
-     SOUND(
-       NAME(SND_DINK)
-      
-      AT_NODE(ROOT_NODE)
-      
-      START()
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
-      
-      )
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(INPUT_STRING)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnGameweaponstart)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("Press the X button to select character and weapons")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnSteamStart)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("Press the X button to switch teams.")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnReadystart)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("Press the X button if you're ready to play.")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnSMlaunchstart)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("This will launch all players, ready or not")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnGameLockstart)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("Allows the host to lock the game")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnArmBtnUp)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF((
-        ui::UI_COMMAND(
-         TYPE(IsSessionMaster)
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
         
         )
        
@@ -3496,191 +3197,151 @@
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(ForceLaunch)
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
       
       )
      
-     ELSE()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(PlayerReady)
+      IF (
+        VALVE ( AreYouSure  ==  1 )
       
       )
      
-     ENDIF()
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ELSE ()
+     
+      VALVE ( NoExitState  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_lobby )
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        VALVE ( late_joiner  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RefreshGamePlayerList )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      END_WHILE ()
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnForceLaunchBtnDwn)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnStartGameLock )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(weaponselect)
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_locked_game  ==  0 )
       
       )
+     
+      VALVE ( Did_SM_lock  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
+      
+       CAPTION ( UNLOCKED )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_locked_game  ==  1 )
+      
+      )
+     
+      VALVE ( Did_SM_lock  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
+      
+       CAPTION ( LOCKED )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(do_chat)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameLockPress )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(late_joiner== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionTextLow)
-      
-      CAPTION("Sorry, no chat for late joiners")
+      IF (
+        VALVE ( mp_locked_game  ==  0 )
       
       )
      
-     WAIT( 7  0.000000 )
+      VALVE ( mp_locked_game  =  1 )
      
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionTextLow)
+      VALVE ( Did_SM_lock  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
       
-      CAPTION(" ")
+       CAPTION ( LOCKED )
       
       )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(SetSkbPurpose)
-      
-      ARGUMENT("Enter Chat")
+      ELSEIF (
+        VALVE ( mp_locked_game  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(GetTextInput)
+      VALVE ( mp_locked_game  =  0 )
+     
+      VALVE ( Did_SM_lock  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
       
-      NODE(MENUChatSkb)
-      
-      ARGUMENT(CHATTEXT)
+       CAPTION ( UNLOCKED )
       
       )
      
-     VALVE(SkbMaxChars= 50  0.000000 )
+      ENDIF ()
      
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(send_chat)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(SendChatText)
-      
-      ARGUMENT(CHATTEXT)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(version_failure_2)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgNetAbort.rdr)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(switch_teams_anim)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(player_team== 0  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(ChangeCharacterType)
-      
-      ARGUMENT("5")
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(ChangeCharacterType)
-      
-      ARGUMENT("1")
-      
-      )
-     
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       TYPE(SwitchSides)
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(EnableWeaponUpdate)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(Glswitchteams)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(weaponselect)
-      
-      )
-     
-     WAIT( 5.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(Glswitchteams)
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
       
       )
      
@@ -3688,128 +3349,146 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(exit_lobby)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( goto_eq_mp_set_return_valve )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(NoTriangle== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( GoneToArmory  =  1 )
+     
+      VALVE ( ComeFromBriefing  =  1 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
       
       )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(DisconnectFromGameServer)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
+       ARGUMENT ( INPUT_STRING )
       
       )
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgMPBriefingRoom.rdr)
-      
-      )
-     
-     ENDIF()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnNetError)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameweaponstart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(AlreadyHandlingError!= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to select character and weapons" )
       
       )
      
-     VALVE(AlreadyHandlingError= 1  0.000000 )
-     
-     VALVE(OKValve= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSteamStart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to switch teams." )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnReadystart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION(INPUT_STRING)
+       CAPTION ( "Press the X button if you're ready to play." )
       
-      BACKGROUND(popupOp.tif)
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSMlaunchstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      POSITION( 175.000000  230.000000 )
+       CAPTION ( "This will launch all players, ready or not" )
       
-      WIDTH( 256  0.000000 )
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameLockstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      HEIGHT( 128  0.000000 )
+       CAPTION ( "Allows the host to lock the game" )
       
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 30  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(OKValve)
-       
-       YES(
-         CAPTION("BRIEFING ROOM")
-        
-        POS( 60  0.000000  90  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  20  0.000000 )
-        
-        WIDTH( 120  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(brown_back.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(brown_back.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(brown_back.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.350000 )
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnArmBtnUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
         
         )
        
@@ -3817,44 +3496,38 @@
       
       )
      
-     WHILE(
-       VALVE(OKValve== 0  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( ForceLaunch )
       
       )
      
-     END_WHILE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
       
       )
      
-     WAIT( 0.500000 )
-     
-     CALL_ANIMATION(
-       NAME(exit_lobby)
-      
-      )
-     
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(force_new_db)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnForceLaunchBtnDwn )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(AdvanceMPMission)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      )
-     
-     CALL_ANIMATION(
-       NAME(GameTypeName)
+       ARGUMENT ( weaponselect )
       
       )
      
@@ -3862,731 +3535,69 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MpSTeamsWeaponUpdate)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_chat )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(Enable_M16== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( late_joiner  ==  1 )
       
       )
      
-     VALVE(SealCanChoose_M16= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_M16= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m4Acarbine_203== 1  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "Sorry, no chat for late joiners" )
       
       )
      
-     VALVE(SealCanChoose_m4Acarbine_203= 1  0.000000 )
+      WAIT ( 7 )
      
-     ELSE()
-     
-     VALVE(SealCanChoose_m4Acarbine_203= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_mp5sd== 1  0.000000 )
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( " " )
       
       )
      
-     VALVE(SealCanChoose_mp5sd= 1  0.000000 )
+      ELSE ()
      
-     ELSE()
-     
-     VALVE(SealCanChoose_mp5sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_mp5== 1  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Chat" )
       
       )
      
-     VALVE(SealCanChoose_mp5= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_mp5= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m14_gun== 1  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  ChatSkb )
+      
+       ARGUMENT ( CHATTEXT )
       
       )
      
-     VALVE(SealCanChoose_m14_gun= 1  0.000000 )
+      VALVE ( SkbMaxChars  =  50 )
      
-     ELSE()
+      ENDIF ()
      
-     VALVE(SealCanChoose_m14_gun= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_remington700== 1  0.000000 )
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( send_chat )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SendChatText )
       
-      )
-     
-     VALVE(SealCanChoose_remington700= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_remington700= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m60e== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_m60e= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_m60e= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_EquipmcmillanM87== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_mcmillanM87= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_mcmillanM87= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m4Acarbine== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_m4Acarbine= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_m4Acarbine= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_stoner_sr25== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_stoner_sr25= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_stoner_sr25= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_stoner_sr25_SD== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_stoner_sr25_SD= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_stoner_sr25_SD= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m4Acarbine== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_m4Acarbine= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_m4Acarbine= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m4Acarbine== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_m4Acarbine= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_m4Acarbine= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_M16203== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_M16203= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_M16203= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_M4A1_SD== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_M4A1_SD= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_M4A1_SD= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_Mark23== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_Mark23= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_Mark23= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_mark23sd== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_mark23sd= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_mark23sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_mark23sd== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_mark23sd= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_mark23sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_Sig226== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_Sig226= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_Sig226= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_Sig226== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_Sig226= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_Sig226= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_HkP9s== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_HkP9s= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_HkP9s= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_HkP9s== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_HkP9s= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_HkP9s= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_glock18== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_glock18= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_glock18= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_fiveseven== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_fiveseven= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_fiveseven= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_beretta_m9== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_beretta_m9= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_beretta_m9= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_desert_eagle== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_desert_eagle= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_desert_eagle= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_2xammo== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_2xammo= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_2xammo= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_frag== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_frag= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_frag= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_smoke== 1  0.000000 )
-      
-      )
-     
-     VALVE(SealCanChoose_smoke= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(SealCanChoose_smoke= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_M16== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_M16= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_M16= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_ak47== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_ak47= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_ak47= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_aks74== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_aks74= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_aks74= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m14_gun== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_m14_gun= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_m14_gun= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enablesig_commando== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_sig_commando= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_sig_commando= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_uzi== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_uzi= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_uzi= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_remington700== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_remington700= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_remington700= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enablesig_m60e== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_m60e= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_m60e= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m63a== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_m63a= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_m63a= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_barret_lightm82A1== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_barret_lightm82A1= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_barret_lightm82A1= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_EquipmcmillanM87== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_EquipmcmillanM87= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_EquipmcmillanM87= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_m79== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_m79= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_m79= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_mglmk1== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_m79= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_m79= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_Mark23== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_Mark23= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_Mark23= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_mark23sd== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_mark23sd= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_mark23sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_HkP9s== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_HkP9s= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_HkP9s= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_glock18== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_glock18= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_glock18= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_fiveseven== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_fiveseven= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_fiveseven= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_beretta_m9== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_beretta_m9= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_beretta_m9= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_desert_eagle== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_desert_eagle= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_desert_eagle= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_2xammo== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_2xammo= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_2xammo= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_frag== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_frag= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_frag= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_satchel== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_satchel= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_satchel= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_GLFRAG== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_GLFRAG= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_GLFRAG= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_GLSMK== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_GLSMK= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_GLSMK= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(Enable_GLHE== 1  0.000000 )
-      
-      )
-     
-     VALVE(TerrCanChoose_GLHE= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TerrCanChoose_GLHE= 0  0.000000 )
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(EnableWeaponUpdate)
-      
-      WAIT_FOR_COMPLETION()
+       ARGUMENT ( CHATTEXT )
       
       )
      
@@ -4594,806 +3605,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(EnableWeaponUpdate)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( version_failure_2 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(player_team== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      )
-     
-     IF(
-       VALVE(SealCanChoose_M16== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_M16= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_M16= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_m4Acarbine_203== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m4Acarbine_203= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m4Acarbine_203= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_mp5sd== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_mp5sd= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_mp5sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_mp5== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_mp5= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_mp5= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_m14_gun== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m14_gun= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m14_gun= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_remington700== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_remington700= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_remington700= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_m60e== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m60e= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m60e= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_mcmillanM87== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_EquipmcmillanM87= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_EquipmcmillanM87= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_m4Acarbine== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m4Acarbine= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m4Acarbine= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_stoner_sr25== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_stoner_sr25= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_stoner_sr25= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_stoner_sr25_SD== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_stoner_sr25_SD= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_stoner_sr25_SD= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_m4Acarbine== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m4Acarbine= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m4Acarbine= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_m4Acarbine== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m4Acarbine= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m4Acarbine= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_M16203== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_M16203= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_M16203= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_M4A1_SD== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_M4A1_SD= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_M4A1_SD= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_Mark23== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_Mark23= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_Mark23= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_mark23sd== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_mark23sd= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_mark23sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_Sig226== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_Sig226= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_Sig226= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_HkP9s== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_HkP9s= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_HkP9s= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_glock18== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_glock18= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_glock18= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_fiveseven== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_fiveseven= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_fiveseven= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_beretta_m9== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_beretta_m9= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_beretta_m9= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_desert_eagle== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_desert_eagle= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_desert_eagle= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_2xammo== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_2xammo= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_2xammo= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_frag== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_frag= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_frag= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(SealCanChoose_smoke== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_smoke= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_smoke= 0  0.000000 )
-     
-     ENDIF()
-     
-     VALVE(Enable_ak47= 0  0.000000 )
-     
-     VALVE(Enable_aks74= 0  0.000000 )
-     
-     VALVE(Enablesig_commando= 0  0.000000 )
-     
-     VALVE(Enable_barret_lightm82A1= 0  0.000000 )
-     
-     VALVE(Enable_uzi= 0  0.000000 )
-     
-     VALVE(Enable_m63a= 0  0.000000 )
-     
-     VALVE(Enable_m79= 0  0.000000 )
-     
-     VALVE(Enable_mglmk1= 0  0.000000 )
-     
-     VALVE(Enable_glock18= 0  0.000000 )
-     
-     VALVE(Enable_fiveseven= 0  0.000000 )
-     
-     VALVE(Enable_beretta_m9= 0  0.000000 )
-     
-     VALVE(Enable_desert_eagle= 0  0.000000 )
-     
-     VALVE(Enable_GLFRAG= 0  0.000000 )
-     
-     VALVE(Enable_GLSMK= 0  0.000000 )
-     
-     VALVE(Enable_GLHE= 0  0.000000 )
-     
-     ELSE()
-     
-     IF(
-       VALVE(TerrCanChoose_M16== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_M16= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_M16= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_ak47== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_ak47= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_ak47= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_aks74== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_aks74= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_aks74= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_m14_gun== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m14_gun= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m14_gun= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_sig_commando== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enablesig_commando= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enablesig_commando= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_uzi== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_uzi= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_uzi= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_remington700== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_remington700= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_remington700= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_m60e== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enablesig_m60e= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enablesig_m60e= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_m63a== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m63a= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m63a= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_barret_lightm82A1== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_barret_lightm82A1= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_barret_lightm82A1= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_EquipmcmillanM87== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_EquipmcmillanM87= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_EquipmcmillanM87= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_m79== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_m79= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_m79= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_mglmk1== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_mglmk1= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_mglmk1= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_Mark23== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_Mark23= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_Mark23= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_mark23sd== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_mark23sd= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_mark23sd= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_HkP9s== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_HkP9s= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_HkP9s= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_glock18== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_glock18= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_glock18= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_fiveseven== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_fiveseven= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_fiveseven= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_beretta_m9== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_beretta_m9= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_beretta_m9= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_desert_eagle== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_desert_eagle= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_desert_eagle= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_2xammo== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_2xammo= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_2xammo= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_frag== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_frag= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_frag= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_satchel== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_satchel= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(TEnable_satchel= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_GLFRAG== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_GLFRAG= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_GLFRAG= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_GLSMK== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_GLSMK= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_GLSMK= 0  0.000000 )
-     
-     ENDIF()
-     
-     IF(
-       VALVE(TerrCanChoose_GLHE== 1  0.000000 )
-      
-      )
-     
-     VALVE(Enable_GLHE= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(Enable_GLHE= 0  0.000000 )
-     
-     ENDIF()
-     
-     VALVE(Enable_m4Acarbine_203= 0  0.000000 )
-     
-     VALVE(Enable_mp5sd= 0  0.000000 )
-     
-     VALVE(Enable_mp5= 0  0.000000 )
-     
-     VALVE(Enable_m4Acarbine= 0  0.000000 )
-     
-     VALVE(Enable_stoner_sr25= 0  0.000000 )
-     
-     VALVE(Enable_stoner_sr25_SD= 0  0.000000 )
-     
-     VALVE(Enable_M16203= 0  0.000000 )
-     
-     VALVE(Enable_M4A1_SD= 0  0.000000 )
-     
-     VALVE(Enable_mark23= 0  0.000000 )
-     
-     VALVE(Enable_mark23sd= 0  0.000000 )
-     
-     VALVE(Enable_Sig226= 0  0.000000 )
-     
-     VALVE(Enable_HkP9s= 0  0.000000 )
-     
-     VALVE(Enable_smoke= 0  0.000000 )
-     
-     VALVE(Enable_flash= 0  0.000000 )
-     
-     VALVE(Enable_claymore= 0  0.000000 )
-     
-     VALVE(Enable_c4= 0  0.000000 )
-     
-     VALVE(Enable_203HE= 0  0.000000 )
-     
-     VALVE(Enable_203SMK= 0  0.000000 )
-     
-     VALVE(Enable_203FRAG= 0  0.000000 )
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       ARGUMENT ( dlgNetAbort.rdr )
       
       )
      
@@ -5401,36 +3622,1815 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( switch_teams_anim )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(INACTIVE)
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( player_team  ==  0 )
       
       )
      
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      ui::UI_COMMAND (
+        TYPE ( ChangeCharacterType )
       
-      STATE(ACTIVE)
+       ARGUMENT ( "5" )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ChangeCharacterType )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       ARGUMENT ( "1" )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SwitchSides )
       
-      RUN_TIME( 0.250000 )
+      )
+     
+      CALL_ANIMATION (
+        NAME ( EnableWeaponUpdate )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_lobby )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( NoTriangle  ==  1 )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMPBriefingRoom.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnNetError )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( AlreadyHandlingError  !=  1 )
+      
+      )
+     
+      VALVE ( AlreadyHandlingError  =  1 )
+     
+      VALVE ( OKValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( INPUT_STRING )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 175.000000  230.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+        YES (
+          CAPTION ( "BRIEFING ROOM" )
+        
+         POS ( 60  90 )
+        
+         TEXTOFFSET ( 10  20 )
+        
+         WIDTH ( 120 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( OKValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_lobby )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( force_new_db )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( AdvanceMPMission )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( GameTypeName )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MpSTeamsWeaponUpdate )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( Enable_M16  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_M16  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_M16  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m4Acarbine_203  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_m4Acarbine_203  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_m4Acarbine_203  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_mp5sd  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_mp5sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_mp5sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_mp5  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_mp5  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_mp5  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m14_gun  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_m14_gun  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_m14_gun  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_remington700  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_remington700  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_remington700  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m60e  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_m60e  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_m60e  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_EquipmcmillanM87  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_mcmillanM87  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_mcmillanM87  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m4Acarbine  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_m4Acarbine  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_m4Acarbine  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_stoner_sr25  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_stoner_sr25  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_stoner_sr25  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_stoner_sr25_SD  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_stoner_sr25_SD  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_stoner_sr25_SD  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m4Acarbine  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_m4Acarbine  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_m4Acarbine  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m4Acarbine  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_m4Acarbine  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_m4Acarbine  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_M16203  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_M16203  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_M16203  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_M4A1_SD  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_M4A1_SD  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_M4A1_SD  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_Mark23  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_Mark23  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_Mark23  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_mark23sd  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_mark23sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_mark23sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_mark23sd  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_mark23sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_mark23sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_Sig226  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_Sig226  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_Sig226  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_Sig226  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_Sig226  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_Sig226  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_HkP9s  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_HkP9s  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_HkP9s  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_HkP9s  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_glock18  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_glock18  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_glock18  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_fiveseven  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_fiveseven  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_fiveseven  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_beretta_m9  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_beretta_m9  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_beretta_m9  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_desert_eagle  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_desert_eagle  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_desert_eagle  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_2xammo  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_2xammo  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_2xammo  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_frag  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_frag  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_frag  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_smoke  ==  1 )
+      
+      )
+     
+      VALVE ( SealCanChoose_smoke  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SealCanChoose_smoke  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_M16  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_M16  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_M16  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_ak47  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_ak47  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_ak47  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_aks74  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_aks74  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_aks74  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m14_gun  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_m14_gun  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_m14_gun  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enablesig_commando  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_sig_commando  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_sig_commando  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_uzi  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_uzi  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_uzi  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_remington700  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_remington700  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_remington700  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enablesig_m60e  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_m60e  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_m60e  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m63a  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_m63a  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_m63a  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_barret_lightm82A1  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_barret_lightm82A1  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_barret_lightm82A1  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_EquipmcmillanM87  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_EquipmcmillanM87  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_EquipmcmillanM87  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_m79  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_m79  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_m79  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_mglmk1  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_m79  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_m79  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_Mark23  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_Mark23  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_Mark23  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_mark23sd  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_mark23sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_mark23sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_HkP9s  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_HkP9s  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_glock18  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_glock18  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_glock18  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_fiveseven  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_fiveseven  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_fiveseven  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_beretta_m9  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_beretta_m9  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_beretta_m9  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_desert_eagle  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_desert_eagle  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_desert_eagle  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_2xammo  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_2xammo  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_2xammo  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_frag  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_frag  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_frag  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_satchel  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_satchel  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_satchel  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_GLFRAG  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_GLFRAG  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_GLFRAG  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_GLSMK  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_GLSMK  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_GLSMK  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Enable_GLHE  ==  1 )
+      
+      )
+     
+      VALVE ( TerrCanChoose_GLHE  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TerrCanChoose_GLHE  =  0 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( EnableWeaponUpdate )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( EnableWeaponUpdate )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( player_team  ==  0 )
+      
+      )
+     
+      IF (
+        VALVE ( SealCanChoose_M16  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_M16  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_M16  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_m4Acarbine_203  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m4Acarbine_203  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m4Acarbine_203  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_mp5sd  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_mp5sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_mp5sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_mp5  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_mp5  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_mp5  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_m14_gun  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m14_gun  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m14_gun  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_remington700  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_remington700  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_remington700  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_m60e  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m60e  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m60e  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_mcmillanM87  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_EquipmcmillanM87  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_EquipmcmillanM87  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_m4Acarbine  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m4Acarbine  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m4Acarbine  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_stoner_sr25  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_stoner_sr25  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_stoner_sr25  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_stoner_sr25_SD  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_stoner_sr25_SD  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_m4Acarbine  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m4Acarbine  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m4Acarbine  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_m4Acarbine  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m4Acarbine  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m4Acarbine  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_M16203  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_M16203  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_M16203  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_M4A1_SD  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_M4A1_SD  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_M4A1_SD  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_Mark23  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_Mark23  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_Mark23  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_mark23sd  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_mark23sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_mark23sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_Sig226  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_Sig226  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_Sig226  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_HkP9s  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_HkP9s  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_glock18  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_glock18  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_glock18  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_fiveseven  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_fiveseven  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_fiveseven  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_beretta_m9  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_beretta_m9  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_beretta_m9  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_desert_eagle  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_desert_eagle  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_desert_eagle  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_2xammo  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_2xammo  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_2xammo  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_frag  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_frag  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_frag  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SealCanChoose_smoke  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_smoke  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_smoke  =  0 )
+     
+      ENDIF ()
+     
+      VALVE ( Enable_ak47  =  0 )
+     
+      VALVE ( Enable_aks74  =  0 )
+     
+      VALVE ( Enablesig_commando  =  0 )
+     
+      VALVE ( Enable_barret_lightm82A1  =  0 )
+     
+      VALVE ( Enable_uzi  =  0 )
+     
+      VALVE ( Enable_m63a  =  0 )
+     
+      VALVE ( Enable_m79  =  0 )
+     
+      VALVE ( Enable_mglmk1  =  0 )
+     
+      VALVE ( Enable_glock18  =  0 )
+     
+      VALVE ( Enable_fiveseven  =  0 )
+     
+      VALVE ( Enable_beretta_m9  =  0 )
+     
+      VALVE ( Enable_desert_eagle  =  0 )
+     
+      VALVE ( Enable_GLFRAG  =  0 )
+     
+      VALVE ( Enable_GLSMK  =  0 )
+     
+      VALVE ( Enable_GLHE  =  0 )
+     
+      ELSE ()
+     
+      IF (
+        VALVE ( TerrCanChoose_M16  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_M16  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_M16  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_ak47  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_ak47  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_ak47  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_aks74  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_aks74  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_aks74  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_m14_gun  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m14_gun  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m14_gun  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_sig_commando  ==  1 )
+      
+      )
+     
+      VALVE ( Enablesig_commando  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enablesig_commando  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_uzi  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_uzi  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_uzi  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_remington700  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_remington700  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_remington700  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_m60e  ==  1 )
+      
+      )
+     
+      VALVE ( Enablesig_m60e  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enablesig_m60e  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_m63a  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m63a  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m63a  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_barret_lightm82A1  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_barret_lightm82A1  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_barret_lightm82A1  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_EquipmcmillanM87  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_EquipmcmillanM87  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_EquipmcmillanM87  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_m79  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_m79  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_m79  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_mglmk1  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_mglmk1  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_mglmk1  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_Mark23  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_Mark23  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_Mark23  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_mark23sd  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_mark23sd  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_mark23sd  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_HkP9s  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_HkP9s  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_glock18  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_glock18  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_glock18  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_fiveseven  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_fiveseven  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_fiveseven  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_beretta_m9  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_beretta_m9  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_beretta_m9  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_desert_eagle  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_desert_eagle  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_desert_eagle  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_2xammo  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_2xammo  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_2xammo  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_frag  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_frag  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_frag  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_satchel  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_satchel  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( TEnable_satchel  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_GLFRAG  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_GLFRAG  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_GLFRAG  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_GLSMK  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_GLSMK  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_GLSMK  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TerrCanChoose_GLHE  ==  1 )
+      
+      )
+     
+      VALVE ( Enable_GLHE  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_GLHE  =  0 )
+     
+      ENDIF ()
+     
+      VALVE ( Enable_m4Acarbine_203  =  0 )
+     
+      VALVE ( Enable_mp5sd  =  0 )
+     
+      VALVE ( Enable_mp5  =  0 )
+     
+      VALVE ( Enable_m4Acarbine  =  0 )
+     
+      VALVE ( Enable_stoner_sr25  =  0 )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  0 )
+     
+      VALVE ( Enable_M16203  =  0 )
+     
+      VALVE ( Enable_M4A1_SD  =  0 )
+     
+      VALVE ( Enable_mark23  =  0 )
+     
+      VALVE ( Enable_mark23sd  =  0 )
+     
+      VALVE ( Enable_Sig226  =  0 )
+     
+      VALVE ( Enable_HkP9s  =  0 )
+     
+      VALVE ( Enable_smoke  =  0 )
+     
+      VALVE ( Enable_flash  =  0 )
+     
+      VALVE ( Enable_claymore  =  0 )
+     
+      VALVE ( Enable_c4  =  0 )
+     
+      VALVE ( Enable_203HE  =  0 )
+     
+      VALVE ( Enable_203SMK  =  0 )
+     
+      VALVE ( Enable_203FRAG  =  0 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

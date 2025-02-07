@@ -1,73 +1,73 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(undefined.tif)
+     FILENAME ( undefined.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(uianim.rdr)
+    SCRIPT_LIBRARY ( uianim.rdr )
    
-   OBJECTS((
-      NAME(STANDIN)
+    OBJECTS ((
+       NAME ( STANDIN )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 30 )
      
-     YPOS( 28.000000 )
+      YPOS ( 28.000000 )
      
-     SPEC(
-       FILENAME(Menu584_medalcase.tif)
+      SPEC (
+        FILENAME ( Menu584_medalcase.tif )
       
-      XSIZE( 256  0.000000 )
+       XSIZE ( 256 )
       
-      YSIZE( 64  0.000000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(STANDIN)
+       NAME ( STANDIN )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 304  0.000000 )
+      XPOS ( 304 )
      
-     YPOS( 82.129997 )
+      YPOS ( 82.129997 )
      
-     SPEC(
-       FILENAME(Menu585_medaldisplay.tif)
+      SPEC (
+        FILENAME ( Menu585_medaldisplay.tif )
       
-      XSIZE( 256  0.000000 )
+       XSIZE ( 256 )
       
-      YSIZE( 256  0.000000 )
+       YSIZE ( 256 )
       
       )
      
      )
     
     (
-      NAME(STANDIN)
+       NAME ( STANDIN )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 305  0.000000 )
+      XPOS ( 305 )
      
-     YPOS( 342.529999 )
+      YPOS ( 342.529999 )
      
-     SPEC(
-       FILENAME(Menu586_medaldesc.tif)
+      SPEC (
+        FILENAME ( Menu586_medaldesc.tif )
       
-      XSIZE( 256  0.000000 )
+       XSIZE ( 256 )
       
-      YSIZE( 64  0.000000 )
+       YSIZE ( 64 )
       
       )
      
@@ -75,45 +75,45 @@
     
     )
    
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(dlgOnlineOptions.rdr)
+      ARGUMENT ( dlgOnlineOptions.rdr )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(exit)
+    CONTROLS ((
+       NAME ( exit )
      
-     XPOS( 88  0.000000 )
+      XPOS ( 88 )
      
-     YPOS( 342.529999 )
+      YPOS ( 342.529999 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 64  0.000000 )
+       YSIZE ( 64 )
       
-      NORMAL(Menu587_exit.tif)
+       NORMAL ( Menu587_exit.tif )
       
-      ACTIVE(A_Menu587_exit.tif)
+       ACTIVE ( A_Menu587_exit.tif )
       
-      PRESSED(Menu588_exit_GLOW.tif)
+       PRESSED ( Menu588_exit_GLOW.tif )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgOnlineOptions.rdr)
+         ARGUMENT ( dlgOnlineOptions.rdr )
         
         )
        

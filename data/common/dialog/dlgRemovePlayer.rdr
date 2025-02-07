@@ -1,252 +1,252 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgRemovePlayer.rdr)
+    SCRIPT_LIBRARY ( dlgRemovePlayer.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("REMOVE PLAYER")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(BS_mark)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 517  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 370  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        FONT ( Gothic_13 )
       
-      YSIZE( 64  0.000000 )
+       CHILDOF ( letterbar )
       
-      FILENAME(BS_button.tif)
+       CAPTION ( "REMOVE PLAYER" )
       
-      )
-     
-     )
-    
-    (
-      NAME(MainWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 170  0.000000 )
-     
-     YPOS( 70  0.000000 )
-     
-     SPEC(
-       XSIZE( 460  0.000000 )
-      
-      YSIZE( 295  0.000000 )
-      
-      FILENAME(eq_CharWinInv.tif)
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(DescFieldTop)
+       NAME ( BS_mark )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 177  0.000000 )
+      XPOS ( 517 )
      
-     YPOS( 75  0.000000 )
+      YPOS ( 370 )
      
-     SPEC(
-       XSIZE( 442  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 16  0.000000 )
+       YSIZE ( 64 )
       
-      FILENAME(DescField.tif)
+       FILENAME ( BS_button.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MainWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 170 )
+     
+      YPOS ( 70 )
+     
+      SPEC (
+        XSIZE ( 460 )
+      
+       YSIZE ( 295 )
+      
+       FILENAME ( eq_CharWinInv.tif )
       
       )
      
      )
     
     (
-      NAME(DescriptionText)
+       NAME ( DescFieldTop )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 185  0.000000 )
+      XPOS ( 177 )
      
-     YPOS( 90  0.000000 )
+      YPOS ( 75 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 442 )
       
-      SCALE( 0.400000 )
+       YSIZE ( 16 )
       
-      CAPTION("SELECT A PLAYER TO DISMISS FROM THE CLAN")
+       FILENAME ( DescField.tif )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(PREVIOUS_SCREEN)
-     
-     )
-    
     (
-      EVENT(ONSTART)
+       NAME ( DescriptionText )
      
-     ANIMATION(get_clan_roster)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(MP_PLAYER_NOT_FOUND)
+      XPOS ( 185 )
      
-     ANIMATION(player_not_found)
+      YPOS ( 90 )
      
-     )
-    
-    (
-      EVENT(MP_SUCCESS)
-     
-     ANIMATION(player_ejected)
-     
-     )
-    
-    (
-      EVENT(MP_MEDIUS_ERROR)
-     
-     ANIMATION(OnMultiplayerDisconnect)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( "SELECT A PLAYER TO DISMISS FROM THE CLAN" )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(Clan_Roster)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     XPOS( 185  0.000000 )
+      ANIMATION ( goto_menu )
      
-     YPOS( 120  0.000000 )
+      ARGUMENT ( PREVIOUS_SCREEN )
      
-     TYPE(LISTBOX)
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     SPEC(
-       PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+      ANIMATION ( get_clan_roster )
+     
+     )
+    
+    (
+       EVENT ( MP_PLAYER_NOT_FOUND )
+     
+      ANIMATION ( player_not_found )
+     
+     )
+    
+    (
+       EVENT ( MP_SUCCESS )
+     
+      ANIMATION ( player_ejected )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( Clan_Roster )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 120 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
       
-      NORMAL_COLOR( 158.000000  158.000000  158.000000 )
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
       
-      ACTIVE_COLOR( 255.000000  104.000000  51.000000 )
+       ACTIVE_COLOR ( 255.000000  104.000000  51.000000 )
       
-      XSIZE( 250  0.000000 )
+       XSIZE ( 250 )
       
-      YSIZE( 210  0.000000 )
+       YSIZE ( 210 )
       
-      NOSELECT()
+       NOSELECT ()
       
-      PADHOG()
+       PADHOG ()
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      LEFT_MARGIN( 10  0.000000 )
+       LEFT_MARGIN ( 10 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      SPACING( 17  0.000000 )
+       SPACING ( 17 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 0  0.000000 )
+       TOP_MARGIN ( 0 )
       
-      UIVAR(
-        NAME(CLAN_ROSTER)
+       UIVAR (
+         NAME ( CLAN_ROSTER )
        
        )
       
-      OPTIONS((
-         CAPTION(Bob)
+       OPTIONS ((
+          CAPTION ( Bob )
         
         )
        
        (
-         CAPTION(Dave)
+          CAPTION ( Dave )
         
         )
        
        (
-         CAPTION(Conrad)
+          CAPTION ( Conrad )
         
         )
        
        (
-         CAPTION(Tom)
+          CAPTION ( Tom )
         
         )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(remove_player)
+         ANIMATION ( remove_player )
         
         )
        
@@ -262,18 +262,18 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(get_clan_roster)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( get_clan_roster )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetClanRoster)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetClanRoster )
       
       )
      
@@ -281,79 +281,39 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(player_not_found)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( player_not_found )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("THAT PLAYER DOES NOT EXIST. PRESS X TO CONTINUE")
+       CAPTION ( "THAT PLAYER DOES NOT EXIST. PRESS X TO CONTINUE" )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  285.000000 )
+       POSITION ( 170.000000  285.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 100  0.000000 )
+       HEIGHT ( 100 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(player_ejected)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("PLAYER HAS BEEN SUCCESSFULLY REMOVED FROM THE CLAN. PRESS X TO CONTINUE.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
@@ -361,108 +321,148 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(remove_player)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( player_ejected )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(AreYouReallySure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("DO YOU REALLY WANT TO REMOVE THIS PLAYER FROM THE CLAN?")
+       CAPTION ( "PLAYER HAS BEEN SUCCESSFULLY REMOVED FROM THE CLAN. PRESS X TO CONTINUE." )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  285.000000 )
+       POSITION ( 170.000000  285.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 100  0.000000 )
+       HEIGHT ( 100 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      YESNO(
-        VALVE(AreYouReallySure)
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( remove_player )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( AreYouReallySure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "DO YOU REALLY WANT TO REMOVE THIS PLAYER FROM THE CLAN?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouReallySure )
        
-       YES(
-         CAPTION(YES)
+        YES (
+          CAPTION ( YES )
         
-        POS( 40  0.000000  65  0.000000 )
+         POS ( 40  65 )
         
-        TEXTOFFSET( 10  0.000000  20  0.000000 )
+         TEXTOFFSET ( 10  20 )
         
-        WIDTH( 75  0.000000 )
+         WIDTH ( 75 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(Popup_bk.tif)
+         PRESSED (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(Popup_bk.tif)
+         ACTIVE (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Popup_bk.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
         )
        
-       NO(
-         CAPTION(NO)
+        NO (
+          CAPTION ( NO )
         
-        POS( 190  0.000000  65  0.000000 )
+         POS ( 190  65 )
         
-        TEXTOFFSET( 10  0.000000  20  0.000000 )
+         TEXTOFFSET ( 10  20 )
         
-        WIDTH( 75  0.000000 )
+         WIDTH ( 75 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(Popup_bk.tif)
+         PRESSED (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(Popup_bk.tif)
+         ACTIVE (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Popup_bk.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
@@ -472,72 +472,72 @@
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUPOPUP)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  POPUP )
       
-      TRANSLATE_FROM( -50.000000  120.000000  0.000000 )
+       TRANSLATE_FROM ( -50.000000  120.000000  0.000000 )
       
-      TRANSLATE_TO( 190.000000  260.000000  0.000000 )
+       TRANSLATE_TO ( 190.000000  260.000000  0.000000 )
       
-      RUN_TIME( 0.000000 )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouReallySure== 0  0.000000 )
+       RUN_TIME ( 0.000000 )
       
       )
      
-     END_WHILE()
-     
-     IF(
-       VALVE(AreYouReallySure== 1  0.000000 )
+      WHILE (
+        VALVE ( AreYouReallySure  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(RemovePlayerFromClan)
+      END_WHILE ()
+     
+      IF (
+        VALVE ( AreYouReallySure  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(KillPopUp)
+      ui::UI_COMMAND (
+        TYPE ( RemovePlayerFromClan )
       
       )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( KillPopUp )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("ACTION CANCELLED. PRESS X TO CONTINUE.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "ACTION CANCELLED. PRESS X TO CONTINUE." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ENDIF ()
      
      )
     

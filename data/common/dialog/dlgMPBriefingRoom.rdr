@@ -1,484 +1,459 @@
 ((
-  SCREENS((
-    LIBRARIES(ui/assetlib/uimpui/assetlib/anim)
+   SCREENS ((
+     LIBRARIES ( ui/assetlib/uimp  ui/assetlib/anim )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgMPBriefingRoom.rdr)
+    SCRIPT_LIBRARY ( dlgMPBriefingRoom.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("BRIEFING ROOM")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(MainWindow)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 140  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 70  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       XSIZE( 485  0.000000 )
+      SPEC (
+        FONT ( Gothic_13 )
       
-      YSIZE( 295  0.000000 )
+       CHILDOF ( letterbar )
       
-      FILENAME(eq_CharWinInv.tif)
+       CAPTION ( "BRIEFING ROOM" )
       
-      )
-     
-     )
-    
-    (
-      NAME(letterbar_bottom)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 0  0.000000 )
-     
-     YPOS( 361  0.000000 )
-     
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
-      
-      SIZE( 640  0.000000  64  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(net_conn_ind_Yel)
+       NAME ( MainWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 572  0.000000 )
+      XPOS ( 140 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 70 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        XSIZE ( 485 )
       
-      FILENAME(NetMonY.tif)
+       YSIZE ( 295 )
       
-      SIZE( 28  0.000000  28  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(net_conn_ind_blue)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 581  0.000000 )
-     
-     YPOS( 34  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
-      
-      FILENAME(NetMonB.tif)
-      
-      SIZE( 10  0.000000  12  0.000000 )
+       FILENAME ( eq_CharWinInv.tif )
       
       )
      
      )
     
     (
-      NAME(dogtags)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 370  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 325  0.000000 )
+      YPOS ( 361 )
      
-     SPEC(
-       FILENAME(dogtags2.tif)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      SIZE( 256  0.000000  128  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(JoiningText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 320  0.000000 )
-     
-     YPOS( 320  0.000000 )
-     
-     SPEC(
-       CAPTION("JOINING GAME")
-      
-      SCALE( 0.600000 )
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(DescFieldTop)
+       NAME ( net_conn_ind_Yel )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 147  0.000000 )
+      XPOS ( 572 )
      
-     YPOS( 75  0.000000 )
+      YPOS ( 25 )
      
-     SPEC(
-       XSIZE( 472  0.000000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      YSIZE( 16  0.000000 )
+       FILENAME ( NetMonY.tif )
       
-      FILENAME(blue_back_plate.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(DescFieldMid)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 147  0.000000 )
-     
-     YPOS( 231  0.000000 )
-     
-     SPEC(
-       XSIZE( 472  0.000000 )
-      
-      YSIZE( 15  0.000000 )
-      
-      FILENAME(blue_back_plate.tif)
+       SIZE ( 28  28 )
       
       )
      
      )
     
     (
-      NAME(DescFieldLow)
+       NAME ( net_conn_ind_blue )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 147  0.000000 )
+      XPOS ( 581 )
      
-     YPOS( 341  0.000000 )
+      YPOS ( 34 )
      
-     SPEC(
-       XSIZE( 472  0.000000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      YSIZE( 20  0.000000 )
+       FILENAME ( NetMonB.tif )
       
-      FILENAME(blue_back_plate.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(JoiningAnim)
-     
-     TYPE(TEXT)
-     
-     XPOS( 175  0.000000 )
-     
-     YPOS( 359  0.000000 )
-     
-     SPEC(
-       COLOR( 243  0.000000  243  0.000000  69  0.000000 )
-      
-      CAPTION(" ")
-      
-      SCALE( 0.400000 )
+       SIZE ( 10  12 )
       
       )
      
      )
     
     (
-      NAME(JoiningAnimRed)
+       NAME ( dogtags )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 175  0.000000 )
+      XPOS ( 370 )
      
-     YPOS( 359  0.000000 )
+      YPOS ( 325 )
      
-     SPEC(
-       COLOR( 150  0.000000  150  0.000000  150  0.000000 )
+      SPEC (
+        FILENAME ( dogtags2.tif )
       
-      CAPTION(" ")
-      
-      SCALE( 0.400000 )
+       SIZE ( 256  128 )
       
       )
      
      )
     
     (
-      NAME(DescriptionText)
+       NAME ( JoiningText )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 175  0.000000 )
+      XPOS ( 320 )
      
-     YPOS( 357  0.000000 )
+      YPOS ( 320 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        CAPTION ( "JOINING GAME" )
       
-      SCALE( 0.400000 )
-      
-      CAPTION(" ")
+       SCALE ( 0.600000 )
       
       )
      
      )
     
     (
-      NAME(TabDivHorChatTop)
+       NAME ( DescFieldTop )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 147  0.000000 )
+      XPOS ( 147 )
      
-     YPOS( 225  0.000000 )
+      YPOS ( 75 )
      
-     SPEC(
-       XSIZE( 475  0.000000 )
+      SPEC (
+        XSIZE ( 472 )
       
-      YSIZE( 8  0.000000 )
+       YSIZE ( 16 )
       
-      FILENAME(Tab_HorGold_Divider.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabDivHorChatLow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 147  0.000000 )
-     
-     YPOS( 242  0.000000 )
-     
-     SPEC(
-       XSIZE( 475  0.000000 )
-      
-      YSIZE( 8  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
+       FILENAME ( blue_back_plate.tif )
       
       )
      
      )
     
     (
-      NAME(TabDivHorTop)
+       NAME ( DescFieldMid )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 147  0.000000 )
+      XPOS ( 147 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 231 )
      
-     SPEC(
-       XSIZE( 475  0.000000 )
+      SPEC (
+        XSIZE ( 472 )
       
-      YSIZE( 8  0.000000 )
+       YSIZE ( 15 )
       
-      FILENAME(Tab_HorGold_Divider.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabDivHorLow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 147  0.000000 )
-     
-     YPOS( 335  0.000000 )
-     
-     SPEC(
-       XSIZE( 475  0.000000 )
-      
-      YSIZE( 8  0.000000 )
-      
-      FILENAME(Tab_HorGold_Divider.tif)
+       FILENAME ( blue_back_plate.tif )
       
       )
      
      )
     
     (
-      NAME(playertext)
+       NAME ( DescFieldLow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 147 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 341 )
      
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
+      SPEC (
+        XSIZE ( 472 )
       
-      CAPTION(Player:)
+       YSIZE ( 20 )
       
-      )
-     
-     )
-    
-    (
-      NAME(clantext)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      CAPTION(Clan:)
+       FILENAME ( blue_back_plate.tif )
       
       )
      
      )
     
     (
-      NAME(playername)
+       NAME ( JoiningAnim )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 175 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 359 )
      
-     CHILDOF(letterbar_bottom)
+      SPEC (
+        COLOR ( 243  243  69 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.400000 )
+      
+      )
      
-     SPEC(
-       UIVAR(
-        NAME(PLAYERNAMEVAR)
+     )
+    
+    (
+       NAME ( JoiningAnimRed )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 359 )
+     
+      SPEC (
+        COLOR ( 150  150  150 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 357 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorChatTop )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 147 )
+     
+      YPOS ( 225 )
+     
+      SPEC (
+        XSIZE ( 475 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorChatLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 147 )
+     
+      YPOS ( 242 )
+     
+      SPEC (
+        XSIZE ( 475 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorTop )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 147 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        XSIZE ( 475 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 147 )
+     
+      YPOS ( 335 )
+     
+      SPEC (
+        XSIZE ( 475 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(txtClanName)
+       NAME ( txtClanName )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 45  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar_bottom )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(CLANNAMEVAR)
+       UIVAR (
+         NAME ( CLANNAMEVAR )
        
-       VALUE(Unaffiliated)
+        VALUE ( Unaffiliated )
        
-       TYPE(PERMANENT)
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(roomname)
-     
-     TYPE(TEXT)
-     
-     XPOS( 270  0.000000 )
-     
-     YPOS( 0  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(bar_title)
-      
-      SCALE( 0.650000 )
-      
-      UIVAR(
-        NAME(MEDIUS_LOBBY_NAME)
+        TYPE ( PERMANENT )
        
        )
       
@@ -487,386 +462,411 @@
      )
     
     (
-      NAME(ChatFieldText)
+       NAME ( roomname )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 167  0.000000 )
+      XPOS ( 270 )
      
-     YPOS( 242  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SCALE( 0.350000 )
+       CHILDOF ( bar_title )
       
-      CAPTION("Press the Circle button to chat")
+       SCALE ( 0.650000 )
       
-      )
-     
-     )
-    
-    (
-      NAME(CategoryText)
-     
-     TYPE(TEXT)
-     
-     XPOS( 150  0.000000 )
-     
-     YPOS( 88  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.350000 )
-      
-      CAPTION(IN/MAX)
+       UIVAR (
+         NAME ( MEDIUS_LOBBY_NAME )
+       
+       )
       
       )
      
      )
     
     (
-      NAME(Category2Text)
+       NAME ( ChatFieldText )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 215  0.000000 )
+      XPOS ( 167 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 242 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      CAPTION(GAME)
-      
-      )
-     
-     )
-    
-    (
-      NAME(Category3Text)
-     
-     TYPE(TEXT)
-     
-     XPOS( 370  0.000000 )
-     
-     YPOS( 88  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.350000 )
-      
-      CAPTION(TYPE)
+       CAPTION ( "Press the Circle button to chat" )
       
       )
      
      )
     
     (
-      NAME(Category3Text)
+       NAME ( CategoryText )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 440  0.000000 )
+      XPOS ( 150 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 88 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      CAPTION(PING)
-      
-      )
-     
-     )
-    
-    (
-      NAME(Category3Text)
-     
-     TYPE(TEXT)
-     
-     XPOS( 485  0.000000 )
-     
-     YPOS( 88  0.000000 )
-     
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
-      
-      SCALE( 0.350000 )
-      
-      CAPTION(FF)
+       CAPTION ( IN/MAX )
       
       )
      
      )
     
     (
-      NAME(Category4Text)
+       NAME ( Category2Text )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 520  0.000000 )
+      XPOS ( 215 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 88 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      CAPTION(LOCK)
+       CAPTION ( GAME )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Category3Text )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( TYPE )
       
       )
      
      )
     
     (
-      NAME(Category5Text)
+       NAME ( Category3Text )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 570  0.000000 )
+      XPOS ( 440 )
      
-     YPOS( 88  0.000000 )
+      YPOS ( 88 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      CAPTION(PASS)
+       CAPTION ( PING )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      EVENT(ONSTART)
+    (
+       NAME ( Category3Text )
      
-     ANIMATION(net_monitor)
+      TYPE ( TEXT )
+     
+      XPOS ( 485 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( FF )
+      
+      )
      
      )
     
     (
-      BUTTON(TRIGGER_R2)
+       NAME ( Category4Text )
      
-     ANIMATION(ForceUsagePolicy)
+      TYPE ( TEXT )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 520 )
      
-     ANIMATION(letterbar_slide_down)
+      YPOS ( 88 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(bottom_bar_slide_up)
-     
-     )
-    
-    (
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(exit_triage)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( LOCK )
+      
+      )
      
      )
     
     (
-      BUTTON(SELECT)
+       NAME ( Category5Text )
      
-     ANIMATION(goto_menu)
+      TYPE ( TEXT )
      
-     ARGUMENT(dlgMPBriefingRoom.rdr)
+      XPOS ( 570 )
      
-     )
-    
-    (
-      BUTTON(CIRCLE)
+      YPOS ( 88 )
      
-     ANIMATION(do_chat)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(autorefresh)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(OnBriefingRoomstart)
-     
-     )
-    
-    (
-      EVENT(ON_SKB_APPLY)
-     
-     ANIMATION(send_chat)
-     
-     )
-    
-    (
-      EVENT(ON_SKB_CANCEL)
-     
-     ANIMATION(keyboard_closed)
-     
-     )
-    
-    (
-      EVENT(MP_MEDIUS_ERROR)
-     
-     ANIMATION(OnMultiplayerDisconnect)
-     
-     )
-    
-    (
-      EVENT(ON_CLIENT_CONNECT)
-     
-     ANIMATION(refresh_gamelist)
-     
-     )
-    
-    (
-      EVENT(MP_MEDIUS_JOIN_GAME_FAILURE)
-     
-     ANIMATION(join_game_failure)
-     
-     )
-    
-    (
-      EVENT(MP_VERSION_NUMBER_ERROR)
-     
-     ANIMATION(version_failure_1)
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( PASS )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(GAMELIST)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     XPOS( 145  0.000000 )
+      ANIMATION ( net_monitor )
      
-     YPOS( 80  0.000000 )
+     )
+    
+    (
+       BUTTON ( TRIGGER_R2 )
      
-     TYPE(LISTBOX)
+      ANIMATION ( ForceUsagePolicy )
      
-     SPEC(
-       PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( exit_triage )
+     
+     )
+    
+    (
+       BUTTON ( SELECT )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( dlgMPBriefingRoom.rdr )
+     
+     )
+    
+    (
+       BUTTON ( CIRCLE )
+     
+      ANIMATION ( do_chat )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( autorefresh )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnBriefingRoomstart )
+     
+     )
+    
+    (
+       EVENT ( ON_SKB_APPLY )
+     
+      ANIMATION ( send_chat )
+     
+     )
+    
+    (
+       EVENT ( ON_SKB_CANCEL )
+     
+      ANIMATION ( keyboard_closed )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    (
+       EVENT ( ON_CLIENT_CONNECT )
+     
+      ANIMATION ( refresh_gamelist )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_JOIN_GAME_FAILURE )
+     
+      ANIMATION ( join_game_failure )
+     
+     )
+    
+    (
+       EVENT ( MP_VERSION_NUMBER_ERROR )
+     
+      ANIMATION ( version_failure_1 )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( GAMELIST )
+     
+      XPOS ( 145 )
+     
+      YPOS ( 80 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
       
-      NORMAL_COLOR( 158.000000  158.000000  158.000000 )
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
       
-      ACTIVE_COLOR(
-         255.000000  104.000000  51.000000 RANGE( 0.500000  1.000000 )
+       ACTIVE_COLOR (
+         255.000000  104.000000  51.000000  RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.750000 )
+        TIME ( 0.750000 )
        
        )
       
-      XSIZE( 201  0.000000 )
+       XSIZE ( 201 )
       
-      YSIZE( 150  0.000000 )
+       YSIZE ( 150 )
       
-      NOSELECT()
+       NOSELECT ()
       
-      SPACING( 15  0.000000 )
+       SPACING ( 15 )
       
-      UP_ARROW(
-        TEXTURE(arrow_top.tif)
+       UP_ARROW (
+         TEXTURE ( arrow_top.tif )
        
-       SIZE( 30  0.000000  30  0.000000 )
+        SIZE ( 30  30 )
        
-       OFFSET( 120  0.000000  -10  -nan )
+        OFFSET ( 120  -10 )
        
        )
       
-      DOWN_ARROW(
-        TEXTURE(arrow_botm.tif)
+       DOWN_ARROW (
+         TEXTURE ( arrow_botm.tif )
        
-       SIZE( 30  0.000000  30  0.000000 )
+        SIZE ( 30  30 )
        
-       OFFSET( 120  0.000000  225  0.000000 )
-       
-       )
-      
-      SCALE( 0.400000 )
-      
-      PADHOG()
-      
-      AUTSCROLL()
-      
-      LEFT_MARGIN( 10  0.000000 )
-      
-      TOP_MARGIN( 30  0.000000 )
-      
-      COLUMNS((
-         POSITION( 60  0.000000 )
-        
-        )
-       
-       (
-         POSITION( 0  0.000000 )
-        
-        )
-       
-       (
-         POSITION( 20  0.000000 )
-        
-        )
-       
-       (
-         POSITION( 295  0.000000 )
-        
-        )
-       
-       (
-         POSITION( 335  0.000000 )
-        
-        )
-       
-       (
-         POSITION( 382  0.000000 )
-        
-        )
-       
-       (
-         POSITION( 425  0.000000 )
-        
-        )
+        OFFSET ( 120  225 )
        
        )
       
-      UIVAR(
-        NAME(GAMELISTVAR)
-       
-       )
+       SCALE ( 0.400000 )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(join_game)
+       PADHOG ()
+      
+       AUTSCROLL ()
+      
+       LEFT_MARGIN ( 10 )
+      
+       TOP_MARGIN ( 30 )
+      
+       COLUMNS ((
+          POSITION ( 60 )
         
         )
        
        (
-         BUTTON(TRIANGLE)
+          POSITION ( 0 )
         
-        ANIMATION(OnBriefingRoomstart)
+        )
+       
+       (
+          POSITION ( 20 )
+        
+        )
+       
+       (
+          POSITION ( 295 )
+        
+        )
+       
+       (
+          POSITION ( 335 )
+        
+        )
+       
+       (
+          POSITION ( 382 )
+        
+        )
+       
+       (
+          POSITION ( 425 )
+        
+        )
+       
+       )
+      
+       UIVAR (
+         NAME ( GAMELISTVAR )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( join_game )
+        
+        )
+       
+       (
+          BUTTON ( TRIANGLE )
+        
+         ANIMATION ( OnBriefingRoomstart )
         
         )
        
@@ -877,75 +877,75 @@
      )
     
     (
-      NAME(CRgame)
+       NAME ( CRgame )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 67  0.000000 )
+      YPOS ( 67 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION("CREATE GAME")
+       CAPTION ( "CREATE GAME" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnCreatestart)
+         ANIMATION ( OnCreatestart )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgCreateGame.rdr)
+         ARGUMENT ( dlgCreateGame.rdr )
         
         )
        
@@ -956,73 +956,73 @@
      )
     
     (
-      NAME(JoinGame)
+       NAME ( JoinGame )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 97  0.000000 )
+      YPOS ( 97 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION("JOIN GAME")
+       CAPTION ( "JOIN GAME" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnJoinGamestart)
+         ANIMATION ( OnJoinGamestart )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(OnJoinBtnPress)
+         ANIMATION ( OnJoinBtnPress )
         
         )
        
@@ -1033,73 +1033,73 @@
      )
     
     (
-      NAME(refreshlist)
+       NAME ( refreshlist )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 127  0.000000 )
+      YPOS ( 127 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 10  0.000000 )
+       XOFFSET ( 10 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION("REFRESH LIST")
+       CAPTION ( "REFRESH LIST" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnRefreshAct)
+         ANIMATION ( OnRefreshAct )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(refresh_roomlist)
+         ANIMATION ( refresh_roomlist )
         
         )
        
@@ -1110,39 +1110,39 @@
      )
     
     (
-      NAME(CHATLIST)
+       NAME ( CHATLIST )
      
-     XPOS( 165  0.000000 )
+      XPOS ( 165 )
      
-     YPOS( 235  0.000000 )
+      YPOS ( 235 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+      SPEC (
+        PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
       
-      NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+       NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
       
-      ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+       ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
       
-      XSIZE( 256  0.000000 )
+       XSIZE ( 256 )
       
-      YSIZE( 115  0.000000 )
+       YSIZE ( 115 )
       
-      SPACING( 15  0.000000 )
+       SPACING ( 15 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      AUTOSCROLL()
+       AUTOSCROLL ()
       
-      NOSELECT()
+       NOSELECT ()
       
-      UIVAR(
-        NAME(MEDIUS_CHAT_RECV_VAR)
+       UIVAR (
+         NAME ( MEDIUS_CHAT_RECV_VAR )
        
        )
       
@@ -1156,127 +1156,89 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnBriefingRoomstart)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnBriefingRoomstart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(UsagePolicyReturnScreen= 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( UsagePolicyReturnScreen  =  0 )
      
-     VALVE(IDFromBriefing= 0  0.000000 )
+      VALVE ( IDFromBriefing  =  0 )
      
-     VALVE(ComeFromBriefing= 0  0.000000 )
+      VALVE ( ComeFromBriefing  =  0 )
      
-     IF(
-       VALVE(NoExitState== 1  0.000000 )
+      IF (
+        VALVE ( NoExitState  ==  1 )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     VALVE(mp_persistent= 0  0.000000 )
+      VALVE ( mp_persistent  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(JoinGame)
+       ARGUMENT ( JoinGame )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(GAMELIST)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(CHATLIST)
+       ARGUMENT ( GAMELIST )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( CHATLIST )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnJoinGamestart)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnJoinGamestart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Press the X button to activate the games list")
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
-      
-      STATE(INACTIVE)
+       CAPTION ( "Press the X button to activate the games list" )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUGAMELIST)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCHATLIST)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnCreatestart)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  GAMELIST )
       
-      CAPTION("Press the X button to create a new game")
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CHATLIST )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUGAMELIST)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCHATLIST)
-      
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
@@ -1284,54 +1246,37 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnRefreshAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnCreatestart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Press the X button to refresh the list")
+       CAPTION ( "Press the X button to create a new game" )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUGAMELIST)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCHATLIST)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  GAMELIST )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(version_failure_1)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CHATLIST )
       
-      ARGUMENT(dlgNetAbort.rdr)
+       STATE ( ACTIVE )
       
       )
      
@@ -1339,16 +1284,37 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnJoinBtnDwn)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnRefreshAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(ActivateButton)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      ARGUMENT(AvailGames)
+       CAPTION ( "Press the X button to refresh the list" )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  GAMELIST )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CHATLIST )
+      
+       STATE ( ACTIVE )
       
       )
      
@@ -1356,46 +1322,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnJoinBtnPress)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( version_failure_1 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      CAPTION(" ")
-      
-      )
-     
-     VALVE(NoExitState= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(GAMELIST)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(GAMELIST)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJgameYellowText)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJgame)
-      
-      STATE(INACTIVE)
+       ARGUMENT ( dlgNetAbort.rdr )
       
       )
      
@@ -1403,16 +1339,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnAgamesBtnUp)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnJoinBtnDwn )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(ActivateButton)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(JoinGame)
+       ARGUMENT ( AvailGames )
       
       )
      
@@ -1420,72 +1356,46 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(exit_triage)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnJoinBtnPress )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(NoExitState== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( " " )
       
       )
      
-     ELSE()
+      VALVE ( NoExitState  =  0 )
      
-     CALL_ANIMATION(
-       NAME(exit_lobby)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( GAMELIST )
       
       )
      
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(exit_lobby)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(DisableButton)
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
       
-      ARGUMENT(CRgame)
+       ARGUMENT ( GAMELIST )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JgameYellowText )
       
-      ARGUMENT(join_game)
-      
-      )
-     
-     DEBUG(
-       PREFIX_STRING("Debug: ")
-      
-      ANIM_NAME(": ")
-      
-      SEQ_NAME(": ")
-      
-      STRING("Exit Lobby")
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(JoinMPRoom)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Jgame )
       
-      ARGUMENT(NONE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgWorldOfSOCOM.rdr)
+       STATE ( INACTIVE )
       
       )
      
@@ -1493,27 +1403,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(refresh_roomlist)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnAgamesBtnUp )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUROOMLIST)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      TYPE(RefreshRoomList)
-      
-      )
-     
-     DEBUG(
-       PREFIX_STRING("Debug: ")
-      
-      ANIM_NAME(": ")
-      
-      SEQ_NAME(": ")
-      
-      STRING("Refresh RoomList")
+       ARGUMENT ( JoinGame )
       
       )
      
@@ -1521,1085 +1420,888 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(do_chat)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_triage )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(KeyboardPurpose= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(SetSkbPurpose)
-      
-      ARGUMENT("Enter a Chat Message")
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( NoExitState  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(GetTextInput)
-      
-      NODE(MENUChatSkb)
-      
-      ARGUMENT(CHATMESSAGE)
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( exit_lobby )
       
       )
      
-     VALVE(SkbMaxChars= 50  0.000000 )
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(keyboard_closed)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_lobby )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(KeyboardCameBack= 2  0.000000 )
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( CRgame )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( join_game )
+      
+      )
+     
+      DEBUG (
+        PREFIX_STRING ( "Debug: " )
+      
+       ANIM_NAME ( ": " )
+      
+       SEQ_NAME ( ": " )
+      
+       STRING ( "Exit Lobby" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( JoinMPRoom )
+      
+       ARGUMENT ( NONE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgWorldOfSOCOM.rdr )
+      
+      )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(send_chat)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( refresh_roomlist )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(KeyboardPurpose== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  ROOMLIST )
+      
+       TYPE ( RefreshRoomList )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SendMediusChat)
+      DEBUG (
+        PREFIX_STRING ( "Debug: " )
       
-      ARGUMENT(CHATMESSAGE)
+       ANIM_NAME ( ": " )
+      
+       SEQ_NAME ( ": " )
+      
+       STRING ( "Refresh RoomList" )
       
       )
-     
-     ELSE()
-     
-     VALVE(KeyboardCameBack= 1  0.000000 )
-     
-     ENDIF()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(refresh_gamelist)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_chat )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(socom_online_state== 11  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( KeyboardPurpose  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter a Chat Message" )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUGAMELIST)
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      TYPE(RefreshGameList)
+       NODE ( MENU  ChatSkb )
+      
+       ARGUMENT ( CHATMESSAGE )
       
       )
      
-     ENDIF()
+      VALVE ( SkbMaxChars  =  50 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(autorefresh)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( keyboard_closed )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      WHILE(TRUE)
-     
-     CALL_ANIMATION(
-       NAME(refresh_gamelist)
-      
-      )
-     
-     WAIT( 30  0.000000 )
-     
-     END_WHILE()
+     SEQUENCE_DEFINITION (
+       VALVE ( KeyboardCameBack  =  2 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(join_game)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( send_chat )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      NAME(join_game_main)
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( KeyboardPurpose  ==  1 )
+      
+      )
      
-     VALVE(SeenPopup= 0  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( SendMediusChat )
+      
+       ARGUMENT ( CHATMESSAGE )
+      
+      )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(GameHasPassword)
+      ELSE ()
+     
+      VALVE ( KeyboardCameBack  =  1 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( refresh_gamelist )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( socom_online_state  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GAMELIST )
+      
+       TYPE ( RefreshGameList )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( autorefresh )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CALL_ANIMATION (
+        NAME ( refresh_gamelist )
+      
+      )
+     
+      WAIT ( 30 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( join_game )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( join_game_main )
+     
+      VALVE ( SeenPopup  =  0 )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( GameHasPassword )
        
-       ARGUMENT(INPUT_STRING)
-       
-       )
-      
-      )
-     
-     VALVE(KeyboardCameBack= 0  0.000000 )
-     
-     VALVE(KeyboardPurpose= 2  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(SetSkbPurpose)
-      
-      ARGUMENT("Enter a Password to Connect.")
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(GetTextInput)
-      
-      NODE(MENUMPPLAYERNAME)
-      
-      ARGUMENT(PlayerGamePassword)
-      
-      )
-     
-     VALVE(SkbMaxChars= 12  0.000000 )
-     
-     WHILE(
-       VALVE(KeyboardCameBack== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     IF(
-       VALVE(KeyboardCameBack== 2  0.000000 )
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(join_game)
-      
-      )
-     
-     WHILE(
-       VALVE(KeyboardCameBack== 2  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     VALVE(NoExitState= 1  0.000000 )
-     
-     VALVE(mp_x_sec_clock= 11  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(join_game)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(GAMELIST)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(monitor_timeout)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(Join_flash)
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(JoinMPGame)
-       
-       ARGUMENT(INPUT_STRING)
+        ARGUMENT ( INPUT_STRING )
        
        )
       
       )
      
-     WHILE(
-       VALVE(socom_online_state!= 17  0.000000 )
+      VALVE ( KeyboardCameBack  =  0 )
+     
+      VALVE ( KeyboardPurpose  =  2 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter a Password to Connect." )
       
       )
      
-     WAIT( 1.000000 )
-     
-     IF(
-       VALVE(socom_online_state== 11  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( PlayerGamePassword )
       
       )
      
-     IF(
-       !ui::UI_COMMAND(
-        TYPE(JoinMPGame)
+      VALVE ( SkbMaxChars  =  12 )
+     
+      WHILE (
+        VALVE ( KeyboardCameBack  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( KeyboardCameBack  ==  2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( join_game )
+      
+      )
+     
+      WHILE (
+        VALVE ( KeyboardCameBack  ==  2 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      VALVE ( NoExitState  =  1 )
+     
+      VALVE ( mp_x_sec_clock  =  11 )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( join_game )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( GAMELIST )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( monitor_timeout )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( Join_flash )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( JoinMPGame )
        
-       ARGUMENT(INPUT_STRING)
-       
-       )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningText)
-      
-      CAPTION("Join Multiplayer Game Retry Failure")
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(abort_join)
-      
-      )
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     END_WHILE()
-     
-     VALVE(mp_join_game= 9  0.000000 )
-     
-     WAIT( 1.000000 )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(ConnectToGameServer)
-       
-       )
-      
-      )
-     
-     WAIT( 2.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(monitor_timeout)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(join_after_a_while)
-      
-      )
-     
-     WHILE(
-       VALVE(mp_join_game== 9  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(CheckJoinMP)
-      
-      )
-     
-     END_WHILE()
-     
-     STOP_SEQUENCE(
-       NAME(join_after_a_while)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(do_join)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("You have experienced a multiplayer connection failure")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     WAIT( 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(abort_join)
-      
-      )
-     
-     ENDIF()
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("You have experienced a multiplayer join game game failure")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     WAIT( 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(abort_join)
-      
-      )
-     
-     ENDIF()
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(join_after_a_while)
-     
-     ACTIVATION(ON_CALL)
-     
-     WAIT( 33.333000 )
-     
-     STOP_SEQUENCE(
-       NAME(join_game_main)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(do_join)
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(do_join)
-     
-     ACTIVATION(ON_CALL)
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(JoinGameServer)
+        ARGUMENT ( INPUT_STRING )
        
        )
       
       )
      
-     STOP_SEQUENCE(
-       NAME(monitor_timeout)
+      WHILE (
+        VALVE ( socom_online_state  !=  17 )
       
       )
      
-     WAIT( 2.000000 )
+      WAIT ( 1.000000 )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgGameLobby.rdr)
+      IF (
+        VALVE ( socom_online_state  ==  11 )
       
       )
      
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(DisconnectFromGameServer)
+      IF (
+        !ui::UI_COMMAND (
+         TYPE ( JoinMPGame )
+       
+        ARGUMENT ( INPUT_STRING )
+       
+       )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUJoiningText)
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningText )
       
-      CAPTION("JoinGameServer Failure")
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(abort_join)
+       CAPTION ( "Join Multiplayer Game Retry Failure" )
       
       )
      
-     ENDIF()
+      CALL_SEQUENCE (
+        NAME ( abort_join )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+      VALVE ( mp_join_game  =  9 )
+     
+      WAIT ( 1.000000 )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( ConnectToGameServer )
+       
+       )
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      STOP_SEQUENCE (
+        NAME ( monitor_timeout )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( join_after_a_while )
+      
+      )
+     
+      WHILE (
+        VALVE ( mp_join_game  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CheckJoinMP )
+      
+      )
+     
+      END_WHILE ()
+     
+      STOP_SEQUENCE (
+        NAME ( join_after_a_while )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( do_join )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You have experienced a multiplayer connection failure" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( abort_join )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You have experienced a multiplayer join game game failure" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( abort_join )
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(Join_flash)
+     SEQUENCE_DEFINITION (
+       NAME ( join_after_a_while )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnim)
-      
-      STATE(ACTIVE)
+      WAIT ( 33.333000 )
+     
+      STOP_SEQUENCE (
+        NAME ( join_game_main )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnimRed)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME.")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . . .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . . . .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . . . . . ")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . . . . .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . . .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. . .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnim)
-      
-      CAPTION("JOINING GAME. .")
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnim)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnimRed)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME.")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . . .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . . . .")
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . . . . . ")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . . . . .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . . .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. . .")
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningAnimRed)
-      
-      CAPTION("JOINING GAME. .")
-      
-      )
-     
-     WAIT(EVENT_OFFSET 0.100000 )
-     
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_SEQUENCE (
+        NAME ( do_join )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(abort_join)
+     SEQUENCE_DEFINITION (
+       NAME ( do_join )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     STOP_SEQUENCE(
-       NAME(monitor_timeout)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( JoinGameServer )
+       
+       )
       
       )
      
-     STOP_SEQUENCE(
-       NAME(join_game_main)
+      STOP_SEQUENCE (
+        NAME ( monitor_timeout )
       
       )
      
-     STOP_SEQUENCE(
-       NAME(Join_flash)
+      WAIT ( 2.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgGameLobby.rdr )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(join_game)
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnim)
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnimRed)
-      
-      STATE(INACTIVE)
+       CAPTION ( "JoinGameServer Failure" )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
-      
-      STATE(ACTIVE)
+      CALL_SEQUENCE (
+        NAME ( abort_join )
       
       )
      
-     WAIT( 2.000000 )
+      ENDIF ()
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Join_flash )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
       
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     VALVE(NoExitState= 0  0.000000 )
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
+      
+       STATE ( INACTIVE )
+      
+      )
      
-     CALL_ANIMATION(
-       NAME(OnBriefingRoomstart)
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . . . . . " )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . . . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "JOINING GAME. ." )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . . . . . " )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . . . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "JOINING GAME. ." )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  0.100000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(monitor_timeout)
+     SEQUENCE_DEFINITION (
+       NAME ( abort_join )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     WAIT( 30.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUJoiningText)
-      
-      CAPTION("Timeout Failure")
+      STOP_SEQUENCE (
+        NAME ( monitor_timeout )
       
       )
      
-     CALL_SEQUENCE(
-       NAME(abort_join)
+      STOP_SEQUENCE (
+        NAME ( join_game_main )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(join_game_failure)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(NoExitState= 0  0.000000 )
-     
-     STOP_ANIMATION(
-       NAME(join_game)
+      STOP_SEQUENCE (
+        NAME ( Join_flash )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUJoiningText)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      CAPTION("Game Full or Locked")
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnim)
-      
-      STATE(INACTIVE)
+       ARGUMENT ( join_game )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningAnimRed)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 2.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUJoiningText)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     VALVE(NoExitState= 0  0.000000 )
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
+      
+       STATE ( ACTIVE )
+      
+      )
      
-     CALL_ANIMATION(
-       NAME(OnBriefingRoomstart)
+      WAIT ( 2.000000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( NoExitState  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( OnBriefingRoomstart )
       
       )
      
      )
     
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       NAME ( monitor_timeout )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 30.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningText )
       
-      STATE(INACTIVE)
+       CAPTION ( "Timeout Failure" )
       
       )
      
-     WAIT( 0.200000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
-      
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ChopperCall)
-    
-    NAME(ChopperM)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(ChopperMove)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ChopperMove)
-    
-    NAME(ChopperM)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(ChopperM)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(ChopperM)
-      
-      TRANSLATE_FROM( 304.000000  -1.100000  290.000000 )
-      
-      TRANSLATE_TO( 308.000000  -1.100000  298.000000 )
-      
-      RUN_TIME( 2.500000 )
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_MOTION_FROM_TO(
-       NAME(tailrotor)
-      
-      ROTATE_FROM( 0  0.000000  0  0.000000  0  0.000000 )
-      
-      ROTATE_TO( 0  0.000000  0  0.000000  360  0.000000 )
-      
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     LOOP(
-       LOOP_COUNT( -1  -nan )
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_MOTION_FROM_TO(
-       NAME(mainrotor)
-      
-      ROTATE_FROM( 0  0.000000  0  0.000000  0  0.000000 )
-      
-      ROTATE_TO( 0  0.000000  360  0.000000  0  0.000000 )
-      
-      RUN_TIME( 0.200000 )
-      
-      )
-     
-     LOOP(
-       LOOP_COUNT( -1  -nan )
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      WAIT( 3.000000 )
-     
-     CALL_ANIMATION(
-       NAME(RoperCall)
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_MOTION_FROM_TO(
-       NAME(rot1)
-      
-      ROTATE_FROM( 15  0.000000  1  0.000000  10  0.000000 )
-      
-      ROTATE_TO( -5  -nan  -1  -nan  -3  -nan )
-      
-      RUN_TIME( 3.500000 )
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(rot1)
-      
-      ROTATE_FROM( -5  -nan  -1  -nan  -3  -nan )
-      
-      ROTATE_TO( 0  0.000000  1  0.000000  2  0.000000 )
-      
-      RUN_TIME( 3.000000 )
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(rot1)
-      
-      ROTATE_FROM( 0  0.000000  1  0.000000  2  0.000000 )
-      
-      ROTATE_TO( 0  0.000000  0  0.000000  -1  -nan )
-      
-      RUN_TIME( 3.000000 )
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(rot1)
-      
-      ROTATE_FROM( 0  0.000000  -1  -nan  -1  -nan )
-      
-      ROTATE_TO( 0  0.000000  1  0.000000  0  0.000000 )
-      
-      RUN_TIME( 3.000000 )
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_MOTION_FROM_TO(
-       NAME(rot2)
-      
-      ROTATE_FROM( 0  0.000000  90  0.000000  0  0.000000 )
-      
-      ROTATE_TO( 0  0.000000  0  0.000000  0  0.000000 )
-      
-      RUN_TIME( 2.000000 )
+      CALL_SEQUENCE (
+        NAME ( abort_join )
       
       )
      
@@ -2607,106 +2309,60 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ChopperState)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( join_game_failure )
     
-    NAME(ChopperM)
+     ACTIVATION ( ON_CALL )
     
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(ChopperM)
-      
-      STATE(INACTIVE)
+     SEQUENCE_DEFINITION (
+       VALVE ( NoExitState  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( join_game )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
+       CAPTION ( "Game Full or Locked" )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCover1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope1)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope2)
+      WAIT ( 2.000000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningText )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope3)
-      
-      STATE(INACTIVE)
-      
-      )
+      VALVE ( NoExitState  =  0 )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUFRope)
-      
-      SCALE_FROM( 1.000000  0.000000  0.000000 )
-      
-      SCALE_TO( 1.000000  0.000000  0.000000 )
-      
-      RUN_TIME( 0.000000 )
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope)
-      
-      STATE(INACTIVE)
+      CALL_ANIMATION (
+        NAME ( OnBriefingRoomstart )
       
       )
      
@@ -2714,129 +2370,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(RoperCall)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUFRope)
-      
-      SCALE_FROM( 1.000000  0.000000  0.000000 )
-      
-      SCALE_TO( 1.000000  1.000000  0.000000 )
-      
-      RUN_TIME( 0.500000 )
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope3)
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUFrope3)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 80  0.000000  240  0.000000  0  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 80  0.000000  370  0.000000  0  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 1.000000 )
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUCover1)
-      
-      STATE(ACTIVE)
+       RUN_TIME ( 0.250000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope3)
+      SOUND (
+        NAME ( SND_METAL )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUCover1)
-      
-      TRANSLATE_FROM( 80  0.000000  370  0.000000  0  0.000000 )
-      
-      TRANSLATE_TO( 103  0.000000  370  0.000000  0  0.000000 )
-      
-      RUN_TIME( 1.000000 )
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(drop_roper_loop)
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(drop_roper_loop)
-     
-     ACTIVATION(ON_CALL)
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(Drop1)
-      
-      )
-     
-     WAIT( 1  0.000000 )
-     
-     CALL_ANIMATION(
-       NAME(Drop2)
-      
-      )
-     
-     WAIT( 1  0.000000 )
-     
-     CALL_ANIMATION(
-       NAME(Drop3)
-      
-      )
-     
-     WAIT( 2  0.000000 )
-     
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+       START ()
       
       )
      
@@ -2844,39 +2414,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Drop1)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope1)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUFrope1)
-      
-      TRANSLATE_FROM( 80  0.000000  240  0.000000  0  0.000000 )
-      
-      TRANSLATE_TO( 80  0.000000  370  0.000000  0  0.000000 )
-      
-      RUN_TIME( 1.000000 )
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope1)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     CALL_ANIMATION(
-       NAME(RunningManLead)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      
@@ -2884,39 +2451,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Drop2)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChopperCall )
     
-    ACTIVATION(ON_CALL)
+     NAME ( ChopperM )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope2)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUFrope2)
-      
-      TRANSLATE_FROM( 80  0.000000  240  0.000000  0  0.000000 )
-      
-      TRANSLATE_TO( 80  0.000000  370  0.000000  0  0.000000 )
-      
-      RUN_TIME( 1.000000 )
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(RunningManLead2)
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( ChopperMove )
       
       )
      
@@ -2924,39 +2468,138 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Drop3)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChopperMove )
     
-    ACTIVATION(ON_CALL)
+     NAME ( ChopperM )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope3)
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ChopperM )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUFrope3)
-      
-      TRANSLATE_FROM( 80  0.000000  240  0.000000  0  0.000000 )
-      
-      TRANSLATE_TO( 80  0.000000  370  0.000000  0  0.000000 )
-      
-      RUN_TIME( 1.000000 )
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUFrope3)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( ChopperM )
       
-      STATE(INACTIVE)
+       TRANSLATE_FROM ( 304.000000  -1.100000  290.000000 )
+      
+       TRANSLATE_TO ( 308.000000  -1.100000  298.000000 )
+      
+       RUN_TIME ( 2.500000 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(RunningManLead)
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( tailrotor )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       ROTATE_TO ( 0  0  360 )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( mainrotor )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 3.000000 )
+     
+      CALL_ANIMATION (
+        NAME ( RoperCall )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( rot1 )
+      
+       ROTATE_FROM ( 15  1  10 )
+      
+       ROTATE_TO ( -5  -1  -3 )
+      
+       RUN_TIME ( 3.500000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( rot1 )
+      
+       ROTATE_FROM ( -5  -1  -3 )
+      
+       ROTATE_TO ( 0  1  2 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( rot1 )
+      
+       ROTATE_FROM ( 0  1  2 )
+      
+       ROTATE_TO ( 0  0  -1 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( rot1 )
+      
+       ROTATE_FROM ( 0  -1  -1 )
+      
+       ROTATE_TO ( 0  1  0 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( rot2 )
+      
+       ROTATE_FROM ( 0  90  0 )
+      
+       ROTATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 2.000000 )
       
       )
      
@@ -2964,67 +2607,106 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(RunningManLead)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChopperState )
     
-    ACTIVATION(ON_CALL)
+     NAME ( ChopperM )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ChopperM )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     CALL_ANIMATION(
-       NAME(RunningMan1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENURMan0)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
       
-      TRANSLATE_FROM( 80  0.000000  370  0.000000  0  0.000000 )
+       STATE ( INACTIVE )
       
-      TRANSLATE_TO( -30  -nan  370  0.000000  0  0.000000 )
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
       
-      RUN_TIME( 1.000000 )
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Cover1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  FRope )
+      
+       SCALE_FROM ( 1.000000  0.000000  0.000000 )
+      
+       SCALE_TO ( 1.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope )
+      
+       STATE ( INACTIVE )
       
       )
      
@@ -3032,67 +2714,129 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(RunningManLead2)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RoperCall )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  FRope )
       
-      STATE(INACTIVE)
+       SCALE_FROM ( 1.000000  0.000000  0.000000 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
+       SCALE_TO ( 1.000000  1.000000  0.000000 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 0.500000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     CALL_ANIMATION(
-       NAME(RunningMan2)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Frope3 )
+      
+       TRANSLATE_FROM ( 80  240  0 )
+      
+       TRANSLATE_TO ( 80  370  0 )
+      
+       RUN_TIME ( 1.000000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENURMan0)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Cover1 )
       
-      TRANSLATE_FROM( 80  0.000000  370  0.000000  0  0.000000 )
+       STATE ( ACTIVE )
       
-      TRANSLATE_TO( -30  -nan  370  0.000000  0  0.000000 )
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope3 )
       
-      RUN_TIME( 1.000000 )
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Cover1 )
+      
+       TRANSLATE_FROM ( 80  370  0 )
+      
+       TRANSLATE_TO ( 103  370  0 )
+      
+       RUN_TIME ( 1.000000 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( drop_roper_loop )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( drop_roper_loop )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Drop1 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      CALL_ANIMATION (
+        NAME ( Drop2 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      CALL_ANIMATION (
+        NAME ( Drop3 )
+      
+      )
+     
+      WAIT ( 2 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -3100,278 +2844,39 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(RunningMan1)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Drop1 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope1 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Frope1 )
       
-      STATE(INACTIVE)
+       TRANSLATE_FROM ( 80  240  0 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
+       TRANSLATE_TO ( 80  370  0 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 1.000000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope1 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( RunningManLead )
       
       )
      
@@ -3379,278 +2884,773 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(RunningMan2)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Drop2 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope2 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Frope2 )
       
-      STATE(INACTIVE)
+       TRANSLATE_FROM ( 80  240  0 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
+       TRANSLATE_TO ( 80  370  0 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 1.000000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
+      CALL_ANIMATION (
+        NAME ( RunningManLead2 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Drop3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope3 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Frope3 )
       
-      STATE(INACTIVE)
+       TRANSLATE_FROM ( 80  240  0 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
+       TRANSLATE_TO ( 80  370  0 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 1.000000 )
       
       )
      
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Frope3 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
+      CALL_ANIMATION (
+        NAME ( RunningManLead )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RunningManLead )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
-      
-      STATE(INACTIVE)
+      CALL_ANIMATION (
+        NAME ( RunningMan1 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  RMan0 )
       
-      STATE(ACTIVE)
+       TRANSLATE_FROM ( 80  370  0 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
+       TRANSLATE_TO ( -30  370  0 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 1.000000 )
       
       )
      
-     WAIT( 0.100000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan1)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RunningManLead2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan3)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan4)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan5)
-      
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENURMan6)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
       
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.100000 )
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( RunningMan2 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  RMan0 )
+      
+       TRANSLATE_FROM ( 80  370  0 )
+      
+       TRANSLATE_TO ( -30  370  0 )
+      
+       RUN_TIME ( 1.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RunningMan1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RunningMan2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RMan6 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      

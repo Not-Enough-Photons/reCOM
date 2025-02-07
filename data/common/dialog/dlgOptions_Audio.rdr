@@ -1,396 +1,396 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/ui2d)
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
   
-  BACKGROUND(
-    TYPE(IMAGE)
+   BACKGROUND (
+     TYPE ( IMAGE )
    
-   FILENAME(multplay_back.tif)
+    FILENAME ( multplay_back.tif )
    
    )
   
-  FONT(myriad)
+   FONT ( myriad )
   
-  SCRIPT_LIBRARY(dlgOptions_Audio.rdr)
+   SCRIPT_LIBRARY ( dlgOptions_Audio.rdr )
   
-  OBJECTS((
-     NAME(letterbar)
+   OBJECTS ((
+      NAME ( letterbar )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 0  0.000000 )
+     YPOS ( 0 )
     
-    SPEC(
-      FILENAME(blank_top_bar.tif)
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
      
-     XSIZE( 640  0.000000 )
+      XSIZE ( 640 )
      
-     YSIZE( 64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(bar_title)
-    
-    TYPE(TEXT)
-    
-    XPOS( 20  0.000000 )
-    
-    YPOS( 50  0.000000 )
-    
-    SPEC(
-      FONT(Gothic_13)
-     
-     CHILDOF(letterbar)
-     
-     CAPTION("AUDIO OPTIONS")
-     
-     SCALE( 0.950000 )
+      YSIZE ( 64 )
      
      )
     
     )
    
    (
-     NAME(letterbar_bottom)
+      NAME ( bar_title )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 20 )
     
-    YPOS( 384  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      FILENAME(common_bar_bottom.tif)
+     SPEC (
+       FONT ( Gothic_13 )
      
-     SIZE( 640  0.000000  64  0.000000 )
+      CHILDOF ( letterbar )
      
-     )
-    
-    )
-   
-   (
-     NAME(MainWindow)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 15  0.000000 )
-    
-    YPOS( 70  0.000000 )
-    
-    SPEC(
-      XSIZE( 600  0.000000 )
+      CAPTION ( "AUDIO OPTIONS" )
      
-     YSIZE( 300  0.000000 )
-     
-     FILENAME(eq_CharWinInv.tif)
+      SCALE ( 0.950000 )
      
      )
     
     )
    
    (
-     NAME(dogtags)
+      NAME ( letterbar_bottom )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 360  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 320  0.000000 )
+     YPOS ( 384 )
     
-    SPEC(
-      FILENAME(dogtags.tif)
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
      
-     SIZE( 256  0.000000  128  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(InfoWin)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 25  0.000000 )
-    
-    YPOS( 77  0.000000 )
-    
-    SPEC(
-      FILENAME(brown_back_50.tif)
-     
-     SIZE( 580  0.000000  18  0.000000 )
+      SIZE ( 640  64 )
      
      )
     
     )
    
    (
-     NAME(instText)
+      NAME ( MainWindow )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 320  0.000000 )
+     XPOS ( 15 )
     
-    YPOS( 90  0.000000 )
+     YPOS ( 70 )
     
-    SPEC(
-      HCENTERED()
+     SPEC (
+       XSIZE ( 600 )
      
-     COLOR( 255.000000  104.000000  51.000000 )
+      YSIZE ( 300 )
      
-     SCALE( 0.400000 )
-     
-     CAPTION("CHANGE MUSIC VOLUME")
+      FILENAME ( eq_CharWinInv.tif )
      
      )
     
     )
    
    (
-     NAME(TabDivHorTop)
+      NAME ( dogtags )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 22  0.000000 )
+     XPOS ( 360 )
     
-    YPOS( 90  0.000000 )
+     YPOS ( 320 )
     
-    SPEC(
-      XSIZE( 590  0.000000 )
+     SPEC (
+       FILENAME ( dogtags.tif )
      
-     YSIZE( 10  0.000000 )
-     
-     FILENAME(Tab_HorGold_Divider.tif)
+      SIZE ( 256  128 )
      
      )
     
     )
    
-   )
-  
-  ANIMATIONS((
-     EVENT(ONSTART)
+   (
+      NAME ( InfoWin )
     
-    ANIMATION(OnMusicAct)
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 77 )
+    
+     SPEC (
+       FILENAME ( brown_back_50.tif )
+     
+      SIZE ( 580  18 )
+     
+     )
     
     )
    
    (
-     EVENT(ONSTART)
+      NAME ( instText )
     
-    ANIMATION(bottom_bar_slide_up)
+     TYPE ( TEXT )
     
-    )
-   
-   (
-     BUTTON(TRIANGLE)
+     XPOS ( 320 )
     
-    ANIMATION(goto_menu)
+     YPOS ( 90 )
     
-    ARGUMENT(dlgOptions_Menu.rdr)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Initialize_Options_Stuff)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(letterbar_slide_down)
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "CHANGE MUSIC VOLUME" )
+     
+     )
     
     )
    
    (
-     EVENT(MEMCARD_ERROR)
+      NAME ( TabDivHorTop )
     
-    ANIMATION(handle_memcard_error)
+     TYPE ( IMAGE )
+    
+     XPOS ( 22 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       XSIZE ( 590 )
+     
+      YSIZE ( 10 )
+     
+      FILENAME ( Tab_HorGold_Divider.tif )
+     
+     )
     
     )
    
    )
   
-  CONTROLS((
-     NAME(SPassBack)
+   ANIMATIONS ((
+      EVENT ( ONSTART )
     
-    TYPE(IMAGE)
+     ANIMATION ( OnMusicAct )
     
-    XPOS( 30  0.000000 )
+    )
+   
+   (
+      EVENT ( ONSTART )
     
-    YPOS( 120  0.000000 )
+     ANIMATION ( bottom_bar_slide_up )
     
-    SPEC(
-      XSIZE( 185  0.000000 )
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgOptions_Menu.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Initialize_Options_Stuff )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( MEMCARD_ERROR )
+    
+     ANIMATION ( handle_memcard_error )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( SPassBack )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 120 )
+    
+     SPEC (
+       XSIZE ( 185 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(brown_back.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(SPassBack2)
+      NAME ( SPassBack2 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 150  0.000000 )
+     YPOS ( 150 )
     
-    SPEC(
-      XSIZE( 185  0.000000 )
+     SPEC (
+       XSIZE ( 185 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(brown_back.tif)
-     
-     )
-    
-    )
-   
-   (
-     NAME(SPassBack3)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    SPEC(
-      XSIZE( 185  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     FILENAME(brown_back.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(musicslider)
+      NAME ( SPassBack3 )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 215  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 125  0.000000 )
+     YPOS ( 180 )
     
-    SPEC(
-      XSIZE( 340  0.000000 )
+     SPEC (
+       XSIZE ( 185 )
      
-     YSIZE( 16  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(op_slider.tif)
-     
-     )
-    
-    )
-   
-   (
-     NAME(soundslider)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 215  0.000000 )
-    
-    YPOS( 155  0.000000 )
-    
-    SPEC(
-      XSIZE( 340  0.000000 )
-     
-     YSIZE( 16  0.000000 )
-     
-     FILENAME(op_slider.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(dialogslider)
+      NAME ( musicslider )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 215  0.000000 )
+     XPOS ( 215 )
     
-    YPOS( 185  0.000000 )
+     YPOS ( 125 )
     
-    SPEC(
-      XSIZE( 340  0.000000 )
+     SPEC (
+       XSIZE ( 340 )
      
-     YSIZE( 16  0.000000 )
+      YSIZE ( 16 )
      
-     FILENAME(op_slider.tif)
+      FILENAME ( op_slider.tif )
      
      )
     
     )
    
    (
-     NAME(music_bar)
+      NAME ( soundslider )
     
-    XPOS( 225  0.000000 )
+     TYPE ( IMAGE )
     
-    YPOS( 120  0.000000 )
+     XPOS ( 215 )
     
-    TYPE(SLIDERBAR)
+     YPOS ( 155 )
     
-    SPEC(
-      UIVAR(
-       NAME(MUSIC_VOLUME)
+     SPEC (
+       XSIZE ( 340 )
+     
+      YSIZE ( 16 )
+     
+      FILENAME ( op_slider.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dialogslider )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 215 )
+    
+     YPOS ( 185 )
+    
+     SPEC (
+       XSIZE ( 340 )
+     
+      YSIZE ( 16 )
+     
+      FILENAME ( op_slider.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( music_bar )
+    
+     XPOS ( 225 )
+    
+     YPOS ( 120 )
+    
+     TYPE ( SLIDERBAR )
+    
+     SPEC (
+       UIVAR (
+        NAME ( MUSIC_VOLUME )
       
-      VALUE( 0.500000 )
+       VALUE ( 0.500000 )
       
-      LONGEVITY(PERSISTENT)
+       LONGEVITY ( PERSISTENT )
       
       )
      
-     XOFFSET( -185  -nan )
+      XOFFSET ( -185 )
      
-     YOFFSET( 20  0.000000 )
+      YOFFSET ( 20 )
      
-     XSIZE( 290  0.000000 )
+      XSIZE ( 290 )
      
-     YSIZE( 8  0.000000 )
+      YSIZE ( 8 )
      
-     PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+      PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
      
-     NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+      NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
      
-     ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+      ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
      
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
       
       )
      
-     KNOB_TEXTURE(op_knob.tif)
+      KNOB_TEXTURE ( op_knob.tif )
      
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
+      KNOB_SIZE ( 30  30 )
      
-     NUM_INTERVALS( 10  0.000000 )
+      NUM_INTERVALS ( 10 )
      
-     CAPTION("MUSIC VOLUME")
+      CAPTION ( "MUSIC VOLUME" )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(OnMusicAct)
+        ANIMATION ( OnMusicAct )
        
        )
       
@@ -401,118 +401,57 @@
     )
    
    (
-     NAME(sound_bar)
+      NAME ( sound_bar )
     
-    XPOS( 225  0.000000 )
+     XPOS ( 225 )
     
-    YPOS( 150  0.000000 )
+     YPOS ( 150 )
     
-    TYPE(SLIDERBAR)
+     TYPE ( SLIDERBAR )
     
-    SPEC(
-      UIVAR(
-       NAME(SOUND_VOLUME)
+     SPEC (
+       UIVAR (
+        NAME ( SOUND_VOLUME )
       
-      VALUE( 1.000000 )
+       VALUE ( 1.000000 )
       
-      LONGEVITY(PERSISTENT)
-      
-      )
-     
-     XSIZE( 290  0.000000 )
-     
-     YSIZE( 8  0.000000 )
-     
-     PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-     
-     NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-     
-     ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-     
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       LONGEVITY ( PERSISTENT )
       
       )
      
-     KNOB_TEXTURE(op_knob.tif)
+      XSIZE ( 290 )
      
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
+      YSIZE ( 8 )
      
-     NUM_INTERVALS( 10  0.000000 )
+      PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
      
-     CAPTION("SOUND VOLUME")
+      NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
      
-     SCALE( 0.400000 )
+      ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
      
-     XOFFSET( -185  -nan )
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
+      
+      )
      
-     YOFFSET( 20  0.000000 )
+      KNOB_TEXTURE ( op_knob.tif )
      
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
+      KNOB_SIZE ( 30  30 )
+     
+      NUM_INTERVALS ( 10 )
+     
+      CAPTION ( "SOUND VOLUME" )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( -185 )
+     
+      YOFFSET ( 20 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(OnSoundAct)
-       
-       )
-      
-      )
-     
-     )
-    
-    )
-   
-   (
-     NAME(dialog_bar)
-    
-    XPOS( 225  0.000000 )
-    
-    YPOS( 180  0.000000 )
-    
-    TYPE(SLIDERBAR)
-    
-    SPEC(
-      UIVAR(
-       NAME(DIALOG_VOLUME)
-      
-      VALUE( 1.000000 )
-      
-      LONGEVITY(PERSISTENT)
-      
-      )
-     
-     XSIZE( 290  0.000000 )
-     
-     YSIZE( 8  0.000000 )
-     
-     PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-     
-     NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-     
-     ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-     
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      )
-     
-     KNOB_TEXTURE(op_knob.tif)
-     
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
-     
-     NUM_INTERVALS( 10  0.000000 )
-     
-     CAPTION("DIALOG VOLUME")
-     
-     SCALE( 0.400000 )
-     
-     XOFFSET( -185  -nan )
-     
-     YOFFSET( 20  0.000000 )
-     
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
-       
-       ANIMATION(OnDialogAct)
+        ANIMATION ( OnSoundAct )
        
        )
       
@@ -523,176 +462,237 @@
     )
    
    (
-     NAME(mono_stereo)
+      NAME ( dialog_bar )
     
-    TYPE(RADIOSTRIP)
+     XPOS ( 225 )
     
-    XPOS( 30  0.000000 )
+     YPOS ( 180 )
     
-    YPOS( 210  0.000000 )
+     TYPE ( SLIDERBAR )
     
-    SPEC(
-      XSIZE( 185  0.000000 )
-     
-     YSIZE( 30  0.000000 )
-     
-     CAPTION(SOUND)
-     
-     SCALE( 0.400000 )
-     
-     XOFFSET( 10  0.000000 )
-     
-     YOFFSET( 20  0.000000 )
-     
-     PRESSED(
-       IMAGE(brown_back.tif)
+     SPEC (
+       UIVAR (
+        NAME ( DIALOG_VOLUME )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       VALUE ( 1.000000 )
+      
+       LONGEVITY ( PERSISTENT )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
-      
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+      XSIZE ( 290 )
+     
+      YSIZE ( 8 )
+     
+      PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+     
+      NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+     
+      ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+     
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
-      
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+      KNOB_TEXTURE ( op_knob.tif )
+     
+      KNOB_SIZE ( 30  30 )
+     
+      NUM_INTERVALS ( 10 )
+     
+      CAPTION ( "DIALOG VOLUME" )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( -185 )
+     
+      YOFFSET ( 20 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
        
-       TIME( 0.500000 )
+        ANIMATION ( OnDialogAct )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( mono_stereo )
+    
+     TYPE ( RADIOSTRIP )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 210 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 30 )
+     
+      CAPTION ( SOUND )
+     
+      SCALE ( 0.400000 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 20 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     SUBORDINATES((
-        NAME(Stereo)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       XPOS( 200  0.000000 )
+        TIME ( 0.500000 )
        
-       YPOS( 0  0.000000 )
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      SUBORDINATES ((
+         NAME ( Stereo )
        
-       TYPE(CHECKBOX)
+        XPOS ( 200 )
        
-       SPEC(
-         CHILDOF(mono_stereo)
+        YPOS ( 0 )
+       
+        TYPE ( CHECKBOX )
+       
+        SPEC (
+          CHILDOF ( mono_stereo )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(enable_stereo)
+          ANIMATION ( enable_stereo )
          
          )
         
-        CAPTION(STEREO)
+         CAPTION ( STEREO )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(Mono)
+         NAME ( Mono )
        
-       XPOS( 300  0.000000 )
+        XPOS ( 300 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(mono_stereo)
+        SPEC (
+          CHILDOF ( mono_stereo )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(disable_stereo)
+          ANIMATION ( disable_stereo )
          
          )
         
-        CAPTION(MONO)
+         CAPTION ( MONO )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnStereoAct)
+           ANIMATION ( OnStereoAct )
           
           )
          
@@ -709,181 +709,181 @@
     )
    
    (
-     NAME(TeammateResponses)
+      NAME ( TeammateResponses )
     
-    TYPE(RADIOSTRIP)
+     TYPE ( RADIOSTRIP )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 240  0.000000 )
+     YPOS ( 240 )
     
-    SPEC(
-      XSIZE( 185  0.000000 )
+     SPEC (
+       XSIZE ( 185 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     CAPTION("TEAMMATE RESPONSES")
+      CAPTION ( "TEAMMATE RESPONSES" )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 20  0.000000 )
+      YOFFSET ( 20 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     SUBORDINATES((
-        NAME(TRoff)
+      SUBORDINATES ((
+         NAME ( TRoff )
        
-       XPOS( 200  0.000000 )
+        XPOS ( 200 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(TeammateResponses)
+        SPEC (
+          CHILDOF ( TeammateResponses )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(disable_order_response)
-         
-         )
-        
-        CAPTION(OFF)
-        
-        SCALE( 0.400000 )
-        
-        XOFFSET( 35  0.000000 )
-        
-        YOFFSET( 25  0.000000 )
-        
-        PRESSED(op_checkbox.tif)
-        
-        NORMAL(op_checkbox.tif)
-        
-        ACTIVE(op_checkbox.tif)
-        
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-        
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-        
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-        
-        DISABLED(
-          TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+          ANIMATION ( disable_order_response )
          
          )
         
-        XSIZE( 35  0.000000 )
+         CAPTION ( OFF )
         
-        YSIZE( 35  0.000000 )
+         SCALE ( 0.400000 )
+        
+         XOFFSET ( 35 )
+        
+         YOFFSET ( 25 )
+        
+         PRESSED ( op_checkbox.tif )
+        
+         NORMAL ( op_checkbox.tif )
+        
+         ACTIVE ( op_checkbox.tif )
+        
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+        
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+        
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+        
+         DISABLED (
+           TEXT_COLOR ( 50  50  50 )
+         
+         )
+        
+         XSIZE ( 35 )
+        
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(TRon)
+         NAME ( TRon )
        
-       XPOS( 300  0.000000 )
+        XPOS ( 300 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(TeammateResponses)
+        SPEC (
+          CHILDOF ( TeammateResponses )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(enable_order_response)
+          ANIMATION ( enable_order_response )
          
          )
         
-        CAPTION(ON)
+         CAPTION ( ON )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnTresponseAct)
+           ANIMATION ( OnTresponseAct )
           
           )
          
@@ -900,73 +900,73 @@
     )
    
    (
-     NAME(Default)
+      NAME ( Default )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 270  0.000000 )
+     YPOS ( 270 )
     
-    TYPE(BUTTON)
+     TYPE ( BUTTON )
     
-    SPEC(
-      XSIZE( 185  0.000000 )
+     SPEC (
+       XSIZE ( 185 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 22  0.000000 )
+      YOFFSET ( 22 )
      
-     CAPTION("DEFAULT SETTINGS")
+      CAPTION ( "DEFAULT SETTINGS" )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(OnDefAct)
+        ANIMATION ( OnDefAct )
        
        )
       
       (
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
        
-       ANIMATION(do_audio_default)
+        ANIMATION ( do_audio_default )
        
        )
       
@@ -980,22 +980,22 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnMusicAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnMusicAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Change music volume")
+       CAPTION ( "Change music volume" )
       
       )
      
@@ -1003,33 +1003,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnSoundAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSoundAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Change sound effects volume")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnDialogAct)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
-      
-      CAPTION("Change dialog volume")
+       CAPTION ( "Change sound effects volume" )
       
       )
      
@@ -1037,79 +1020,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(handle_memcard_error)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnDialogAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Error loading data, press X to continue.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 96  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.450000 )
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(load_initial_config)
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(save_and_leave)
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(Ensure_MC_Dirs)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
+       CAPTION ( "Change dialog volume" )
       
       )
      
@@ -1117,16 +1037,79 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnStereoAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      CAPTION("Press the X button to toggle sound settings.")
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Error loading data, press X to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 96 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( load_initial_config )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( save_and_leave )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( Ensure_MC_Dirs )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
       
       )
      
@@ -1134,33 +1117,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnTresponseAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnStereoAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Press the X button to toggle teammate responses.")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnDefAct)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
-      
-      CAPTION("Return to default settings.")
+       CAPTION ( "Press the X button to toggle sound settings." )
       
       )
      
@@ -1168,232 +1134,222 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_stereo)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnTresponseAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(STEREO_CONTROLLER= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_stereo)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(STEREO_CONTROLLER= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_order_response)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(ORDER_RESPONSE_CONTROLLER= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_order_response)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(ORDER_RESPONSE_CONTROLLER= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Initialize_Options_Stuff)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(STEREO_CONTROLLER== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to toggle teammate responses." )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUmono_stereo)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnDefAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       CAPTION ( "Return to default settings." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_stereo )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( STEREO_CONTROLLER  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_stereo )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( STEREO_CONTROLLER  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_order_response )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ORDER_RESPONSE_CONTROLLER  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_order_response )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( ORDER_RESPONSE_CONTROLLER  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Initialize_Options_Stuff )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( STEREO_CONTROLLER  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  mono_stereo )
+      
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUmono_stereo)
+      ui::UI_COMMAND (
+        NODE ( MENU  mono_stereo )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(ORDER_RESPONSE_CONTROLLER== 0  0.000000 )
+      IF (
+        VALVE ( ORDER_RESPONSE_CONTROLLER  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUTeammateResponses)
+      ui::UI_COMMAND (
+        NODE ( MENU  TeammateResponses )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUTeammateResponses)
+      ui::UI_COMMAND (
+        NODE ( MENU  TeammateResponses )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(FirstAudio== 0  0.000000 )
+      IF (
+        VALVE ( FirstAudio  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      ARGUMENT(music_bar)
+       ARGUMENT ( music_bar )
       
       )
      
-     VALVE(FirstAudio= 1  0.000000 )
+      VALVE ( FirstAudio  =  1 )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(do_audio_default)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_audio_default )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
      
-     VALVE(STEREO_CONTROLLER= 1  0.000000 )
+      VALVE ( STEREO_CONTROLLER  =  1 )
      
-     VALVE(DIALOG_CONTROLLER= 0  0.000000 )
+      VALVE ( DIALOG_CONTROLLER  =  0 )
      
-     VALVE(ORDER_RESPONSE_CONTROLLER= 1  0.000000 )
+      VALVE ( ORDER_RESPONSE_CONTROLLER  =  1 )
      
-     ui::UI_COMMAND(
-       NODE(MENUmusic_bar)
+      ui::UI_COMMAND (
+        NODE ( MENU  music_bar )
       
-      SETVALUE( 50  0.000000 )
+       SETVALUE ( 50 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUsound_bar)
+      ui::UI_COMMAND (
+        NODE ( MENU  sound_bar )
       
-      SETVALUE( 100  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUdialog_bar)
-      
-      SETVALUE( 100  0.000000 )
+       SETVALUE ( 100 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(Initialize_Options_Stuff)
+      ui::UI_COMMAND (
+        NODE ( MENU  dialog_bar )
       
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(OnDefAct)
-      
-      WAIT_FOR_COMPLETION()
+       SETVALUE ( 100 )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+      CALL_ANIMATION (
+        NAME ( Initialize_Options_Stuff )
       
-      STATE(INACTIVE)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+      CALL_ANIMATION (
+        NAME ( OnDefAct )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       WAIT_FOR_COMPLETION ()
       
       )
      
@@ -1401,36 +1357,80 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

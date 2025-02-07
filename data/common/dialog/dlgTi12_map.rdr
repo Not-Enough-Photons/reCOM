@@ -1,302 +1,302 @@
 ((
-  SCREENS(
-   LIBRARIES(ui/assetlib/ui2dui/assetlib/mm/mm12)
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/mm/mm12 )
   
-  FONT(myriad)
+   FONT ( myriad )
   
-  SCRIPT_LIBRARY(dlgTi12_map.rdr)
+   SCRIPT_LIBRARY ( dlgTi12_map.rdr )
   
-  OBJECTS((
-     NAME(teletype_plate)
+   OBJECTS ((
+      NAME ( teletype_plate )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 190  0.000000 )
+     XPOS ( 190 )
     
-    YPOS( 80  0.000000 )
+     YPOS ( 80 )
     
-    SPEC(
-      FILENAME(common_teletype_Op_plate.tif)
+     SPEC (
+       FILENAME ( common_teletype_Op_plate.tif )
      
-     XSIZE( 436  0.000000 )
+      XSIZE ( 436 )
      
-     YSIZE( 255  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(teletype_text)
-    
-    TYPE(TELETYPE)
-    
-    XPOS( 10  0.000000 )
-    
-    YPOS( 45  0.000000 )
-    
-    SPEC(
-      CHILDOF(teletype_plate)
-     
-     MAXLENGTH( 130  0.000000 )
-     
-     MAXHEIGHT( 200  0.000000 )
-     
-     CAPTION(" ")
-     
-     SCALE( 0.350000 )
-     
-     INTERVAL( 400.000000 )
-     
-     SPACING( 17  0.000000 )
+      YSIZE ( 255 )
      
      )
     
     )
    
    (
-     NAME(Objtext)
+      NAME ( teletype_text )
     
-    TYPE(TEXT)
+     TYPE ( TELETYPE )
     
-    XPOS( 10  0.000000 )
+     XPOS ( 10 )
     
-    YPOS( 25  0.000000 )
+     YPOS ( 45 )
     
-    SPEC(
-      COLOR( 255.000000  204.000000  51.000000 )
+     SPEC (
+       CHILDOF ( teletype_plate )
      
-     CHILDOF(teletype_plate)
+      MAXLENGTH ( 130 )
      
-     CAPTION(OBJECTIVES)
+      MAXHEIGHT ( 200 )
      
-     SCALE( 0.500000 )
+      CAPTION ( " " )
      
-     )
-    
-    )
-   
-   (
-     NAME(triangle)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 35  0.000000 )
-    
-    SPEC(
-      FILENAME(action_triangle.tif)
+      SCALE ( 0.350000 )
      
-     SIZE( 18  0.000000  18  0.000000 )
+      INTERVAL ( 400.000000 )
+     
+      SPACING ( 17 )
      
      )
     
     )
    
    (
-     NAME(TriFieldText)
+      NAME ( Objtext )
     
-    TYPE(TEXT)
+     TYPE ( TEXT )
     
-    XPOS( 25  0.000000 )
+     XPOS ( 10 )
     
-    YPOS( 15  0.000000 )
+     YPOS ( 25 )
     
-    SPEC(
-      CHILDOF(triangle)
+     SPEC (
+       COLOR ( 255.000000  204.000000  51.000000 )
      
-     COLOR( 255.000000  104.000000  51.000000 )
+      CHILDOF ( teletype_plate )
      
-     SCALE( 0.350000 )
+      CAPTION ( OBJECTIVES )
      
-     CAPTION("RETURN TO BRIEFING")
-     
-     )
-    
-    )
-   
-   (
-     NAME(circle)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 30  0.000000 )
-    
-    YPOS( 15  0.000000 )
-    
-    SPEC(
-      FILENAME(action_circle.tif)
-     
-     SIZE( 18  0.000000  18  0.000000 )
+      SCALE ( 0.500000 )
      
      )
     
     )
    
    (
-     NAME(CircleFieldText)
+      NAME ( triangle )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 25  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 15  0.000000 )
+     YPOS ( 35 )
     
-    SPEC(
-      CHILDOF(circle)
+     SPEC (
+       FILENAME ( action_triangle.tif )
      
-     COLOR( 255.000000  104.000000  51.000000 )
-     
-     SCALE( 0.350000 )
-     
-     CAPTION("FOR OBJECTIVES")
+      SIZE ( 18  18 )
      
      )
     
     )
    
    (
-     NAME(L_1)
+      NAME ( TriFieldText )
     
-    TYPE(TEXT)
+     TYPE ( TEXT )
     
-    XPOS( 325  0.000000 )
+     XPOS ( 25 )
     
-    YPOS( 30  0.000000 )
+     YPOS ( 15 )
     
-    SPEC(
-      COLOR( 255.000000  104.000000  51.000000 )
+     SPEC (
+       CHILDOF ( triangle )
      
-     SCALE( 0.350000 )
+      COLOR ( 255.000000  104.000000  51.000000 )
      
-     CAPTION("Press the L1 button to zoom in.")
+      SCALE ( 0.350000 )
      
-     )
-    
-    )
-   
-   (
-     NAME(L_2)
-    
-    TYPE(TEXT)
-    
-    XPOS( 325  0.000000 )
-    
-    YPOS( 50  0.000000 )
-    
-    SPEC(
-      COLOR( 255.000000  104.000000  51.000000 )
-     
-     SCALE( 0.350000 )
-     
-     CAPTION("Press the L2 button to zoom out.")
+      CAPTION ( "RETURN TO BRIEFING" )
      
      )
     
     )
    
    (
-     NAME(teletype_plate_frame)
+      NAME ( circle )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 15  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 10  0.000000 )
+     YPOS ( 15 )
     
-    SPEC(
-      FILENAME(common_teletype_plate.tif)
+     SPEC (
+       FILENAME ( action_circle.tif )
      
-     XSIZE( 620  0.000000 )
-     
-     YSIZE( 420  0.000000 )
+      SIZE ( 18  18 )
      
      )
     
     )
    
    (
-     NAME(arrow_up)
+      NAME ( CircleFieldText )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 295  0.000000 )
+     XPOS ( 25 )
     
-    YPOS( 45  0.000000 )
+     YPOS ( 15 )
     
-    SPEC(
-      FILENAME(arrow_top.tif)
+     SPEC (
+       CHILDOF ( circle )
      
-     XSIZE( 50  0.000000 )
+      COLOR ( 255.000000  104.000000  51.000000 )
      
-     YSIZE( 50  0.000000 )
+      SCALE ( 0.350000 )
      
-     )
-    
-    )
-   
-   (
-     NAME(arrow_dwn)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 345  0.000000 )
-    
-    SPEC(
-      CHILDOF(arrow_up)
-     
-     FILENAME(arrow_botm.tif)
-     
-     XSIZE( 50  0.000000 )
-     
-     YSIZE( 50  0.000000 )
+      CAPTION ( "FOR OBJECTIVES" )
      
      )
     
     )
    
    (
-     NAME(arrow_lft)
+      NAME ( L_1 )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( -290  -nan )
+     XPOS ( 325 )
     
-    YPOS( 185  0.000000 )
+     YPOS ( 30 )
     
-    SPEC(
-      CHILDOF(arrow_up)
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
      
-     FILENAME(arrow_left.tif)
+      SCALE ( 0.350000 )
      
-     XSIZE( 50  0.000000 )
-     
-     YSIZE( 50  0.000000 )
+      CAPTION ( "Press the L1 button to zoom in." )
      
      )
     
     )
    
    (
-     NAME(arrow_rt)
+      NAME ( L_2 )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 295  0.000000 )
+     XPOS ( 325 )
     
-    YPOS( 195  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      CHILDOF(arrow_up)
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
      
-     FILENAME(arrow_right.tif)
+      SCALE ( 0.350000 )
      
-     XSIZE( 50  0.000000 )
+      CAPTION ( "Press the L2 button to zoom out." )
      
-     YSIZE( 50  0.000000 )
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_plate_frame )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 10 )
+    
+     SPEC (
+       FILENAME ( common_teletype_plate.tif )
+     
+      XSIZE ( 620 )
+     
+      YSIZE ( 420 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_up )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 295 )
+    
+     YPOS ( 45 )
+    
+     SPEC (
+       FILENAME ( arrow_top.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_dwn )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 345 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_botm.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_lft )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( -290 )
+    
+     YPOS ( 185 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_left.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_rt )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 295 )
+    
+     YPOS ( 195 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_right.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
      
      )
     
@@ -304,102 +304,102 @@
    
    )
   
-  ANIMATIONS((
-     BUTTON(TRIANGLE)
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
     
-    ANIMATION(UiTriangleBack)
-    
-    )
-   
-   (
-     BUTTON(CIRCLE)
-    
-    ANIMATION(ShowObjectives)
+     ANIMATION ( UiTriangleBack )
     
     )
    
    (
-     EVENT(ONSTART)
+      BUTTON ( CIRCLE )
     
-    ANIMATION(MapScreenSet)
+     ANIMATION ( ShowObjectives )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( MapScreenSet )
     
     )
    
    )
   
-  CONTROLS((
-     NAME(map_alaska_mission1)
+   CONTROLS ((
+      NAME ( map_alaska_mission1 )
     
-    TYPE(MAPCONTROL)
+     TYPE ( MAPCONTROL )
     
-    XPOS( 20  0.000000 )
+     XPOS ( 20 )
     
-    YPOS( 23  0.000000 )
+     YPOS ( 23 )
     
-    SPEC(
-      UPPERLEFT( 20  0.000000  61  0.000000 )
+     SPEC (
+       UPPERLEFT ( 20  61 )
      
-     LOWERRIGHT( 630  0.000000  425  0.000000 )
+      LOWERRIGHT ( 630  425 )
      
-     ELEMENTS((
-        TYPE(IMAGE)
+      ELEMENTS ((
+         TYPE ( IMAGE )
        
-       XOFFSET( 0  0.000000 )
+        XOFFSET ( 0 )
        
-       YOFFSET( 0  0.000000 )
+        YOFFSET ( 0 )
        
-       SPEC(
-         FILENAME(ui_map12_01.tif)
+        SPEC (
+          FILENAME ( ui_map12_01.tif )
         
-        XSIZE( 512  0.000000 )
+         XSIZE ( 512 )
         
-        YSIZE( 512  0.000000 )
-        
-        )
-       
-       )
-      
-      (
-        TYPE(IMAGE)
-       
-       XOFFSET( 512  0.000000 )
-       
-       YOFFSET( 0  0.000000 )
-       
-       SPEC(
-         FILENAME(ui_map12_02.tif)
-        
-        XSIZE( 512  0.000000 )
-        
-        YSIZE( 512  0.000000 )
+         YSIZE ( 512 )
         
         )
        
        )
       
       (
-        TYPE(TEXT)
+         TYPE ( IMAGE )
        
-       XOFFSET( 50  0.000000 )
+        XOFFSET ( 512 )
        
-       YOFFSET( 150  0.000000 )
+        YOFFSET ( 0 )
        
-       SPEC(
-         CAPTION(" ")
+        SPEC (
+          FILENAME ( ui_map12_02.tif )
+        
+         XSIZE ( 512 )
+        
+         YSIZE ( 512 )
         
         )
        
        )
       
       (
-        TYPE(TEXT)
+         TYPE ( TEXT )
        
-       XOFFSET( 537  0.000000 )
+        XOFFSET ( 50 )
        
-       YOFFSET( 625  0.000000 )
+        YOFFSET ( 150 )
        
-       SPEC(
-         CAPTION(" ")
+        SPEC (
+          CAPTION ( " " )
+        
+        )
+       
+       )
+      
+      (
+         TYPE ( TEXT )
+       
+        XOFFSET ( 537 )
+       
+        YOFFSET ( 625 )
+       
+        SPEC (
+          CAPTION ( " " )
         
         )
        
@@ -407,57 +407,57 @@
       
       )
      
-     ANIMATIONS((
-        BUTTON(UP)
+      ANIMATIONS ((
+         BUTTON ( UP )
        
-       STATE(DOWN)
+        STATE ( DOWN )
        
-       ANIMATION(map_up)
-       
-       )
-      
-      (
-        BUTTON(LEFT)
-       
-       STATE(DOWN)
-       
-       ANIMATION(map_left)
+        ANIMATION ( map_up )
        
        )
       
       (
-        BUTTON(DOWN)
+         BUTTON ( LEFT )
        
-       STATE(DOWN)
+        STATE ( DOWN )
        
-       ANIMATION(map_down)
-       
-       )
-      
-      (
-        BUTTON(RIGHT)
-       
-       STATE(DOWN)
-       
-       ANIMATION(map_right)
+        ANIMATION ( map_left )
        
        )
       
       (
-        BUTTON(TRIGGER_L1)
+         BUTTON ( DOWN )
        
-       STATE(DOWN)
+        STATE ( DOWN )
        
-       ANIMATION(map_zoomin)
+        ANIMATION ( map_down )
        
        )
       
       (
-        BUTTON(TRIGGER_L2)
+         BUTTON ( RIGHT )
        
-       STATE(DOWN)
+        STATE ( DOWN )
        
-       ANIMATION(map_zoomout)
+        ANIMATION ( map_right )
+       
+       )
+      
+      (
+         BUTTON ( TRIGGER_L1 )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_zoomin )
+       
+       )
+      
+      (
+         BUTTON ( TRIGGER_L2 )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_zoomout )
        
        )
       
@@ -469,33 +469,33 @@
    
    )
   
-  MODELS()
+   MODELS ()
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MapScreenSet)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MapScreenSet )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(CameFromMap= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromMap  =  1 )
      
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_plate)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
@@ -503,111 +503,74 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(UiTriangleBack)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiTriangleBack )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(UiTriangleBack== 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( UiTriangleBack  ==  1 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(CloseObjectives)
+      CALL_ANIMATION (
+        NAME ( CloseObjectives )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUTriFieldText)
+      ui::UI_COMMAND (
+        NODE ( MENU  TriFieldText )
       
-      CAPTION("RETURN TO BRIEFING")
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlg_Thai_mission3.rdr)
+       CAPTION ( "RETURN TO BRIEFING" )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_Thai_mission3.rdr )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(teletype_plate_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_plate_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(UiTriangleBack= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( UiTriangleBack  =  1 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_plate)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUarrow_rt)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_rt )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUteletype_plate)
-      
-      TRANSLATE_FROM( 645.000000  75.000000  0.000000 )
-      
-      TRANSLATE_TO( 375.000000  75.000000  0.000000 )
-      
-      RUN_TIME( 0.400000 )
+       STATE ( INACTIVE )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(teletype_plate_slide_back)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(UiTriangleBack= 0  0.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_plate)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  teletype_plate )
       
-      STATE(ACTIVE)
+       TRANSLATE_FROM ( 645.000000  75.000000  0.000000 )
       
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUteletype_plate)
+       TRANSLATE_TO ( 375.000000  75.000000  0.000000 )
       
-      TRANSLATE_FROM( 375.000000  75.000000  0.000000 )
-      
-      TRANSLATE_TO( 645.000000  75.000000  0.000000 )
-      
-      RUN_TIME( 0.400000 )
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_plate)
-      
-      STATE(INACTIVE)
+       RUN_TIME ( 0.400000 )
       
       )
      
@@ -615,37 +578,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(CloseObjectives)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_plate_slide_back )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(teletype_plate_slide_back)
+     SEQUENCE_DEFINITION (
+       VALVE ( UiTriangleBack  =  0 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUarrow_rt)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  teletype_plate )
       
-      STATE(ACTIVE)
+       TRANSLATE_FROM ( 375.000000  75.000000  0.000000 )
       
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_text)
+       TRANSLATE_TO ( 645.000000  75.000000  0.000000 )
       
-      STATE(INACTIVE)
+       RUN_TIME ( 0.400000 )
       
       )
      
-     WAIT( 0.200000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
       
-      CAPTION(" ")
+       STATE ( INACTIVE )
       
       )
      
@@ -653,44 +615,37 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ShowObjectives)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CloseObjectives )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(teletype_plate_slide)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( teletype_plate_slide_back )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUarrow_rt)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_rt )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUTriFieldText)
-      
-      CAPTION("TO CLOSE OBJECTIVES")
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUteletype_text)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
       
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
       
-      CAPTION("PLACEHOLDER! SPECIFIC OBJECTIVES: 1. SECURE THE AREA 2. TAKE THONGKON CAPTIVE 3. GATHER INTEL 4. RETRIEVE THE BIOCHEMICAL AGENT. LOOK FOR ESCAPE ROUTES AND BOATS AND BE WARY OF THE JUNGLE.")
+       CAPTION ( " " )
       
       )
      
@@ -698,23 +653,68 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(map_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ShowObjectives )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUmap_alaska_mission1)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( teletype_plate_slide )
       
-      PAN(
-        DIRECTION(UP)
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_rt )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TriFieldText )
+      
+       CAPTION ( "TO CLOSE OBJECTIVES" )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "PLACEHOLDER! SPECIFIC OBJECTIVES: 1. SECURE THE AREA 2. TAKE THONGKON CAPTIVE 3. GATHER INTEL 4. RETRIEVE THE BIOCHEMICAL AGENT. LOOK FOR ESCAPE ROUTES AND BOATS AND BE WARY OF THE JUNGLE." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       PAN (
+         DIRECTION ( UP )
        
-       SPEED( 30  0.000000 )
+        SPEED ( 30 )
        
-       ACCEL( 10  0.000000 )
+        ACCEL ( 10 )
        
-       LIMIT( 1000  0.000000 )
+        LIMIT ( 1000 )
        
        )
       
@@ -724,23 +724,23 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(map_left)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_left )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUmap_alaska_mission1)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
       
-      PAN(
-        DIRECTION(LEFT)
+       PAN (
+         DIRECTION ( LEFT )
        
-       SPEED( 30  0.000000 )
+        SPEED ( 30 )
        
-       ACCEL( 10  0.000000 )
+        ACCEL ( 10 )
        
-       LIMIT( 1000  0.000000 )
+        LIMIT ( 1000 )
        
        )
       
@@ -750,23 +750,23 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(map_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUmap_alaska_mission1)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
       
-      PAN(
-        DIRECTION(DOWN)
+       PAN (
+         DIRECTION ( DOWN )
        
-       SPEED( 30  0.000000 )
+        SPEED ( 30 )
        
-       ACCEL( 10  0.000000 )
+        ACCEL ( 10 )
        
-       LIMIT( 1000  0.000000 )
+        LIMIT ( 1000 )
        
        )
       
@@ -776,23 +776,23 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(map_right)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_right )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUmap_alaska_mission1)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
       
-      PAN(
-        DIRECTION(RIGHT)
+       PAN (
+         DIRECTION ( RIGHT )
        
-       SPEED( 30  0.000000 )
+        SPEED ( 30 )
        
-       ACCEL( 10  0.000000 )
+        ACCEL ( 10 )
        
-       LIMIT( 1000  0.000000 )
+        LIMIT ( 1000 )
        
        )
       
@@ -802,16 +802,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(map_zoomin)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_zoomin )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUmap_alaska_mission1)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
       
-      ZOOM_IN()
+       ZOOM_IN ()
       
       )
      
@@ -819,16 +819,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(map_zoomout)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_zoomout )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUmap_alaska_mission1)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
       
-      ZOOM_OUT()
+       ZOOM_OUT ()
       
       )
      

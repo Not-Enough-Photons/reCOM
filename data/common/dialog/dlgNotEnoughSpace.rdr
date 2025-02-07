@@ -1,22 +1,22 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(uianim.rdr)
+    SCRIPT_LIBRARY ( uianim.rdr )
    
-   OBJECTS((
-      TYPE(WRAPPEDTEXT)
+    OBJECTS ((
+       TYPE ( WRAPPEDTEXT )
      
-     XPOS( 50  0.000000 )
+      XPOS ( 50 )
      
-     YPOS( 50  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       CAPTION("to save the game at least x kb is required. start anyway")
+      SPEC (
+        CAPTION ( "to save the game at least x kb is required. start anyway" )
       
-      WIDTH( 500  0.000000 )
+       WIDTH ( 500 )
       
       )
      
@@ -24,30 +24,30 @@
     
     )
    
-   CONTROLS((
-      XPOS( 30  0.000000 )
+    CONTROLS ((
+       XPOS ( 30 )
      
-     YPOS( 360.269989 )
+      YPOS ( 360.269989 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 64  0.000000 )
+       YSIZE ( 64 )
       
-      ACTIVE(A_common_highlight.tif)
+       ACTIVE ( A_common_highlight.tif )
       
-      PRESSED(A_common_highlight.tif)
+       PRESSED ( A_common_highlight.tif )
       
-      CAPTION(yes)
+       CAPTION ( yes )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgMenu.rdr)
+         ARGUMENT ( dlgMenu.rdr )
         
         )
        

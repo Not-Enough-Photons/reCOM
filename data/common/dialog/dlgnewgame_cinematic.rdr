@@ -1,35 +1,35 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(MPEG)
+    BACKGROUND (
+      TYPE ( MPEG )
     
-    FILENAME(run/movies/alaska/0100.pss)
+     FILENAME ( run/movies/alaska/0100.pss )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(uianim.rdr)
+    SCRIPT_LIBRARY ( uianim.rdr )
    
-   OBJECTS()
+    OBJECTS ()
    
-   ANIMATIONS((
-      EVENT(ONMPEGEND)
+    ANIMATIONS ((
+       EVENT ( ONMPEGEND )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(dlgMISSIONSELECTION.rdr)
+      ARGUMENT ( dlgMISSIONSELECTION.rdr )
      
      )
     
     (
-      BUTTON(CROSS)
+       BUTTON ( CROSS )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(dlgMISSIONSELECTION.rdr)
+      ARGUMENT ( dlgMISSIONSELECTION.rdr )
      
      )
     

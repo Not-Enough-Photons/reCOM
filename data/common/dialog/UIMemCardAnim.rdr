@@ -1,57 +1,57 @@
 ((
-  ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(check_memcard)
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_memcard )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(MC_Init)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( MC_Init )
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
        )
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgFormatMemCard.rdr)
-      
-      )
-     
-     ENDIF()
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgInsertMemCard.rdr)
+       ARGUMENT ( dlgFormatMemCard.rdr )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgInsertMemCard.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
@@ -59,241 +59,241 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(load_initial_config)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( load_initial_config )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(memcard_have_loaded_config== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( memcard_have_loaded_config  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Init)
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
        )
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Loading preferences from memory card (PS2). Do not remove memory card (PS2).")
+       CAPTION ( "Loading preferences from memory card (PS2). Do not remove memory card (PS2)." )
       
-      PROTECTED()
+       PROTECTED ()
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  275.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 96  0.000000 )
+       HEIGHT ( 96 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.450000 )
-      
-      )
-     
-     WAIT( 2.000000 )
-     
-     CALL_ANIMATION(
-       NAME(Ensure_MC_Dirs_Fast)
-      
-      WAIT_FOR_COMPLETION()
+       SCALE ( 0.450000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(LoadConfig)
+      WAIT ( 2.000000 )
+     
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs_Fast )
       
-      ARGUMENT(BASCUS-97859SOCOM)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     ELSE()
-     
-     VALVE(AcceptNoFormat= 0  0.000000 )
-     
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      ui::UI_COMMAND (
+        TYPE ( LoadConfig )
+      
+       ARGUMENT ( BASCUS-97859SOCOM )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.700000 )
+      ELSE ()
+     
+      VALVE ( AcceptNoFormat  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      CAPTION("No SOCOM: U.S. NAVY SEALS data in memory card (PS2). Press the X button to continue.")
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      BACKGROUND(popupOp.tif)
+       CAPTION ( "No SOCOM: U.S. NAVY SEALS data in memory card (PS2). Press the X button to continue." )
       
-      POSITION( 170.000000  275.000000 )
+       BACKGROUND ( popupOp.tif )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      WIDTH( 300  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      HEIGHT( 110  0.000000 )
+       WIDTH ( 300 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 110 )
       
-      YOFFSET( 35  0.000000 )
+       XOFFSET ( 20 )
       
-      SPACING( 20  0.000000 )
+       YOFFSET ( 35 )
       
-      SCALE( 0.400000 )
+       SPACING ( 20 )
       
-      YESNO(
-        VALVE(AcceptNoFormat)
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AcceptNoFormat )
        
        )
       
       )
      
-     WHILE(
-       VALVE(AcceptNoFormat== 0  0.000000 )
+      WHILE (
+        VALVE ( AcceptNoFormat  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ENDIF()
+      ENDIF ()
      
-     ELSE()
+      ELSE ()
      
-     VALVE(AcceptNoFormat= 0  0.000000 )
+      VALVE ( AcceptNoFormat  =  0 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.700000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+       OPACITY_TO ( 0.700000 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      CAPTION("Memory card (PS2) is not inserted. At least 300 KB is needed to save this game data. Press the X button to continue.")
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      BACKGROUND(popupOp.tif)
+       CAPTION ( "Memory card (PS2) is not inserted. At least 300 KB is needed to save this game data. Press the X button to continue." )
       
-      POSITION( 170.000000  275.000000 )
+       BACKGROUND ( popupOp.tif )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      WIDTH( 300  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      HEIGHT( 110  0.000000 )
+       WIDTH ( 300 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 110 )
       
-      YOFFSET( 35  0.000000 )
+       XOFFSET ( 20 )
       
-      SPACING( 20  0.000000 )
+       YOFFSET ( 35 )
       
-      SCALE( 0.400000 )
+       SPACING ( 20 )
       
-      YESNO(
-        VALVE(AcceptNoFormat)
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AcceptNoFormat )
        
        )
       
       )
      
-     WHILE(
-       VALVE(AcceptNoFormat== 0  0.000000 )
+      WHILE (
+        VALVE ( AcceptNoFormat  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ENDIF()
+      ENDIF ()
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(KILLPOPUP)
+      ui::UI_COMMAND (
+        TYPE ( KILLPOPUP )
       
       )
      
-     VALVE(memcard_have_loaded_config= 1  0.000000 )
+      VALVE ( memcard_have_loaded_config  =  1 )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.700000 )
+       OPACITY_FROM ( 0.700000 )
       
-      OPACITY_TO( 0.000000 )
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     ui::UI_COMMAND(
-       TYPE(StoreOptions)
+      ui::UI_COMMAND (
+        TYPE ( StoreOptions )
       
       )
      
@@ -301,46 +301,46 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(LoadGameOnStart)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LoadGameOnStart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(MC_Init)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( MC_Init )
       
       )
      
-     IF(
-       UI::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      IF (
+        UI::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
        )
       
-      &&ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
        
        )
       
       )
      
-     CALL_ANIMATION(
-       NAME(Ensure_MC_Dirs_Fast)
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs_Fast )
       
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(ListSavedGames)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( ListSavedGames )
+      
+      )
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
@@ -348,253 +348,253 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Ensure_MC_Dirs)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Ensure_MC_Dirs )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       ui::UI_COMMAND(
-        TYPE(MC_Exists)
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( MC_Exists )
        
-       ARGUMENT(..)
+        ARGUMENT ( .. )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChDir)
+      ui::UI_COMMAND (
+        TYPE ( MC_ChDir )
       
-      ARGUMENT(..)
+       ARGUMENT ( .. )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(MC_Exists)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( MC_Exists )
        
-       ARGUMENT(BASCUS-97859SOCOM)
+        ARGUMENT ( BASCUS-97859SOCOM )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChDir)
+      ui::UI_COMMAND (
+        TYPE ( MC_ChDir )
       
-      ARGUMENT(BASCUS-97859SOCOM)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(MC_MkDir)
-      
-      ARGUMENT(BASCUS-97859SOCOM)
+       ARGUMENT ( BASCUS-97859SOCOM )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChDir)
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_MkDir )
       
-      ARGUMENT(BASCUS-97859SOCOM)
+       ARGUMENT ( BASCUS-97859SOCOM )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_CreateIconFiles)
+      ui::UI_COMMAND (
+        TYPE ( MC_ChDir )
+      
+       ARGUMENT ( BASCUS-97859SOCOM )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SaveConfig)
-      
-      ARGUMENT(BASCUS-97859SOCOM)
+      ui::UI_COMMAND (
+        TYPE ( MC_CreateIconFiles )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        TYPE ( SaveConfig )
+      
+       ARGUMENT ( BASCUS-97859SOCOM )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Ensure_MC_Dirs_Fast)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Ensure_MC_Dirs_Fast )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       ui::UI_COMMAND(
-        TYPE(MC_Exists)
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( MC_Exists )
        
-       ARGUMENT(..)
+        ARGUMENT ( .. )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChDir)
+      ui::UI_COMMAND (
+        TYPE ( MC_ChDir )
       
-      ARGUMENT(..)
+       ARGUMENT ( .. )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(MC_Exists)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( MC_Exists )
        
-       ARGUMENT(BASCUS-97859SOCOM)
+        ARGUMENT ( BASCUS-97859SOCOM )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChDir)
+      ui::UI_COMMAND (
+        TYPE ( MC_ChDir )
       
-      ARGUMENT(BASCUS-97859SOCOM)
+       ARGUMENT ( BASCUS-97859SOCOM )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ExitOnSaveGame)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ExitOnSaveGame )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      STOP_ANIMATION(
-       NAME(menu_fade_up)
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.700000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Init)
+       OPACITY_TO ( 0.700000 )
       
       )
      
-     IF(
-       UI::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        UI::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
        )
       
-      &&ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
-       
-       )
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsSpaceForSaveGameFile)
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgSaveGame.rdr)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     VALVE(SitHere= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Insufficient space on memory card (PS2).")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(SitHere)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsSpaceForSaveGameFile )
        
-       YES(
-         CAPTION(Continue)
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgSaveGame.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      VALVE ( SitHere  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Insufficient space on memory card (PS2)." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SitHere )
+       
+        YES (
+          CAPTION ( Continue )
         
-        POS( 50  0.000000  65  0.000000 )
+         POS ( 50  65 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
@@ -602,73 +602,73 @@
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.700000 )
+       OPACITY_FROM ( 0.700000 )
       
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     WHILE(
-       VALVE(SitHere== 0  0.000000 )
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     END_WHILE()
-     
-     ENDIF()
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      WHILE (
+        VALVE ( SitHere  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("No memory card (PS2)in slot 1, or card not formatted. Press the X button to continue")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
+      END_WHILE ()
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ENDIF()
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      RUN_TIME( 0.050000 )
+       CAPTION ( "No memory card (PS2)in slot 1, or card not formatted. Press the X button to continue" )
       
-      OPACITY_FROM( 0.700000 )
+       BACKGROUND ( popupOp.tif )
       
-      OPACITY_TO( 0.000000 )
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ENDIF ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
@@ -676,263 +676,137 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(save_and_leave)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( save_and_leave )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      STOP_ANIMATION(
-       NAME(menu_fade_up)
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.700000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(StoreOptions)
+       OPACITY_TO ( 0.700000 )
       
       )
      
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( StoreOptions )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      CAPTION("Would you like to save to the memory card (PS2)?")
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      BACKGROUND(popupOp.tif)
+       CAPTION ( "Would you like to save to the memory card (PS2)?" )
       
-      POSITION( 170.000000  200.000000 )
+       BACKGROUND ( popupOp.tif )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       POSITION ( 170.000000  200.000000 )
       
-      WIDTH( 300  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      HEIGHT( 100  0.000000 )
+       WIDTH ( 300 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 100 )
       
-      YOFFSET( 35  0.000000 )
+       XOFFSET ( 20 )
       
-      SPACING( 20  0.000000 )
+       YOFFSET ( 35 )
       
-      SCALE( 0.400000 )
+       SPACING ( 20 )
       
-      CANCELLABLE()
+       SCALE ( 0.400000 )
       
-      YESNO(
-        VALVE(AreYouSure)
+       CANCELLABLE ()
+      
+       YESNO (
+         VALVE ( AreYouSure )
        
-       YES(
-         CAPTION(Yes)
+        YES (
+          CAPTION ( Yes )
         
-        POS( 50  0.000000  65  0.000000 )
+         POS ( 50  65 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
-       NO(
-         CAPTION(No)
+        NO (
+          CAPTION ( No )
         
-        POS( 190  0.000000  65  0.000000 )
+         POS ( 190  65 )
         
-        TEXTOFFSET( 15  0.000000  18  0.000000 )
+         TEXTOFFSET ( 15  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.400000 )
-        
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     IF(
-       VALVE(AreYouSure!= 66  0.000000 )
-      
-      )
-     
-     IF(
-       VALVE(AreYouSure!= 1  0.000000 )
-      
-      )
-     
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Unsaved data can be lost. Are you sure you do not wish to save?")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(AreYouSure)
-       
-       YES(
-         CAPTION(Yes)
-        
-        POS( 50  0.000000  65  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
-        
-        WIDTH( 50  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         NORMAL (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
-        SCALE( 0.400000 )
-        
-        )
-       
-       NO(
-         CAPTION(No)
-        
-        POS( 190  0.000000  65  0.000000 )
-        
-        TEXTOFFSET( 15  0.000000  18  0.000000 )
-        
-        WIDTH( 50  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
         )
        
@@ -940,194 +814,125 @@
       
       )
      
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(AreYouSure!= 1  0.000000 )
+      IF (
+        VALVE ( AreYouSure  !=  66 )
       
       )
      
-     VALVE(AreYouSure= 1  0.000000 )
-     
-     ELSE()
-     
-     VALVE(AreYouSure= 2  0.000000 )
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
+      IF (
+        VALVE ( AreYouSure  !=  1 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Saving preferences to the memory card (PS2). Do not remove the memory card (PS2)")
+       CAPTION ( "Unsaved data can be lost. Are you sure you do not wish to save?" )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  285.000000 )
+       POSITION ( 170.000000  200.000000 )
       
-      PROTECTED()
+       TEXT_COLOR ( 255  204  51 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       WIDTH ( 300 )
       
-      WIDTH( 300  0.000000 )
+       HEIGHT ( 100 )
       
-      HEIGHT( 100  0.000000 )
+       XOFFSET ( 20 )
       
-      XOFFSET( 20  0.000000 )
+       YOFFSET ( 35 )
       
-      YOFFSET( 35  0.000000 )
+       SPACING ( 20 )
       
-      SPACING( 20  0.000000 )
+       SCALE ( 0.400000 )
       
-      SCALE( 0.400000 )
-      
-      )
-     
-     WAIT( 0.300000 )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Init)
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+       YESNO (
+         VALVE ( AreYouSure )
        
-       )
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
-       
-       )
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsSpaceForSaveGameFile)
-       
-       )
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(Ensure_MC_Dirs)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SaveConfig)
-      
-      ARGUMENT(BASCUS-97859SOCOM)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(KILLPOPUP)
-      
-      )
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.700000 )
-      
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     VALVE(SitHere= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("There is insufficient space on the memory card (PS2). At least 300KB is needed to save this game data.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(SitHere)
-       
-       YES(
-         CAPTION(Continue)
+        YES (
+          CAPTION ( Yes )
         
-        POS( 50  0.000000  65  0.000000 )
+         POS ( 50  65 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+        NO (
+          CAPTION ( No )
+        
+         POS ( 190  65 )
+        
+         TEXTOFFSET ( 15  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
@@ -1135,94 +940,194 @@
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.700000 )
-      
-      OPACITY_TO( 0.000000 )
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
       
       )
      
-     WHILE(
-       VALVE(SitHere== 0  0.000000 )
+      END_WHILE ()
+     
+      IF (
+        VALVE ( AreYouSure  !=  1 )
       
       )
      
-     END_WHILE()
+      VALVE ( AreYouSure  =  1 )
      
-     ENDIF()
+      ELSE ()
      
-     ELSE()
+      VALVE ( AreYouSure  =  2 )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ENDIF ()
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
       
       )
      
-     VALVE(SitHere= 0  0.000000 )
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Can not save. Memory card (PS2) in MEMORY CARD slot 1 not formatted. Press the X button to continue.")
+       CAPTION ( "Saving preferences to the memory card (PS2). Do not remove the memory card (PS2)" )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  285.000000 )
+       POSITION ( 170.000000  285.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       PROTECTED ()
       
-      WIDTH( 300  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      HEIGHT( 150  0.000000 )
+       WIDTH ( 300 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 100 )
       
-      YOFFSET( 35  0.000000 )
+       XOFFSET ( 20 )
       
-      SPACING( 20  0.000000 )
+       YOFFSET ( 35 )
       
-      SCALE( 0.400000 )
+       SPACING ( 20 )
       
-      YESNO(
-        VALVE(SitHere)
+       SCALE ( 0.400000 )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
-       YES(
-         CAPTION(Continue)
+       )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
+       
+       )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsSpaceForSaveGameFile )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SaveConfig )
+      
+       ARGUMENT ( BASCUS-97859SOCOM )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KILLPOPUP )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      VALVE ( SitHere  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "There is insufficient space on the memory card (PS2). At least 300KB is needed to save this game data." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SitHere )
+       
+        YES (
+          CAPTION ( Continue )
         
-        POS( 50  0.000000  115  0.000000 )
+         POS ( 50  65 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
@@ -1230,94 +1135,94 @@
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.700000 )
+       OPACITY_FROM ( 0.700000 )
       
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     WHILE(
-       VALVE(SitHere== 0  0.000000 )
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     END_WHILE()
-     
-     ENDIF()
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      WHILE (
+        VALVE ( SitHere  ==  0 )
       
       )
      
-     VALVE(SitHere= 0  0.000000 )
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
-      CAPTION("Can not save. No memory card (PS2)in MEMORY CARD slot 1. Press the X button to continue.")
+      )
+     
+      VALVE ( SitHere  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      BACKGROUND(popupOp.tif)
+       CAPTION ( "Can not save. Memory card (PS2) in MEMORY CARD slot 1 not formatted. Press the X button to continue." )
       
-      POSITION( 170.000000  285.000000 )
+       BACKGROUND ( popupOp.tif )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       POSITION ( 170.000000  285.000000 )
       
-      WIDTH( 300  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      HEIGHT( 150  0.000000 )
+       WIDTH ( 300 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 150 )
       
-      YOFFSET( 35  0.000000 )
+       XOFFSET ( 20 )
       
-      SPACING( 20  0.000000 )
+       YOFFSET ( 35 )
       
-      SCALE( 0.400000 )
+       SPACING ( 20 )
       
-      YESNO(
-        VALVE(SitHere)
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SitHere )
        
-       YES(
-         CAPTION(Continue)
+        YES (
+          CAPTION ( Continue )
         
-        POS( 50  0.000000  115  0.000000 )
+         POS ( 50  115 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
@@ -1325,48 +1230,143 @@
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
-      OPACITY_FROM( 0.700000 )
+       OPACITY_FROM ( 0.700000 )
       
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     WHILE(
-       VALVE(SitHere== 0  0.000000 )
+       OPACITY_TO ( 0.000000 )
       
       )
      
-     END_WHILE()
-     
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      WHILE (
+        VALVE ( SitHere  ==  0 )
       
       )
      
-     ENDIF()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(PREVIOUS_SCREEN)
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ENDIF()
+      VALVE ( SitHere  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Can not save. No memory card (PS2)in MEMORY CARD slot 1. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 150 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SitHere )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 50  115 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      WHILE (
+        VALVE ( SitHere  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(end_of_screen)
+     SEQUENCE_DEFINITION (
+       NAME ( end_of_screen )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
      )
     

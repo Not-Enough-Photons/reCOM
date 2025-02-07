@@ -1,74 +1,74 @@
 ((
-  ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnMultiplayerDisconnect)
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnMultiplayerDisconnect )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(OKValve= 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( OKValve  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION(INPUT_STRING)
+       CAPTION ( INPUT_STRING )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 175.000000  230.000000 )
+       POSITION ( 175.000000  230.000000 )
       
-      WIDTH( 256  0.000000 )
+       WIDTH ( 256 )
       
-      HEIGHT( 128  0.000000 )
+       HEIGHT ( 128 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 30  0.000000 )
+       YOFFSET ( 30 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      YESNO(
-        VALVE(OKValve)
+       YESNO (
+         VALVE ( OKValve )
        
-       YES(
-         CAPTION("MAIN MENU")
+        YES (
+          CAPTION ( "MAIN MENU" )
         
-        POS( 60  0.000000  90  0.000000 )
+         POS ( 60  90 )
         
-        TEXTOFFSET( 10  0.000000  20  0.000000 )
+         TEXTOFFSET ( 10  20 )
         
-        WIDTH( 110  0.000000 )
+         WIDTH ( 110 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(brown_back.tif)
+         PRESSED (
+           IMAGE ( brown_back.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(brown_back.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(brown_back.tif)
+         ACTIVE (
+           IMAGE ( brown_back.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.350000 )
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
         
         )
        
@@ -76,44 +76,44 @@
       
       )
      
-     WHILE(
-       VALVE(OKValve== 0  0.000000 )
+      WHILE (
+        VALVE ( OKValve  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(LobbyBailout)
+      ui::UI_COMMAND (
+        TYPE ( LobbyBailout )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(UnInitNetwork)
+      ui::UI_COMMAND (
+        TYPE ( UnInitNetwork )
       
       )
      
-     VALVE(socom_online_initialized= 0  0.000000 )
+      VALVE ( socom_online_initialized  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(NetCnfClose)
+      ui::UI_COMMAND (
+        TYPE ( NetCnfClose )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(NetCnfUnInit)
+      ui::UI_COMMAND (
+        TYPE ( NetCnfUnInit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(RebootIOP)
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgMenu.rdr)
+       ARGUMENT ( dlgMenu.rdr )
       
       )
      
@@ -121,21 +121,21 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(force_new_db)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( force_new_db )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(AdvanceMPMission)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( AdvanceMPMission )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgGameLobby.rdr)
+       ARGUMENT ( dlgGameLobby.rdr )
       
       )
      

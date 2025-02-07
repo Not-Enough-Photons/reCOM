@@ -44,11 +44,11 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
         {
             if (_NeedQuotes(reader))
             {
-                fprintf_s(out, "\"%s\"", reader->string);
+                fprintf_s(out, " \"%s\" ", reader->string);
                 return true;
             }
 
-            fprintf_s(out, "%s", reader->string);
+            fprintf_s(out, " %s ", reader->string);
             return true;
         }
 

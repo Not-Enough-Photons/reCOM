@@ -1,108 +1,108 @@
 ((
-  ANIMATION_DEFINITIONS(
-   GRAVITY( -98.000000 )
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
   
-  ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(shell_smoke_med)
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( shell_smoke_med )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION_TEST(
-      IF(
-       RANGE_TEST(
-        P1(
-         NODE(GLOBALcamera)
+     ACTIVATION_TEST (
+       IF (
+        RANGE_TEST (
+         P1 (
+          NODE ( GLOBAL  camera )
         
         )
        
-       P2(
-         NODE(INPUT_NODE)
+        P2 (
+          NODE ( INPUT_NODE )
         
         )
        
-       TEST(>)
+        TEST ( > )
        
-       RANGE( 100.000000 )
+        RANGE ( 100.000000 )
        
        )
       
       )
      
-     FAIL()
+      FAIL ()
      
-     ENDIF()
+      ENDIF ()
      
-     IF((!CAMERA_3RD_PERSON)
+      IF (( !  CAMERA_3RD_PERSON )
       
       )
      
-     FAIL()
+      FAIL ()
      
-     ENDIF()
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(smoke)
+     SEQUENCE_DEFINITION (
+       NAME ( smoke )
      
-     IF(
-       RANDOM_WEIGHT( 0.500000 )
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     PARTICLE_SOURCE(
-       NAME(blue_smoke01)
+      PARTICLE_SOURCE (
+        NAME ( blue_smoke01 )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      NUM_PERIODS( 2  0.000000 )
+       NUM_PERIODS ( 2 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 60.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 60.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -2.000000  2.000000 )
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
       
-      PERTURB_VELOCITY_Y( -2.000000  2.000000 )
+       PERTURB_VELOCITY_Y ( -2.000000  2.000000 )
       
-      PERTURB_VELOCITY_Z( -2.000000  2.000000 )
+       PERTURB_VELOCITY_Z ( -2.000000  2.000000 )
       
-      RADIUS_RANGE( 2.000000  3.000000 )
+       RADIUS_RANGE ( 2.000000  3.000000 )
       
-      LIFESPAN_RANGE( 0.500000  1.000000 )
+       LIFESPAN_RANGE ( 0.500000  1.000000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0  0.000000 )
+       FRICTION ( 0 )
       
-      WORLD_ACCELERATION( 0.000000  1.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  1.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  800.000000 )
+       FADE_FAR_RANGE ( 200.000000  800.000000 )
       
-      COLORS(( 0.000000  0.400000  0.400000  0.500000  0.000000 )
+       COLORS (( 0.000000  0.400000  0.400000  0.500000  0.000000 )
        
        ( 0.100000  0.400000  0.400000  0.500000  0.100000 )
        
@@ -112,7 +112,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  0.100000 )
+       SCALE_SEQUENCE (( 0.000000  0.100000 )
        
        ( 0.700000  3.000000 )
        
@@ -122,74 +122,74 @@
       
       )
      
-     WAIT(EVENT_OFFSET 0.250000 )
+      WAIT ( EVENT_OFFSET  0.250000 )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(sniper_flash)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( sniper_flash )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(flashy)
+     SEQUENCE_DEFINITION (
+       NAME ( flashy )
      
-     PARTICLE_SOURCE(
-       NAME(flashy_fire)
+      PARTICLE_SOURCE (
+        NAME ( flashy_fire )
       
-      TEXTURES(explosion2.tif)
+       TEXTURES ( explosion2.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 2  0.000000 )
+       NUMBER ( 2 )
       
-      NUM_PERIODS( 10  0.000000 )
+       NUM_PERIODS ( 10 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( -1.000000  1.000000 )
+       PERTURB_POSITION_Z ( -1.000000  1.000000 )
       
-      LOCAL_VELOCITY( 60.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 60.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( 0.000000  0.000000 )
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
       
-      RADIUS_RANGE( 1.500000  2.500000 )
+       RADIUS_RANGE ( 1.500000  2.500000 )
       
-      LIFESPAN_RANGE( 0.300000  0.350000 )
+       LIFESPAN_RANGE ( 0.300000  0.350000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0  0.000000 )
+       FRICTION ( 0 )
       
-      WORLD_ACCELERATION( 0.000000  0.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  800.000000 )
+       FADE_FAR_RANGE ( 200.000000  800.000000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  0.500000  1.000000 )
+       COLORS (( 0.000000  1.000000  1.000000  0.500000  1.000000 )
        
        ( 0.500000  0.400000  0.400000  0.500000  0.600000 )
        
@@ -197,7 +197,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.800000 )
+       SCALE_SEQUENCE (( 0.000000  1.800000 )
        
        ( 0.300000  0.800000 )
        
@@ -209,69 +209,69 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(flashy2)
+     SEQUENCE_DEFINITION (
+       NAME ( flashy2 )
      
-     PARTICLE_SOURCE(
-       NAME(flashy_fire2)
+      PARTICLE_SOURCE (
+        NAME ( flashy_fire2 )
       
-      TEXTURES(explosion2.tif)
+       TEXTURES ( explosion2.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      DRAW_TYPE(STREAK)
+       DRAW_TYPE ( STREAK )
       
-      STREAK_LENGTH( 3.000000 )
+       STREAK_LENGTH ( 3.000000 )
       
-      STREAK_OPACITY( 0.700000 )
+       STREAK_OPACITY ( 0.700000 )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 2  0.000000 )
+       NUMBER ( 2 )
       
-      NUM_PERIODS( 20  0.000000 )
+       NUM_PERIODS ( 20 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 150.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 150.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( 0.000000  0.000000 )
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Y( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Z( 0.000000  0.000000 )
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
       
-      RADIUS_RANGE( 1.000000  1.500000 )
+       RADIUS_RANGE ( 1.000000  1.500000 )
       
-      LIFESPAN_RANGE( 0.200000  0.250000 )
+       LIFESPAN_RANGE ( 0.200000  0.250000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0  0.000000 )
+       FRICTION ( 0 )
       
-      WORLD_ACCELERATION( 0.000000  60.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  60.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  800.000000 )
+       FADE_FAR_RANGE ( 200.000000  800.000000 )
       
-      COLORS(( 0.000000  1.000000  1.000000  0.500000  1.000000 )
+       COLORS (( 0.000000  1.000000  1.000000  0.500000  1.000000 )
        
        ( 0.400000  0.400000  0.400000  0.500000  0.800000 )
        
@@ -279,7 +279,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  0.400000 )
+       SCALE_SEQUENCE (( 0.000000  0.400000 )
        
        ( 0.300000  2.000000 )
        
@@ -291,70 +291,70 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(shotgun_smoke)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( shotgun_smoke )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(s_smoke)
+     SEQUENCE_DEFINITION (
+       NAME ( s_smoke )
      
-     PARTICLE_SOURCE(
-       NAME(smoke_fire)
+      PARTICLE_SOURCE (
+        NAME ( smoke_fire )
       
-      TEXTURES(effect_spark02.tif)
+       TEXTURES ( effect_spark02.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 8  0.000000 )
+       NUMBER ( 8 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( -2.000000  2.000000 )
+       PERTURB_POSITION_Y ( -2.000000  2.000000 )
       
-      PERTURB_POSITION_Z( -2.000000  2.000000 )
+       PERTURB_POSITION_Z ( -2.000000  2.000000 )
       
-      LOCAL_VELOCITY( 340.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 340.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( 0.000000  0.000000 )
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
       
-      PERTURB_VELOCITY_Y( -10.000000  10.000000 )
+       PERTURB_VELOCITY_Y ( -10.000000  10.000000 )
       
-      PERTURB_VELOCITY_Z( -20.000000  20.000000 )
+       PERTURB_VELOCITY_Z ( -20.000000  20.000000 )
       
-      RADIUS_RANGE( 0.400000  0.500000 )
+       RADIUS_RANGE ( 0.400000  0.500000 )
       
-      LIFESPAN_RANGE( 0.600000  0.900000 )
+       LIFESPAN_RANGE ( 0.600000  0.900000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0  0.000000 )
+       FRICTION ( 0 )
       
-      WORLD_ACCELERATION( 0.000000  0.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  800.000000 )
+       FADE_FAR_RANGE ( 200.000000  800.000000 )
       
-      COLORS(( 0.000000  0.100000  0.100000  0.100000  1.000000 )
+       COLORS (( 0.000000  0.100000  0.100000  0.100000  1.000000 )
        
        ( 0.600000  0.100000  0.100000  0.100000  0.400000 )
        
@@ -362,7 +362,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  0.500000 )
+       SCALE_SEQUENCE (( 0.000000  0.500000 )
        
        ( 0.800000  1.000000 )
        
@@ -372,104 +372,104 @@
       
       )
      
-     WAIT(FRAME_COUNT 2  0.000000 )
+      WAIT ( FRAME_COUNT  2 )
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(shell_smoke_big)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( shell_smoke_big )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION_TEST(
-      IF(
-       RANGE_TEST(
-        P1(
-         NODE(GLOBALcamera)
+     ACTIVATION_TEST (
+       IF (
+        RANGE_TEST (
+         P1 (
+          NODE ( GLOBAL  camera )
         
         )
        
-       P2(
-         NODE(INPUT_NODE)
+        P2 (
+          NODE ( INPUT_NODE )
         
         )
        
-       TEST(>)
+        TEST ( > )
        
-       RANGE( 100.000000 )
+        RANGE ( 100.000000 )
        
        )
       
       )
      
-     FAIL()
+      FAIL ()
      
-     ENDIF()
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(smoke_big)
+     SEQUENCE_DEFINITION (
+       NAME ( smoke_big )
      
-     IF(
-       RANDOM_WEIGHT( 0.900000 )
+      IF (
+        RANDOM_WEIGHT ( 0.900000 )
       
       )
      
-     PARTICLE_SOURCE(
-       NAME(blue_smoke01)
+      PARTICLE_SOURCE (
+        NAME ( blue_smoke01 )
       
-      TEXTURES(cloudpuff01.tif)
+       TEXTURES ( cloudpuff01.tif )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      ACTIVE_STATE(ACTIVE)
+       ACTIVE_STATE ( ACTIVE )
       
-      TIME_INTERVAL( 0.010000 )
+       TIME_INTERVAL ( 0.010000 )
       
-      NUMBER( 1  0.000000 )
+       NUMBER ( 1 )
       
-      NUM_PERIODS( 15  0.000000 )
+       NUM_PERIODS ( 15 )
       
-      PERTURB_POSITION_X( 0.000000  0.000000 )
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Y( 0.000000  0.000000 )
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
       
-      PERTURB_POSITION_Z( 0.000000  0.000000 )
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
       
-      LOCAL_VELOCITY( 30.000000  0.000000  0.000000 )
+       LOCAL_VELOCITY ( 30.000000  0.000000  0.000000 )
       
-      WORLD_VELOCITY( 0.000000  0.000000  0.000000 )
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
       
-      PERTURB_VELOCITY_X( -2.000000  2.000000 )
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
       
-      PERTURB_VELOCITY_Y( -2.000000  2.000000 )
+       PERTURB_VELOCITY_Y ( -2.000000  2.000000 )
       
-      PERTURB_VELOCITY_Z( -2.000000  2.000000 )
+       PERTURB_VELOCITY_Z ( -2.000000  2.000000 )
       
-      RADIUS_RANGE( 1.000000  1.500000 )
+       RADIUS_RANGE ( 1.000000  1.500000 )
       
-      LIFESPAN_RANGE( 0.200000  0.300000 )
+       LIFESPAN_RANGE ( 0.200000  0.300000 )
       
-      START_AGE_RANGE( 0.000000  0.000000 )
+       START_AGE_RANGE ( 0.000000  0.000000 )
       
-      PRIORITY( 0.000000 )
+       PRIORITY ( 0.000000 )
       
-      WIND_FACTOR( 0.000000 )
+       WIND_FACTOR ( 0.000000 )
       
-      FRICTION( 0  0.000000 )
+       FRICTION ( 0 )
       
-      WORLD_ACCELERATION( 0.000000  1.000000  0.000000 )
+       WORLD_ACCELERATION ( 0.000000  1.000000  0.000000 )
       
-      FADE_NEAR_RANGE( 0.000000  0.000000 )
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
       
-      FADE_FAR_RANGE( 200.000000  800.000000 )
+       FADE_FAR_RANGE ( 200.000000  800.000000 )
       
-      COLORS(( 0.000000  0.400000  0.400000  0.500000  0.500000 )
+       COLORS (( 0.000000  0.400000  0.400000  0.500000  0.500000 )
        
        ( 0.100000  0.400000  0.400000  0.500000  0.300000 )
        
@@ -477,7 +477,7 @@
        
        )
       
-      SCALE_SEQUENCE(( 0.000000  1.000000 )
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
        
        ( 0.500000  3.000000 )
        
@@ -487,247 +487,247 @@
       
       )
      
-     WAIT(EVENT_OFFSET 0.100000 )
+      WAIT ( EVENT_OFFSET  0.100000 )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flash_fire)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flash_fire )
     
-    ANIMATION_ROOT_NAME(muzzle_flash_m4)
+     ANIMATION_ROOT_NAME ( muzzle_flash_m4 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_rotate)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_rotate )
      
-     IF(
-       RANDOM_WEIGHT( 0.125000 )
+      IF (
+        RANDOM_WEIGHT ( 0.125000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 90.000000  0.000000  0.000000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.142000 )
+       ROTATION ( 90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -90.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.142000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.166000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.166000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.200000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.250000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.300000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 180.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 0.000000  0.000000  0.000000 )
+       ROTATION ( 180.000000  0.000000  0.000000 )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 0.000000  0.000000  0.000000 )
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_fix)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_fix )
      
-     OBJECT_ROTATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ROTATE_STATE (
+        NAME ( ROOT_NODE )
       
-      LIKE_NODE(INPUT_NODE)
+       LIKE_NODE ( INPUT_NODE )
       
-      RELATIVE( 0.000000  0.000000  0.000000 )
+       RELATIVE ( 0.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      INPUT_TRANSLATION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(ACTIVE)
+       INPUT_TRANSLATION ()
       
       )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
       
       )
      
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(fire_scale)
-     
-     IF(
-       RANDOM_WEIGHT( 0.330000 )
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 1.000000  1.000000  1.000000 )
-      
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 0.700000  0.700000  0.700000 )
-      
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSE()
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 1.200000  1.200000  1.200000 )
-      
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ENDIF()
-     
-     WAIT(FRAME_COUNT 1  0.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(fire_fix)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(INACTIVE)
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(light_at_muzzle)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_scale )
      
-     LIGHT(
-       NAME(muzzle_light_fire)
+      IF (
+        RANDOM_WEIGHT ( 0.330000 )
       
-      START()
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      STOP()
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      INPUT_TRANSLATION()
+       SCALE_TO ( 1.000000  1.000000  1.000000 )
       
-      AT_NODE(INPUT_NODE)
+       RUN_TIME ( 0.050000 )
       
-      DIFFUSE( 0.800000  0.730000  0.570000 )
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
-      OPACITY( 1.000000 )
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      RANGE_SEQUENCE(( 0.000000  3.000000  16.000000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 0.700000  0.700000  0.700000 )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
+      
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 1.200000  1.200000  1.200000 )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( fire_fix )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( light_at_muzzle )
+     
+      LIGHT (
+        NAME ( muzzle_light_fire )
+      
+       START ()
+      
+       STOP ()
+      
+       INPUT_TRANSLATION ()
+      
+       AT_NODE ( INPUT_NODE )
+      
+       DIFFUSE ( 0.800000  0.730000  0.570000 )
+      
+       OPACITY ( 1.000000 )
+      
+       RANGE_SEQUENCE (( 0.000000  3.000000  16.000000 )
        
        ( 0.070000  30.000000  60.000000 )
        
@@ -739,239 +739,239 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flash_fire_small)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flash_fire_small )
     
-    ANIMATION_ROOT_NAME(muzzle_flash_m4)
+     ANIMATION_ROOT_NAME ( muzzle_flash_m4 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_fix)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_fix )
      
-     OBJECT_ROTATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ROTATE_STATE (
+        NAME ( ROOT_NODE )
       
-      LIKE_NODE(INPUT_NODE)
+       LIKE_NODE ( INPUT_NODE )
       
-      RELATIVE( 0.000000  0.000000  0.000000 )
+       RELATIVE ( 0.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      INPUT_TRANSLATION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(ACTIVE)
+       INPUT_TRANSLATION ()
       
       )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_rotate)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_rotate )
      
-     IF(
-       RANDOM_WEIGHT( 0.125000 )
+      IF (
+        RANDOM_WEIGHT ( 0.125000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 90.000000  0.000000  0.000000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.142000 )
+       ROTATION ( 90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -90.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.142000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.166000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.166000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.200000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.250000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.300000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 180.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 0.000000  0.000000  0.000000 )
+       ROTATION ( 180.000000  0.000000  0.000000 )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 0.000000  0.000000  0.000000 )
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_scale)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_scale )
      
-     IF(
-       RANDOM_WEIGHT( 0.330000 )
+      IF (
+        RANDOM_WEIGHT ( 0.330000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 0.300000  0.300000  0.300000 )
+       SCALE_TO ( 0.300000  0.300000  0.300000 )
       
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 0.400000  0.400000  0.400000 )
-      
-      RUN_TIME( 0.050000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 0.200000  0.200000  0.200000 )
+       SCALE_TO ( 0.400000  0.400000  0.400000 )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     WAIT(FRAME_COUNT 1  0.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(fire_fix)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
+      
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 0.200000  0.200000  0.200000 )
+      
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
+      ENDIF ()
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( fire_fix )
       
-      STATE(INACTIVE)
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(light_at_muzzle)
+     SEQUENCE_DEFINITION (
+       NAME ( light_at_muzzle )
      
-     LIGHT(
-       NAME(muzzle_light_fire)
+      LIGHT (
+        NAME ( muzzle_light_fire )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      DIFFUSE( 0.800000  0.670000  0.470000 )
+       DIFFUSE ( 0.800000  0.670000  0.470000 )
       
-      OPACITY( 1.000000 )
+       OPACITY ( 1.000000 )
       
-      RANGE_SEQUENCE(( 0.000000  5.000000  20.000000 )
+       RANGE_SEQUENCE (( 0.000000  5.000000  20.000000 )
        
        ( 0.070000  20.000000  40.000000 )
        
@@ -983,239 +983,239 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flash_fire_med)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flash_fire_med )
     
-    ANIMATION_ROOT_NAME(muzzle_flash_m4)
+     ANIMATION_ROOT_NAME ( muzzle_flash_m4 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_fix)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_fix )
      
-     OBJECT_ROTATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ROTATE_STATE (
+        NAME ( ROOT_NODE )
       
-      LIKE_NODE(INPUT_NODE)
+       LIKE_NODE ( INPUT_NODE )
       
-      RELATIVE( 0.000000  0.000000  0.000000 )
+       RELATIVE ( 0.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      INPUT_TRANSLATION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(ACTIVE)
+       INPUT_TRANSLATION ()
       
       )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_rotate)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_rotate )
      
-     IF(
-       RANDOM_WEIGHT( 0.125000 )
+      IF (
+        RANDOM_WEIGHT ( 0.125000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 90.000000  0.000000  0.000000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.142000 )
+       ROTATION ( 90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -90.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.142000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.166000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.166000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.200000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.250000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.300000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 180.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 0.000000  0.000000  0.000000 )
+       ROTATION ( 180.000000  0.000000  0.000000 )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 0.000000  0.000000  0.000000 )
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_scale)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_scale )
      
-     IF(
-       RANDOM_WEIGHT( 0.330000 )
+      IF (
+        RANDOM_WEIGHT ( 0.330000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 0.600000  0.600000  0.600000 )
+       SCALE_TO ( 0.600000  0.600000  0.600000 )
       
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 0.400000  0.400000  0.400000 )
-      
-      RUN_TIME( 0.050000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 0.800000  0.800000  0.800000 )
+       SCALE_TO ( 0.400000  0.400000  0.400000 )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     WAIT(FRAME_COUNT 1  0.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(fire_fix)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
+      
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 0.800000  0.800000  0.800000 )
+      
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
+      ENDIF ()
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( fire_fix )
       
-      STATE(INACTIVE)
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(light_at_muzzle)
+     SEQUENCE_DEFINITION (
+       NAME ( light_at_muzzle )
      
-     LIGHT(
-       NAME(muzzle_light_med)
+      LIGHT (
+        NAME ( muzzle_light_med )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      DIFFUSE( 0.800000  0.730000  0.570000 )
+       DIFFUSE ( 0.800000  0.730000  0.570000 )
       
-      OPACITY( 1.000000 )
+       OPACITY ( 1.000000 )
       
-      RANGE_SEQUENCE(( 0.000000  3.000000  16.000000 )
+       RANGE_SEQUENCE (( 0.000000  3.000000  16.000000 )
        
        ( 0.070000  30.000000  60.000000 )
        
@@ -1227,239 +1227,239 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flash_fire_big)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flash_fire_big )
     
-    ANIMATION_ROOT_NAME(muzzle_flash_m4)
+     ANIMATION_ROOT_NAME ( muzzle_flash_m4 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_fix)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_fix )
      
-     OBJECT_ROTATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ROTATE_STATE (
+        NAME ( ROOT_NODE )
       
-      LIKE_NODE(INPUT_NODE)
+       LIKE_NODE ( INPUT_NODE )
       
-      RELATIVE( 0.000000  0.000000  0.000000 )
+       RELATIVE ( 0.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      INPUT_TRANSLATION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(ACTIVE)
+       INPUT_TRANSLATION ()
       
       )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_rotate)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_rotate )
      
-     IF(
-       RANDOM_WEIGHT( 0.125000 )
+      IF (
+        RANDOM_WEIGHT ( 0.125000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 90.000000  0.000000  0.000000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.142000 )
+       ROTATION ( 90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -90.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.142000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.166000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -90.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.166000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.200000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 45.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.250000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 45.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.300000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( -135.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
       
       )
      
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( -135.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
-      
-      ROTATION( 180.000000  0.000000  0.000000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_ROTATE_STATE(
-       NAME(rotate)
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
       
-      ROTATION( 0.000000  0.000000  0.000000 )
+       ROTATION ( 180.000000  0.000000  0.000000 )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( rotate )
+      
+       ROTATION ( 0.000000  0.000000  0.000000 )
+      
+      )
+     
+      ENDIF ()
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_scale)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_scale )
      
-     IF(
-       RANDOM_WEIGHT( 0.330000 )
+      IF (
+        RANDOM_WEIGHT ( 0.330000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 1.800000  1.800000  1.800000 )
+       SCALE_TO ( 1.800000  1.800000  1.800000 )
       
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 0.900000  0.900000  0.900000 )
-      
-      RUN_TIME( 0.050000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 1.300000  1.300000  1.300000 )
+       SCALE_TO ( 0.900000  0.900000  0.900000 )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     WAIT(FRAME_COUNT 1  0.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(fire_fix)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
+      
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 1.300000  1.300000  1.300000 )
+      
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
+      ENDIF ()
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( fire_fix )
       
-      STATE(INACTIVE)
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(light_at_muzzle)
+     SEQUENCE_DEFINITION (
+       NAME ( light_at_muzzle )
      
-     LIGHT(
-       NAME(muzzle_light_big)
+      LIGHT (
+        NAME ( muzzle_light_big )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      DIFFUSE( 0.800000  0.680000  0.470000 )
+       DIFFUSE ( 0.800000  0.680000  0.470000 )
       
-      OPACITY( 1.000000 )
+       OPACITY ( 1.000000 )
       
-      RANGE_SEQUENCE(( 0.000000  6.000000  26.000000 )
+       RANGE_SEQUENCE (( 0.000000  6.000000  26.000000 )
        
        ( 0.070000  50.000000  100.000000 )
        
@@ -1471,139 +1471,139 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flash_fire_hider)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flash_fire_hider )
     
-    ANIMATION_ROOT_NAME(muzzle_flash_hider)
+     ANIMATION_ROOT_NAME ( muzzle_flash_hider )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_fix)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_fix )
      
-     OBJECT_ROTATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ROTATE_STATE (
+        NAME ( ROOT_NODE )
       
-      LIKE_NODE(INPUT_NODE)
+       LIKE_NODE ( INPUT_NODE )
       
-      RELATIVE( 0.000000  0.000000  0.000000 )
+       RELATIVE ( 0.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      INPUT_TRANSLATION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(ACTIVE)
+       INPUT_TRANSLATION ()
       
       )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_scale)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_scale )
      
-     IF(
-       RANDOM_WEIGHT( 0.330000 )
+      IF (
+        RANDOM_WEIGHT ( 0.330000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 1.200000  1.200000  1.200000 )
+       SCALE_TO ( 1.200000  1.200000  1.200000 )
       
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 0.900000  0.900000  0.900000 )
-      
-      RUN_TIME( 0.050000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 1.300000  1.300000  1.300000 )
+       SCALE_TO ( 0.900000  0.900000  0.900000 )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     WAIT(FRAME_COUNT 1  0.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(fire_fix)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
+      
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 1.300000  1.300000  1.300000 )
+      
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
+      ENDIF ()
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( fire_fix )
       
-      STATE(INACTIVE)
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(light_at_muzzle)
+     SEQUENCE_DEFINITION (
+       NAME ( light_at_muzzle )
      
-     LIGHT(
-       NAME(muzzle_light_most)
+      LIGHT (
+        NAME ( muzzle_light_most )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      DIFFUSE( 0.800000  0.680000  0.470000 )
+       DIFFUSE ( 0.800000  0.680000  0.470000 )
       
-      OPACITY( 1.000000 )
+       OPACITY ( 1.000000 )
       
-      RANGE_SEQUENCE(( 0.000000  6.000000  26.000000 )
+       RANGE_SEQUENCE (( 0.000000  6.000000  26.000000 )
        
        ( 0.070000  50.000000  100.000000 )
        
@@ -1615,139 +1615,139 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(flash_fire_break_big)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( flash_fire_break_big )
     
-    ANIMATION_ROOT_NAME(muzzle_flash_break)
+     ANIMATION_ROOT_NAME ( muzzle_flash_break )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_fix)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_fix )
      
-     OBJECT_ROTATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ROTATE_STATE (
+        NAME ( ROOT_NODE )
       
-      LIKE_NODE(INPUT_NODE)
+       LIKE_NODE ( INPUT_NODE )
       
-      RELATIVE( 0.000000  0.000000  0.000000 )
+       RELATIVE ( 0.000000  0.000000  0.000000 )
       
       )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      INPUT_TRANSLATION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(ACTIVE)
+       INPUT_TRANSLATION ()
       
       )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(fire_scale)
+     SEQUENCE_DEFINITION (
+       NAME ( fire_scale )
      
-     IF(
-       RANDOM_WEIGHT( 0.330000 )
+      IF (
+        RANDOM_WEIGHT ( 0.330000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 1.100000  1.100000  1.100000 )
+       SCALE_TO ( 1.100000  1.100000  1.100000 )
       
-      RUN_TIME( 0.050000 )
-      
-      )
-     
-     ELSEIF(
-       RANDOM_WEIGHT( 0.500000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
-      
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
-      
-      SCALE_TO( 0.900000  0.900000  0.900000 )
-      
-      RUN_TIME( 0.050000 )
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
       
       )
      
-     ELSE()
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(scale)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
       
-      SCALE_FROM( 0.100000  0.100000  0.100000 )
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
       
-      SCALE_TO( 1.200000  1.200000  1.200000 )
+       SCALE_TO ( 0.900000  0.900000  0.900000 )
       
-      RUN_TIME( 0.050000 )
+       RUN_TIME ( 0.050000 )
       
       )
      
-     ENDIF()
+      ELSE ()
      
-     WAIT(FRAME_COUNT 1  0.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(fire_fix)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( scale )
+      
+       SCALE_FROM ( 0.100000  0.100000  0.100000 )
+      
+       SCALE_TO ( 1.200000  1.200000  1.200000 )
+      
+       RUN_TIME ( 0.050000 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
+      ENDIF ()
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( fire_fix )
       
-      STATE(INACTIVE)
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(light_at_muzzle)
+     SEQUENCE_DEFINITION (
+       NAME ( light_at_muzzle )
      
-     LIGHT(
-       NAME(muzzle_m4_light)
+      LIGHT (
+        NAME ( muzzle_m4_light )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      INPUT_TRANSLATION()
+       INPUT_TRANSLATION ()
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      DIFFUSE( 0.800000  0.680000  0.470000 )
+       DIFFUSE ( 0.800000  0.680000  0.470000 )
       
-      OPACITY( 0.800000 )
+       OPACITY ( 0.800000 )
       
-      RANGE_SEQUENCE(( 0.000000  5.000000  12.000000 )
+       RANGE_SEQUENCE (( 0.000000  5.000000  12.000000 )
        
        ( 0.050000  15.000000  60.000000 )
        
@@ -1761,32 +1761,32 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(zoom_flash_fire)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( zoom_flash_fire )
     
-    AUTO_CREATE_ROOT()
+     AUTO_CREATE_ROOT ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    EXECUTION_PRIORITY(LAST)
+     EXECUTION_PRIORITY ( LAST )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      LIGHT(
-       NAME(muzzle_m4_light)
+     SEQUENCE_DEFINITION (
+       LIGHT (
+        NAME ( muzzle_m4_light )
       
-      START()
+       START ()
       
-      STOP()
+       STOP ()
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      DIFFUSE( 0.800000  0.680000  0.470000 )
+       DIFFUSE ( 0.800000  0.680000  0.470000 )
       
-      OPACITY( 0.800000 )
+       OPACITY ( 0.800000 )
       
-      RANGE_SEQUENCE(( 0.000000  5.000000  12.000000 )
+       RANGE_SEQUENCE (( 0.000000  5.000000  12.000000 )
        
        ( 0.050000  15.000000  60.000000 )
        

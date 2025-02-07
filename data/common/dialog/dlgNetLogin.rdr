@@ -1,248 +1,248 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgNetLogin.rdr)
+    SCRIPT_LIBRARY ( dlgNetLogin.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("LOGIN TO SOCOM")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 384  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SIZE( 640  0.000000  64  0.000000 )
+       CHILDOF ( letterbar )
       
-      )
-     
-     )
-    
-    (
-      NAME(dogtags)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 370  0.000000 )
-     
-     YPOS( 325  0.000000 )
-     
-     SPEC(
-       FILENAME(dogtags.tif)
+       CAPTION ( "LOGIN TO SOCOM" )
       
-      SIZE( 256  0.000000  128  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 203  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 70  0.000000 )
+      YPOS ( 384 )
      
-     SPEC(
-       XSIZE( 410  0.000000 )
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( dogtags )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 203  0.000000 )
+      XPOS ( 370 )
      
-     YPOS( 130  0.000000 )
+      YPOS ( 325 )
      
-     SPEC(
-       XSIZE( 410  0.000000 )
+      SPEC (
+        FILENAME ( dogtags.tif )
       
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       SIZE ( 256  128 )
       
       )
      
      )
     
     (
-      NAME(TabSmWindow)
+       NAME ( TabSmWindow )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 203 )
      
-     YPOS( 180  0.000000 )
+      YPOS ( 70 )
      
-     SPEC(
-       XSIZE( 590  0.000000 )
+      SPEC (
+        XSIZE ( 410 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(TabSmWindow)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 210  0.000000 )
-     
-     SPEC(
-       XSIZE( 590  0.000000 )
-      
-      YSIZE( 30  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(DescriptionText)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 215  0.000000 )
+      XPOS ( 203 )
      
-     YPOS( 90  0.000000 )
+      YPOS ( 130 )
      
-     SPEC(
-       COLOR( 255.000000  104.000000  51.000000 )
+      SPEC (
+        XSIZE ( 410 )
       
-      SCALE( 0.400000 )
+       YSIZE ( 30 )
       
-      CAPTION(" ")
-      
-      )
-     
-     )
-    
-    (
-      NAME(combo_value)
-     
-     TYPE(TEXT)
-     
-     XPOS( 215  0.000000 )
-     
-     YPOS( 151  0.000000 )
-     
-     SPEC(
-       CAPTION("Combination 1")
-      
-      SCALE( 0.400000 )
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(hw_title)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 35  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 200  0.000000 )
+      YPOS ( 180 )
      
-     SPEC(
-       CAPTION(HARDWARE:)
+      SPEC (
+        XSIZE ( 590 )
       
-      SCALE( 0.400000 )
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(hw_value)
+       NAME ( TabSmWindow )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 180  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 210 )
      
-     SPEC(
-       CHILDOF(hw_title)
+      SPEC (
+        XSIZE ( 590 )
       
-      SCALE( 0.400000 )
+       YSIZE ( 30 )
       
-      UIVAR(
-        NAME(DevDispName)
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 215 )
+     
+      YPOS ( 90 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( combo_value )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 215 )
+     
+      YPOS ( 151 )
+     
+      SPEC (
+        CAPTION ( "Combination 1" )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hw_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 35 )
+     
+      YPOS ( 200 )
+     
+      SPEC (
+        CAPTION ( HARDWARE: )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hw_value )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( hw_title )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( DevDispName )
        
        )
       
@@ -251,39 +251,39 @@
      )
     
     (
-      NAME(serv_title)
+       NAME ( serv_title )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 35  0.000000 )
+      XPOS ( 35 )
      
-     YPOS( 230  0.000000 )
+      YPOS ( 230 )
      
-     SPEC(
-       CAPTION("SERVICE PROVIDER:")
+      SPEC (
+        CAPTION ( "SERVICE PROVIDER:" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(serv_value)
+       NAME ( serv_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 180  0.000000 )
+      XPOS ( 180 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       CHILDOF(serv_title)
+      SPEC (
+        CHILDOF ( serv_title )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(IfcDispName)
+       UIVAR (
+         NAME ( IfcDispName )
        
        )
       
@@ -292,52 +292,25 @@
      )
     
     (
-      NAME(SOP1)
+       NAME ( SOP1 )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( -385  -nan )
+      XPOS ( -385 )
      
-     YPOS( 87  0.000000 )
+      YPOS ( 87 )
      
-     SPEC(
-       CAPTION("Set Me")
+      SPEC (
+        CAPTION ( "Set Me" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(MPLOCALSOP1)
+       UIVAR (
+         NAME ( MPLOCALSOP1 )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
-       VALUE("I'M GOING LEFT.")
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(SOP2)
-     
-     TYPE(TEXT)
-     
-     XPOS( -385  -nan )
-     
-     YPOS( 117  0.000000 )
-     
-     SPEC(
-       CAPTION("Set Me")
-      
-      SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(MPLOCALSOP2)
-       
-       LONGEVITY(PERSISTENT)
-       
-       VALUE("I'M GOING RIGHT.")
+        VALUE ( "I'M GOING LEFT." )
        
        )
       
@@ -346,52 +319,25 @@
      )
     
     (
-      NAME(SOP3)
+       NAME ( SOP2 )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( -385  -nan )
+      XPOS ( -385 )
      
-     YPOS( 147  0.000000 )
+      YPOS ( 117 )
      
-     SPEC(
-       CAPTION("Set Me")
+      SPEC (
+        CAPTION ( "Set Me" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(MPLOCALSOP3)
+       UIVAR (
+         NAME ( MPLOCALSOP2 )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
-       VALUE("I'M GOING DOWN THE MIDDLE.")
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(SOP4)
-     
-     TYPE(TEXT)
-     
-     XPOS( -385  -nan )
-     
-     YPOS( 177  0.000000 )
-     
-     SPEC(
-       CAPTION("Set Me")
-      
-      SCALE( 0.400000 )
-      
-      UIVAR(
-        NAME(MPLOCALSOP4)
-       
-       LONGEVITY(PERSISTENT)
-       
-       VALUE("I'M GOING FOR THE BOMB.")
+        VALUE ( "I'M GOING RIGHT." )
        
        )
       
@@ -400,25 +346,25 @@
      )
     
     (
-      NAME(SOP5)
+       NAME ( SOP3 )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( -385  -nan )
+      XPOS ( -385 )
      
-     YPOS( 207  0.000000 )
+      YPOS ( 147 )
      
-     SPEC(
-       CAPTION("Set Me")
+      SPEC (
+        CAPTION ( "Set Me" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(MPLOCALSOP5)
+       UIVAR (
+         NAME ( MPLOCALSOP3 )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
-       VALUE("I'M GOING FOR THE HOSTAGES.")
+        VALUE ( "I'M GOING DOWN THE MIDDLE." )
        
        )
       
@@ -426,131 +372,185 @@
      
      )
     
-    )
-   
-   ANIMATIONS((
-      EVENT(ONSTART)
+    (
+       NAME ( SOP4 )
      
-     ANIMATION(bottom_bar_slide_up)
+      TYPE ( TEXT )
+     
+      XPOS ( -385 )
+     
+      YPOS ( 177 )
+     
+      SPEC (
+        CAPTION ( "Set Me" )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( MPLOCALSOP4 )
+       
+        LONGEVITY ( PERSISTENT )
+       
+        VALUE ( "I'M GOING FOR THE BOMB." )
+       
+       )
+      
+      )
      
      )
     
     (
-      BUTTON(TRIANGLE)
+       NAME ( SOP5 )
      
-     ANIMATION(exit_net_login)
+      TYPE ( TEXT )
      
-     ARGUMENT(PREVIOUS_SCREEN)
+      XPOS ( -385 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      YPOS ( 207 )
      
-     ANIMATION(letterbar_slide_down)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(OnLoginRoomstart)
-     
-     )
-    
-    (
-      EVENT(ON_STATE_POP)
-     
-     ANIMATION(menu_fade_up)
-     
-     )
-    
-    (
-      EVENT(MP_MEDIUS_ERROR)
-     
-     ANIMATION(OnMultiplayerDisconnect)
-     
-     )
-    
-    (
-      EVENT(NETCNF_ERROR)
-     
-     ANIMATION(OnNetCnfError)
+      SPEC (
+        CAPTION ( "Set Me" )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( MPLOCALSOP5 )
+       
+        LONGEVITY ( PERSISTENT )
+       
+        VALUE ( "I'M GOING FOR THE HOSTAGES." )
+       
+       )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(login_btn)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     XPOS( 20  0.000000 )
+      ANIMATION ( bottom_bar_slide_up )
      
-     YPOS( 70  0.000000 )
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
      
-     TYPE(BUTTON)
+      ANIMATION ( exit_net_login )
      
-     SPEC(
-       XSIZE( 180  0.000000 )
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnLoginRoomstart )
+     
+     )
+    
+    (
+       EVENT ( ON_STATE_POP )
+     
+      ANIMATION ( menu_fade_up )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    (
+       EVENT ( NETCNF_ERROR )
+     
+      ANIMATION ( OnNetCnfError )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( login_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 70 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 180 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 13  0.000000 )
+       XOFFSET ( 13 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION(LOGIN)
+       CAPTION ( LOGIN )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnLoginactive)
+         ANIMATION ( OnLoginactive )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(exit_net_login)
+         ANIMATION ( exit_net_login )
         
-        ARGUMENT(dlgNetPlayerName.rdr)
+         ARGUMENT ( dlgNetPlayerName.rdr )
         
         )
        
@@ -561,75 +561,75 @@
      )
     
     (
-      NAME(configureBtn)
+       NAME ( configureBtn )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 100  0.000000 )
+      YPOS ( 100 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 180  0.000000 )
+      SPEC (
+        XSIZE ( 180 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 13  0.000000 )
+       XOFFSET ( 13 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION("CONFIGURE NETWORK")
+       CAPTION ( "CONFIGURE NETWORK" )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnConfigureactive)
+         ANIMATION ( OnConfigureactive )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(exit_net_login)
+         ANIMATION ( exit_net_login )
         
-        ARGUMENT(dlgNetConfig.rdr)
+         ARGUMENT ( dlgNetConfig.rdr )
         
         )
        
@@ -640,73 +640,73 @@
      )
     
     (
-      NAME(combo_btn)
+       NAME ( combo_btn )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 130  0.000000 )
+      YPOS ( 130 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 180  0.000000 )
+      SPEC (
+        XSIZE ( 180 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 21  0.000000 )
+       YOFFSET ( 21 )
       
-      CAPTION(COMBINATION:)
+       CAPTION ( COMBINATION: )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         EVENT(ONACTIVATE)
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
         
-        ANIMATION(OnComboactive)
+         ANIMATION ( OnComboactive )
         
         )
        
        (
-         BUTTON(CROSS)
+          BUTTON ( CROSS )
         
-        ANIMATION(incr_combo)
+         ANIMATION ( incr_combo )
         
         )
        
@@ -722,20 +722,20 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnLoginactive)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnLoginactive )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Login to SOCOM to play online")
+       CAPTION ( "Login to SOCOM to play online" )
       
       )
      
@@ -743,132 +743,132 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnLoginRoomstart)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnLoginRoomstart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(CameFromOther= 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromOther  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Init)
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
        )
       
-      &&ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Loading network configuration from memory card (PS2). Do not remove memory card (PS2).")
+       CAPTION ( "Loading network configuration from memory card (PS2). Do not remove memory card (PS2)." )
       
-      PROTECTED()
+       PROTECTED ()
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  275.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 96  0.000000 )
+       HEIGHT ( 96 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.450000 )
-      
-      )
-     
-     ELSE()
-     
-     IF(
-       VALVE(NETCNF_REQUIRED!= 0  0.000000 )
+       SCALE ( 0.450000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(login_btn)
+      ELSE ()
+     
+      IF (
+        VALVE ( NETCNF_REQUIRED  !=  0 )
       
       )
      
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      CAPTION("Checking for network adapter")
-      
-      PROTECTED()
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  275.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 96  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.450000 )
+       ARGUMENT ( login_btn )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     ui::UI_COMMAND(
-       TYPE(NetCnfInit)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Checking for network adapter" )
+      
+       PROTECTED ()
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  275.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 96 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.450000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(NetCnfOpen)
-      
-      ARGUMENT(mc0:)
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfInit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(NetGetInterfaceList)
+      ui::UI_COMMAND (
+        TYPE ( NetCnfOpen )
+      
+       ARGUMENT ( mc0: )
       
       )
      
-     IF(
-       !(
-        ui::UI_COMMAND(
-         TYPE(TestUIVar)
+      ui::UI_COMMAND (
+        TYPE ( NetGetInterfaceList )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( TestUIVar )
         
-        ARGUMENT(NETDEVICE_LIST)
+         ARGUMENT ( NETDEVICE_LIST )
         
         )
        
@@ -876,564 +876,269 @@
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("No network adapter detected. Online play requires a network adapter.")
+       CAPTION ( "No network adapter detected. Online play requires a network adapter." )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  275.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 110  0.000000 )
+       HEIGHT ( 110 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      YESNO(
-        VALVE(NeedNetAdapter)
+       YESNO (
+         VALVE ( NeedNetAdapter )
        
        )
       
       )
      
-     WHILE(
-       VALVE(NeedNetAdapter== 0  0.000000 )
+      WHILE (
+        VALVE ( NeedNetAdapter  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(NetCnfClose)
+      ui::UI_COMMAND (
+        TYPE ( NetCnfClose )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(NetCnfUnInit)
+      ui::UI_COMMAND (
+        TYPE ( NetCnfUnInit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(RebootIOP)
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(PREVIOUS_SCREEN)
-      
-      )
-     
-     VALVE(net_config_is_init= 0  0.000000 )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfCurrCombo)
-      
-      ARGUMENT(SELECTED_COMBO)
+       ARGUMENT ( PREVIOUS_SCREEN )
       
       )
      
-     CALL_ANIMATION(
-       NAME(refresh_combo)
+      VALVE ( net_config_is_init  =  0 )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfCurrCombo )
+      
+       ARGUMENT ( SELECTED_COMBO )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(KILLPOPUP)
+      CALL_ANIMATION (
+        NAME ( refresh_combo )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(login_btn)
+      ui::UI_COMMAND (
+        TYPE ( KILLPOPUP )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      CAPTION("Login to SOCOM to play online")
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(PasswordSecurity)
+       ARGUMENT ( login_btn )
       
       )
      
-     ENDIF()
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Login to SOCOM to play online" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( PasswordSecurity )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnNetCnfError)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnNetCnfError )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      STOP_ANIMATION(
-       NAME(OnLoginRoomstart)
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( OnLoginRoomstart )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     IF(
-       VALVE(NETCNF_ERRNO== 15  0.000000 )
+      IF (
+        VALVE ( NETCNF_ERRNO  ==  15 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  275.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 110  0.000000 )
+       HEIGHT ( 110 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      YESNO(
-        VALVE(WatiForX)
+       YESNO (
+         VALVE ( WatiForX )
        
        )
       
       )
      
-     VALVE(AreYouSure= 0  0.000000 )
+      VALVE ( AreYouSure  =  0 )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("The Network configuration is not readable. Would you like to delete any existing configurations, and create a new one?")
+       CAPTION ( "The Network configuration is not readable. Would you like to delete any existing configurations, and create a new one?" )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  200.000000 )
+       POSITION ( 170.000000  200.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 100  0.000000 )
+       HEIGHT ( 100 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      CANCELLABLE()
+       CANCELLABLE ()
       
-      YESNO(
-        VALVE(AreYouSure)
+       YESNO (
+         VALVE ( AreYouSure )
        
-       YES(
-         CAPTION(Yes)
+        YES (
+          CAPTION ( Yes )
         
-        POS( 50  0.000000  65  0.000000 )
+         POS ( 50  65 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
-       NO(
-         CAPTION(No)
+        NO (
+          CAPTION ( No )
         
-        POS( 190  0.000000  65  0.000000 )
+         POS ( 190  65 )
         
-        TEXTOFFSET( 15  0.000000  18  0.000000 )
+         TEXTOFFSET ( 15  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
         
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfDeleteAll)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgNetConfig.rdr)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(PREVIOUS_SCREEN)
-      
-      )
-     
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfSelectCombo)
-      
-      ARGUMENT(SELECTED_COMBO)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfClose)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfUnInit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(RebootIOP)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION(INPUT_STRING)
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  275.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 110  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(WaitForX)
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(WaitForX== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(exit_net_login)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(NetCnfSelectCombo)
-      
-      ARGUMENT(SELECTED_COMBO)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfClose)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfUnInit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(RebootIOP)
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
-      
-      )
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(INPUT_STRING)
-      
-      )
-     
-     VALVE(net_config_is_init= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(incr_combo)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(SELECTED_COMBO+= 1  0.000000 )
-     
-     IF(
-       VALVE(SELECTED_COMBO> 6  0.000000 )
-      
-      )
-     
-     VALVE(SELECTED_COMBO= 1  0.000000 )
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_combo)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(refresh_combo)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(SELECTED_COMBO== 1  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUcombo_value)
-      
-      CAPTION("Combination 1")
-      
-      )
-     
-     ELSEIF(
-       VALVE(SELECTED_COMBO== 2  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUcombo_value)
-      
-      CAPTION("Combination 2")
-      
-      )
-     
-     ELSEIF(
-       VALVE(SELECTED_COMBO== 3  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUcombo_value)
-      
-      CAPTION("Combination 3")
-      
-      )
-     
-     ELSEIF(
-       VALVE(SELECTED_COMBO== 4  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUcombo_value)
-      
-      CAPTION("Combination 4")
-      
-      )
-     
-     ELSEIF(
-       VALVE(SELECTED_COMBO== 5  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUcombo_value)
-      
-      CAPTION("Combination 5")
-      
-      )
-     
-     ELSEIF(
-       VALVE(SELECTED_COMBO== 6  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUcombo_value)
-      
-      CAPTION("Combination 6")
-      
-      )
-     
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       TYPE(NetCnfGetDispNames)
-      
-      ARGUMENT(SELECTED_COMBO)
-      
-      )
-     
-     IF(
-       !(
-        ui::UI_COMMAND(
-         TYPE(TestUIVar)
-        
-        ARGUMENT(DevDispName)
+         SCALE ( 0.400000 )
         
         )
        
@@ -1441,21 +1146,294 @@
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUhw_value)
-      
-      CAPTION("(not set)")
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
       
       )
      
-     ENDIF()
+      END_WHILE ()
      
-     IF(
-       !(
-        ui::UI_COMMAND(
-         TYPE(TestUIVar)
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfDeleteAll )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgNetConfig.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfSelectCombo )
+      
+       ARGUMENT ( SELECTED_COMBO )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfClose )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfUnInit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( INPUT_STRING )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  275.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 110 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( WaitForX )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( WaitForX  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_net_login )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( NetCnfSelectCombo )
+      
+       ARGUMENT ( SELECTED_COMBO )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfClose )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfUnInit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( INPUT_STRING )
+      
+      )
+     
+      VALVE ( net_config_is_init  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_combo )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( SELECTED_COMBO  +=  1 )
+     
+      IF (
+        VALVE ( SELECTED_COMBO  >  6 )
+      
+      )
+     
+      VALVE ( SELECTED_COMBO  =  1 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_combo )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( refresh_combo )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( SELECTED_COMBO  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  combo_value )
+      
+       CAPTION ( "Combination 1" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SELECTED_COMBO  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  combo_value )
+      
+       CAPTION ( "Combination 2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SELECTED_COMBO  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  combo_value )
+      
+       CAPTION ( "Combination 3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SELECTED_COMBO  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  combo_value )
+      
+       CAPTION ( "Combination 4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SELECTED_COMBO  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  combo_value )
+      
+       CAPTION ( "Combination 5" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SELECTED_COMBO  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  combo_value )
+      
+       CAPTION ( "Combination 6" )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCnfGetDispNames )
+      
+       ARGUMENT ( SELECTED_COMBO )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( TestUIVar )
         
-        ARGUMENT(IfcDispName)
+         ARGUMENT ( DevDispName )
         
         )
        
@@ -1463,90 +1441,51 @@
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUserv_value)
+      ui::UI_COMMAND (
+        NODE ( MENU  hw_value )
       
-      CAPTION("(not set)")
+       CAPTION ( "(not set)" )
       
       )
      
-     ENDIF()
+      ENDIF ()
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( TestUIVar )
+        
+         ARGUMENT ( IfcDispName )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  serv_value )
+      
+       CAPTION ( "(not set)" )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnConfigureactive)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnConfigureactive )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      CAPTION("Press X button to enter your network settings.")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnComboactive)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUDescriptionText)
-      
-      CAPTION("Press the X button to select other combinations.")
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       CAPTION ( "Press X button to enter your network settings." )
       
       )
      
@@ -1554,43 +1493,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnComboactive )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       CAPTION ( "Press the X button to select other combinations." )
       
       )
      
@@ -1598,36 +1510,124 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

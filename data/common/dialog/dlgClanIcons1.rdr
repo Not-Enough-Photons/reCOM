@@ -1,203 +1,203 @@
 ((
-  SCREENS((
-    LIBRARIES(ui/assetlib/uimpui/assetlib/uici)
+   SCREENS ((
+     LIBRARIES ( ui/assetlib/uimp  ui/assetlib/uici )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgClanIcons1.rdr)
+    SCRIPT_LIBRARY ( dlgClanIcons1.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("CLAN ICONS")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 384  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SIZE( 640  0.000000  64  0.000000 )
+       CHILDOF ( letterbar )
       
-      )
-     
-     )
-    
-    (
-      NAME(net_conn_ind_Yel)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 572  0.000000 )
-     
-     YPOS( 25  0.000000 )
-     
-     SPEC(
-       CHILDOF(letterbar)
+       CAPTION ( "CLAN ICONS" )
       
-      FILENAME(NetMonY.tif)
-      
-      SIZE( 28  0.000000  28  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(net_conn_ind_blue)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 581  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 34  0.000000 )
+      YPOS ( 384 )
      
-     SPEC(
-       CHILDOF(letterbar)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      FILENAME(NetMonB.tif)
-      
-      SIZE( 10  0.000000  12  0.000000 )
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(playertext)
+       NAME ( net_conn_ind_Yel )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 572 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 25 )
      
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
+      SPEC (
+        CHILDOF ( letterbar )
       
-      CAPTION(Player:)
+       FILENAME ( NetMonY.tif )
       
-      )
-     
-     )
-    
-    (
-      NAME(clantext)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 45  0.000000 )
-     
-     CHILDOF(letterbar_bottom)
-     
-     SPEC(
-       SCALE( 0.400000 )
-      
-      CAPTION(Clan:)
+       SIZE ( 28  28 )
       
       )
      
      )
     
     (
-      NAME(playername)
+       NAME ( net_conn_ind_blue )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 581 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 34 )
      
-     CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
      
-     SPEC(
-       UIVAR(
-        NAME(PLAYERNAMEVAR)
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
        
-       LONGEVITY(PERSISTENT)
+        LONGEVITY ( PERSISTENT )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(txtClanName)
+       NAME ( txtClanName )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 45  0.000000 )
+      YPOS ( 45 )
      
-     SPEC(
-       CHILDOF(letterbar_bottom)
+      SPEC (
+        CHILDOF ( letterbar_bottom )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      UIVAR(
-        NAME(CLANNAMEVAR)
+       UIVAR (
+         NAME ( CLANNAMEVAR )
        
-       VALUE(Unaffiliated)
+        VALUE ( Unaffiliated )
        
-       TYPE(PERMANENT)
+        TYPE ( PERMANENT )
        
        )
       
@@ -206,1529 +206,1529 @@
      )
     
     (
-      NAME(IconDummy)
+       NAME ( IconDummy )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       XSIZE( 36  0.000000 )
+      SPEC (
+        XSIZE ( 36 )
       
-      YSIZE( 36  0.000000 )
+       YSIZE ( 36 )
       
-      FILENAME(" ")
+       FILENAME ( " " )
       
       )
      
      )
     
     (
-      NAME(IconActive)
+       NAME ( IconActive )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       CHILDOF(IconDummy)
+      SPEC (
+        CHILDOF ( IconDummy )
       
-      XSIZE( 36  0.000000 )
+       XSIZE ( 36 )
       
-      YSIZE( 36  0.000000 )
+       YSIZE ( 36 )
       
-      FILENAME(ClanIconSel.tif)
+       FILENAME ( ClanIconSel.tif )
       
       )
      
      )
     
     (
-      NAME(IconSelect)
+       NAME ( IconSelect )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       CHILDOF(IconDummy)
+      SPEC (
+        CHILDOF ( IconDummy )
       
-      XSIZE( 36  0.000000 )
+       XSIZE ( 36 )
       
-      YSIZE( 36  0.000000 )
+       YSIZE ( 36 )
       
-      FILENAME(ClanIconAct.tif)
+       FILENAME ( ClanIconAct.tif )
       
       )
      
      )
     
     (
-      NAME(IconParent)
+       NAME ( IconParent )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( -12  -nan )
+      XPOS ( -12 )
      
-     YPOS( 8  0.000000 )
+      YPOS ( 8 )
      
-     SPEC()
+      SPEC ()
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 64  0.000000 )
+      XPOS ( 64 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_01.tif)
+       FILENAME ( clan_icon_01.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 114  0.000000 )
+      XPOS ( 114 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_02.tif)
+       FILENAME ( clan_icon_02.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 164  0.000000 )
+      XPOS ( 164 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_03.tif)
+       FILENAME ( clan_icon_03.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 214  0.000000 )
+      XPOS ( 214 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_04.tif)
+       FILENAME ( clan_icon_04.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 264  0.000000 )
+      XPOS ( 264 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_05.tif)
+       FILENAME ( clan_icon_05.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 314  0.000000 )
+      XPOS ( 314 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_06.tif)
+       FILENAME ( clan_icon_06.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 364  0.000000 )
+      XPOS ( 364 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_07.tif)
+       FILENAME ( clan_icon_07.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 414  0.000000 )
+      XPOS ( 414 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_08.tif)
+       FILENAME ( clan_icon_08.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 464  0.000000 )
+      XPOS ( 464 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_09.tif)
+       FILENAME ( clan_icon_09.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 514  0.000000 )
+      XPOS ( 514 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_10.tif)
+       FILENAME ( clan_icon_10.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 564  0.000000 )
+      XPOS ( 564 )
      
-     YPOS( 64  0.000000 )
+      YPOS ( 64 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_11.tif)
+       FILENAME ( clan_icon_11.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 64  0.000000 )
+      XPOS ( 64 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_12.tif)
+       FILENAME ( clan_icon_12.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 114  0.000000 )
+      XPOS ( 114 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_13.tif)
+       FILENAME ( clan_icon_13.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 164  0.000000 )
+      XPOS ( 164 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_14.tif)
+       FILENAME ( clan_icon_14.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 214  0.000000 )
+      XPOS ( 214 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_15.tif)
+       FILENAME ( clan_icon_15.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 264  0.000000 )
+      XPOS ( 264 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_16.tif)
+       FILENAME ( clan_icon_16.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 314  0.000000 )
+      XPOS ( 314 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_17.tif)
+       FILENAME ( clan_icon_17.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 364  0.000000 )
+      XPOS ( 364 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_18.tif)
+       FILENAME ( clan_icon_18.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 414  0.000000 )
+      XPOS ( 414 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_19.tif)
+       FILENAME ( clan_icon_19.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 464  0.000000 )
+      XPOS ( 464 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_20.tif)
+       FILENAME ( clan_icon_20.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 514  0.000000 )
+      XPOS ( 514 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_21.tif)
+       FILENAME ( clan_icon_21.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 564  0.000000 )
+      XPOS ( 564 )
      
-     YPOS( 114  0.000000 )
+      YPOS ( 114 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_22.tif)
+       FILENAME ( clan_icon_22.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 64  0.000000 )
+      XPOS ( 64 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_23.tif)
+       FILENAME ( clan_icon_23.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 114  0.000000 )
+      XPOS ( 114 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_24.tif)
+       FILENAME ( clan_icon_24.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 164  0.000000 )
+      XPOS ( 164 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_25.tif)
+       FILENAME ( clan_icon_25.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 214  0.000000 )
+      XPOS ( 214 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_26.tif)
+       FILENAME ( clan_icon_26.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 264  0.000000 )
+      XPOS ( 264 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_27.tif)
+       FILENAME ( clan_icon_27.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 314  0.000000 )
+      XPOS ( 314 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_28.tif)
+       FILENAME ( clan_icon_28.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 364  0.000000 )
+      XPOS ( 364 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_29.tif)
+       FILENAME ( clan_icon_29.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 414  0.000000 )
+      XPOS ( 414 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_30.tif)
+       FILENAME ( clan_icon_30.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 464  0.000000 )
+      XPOS ( 464 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_31.tif)
+       FILENAME ( clan_icon_31.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 514  0.000000 )
+      XPOS ( 514 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_32.tif)
+       FILENAME ( clan_icon_32.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 564  0.000000 )
+      XPOS ( 564 )
      
-     YPOS( 164  0.000000 )
+      YPOS ( 164 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_33.tif)
+       FILENAME ( clan_icon_33.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 64  0.000000 )
+      XPOS ( 64 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_34.tif)
+       FILENAME ( clan_icon_34.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 114  0.000000 )
+      XPOS ( 114 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_35.tif)
+       FILENAME ( clan_icon_35.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 164  0.000000 )
+      XPOS ( 164 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_36.tif)
+       FILENAME ( clan_icon_36.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 214  0.000000 )
+      XPOS ( 214 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_37.tif)
+       FILENAME ( clan_icon_37.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 264  0.000000 )
+      XPOS ( 264 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_38.tif)
+       FILENAME ( clan_icon_38.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 314  0.000000 )
+      XPOS ( 314 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_39.tif)
+       FILENAME ( clan_icon_39.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 364  0.000000 )
+      XPOS ( 364 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_40.tif)
+       FILENAME ( clan_icon_40.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 414  0.000000 )
+      XPOS ( 414 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_41.tif)
+       FILENAME ( clan_icon_41.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 464  0.000000 )
+      XPOS ( 464 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_42.tif)
+       FILENAME ( clan_icon_42.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 514  0.000000 )
+      XPOS ( 514 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_43.tif)
+       FILENAME ( clan_icon_43.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 564  0.000000 )
+      XPOS ( 564 )
      
-     YPOS( 214  0.000000 )
+      YPOS ( 214 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_44.tif)
+       FILENAME ( clan_icon_44.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 64  0.000000 )
+      XPOS ( 64 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_45.tif)
+       FILENAME ( clan_icon_45.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 114  0.000000 )
+      XPOS ( 114 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_46.tif)
+       FILENAME ( clan_icon_46.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 164  0.000000 )
+      XPOS ( 164 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_47.tif)
+       FILENAME ( clan_icon_47.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 214  0.000000 )
+      XPOS ( 214 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_48.tif)
+       FILENAME ( clan_icon_48.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 264  0.000000 )
+      XPOS ( 264 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_49.tif)
+       FILENAME ( clan_icon_49.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 314  0.000000 )
+      XPOS ( 314 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_50.tif)
+       FILENAME ( clan_icon_50.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 364  0.000000 )
+      XPOS ( 364 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_51.tif)
+       FILENAME ( clan_icon_51.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 414  0.000000 )
+      XPOS ( 414 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_52.tif)
+       FILENAME ( clan_icon_52.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 464  0.000000 )
+      XPOS ( 464 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_53.tif)
+       FILENAME ( clan_icon_53.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 514  0.000000 )
+      XPOS ( 514 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_54.tif)
+       FILENAME ( clan_icon_54.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 564  0.000000 )
+      XPOS ( 564 )
      
-     YPOS( 264  0.000000 )
+      YPOS ( 264 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_55.tif)
+       FILENAME ( clan_icon_55.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 64  0.000000 )
+      XPOS ( 64 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_56.tif)
+       FILENAME ( clan_icon_56.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 114  0.000000 )
+      XPOS ( 114 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_57.tif)
+       FILENAME ( clan_icon_57.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 164  0.000000 )
+      XPOS ( 164 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_58.tif)
+       FILENAME ( clan_icon_58.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 214  0.000000 )
+      XPOS ( 214 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_59.tif)
+       FILENAME ( clan_icon_59.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 264  0.000000 )
+      XPOS ( 264 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_60.tif)
+       FILENAME ( clan_icon_60.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 314  0.000000 )
+      XPOS ( 314 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_61.tif)
+       FILENAME ( clan_icon_61.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 364  0.000000 )
+      XPOS ( 364 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_62.tif)
+       FILENAME ( clan_icon_62.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 414  0.000000 )
+      XPOS ( 414 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_63.tif)
+       FILENAME ( clan_icon_63.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 464  0.000000 )
+      XPOS ( 464 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_64.tif)
+       FILENAME ( clan_icon_64.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 514  0.000000 )
+      XPOS ( 514 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_65.tif)
+       FILENAME ( clan_icon_65.tif )
       
       )
      
      )
     
     (
-      NAME(clanIcon1)
+       NAME ( clanIcon1 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 564  0.000000 )
+      XPOS ( 564 )
      
-     YPOS( 314  0.000000 )
+      YPOS ( 314 )
      
-     SPEC(
-       XSIZE( 32  0.000000 )
+      SPEC (
+        XSIZE ( 32 )
       
-      CHILDOF(IconParent)
+       CHILDOF ( IconParent )
       
-      YSIZE( 32  0.000000 )
+       YSIZE ( 32 )
       
-      FILENAME(clan_icon_66.tif)
+       FILENAME ( clan_icon_66.tif )
       
       )
      
@@ -1736,195 +1736,195 @@
     
     )
    
-   ANIMATIONS((
-      EVENT(ONSTART)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     ANIMATION(net_monitor)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(OnClanIconstart)
+      ANIMATION ( net_monitor )
      
      )
     
     (
-      EVENT(ONSTART)
+       EVENT ( ONSTART )
      
-     ANIMATION(bottom_bar_slide_up)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(letterbar_slide_down)
+      ANIMATION ( OnClanIconstart )
      
      )
     
     (
-      BUTTON(TRIANGLE)
+       EVENT ( ONSTART )
      
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(dlgManageRosterLeader.rdr)
+      ANIMATION ( bottom_bar_slide_up )
      
      )
     
     (
-      BUTTON(SELECT)
+       EVENT ( ONSTART )
      
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(dlgClanIcons1.rdr)
+      ANIMATION ( letterbar_slide_down )
      
      )
     
     (
-      BUTTON(RIGHT)
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(MoveRight)
+      ANIMATION ( goto_menu )
      
-     )
-    
-    (
-      BUTTON(LEFT)
-     
-     ANIMATION(MoveLeft)
+      ARGUMENT ( dlgManageRosterLeader.rdr )
      
      )
     
     (
-      BUTTON(UP)
+       BUTTON ( SELECT )
      
-     ANIMATION(MoveUp)
+      ANIMATION ( goto_menu )
      
-     )
-    
-    (
-      BUTTON(DOWN)
-     
-     ANIMATION(MoveDown)
+      ARGUMENT ( dlgClanIcons1.rdr )
      
      )
     
     (
-      BUTTON(CROSS)
+       BUTTON ( RIGHT )
      
-     ANIMATION(SetClanBadge)
+      ANIMATION ( MoveRight )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       BUTTON ( LEFT )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      ANIMATION ( MoveLeft )
+     
+     )
+    
+    (
+       BUTTON ( UP )
+     
+      ANIMATION ( MoveUp )
+     
+     )
+    
+    (
+       BUTTON ( DOWN )
+     
+      ANIMATION ( MoveDown )
+     
+     )
+    
+    (
+       BUTTON ( CROSS )
+     
+      ANIMATION ( SetClanBadge )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
      
      )
     
     )
    
-   CONTROLS()
+    CONTROLS ()
    
    )
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SetClanBadge)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetClanBadge )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(clan_badge=Max_x)
+     SEQUENCE_DEFINITION (
+       VALVE ( clan_badge  =  Max_x )
      
-     VALVE(clan_badge+= 1  0.000000 )
+      VALVE ( clan_badge  +=  1 )
      
-     VALVE(clan_badge*=Current_Y)
+      VALVE ( clan_badge  *=  Current_Y )
      
-     VALVE(clan_badge+=Current_X)
+      VALVE ( clan_badge  +=  Current_X )
      
-     VALVE(clan_badge+= 1  0.000000 )
+      VALVE ( clan_badge  +=  1 )
      
-     ui::UI_COMMAND(
-       TYPE(UpdateClanStats)
+      ui::UI_COMMAND (
+        TYPE ( UpdateClanStats )
       
       )
      
-     SOUND(
-       NAME(SND_DINK)
+      SOUND (
+        NAME ( SND_DINK )
       
-      AT_NODE(ROOT_NODE)
+       AT_NODE ( ROOT_NODE )
       
-      START()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUIconActive)
-      
-      STATE(INACTIVE)
+       START ()
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUIconSelect)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  IconActive )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     WAIT( 0.500000 )
-     
-     SOUND(
-       NAME(SND_DINK)
-      
-      AT_NODE(ROOT_NODE)
-      
-      START()
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUIconActive)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  IconSelect )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUIconSelect)
-      
-      STATE(INACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      WAIT ( 0.500000 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  IconActive )
       
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
+       STATE ( ACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  IconSelect )
       
-      ARGUMENT(dlgManageRosterLeader.rdr)
+       STATE ( INACTIVE )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgManageRosterLeader.rdr )
       
       )
      
@@ -1932,35 +1932,35 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(refresh_icon_screen)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( refresh_icon_screen )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(back_x=Current_X)
+     SEQUENCE_DEFINITION (
+       VALVE ( back_x  =  Current_X )
      
-     VALVE(back_x*=X_Width)
+      VALVE ( back_x  *=  X_Width )
      
-     VALVE(back_x+=Start_X)
+      VALVE ( back_x  +=  Start_X )
      
-     VALVE(back_y=Current_Y)
+      VALVE ( back_y  =  Current_Y )
      
-     VALVE(back_y*=Y_Width)
+      VALVE ( back_y  *=  Y_Width )
      
-     VALVE(back_y+=Start_Y)
+      VALVE ( back_y  +=  Start_Y )
      
-     VALVE(back_z= 0  0.000000 )
+      VALVE ( back_z  =  0 )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUIconDummy)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  IconDummy )
       
-      TRANSLATE_TO(
-        VALVES(back_xback_yback_z)
+       TRANSLATE_TO (
+         VALVES ( back_x  back_y  back_z )
        
        )
       
-      RUN_TIME( 0.010000 )
+       RUN_TIME ( 0.010000 )
       
       )
      
@@ -1968,57 +1968,29 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MoveUp)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MoveUp )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(Current_Y== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( Current_Y  ==  0 )
       
       )
      
-     VALVE(Current_Y=Max_y)
+      VALVE ( Current_Y  =  Max_y )
      
-     ELSE()
+      ELSE ()
      
-     VALVE(Current_Y+= -1  -nan )
+      VALVE ( Current_Y  +=  -1 )
      
-     ENDIF()
+      ENDIF ()
      
-     CALL_ANIMATION(
-       NAME(refresh_icon_screen)
+      CALL_ANIMATION (
+        NAME ( refresh_icon_screen )
       
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MoveDown)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(Current_Y+= 1  0.000000 )
-     
-     IF(
-       VALVE(Current_Y>Max_y)
-      
-      )
-     
-     VALVE(Current_Y= 0  0.000000 )
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_icon_screen)
-      
-      WAIT_FOR_COMPLETION()
+       WAIT_FOR_COMPLETION ()
       
       )
      
@@ -2026,57 +1998,27 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MoveLeft)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MoveDown )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(Current_X== 0  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( Current_Y  +=  1 )
+     
+      IF (
+        VALVE ( Current_Y  >  Max_y )
       
       )
      
-     VALVE(Current_X=Max_x)
+      VALVE ( Current_Y  =  0 )
      
-     ELSE()
+      ENDIF ()
      
-     VALVE(Current_X+= -1  -nan )
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_icon_screen)
+      CALL_ANIMATION (
+        NAME ( refresh_icon_screen )
       
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MoveRight)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(Current_X+= 1  0.000000 )
-     
-     IF(
-       VALVE(Current_X>Max_x)
-      
-      )
-     
-     VALVE(Current_X= 0  0.000000 )
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(refresh_icon_screen)
-      
-      WAIT_FOR_COMPLETION()
+       WAIT_FOR_COMPLETION ()
       
       )
      
@@ -2084,46 +2026,29 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnClanIconstart)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MoveLeft )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(Current_X= 0  0.000000 )
-     
-     VALVE(Current_Y= 0  0.000000 )
-     
-     VALVE(Max_x= 10  0.000000 )
-     
-     VALVE(Max_y= 5  0.000000 )
-     
-     VALVE(X_Width= 50  0.000000 )
-     
-     VALVE(Y_Width= 50  0.000000 )
-     
-     VALVE(Start_X= 50  0.000000 )
-     
-     VALVE(Start_Y= 70  0.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUIconSelect)
-      
-      STATE(INACTIVE)
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( Current_X  ==  0 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(Icons1)
-      
-      )
+      VALVE ( Current_X  =  Max_x )
      
-     CALL_ANIMATION(
-       NAME(refresh_icon_screen)
+      ELSE ()
+     
+      VALVE ( Current_X  +=  -1 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_icon_screen )
       
-      WAIT_FOR_COMPLETION()
+       WAIT_FOR_COMPLETION ()
       
       )
      
@@ -2131,43 +2056,27 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MoveRight )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(INACTIVE)
+     SEQUENCE_DEFINITION (
+       VALVE ( Current_X  +=  1 )
+     
+      IF (
+        VALVE ( Current_X  >  Max_x )
       
       )
      
-     WAIT( 0.400000 )
+      VALVE ( Current_X  =  0 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
+      ENDIF ()
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      CALL_ANIMATION (
+        NAME ( refresh_icon_screen )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       WAIT_FOR_COMPLETION ()
       
       )
      
@@ -2175,36 +2084,127 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnClanIconstart )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       VALVE ( Current_X  =  0 )
+     
+      VALVE ( Current_Y  =  0 )
+     
+      VALVE ( Max_x  =  10 )
+     
+      VALVE ( Max_y  =  5 )
+     
+      VALVE ( X_Width  =  50 )
+     
+      VALVE ( Y_Width  =  50 )
+     
+      VALVE ( Start_X  =  50 )
+     
+      VALVE ( Start_Y  =  70 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  IconSelect )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
       
-      STATE(ACTIVE)
+       ARGUMENT ( Icons1 )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      CALL_ANIMATION (
+        NAME ( refresh_icon_screen )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       WAIT_FOR_COMPLETION ()
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      RUN_TIME( 0.250000 )
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

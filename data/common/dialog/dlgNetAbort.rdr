@@ -1,53 +1,53 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(dlgNetAbort.rdr)
+    SCRIPT_LIBRARY ( dlgNetAbort.rdr )
    
-   OBJECTS((
-      NAME(title)
+    OBJECTS ((
+       NAME ( title )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 320  0.000000 )
+      XPOS ( 320 )
      
-     YPOS( 100  0.000000 )
+      YPOS ( 100 )
      
-     SPEC(
-       HCENTERED()
+      SPEC (
+        HCENTERED ()
       
-      SCALE( 1.600000 )
+       SCALE ( 1.600000 )
       
-      CAPTION("ABORTING MISSION.")
+       CAPTION ( "ABORTING MISSION." )
       
       )
      
      )
     
     (
-      NAME(disconnect)
+       NAME ( disconnect )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 320  0.000000 )
+      XPOS ( 320 )
      
-     YPOS( 200  0.000000 )
+      YPOS ( 200 )
      
-     SPEC(
-       HCENTERED()
+      SPEC (
+        HCENTERED ()
       
-      SCALE( 0.900000 )
+       SCALE ( 0.900000 )
       
-      CAPTION("RETURNING TO SOCOM ONLINE")
+       CAPTION ( "RETURNING TO SOCOM ONLINE" )
       
       )
      
@@ -55,54 +55,54 @@
     
     )
    
-   ANIMATIONS((
-      EVENT(ONSTART)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     ANIMATION(onstart_handler)
-     
-     )
-    
-    (
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(exit_lobby)
+      ANIMATION ( onstart_handler )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      ANIMATION ( exit_lobby )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
      
      )
     
     )
    
-   CONTROLS()
+    CONTROLS ()
    
    )
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(onstart_handler)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( onstart_handler )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(DisconnectFromGameServer)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
       
       )
      
-     WAIT( 3.000000 )
+      WAIT ( 3.000000 )
      
-     CALL_ANIMATION(
-       NAME(exit_lobby)
+      CALL_ANIMATION (
+        NAME ( exit_lobby )
       
       )
      
@@ -110,27 +110,27 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(exit_lobby)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_lobby )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      DEBUG(
-       PREFIX_STRING("Debug: ")
+     SEQUENCE_DEFINITION (
+       DEBUG (
+        PREFIX_STRING ( "Debug: " )
       
-      ANIM_NAME(": ")
+       ANIM_NAME ( ": " )
       
-      SEQ_NAME(": ")
+       SEQ_NAME ( ": " )
       
-      STRING("Exit Lobby")
+       STRING ( "Exit Lobby" )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgWorldOfSOCOM.rdr)
+       ARGUMENT ( dlgWorldOfSOCOM.rdr )
       
       )
      

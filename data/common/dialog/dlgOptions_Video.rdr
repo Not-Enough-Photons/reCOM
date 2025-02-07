@@ -1,350 +1,350 @@
 ((
-  SCREENS(
-   LIBRARY(ui/assetlib/ui2d)
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
   
-  BACKGROUND(
-    TYPE(IMAGE)
+   BACKGROUND (
+     TYPE ( IMAGE )
    
-   FILENAME(multplay_back.tif)
+    FILENAME ( multplay_back.tif )
    
    )
   
-  FONT(myriad)
+   FONT ( myriad )
   
-  SCRIPT_LIBRARY(dlgOptions_Video.rdr)
+   SCRIPT_LIBRARY ( dlgOptions_Video.rdr )
   
-  OBJECTS((
-     NAME(letterbar)
+   OBJECTS ((
+      NAME ( letterbar )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 0  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 0  0.000000 )
+     YPOS ( 0 )
     
-    SPEC(
-      FILENAME(blank_top_bar.tif)
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
      
-     XSIZE( 640  0.000000 )
+      XSIZE ( 640 )
      
-     YSIZE( 64  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(bar_title)
-    
-    TYPE(TEXT)
-    
-    XPOS( 20  0.000000 )
-    
-    YPOS( 50  0.000000 )
-    
-    SPEC(
-      FONT(Gothic_13)
-     
-     CHILDOF(letterbar)
-     
-     CAPTION("VIDEO OPTIONS")
-     
-     SCALE( 0.950000 )
+      YSIZE ( 64 )
      
      )
     
     )
    
    (
-     NAME(MainWindow)
+      NAME ( bar_title )
     
-    TYPE(IMAGE)
+     TYPE ( TEXT )
     
-    XPOS( 15  0.000000 )
+     XPOS ( 20 )
     
-    YPOS( 70  0.000000 )
+     YPOS ( 50 )
     
-    SPEC(
-      XSIZE( 600  0.000000 )
+     SPEC (
+       FONT ( Gothic_13 )
      
-     YSIZE( 300  0.000000 )
+      CHILDOF ( letterbar )
      
-     FILENAME(eq_CharWinInv.tif)
+      CAPTION ( "VIDEO OPTIONS" )
      
-     )
-    
-    )
-   
-   (
-     NAME(letterbar_bottom)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 0  0.000000 )
-    
-    YPOS( 384  0.000000 )
-    
-    SPEC(
-      FILENAME(common_bar_bottom.tif)
-     
-     SIZE( 640  0.000000  64  0.000000 )
+      SCALE ( 0.950000 )
      
      )
     
     )
    
    (
-     NAME(dogtags)
+      NAME ( MainWindow )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 360  0.000000 )
+     XPOS ( 15 )
     
-    YPOS( 320  0.000000 )
+     YPOS ( 70 )
     
-    SPEC(
-      FILENAME(dogtags.tif)
+     SPEC (
+       XSIZE ( 600 )
      
-     SIZE( 256  0.000000  128  0.000000 )
+      YSIZE ( 300 )
      
-     )
-    
-    )
-   
-   (
-     NAME(spectrum)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 250  0.000000 )
-    
-    YPOS( 145  0.000000 )
-    
-    SPEC(
-      FILENAME(spectrum.tif)
-     
-     SIZE( 300  0.000000  95  0.000000 )
+      FILENAME ( eq_CharWinInv.tif )
      
      )
     
     )
    
    (
-     NAME(InfoWin)
+      NAME ( letterbar_bottom )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 25  0.000000 )
+     XPOS ( 0 )
     
-    YPOS( 77  0.000000 )
+     YPOS ( 384 )
     
-    SPEC(
-      FILENAME(brown_back_50.tif)
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
      
-     SIZE( 580  0.000000  18  0.000000 )
-     
-     )
-    
-    )
-   
-   (
-     NAME(TabDivHorTop)
-    
-    TYPE(IMAGE)
-    
-    XPOS( 22  0.000000 )
-    
-    YPOS( 90  0.000000 )
-    
-    SPEC(
-      XSIZE( 590  0.000000 )
-     
-     YSIZE( 10  0.000000 )
-     
-     FILENAME(Tab_HorGold_Divider.tif)
+      SIZE ( 640  64 )
      
      )
     
     )
    
    (
-     NAME(instText)
+      NAME ( dogtags )
     
-    TYPE(TEXT)
+     TYPE ( IMAGE )
     
-    XPOS( 320  0.000000 )
+     XPOS ( 360 )
     
-    YPOS( 90  0.000000 )
+     YPOS ( 320 )
     
-    SPEC(
-      HCENTERED()
+     SPEC (
+       FILENAME ( dogtags.tif )
      
-     COLOR( 255.000000  104.000000  51.000000 )
-     
-     SCALE( 0.400000 )
-     
-     CAPTION("CHANGE MONITOR BRIGHTNESS")
+      SIZE ( 256  128 )
      
      )
     
     )
    
-   )
-  
-  ANIMATIONS((
-     EVENT(ONSTART)
+   (
+      NAME ( spectrum )
     
-    ANIMATION(OnBrightAct)
+     TYPE ( IMAGE )
+    
+     XPOS ( 250 )
+    
+     YPOS ( 145 )
+    
+     SPEC (
+       FILENAME ( spectrum.tif )
+     
+      SIZE ( 300  95 )
+     
+     )
     
     )
    
    (
-     EVENT(ONSTART)
+      NAME ( InfoWin )
     
-    ANIMATION(bottom_bar_slide_up)
+     TYPE ( IMAGE )
     
-    )
-   
-   (
-     BUTTON(TRIANGLE)
+     XPOS ( 25 )
     
-    ANIMATION(goto_menu)
+     YPOS ( 77 )
     
-    ARGUMENT(dlgOptions_Menu.rdr)
-    
-    )
-   
-   (
-     EVENT(ONSTART)
-    
-    ANIMATION(Initialize_Options_Stuff)
+     SPEC (
+       FILENAME ( brown_back_50.tif )
+     
+      SIZE ( 580  18 )
+     
+     )
     
     )
    
    (
-     EVENT(ONSTART)
+      NAME ( TabDivHorTop )
     
-    ANIMATION(letterbar_slide_down)
+     TYPE ( IMAGE )
+    
+     XPOS ( 22 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       XSIZE ( 590 )
+     
+      YSIZE ( 10 )
+     
+      FILENAME ( Tab_HorGold_Divider.tif )
+     
+     )
     
     )
    
    (
-     EVENT(MEMCARD_ERROR)
+      NAME ( instText )
     
-    ANIMATION(handle_memcard_error)
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "CHANGE MONITOR BRIGHTNESS" )
+     
+     )
     
     )
    
    )
   
-  CONTROLS((
-     NAME(SPassBack)
+   ANIMATIONS ((
+      EVENT ( ONSTART )
     
-    TYPE(IMAGE)
+     ANIMATION ( OnBrightAct )
     
-    XPOS( 30  0.000000 )
+    )
+   
+   (
+      EVENT ( ONSTART )
     
-    YPOS( 105  0.000000 )
+     ANIMATION ( bottom_bar_slide_up )
     
-    SPEC(
-      XSIZE( 160  0.000000 )
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgOptions_Menu.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Initialize_Options_Stuff )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( MEMCARD_ERROR )
+    
+     ANIMATION ( handle_memcard_error )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( SPassBack )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 105 )
+    
+     SPEC (
+       XSIZE ( 160 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     FILENAME(brown_back.tif)
+      FILENAME ( brown_back.tif )
      
      )
     
     )
    
    (
-     NAME(brightnessslider)
+      NAME ( brightnessslider )
     
-    TYPE(IMAGE)
+     TYPE ( IMAGE )
     
-    XPOS( 230  0.000000 )
+     XPOS ( 230 )
     
-    YPOS( 115  0.000000 )
+     YPOS ( 115 )
     
-    SPEC(
-      XSIZE( 336  0.000000 )
+     SPEC (
+       XSIZE ( 336 )
      
-     YSIZE( 16  0.000000 )
+      YSIZE ( 16 )
      
-     FILENAME(op_slider.tif)
+      FILENAME ( op_slider.tif )
      
      )
     
     )
    
    (
-     NAME(brightnessbar)
+      NAME ( brightnessbar )
     
-    XPOS( 250  0.000000 )
+     XPOS ( 250 )
     
-    YPOS( 110  0.000000 )
+     YPOS ( 110 )
     
-    TYPE(SLIDERBAR)
+     TYPE ( SLIDERBAR )
     
-    SPEC(
-      UIVAR(
-       NAME(BRIGHTNESS)
+     SPEC (
+       UIVAR (
+        NAME ( BRIGHTNESS )
       
-      VALUE( 1.000000 )
+       VALUE ( 1.000000 )
       
-      LONGEVITY(PERSISTENT)
+       LONGEVITY ( PERSISTENT )
       
       )
      
-     XSIZE( 280  0.000000 )
+      XSIZE ( 280 )
      
-     YSIZE( 8  0.000000 )
+      YSIZE ( 8 )
      
-     PRESSED(
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+      PRESSED (
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+      NORMAL (
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+      ACTIVE (
+        TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+      DISABLED (
+        TEXT_COLOR ( 50  50  50 )
       
       )
      
-     NUM_INTERVALS( 10  0.000000 )
+      NUM_INTERVALS ( 10 )
      
-     KNOB_TEXTURE(op_knob.tif)
+      KNOB_TEXTURE ( op_knob.tif )
      
-     KNOB_SIZE( 30  0.000000  30  0.000000 )
+      KNOB_SIZE ( 30  30 )
      
-     CAPTION(BRIGHTNESS)
+      CAPTION ( BRIGHTNESS )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     XOFFSET( -210  -nan )
+      XOFFSET ( -210 )
      
-     YOFFSET( 15  0.000000 )
+      YOFFSET ( 15 )
      
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(OnBrightAct)
+        ANIMATION ( OnBrightAct )
        
        )
       
@@ -355,176 +355,176 @@
     )
    
    (
-     NAME(video_mode)
+      NAME ( video_mode )
     
-    TYPE(RADIOSTRIP)
+     TYPE ( RADIOSTRIP )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 240  0.000000 )
+     YPOS ( 240 )
     
-    SPEC(
-      XSIZE( 160  0.000000 )
+     SPEC (
+       XSIZE ( 160 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     CAPTION("VIDEO MODE")
+      CAPTION ( "VIDEO MODE" )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 20  0.000000 )
+      YOFFSET ( 20 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     SUBORDINATES((
-        NAME(VideoNTSC)
+      SUBORDINATES ((
+         NAME ( VideoNTSC )
        
-       XPOS( 200  0.000000 )
+        XPOS ( 200 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(video_mode)
+        SPEC (
+          CHILDOF ( video_mode )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(video_ntsc)
+          ANIMATION ( video_ntsc )
          
          )
         
-        CAPTION(Interlace)
+         CAPTION ( Interlace )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(VideoDTV)
+         NAME ( VideoDTV )
        
-       XPOS( 300  0.000000 )
+        XPOS ( 300 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(video_mode)
+        SPEC (
+          CHILDOF ( video_mode )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(video_dtv)
+          ANIMATION ( video_dtv )
          
          )
         
-        CAPTION("Progressive Scan (480p)")
+         CAPTION ( "Progressive Scan (480p)" )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnVideoModeAct)
+           ANIMATION ( OnVideoModeAct )
           
           )
          
@@ -541,176 +541,176 @@
     )
    
    (
-     NAME(subtitles)
+      NAME ( subtitles )
     
-    TYPE(RADIOSTRIP)
+     TYPE ( RADIOSTRIP )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 270  0.000000 )
+     YPOS ( 270 )
     
-    SPEC(
-      XSIZE( 160  0.000000 )
+     SPEC (
+       XSIZE ( 160 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     CAPTION(SUBTITLES)
+      CAPTION ( SUBTITLES )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 20  0.000000 )
+      YOFFSET ( 20 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     SUBORDINATES((
-        NAME(Suboff)
+      SUBORDINATES ((
+         NAME ( Suboff )
        
-       XPOS( 200  0.000000 )
+        XPOS ( 200 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(subtitles)
+        SPEC (
+          CHILDOF ( subtitles )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(disable_subtitles)
+          ANIMATION ( disable_subtitles )
          
          )
         
-        CAPTION(OFF)
+         CAPTION ( OFF )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(Subon)
+         NAME ( Subon )
        
-       XPOS( 300  0.000000 )
+        XPOS ( 300 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(subtitles)
+        SPEC (
+          CHILDOF ( subtitles )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(enable_subtitles)
+          ANIMATION ( enable_subtitles )
          
          )
         
-        CAPTION(ON)
+         CAPTION ( ON )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnSubtitlesAct)
+           ANIMATION ( OnSubtitlesAct )
           
           )
          
@@ -727,176 +727,176 @@
     )
    
    (
-     NAME(headbobbing)
+      NAME ( headbobbing )
     
-    TYPE(RADIOSTRIP)
+     TYPE ( RADIOSTRIP )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 300  0.000000 )
+     YPOS ( 300 )
     
-    SPEC(
-      XSIZE( 160  0.000000 )
+     SPEC (
+       XSIZE ( 160 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     CAPTION("HEAD BOB")
+      CAPTION ( "HEAD BOB" )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 20  0.000000 )
+      YOFFSET ( 20 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     SUBORDINATES((
-        NAME(headboboff)
+      SUBORDINATES ((
+         NAME ( headboboff )
        
-       XPOS( 200  0.000000 )
+        XPOS ( 200 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(headbobbing)
+        SPEC (
+          CHILDOF ( headbobbing )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(disable_headbob)
+          ANIMATION ( disable_headbob )
          
          )
         
-        CAPTION(OFF)
+         CAPTION ( OFF )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
         )
        
        )
       
       (
-        NAME(headbobon)
+         NAME ( headbobon )
        
-       XPOS( 300  0.000000 )
+        XPOS ( 300 )
        
-       YPOS( 0  0.000000 )
+        YPOS ( 0 )
        
-       TYPE(CHECKBOX)
+        TYPE ( CHECKBOX )
        
-       SPEC(
-         CHILDOF(headbobbing)
+        SPEC (
+          CHILDOF ( headbobbing )
         
-        CHECK_X( 7  0.000000 )
+         CHECK_X ( 7 )
         
-        CHECK_Y( 7  0.000000 )
+         CHECK_Y ( 7 )
         
-        CHECKSIZE_X( 25  0.000000 )
+         CHECKSIZE_X ( 25 )
         
-        CHECKSIZE_Y( 25  0.000000 )
+         CHECKSIZE_Y ( 25 )
         
-        CHECK_TEXTURE(op_check.tif)
+         CHECK_TEXTURE ( op_check.tif )
         
-        ONCHECK(
-          BUTTON(NONE)
+         ONCHECK (
+           BUTTON ( NONE )
          
-         ANIMATION(enable_headbob)
+          ANIMATION ( enable_headbob )
          
          )
         
-        CAPTION(ON)
+         CAPTION ( ON )
         
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
-        XOFFSET( 35  0.000000 )
+         XOFFSET ( 35 )
         
-        YOFFSET( 25  0.000000 )
+         YOFFSET ( 25 )
         
-        PRESSED(op_checkbox.tif)
+         PRESSED ( op_checkbox.tif )
         
-        NORMAL(op_checkbox.tif)
+         NORMAL ( op_checkbox.tif )
         
-        ACTIVE(op_checkbox.tif)
+         ACTIVE ( op_checkbox.tif )
         
-        PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+         PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
         
-        NORMAL_COLOR( 128.000000  128.000000  128.000000 )
+         NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
         
-        ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
+         ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
         
-        XSIZE( 35  0.000000 )
+         XSIZE ( 35 )
         
-        YSIZE( 35  0.000000 )
+         YSIZE ( 35 )
         
-        ANIMATIONS((
-           EVENT(ONACTIVATE)
+         ANIMATIONS ((
+            EVENT ( ONACTIVATE )
           
-          ANIMATION(OnOnHeadBobAct)
+           ANIMATION ( OnOnHeadBobAct )
           
           )
          
@@ -913,73 +913,73 @@
     )
    
    (
-     NAME(Default)
+      NAME ( Default )
     
-    XPOS( 30  0.000000 )
+     XPOS ( 30 )
     
-    YPOS( 330  0.000000 )
+     YPOS ( 330 )
     
-    TYPE(BUTTON)
+     TYPE ( BUTTON )
     
-    SPEC(
-      XSIZE( 160  0.000000 )
+     SPEC (
+       XSIZE ( 160 )
      
-     YSIZE( 30  0.000000 )
+      YSIZE ( 30 )
      
-     XOFFSET( 10  0.000000 )
+      XOFFSET ( 10 )
      
-     YOFFSET( 22  0.000000 )
+      YOFFSET ( 22 )
      
-     CAPTION("DEFAULT SETTINGS")
+      CAPTION ( "DEFAULT SETTINGS" )
      
-     SCALE( 0.400000 )
+      SCALE ( 0.400000 )
      
-     PRESSED(
-       IMAGE(brown_back.tif)
+      PRESSED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
       
       )
      
-     NORMAL(
-       IMAGE(brown_back.tif)
+      NORMAL (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
       
       )
      
-     ACTIVE(
-       IMAGE(brown_back_real.tif)
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
       
-      TEXT_GLOW(
-        RANGE( 0.500000  1.000000 )
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.500000 )
+        TIME ( 0.500000 )
        
        )
       
-      TEXT_COLOR( 255.000000  204.000000  51.000000 )
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
       
       )
      
-     DISABLED(
-       IMAGE(brown_back.tif)
+      DISABLED (
+        IMAGE ( brown_back.tif )
       
-      TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+       TEXT_COLOR ( 50  50  50 )
       
       )
      
-     ANIMATIONS((
-        EVENT(ONACTIVATE)
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
        
-       ANIMATION(OnDefAct)
+        ANIMATION ( OnDefAct )
        
        )
       
       (
-        BUTTON(CROSS)
+         BUTTON ( CROSS )
        
-       ANIMATION(do_video_default)
+        ANIMATION ( do_video_default )
        
        )
       
@@ -993,22 +993,22 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnBrightAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnBrightAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Change the monitor brightness")
+       CAPTION ( "Change the monitor brightness" )
       
       )
      
@@ -1016,16 +1016,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnOnHeadBobAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnOnHeadBobAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Enable or disable head bob")
+       CAPTION ( "Enable or disable head bob" )
       
       )
      
@@ -1033,16 +1033,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnVideoModeAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnVideoModeAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Choose your television signal type")
+       CAPTION ( "Choose your television signal type" )
       
       )
      
@@ -1050,16 +1050,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnSubtitlesAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSubtitlesAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Enable or disable subtitles")
+       CAPTION ( "Enable or disable subtitles" )
       
       )
      
@@ -1067,16 +1067,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnDefAct)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnDefAct )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       NODE(MENUinstText)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
       
-      CAPTION("Return to default settings")
+       CAPTION ( "Return to default settings" )
       
       )
      
@@ -1084,79 +1084,79 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(handle_memcard_error)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Error loading data, press X to continue.")
+       CAPTION ( "Error loading data, press X to continue." )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  285.000000 )
+       POSITION ( 170.000000  285.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 96  0.000000 )
+       HEIGHT ( 96 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.450000 )
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(load_initial_config)
+       SCALE ( 0.450000 )
       
       )
      
-     STOP_ANIMATION(
-       NAME(save_and_leave)
+      STOP_ANIMATION (
+        NAME ( load_initial_config )
       
       )
      
-     STOP_ANIMATION(
-       NAME(Ensure_MC_Dirs)
+      STOP_ANIMATION (
+        NAME ( save_and_leave )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
+      STOP_ANIMATION (
+        NAME ( Ensure_MC_Dirs )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
       
       )
      
@@ -1164,612 +1164,409 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Initialize_Options_Stuff)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Initialize_Options_Stuff )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(DisableButton)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
       
-      ARGUMENT(video_mode)
+       ARGUMENT ( video_mode )
       
       )
      
-     IF(
-       VALVE(SUBTITLE_CONTROLLER== 1  0.000000 )
+      IF (
+        VALVE ( SUBTITLE_CONTROLLER  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUsubtitles)
+      ui::UI_COMMAND (
+        NODE ( MENU  subtitles )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUsubtitles)
+      ui::UI_COMMAND (
+        NODE ( MENU  subtitles )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(BOBBING_1ST_PERSON== 1  0.000000 )
+      IF (
+        VALVE ( BOBBING_1ST_PERSON  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUheadbobbing)
+      ui::UI_COMMAND (
+        NODE ( MENU  headbobbing )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 1 )
        
        )
       
       )
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       NODE(MENUheadbobbing)
+      ui::UI_COMMAND (
+        NODE ( MENU  headbobbing )
       
-      SELECTION(
-        INDEX( 0  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(CheckVideoMode)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( CheckVideoMode )
        
-       ARGUMENT(NTSC)
-       
-       )
-      
-      )
-     
-     VALVE(video_mode= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUvideo_mode)
-      
-      SELECTION(
-        INDEX( 0  0.000000 )
+        ARGUMENT ( NTSC )
        
        )
       
       )
      
-     ELSEIF(
-       ui::UI_COMMAND(
-        TYPE(CheckVideoMode)
-       
-       ARGUMENT(DTV)
-       
-       )
-      
-      )
+      VALVE ( video_mode  =  0 )
      
-     VALVE(video_mode= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUvideo_mode)
+      ui::UI_COMMAND (
+        NODE ( MENU  video_mode )
       
-      SELECTION(
-        INDEX( 1  0.000000 )
+       SELECTION (
+         INDEX ( 0 )
        
        )
       
       )
      
-     ENDIF()
-     
-     IF(
-       VALVE(FirstVideo== 0  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(brightnessbar)
-      
-      )
-     
-     VALVE(FirstVideo= 1  0.000000 )
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(do_video_default)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(SUBTITLE_CONTROLLER= 1  0.000000 )
-     
-     VALVE(BOBBING_1ST_PERSON= 1  0.000000 )
-     
-     VALVE(video_mode= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       NODE(MENUbrightnessbar)
-      
-      SETVALUE( 50  0.000000 )
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(Initialize_Options_Stuff)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(OnDefAct)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_subtitles)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(SUBTITLE_CONTROLLER= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_subtitles)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(SUBTITLE_CONTROLLER= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(enable_headbob)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(BOBBING_1ST_PERSON= 1  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(disable_headbob)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(BOBBING_1ST_PERSON= 0  0.000000 )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(video_ntsc)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     VALVE(video_mode= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(SwitchProgressiveVideo)
-      
-      ARGUMENT(NTSC)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(verify_video_dtv)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Switching Video Modes. The screen may go black for a bit.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      CANCELLABLE()
-      
-      YESNO(
-        VALVE(AreYouSure)
+      ELSEIF (
+        ui::UI_COMMAND (
+         TYPE ( CheckVideoMode )
        
-       YES(
-         CAPTION(Continue)
+        ARGUMENT ( DTV )
+       
+       )
+      
+      )
+     
+      VALVE ( video_mode  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  video_mode )
+      
+       SELECTION (
+         INDEX ( 1 )
+       
+       )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( FirstVideo  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( brightnessbar )
+      
+      )
+     
+      VALVE ( FirstVideo  =  1 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_video_default )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( SUBTITLE_CONTROLLER  =  1 )
+     
+      VALVE ( BOBBING_1ST_PERSON  =  1 )
+     
+      VALVE ( video_mode  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  brightnessbar )
+      
+       SETVALUE ( 50 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Initialize_Options_Stuff )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnDefAct )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_subtitles )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( SUBTITLE_CONTROLLER  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_subtitles )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( SUBTITLE_CONTROLLER  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_headbob )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( BOBBING_1ST_PERSON  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_headbob )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( BOBBING_1ST_PERSON  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( video_ntsc )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      VALVE ( video_mode  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SwitchProgressiveVideo )
+      
+       ARGUMENT ( NTSC )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( verify_video_dtv )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Switching Video Modes. The screen may go black for a bit." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       CANCELLABLE ()
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( Continue )
         
-        POS( 30  0.000000  65  0.000000 )
+         POS ( 30  65 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 90  0.000000 )
+         WIDTH ( 90 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        SCALE( 0.400000 )
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
         
         )
        
-       NO(
-         CAPTION(Cancel)
+        NO (
+          CAPTION ( Cancel )
         
-        POS( 180  0.000000  65  0.000000 )
+         POS ( 180  65 )
         
-        TEXTOFFSET( 15  0.000000  18  0.000000 )
+         TEXTOFFSET ( 15  18 )
         
-        WIDTH( 90  0.000000 )
+         WIDTH ( 90 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.400000 )
-        
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(video_dtv)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(OptionsMenuChanged= 1  0.000000 )
-     
-     IF(
-       !ui::UI_COMMAND(
-        TYPE(CheckVideoMode)
-       
-       ARGUMENT(DTV)
-       
-       )
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(verify_video_dtv)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
-      
-      )
-     
-     VALVE(video_mode= 1  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(SwitchProgressiveVideo)
-      
-      ARGUMENT(DTV)
-      
-      )
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(monitor_acceptance)
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(switch_safeguard)
-      
-      )
-     
-     ELSE()
-     
-     CALL_ANIMATION(
-       NAME(Initialize_Options_Stuff)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(OnVideoModeAct)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     ENDIF()
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(monitor_acceptance)
-     
-     ACTIVATION(ON_CALL)
-     
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Can you see this screen? Press yes if you can, otherwise you will be switched back to NTSC mode in 15 seconds.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 150  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(AreYouSure)
-       
-       YES(
-         CAPTION(No)
-        
-        POS( 50  0.000000  110  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
-        
-        WIDTH( 50  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         NORMAL (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
-        SCALE( 0.400000 )
-        
-        )
-       
-       NO(
-         CAPTION(Yes)
-        
-        POS( 190  0.000000  110  0.000000 )
-        
-        TEXTOFFSET( 15  0.000000  18  0.000000 )
-        
-        WIDTH( 50  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.400000 )
+         SCALE ( 0.400000 )
         
         )
        
@@ -1777,280 +1574,483 @@
       
       )
      
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
       
       )
      
-     END_WHILE()
-     
-     STOP_SEQUENCE(
-       NAME(switch_safeguard)
-      
-      )
-     
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(video_ntsc)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(Initialize_Options_Stuff)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(OnVideoModeAct)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Progressive scan cancelled. Press the X button to continue")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(AreYouSure)
-       
-       YES(
-         CAPTION(Continue)
-        
-        POS( 90  0.000000  70  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
-        
-        WIDTH( 90  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.400000 )
-        
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     ENDIF()
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(switch_safeguard)
-     
-     ACTIVATION(ON_CALL)
-     
-     WAIT( 15.000000 )
-     
-     STOP_SEQUENCE(
-       NAME(monitor_acceptance)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(KillPopUp)
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(video_ntsc)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(Initialize_Options_Stuff)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(OnVideoModeAct)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Interlaced mode restored. Press the X button to continue")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 100  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(AreYouSure)
-       
-       YES(
-         CAPTION(Continue)
-        
-        POS( 90  0.000000  70  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
-        
-        WIDTH( 90  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        SCALE( 0.400000 )
-        
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
+      END_WHILE ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( video_dtv )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
-      
-      STATE(INACTIVE)
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  1 )
+     
+      IF (
+        !  ui::UI_COMMAND (
+         TYPE ( CheckVideoMode )
+       
+        ARGUMENT ( DTV )
+       
+       )
       
       )
      
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      CALL_ANIMATION (
+        NAME ( verify_video_dtv )
       
-      STATE(ACTIVE)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      IF (
+        VALVE ( AreYouSure  ==  1 )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+      )
+     
+      VALVE ( video_mode  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SwitchProgressiveVideo )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       ARGUMENT ( DTV )
       
-      RUN_TIME( 0.250000 )
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( monitor_acceptance )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( switch_safeguard )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( Initialize_Options_Stuff )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnVideoModeAct )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( monitor_acceptance )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Can you see this screen? Press yes if you can, otherwise you will be switched back to NTSC mode in 15 seconds." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 150 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( No )
+        
+         POS ( 50  110 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+        NO (
+          CAPTION ( Yes )
+        
+         POS ( 190  110 )
+        
+         TEXTOFFSET ( 15  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      STOP_SEQUENCE (
+        NAME ( switch_safeguard )
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( video_ntsc )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Initialize_Options_Stuff )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnVideoModeAct )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Progressive scan cancelled. Press the X button to continue" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 90  70 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( switch_safeguard )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 15.000000 )
+     
+      STOP_SEQUENCE (
+        NAME ( monitor_acceptance )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopUp )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( video_ntsc )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Initialize_Options_Stuff )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnVideoModeAct )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Interlaced mode restored. Press the X button to continue" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 90  70 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      

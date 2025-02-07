@@ -1,598 +1,526 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/uimp)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgNetConfigStatic.rdr)
+    SCRIPT_LIBRARY ( dlgNetConfigStatic.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(letterbar_bottom)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 0  0.000000 )
-     
-     YPOS( 361  0.000000 )
-     
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
-      
-      SIZE( 640  0.000000  64  0.000000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(bar_title)
+       NAME ( letterbar_bottom )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 50  0.000000 )
+      YPOS ( 361 )
      
-     CHILDOF(letterbar)
-     
-     SPEC(
-       FONT(Gothic_13)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      CAPTION("STATIC IP OPTIONS")
-      
-      SCALE( 0.950000 )
+       SIZE ( 640  64 )
       
       )
      
      )
     
     (
-      NAME(IFC_value)
+       NAME ( bar_title )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 80  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       CAPTION("IFC NAME")
+      CHILDOF ( letterbar )
+     
+      SPEC (
+        FONT ( Gothic_13 )
       
-      SCALE( 0.400000 )
+       CAPTION ( "STATIC IP OPTIONS" )
+      
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(name_value)
+       NAME ( IFC_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 30 )
      
-     YPOS( 80  0.000000 )
+      YPOS ( 80 )
      
-     SPEC(
-       UIVAR(
-        NAME(IFC_NAME)
+      SPEC (
+        CAPTION ( "IFC NAME" )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( name_value )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 200 )
+     
+      YPOS ( 80 )
+     
+      SPEC (
+        UIVAR (
+         NAME ( IFC_NAME )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(ip_address_value)
+       NAME ( ip_address_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 200 )
      
-     YPOS( 130  0.000000 )
+      YPOS ( 130 )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       UIVAR(
-        NAME(IP_ADDRESS)
+      SPEC (
+        UIVAR (
+         NAME ( IP_ADDRESS )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(netmask_value)
+       NAME ( netmask_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 200 )
      
-     YPOS( 155  0.000000 )
+      YPOS ( 155 )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       UIVAR(
-        NAME(NETMASK)
+      SPEC (
+        UIVAR (
+         NAME ( NETMASK )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(primary_dns_value)
+       NAME ( primary_dns_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 200 )
      
-     YPOS( 180  0.000000 )
+      YPOS ( 180 )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       UIVAR(
-        NAME(PRIMARY_DNS)
+      SPEC (
+        UIVAR (
+         NAME ( PRIMARY_DNS )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(secondary_dns_value)
+       NAME ( secondary_dns_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 200 )
      
-     YPOS( 205  0.000000 )
+      YPOS ( 205 )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       UIVAR(
-        NAME(SECONDARY_DNS)
+      SPEC (
+        UIVAR (
+         NAME ( SECONDARY_DNS )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(default_gateway_value)
+       NAME ( default_gateway_value )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 200 )
      
-     YPOS( 230  0.000000 )
+      YPOS ( 230 )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       UIVAR(
-        NAME(DEFAULT_GATEWAY)
+      SPEC (
+        UIVAR (
+         NAME ( DEFAULT_GATEWAY )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
      
      )
     
     (
-      NAME(dhcp_hostname)
+       NAME ( dhcp_hostname )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 200  0.000000 )
+      XPOS ( 200 )
      
-     YPOS( 260  0.000000 )
+      YPOS ( 260 )
      
-     SPEC(
-       UIVAR(
-        NAME(DHCP_HOSTNAME)
+      SPEC (
+        UIVAR (
+         NAME ( DHCP_HOSTNAME )
        
        )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
       )
-     
-     )
-    
-    )
-   
-   ANIMATIONS((
-      BUTTON(SELECT)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(dlgNetConfigStatic.rdr)
-     
-     )
-    
-    (
-      BUTTON(TRIANGLE)
-     
-     ANIMATION(goto_menu)
-     
-     ARGUMENT(PREVIOUS_SCREEN)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(letterbar_slide_down)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(bottom_bar_slide_up)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(on_start)
-     
-     )
-    
-    (
-      EVENT(NETCNF_ERROR)
-     
-     ANIMATION(OnNetCnfErr)
      
      )
     
     )
    
-   CONTROLS((
-      NAME(RequiredBack)
+    ANIMATIONS ((
+       BUTTON ( SELECT )
      
-     TYPE(IMAGE)
+      ANIMATION ( goto_menu )
      
-     XPOS( 20  0.000000 )
+      ARGUMENT ( dlgNetConfigStatic.rdr )
      
-     YPOS( 235  0.000000 )
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
      
-     SPEC(
-       XSIZE( 170  0.000000 )
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( on_start )
+     
+     )
+    
+    (
+       EVENT ( NETCNF_ERROR )
+     
+      ANIMATION ( OnNetCnfErr )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( RequiredBack )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 235 )
+     
+      SPEC (
+        XSIZE ( 170 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      FILENAME(brown_back.tif)
+       FILENAME ( brown_back.tif )
       
       )
      
      )
     
     (
-      NAME(SettingsField)
+       NAME ( SettingsField )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 60  0.000000 )
+      YPOS ( 60 )
      
-     SPEC(
-       XSIZE( 550  0.000000 )
+      SPEC (
+        XSIZE ( 550 )
       
-      YSIZE( 30  0.000000 )
+       YSIZE ( 30 )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(FieldOnly)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 195  0.000000 )
-     
-     YPOS( 110  0.000000 )
-     
-     SPEC(
-       XSIZE( 130  0.000000 )
-      
-      YSIZE( 25  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(FieldOnly)
+       NAME ( FieldOnly )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 195  0.000000 )
+      XPOS ( 195 )
      
-     YPOS( 135  0.000000 )
+      YPOS ( 110 )
      
-     SPEC(
-       XSIZE( 130  0.000000 )
+      SPEC (
+        XSIZE ( 130 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(FieldOnly)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 195  0.000000 )
-     
-     YPOS( 160  0.000000 )
-     
-     SPEC(
-       XSIZE( 130  0.000000 )
-      
-      YSIZE( 25  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(FieldOnly)
+       NAME ( FieldOnly )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 195  0.000000 )
+      XPOS ( 195 )
      
-     YPOS( 185  0.000000 )
+      YPOS ( 135 )
      
-     SPEC(
-       XSIZE( 130  0.000000 )
+      SPEC (
+        XSIZE ( 130 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      FILENAME(infoWin1.tif)
-      
-      )
-     
-     )
-    
-    (
-      NAME(FieldOnly)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 195  0.000000 )
-     
-     YPOS( 210  0.000000 )
-     
-     SPEC(
-       XSIZE( 130  0.000000 )
-      
-      YSIZE( 25  0.000000 )
-      
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(FieldOnly)
+       NAME ( FieldOnly )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 195  0.000000 )
+      XPOS ( 195 )
      
-     YPOS( 260  0.000000 )
+      YPOS ( 160 )
      
-     SPEC(
-       XSIZE( 130  0.000000 )
+      SPEC (
+        XSIZE ( 130 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      FILENAME(infoWin1.tif)
+       FILENAME ( infoWin1.tif )
       
       )
      
      )
     
     (
-      NAME(ip_address_btn)
+       NAME ( FieldOnly )
      
-     XPOS( 20  0.000000 )
+      TYPE ( IMAGE )
      
-     YPOS( 110  0.000000 )
+      XPOS ( 195 )
      
-     TYPE(BUTTON)
+      YPOS ( 185 )
      
-     CHILDOF(staticip_root)
+      SPEC (
+        XSIZE ( 130 )
+      
+       YSIZE ( 25 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
      
-     SPEC(
-       XSIZE( 170  0.000000 )
+     )
+    
+    (
+       NAME ( FieldOnly )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 195 )
+     
+      YPOS ( 210 )
+     
+      SPEC (
+        XSIZE ( 130 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      SCALE( 0.350000 )
+       FILENAME ( infoWin1.tif )
       
-      XOFFSET( 15  0.000000 )
+      )
+     
+     )
+    
+    (
+       NAME ( FieldOnly )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 195 )
+     
+      YPOS ( 260 )
+     
+      SPEC (
+        XSIZE ( 130 )
       
-      YOFFSET( 18  0.000000 )
+       YSIZE ( 25 )
       
-      CAPTION("IP ADDRESS")
+       FILENAME ( infoWin1.tif )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+      )
+     
+     )
+    
+    (
+       NAME ( ip_address_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 110 )
+     
+      TYPE ( BUTTON )
+     
+      CHILDOF ( staticip_root )
+     
+      SPEC (
+        XSIZE ( 170 )
+      
+       YSIZE ( 25 )
+      
+       SCALE ( 0.350000 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 18 )
+      
+       CAPTION ( "IP ADDRESS" )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(set_ip_address)
-        
-        )
-       
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(netmask_btn)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 135  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     CHILDOF(staticip_root)
-     
-     SPEC(
-       XSIZE( 170  0.000000 )
-      
-      YSIZE( 25  0.000000 )
-      
-      SCALE( 0.350000 )
-      
-      XOFFSET( 15  0.000000 )
-      
-      YOFFSET( 18  0.000000 )
-      
-      CAPTION(NETMASK)
-      
-      PRESSED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
-       
-       )
-      
-      NORMAL(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
-       
-       )
-      
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
-       
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
-        
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(set_netmask)
+         ANIMATION ( set_ip_address )
         
         )
        
@@ -603,140 +531,68 @@
      )
     
     (
-      NAME(primary_dns_btn)
+       NAME ( netmask_btn )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 160  0.000000 )
+      YPOS ( 135 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       XSIZE( 170  0.000000 )
+      SPEC (
+        XSIZE ( 170 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 18  0.000000 )
+       YOFFSET ( 18 )
       
-      CAPTION("PRIMARY DNS")
+       CAPTION ( NETMASK )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
-       
-       )
-      
-      NORMAL(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(set_primary_dns)
+         TIME ( 0.500000 )
         
         )
        
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(secondary_dns_btn)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 185  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     CHILDOF(staticip_root)
-     
-     SPEC(
-       XSIZE( 170  0.000000 )
-      
-      YSIZE( 25  0.000000 )
-      
-      SCALE( 0.350000 )
-      
-      XOFFSET( 15  0.000000 )
-      
-      YOFFSET( 18  0.000000 )
-      
-      CAPTION("SECONDARY DNS")
-      
-      PRESSED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
-       
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(set_secondary_dns)
+         ANIMATION ( set_netmask )
         
         )
        
@@ -747,204 +603,68 @@
      )
     
     (
-      NAME(default_gateway_btn)
+       NAME ( primary_dns_btn )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 210  0.000000 )
+      YPOS ( 160 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     CHILDOF(staticip_root)
+      CHILDOF ( staticip_root )
      
-     SPEC(
-       XSIZE( 170  0.000000 )
+      SPEC (
+        XSIZE ( 170 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 18  0.000000 )
+       YOFFSET ( 18 )
       
-      CAPTION("DEFAULT GATEWAY")
+       CAPTION ( "PRIMARY DNS" )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
-       
-       )
-      
-      NORMAL(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(set_default_gateway)
+         TIME ( 0.500000 )
         
         )
        
-       )
-      
-      )
-     
-     )
-    
-    (
-      NAME(dhcp_hostname_required_btn)
-     
-     XPOS( 210  0.000000 )
-     
-     YPOS( 230  0.000000 )
-     
-     TYPE(CHECKBOX)
-     
-     SPEC(
-       CHECK_X( 7  0.000000 )
-      
-      CHECK_Y( 7  0.000000 )
-      
-      CHECKSIZE_X( 25  0.000000 )
-      
-      CHECKSIZE_Y( 25  0.000000 )
-      
-      CHECK_TEXTURE(op_check.tif)
-      
-      ONCHECK(
-        BUTTON(NONE)
-       
-       ANIMATION(enable_hostname)
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      ONUNCHECK(
-        BUTTON(NONE)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       ANIMATION(disable_hostname)
-       
-       )
-      
-      CAPTION("HOSTNAME REQUIRED?")
-      
-      SCALE( 0.350000 )
-      
-      XOFFSET( -175  -nan )
-      
-      YOFFSET( 22  0.000000 )
-      
-      PRESSED(op_checkbox.tif)
-      
-      NORMAL(op_checkbox.tif)
-      
-      ACTIVE(op_checkbox.tif)
-      
-      PRESSED_COLOR( 255.000000  74.000000  8.000000 )
-      
-      NORMAL_COLOR( 128.000000  128.000000  128.000000 )
-      
-      ACTIVE_COLOR( 255.000000  204.000000  51.000000 )
-      
-      DISABLED_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-      
-      XSIZE( 35  0.000000 )
-      
-      YSIZE( 35  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(dhcp_hostname_btn)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 260  0.000000 )
-     
-     TYPE(BUTTON)
-     
-     CHILDOF(dhcp_root)
-     
-     SPEC(
-       XSIZE( 170  0.000000 )
-      
-      YSIZE( 25  0.000000 )
-      
-      SCALE( 0.350000 )
-      
-      XOFFSET( 15  0.000000 )
-      
-      YOFFSET( 18  0.000000 )
-      
-      CAPTION(HOSTNAME)
-      
-      PRESSED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
-       
-       )
-      
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
-       
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        TIME( 0.500000 )
-        
-        )
-       
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
-       
-       )
-      
-      DISABLED(
-        IMAGE(brown_back.tif)
-       
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
-       
-       )
-      
-      ANIMATIONS((
-         BUTTON(CROSS)
-        
-        ANIMATION(set_dhcp_hostname)
+         ANIMATION ( set_primary_dns )
         
         )
        
@@ -955,66 +675,346 @@
      )
     
     (
-      NAME(save_btn)
+       NAME ( secondary_dns_btn )
      
-     XPOS( 20  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 340  0.000000 )
+      YPOS ( 185 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 150  0.000000 )
+      CHILDOF ( staticip_root )
+     
+      SPEC (
+        XSIZE ( 170 )
       
-      YSIZE( 25  0.000000 )
+       YSIZE ( 25 )
       
-      SCALE( 0.350000 )
+       SCALE ( 0.350000 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 18  0.000000 )
+       YOFFSET ( 18 )
       
-      CAPTION(SAVE)
+       CAPTION ( "SECONDARY DNS" )
       
-      PRESSED(
-        IMAGE(brown_back.tif)
+       PRESSED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 255.000000  74.000000  8.000000 )
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        IMAGE(brown_back.tif)
+       NORMAL (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 128.000000  128.000000  128.000000 )
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        IMAGE(brown_back_real.tif)
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
        
-       TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(save_ifc)
+         ANIMATION ( set_secondary_dns )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( default_gateway_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 210 )
+     
+      TYPE ( BUTTON )
+     
+      CHILDOF ( staticip_root )
+     
+      SPEC (
+        XSIZE ( 170 )
+      
+       YSIZE ( 25 )
+      
+       SCALE ( 0.350000 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 18 )
+      
+       CAPTION ( "DEFAULT GATEWAY" )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( set_default_gateway )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dhcp_hostname_required_btn )
+     
+      XPOS ( 210 )
+     
+      YPOS ( 230 )
+     
+      TYPE ( CHECKBOX )
+     
+      SPEC (
+        CHECK_X ( 7 )
+      
+       CHECK_Y ( 7 )
+      
+       CHECKSIZE_X ( 25 )
+      
+       CHECKSIZE_Y ( 25 )
+      
+       CHECK_TEXTURE ( op_check.tif )
+      
+       ONCHECK (
+         BUTTON ( NONE )
+       
+        ANIMATION ( enable_hostname )
+       
+       )
+      
+       ONUNCHECK (
+         BUTTON ( NONE )
+       
+        ANIMATION ( disable_hostname )
+       
+       )
+      
+       CAPTION ( "HOSTNAME REQUIRED?" )
+      
+       SCALE ( 0.350000 )
+      
+       XOFFSET ( -175 )
+      
+       YOFFSET ( 22 )
+      
+       PRESSED ( op_checkbox.tif )
+      
+       NORMAL ( op_checkbox.tif )
+      
+       ACTIVE ( op_checkbox.tif )
+      
+       PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+      
+       NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+      
+       ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+      
+       DISABLED_COLOR ( 50  50  50 )
+      
+       XSIZE ( 35 )
+      
+       YSIZE ( 35 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dhcp_hostname_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 260 )
+     
+      TYPE ( BUTTON )
+     
+      CHILDOF ( dhcp_root )
+     
+      SPEC (
+        XSIZE ( 170 )
+      
+       YSIZE ( 25 )
+      
+       SCALE ( 0.350000 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 18 )
+      
+       CAPTION ( HOSTNAME )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( set_dhcp_hostname )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( save_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 340 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 25 )
+      
+       SCALE ( 0.350000 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 18 )
+      
+       CAPTION ( SAVE )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( save_ifc )
         
         )
        
@@ -1030,27 +1030,27 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(on_start)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( on_start )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(IP_ADDRESSING_TYPE= 2  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( IP_ADDRESSING_TYPE  =  2 )
      
-     ui::UI_COMMAND(
-       TYPE(NetGetInterfaceList)
+      ui::UI_COMMAND (
+        TYPE ( NetGetInterfaceList )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(NetUpdateIFCVars)
+      ui::UI_COMMAND (
+        TYPE ( NetUpdateIFCVars )
       
-      ARGUMENT(READ)
+       ARGUMENT ( READ )
       
       )
      
@@ -1058,33 +1058,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_ifc_name)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_ifc_name )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      ARGUMENT(IFC_NAME)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_ip_address)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
-      
-      ARGUMENT(IP_ADDRESS)
+       ARGUMENT ( IFC_NAME )
       
       )
      
@@ -1092,33 +1075,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_netmask)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_ip_address )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      ARGUMENT(NETMASK)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_primary_dns)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
-      
-      ARGUMENT(PRIMARY_DNS)
+       ARGUMENT ( IP_ADDRESS )
       
       )
      
@@ -1126,16 +1092,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_secondary_dns)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_netmask )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      ARGUMENT(SECONDARY_DNS)
+       ARGUMENT ( NETMASK )
       
       )
      
@@ -1143,16 +1109,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_default_gateway)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_primary_dns )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      ARGUMENT(DEFAULT_GATEWAY)
+       ARGUMENT ( PRIMARY_DNS )
       
       )
      
@@ -1160,16 +1126,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(set_dhcp_hostname)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_secondary_dns )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetTextInput)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
       
-      ARGUMENT(DHCP_HOSTNAME)
+       ARGUMENT ( SECONDARY_DNS )
       
       )
      
@@ -1177,159 +1143,149 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(save_ifc)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_default_gateway )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(NetAddIFC)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       ARGUMENT ( DEFAULT_GATEWAY )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(NetSaveIFC)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_dhcp_hostname )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       ARGUMENT ( DHCP_HOSTNAME )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( save_ifc )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( NetAddIFC )
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      ui::UI_COMMAND (
+        TYPE ( NetSaveIFC )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
        
        )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgNetConfigNewCombo.rdr)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
-      
-      ARGUMENT(dlgNetConfig.rdr)
+       ARGUMENT ( dlgNetConfigNewCombo.rdr )
       
       )
      
-     ENDIF()
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgNetConfig.rdr )
+      
+      )
+     
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OnNetCnfErr)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnNetCnfErr )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     VALVE(WaitForX= 0  0.000000 )
+      VALVE ( WaitForX  =  0 )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION(INPUT_STRING)
+       CAPTION ( INPUT_STRING )
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  275.000000 )
+       POSITION ( 170.000000  275.000000 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 110  0.000000 )
+       HEIGHT ( 110 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
+       SCALE ( 0.400000 )
       
-      YESNO(
-        VALVE(WaitForX)
+       YESNO (
+         VALVE ( WaitForX )
        
        )
       
       )
      
-     WHILE(
-       VALVE(WaitForX== 0  0.000000 )
+      WHILE (
+        VALVE ( WaitForX  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     ui::UI_COMMAND(
-       TYPE(KILLPOPUP)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+      ui::UI_COMMAND (
+        TYPE ( KILLPOPUP )
       
       )
      
@@ -1337,36 +1293,43 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
       
       )
      
@@ -1374,43 +1337,36 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
       
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( ACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_METAL)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
       
-      START()
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      
@@ -1418,36 +1374,80 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide_down)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 0.400000 )
+      WAIT ( 0.400000 )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
       
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
       
-      RUN_TIME( 0.250000 )
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
       
       )
      
@@ -1461,5 +1461,5 @@
  
  )
 
-ENDOFFILE)
+ END  OF  FILE )
 

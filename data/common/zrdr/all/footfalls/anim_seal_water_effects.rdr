@@ -1,54 +1,54 @@
 ((
-  ANIMATION_DEFINITIONS(
-   GRAVITY( -98.000000 )
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
   
-  ANIMATION_LIST(
-    ANIMATION_DEFINITION(
-     ANIMATION_NAME(big_ripple_anim)
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( big_ripple_anim )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 1.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 1.200000 )
+      WAIT ( 1.200000 )
      
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 1.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 1.200000 )
+      WAIT ( 1.200000 )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 1.200000 )
+     
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 1.200000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -56,52 +56,52 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(big_ripple_anim_walk)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( big_ripple_anim_walk )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 9.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 9.200000 )
+      WAIT ( 9.200000 )
      
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 9.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 9.200000 )
+      WAIT ( 9.200000 )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 9.200000 )
+     
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 9.200000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -109,52 +109,52 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(big_ripple_anim_run)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( big_ripple_anim_run )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -162,52 +162,52 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(small_ripple_anim)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( small_ripple_anim )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -215,52 +215,52 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(small_ripple_anim_walk)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( small_ripple_anim_walk )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -268,52 +268,52 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(small_ripple_anim_run)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( small_ripple_anim_run )
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
       
-      WITH_INPUT_ARGS()
-      
-      )
-     
-     WAIT( 0.200000 )
-     
-     CALL_ANIMATION(
-       NAME(wake_single_ripple01)
-      
-      WITH_INPUT_ARGS()
+       WITH_INPUT_ARGS ()
       
       )
      
-     WAIT( 0.200000 )
+      WAIT ( 0.200000 )
      
-     LOOP(
-       LOOP_COUNT( -1  -nan )
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      CALL_ANIMATION (
+        NAME ( wake_single_ripple01 )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
       
       )
      
@@ -321,101 +321,101 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(wake_single_ripple01)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( wake_single_ripple01 )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    ANIMATION_ROOT_NAME(wake01)
+     ANIMATION_ROOT_NAME ( wake01 )
     
-    AUTO_INSTANCE_ROOT()
+     AUTO_INSTANCE_ROOT ()
     
-    AUTO_COPY_ANIMATION()
+     AUTO_COPY_ANIMATION ()
     
-    SEQUENCE_DEFINITION(
-      NAME(fade)
+     SEQUENCE_DEFINITION (
+       NAME ( fade )
      
-     OBJECT_TRANSLATE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
       
-      AT_NODE(INPUT_NODE)
+       AT_NODE ( INPUT_NODE )
       
-      TRANSLATION( 0.000000  0.700000  0.000000 )
+       TRANSLATION ( 0.000000  0.700000  0.000000 )
       
       )
      
-     CALL_SEQUENCE(
-       NAME(move2)
+      CALL_SEQUENCE (
+        NAME ( move2 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(ROOT_NODE)
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.200000 )
-      
-      RUN_TIME( 0.100000 )
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(ROOT_NODE)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( ROOT_NODE )
       
-      OPACITY_FROM( 0.200000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.000000 )
+       OPACITY_TO ( 0.200000 )
       
-      RUN_TIME( 0.700000 )
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(ROOT_NODE)
-      
-      STATE(INACTIVE)
+       RUN_TIME ( 0.100000 )
       
       )
      
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(grow)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( ROOT_NODE )
+      
+       OPACITY_FROM ( 0.200000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+       RUN_TIME ( 0.700000 )
+      
+      )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(ROOT_NODE)
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
       
-      SCALE_FROM( 0.250000 )
-      
-      SCALE_TO( 0.800000 )
-      
-      RUN_TIME( 0.800000 )
+       STATE ( INACTIVE )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(move2)
+     SEQUENCE_DEFINITION (
+       NAME ( grow )
      
-     ACTIVATION(ON_CALL)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( ROOT_NODE )
+      
+       SCALE_FROM ( 0.250000 )
+      
+       SCALE_TO ( 0.800000 )
+      
+       RUN_TIME ( 0.800000 )
+      
+      )
      
-     OBJECT_MOTION(
-       NAME(ROOT_NODE)
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( move2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
       
-      TRANSLATION_RANGE_MIN( 0.000000  -18.750000  3.000000  0.000000 )
+       TRANSLATION_RANGE_MIN ( 0.000000  -18.750000  3.000000  0.000000 )
       
-      TRANSLATION_RANGE_MAX( 360.000000  -18.750000  3.000000  0.000000 )
+       TRANSLATION_RANGE_MAX ( 360.000000  -18.750000  3.000000  0.000000 )
       
-      RUN_TIME( 0.800000 )
+       RUN_TIME ( 0.800000 )
       
       )
      

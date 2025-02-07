@@ -4,6 +4,7 @@
 
 #include <freebsd/strcasecmp.h>
 
+#include "zrdr_local.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_systemio.h"
@@ -90,6 +91,11 @@ char* _zrdr::Get(s32 offset) const
 	}
 
 	return NULL;
+}
+
+bool _zrdr::Write(FILE* file)
+{
+	return _OutputASCII(file, this, 0);
 }
 
 _zrdr* zrdr_findtag(_zrdr* reader, const char* name)

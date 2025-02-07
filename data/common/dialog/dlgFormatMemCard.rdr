@@ -1,49 +1,49 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(undefined.tif)
+     FILENAME ( undefined.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(UISocomOnlineanim.rdr)
+    SCRIPT_LIBRARY ( UISocomOnlineanim.rdr )
    
-   OBJECTS((
-      NAME(STANDIN)
+    OBJECTS ((
+       NAME ( STANDIN )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 350  0.000000 )
+      XPOS ( 350 )
      
-     YPOS( 15  0.000000 )
+      YPOS ( 15 )
      
-     SPEC(
-       CAPTION("STANDIN FOR INSERT MEMCARD POPUP")
+      SPEC (
+        CAPTION ( "STANDIN FOR INSERT MEMCARD POPUP" )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
       )
      
      )
     
     (
-      NAME(DIRECTIONS)
+       NAME ( DIRECTIONS )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     XPOS( 10  0.000000 )
+      XPOS ( 10 )
      
-     YPOS( 70  0.000000 )
+      YPOS ( 70 )
      
-     SPEC(
-       CAPTION("The memory card is not Formatted. Do you wish to format it?")
+      SPEC (
+        CAPTION ( "The memory card is not Formatted. Do you wish to format it?" )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
       
       )
      
@@ -51,49 +51,49 @@
     
     )
    
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(dlgMenu.rdr)
+      ARGUMENT ( dlgMenu.rdr )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(yes)
+    CONTROLS ((
+       NAME ( yes )
      
-     XPOS( 163  0.000000 )
+      XPOS ( 163 )
      
-     YPOS( 201  0.000000 )
+      YPOS ( 201 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 200  0.000000 )
+      SPEC (
+        XSIZE ( 200 )
       
-      YSIZE( 40  0.000000 )
+       YSIZE ( 40 )
       
-      CAPTION(YES)
+       CAPTION ( YES )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 15  0.000000 )
+       YOFFSET ( 15 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
+       ACTIVE ( Menu050_CreateGame_MissionPressed.tif )
       
-      PRESSED(Menu050_CreateGame_MissionPressed.tif)
+       PRESSED ( Menu050_CreateGame_MissionPressed.tif )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(format_memorycard)
+         ANIMATION ( format_memorycard )
         
-        ARGUMENT(dlgSocomOnline.rdr)
+         ARGUMENT ( dlgSocomOnline.rdr )
         
         )
        
@@ -104,37 +104,37 @@
      )
     
     (
-      NAME(no)
+       NAME ( no )
      
-     XPOS( 163  0.000000 )
+      XPOS ( 163 )
      
-     YPOS( 250  0.000000 )
+      YPOS ( 250 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       XSIZE( 200  0.000000 )
+      SPEC (
+        XSIZE ( 200 )
       
-      YSIZE( 40  0.000000 )
+       YSIZE ( 40 )
       
-      CAPTION(NO)
+       CAPTION ( NO )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 15  0.000000 )
+       YOFFSET ( 15 )
       
-      SCALE( 0.800000 )
+       SCALE ( 0.800000 )
       
-      ACTIVE(Menu050_CreateGame_MissionPressed.tif)
+       ACTIVE ( Menu050_CreateGame_MissionPressed.tif )
       
-      PRESSED(Menu050_CreateGame_MissionPressed.tif)
+       PRESSED ( Menu050_CreateGame_MissionPressed.tif )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgMultiplayerMenu.rdr)
+         ARGUMENT ( dlgMultiplayerMenu.rdr )
         
         )
        
@@ -144,7 +144,7 @@
      
      )
     
-    ````````)
+     ```````` )
    
    )
   

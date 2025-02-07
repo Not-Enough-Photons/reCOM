@@ -1,31 +1,31 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(undefined.tif)
+     FILENAME ( undefined.tif )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(dlgLeadershipChange.rdr)
+    SCRIPT_LIBRARY ( dlgLeadershipChange.rdr )
    
-   OBJECTS((
-      NAME(Clan_Roster_Label)
+    OBJECTS ((
+       NAME ( Clan_Roster_Label )
      
-     XPOS( 55  0.000000 )
+      XPOS ( 55 )
      
-     YPOS( 55  0.000000 )
+      YPOS ( 55 )
      
-     TYPE(TEXT)
+      TYPE ( TEXT )
      
-     SPEC(
-       CAPTION(CLAN_ROSTER)
+      SPEC (
+        CAPTION ( CLAN_ROSTER )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
       
       )
      
@@ -33,81 +33,81 @@
     
     )
    
-   ANIMATIONS((
-      BUTTON(TRIANGLE)
+    ANIMATIONS ((
+       BUTTON ( TRIANGLE )
      
-     ANIMATION(goto_menu)
+      ANIMATION ( goto_menu )
      
-     ARGUMENT(PREVIOUS_SCREEN)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(get_clan_roster)
+      ARGUMENT ( PREVIOUS_SCREEN )
      
      )
     
     (
-      EVENT(MP_MEDIUS_ERROR)
+       EVENT ( ONSTART )
      
-     ANIMATION(OnMultiplayerDisconnect)
+      ANIMATION ( get_clan_roster )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(appointpermldr)
+    CONTROLS ((
+       NAME ( appointpermldr )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 30 )
      
-     YPOS( 300  0.000000 )
+      YPOS ( 300 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       CAPTION("Permanent Leader")
+      SPEC (
+        CAPTION ( "Permanent Leader" )
       
-      Scale( 1.000000 )
+       Scale ( 1.000000 )
       
-      NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+       NORMAL_COLOR ( 100  100  100 )
       
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
       )
      
      )
     
     (
-      NAME(exit)
+       NAME ( exit )
      
-     XPOS( 400  0.000000 )
+      XPOS ( 400 )
      
-     YPOS( 300  0.000000 )
+      YPOS ( 300 )
      
-     TYPE(BUTTON)
+      TYPE ( BUTTON )
      
-     SPEC(
-       CAPTION(EXIT)
+      SPEC (
+        CAPTION ( EXIT )
       
-      SCALE( 1.000000 )
+       SCALE ( 1.000000 )
       
-      NORMAL_COLOR( 100  0.000000  100  0.000000  100  0.000000 )
+       NORMAL_COLOR ( 100  100  100 )
       
-      ACTIVE_COLOR( 0  0.000000  100  0.000000  100  0.000000 )
+       ACTIVE_COLOR ( 0  100  100 )
       
-      PRESSED_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+       PRESSED_COLOR ( 100  0  0 )
       
-      ANIMATIONS((
-         BUTTON(SELECT)
+       ANIMATIONS ((
+          BUTTON ( SELECT )
         
-        ANIMATION(goto_menu)
+         ANIMATION ( goto_menu )
         
-        ARGUMENT(dlgLeadershipChange.rdr)
+         ARGUMENT ( dlgLeadershipChange.rdr )
         
         )
        
@@ -118,49 +118,49 @@
      )
     
     (
-      NAME("Clan Roster")
+       NAME ( "Clan Roster" )
      
-     XPOS( 55  0.000000 )
+      XPOS ( 55 )
      
-     YPOS( 120  0.000000 )
+      YPOS ( 120 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       XSIZE( 128  0.000000 )
+      SPEC (
+        XSIZE ( 128 )
       
-      YSIZE( 55  0.000000 )
+       YSIZE ( 55 )
       
-      SPACING( 17  0.000000 )
+       SPACING ( 17 )
       
-      SCALE( 0.700000 )
+       SCALE ( 0.700000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 0  0.000000 )
+       TOP_MARGIN ( 0 )
       
-      UIVAR(
-        NAME(CLAN_ROSTER)
+       UIVAR (
+         NAME ( CLAN_ROSTER )
        
        )
       
-      OPTIONS((
-         CAPTION(Bob)
+       OPTIONS ((
+          CAPTION ( Bob )
         
         )
        
        (
-         CAPTION(Dave)
+          CAPTION ( Dave )
         
         )
        
        (
-         CAPTION(Conrad)
+          CAPTION ( Conrad )
         
         )
        
        (
-         CAPTION(Tom)
+          CAPTION ( Tom )
         
         )
        
@@ -176,18 +176,18 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(get_clan_roster)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( get_clan_roster )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(GetClanRoster)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetClanRoster )
       
       )
      

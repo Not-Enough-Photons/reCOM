@@ -1,33 +1,33 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(MPEG)
+    BACKGROUND (
+      TYPE ( MPEG )
     
-    FILENAME(run/movies/common/sony448.pss)
+     FILENAME ( run/movies/common/sony448.pss )
     
     )
    
-   FONT(arialblack)
+    FONT ( arialblack )
    
-   SCRIPT_LIBRARY(dlgIntroCinematic.rdr)
+    SCRIPT_LIBRARY ( dlgIntroCinematic.rdr )
    
-   OBJECTS()
+    OBJECTS ()
    
-   ANIMATIONS((
-      EVENT(ONSTART)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     ANIMATION(TurnOffVagStream)
+      ANIMATION ( TurnOffVagStream )
      
      )
     
     (
-      EVENT(ONMPEGEND)
+       EVENT ( ONMPEGEND )
      
-     ANIMATION(switch_menu)
+      ANIMATION ( switch_menu )
      
-     ARGUMENT(dlgIntroZipperCinematic.rdr)
+      ARGUMENT ( dlgIntroZipperCinematic.rdr )
      
      )
     
@@ -37,20 +37,20 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(data\common\dialog\uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(TurnOffVagStream)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( TurnOffVagStream )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(VagStreaming)
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( VagStreaming )
       
-      ARGUMENT(OFF)
+       ARGUMENT ( OFF )
       
       )
      

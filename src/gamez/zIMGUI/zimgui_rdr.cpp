@@ -26,7 +26,7 @@ void FileCallback(void* userdata, const char * const *filelist, int filter)
             CRdrFile* reader = zrdr_read(*it, NULL, 0);
             sprintf_s(path, 256, "%s/%s", input_path, *it);
             FILE* file = fopen(path, "w");
-            _OutputASCII(file, reader, 0);
+            reader->Write(file);
             fclose(file);
         }
     }

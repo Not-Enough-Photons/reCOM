@@ -1,426 +1,426 @@
 ((
-  SCREENS((
-    LIBRARY(ui/assetlib/ui2d)
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
    
-   BACKGROUND(
-     TYPE(IMAGE)
+    BACKGROUND (
+      TYPE ( IMAGE )
     
-    FILENAME(multplay_back.tif)
+     FILENAME ( multplay_back.tif )
     
     )
    
-   FONT(myriad)
+    FONT ( myriad )
    
-   SCRIPT_LIBRARY(dlgDebriefing.rdr)
+    SCRIPT_LIBRARY ( dlgDebriefing.rdr )
    
-   OBJECTS((
-      NAME(letterbar)
+    OBJECTS ((
+       NAME ( letterbar )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 0  0.000000 )
+      YPOS ( 0 )
      
-     SPEC(
-       FILENAME(blank_top_bar.tif)
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
       
-      XSIZE( 640  0.000000 )
+       XSIZE ( 640 )
       
-      YSIZE( 64  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(bar_title)
-     
-     TYPE(TEXT)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 50  0.000000 )
-     
-     SPEC(
-       FONT(Gothic_13)
-      
-      CHILDOF(letterbar)
-      
-      CAPTION("MISSION DEBRIEFING")
-      
-      SCALE( 0.950000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(letterbar_bottom)
+       NAME ( bar_title )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 0  0.000000 )
+      XPOS ( 20 )
      
-     YPOS( 384  0.000000 )
+      YPOS ( 50 )
      
-     SPEC(
-       FILENAME(common_bar_bottom.tif)
+      SPEC (
+        FONT ( Gothic_13 )
       
-      XSIZE( 640  0.000000 )
+       CHILDOF ( letterbar )
       
-      YSIZE( 64  0.000000 )
+       CAPTION ( "MISSION DEBRIEFING" )
       
-      )
-     
-     )
-    
-    (
-      NAME(title_bar)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 0  0.000000 )
-     
-     YPOS( 60  0.000000 )
-     
-     SPEC(
-       FILENAME(undefined.tif)
-      
-      SIZE( 700  0.000000  32  0.000000 )
+       SCALE ( 0.950000 )
       
       )
      
      )
     
     (
-      NAME(dogtags)
+       NAME ( letterbar_bottom )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 370  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 325  0.000000 )
+      YPOS ( 384 )
      
-     SPEC(
-       FILENAME(dogtags_db1.tif)
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
       
-      SIZE( 256  0.000000  128  0.000000 )
+       XSIZE ( 640 )
       
-      )
-     
-     )
-    
-    (
-      NAME(dogtags2)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 370  0.000000 )
-     
-     YPOS( 325  0.000000 )
-     
-     SPEC(
-       FILENAME(dogtags_db2.tif)
-      
-      SIZE( 256  0.000000  128  0.000000 )
+       YSIZE ( 64 )
       
       )
      
      )
     
     (
-      NAME(StatusDisplay)
+       NAME ( title_bar )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 0 )
      
-     YPOS( 123  0.000000 )
+      YPOS ( 60 )
      
-     SPEC(
-       COLOR( 73.000000  76.000000  81.000000 )
+      SPEC (
+        FILENAME ( undefined.tif )
       
-      CHILDOF(title_bar)
-      
-      CAPTION(" ")
-      
-      SCALE( 0.650000 )
+       SIZE ( 700  32 )
       
       )
      
      )
     
     (
-      NAME(NextMiss)
+       NAME ( dogtags )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 80  0.000000 )
+      XPOS ( 370 )
      
-     YPOS( 23  0.000000 )
+      YPOS ( 325 )
      
-     SPEC(
-       COLOR( 73.000000  76.000000  81.000000 )
+      SPEC (
+        FILENAME ( dogtags_db1.tif )
       
-      CHILDOF(title_bar)
-      
-      CAPTION(" ")
-      
-      SCALE( 0.650000 )
+       SIZE ( 256  128 )
       
       )
      
      )
     
     (
-      NAME(Medal)
+       NAME ( dogtags2 )
      
-     TYPE(IMAGE)
+      TYPE ( IMAGE )
      
-     XPOS( 450  0.000000 )
+      XPOS ( 370 )
      
-     YPOS( 160  0.000000 )
+      YPOS ( 325 )
      
-     SPEC(
-       FILENAME(Medal.tif)
+      SPEC (
+        FILENAME ( dogtags_db2.tif )
       
-      SIZE( 94  0.000000  158  0.000000 )
-      
-      )
-     
-     )
-    
-    (
-      NAME(Medal1)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 450  0.000000 )
-     
-     YPOS( 160  0.000000 )
-     
-     SPEC(
-       FILENAME(Medal1.tif)
-      
-      SIZE( 94  0.000000  158  0.000000 )
+       SIZE ( 256  128 )
       
       )
      
      )
     
     (
-      NAME(Medal2)
+       NAME ( StatusDisplay )
      
-     TYPE(IMAGE)
+      TYPE ( TEXT )
      
-     XPOS( 450  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 160  0.000000 )
+      YPOS ( 123 )
      
-     SPEC(
-       FILENAME(Medal2.tif)
+      SPEC (
+        COLOR ( 73.000000  76.000000  81.000000 )
       
-      SIZE( 94  0.000000  158  0.000000 )
+       CHILDOF ( title_bar )
       
-      )
-     
-     )
-    
-    (
-      NAME(teletype_plate)
-     
-     TYPE(IMAGE)
-     
-     XPOS( 20  0.000000 )
-     
-     YPOS( 115  0.000000 )
-     
-     SPEC(
-       FILENAME(eq_CharWinInv.tif)
+       CAPTION ( " " )
       
-      XSIZE( 596  0.000000 )
-      
-      YSIZE( 235  0.000000 )
+       SCALE ( 0.650000 )
       
       )
      
      )
     
     (
-      NAME(teletype_text)
+       NAME ( NextMiss )
      
-     TYPE(TELETYPE)
+      TYPE ( TEXT )
      
-     XPOS( 15  0.000000 )
+      XPOS ( 80 )
      
-     YPOS( 25  0.000000 )
+      YPOS ( 23 )
      
-     SPEC(
-       CHILDOF(teletype_plate)
+      SPEC (
+        COLOR ( 73.000000  76.000000  81.000000 )
       
-      PULSERATE( 10.000000 )
+       CHILDOF ( title_bar )
       
-      MAXLENGTH( 250  0.000000 )
+       CAPTION ( " " )
       
-      MAXHEIGHT( 200  0.000000 )
-      
-      CAPTION(" ")
-      
-      SCALE( 0.450000 )
-      
-      INTERVAL( 1400.000000 )
-      
-      SPACING( 17  0.000000 )
+       SCALE ( 0.650000 )
       
       )
      
      )
     
     (
-      NAME(Objtext)
+       NAME ( Medal )
      
-     TYPE(TEXT)
+      TYPE ( IMAGE )
      
-     XPOS( 30  0.000000 )
+      XPOS ( 450 )
      
-     YPOS( 23  0.000000 )
+      YPOS ( 160 )
      
-     SPEC(
-       COLOR( 255.000000  204.000000  51.000000 )
+      SPEC (
+        FILENAME ( Medal.tif )
       
-      CHILDOF(teletype_plate)
-      
-      CAPTION(" ")
-      
-      SCALE( 0.500000 )
+       SIZE ( 94  158 )
       
       )
      
      )
     
-    )
-   
-   ANIMATIONS((
-      EVENT(ONSTART)
+    (
+       NAME ( Medal1 )
      
-     ANIMATION(OffToHypeSoon)
+      TYPE ( IMAGE )
+     
+      XPOS ( 450 )
+     
+      YPOS ( 160 )
+     
+      SPEC (
+        FILENAME ( Medal1.tif )
+      
+       SIZE ( 94  158 )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( Medal2 )
      
-     ANIMATION(CallMusic)
+      TYPE ( IMAGE )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 450 )
      
-     ANIMATION(title_oilplatform_slide)
+      YPOS ( 160 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(ShowGameReview)
+      SPEC (
+        FILENAME ( Medal2.tif )
+      
+       SIZE ( 94  158 )
+      
+      )
      
      )
     
     (
-      EVENT(ONSTART)
+       NAME ( teletype_plate )
      
-     ANIMATION(Progress_flash)
+      TYPE ( IMAGE )
      
-     )
-    
-    (
-      EVENT(ONSTART)
+      XPOS ( 20 )
      
-     ANIMATION(bottom_bar_slide_up)
+      YPOS ( 115 )
      
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(letterbar_slide)
-     
-     )
-    
-    (
-      EVENT(ONSTART)
-     
-     ANIMATION(CancelLoadGame)
+      SPEC (
+        FILENAME ( eq_CharWinInv.tif )
+      
+       XSIZE ( 596 )
+      
+       YSIZE ( 235 )
+      
+      )
      
      )
     
     (
-      EVENT(MEMCARD_ERROR)
+       NAME ( teletype_text )
      
-     ANIMATION(handle_memcard_error)
+      TYPE ( TELETYPE )
+     
+      XPOS ( 15 )
+     
+      YPOS ( 25 )
+     
+      SPEC (
+        CHILDOF ( teletype_plate )
+      
+       PULSERATE ( 10.000000 )
+      
+       MAXLENGTH ( 250 )
+      
+       MAXHEIGHT ( 200 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.450000 )
+      
+       INTERVAL ( 1400.000000 )
+      
+       SPACING ( 17 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Objtext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 30 )
+     
+      YPOS ( 23 )
+     
+      SPEC (
+        COLOR ( 255.000000  204.000000  51.000000 )
+      
+       CHILDOF ( teletype_plate )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.500000 )
+      
+      )
      
      )
     
     )
    
-   CONTROLS((
-      NAME(DoSaveButton)
+    ANIMATIONS ((
+       EVENT ( ONSTART )
      
-     TYPE(BUTTON)
+      ANIMATION ( OffToHypeSoon )
      
-     XPOS( 10  0.000000 )
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     YPOS( 112  0.000000 )
+      ANIMATION ( CallMusic )
      
-     TYPE(BUTTON)
+     )
+    
+    (
+       EVENT ( ONSTART )
      
-     SPEC(
-       SIZE( 172  0.000000  32  0.000000 )
+      ANIMATION ( title_oilplatform_slide )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ShowGameReview )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Progress_flash )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( CancelLoadGame )
+     
+     )
+    
+    (
+       EVENT ( MEMCARD_ERROR )
+     
+      ANIMATION ( handle_memcard_error )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( DoSaveButton )
+     
+      TYPE ( BUTTON )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 112 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        SIZE ( 172  32 )
       
-      XOFFSET( 15  0.000000 )
+       XOFFSET ( 15 )
       
-      YOFFSET( 23  0.000000 )
+       YOFFSET ( 23 )
       
-      SCALE( 0.500000 )
+       SCALE ( 0.500000 )
       
-      CAPTION(" ")
+       CAPTION ( " " )
       
-      PRESSED(
-        TEXT_COLOR( 255.000000  74.000000  8.000000 )
+       PRESSED (
+         TEXT_COLOR ( 255.000000  74.000000  8.000000 )
        
        )
       
-      NORMAL(
-        TEXT_COLOR( 128.000000  128.000000  128.000000 )
+       NORMAL (
+         TEXT_COLOR ( 128.000000  128.000000  128.000000 )
        
        )
       
-      ACTIVE(
-        TEXT_GLOW(
-         RANGE( 0.500000  1.000000 )
+       ACTIVE (
+         TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
         
-        TIME( 0.500000 )
+         TIME ( 0.500000 )
         
         )
        
-       TEXT_COLOR( 255.000000  204.000000  51.000000 )
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
        
        )
       
-      DISABLED(
-        IMAGE(brown_back.tif)
+       DISABLED (
+         IMAGE ( brown_back.tif )
        
-       TEXT_COLOR( 50  0.000000  50  0.000000  50  0.000000 )
+        TEXT_COLOR ( 50  50  50 )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(OffToHype)
+         ANIMATION ( OffToHype )
         
         )
        
@@ -431,84 +431,84 @@
      )
     
     (
-      NAME(SavedGames)
+       NAME ( SavedGames )
      
-     XPOS( 120  0.000000 )
+      XPOS ( 120 )
      
-     YPOS( 180  0.000000 )
+      YPOS ( 180 )
      
-     TYPE(LISTBOX)
+      TYPE ( LISTBOX )
      
-     SPEC(
-       CHILDOF("CGameMenu foreplane")
+      SPEC (
+        CHILDOF ( "CGameMenu foreplane" )
       
-      PRESSED_COLOR( 255.000000  74.000000  8.000000 )
+       PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
       
-      NORMAL_COLOR( 158.000000  158.000000  158.000000 )
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
       
-      ACTIVE_COLOR(
-         255.000000  104.000000  51.000000 RANGE( 0.500000  1.000000 )
+       ACTIVE_COLOR (
+         255.000000  104.000000  51.000000  RANGE ( 0.500000  1.000000 )
        
-       TIME( 0.750000 )
+        TIME ( 0.750000 )
        
        )
       
-      NOSELECT()
+       NOSELECT ()
       
-      PADHOG()
+       PADHOG ()
       
-      FILENAME(popupOp.tif)
+       FILENAME ( popupOp.tif )
       
-      XSIZE( 400  0.000000 )
+       XSIZE ( 400 )
       
-      YSIZE( 165  0.000000 )
+       YSIZE ( 165 )
       
-      SPACING( 18  0.000000 )
+       SPACING ( 18 )
       
-      SCALE( 0.500000 )
+       SCALE ( 0.500000 )
       
-      LEFT_MARGIN( 30  0.000000 )
+       LEFT_MARGIN ( 30 )
       
-      TOP_MARGIN( 30  0.000000 )
+       TOP_MARGIN ( 30 )
       
-      COLUMNS((
-         POSITION( 0  0.000000 )
+       COLUMNS ((
+          POSITION ( 0 )
         
         )
        
        (
-         POSITION( 50  0.000000 )
+          POSITION ( 50 )
         
         )
        
        (
-         POSITION( 200  0.000000 )
+          POSITION ( 200 )
         
         )
        
        (
-         POSITION( 300  0.000000 )
+          POSITION ( 300 )
         
         )
        
        )
       
-      UIVAR(
-        NAME(SavedGames)
+       UIVAR (
+         NAME ( SavedGames )
        
        )
       
-      ANIMATIONS((
-         BUTTON(CROSS)
+       ANIMATIONS ((
+          BUTTON ( CROSS )
         
-        ANIMATION(SaveGameOnListBox)
+         ANIMATION ( SaveGameOnListBox )
         
         )
        
        (
-         BUTTON(TRIANGLE)
+          BUTTON ( TRIANGLE )
         
-        ANIMATION(CancelLoadGame)
+         ANIMATION ( CancelLoadGame )
         
         )
        
@@ -524,36 +524,36 @@
   
   )
  
- ANIMATION_DEFINITIONS(
-   ANIMATION_LIST(
-    ANIMATION_DEFINITION_FILE(uianim.rdr)
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
    
-   ANIMATION_DEFINITION_FILE(UIMemCardAnim.rdr)
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OffToHypeSoon)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OffToHypeSoon )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags2 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     WAIT( 11  0.000000 )
+      WAIT ( 11 )
      
-     CALL_ANIMATION(
-       NAME(OffToHype)
+      CALL_ANIMATION (
+        NAME ( OffToHype )
       
       )
      
@@ -561,39 +561,39 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(OffToHype)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OffToHype )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+     SEQUENCE_DEFINITION (
+       OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(StopAllSounds)
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(VagStreaming)
-      
-      ARGUMENT(OFF)
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
       
-      ARGUMENT(dlgHype.rdr)
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgHype.rdr )
       
       )
      
@@ -601,16 +601,16 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SaveFromReplay)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SaveFromReplay )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(ReplayMissAnyway= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( ReplayMissAnyway  =  1 )
      
-     CALL_ANIMATION(
-       NAME(MemCheckSave)
+      CALL_ANIMATION (
+        NAME ( MemCheckSave )
       
       )
      
@@ -618,162 +618,121 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(CallMusic)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallMusic )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(MUS_SUCCESS)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( MUS_SUCCESS )
       
-      START()
+       START ()
       
       )
      
-     WHILE(TRUE)
+      WHILE ( TRUE )
      
-     END_WHILE()
+      END_WHILE ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(incr_spec_mission_comp)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_spec_mission_comp )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(CurrentMission== 6  0.000000 )
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( CurrentMission  ==  6 )
       
       )
      
-     VALVE(incr_miss_6+= 1  0.000000 )
+      VALVE ( incr_miss_6  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 8  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
       
       )
      
-     VALVE(incr_miss_8+= 1  0.000000 )
+      VALVE ( incr_miss_8  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 5  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
       
       )
      
-     VALVE(incr_miss_5+= 1  0.000000 )
+      VALVE ( incr_miss_5  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 9  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
       
       )
      
-     VALVE(incr_miss_9+= 1  0.000000 )
+      VALVE ( incr_miss_9  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 11  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
       
       )
      
-     VALVE(incr_miss_11+= 1  0.000000 )
+      VALVE ( incr_miss_11  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 12  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
       
       )
      
-     VALVE(incr_miss_12+= 1  0.000000 )
+      VALVE ( incr_miss_12  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 17  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
       
       )
      
-     VALVE(incr_miss_17+= 1  0.000000 )
+      VALVE ( incr_miss_17  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 19  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
       
       )
      
-     VALVE(incr_miss_19+= 1  0.000000 )
+      VALVE ( incr_miss_19  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 21  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
       
       )
      
-     VALVE(incr_miss_21+= 1  0.000000 )
+      VALVE ( incr_miss_21  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 13  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
       
       )
      
-     VALVE(incr_miss_13+= 1  0.000000 )
+      VALVE ( incr_miss_13  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 15  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
       
       )
      
-     VALVE(incr_miss_15+= 1  0.000000 )
+      VALVE ( incr_miss_15  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 16  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
       
       )
      
-     VALVE(incr_miss_16+= 1  0.000000 )
+      VALVE ( incr_miss_16  +=  1 )
      
-     ENDIF()
+      ENDIF ()
      
-     CALL_ANIMATION(
-       NAME(TestForCompletionLevel)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(incr_mission_comp)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(incr_miss_6+= 1  0.000000 )
-     
-     VALVE(incr_miss_8+= 1  0.000000 )
-     
-     VALVE(incr_miss_5+= 1  0.000000 )
-     
-     VALVE(incr_miss_9+= 1  0.000000 )
-     
-     VALVE(incr_miss_11+= 1  0.000000 )
-     
-     VALVE(incr_miss_12+= 1  0.000000 )
-     
-     VALVE(incr_miss_17+= 1  0.000000 )
-     
-     VALVE(incr_miss_19+= 1  0.000000 )
-     
-     VALVE(incr_miss_21+= 1  0.000000 )
-     
-     VALVE(incr_miss_13+= 1  0.000000 )
-     
-     VALVE(incr_miss_15+= 1  0.000000 )
-     
-     VALVE(incr_miss_16+= 1  0.000000 )
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(TestForCompletionLevel)
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
       
       )
      
@@ -781,40 +740,40 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(decr_mission_comp)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_mission_comp )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(incr_miss_6-= 1  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( incr_miss_6  +=  1 )
      
-     VALVE(incr_miss_8-= 1  0.000000 )
+      VALVE ( incr_miss_8  +=  1 )
      
-     VALVE(incr_miss_5-= 1  0.000000 )
+      VALVE ( incr_miss_5  +=  1 )
      
-     VALVE(incr_miss_9-= 1  0.000000 )
+      VALVE ( incr_miss_9  +=  1 )
      
-     VALVE(incr_miss_11-= 1  0.000000 )
+      VALVE ( incr_miss_11  +=  1 )
      
-     VALVE(incr_miss_12-= 1  0.000000 )
+      VALVE ( incr_miss_12  +=  1 )
      
-     VALVE(incr_miss_17-= 1  0.000000 )
+      VALVE ( incr_miss_17  +=  1 )
      
-     VALVE(incr_miss_19-= 1  0.000000 )
+      VALVE ( incr_miss_19  +=  1 )
      
-     VALVE(incr_miss_21-= 1  0.000000 )
+      VALVE ( incr_miss_21  +=  1 )
      
-     VALVE(incr_miss_13-= 1  0.000000 )
+      VALVE ( incr_miss_13  +=  1 )
      
-     VALVE(incr_miss_15-= 1  0.000000 )
+      VALVE ( incr_miss_15  +=  1 )
      
-     VALVE(incr_miss_16-= 1  0.000000 )
+      VALVE ( incr_miss_16  +=  1 )
      
-     ENDIF()
+      ENDIF ()
      
-     CALL_ANIMATION(
-       NAME(TestForCompletionLevel)
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
       
       )
      
@@ -822,350 +781,40 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(TestForCompletionLevel)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( decr_mission_comp )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      VALVE(GameComplete= 999  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( incr_miss_6  -=  1 )
      
-     IF(
-       VALVE(incr_miss_6<GameComplete)
-      
-      )
+      VALVE ( incr_miss_8  -=  1 )
      
-     VALVE(GameComplete=incr_miss_6)
+      VALVE ( incr_miss_5  -=  1 )
      
-     ENDIF()
+      VALVE ( incr_miss_9  -=  1 )
      
-     IF(
-       VALVE(incr_miss_8<GameComplete)
-      
-      )
+      VALVE ( incr_miss_11  -=  1 )
      
-     VALVE(GameComplete=incr_miss_8)
+      VALVE ( incr_miss_12  -=  1 )
      
-     ENDIF()
+      VALVE ( incr_miss_17  -=  1 )
      
-     IF(
-       VALVE(incr_miss_5<GameComplete)
-      
-      )
+      VALVE ( incr_miss_19  -=  1 )
      
-     VALVE(GameComplete=incr_miss_5)
+      VALVE ( incr_miss_21  -=  1 )
      
-     ENDIF()
+      VALVE ( incr_miss_13  -=  1 )
      
-     IF(
-       VALVE(incr_miss_9<GameComplete)
-      
-      )
+      VALVE ( incr_miss_15  -=  1 )
      
-     VALVE(GameComplete=incr_miss_9)
+      VALVE ( incr_miss_16  -=  1 )
      
-     ENDIF()
+      ENDIF ()
      
-     IF(
-       VALVE(incr_miss_11<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_11)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_12<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_12)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_17<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_17)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_19<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_19)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_21<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_21)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_13<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_13)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_15<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_15)
-     
-     ENDIF()
-     
-     IF(
-       VALVE(incr_miss_16<GameComplete)
-      
-      )
-     
-     VALVE(GameComplete=incr_miss_16)
-     
-     ENDIF()
-     
-     CALL_SEQUENCE(
-       NAME(IncrAiDiff)
-      
-      )
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(IncrAiDiff)
-     
-     ACTIVATION(ON_CALL)
-     
-     IF(
-       VALVE(GameComplete== 3  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 1  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameComplete== 4  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 2  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameComplete== 5  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 3  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameComplete== 6  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 4  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameComplete== 7  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 5  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameComplete== 8  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 6  0.000000 )
-     
-     ELSEIF(
-       VALVE(GameComplete== 9  0.000000 )
-      
-      )
-     
-     VALVE(ai_difficulty= 7  0.000000 )
-     
-     ELSE()
-     
-     VALVE(ai_difficulty= 0  0.000000 )
-     
-     ENDIF()
-     
-     )
-    
-    SEQUENCE_DEFINITION(
-      NAME(ShowAiDiff)
-     
-     IF(
-       VALVE(GameComplete== 1  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("1")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 2  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("2")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 3  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("3")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 4  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("4")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 5  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("5")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 6  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("6")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 7  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("7")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 8  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("8")
-      
-      )
-     
-     ELSEIF(
-       VALVE(GameComplete== 9  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION("9")
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       NODE(MENUGCtext)
-      
-      CAPTION(?)
-      
-      )
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(ShowGameReview)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      VALVE(ReplayMissionMusic= 0  0.000000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUMedal)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUMedal1)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUMedal2)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUteletype_text)
-      
-      CAPTION("CONGRATULATIONS COMMANDER!  YOU PERFORMED EXCEEDINGLY WELL.  MORE MISSIONS WILL BE AVAILABLE IN AUGUST.")
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
       
       )
      
@@ -1173,172 +822,350 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SetPerfectMission)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( TestForCompletionLevel )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      IF(
-       VALVE(CurrentMission== 6  0.000000 )
+     SEQUENCE_DEFINITION (
+       VALVE ( GameComplete  =  999 )
+     
+      IF (
+        VALVE ( incr_miss_6  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_6+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_6 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 8  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_8  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_8+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_8 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 5  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_5  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_5+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_5 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 9  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_9  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_9+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_9 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 11  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_11  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_11+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_11 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 12  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_12  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_12+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_12 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 17  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_17  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_17+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_17 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 19  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_19  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_19+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_19 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 21  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_21  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_21+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_21 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 13  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_13  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_13+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_13 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 15  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_15  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_15+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_15 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 16  0.000000 )
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_16  <  GameComplete )
       
       )
      
-     VALVE(incr_miss_16+= 1  0.000000 )
+      VALVE ( GameComplete  =  incr_miss_16 )
      
-     ENDIF()
+      ENDIF ()
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(CancelLoadGame)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      SOUND(
-       NAME(SND_DINK)
-      
-      AT_NODE(ROOT_NODE)
-      
-      START()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSavedGames)
-      
-      STATE(INACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(DisableButton)
-      
-      ARGUMENT(SavedGames)
+      CALL_SEQUENCE (
+        NAME ( IncrAiDiff )
       
       )
      
      )
     
+     SEQUENCE_DEFINITION (
+       NAME ( IncrAiDiff )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  1 )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  4 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  2 )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  5 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  3 )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  6 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  4 )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  7 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  5 )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  8 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  6 )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  9 )
+      
+      )
+     
+      VALVE ( ai_difficulty  =  7 )
+     
+      ELSE ()
+     
+      VALVE ( ai_difficulty  =  0 )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( ShowAiDiff )
+     
+      IF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "9" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( ? )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MoveToNextMiss)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ShowGameReview )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      NAME(switch)
+     SEQUENCE_DEFINITION (
+       VALVE ( ReplayMissionMusic  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(VagStreaming)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal )
       
-      ARGUMENT(OFF)
+       STATE ( ACTIVE )
       
       )
      
-     VALVE(CameFromDebriefing= 1  0.000000 )
-     
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal1 )
+      
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal2 )
       
-      RUN_TIME( 0.500000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.990000 )
+       STATE ( INACTIVE )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
       
-      ARGUMENT(dlgAlaska_mission3.rdr)
+       CAPTION ( "CONGRATULATIONS COMMANDER!  YOU PERFORMED EXCEEDINGLY WELL.  MORE MISSIONS WILL BE AVAILABLE IN AUGUST." )
       
       )
      
@@ -1346,432 +1173,460 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(Progress_flash)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetPerfectMission )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      NAME(mission)
-     
-     CALL_ANIMATION(
-       NAME(incr_spec_mission_comp)
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( CurrentMission  ==  6 )
       
       )
      
-     IF(
-       VALVE(CurrentMission== 6  0.000000 )
+      VALVE ( incr_miss_6  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION(" NEXT MISSION: ALASKAN GHOST TOWN")
+      VALVE ( incr_miss_8  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 8  0.000000 )
+      VALVE ( incr_miss_5  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION(" THANK YOU FOR PLAYING.")
+      VALVE ( incr_miss_9  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 5  0.000000 )
+      VALVE ( incr_miss_11  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION(" NEXT AREA OF OPERATIONS: THAILAND")
+      VALVE ( incr_miss_12  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 9  0.000000 )
+      VALVE ( incr_miss_17  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT MISSION: TEMPLE AT HOHN KAEN")
+      VALVE ( incr_miss_19  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 11  0.000000 )
+      VALVE ( incr_miss_21  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT MISSION: CITY OF THE FORGOTTEN")
+      VALVE ( incr_miss_13  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 12  0.000000 )
+      VALVE ( incr_miss_15  +=  1 )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT AREA OF OPERATIONS: CONGO")
-      
-      )
+      VALVE ( incr_miss_16  +=  1 )
      
-     ELSEIF(
-       VALVE(CurrentMission== 17  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT MISSION: POW CAMP")
-      
-      )
-     
-     ELSEIF(
-       VALVE(CurrentMission== 19  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT MISSION: MOUNTAIN ASSAULT")
-      
-      )
-     
-     ELSEIF(
-       VALVE(CurrentMission== 21  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT AREA OF OPERATIONS: TURKMENISTAN")
-      
-      )
-     
-     ELSEIF(
-       VALVE(CurrentMission== 13  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT MISSION: MOUTH OF THE BEAST")
-      
-      )
-     
-     ELSEIF(
-       VALVE(CurrentMission== 15  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("NEXT MISSION: NUCLEAR INTERCEPTION")
-      
-      )
-     
-     ELSEIF(
-       VALVE(CurrentMission== 16  0.000000 )
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUNextMiss)
-      
-      CAPTION("THE END")
-      
-      )
-     
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(MemCheckSave)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CancelLoadGame )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      STOP_ANIMATION(
-       NAME(menu_fade_up)
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
       
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.000000 )
-      
-      OPACITY_TO( 0.700000 )
+       STATE ( INACTIVE )
       
       )
      
-     VALVE(SaveToMemory= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MoveToNextMiss )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( switch )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
       
-      CAPTION("Would you like to save your progress to the memory card (PS2)?")
+       ARGUMENT ( OFF )
       
-      BACKGROUND(popupOp.tif)
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
-      POSITION( 170.000000  200.000000 )
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       RUN_TIME ( 0.500000 )
       
-      WIDTH( 300  0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      HEIGHT( 128  0.000000 )
+       OPACITY_TO ( 0.990000 )
       
-      XOFFSET( 20  0.000000 )
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      YOFFSET( 35  0.000000 )
+       ARGUMENT ( dlgAlaska_mission3.rdr )
       
-      SPACING( 20  0.000000 )
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Progress_flash )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( mission )
+     
+      CALL_ANIMATION (
+        NAME ( incr_spec_mission_comp )
       
-      SCALE( 0.400000 )
+      )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
       
-      YESNO(
-        VALVE(SaveToMemory)
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( " NEXT MISSION: ALASKAN GHOST TOWN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( " THANK YOU FOR PLAYING." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( " NEXT AREA OF OPERATIONS: THAILAND" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: TEMPLE AT HOHN KAEN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: CITY OF THE FORGOTTEN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT AREA OF OPERATIONS: CONGO" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: POW CAMP" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: MOUNTAIN ASSAULT" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT AREA OF OPERATIONS: TURKMENISTAN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: MOUTH OF THE BEAST" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: NUCLEAR INTERCEPTION" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "THE END" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MemCheckSave )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      VALVE ( SaveToMemory  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Would you like to save your progress to the memory card (PS2)?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SaveToMemory )
        
-       YES(
-         CAPTION(Yes)
+        YES (
+          CAPTION ( Yes )
         
-        POS( 55  0.000000  90  0.000000 )
+         POS ( 55  90 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
         )
        
-       NO(
-         CAPTION(No)
+        NO (
+          CAPTION ( No )
         
-        POS( 190  0.000000  90  0.000000 )
+         POS ( 190  90 )
         
-        TEXTOFFSET( 13  0.000000  18  0.000000 )
+         TEXTOFFSET ( 13  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        )
-       
-       )
-      
-      )
-     
-     WHILE(
-       VALVE(SaveToMemory== 0  0.000000 )
-      
-      )
-     
-     END_WHILE()
-     
-     IF(
-       VALVE(SaveToMemory!= 66  0.000000 )
-      
-      )
-     
-     IF(
-       VALVE(SaveToMemory== 2  0.000000 )
-      
-      )
-     
-     IF(
-       VALVE(ReplayMissAnyway== 1  0.000000 )
-      
-      )
-     
-     CALL_SEQUENCE(
-       NAME(ReplayFromDebriefing)
-      
-      )
-     
-     ELSE()
-     
-     CALL_ANIMATION(
-       NAME(MoveToNextMiss)
-      
-      )
-     
-     ENDIF()
-     
-     ELSE()
-     
-     VALVE(MainMenuCardSlot= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Select memory card (PS2) SLOT:")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 10  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      CANCELLABLE()
-      
-      YESNO(
-        VALVE(MainMenuCardSlot)
-       
-       YES(
-         CAPTION("SLOT 1")
-        
-        POS( 40  0.000000  85  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  20  0.000000 )
-        
-        WIDTH( 75  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        ACTIVE(
-          IMAGE(Popup_bk.tif)
+         NORMAL (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
-         
-         )
-        
-        )
-       
-       NO(
-         CAPTION("SLOT 2")
-        
-        POS( 190  0.000000  85  0.000000 )
-        
-        TEXTOFFSET( 10  0.000000  20  0.000000 )
-        
-        WIDTH( 75  0.000000 )
-        
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-         
-         )
-        
-        NORMAL(
-          IMAGE(Popup_bk.tif)
-         
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
@@ -1781,419 +1636,142 @@
       
       )
      
-     WHILE(
-       VALVE(MainMenuCardSlot== 0  0.000000 )
+      WHILE (
+        VALVE ( SaveToMemory  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(MainMenuCardSlot!= 66  0.000000 )
+      IF (
+        VALVE ( SaveToMemory  !=  66 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      IF (
+        VALVE ( SaveToMemory  ==  2 )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Checking... Do not remove memory card (PS2) at this time.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      PROTECTED()
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 10  0.000000 )
-      
-      SCALE( 0.400000 )
+      IF (
+        VALVE ( ReplayMissAnyway  ==  1 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_Init)
+      CALL_SEQUENCE (
+        NAME ( ReplayFromDebriefing )
       
       )
      
-     IF(
-       VALVE(MainMenuCardSlot== 1  0.000000 )
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChPort)
-      
-      ARGUMENT("0")
-      
-      )
+      ENDIF ()
      
-     ELSE()
+      ELSE ()
      
-     ui::UI_COMMAND(
-       TYPE(MC_ChPort)
-      
-      ARGUMENT("1")
+      VALVE ( MainMenuCardSlot  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ENDIF()
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(IsMemCardInserted)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Select memory card (PS2) SLOT:" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 10 )
+      
+       SCALE ( 0.400000 )
+      
+       CANCELLABLE ()
+      
+       YESNO (
+         VALVE ( MainMenuCardSlot )
        
-       )
-      
-      &&ui::UI_COMMAND(
-        TYPE(IsMemCardFormatted)
-       
-       )
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
-      
-      )
-     
-     IF(
-       ui::UI_COMMAND(
-        TYPE(HasSOCOMDir)
-       
-       )
-      
-      )
-     
-     CALL_ANIMATION(
-       NAME(LoadGameOnStart)
-      
-      WAIT_FOR_COMPLETION()
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUSavedGames)
-      
-      STATE(ACTIVE)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(ActivateButton)
-      
-      ARGUMENT(SavedGames)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(EnableButton)
-      
-      ARGUMENT(SavedGames)
-      
-      )
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("No SOCOM: U.S. NAVY SEALs data in memory card (PS2). Press the X button.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     ENDIF()
-     
-     ELSE()
-     
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("No memory card (PS2) in SLOT, or memory card (PS2) not formatted. Press the X button.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      )
-     
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
-      
-      RUN_TIME( 0.050000 )
-      
-      OPACITY_FROM( 0.700000 )
-      
-      OPACITY_TO( 0.000000 )
-      
-      )
-     
-     ENDIF()
-     
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
-      
-      )
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(handle_memcard_error)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Error loading data, press the X button to continue.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  285.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 96  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.450000 )
-      
-      )
-     
-     STOP_ANIMATION(
-       NAME(load_initial_config)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Uninit)
-      
-      )
-     
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(SaveGameOnListBox)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      ui::UI_COMMAND(
-       TYPE(MC_Init)
-      
-      )
-     
-     IF(
-       !(
-        ui::UI_COMMAND(
-         TYPE(IsMemCardFormatted)
+        YES (
+          CAPTION ( "SLOT 1" )
         
-        )
-       
-       )
-      
-      )
-     
-     VALVE(AreYouSure= 0  0.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Memory card (PS2) in SLOT 1 is not formatted. Do you want to format it and create new data?")
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(AreYouSure)
-       
-       YES(
-         CAPTION(YES)
+         POS ( 40  85 )
         
-        POS( 45  0.000000  90  0.000000 )
+         TEXTOFFSET ( 10  20 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         WIDTH ( 75 )
         
-        WIDTH( 50  0.000000 )
+         HEIGHT ( 25 )
         
-        HEIGHT( 25  0.000000 )
-        
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         NORMAL (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
         )
        
-       NO(
-         CAPTION(NO)
+        NO (
+          CAPTION ( "SLOT 2" )
         
-        POS( 160  0.000000  90  0.000000 )
+         POS ( 190  85 )
         
-        TEXTOFFSET( 13  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  20 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 75 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( Popup_bk.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Popup_bk.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
@@ -2203,212 +1781,419 @@
       
       )
      
-     WHILE(
-       VALVE(AreYouSure== 0  0.000000 )
+      WHILE (
+        VALVE ( MainMenuCardSlot  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(AreYouSure== 1  0.000000 )
+      IF (
+        VALVE ( MainMenuCardSlot  !=  66 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Formatting...Do not remove memory card (PS2).")
+       CAPTION ( "Checking... Do not remove memory card (PS2) at this time." )
       
-      PROTECTED()
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  200.000000 )
+       PROTECTED ()
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       POSITION ( 170.000000  200.000000 )
       
-      WIDTH( 300  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      HEIGHT( 128  0.000000 )
+       WIDTH ( 300 )
       
-      XOFFSET( 20  0.000000 )
+       HEIGHT ( 128 )
       
-      YOFFSET( 35  0.000000 )
+       XOFFSET ( 20 )
       
-      SCALE( 0.400000 )
+       YOFFSET ( 35 )
       
-      YESNO(
-        VALVE(AreYouSure)
+       SPACING ( 10 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        VALVE ( MainMenuCardSlot  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "0" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "1" )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
        
        )
       
       )
      
-     WAIT( 0.200000 )
-     
-     ui::UI_COMMAND(
-       TYPE(FormatMemCard)
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
-      
-      )
-     
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Copying system files...Do not remove memory card (PS2).")
-      
-      PROTECTED()
-      
-      POSITION( 170.000000  200.000000 )
-      
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(AreYouSure)
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( HasSOCOMDir )
        
        )
       
       )
      
-     WAIT( 0.200000 )
-     
-     ENDIF()
-     
-     ENDIF()
-     
-     CALL_ANIMATION(
-       NAME(Ensure_MC_Dirs)
+      CALL_ANIMATION (
+        NAME ( LoadGameOnStart )
       
-      WAIT_FOR_COMPLETION()
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     IF(
-       ui::UI_COMMAND(
-        TYPE(DoesSlotHaveGame)
-       
-       ARGUMENT(INPUT_STRING)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "No SOCOM: U.S. NAVY SEALs data in memory card (PS2). Press the X button." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "No memory card (PS2) in SLOT, or memory card (PS2) not formatted. Press the X button." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       COLOR ( 255  204  51 )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Error loading data, press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 96 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( load_initial_config )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Uninit )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SaveGameOnListBox )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMemCardFormatted )
+        
+        )
        
        )
       
       )
      
-     VALVE(WantToOverwrite= 0  0.000000 )
+      VALVE ( AreYouSure  =  0 )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("That slot is already used, do you want to overwrite?")
+       CAPTION ( "Memory card (PS2) in SLOT 1 is not formatted. Do you want to format it and create new data?" )
       
-      BACKGROUND(popupOp.tif)
+       POSITION ( 170.000000  200.000000 )
       
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       TEXT_COLOR ( 255  204  51 )
       
-      POSITION( 170.000000  200.000000 )
+       WIDTH ( 300 )
       
-      TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       HEIGHT ( 128 )
       
-      WIDTH( 300  0.000000 )
+       XOFFSET ( 20 )
       
-      HEIGHT( 128  0.000000 )
+       YOFFSET ( 35 )
       
-      XOFFSET( 20  0.000000 )
+       SPACING ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       SCALE ( 0.400000 )
       
-      SPACING( 10  0.000000 )
-      
-      SCALE( 0.400000 )
-      
-      YESNO(
-        VALVE(WantToOverwrite)
+       YESNO (
+         VALVE ( AreYouSure )
        
-       YES(
-         CAPTION(YES)
+        YES (
+          CAPTION ( YES )
         
-        POS( 45  0.000000  90  0.000000 )
+         POS ( 45  90 )
         
-        TEXTOFFSET( 10  0.000000  18  0.000000 )
+         TEXTOFFSET ( 10  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        ACTIVE(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         NORMAL (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
         )
        
-       NO(
-         CAPTION(NO)
+        NO (
+          CAPTION ( NO )
         
-        POS( 160  0.000000  90  0.000000 )
+         POS ( 160  90 )
         
-        TEXTOFFSET( 13  0.000000  18  0.000000 )
+         TEXTOFFSET ( 13  18 )
         
-        WIDTH( 50  0.000000 )
+         WIDTH ( 50 )
         
-        HEIGHT( 25  0.000000 )
+         HEIGHT ( 25 )
         
-        PRESSED(
-          IMAGE(pop_butt.tif)
+         PRESSED (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 100  0.000000  0  0.000000  0  0.000000 )
-         
-         )
-        
-        ACTIVE(
-          IMAGE(pop_butt.tif)
-         
-         TEXT_COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+          TEXT_COLOR ( 100  0  0 )
          
          )
         
-        NORMAL(
-          IMAGE(pop_butt.tif)
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
          
-         TEXT_COLOR( 128  0.000000  128  0.000000  128  0.000000 )
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
          
          )
         
@@ -2418,771 +2203,942 @@
       
       )
      
-     WAIT( 1.000000 )
-     
-     WHILE(
-       VALVE(WantToOverwrite== 0  0.000000 )
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
       
       )
      
-     END_WHILE()
+      END_WHILE ()
      
-     IF(
-       VALVE(WantToOverwrite== 1  0.000000 )
+      IF (
+        VALVE ( AreYouSure  ==  1 )
       
       )
      
-     CALL_SEQUENCE(
-       NAME(SaveIt)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ENDIF()
-     
-     ELSE()
-     
-     CALL_SEQUENCE(
-       NAME(SaveIt)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Formatting...Do not remove memory card (PS2)." )
+      
+       PROTECTED ()
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+       )
       
       )
      
-     ENDIF()
+      WAIT ( 0.200000 )
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ui::UI_COMMAND (
+        TYPE ( FormatMemCard )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Copying system files...Do not remove memory card (PS2)." )
+      
+       PROTECTED ()
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( DoesSlotHaveGame )
+       
+        ARGUMENT ( INPUT_STRING )
+       
+       )
+      
+      )
+     
+      VALVE ( WantToOverwrite  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "That slot is already used, do you want to overwrite?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       COLOR ( 255  204  51 )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 10 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( WantToOverwrite )
+       
+        YES (
+          CAPTION ( YES )
+        
+         POS ( 45  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( NO )
+        
+         POS ( 160  90 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      WHILE (
+        VALVE ( WantToOverwrite  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( WantToOverwrite  ==  1 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( SaveIt )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_SEQUENCE (
+        NAME ( SaveIt )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(SaveIt)
+     SEQUENCE_DEFINITION (
+       NAME ( SaveIt )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
       
-      CAPTION("Saving...Do not remove memory card (PS2)...")
+       CAPTION ( "Saving...Do not remove memory card (PS2)..." )
       
-      PROTECTED()
+       PROTECTED ()
       
-      BACKGROUND(popupOp.tif)
+       BACKGROUND ( popupOp.tif )
       
-      POSITION( 170.000000  200.000000 )
+       POSITION ( 170.000000  200.000000 )
       
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
+       COLOR ( 255  204  51 )
       
-      WIDTH( 300  0.000000 )
+       WIDTH ( 300 )
       
-      HEIGHT( 128  0.000000 )
+       HEIGHT ( 128 )
       
-      XOFFSET( 20  0.000000 )
+       XOFFSET ( 20 )
       
-      YOFFSET( 35  0.000000 )
+       YOFFSET ( 35 )
       
-      SPACING( 20  0.000000 )
+       SPACING ( 20 )
       
-      SCALE( 0.400000 )
-      
-      )
-     
-     WAIT( 0.500000 )
-     
-     ui::UI_COMMAND(
-       TYPE(MC_Init)
+       SCALE ( 0.400000 )
       
       )
      
-     CALL_ANIMATION(
-       NAME(Ensure_MC_Dirs_Fast)
-      
-      WAIT_FOR_COMPLETION()
+      WAIT ( 0.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SaveSavedGame)
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs_Fast )
       
-      ARGUMENT(INPUT_STRING)
-      
-      )
-     
-     ui::UI_COMMAND(
-       TYPE(SaveConfig)
-      
-      ARGUMENT(BASCUS-97859SOCOM)
+       WAIT_FOR_COMPLETION ()
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(ListSavedGames)
+      ui::UI_COMMAND (
+        TYPE ( SaveSavedGame )
+      
+       ARGUMENT ( INPUT_STRING )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(MC_UnInit)
+      ui::UI_COMMAND (
+        TYPE ( SaveConfig )
+      
+       ARGUMENT ( BASCUS-97859SOCOM )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
+      ui::UI_COMMAND (
+        TYPE ( ListSavedGames )
       
       )
      
-     WAIT( 1.000000 )
-     
-     ui::UI_COMMAND(
-       TYPE(POPUPDIALOG)
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
       
       )
      
-     ui::UI_COMMAND(
-       NODE(MENUPOPUP)
-      
-      CAPTION("Game saved successfully.")
-      
-      BACKGROUND(popupOp.tif)
-      
-      POSITION( 170.000000  200.000000 )
-      
-      COLOR( 255  0.000000  204  0.000000  51  0.000000 )
-      
-      WIDTH( 300  0.000000 )
-      
-      HEIGHT( 128  0.000000 )
-      
-      XOFFSET( 20  0.000000 )
-      
-      YOFFSET( 35  0.000000 )
-      
-      SPACING( 20  0.000000 )
-      
-      SCALE( 0.400000 )
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
       
       )
      
-     WAIT( 1.000000 )
+      WAIT ( 1.000000 )
      
-     ui::UI_COMMAND(
-       TYPE(KillPopup)
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
       
       )
      
-     CALL_SEQUENCE(
-       NAME(ReplayFromDebriefing)
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Game saved successfully." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( ReplayFromDebriefing )
       
       )
      
      )
     
-    SEQUENCE_DEFINITION(
-      NAME(ReplayFromDebriefing)
+     SEQUENCE_DEFINITION (
+       NAME ( ReplayFromDebriefing )
      
-     ACTIVATION(ON_CALL)
+      ACTIVATION ( ON_CALL )
      
-     ui::UI_COMMAND(
-       TYPE(StopAllSounds)
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
       
       )
      
-     IF(
-       VALVE(ReplayMissAnyway== 1  0.000000 )
+      IF (
+        VALVE ( ReplayMissAnyway  ==  1 )
       
       )
      
-     IF(
-       VALVE(GameComplete>= 1  0.000000 )
+      IF (
+        VALVE ( GameComplete  >=  1 )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags2 )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     IF(
-       VALVE(CurrentMission== 6  0.000000 )
+      IF (
+        VALVE ( CurrentMission  ==  6 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m6)
+       ARGUMENT ( m6 )
       
       )
      
-     VALVE(CameFromDebriefing= 1  0.000000 )
+      VALVE ( CameFromDebriefing  =  1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgAlaska_mission2.rdr)
+       ARGUMENT ( dlgAlaska_mission2.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 8  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m8)
+       ARGUMENT ( m8 )
       
       )
      
-     VALVE(CameFromDebriefing= 1  0.000000 )
+      VALVE ( CameFromDebriefing  =  1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgAlaska_mission3.rdr)
+       ARGUMENT ( dlgAlaska_mission3.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 5  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m5)
+       ARGUMENT ( m5 )
       
       )
      
-     VALVE(CameFromDebriefing= 1  0.000000 )
+      VALVE ( CameFromDebriefing  =  1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlgAlaska_mission1.rdr)
+       ARGUMENT ( dlgAlaska_mission1.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 9  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m9)
+       ARGUMENT ( m9 )
       
       )
      
-     VALVE(CameFromDebriefing= 1  0.000000 )
+      VALVE ( CameFromDebriefing  =  1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_thai_mission1.rdr)
+       ARGUMENT ( dlg_thai_mission1.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 11  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m11)
+       ARGUMENT ( m11 )
       
       )
      
-     VALVE(CameFromDebriefing= 1  0.000000 )
+      VALVE ( CameFromDebriefing  =  1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_thai_mission2.rdr)
+       ARGUMENT ( dlg_thai_mission2.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 12  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m12)
+       ARGUMENT ( m12 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_thai_mission3.rdr)
+       ARGUMENT ( dlg_thai_mission3.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 17  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m17)
+       ARGUMENT ( m17 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_congo_mission1.rdr)
+       ARGUMENT ( dlg_congo_mission1.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 19  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m19)
+       ARGUMENT ( m19 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_congo_mission2.rdr)
+       ARGUMENT ( dlg_congo_mission2.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 21  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m21)
+       ARGUMENT ( m21 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_congo_mission3.rdr)
+       ARGUMENT ( dlg_congo_mission3.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 13  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m13)
+       ARGUMENT ( m13 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_turk_mission1.rdr)
+       ARGUMENT ( dlg_turk_mission1.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 15  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m15)
+       ARGUMENT ( m15 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_turk_mission2.rdr)
+       ARGUMENT ( dlg_turk_mission2.rdr )
       
       )
      
-     ELSEIF(
-       VALVE(CurrentMission== 16  0.000000 )
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SETMISSION)
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
       
-      ARGUMENT(m16)
+       ARGUMENT ( m16 )
       
       )
      
-     VALVE(CameFromDebriefing=1)
+      VALVE ( CameFromDebriefing  =1 )
      
-     STOP_ANIMATION(
-       NAME(menu_fade_up)
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
       
       )
      
-     OBJECT_OPACITY_FROM_TO(
-       NAME(MENUMENUFADER)
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
       
-      RUN_TIME( 0.500000 )
+       RUN_TIME ( 0.500000 )
       
-      OPACITY_FROM( 0.000000 )
+       OPACITY_FROM ( 0.000000 )
       
-      OPACITY_TO( 0.990000 )
+       OPACITY_TO ( 0.990000 )
       
       )
      
-     ui::UI_COMMAND(
-       TYPE(SWITCHMENU)
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
       
-      ARGUMENT(dlg_turk_mission3.rdr)
+       ARGUMENT ( dlg_turk_mission3.rdr )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     ELSE()
+      ELSE ()
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags2 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     CALL_ANIMATION(
-       NAME(MoveToNextMiss)
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
-     ELSE()
+      ELSE ()
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags )
       
-      STATE(ACTIVE)
+       STATE ( ACTIVE )
       
       )
      
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUdogtags2)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags2 )
       
-      STATE(INACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     CALL_ANIMATION(
-       NAME(MoveToNextMiss)
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
       
       )
      
-     ENDIF()
+      ENDIF ()
      
      )
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(title_oilplatform_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( title_oilplatform_slide )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUtitle_bar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  title_bar )
       
-      STATE(INACTIVE)
-      
-      )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUtitle_bar)
-      
-      STATE(ACTIVE)
+       STATE ( INACTIVE )
       
       )
      
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUtitle_bar)
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  title_bar )
       
-      TRANSLATE_FROM( 640.000000  85.000000  0.000000 )
-      
-      TRANSLATE_TO( -70.000000  85.000000  0.000000 )
-      
-      RUN_TIME( 0.400000 )
+       STATE ( ACTIVE )
       
       )
      
-     )
-    
-    )
-   
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(bottom_bar_slide_up)
-    
-    ACTIVATION(ON_CALL)
-    
-    SEQUENCE_DEFINITION(
-      OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  title_bar )
       
-      STATE(INACTIVE)
+       TRANSLATE_FROM ( 640.000000  85.000000  0.000000 )
       
-      )
-     
-     WAIT( 0.400000 )
-     
-     OBJECT_ACTIVE_STATE(
-       NAME(MENUletterbar_bottom)
+       TRANSLATE_TO ( -70.000000  85.000000  0.000000 )
       
-      STATE(ACTIVE)
-      
-      )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar_bottom)
-      
-      TRANSLATE_FROM( 0.000000  448.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  384.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
-      
-      )
-     
-     SOUND(
-       NAME(SND_METAL)
-      
-      START()
+       RUN_TIME ( 0.400000 )
       
       )
      
@@ -3190,29 +3146,73 @@
     
     )
    
-   ANIMATION_DEFINITION(
-     ANIMATION_NAME(letterbar_slide)
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
     
-    ACTIVATION(ON_CALL)
+     ACTIVATION ( ON_CALL )
     
-    SEQUENCE_DEFINITION(
-      WAIT( 0.400000 )
-     
-     OBJECT_MOTION_FROM_TO(
-       NAME(MENUletterbar)
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      TRANSLATE_FROM( 0.000000  -64.000000  0.000000 )
-      
-      TRANSLATE_TO( 0.000000  0.000000  0.000000 )
-      
-      RUN_TIME( 0.250000 )
+       STATE ( INACTIVE )
       
       )
      
-     SOUND(
-       NAME(SND_THUNK)
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
       
-      START()
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.400000 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
       
       )
      

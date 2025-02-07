@@ -65,6 +65,7 @@ struct _zrdr
 	void Clone(const _zrdr* other, const CSTable* table);
 	int GetInt() const;
 	char* Get(int offset) const;
+	bool Write(FILE* file);
 
 	u32 type : 8;
 	u32 isclone : 1;
