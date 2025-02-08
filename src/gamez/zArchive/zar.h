@@ -84,12 +84,15 @@ namespace zar
 		CKey(char* name);
 		~CKey();
 
+		static void fixupKey(CSTable* table, CKey* key);
+
 		CKey* InsertKey(CKey* key);
 		CKey* FindKey(const char* name);
 
 		bool Read(CZAR* file, CBufferIO* io, s64 offset);
-		bool Write(CZAR* file);
-
+		bool Write(CZAR* archive);
+		bool Write(CZAR* archive, FILE* file);
+		
 		char* GetName() const
 		{
 			return m_name;
@@ -203,7 +206,8 @@ namespace zar
 
 		bool ReadDirectory(int appver, u32 mode);
 		bool ReadDirectory_V2(s32 appver, u32 mode);
-		bool WriteDirectory() { return false; }
+		bool WriteDirectory();
+		bool WriteDirectory(FILE* file);
 
 		void SetFilename(const char* name);
 		size_t GetSize(const char* key);

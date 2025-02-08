@@ -90,7 +90,7 @@ public:
 
 	static const char* m_root_path;
 	static bool m_write_status;
-public:
+
 	virtual void Init() {}
 	virtual bool Open(void* buf) { return false; }
 	virtual bool Open(const char* file);
@@ -135,7 +135,7 @@ public:
 	virtual size_t fread(void* buf, size_t size);
 	virtual char freadchar(char* buf) { return 0; }
 	virtual size_t fwrite(const char* buf) { return 0; }
-	virtual size_t fwrite(const void* buf, size_t size) { return 0; }
+	virtual size_t fwrite(const void* buf, size_t size);
 
 	virtual size_t fseek(int offset, int origin);
 	virtual size_t ftell();

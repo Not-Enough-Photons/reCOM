@@ -1,6 +1,13 @@
 #pragma once
 #include "util_systemio.h"
 
+#include "gamez/zSystem/zsys_primitive.h"
+
+namespace zar
+{
+	class CKey;
+}
+
 extern bool dumpLog;
 
 class COutput;
@@ -8,6 +15,8 @@ class COutput;
 extern COutput* debug;
 
 void zUtilInit(const char* log);
+
+s32 _countKeys(zar::CKey* key);
 
 class COutput
 {

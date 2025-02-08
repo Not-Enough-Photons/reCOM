@@ -179,19 +179,19 @@ size_t CBufferIO::fseek(int offset, int mode)
 	}
 	else
 	{
-		if (mode == 2)
+		if (mode == SEEK_END)
 		{
 			pos = m_filesize + offset;
 		}
-		else if (mode == 1)
+		else if (mode == SEEK_CUR)
 		{
 			pos = ftell();
-			pos += offset;
+			pos = offset + pos;
 		}
 		else
 		{
 			pos = 0;
-			if (mode == 0)
+			if (mode == SEEK_SET)
 			{
 				pos = offset;
 			}
@@ -224,4 +224,14 @@ size_t CBufferIO::ftell()
 	}
 
 	return position;
+}
+
+size_t CBufferIO::fwrite(const void* buf, size_t size)
+{
+	if (!m_buffer)
+	{
+		return CFileIO::fwrite(buf, size);
+	}
+
+	return -1;
 }

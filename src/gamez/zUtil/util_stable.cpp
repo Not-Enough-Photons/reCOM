@@ -1,5 +1,7 @@
 #include "util_stable.h"
 
+#include "gamez/zArchive/zar.h"
+
 CSTable::CSTable()
 {
 	m_owner = false;
@@ -175,6 +177,80 @@ void CSTable::LoadTable(void* buffer, size_t bytes, bool owner)
 		} while (byte < bytes);
 	}
 }
+
+size_t CSTable::Pack(void (fixup)(CSTable*, zar::CKey*), void* buffer)
+{
+	u32 index = 0;
+	u32 total_table_length = 0;
+	
+	if (empty())
+	{
+		return 0;
+	}
+
+	if (!m_buffer)
+	{
+		u32 length = 0;
+
+		for (u32 index = 0; index < size(); index++)
+		{
+			total_table_length = length;
+			length = strlen(data()[index]);
+			length = total_table_length + length + 1;
+		}
+
+		char* strbuf = (char*)zmalloc(length);
+		char** tablebuf = (char**)zmalloc(size() << 2);
+
+		for (index = 0; index < size(); index++)
+		{
+			char* str = data()[index];
+			length = strlen(str);
+			memcpy(strbuf, tablebuf, length + 1);
+			tablebuf[index] = str;
+			strbuf += length + 1;
+		}
+
+		fixup(this, (zar::CKey*)buffer);
+
+		s32 size = index + 1;
+		if (index != 0)
+		{
+			index = size * sizeof(u32);
+			bool packed = false;
+			
+			do
+			{
+				zfree(tablebuf[index]);
+				index -= sizeof(u32);
+				packed = size != 0;
+				size--;
+			}
+			while (!packed);
+		}
+
+		zfree(tablebuf);
+
+		if (m_buffer)
+		{
+			zfree(m_buffer);
+		}
+
+		m_buffer = NULL;
+
+		m_buffer = strbuf;
+		m_reserve = total_table_length;
+		m_bytes = total_table_length;
+		total_table_length = m_bytes;
+	}
+	else
+	{
+		total_table_length = m_bytes;
+	}
+
+	return total_table_length;
+}
+
 
 void CSTable::ReleaseBuffer(bool owner)
 {

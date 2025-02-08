@@ -139,7 +139,7 @@ size_t CFileIO::fwrite(const char* buf)
 
 size_t CFileIO::fwrite(const void* buf, size_t count)
 {
-	return std::fwrite(buf, 1, count, (FILE*)m_file);
+	return std::fwrite(buf, count, sizeof(u32), (FILE*)m_file);
 }
 
 void CFileIO::fflush()

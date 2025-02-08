@@ -1,6 +1,7 @@
 #include <freebsd/strcasecmp.h>
 
 #include "zar.h"
+#include "gamez/zUtil/zutil.h"
 
 namespace zar
 {
@@ -83,34 +84,89 @@ namespace zar
 		return true;
 	}
 
-	bool CKey::Write(CZAR* file)
+	bool CKey::Write(CZAR* archive)
 	{
-		file->Securify(m_name, 4);
-		file->m_pFileAlloc->fwrite(m_name, 4);
-		file->Unsecurify(m_name, 4);
+		archive->Securify(m_name, 4);
+		archive->m_pFile->fwrite(m_name, 4);
+		archive->Unsecurify(m_name, 4);
 
-		file->Securify(&m_offset, 4);
-		file->m_pFileAlloc->fwrite(&m_offset, 4);
-		file->Unsecurify(&m_offset, 4);
+		archive->Securify(&m_offset, 4);
+		archive->m_pFile->fwrite(&m_offset, 4);
+		archive->Unsecurify(&m_offset, 4);
 
-		file->Securify(&m_size, 4);
-		file->m_pFileAlloc->fwrite(&m_size, 4);
-		file->Unsecurify(&m_size, 4);
+		archive->Securify(&m_size, 4);
+		archive->m_pFile->fwrite(&m_size, 4);
+		archive->Unsecurify(&m_size, 4);
 
-		file->Securify(this, 4);
-		file->m_pFileAlloc->fwrite(this, 4);
-		file->Unsecurify(this, 4);
+		archive->Securify(this, 4);
+		archive->m_pFile->fwrite(this, 4);
+		archive->Unsecurify(this, 4);
 
 		auto begin = this->begin();
 		auto end = this->end();
 
-		for (auto it = begin; it != end; it++)
+		for (auto it = begin; it != end; ++it)
 		{
 			CKey* key = *it;
-			key->Write(file);
+			key->Write(archive);
 		}
 
 		return true;
+	}
+
+	bool CKey::Write(CZAR* archive, FILE* file)
+	{
+		archive->Securify(m_name, 4);
+		fwrite(m_name, 1, sizeof(s32), file);
+		archive->Unsecurify(m_name, 4);
+
+		archive->Securify(&m_offset, 4);
+		fwrite(&m_offset, 1, sizeof(s32), file);
+		archive->Unsecurify(&m_offset, 4);
+
+		archive->Securify(&m_size, 4);
+		fwrite(&m_size, 1, sizeof(s32), file);
+		archive->Unsecurify(&m_size, 4);
+
+		archive->Securify(this, 4);
+		fwrite(this, 1, sizeof(s32), file);
+		archive->Unsecurify(this, 4);
+
+		auto begin = this->begin();
+		auto end = this->end();
+
+		for (auto it = begin; it != end; ++it)
+		{
+			CKey* key = *it;
+			key->Write(archive, file);
+		}
+
+		return true;
+	}
+
+	void CKey::fixupKey(CSTable* table, CKey* key)
+	{
+		char* keyname = table->FindString(key->m_name);
+		key->m_name = keyname;
+
+		auto key_iterator = key->begin();
+
+		while (key_iterator != key->end())
+		{
+			CKey* child = *key_iterator;
+
+			char* childname = table->FindString(child->m_name);
+			child->m_name = childname;
+
+			auto child_iterator = child->begin();
+			while (child_iterator != child->end())
+			{
+				fixupKey(table, *child_iterator);
+				++child_iterator;
+			}
+			
+			++key_iterator;
+		}
 	}
 
 	CZAR::CZAR(const char* name, CIO* io)
@@ -965,6 +1021,100 @@ namespace zar
 		return success;
 	}
 
+	bool CZAR::WriteDirectory()
+	{
+		bool success = false;
+
+		if (m_pFile && m_pFile->IsOpen())
+		{
+			u32 pos = m_pFile->fseek(0, SEEK_END);
+			success = pos != -1;
+			
+			if (success)
+			{
+				m_tail.version = ZAR_VERSION_1;
+				m_tail.offset = m_pFile->ftell();
+				m_tail.key_count = _countKeys(m_root);
+				m_stable->Pack(CKey::fixupKey, m_root);
+				m_tail.stable_size = m_stable->m_bytes;
+				m_tail.stable_ofs = (s32)m_stable->m_buffer;
+
+				if (!m_bSecure)
+				{
+					m_pFile->fwrite(m_stable->m_buffer, m_stable->m_bytes);
+				}
+				else
+				{
+					void* array = zcalloc(1, m_stable->m_bytes);
+					memcpy(array, m_stable->m_buffer, m_stable->m_bytes);
+					Securify(array, m_stable->m_bytes);
+					m_pFile->fwrite(array, m_stable->m_bytes);
+					zfree(array);
+				}
+
+				m_root->Write(this);
+				Securify(&m_tail, sizeof(TAIL));
+				m_pFile->fwrite(&m_tail, sizeof(TAIL));
+				Unsecurify(&m_tail, sizeof(TAIL));
+			}
+
+			m_modified = false;
+		}
+
+		return success;
+	}
+
+	bool CZAR::WriteDirectory(FILE* file)
+	{
+		bool success = false;
+
+		if (file)
+		{
+			fwrite((void*)m_pFile->m_file, 1, m_pFile->m_filesize, file);
+			
+			if (fseek(file, 0, SEEK_END) != -1)
+			{
+				m_tail.version = ZAR_VERSION_1;
+				m_tail.offset = ftell(file);
+				m_tail.key_count = _countKeys(m_root);
+				m_stable->Pack(CKey::fixupKey, m_root);
+				m_tail.stable_size = m_stable->m_bytes;
+				m_tail.stable_ofs = (s32)m_stable->m_buffer;
+
+				if (!m_bSecure)
+				{
+					fwrite(m_stable->m_buffer, 1, m_stable->m_bytes, file);
+					s32 pos = ftell(file);
+					s32 align = pos % 16;
+					s32 nextpos = 16 - align;
+					char padding = '\0';
+
+					for (u32 i = 0; i < nextpos; i++)
+					{
+						fwrite(&padding, 1, 1, file);
+					}
+				}
+				else
+				{
+					void* array = zcalloc(1, m_stable->m_bytes);
+					memcpy(array, m_stable->m_buffer, m_stable->m_bytes);
+					Securify(array, m_stable->m_bytes);
+					m_pFile->fwrite(array, m_stable->m_bytes);
+					zfree(array);
+				}
+
+				m_root->Write(this, file);
+				Securify(&m_tail, sizeof(TAIL));
+				fwrite(&m_tail, 1, sizeof(TAIL), file);
+				Unsecurify(&m_tail, sizeof(TAIL));
+			}
+
+			m_modified = false;
+		}
+
+		return success;
+	}
+	
 	size_t CZAR::GetSize(const char* name)
 	{
 		CKey* key;

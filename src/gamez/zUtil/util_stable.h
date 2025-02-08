@@ -3,6 +3,11 @@
 
 #include "gamez/zSystem/zsys.h"
 
+namespace zar
+{
+	class CKey;
+}
+
 class CSTable : public std::vector<char*>
 {
 public:
@@ -18,10 +23,10 @@ public:
 	char* CreateString(const char* str);
 	char* FindString(const char* str);
 
-	size_t Pack(void(*packer)(CSTable*, void*), void* buffer);
+	size_t Pack(void(*fixup)(CSTable*, zar::CKey*), void* buffer);
 
 	int Relocate(char* buffer);
-private:
+
 	bool m_owner;
 	char* m_buffer;
 	u32 m_bytes;
