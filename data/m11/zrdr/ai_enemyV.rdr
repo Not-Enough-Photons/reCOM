@@ -1,0 +1,80 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enemyV_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enemyV_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( startup )
+     
+      ai::DEBUG ( 1 )
+     
+      ai::DEBUG ( "starting startup" )
+     
+      CALL_SEQUENCE (
+        NAME ( on_aware0 )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      WHILE ( TRUE )
+     
+      ai::HOLD (
+        wait ( 2  4 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2  4 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

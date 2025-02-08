@@ -1,0 +1,511 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Ambush2_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Ambush2_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( startup )
+     
+      ai::DEBUG ( "starting startup" )
+     
+      ai::SETMODE ( sleep )
+     
+      WHILE (
+        ai::PARAM ( sleep  ==  1 )
+      
+      )
+     
+      END_WHILE ()
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE (
+        VALVE ( Ambushers  ==  0 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Ambush2C )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Swatflies  0 )
+      
+       postwait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Ambush2D )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Wipebrow  0 )
+      
+       postwait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ai::STATE (
+        push ( rush )
+      
+       entity ( player )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware1" )
+     
+      ai::MACRO (
+        anim ( Close_call )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting on_aware2" )
+     
+      ai::GOTO (
+        node ( Ambush2A )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( ambush )
+      
+      )
+     
+      WHILE (
+        VALVE ( Ambushers  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ai::STATE (
+        push ( rush )
+      
+       entity ( player )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting on_aware3" )
+     
+      ai::GOTO (
+        node ( Ambush2A )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( ambush )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware4" )
+     
+      ai::MACRO (
+        anim ( Patrol_guns )
+      
+       blocking )
+     
+      ai::PURSUE (
+        duration ( 30.000000 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( reset )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( ambush )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting ambush" )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Ambush3 )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Ambush2 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( on_ambush )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( ambush )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_ambush )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_ambush" )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( Ambush2B )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Patrol_guns )
+      
+       blocking )
+     
+      ai::PURSUE (
+        duration ( 30.000000 )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( reset )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( reset )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting reset" )
+     
+      ai::GOTO (
+        node ( Ambush2A )
+      
+       speed ( 0.700000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_lowhealth )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_lowhealth" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_noammo )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_noammo" )
+     
+      ai::STANCE (
+        stance ( prone )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_corpse" )
+     
+      ai::ANIMATE (
+        anim ( Kicklow )
+      
+       postwait ( 1.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( guantlet )
+     
+      ai::DEBUG ( "Starting guantlet" )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Running  ==  1 )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware2 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware3 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware4 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( ambush )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_ambush )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( reset )
+      
+      )
+     
+      ai::GOTO (
+        node ( A2Guantlet )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Patrol_guns )
+      
+       blocking )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

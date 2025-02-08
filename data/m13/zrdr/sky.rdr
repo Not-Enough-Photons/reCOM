@@ -1,0 +1,34 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( translate_sky )
+    
+     EXECUTION_PRIORITY ( LAST )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( WORLD  dome )
+      
+       AT_NODE ( camera )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

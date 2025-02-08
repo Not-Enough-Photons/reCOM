@@ -1,0 +1,2548 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( objectives )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( start )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0142.pss )
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      SOUND (
+        NAME ( SND_VM05_01 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_47 )
+      
+       aware ( 1 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_04 )
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE: FIND AND DEFUSE THE BOMBS" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 7.000000 )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_92 )
+      
+       entity ( Dimone )
+      
+       broadcast )
+     
+      WAIT ( 7.000000 )
+     
+      SOUND (
+        NAME ( MUS_M5 )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( aiteam_04  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "VICTORY: ALL ENEMIES KILLED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ2  =  1 )
+     
+      VALVE ( POBJ3  =  1 )
+     
+      VALVE ( POBJ4  =  1 )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( POBJ2  ==  1 )
+      
+       &&  VALVE ( POBJ3  ==  1 )
+      
+       &&  VALVE ( POBJ4  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "VICTORY: MISSION COMPLETE" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "THE BACKUP TEAM WILL MOP UP ANY REMAINING TERRORISTS" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( loss  ==  1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( player_valve_alive  ==  0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: PLAYER DEATH" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_PLAYER_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WAIT ( 12.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( aiteam_01  ==  1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_VOC_231 )
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "MISSION FAILURE: YOUR SEAL TEAM HAS BEEN INCAPACITATED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hutchins_killed )
+     
+      WHILE (
+        VALVE ( Hutchins_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_HUTCHINS_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Hutchins_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Bailey_killed )
+     
+      WHILE (
+        VALVE ( Bailey_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_BAILEY_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Bailey_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( DiMone_killed )
+     
+      WHILE (
+        VALVE ( DiMone_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_DIMONE_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( DiMone_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( leader )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Leader_valve_alive  ==  0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( leader )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombdet )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bombdet  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: BOMB DETONATED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_89 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      VALVE ( loss  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( bombdet )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombs )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bomb1  ==  1 )
+      
+       &&  VALVE ( bomb2  ==  1 )
+      
+       &&  VALVE ( bomb3  ==  1 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_02 )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( POBJ3  ==  1 )
+      
+      )
+     
+      WAIT ( 4.000000 )
+     
+      SOUND (
+        NAME ( SND_VM05_64 )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( bombdet )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( bombs )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( hostages )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Hostage2_valve_alive  ==  0 )
+      
+       &&  VALVE ( Hostage3_valve_alive  ==  0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_60 )
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: HOSTAGES KILLED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      VALVE ( loss  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( hostagerescue )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Hostage2 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Hostage3 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( hostages )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Insert )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( insert  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE FAILED: TEAM SPOTTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_90 )
+      
+       START ()
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_OBJ_FAILURE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      VALVE ( POBJ1Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Insert )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SOBJ1  ==  1 )
+      
+       &&  VALVE ( SOBJ3  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: TEAM INSERTION SILENT" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ1  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Insert )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Snipe2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Snipe2_valve_alive  ==  0 )
+      
+      )
+     
+      VALVE ( SOBJ2Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( IDSnipers )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Snipe2 )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ai::INVIEW (
+         viewer ( player )
+       
+        target ( Snipe2 )
+       
+        equip ( NVG )
+       
+       )
+      
+       ||  ai::INVIEW (
+         viewer ( player )
+       
+        target ( Snipe2 )
+       
+        equip ( Binoculars )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SNIPER IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Snipe2Binoc  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Snipe2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Snipe3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Snipe3_valve_alive  ==  0 )
+      
+      )
+     
+      VALVE ( SOBJ2Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( IDSnipers )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Snipe3 )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ai::INVIEW (
+         viewer ( player )
+       
+        target ( Snipe3 )
+       
+        equip ( NVG )
+       
+       )
+      
+       ||  ai::INVIEW (
+         viewer ( player )
+       
+        target ( Snipe3 )
+       
+        equip ( Binoculars )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SNIPER IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Snipe3Binoc  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Snipe3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( IDSnipers )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Snipe2Binoc  ==  1 )
+      
+       &&  VALVE ( Snipe3Binoc  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: SNIPERS IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ2  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( IDSnipers )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sentries )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Duck1_valve_alive  ==  0 )
+      
+       &&  VALVE ( Duck2_valve_alive  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: SENTRIES NEUTRALIZED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ1  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Sentries )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Snipers )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Snipe2_valve_alive  ==  0 )
+      
+       &&  VALVE ( Snipe3_valve_alive  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: SNIPERS NEUTRALIZED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ3  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Snipers )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Defusing )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bomb1  ==  1 )
+      
+       &&  VALVE ( bomb2  ==  1 )
+      
+       &&  VALVE ( bomb3  ==  1 )
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: ALL BOMBS DEFUSED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ2  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( POBJ3  ==  0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: SECURE AND RESCUE THE HOSTAGES" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Defusing )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Bomb1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bomb1  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BOMB DEFUSED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ4  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Bomb1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Bomb2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bomb2  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BOMB DEFUSED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ5  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Bomb2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Bomb3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bomb3  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BOMB DEFUSED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ6  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Bomb3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( hostagerescue )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( hostage1  ==  1 )
+      
+       &&  VALVE ( hostage2  ==  1 )
+      
+       &&  VALVE ( hostage3  ==  1 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: ALL CIVILIANS SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_03 )
+      
+       START ()
+      
+      )
+     
+      VALVE ( POBJ3  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_VM05_65 )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( POBJ4  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: SECURE THE OIL PLATFORM" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_66 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_67 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( hostagerescue )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hostage1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( hostage1  ==  1 )
+      
+      )
+     
+      HUD_TRIGGER_MISSION_CAM ( m5tut6 )
+     
+      MESSAGE (
+        MESSAGE ( "OIL WORKERS LOCATED AND SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ7  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Hostage1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Restrain )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( hostage2  ==  1 )
+      
+       &&  VALVE ( hostage3  ==  1 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: OIL WORKERS RESTRAINED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM05_91 )
+      
+       START ()
+      
+      )
+     
+      VALVE ( SOBJ9  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Restrain )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hostage2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INSTATE (
+         state ( restrained )
+       
+        entity ( Hostage2 )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "HOSTAGE SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( hostage2  =  1 )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_51 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Hostage2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hostage3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INSTATE (
+         state ( restrained )
+       
+        entity ( Hostage3 )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "HOSTAGE SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( hostage3  =  1 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_52 )
+      
+       entity ( Hostage3 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_53 )
+      
+       entity ( Hostage3 )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Hostage3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Platform )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( SOBJ10  ==  1 )
+      
+       &&  VALVE ( SOBJ11  ==  1 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: OIL PLATFORM CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ4  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Platform )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Helipad )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Helo1_valve_alive  ==  0 )
+      
+       &&  VALVE ( Helo2_valve_alive  ==  0 )
+      
+       &&  ai::INREGION (
+         region ( Helipad )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: HELIPAD CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ10  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Helipad )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Buildings )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( SOBJ14  ==  1 )
+      
+       &&  VALVE ( SOBJ15  ==  1 )
+      
+       &&  VALVE ( SOBJ16  ==  1 )
+      
+       &&  VALVE ( SOBJ17  ==  1 )
+      
+       &&  VALVE ( SOBJ18  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "ALL BUILDINGS CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ11  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Buildings )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Building1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Floor1_valve_alive  ==  0 )
+      
+       &&  ai::INREGION (
+         region ( Floor1 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BUILDING A CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ14  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Building1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Building2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Leader_valve_alive  ==  0 )
+      
+       &&  VALVE ( LeaderHench_valve_alive  ==  0 )
+      
+       &&  ai::INREGION (
+         region ( Floor2 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BUILDING B CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ15  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Building2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Building3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Building4_valve_alive  ==  0 )
+      
+       &&  VALVE ( Building6_valve_alive  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BUILDING C CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ16  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Building3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Building4 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Building4 )
+       
+        entity ( player )
+       
+       )
+      
+       &&  VALVE ( Duck1_valve_alive  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BUILDING D CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ17  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Building4 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Building5 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Building5 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BUILDING E CLEAR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ18  =  1 )
+     
+      ai::COMM (
+        team ( 15 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      IF (
+        ai::INREGION (
+         region ( TunnelCover )
+       
+        entity ( Bailey )
+       
+       )
+      
+       &&  ai::INREGION (
+         region ( TunnelCover )
+       
+        entity ( DiMone )
+       
+       )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      VALVE ( SOBJ12  =  1 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: BRAVO MAINTAINED COVER POSITION" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      ELSE ()
+     
+      VALVE ( SOBJ12Fail  =  1 )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Building5 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( North1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( North2 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Tunnel )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 9 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH01 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( South1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( North1 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 8 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_M5_PLATFORM )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Hall )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 12 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_62 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_63 )
+      
+       entity ( DiMone )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      WAIT ( 3.000000 )
+     
+      HUD_TRIGGER_MISSION_CAM ( m5tut6 )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper4 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Leader1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Leader2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 10 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH02 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper4 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper5 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( South2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_61 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH03 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper5 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper6 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( HeloWake )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( HeliView )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 14 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH04 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper6 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper7 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( TunnelTalk1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( TunnelTalk2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 15 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper7 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper8 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Floor1Stair )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 7 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper8 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper9 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( SoloTunnel1N )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( SoloTunnel1S )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 5 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH05 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper9 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper10 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( SoloTunnel2N )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( SoloTunnel2S )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( SoloTunnel2C )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 6 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH06 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper10 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper11 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Trip1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( SoloTunnel1S )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 11 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper11 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper12 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Trip3 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Trip4 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 16 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper12 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Host2Cower )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Host2_Cower )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_54 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_55 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_56 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Host2Cower )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Host3Cower )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Host3_Cower )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_57 )
+      
+       entity ( Hostage3 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_58 )
+      
+       entity ( Hostage3 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_59 )
+      
+       entity ( Hostage3 )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Host3Cower )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Tut1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Patrol2_valve_alive  ==  0 )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      HUD_TRIGGER_MISSION_CAM ( m5tut1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Tut1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Tut2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Bomb1 )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Bomb2 )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Bomb3 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      HUD_TRIGGER_MISSION_CAM ( m5tut2 )
+     
+      STOP_SEQUENCE (
+        NAME ( Tut2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( success )
+     
+      ACTIVATION ( ON_CALL )
+     
+      SOUND (
+        NAME ( SND_VM05_68 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 4.000000 )
+     
+      SOUND (
+        NAME ( SND_VM05_69 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 4.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0199.pss )
+      
+      )
+     
+      VALVE ( nofade  =  1 )
+     
+      VALVE ( mission_complete  =  1 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( failure )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( mission_failure  =  1 )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,228 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( wiper* )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0  2 )
+     
+      CALL_SEQUENCE (
+        NAME ( wipethatbaby )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( wipethatbaby )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( theblade )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( swipe )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  arm )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       ROTATE_TO ( 0  0  60 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  arm )
+      
+       ROTATE_FROM ( 0  0  60 )
+      
+       ROTATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( fadeswipe )
+      
+      )
+     
+      WAIT ( 1  1.100000 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( theblade )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  blade )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       ROTATE_TO ( 0  0  -60 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  blade )
+      
+       ROTATE_FROM ( 0  0  -60 )
+      
+       ROTATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( swipe )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 0.083333 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.083333 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.083333 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.083333 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.083333 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.083333 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( fadeswipe )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe4 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe5 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( swipe6 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( WORLD  swipes )
+      
+       OPACITY_FROM ( 0  ON )
+      
+       OPACITY_TO ( 1  OFF )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

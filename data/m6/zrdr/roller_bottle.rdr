@@ -1,0 +1,330 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( roller* )
+    
+     ANIMATION_NAME ( bottleroll* )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0  1 )
+     
+      CALL_SEQUENCE (
+        NAME ( rollbaby )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( rollbaby )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( xform )
+      
+       TRANSLATION ( -90  0  0.800000  -0.200000 )
+      
+       XYZ_ROTATION ( 0  0  -80  0  0  20 )
+      
+       RUN_TIME ( 8 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( xform )
+      
+       TRANSLATION ( -90  0  -0.800000  0.200000 )
+      
+       XYZ_ROTATION ( 0  0  80  0  0  -20 )
+      
+       RUN_TIME ( 8 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_BOTTLE_ROLLING )
+      
+       AT_NODE ( ROOT_NODE )
+      
+      )
+     
+      WAIT ( 8 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( roller* )
+    
+     ANIMATION_NAME ( rollstate* )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     LOCAL_NODES_ONLY ()
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  PARENT  NAME ( part1 )
+      
+       NAME ( part2 )
+      
+       NAME ( part3 )
+      
+       NAME ( part4 )
+      
+       NAME ( part5 )
+      
+       NAME ( part6 )
+      
+      )
+     
+     (
+        ACTIVE  NAME ( bottle_di )
+      
+       NAME ( bottle_parts )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( bottle_di )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( roller* )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     LOCAL_NODES_ONLY ()
+    
+     HEALTH_ROOT_NAME ( bottle_di )
+    
+     HEALTH ( 1 )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( call_parts )
+     
+      STOP_ANIMATION (
+        NAME ( bottleroll* )
+      
+      )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_SMALL )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bottle_di )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( bottle_part_fly* )
+      
+       WITH_NODE ( part1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( bottle_part_fly* )
+      
+       WITH_NODE ( part2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( bottle_part_fly* )
+      
+       WITH_NODE ( part3 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part3 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( bottle_part_fly* )
+      
+       WITH_NODE ( part4 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part4 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( bottle_part_fly* )
+      
+       WITH_NODE ( part5 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part5 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( bottle_part_fly* )
+      
+       WITH_NODE ( part6 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part6 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( roller* )
+    
+     ANIMATION_NAME ( bottle_part_fly* )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     LOCAL_NODES_ONLY ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( bottle_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( roller* )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  m6 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.500000 )
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.300000 )
+       
+       )
+      
+       TRANSLATION_RANGE_MIN ( 0.000000  35.000000  30.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 350.000000  60.000000  50.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       BOUNCE_SOUND (
+         NAME ( SND_BULLET_CASING_STONE )
+       
+        FULL_VOLUME_VELOCITY ( 140 )
+       
+       )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,353 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( 1_Patrol3_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( 1_Patrol3_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( ambient )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sleeper_hold )
+     
+      ai::PARAM ( sleep  =  1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( wakeup_1 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::PARAM ( sleep  =  0 )
+     
+      ai::PARAM ( aware  =  0 )
+     
+      STOP_SEQUENCE (
+        NAME ( sleeper_hold )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      ai::GOTO (
+        node ( Patrol1_a )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_b )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_c )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_d )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_e )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Delta )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 7 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  10 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_f )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_g )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  10 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Delta )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_e )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_d )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_c )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_b )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol1_a )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( 1_Patrol1_st )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ai::DEBUG ( "starting on_aware1" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Suspicious_1 )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ai::DEBUG ( "starting on_aware2" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Alert_1 )
+      
+       blocking )
+     
+      ai::STATE (
+        push ( rush )
+      
+       entity ( player )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ai::DEBUG ( "starting on_aware3" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Alert_1 )
+      
+       blocking )
+     
+      ai::STATE (
+        push ( rush )
+      
+       entity ( player )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ai::DEBUG ( "starting on_aware4" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ELSE ()
+     
+      ai::STANCE (
+        stance ( Prone )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::MACRO (
+        anim ( Combat_Mode_1 )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ai::DEBUG ( "starting on_corpse" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Dead_Guy_1 )
+      
+       blocking )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

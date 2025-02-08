@@ -1,0 +1,58 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_camera_inside_state1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      IF (
+        VALVE ( indoors  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( inside_noise )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( outside_noise )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( outside_noise )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( inside_noise )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( 0.500000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

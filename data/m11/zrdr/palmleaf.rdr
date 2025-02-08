@@ -1,0 +1,64 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( palm_frond*** )
+    
+     HEALTH_ROOT_NAME ( hit_dis )
+    
+     HEALTH ( 1 )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_WIND_THRU_TREES )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
+      
+       GRAVITY ()
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.070000 )
+       
+       )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000 )
+      
+       BOUNCE_SOUND (
+         NAME ( SND_STEP_LEAVES_L )
+       
+        FULL_VOLUME_VELOCITY ( 120 )
+       
+       )
+      
+       RUN_TIME ( 1.500000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,438 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( breach_door )
+    
+     ANIMATION_NAME ( setbreachdoor )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  TRANSLATION  ROTATION  PARENT  NAME ( part_1 )
+      
+       NAME ( part_2 )
+      
+       NAME ( part_3 )
+      
+       NAME ( part_4 )
+      
+       NAME ( part_5 )
+      
+       NAME ( part_6 )
+      
+       NAME ( part_7 )
+      
+       NAME ( part_8 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( healthy_door )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( broken_door )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     NAME ( breach_door )
+    
+     HEALTH_ROOT_NAME ( healthy_door )
+    
+     HEALTH ( 1 )
+    
+     SHIELD ( 10 )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( doorgone  =  1 )
+     
+      ai::PAINT (
+        region ( BlowDoor )
+      
+       soil ( default )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( healthy_door )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( broken_door )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_3 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_3 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_4 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_4 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_5 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_5 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_6 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_6 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_7 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_7 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( flydoorpart )
+      
+       WITH_NODE ( part_8 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part_8 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( breach_door )
+    
+     ANIMATION_NAME ( flydoorpart )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( broken_door )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( breach_door )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  m12 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.100000 )
+      
+       TRANSLATION_RANGE_MIN ( 0.000000  35.000000  50.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 350.000000  90.000000  130.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( INPUT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( gas_fire1 )
+      
+       TEXTURES ( fire_hardedge.tif )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.030000 )
+      
+       NUMBER ( 1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  2.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -1.000000  2.000000 )
+      
+       RADIUS_RANGE ( 0.500000  0.700000 )
+      
+       LIFESPAN_RANGE ( 1.600000  2.200000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.300000 )
+      
+       FRICTION ( 0.200000 )
+      
+       WORLD_ACCELERATION ( 0.000000  4.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 420.000000  540.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.900000  0.700000  0.700000 )
+       
+       ( 0.200000  0.950000  0.800000  0.300000  0.900000 )
+       
+       ( 0.600000  0.950000  0.400000  0.070000  0.700000 )
+       
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  5.000000 )
+       
+       ( 0.500000  2.000000 )
+       
+       ( 1.000000  0.400000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  30 )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( gen_smoke1 )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.025000 )
+      
+       NUMBER ( 1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  4.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -2.000000  2.000000 )
+      
+       RADIUS_RANGE ( 1.000000  1.300000 )
+      
+       LIFESPAN_RANGE ( 1.500000  3.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.200000 )
+      
+       FRICTION ( 0.100000 )
+      
+       WORLD_ACCELERATION ( 0.000000  1.400000  0.000000 )
+      
+       FADE_FAR_RANGE ( 240.000000  340.000000 )
+      
+       COLORS (( 0.000000  0.000000  0.000000  0.000000  0.700000 )
+       
+       ( 0.400000  0.050000  0.050000  0.050000  0.600000 )
+       
+       ( 1.000000  0.140000  0.130000  0.130000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.500000 )
+       
+       ( 0.400000  3.000000 )
+       
+       ( 1.000000  14.000000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  40 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

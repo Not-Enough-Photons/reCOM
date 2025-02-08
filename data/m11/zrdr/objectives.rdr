@@ -1,0 +1,1895 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( objectives )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( start )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0332.pss )
+      
+      )
+     
+      WAIT ( SEQUENCE_OFFSET  3.000000 )
+     
+      SOUND (
+        NAME ( MUS_M11 )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WAIT ( SEQUENCE_OFFSET  3.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_01 )
+      
+       START ()
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM11_02 )
+      
+       START ()
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( aiteam_04  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "ALL ENEMIES NEUTRALIZED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ2  =  1 )
+     
+      VALVE ( POBJ3  =  1 )
+     
+      VALVE ( POBJ4  =  1 )
+     
+      VALVE ( POBJ5  =  1 )
+     
+      WAIT ( 3.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( Hostage2_valve_alive  ==  0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM11_22 )
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: AMBASSADOR KILLED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( player_valve_alive  ==  0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      SOUND (
+        NAME ( SNDGROUP_GEIGER_DEATH )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: PLAYER DEATH" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 12.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( aiteam_01  ==  1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_VOC_231 )
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "MISSION FAILURE: YOUR SEAL TEAM HAS BEEN INCAPACITATED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hutchins_killed )
+     
+      WHILE (
+        VALVE ( Hutchins_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_HUTCHINS_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Hutchins_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Bailey_killed )
+     
+      WHILE (
+        VALVE ( Bailey_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_BAILEY_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Bailey_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( DiMone_killed )
+     
+      WHILE (
+        VALVE ( DiMone_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_DIMONE_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( DiMone_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( wifekill )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Hostage1_valve_alive  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "AMBASSADOR'S WIFE KILLED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_OBJ_FAILURE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      VALVE ( POBJ4Fail  =  1 )
+     
+      VALVE ( SOBJ16Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( wifekill )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( BothEaves )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Eaves1  ==  1 )
+      
+       &&  VALVE ( Eaves2  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: EAVESDROPPED ON CONVERSATIONS" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ2  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( BothEaves )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Peasants )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Peasants )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM11_40 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_41 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_42 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_43 )
+      
+       START ()
+      
+      )
+     
+      IF (
+        ai::INREGION (
+         region ( Peasants )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "EAVESDROPPED ON CONVERSATION" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Eaves1  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SOBJ2Fail  =  1 )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Peasants )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Peasants2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Peasants2 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM11_44 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 7.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_45 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 7.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_46 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_47 )
+      
+       START ()
+      
+      )
+     
+      IF (
+        ai::INREGION (
+         region ( Peasants2 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "EAVESDROPPED ON CONVERSATION" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Eaves2  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( SOBJ2Fail  =  1 )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Peasants2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sentries )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( NSpot  ==  1 )
+      
+       &&  VALVE ( JSpot  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: SENTRY LOCATIONS IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ5  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Sentries )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Spot1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Ambush1_valve_alive  ==  0 )
+      
+      )
+     
+      VALVE ( SOBJ5Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot2 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot3 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sentries )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot1 )
+      
+      )
+     
+      ELSEIF (
+        ai::INVIEW (
+         target ( Ambush1 )
+       
+        viewer ( player )
+       
+        equip ( Binoculars )
+       
+       )
+      
+       ||  ai::INVIEW (
+         target ( Ambush1 )
+       
+        viewer ( player )
+       
+        equip ( NVG )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SENTRY LOCATED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( NSpot  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Spot2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Ambush2_valve_alive  ==  0 )
+      
+      )
+     
+      VALVE ( SOBJ5Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot3 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sentries )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot2 )
+      
+      )
+     
+      ELSEIF (
+        ai::INVIEW (
+         target ( Ambush2 )
+       
+        viewer ( player )
+       
+        equip ( Binoculars )
+       
+       )
+      
+       ||  ai::INVIEW (
+         target ( Ambush2 )
+       
+        viewer ( player )
+       
+        equip ( NVG )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SENTRY LOCATED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( JSpot  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Spot2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( FlankGuards )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( aiteam_16  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: FLANK GUARDS NEUTRALIZED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ10  =  1 )
+     
+      VALVE ( SOBJ5  =  1 )
+     
+      WAIT ( 3.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: FLANK SECURE" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ3  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      IF (
+        VALVE ( POBJ4  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "RENEW OBJECTIVE: LOCATE AND EXTRACT AMBASSADOR'S WIFE" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Claymore1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Claymore2 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Claymores )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Bait )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( KillZone )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( FlankGuards )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( WifeEscort )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Extract )
+       
+        entity ( Hostage1 )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: AMBASSADOR'S WIFE ESCORTED TO EXTRACTION POINT" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ16  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( WifeEscort )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( WifeExtract )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INSTATE (
+         state ( following )
+       
+        entity ( Hostage1 )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: AMBASSADOR'S WIFE SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_OBJ_SUCCESS )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      VALVE ( POBJ4  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( WifeExtract )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Extract )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INSTATE (
+         state ( following )
+       
+        entity ( Hostage2 )
+       
+       )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM11_53 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_15 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: AMBASSADOR SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_OBJ_SUCCESS )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      VALVE ( POBJ5  =  1 )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_VOC_363 )
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Extract )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Victory )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( POBJ5  ==  1 )
+      
+       &&  VALVE ( POBJ4  ==  1 )
+      
+      )
+     
+      WAIT ( 4.000000 )
+     
+      SOUND (
+        NAME ( SND_VM11_54 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "VICTORY: HOSTAGE SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 4.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Victory )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( SecFlank )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( SecFlank )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM11_24 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      WAIT ( 5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM11_25 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: SECURE FLANK BEFORE ENTERING THE TEMPLE COMPLEX" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( SecFlank )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Sleep1 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 6 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM11_23 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( MUS_M11_TEMPLE )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( wife_trigger1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( wife_trigger2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 11 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_M11_MEDITATE )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Rear1 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM11_27 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      MESSAGE (
+        MESSAGE ( "TACTICAL: MAINTAIN A SILENT PROFILE IN YOUR SEARCH FOR THE AMBASSADOR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_M11_PRAYER )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper4 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Rear2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 14 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM11_14 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      WAIT ( 3.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "TACTICAL: ELIMINATE THE SECOND FLOOR SENTRY" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper4 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper5 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Temple1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Temple2 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Temple3 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 8 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_M11_TENSION )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper5 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper6 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( SideTemp )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 9 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper6 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper7 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( AmbWake1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( AmbWake2 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( AmbWake3 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( AmbushBang )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 10 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AMBUSH )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper7 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper8 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( reg3 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 7 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper8 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper9 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Ambush )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 16 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper9 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper10 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( reg2_rush )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 12 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper10 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Ambas )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Ambas )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 15 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      IF (
+        VALVE ( Back3_valve_alive  ==  1 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM11_18 )
+      
+       entity ( Back3 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM11_19 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Back3_valve_alive  ==  1 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM11_20 )
+      
+       entity ( Back3 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM11_21 )
+      
+       entity ( Hostage2 )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Ambas )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( WifeClose )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( WifeClose )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( EnemyS_valve_aware  ==  0 )
+      
+       &&  VALVE ( EnemyT_valve_aware  ==  0 )
+      
+      )
+     
+      IF (
+        VALVE ( EnemyS_valve_aware  ==  0 )
+      
+       &&  VALVE ( EnemyT_valve_aware  ==  0 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM11_03 )
+      
+       entity ( EnemyS )
+      
+       aware ( 1 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM11_04 )
+      
+       entity ( EnemyT )
+      
+       aware ( 1 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM11_05 )
+      
+       entity ( EnemyS )
+      
+       aware ( 1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( WifeClose )
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( WifeClose )
+      
+      )
+     
+      ELSE ()
+     
+      STOP_SEQUENCE (
+        NAME ( WifeClose )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Escape )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Escape  ==  1 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      STOP_ANIMATION (
+        NAME ( m11_extract1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( m11_extract2 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: AMBASSADOR'S WIFE EXTRACTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_M11_RESCUE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      VALVE ( POBJ4  =  1 )
+     
+      VALVE ( SOBJ16  =  1 )
+     
+      WAIT ( 3.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: FIND AND SECURE THE AMBASSADOR" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Escape )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( success )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0333.pss )
+      
+      )
+     
+      VALVE ( mission_complete  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( failure )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( mission_failure  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

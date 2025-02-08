@@ -1,0 +1,592 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Leader_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Leader_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( startup )
+     
+      ai::DEBUG ( "starting startup" )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( decide_to_run )
+     
+      ai::DEBUG ( "starting decide_to_run" )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( aiteam_04  <  10 )
+      
+      )
+     
+      ai::DEBUG ( "calling Running" )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware4 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( Running )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM12_29 )
+      
+       broadcast )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM12_26 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM12_27 )
+      
+       entity ( DiMone )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        name ( SND_VM12_28 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_STREAM_AMBUSH )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( decide_to_run )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Running )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting Running" )
+     
+      VALVE ( Running  =  1 )
+     
+      ai::MACRO (
+        anim ( City_guns )
+      
+       blocking )
+     
+      IF (
+        ai::INREGION (
+         region ( North )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      VALVE ( South  =  1 )
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( South )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      VALVE ( North  =  1 )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      VALVE ( South  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( North  =  1 )
+     
+      ENDIF ()
+     
+      ai::GOTO (
+        node ( LeaderDecide )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      IF (
+        VALVE ( South  ==  1 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( South )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( North  ==  1 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( North )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( North )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting North" )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::GOTO (
+        node ( North1 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( North2 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( North3 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( North4 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( LeaderBoat )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        pos ( 2253.120117  25.000000  2250.520020 )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( m12_boat_approach )
+      
+      )
+     
+      WAIT ( 30.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( board_boat )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( South )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting South" )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::GOTO (
+        node ( South1 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( South2 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( South3 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( South4 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( South5 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( South6 )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1 )
+      
+      )
+     
+      ai::GOTO (
+        node ( LeaderBoat )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        pos ( 2253.120117  25.000000  2250.520020 )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( m12_boat_approach )
+      
+      )
+     
+      WAIT ( 30.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( board_boat )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( board_boat )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting board_boat" )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware4 )
+      
+      )
+     
+      ai::GOTO (
+        node ( BoardBoat )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( m12_boat_docked )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( m12_boat_exit )
+      
+      )
+     
+      ai::SETMODE ( sleep )
+     
+      VALVE ( Escape  =  1 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware1" )
+     
+      ai::MACRO (
+        anim ( Close_call )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware2" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware3" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware4" )
+     
+      ai::MACRO (
+        anim ( Spot_shout )
+      
+       blocking )
+     
+      ai::MACRO (
+        anim ( City_guns )
+      
+       blocking )
+     
+      ai::PURSUE (
+        duration ( 15.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_lowhealth )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_lowhealth" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_noammo )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_noammo" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_corpse" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( surrender )
+     
+      ai::DEBUG ( "Starting on_corpse" )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( LeaderGuard1_valve_alive  ==  0 )
+      
+       &&  VALVE ( LeaderGuard2_valve_alive  ==  0 )
+      
+      )
+     
+      ai::PARAM ( courage  =  -1.000000 )
+     
+      STOP_SEQUENCE (
+        NAME ( surrender )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

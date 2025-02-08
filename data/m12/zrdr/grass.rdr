@@ -1,0 +1,194 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( MODEL  grass )
+    
+     ANIMATION_NAME ( blowin_in_the_wind )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sway0 )
+     
+      OBJECT_MOTION (
+        NAME ( clump0 )
+      
+       XYZ_ROTATION ( 2.400000  0  0  -0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( clump0 )
+      
+       XYZ_ROTATION ( -2.400000  0  0  0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( clump0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( callrandom )
+     
+      WAIT ( 1 )
+     
+      CALL_SEQUENCE (
+        NAME ( sway1 )
+      
+      )
+     
+      WAIT ( 2 )
+     
+      CALL_SEQUENCE (
+        NAME ( sway2 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      CALL_SEQUENCE (
+        NAME ( sway3 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sway1 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( clump1 )
+      
+       XYZ_ROTATION ( 2.400000  0  0  -0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( clump1 )
+      
+       XYZ_ROTATION ( -2.400000  0  0  0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( clump1 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sway2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( clump2 )
+      
+       XYZ_ROTATION ( 2.400000  0  0  -0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( clump2 )
+      
+       XYZ_ROTATION ( -2.400000  0  0  0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( clump2 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sway3 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( clump3 )
+      
+       XYZ_ROTATION ( 2.400000  0  0  -0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( clump3 )
+      
+       XYZ_ROTATION ( -2.400000  0  0  0.800000  0  0 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( clump3 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,1068 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol_guns )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_100 )
+     
+      ai::DEBUG ( "choosing rifle" )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 0.500000  4.000000 )
+      
+       burst )
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Snipe_guns )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_100 )
+     
+      ai::DEBUG ( "choosing rifle" )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 0.200000  4.000000 )
+      
+      )
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Close_call )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shout )
+     
+      WAIT ( 1.000000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_20 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_21 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_22 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_32 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_33 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Alert_shout )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shout )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       pos ( 0  0  0 )
+      
+       duration ( 1.000000 )
+      
+       range ( 150.000000 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_06 )
+      
+       aware ( 2 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_07 )
+      
+       aware ( 2 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_09 )
+      
+       aware ( 2 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_10 )
+      
+       aware ( 2 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Spot_shout )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shout )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       pos ( 0  0  0 )
+      
+       duration ( 1.000000 )
+      
+       range ( 150.000000 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_06 )
+      
+       aware ( 4 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_07 )
+      
+       aware ( 4 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_08 )
+      
+       aware ( 4 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_09 )
+      
+       aware ( 4 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_10 )
+      
+       aware ( 4 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Sick )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sick )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_35 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_36 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_37 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_38 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Vomit )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( puke )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_39A )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_39B )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_39C )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_39D )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chatter )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( chat )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_03 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_04 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_55 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_56 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chatter2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( chat2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_57 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_58 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_59 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_60 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Battle_cry )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( yell )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       pos ( 0  0  0 )
+      
+       duration ( 1.000000 )
+      
+       range ( 150.000000 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VOSP_170 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VOSP_171 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        name ( SND_VOSP_172 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Battle_cry2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( yell )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       pos ( 0  0  0 )
+      
+       duration ( 1.000000 )
+      
+       range ( 150.000000 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VOSP_173 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VOSP_174 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        name ( SND_VOSP_175 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RCSearch )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( search )
+     
+      ai::DEBUG ( "Searching Rear Cargo area" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch1  RCSearch2 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch3  RCSearch4 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch5  RCSearch6 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ELSE ()
+     
+      ai::GOTO (
+        node ( RCSearch7  RCSearch6 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch5  RCSearch4 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch3  RCSearch2 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( RCSearch1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( DeckSearch )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( search )
+     
+      ai::DEBUG ( "Searching Rear Cargo area" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch1  DeckSearch2 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch3  DeckSearch4 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch5  DeckSearch6 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ELSE ()
+     
+      ai::GOTO (
+        node ( DeckSearch7  DeckSearch6 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch5  DeckSearch4 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch3  DeckSearch2 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( DeckSearch1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( stand )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

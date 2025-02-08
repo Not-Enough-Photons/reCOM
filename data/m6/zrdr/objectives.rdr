@@ -1,0 +1,1715 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( objectives )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( start )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0112.pss )
+      
+      )
+     
+      HUD_TRIGGER_MISSION_CAM ( m6tut1 )
+     
+      WAIT ( 1.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE: SECURE THE BARGE" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( POBJ1  ==  1 )
+      
+       &&  VALVE ( POBJ2  ==  1 )
+      
+       &&  VALVE ( POBJ3  ==  1 )
+      
+       &&  VALVE ( SOBJ5  ==  1 )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "VICTORY: FREIGHTER SCUTTLED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ4  =  1 )
+     
+      SOUND (
+        NAME ( SND_VM06_67 )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( player_valve_alive  ==  0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_PLAYER_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: PLAYER DEATH" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 12.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( aiteam_01  ==  1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_231 )
+      
+       broadcast )
+     
+      MESSAGE (
+        MESSAGE ( "MISSION FAILURE: YOUR SEAL TEAM HAS BEEN INCAPACITATED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hutchins_killed )
+     
+      WHILE (
+        VALVE ( Hutchins_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_HUTCHINS_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Hutchins_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Bailey_killed )
+     
+      WHILE (
+        VALVE ( Bailey_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_BAILEY_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Bailey_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( DiMone_killed )
+     
+      WHILE (
+        VALVE ( DiMone_valve_alive  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SNDGROUP_DIMONE_DEATH )
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( MUS_BUDDY_DEATH )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( DiMone_killed )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Guard )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( sentry  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE FAILED: GUARD ALERTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ1Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Guard )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( Barge1_valve_alive  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: GUARD NEUTRALIZED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ1  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Guard )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Barge )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( aiteam_06  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: BARGE SECURED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ1  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      WAIT ( 3.000000 )
+     
+      IF (
+        VALVE ( POBJ2  ==  0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: SEVER THEIR COMMUNICATIONS" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM06_05 )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Barge )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Radio )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( radio  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: COMMUNICATIONS SEVERED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( POBJ2  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Radio )
+      
+      )
+     
+      IF (
+        VALVE ( POBJ3  ==  0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: COLLECT INTEL" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_61 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Aft1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Aft1_valve_alive  ==  0 )
+      
+      )
+     
+      VALVE ( SOBJ2Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( IDPatrols )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Aft1 )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ai::INVIEW (
+         viewer ( player )
+       
+        target ( Aft1 )
+       
+        equip ( Binoculars )
+       
+       )
+      
+       ||  ai::INVIEW (
+         viewer ( player )
+       
+        target ( Aft1 )
+       
+        equip ( NVG )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SENTRY IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Aft1Binocs  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Aft1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( For1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( For1_valve_alive  ==  0 )
+      
+      )
+     
+      VALVE ( SOBJ2Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( IDPatrols )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( For1 )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ai::INVIEW (
+         viewer ( player )
+       
+        target ( For1 )
+       
+        equip ( Binoculars )
+       
+       )
+      
+       ||  ai::INVIEW (
+         viewer ( player )
+       
+        target ( For1 )
+       
+        equip ( NVG )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SENTRY IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( For1Binocs  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( For1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( IDPatrols )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Aft1Binocs  ==  1 )
+      
+       &&  VALVE ( For1Binocs  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: PATROLS IDENTIFIED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ2  =  1 )
+     
+      WAIT ( 3.000000 )
+     
+      STOP_SEQUENCE (
+        NAME ( IDPatrols )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Stealth )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( stealth  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE FAILED: TEAM SPOTTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM06_43 )
+      
+       START ()
+      
+      )
+     
+      VALVE ( SOBJ3Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Stealth )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ai::INREGION (
+         region ( Freight )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: REACHED FREIGHTER UNSEEN" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ3  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Stealth )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Ship )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( ship_man  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: SHIPPING MANIFEST RECOVERED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_49 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      VALVE ( POBJ3  =  1 )
+     
+      SOUND (
+        NAME ( MUS_OBJ_COMPLETE )
+      
+       MUSIC_EVENT ()
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( SOBJ4  ==  1 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_VM06_50 )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( SOBJ5  ==  0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "NEW OBJECTIVE: SCUTTLE THE FREIGHTER" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM06_51 )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Ship )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Eaves )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( bossstop  ==  1 )
+      
+      )
+     
+      VALVE ( SOBJ4Fail  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Eaves )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( bosstalk  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: EAVESDROPPED ON CONVERSATION" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ4  =  1 )
+     
+      WAIT ( 3.000000 )
+     
+      IF (
+        VALVE ( POBJ3  ==  0 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_62 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Eaves )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Charge1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Charge1 )
+       
+        weapon ( "Satchel Charge" )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SATCHEL CHARGE PLANTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Charge1  =  1 )
+     
+      IF (
+        VALVE ( Charge2  ==  0 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_63 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_65 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Charge1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Charge2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Charge2 )
+       
+        weapon ( "Satchel Charge" )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "SATCHEL CHARGE PLANTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( Charge2  =  1 )
+     
+      IF (
+        VALVE ( Charge1  ==  0 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_64 )
+      
+       entity ( DiMone )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_65 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Charge2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Scuttle )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Charge1  ==  1 )
+      
+       &&  VALVE ( Charge2  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "OBJECTIVE COMPLETED: SATCHEL CHARGES PLANTED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      VALVE ( SOBJ5  =  1 )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_66 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      IF (
+        VALVE ( POBJ1  ==  0 )
+      
+       ||  VALVE ( POBJ2  ==  0 )
+      
+       ||  VALVE ( POBJ3  ==  0 )
+      
+      )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( 3.000000 )
+     
+      STOP_SEQUENCE (
+        NAME ( Scuttle )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Iron )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( iron_man  ==  1 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "BONUS OBJECTIVE COMPLETED: IRON MANIFESTO OBTAINED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_48 )
+      
+       entity ( Hutchins )
+      
+       broadcast )
+     
+      VALVE ( SOBJ6  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( Iron )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Barge )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 5 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_AK_STEALTH01 )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper2 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Freight )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 11 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_M6_FREIGHT )
+      
+       MUSIC_LOCAL ()
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper2 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper3 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Iron1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Iron2 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Iron3 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 9 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper3 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper4 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Bridge1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Bridge2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 8 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      IF (
+        ai::INREGION (
+         region ( Bridge2 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      HUD_TRIGGER_MISSION_CAM ( m6tut5 )
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( Radiohelp )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper4 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper5 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( BargeTalk )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( Barge1_valve_alive  ==  0 )
+      
+       &&  VALVE ( Barge2_valve_alive  ==  0 )
+      
+      )
+     
+      IF (
+        !  VALVE ( Barge4_valve_aware  >=  2 )
+      
+       &&  !  VALVE ( Barge5_valve_aware  >=  2 )
+      
+      )
+     
+      IF (
+        VALVE ( Barge4_valve_alive  ==  1 )
+      
+       &&  VALVE ( Barge5_valve_alive  ==  1 )
+      
+      )
+     
+      HUD_TRIGGER_MISSION_CAM ( m6tut3 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper5 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper6 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( LadderDown )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( MidCargo )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( LandRight )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( LandLeft )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 10 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper6 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Sleeper7 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( CargoBot )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Iron1 )
+       
+        team ( 1 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( Iron2 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 12 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Sleeper7 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Cutthroat )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( Barge1_valve_alive  ==  0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Cutthroat )
+      
+      )
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( Cutthroat )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_54 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      STOP_SEQUENCE (
+        NAME ( Cutthroat )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( IDSnipers )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( SOBJ2  ==  1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( IDSnipers )
+      
+      )
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( ID )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "TIP: PRESS THE UP ARROW TO USE NIGHT VISION AND BINOCULARS" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM06_45 )
+      
+       entity ( Bailey )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM06_46 )
+      
+       entity ( DiMone )
+      
+       broadcast )
+     
+      ENDIF ()
+     
+      WHILE (
+        VALVE ( POBJ1  ==  0 )
+      
+      )
+     
+      VALVE ( snipecam  =  1 )
+     
+      END_WHILE ()
+     
+      STOP_SEQUENCE (
+        NAME ( IDSnipers )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Ramp )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Ramp )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      ai::COMM (
+        team ( 7 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM06_52 )
+      
+       START ()
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Ramp )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Radiohelp )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( radiohelp  ==  1 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( success )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM06_53 )
+      
+       START ()
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "FAILURE: OPERATION COMPROMISED" )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( failure )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Radiohelp )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( success )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0113.pss )
+      
+      )
+     
+      VALVE ( nofade  =  1 )
+     
+      VALVE ( mission_complete  =  1 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( failure )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( mission_failure  =  1 )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,915 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Suspicious_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response_1 )
+     
+      ai::DEBUG ( "Launching Suspicious Response 1" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_64 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 2.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM19_43 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 2.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Suspicious_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response_2 )
+     
+      ai::DEBUG ( "Launching Suspicious Response 2" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  7 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  6 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_63 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 2.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM19_41 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 2.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  6 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::HOLD (
+        wait ( 1  3 )
+      
+      )
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Suspicious_3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response_1 )
+     
+      ai::DEBUG ( "Launching Suspicious Response 1" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_33 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 2.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  7 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM19_34 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 2.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  7 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Alert_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response1 )
+     
+      ai::DEBUG ( "Launching Alert Response" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      WAIT ( 1  3 )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_37 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ELSE ()
+     
+      WAIT ( 1  3 )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_38 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Alert_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response2 )
+     
+      ai::DEBUG ( "Launching Alert Response" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      WAIT ( 1  2 )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_62 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ELSE ()
+     
+      WAIT ( 1  2 )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_36 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 100 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Combat_Mode_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Rifle_Attack )
+     
+      ai::DEBUG ( "ENTERING COMBAT: Rifle only" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        VALVE ( aiteam_31  <  4 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_55 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_56 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.700000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_005 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_005 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_006 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_54 )
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        ai::VALVE ( valve_aware  ==  4 )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_shot  ==  1 )
+      
+      )
+     
+      ai::PARAM ( param_accuracy  =  0.100000 )
+     
+      ai::PARAM ( param_courage  =  0.500000 )
+     
+      ENDIF ()
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 1.000000  1.000000 )
+      
+       burst )
+     
+      END_WHILE ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Combat_Mode_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Rifle_Attack )
+     
+      ai::DEBUG ( "ENTERING COMBAT: Rifle only" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        VALVE ( aiteam_31  <  4 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_55 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_56 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.700000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_005 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM19_54 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_007 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_008 )
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        ai::VALVE ( valve_aware  ==  4 )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_shot  ==  1 )
+      
+      )
+     
+      ai::PARAM ( param_accuracy  =  0.100000 )
+     
+      ai::PARAM ( param_courage  =  0.500000 )
+     
+      ENDIF ()
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 1.000000  1.000000 )
+      
+       burst )
+     
+      END_WHILE ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Dead_Guy_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Corpse_Found )
+     
+      ai::DEBUG ( "IT'S A DEAD MAN'S PARTY!" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_aware  ==  0 )
+      
+       ||  VALVE ( valve_aware  ==  1 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  6 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_064 )
+      
+      )
+     
+      ai::PARAM ( aware  =  2 )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  6 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_065 )
+      
+      )
+     
+      ai::PARAM ( aware  =  2 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::VALVE ( valve_aware  ==  2 )
+      
+       ||  VALVE ( valve_aware  ==  3 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_005 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_006 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Dead_Guy_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Corpse_Found )
+     
+      ai::DEBUG ( "IT'S A DEAD MAN'S PARTY!" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_aware  ==  0 )
+      
+       ||  VALVE ( valve_aware  ==  1 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  6 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_066 )
+      
+      )
+     
+      ai::PARAM ( aware  =  2 )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4  6 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_067 )
+      
+      )
+     
+      ai::PARAM ( aware  =  2 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::VALVE ( valve_aware  ==  2 )
+      
+       ||  VALVE ( valve_aware  ==  3 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_007 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VOC_008 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

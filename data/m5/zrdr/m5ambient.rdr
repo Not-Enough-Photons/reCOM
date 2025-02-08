@@ -1,0 +1,213 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_camera_inside_state )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      IF (
+        CAMERA_INDOORS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( wind_inside )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( wind_outside )
+      
+      )
+     
+      VALVE ( windblowing  =  0 )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( wind_outside )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( wind_inside )
+      
+      )
+     
+      VALVE ( windblowing  =  1 )
+     
+      ENDIF ()
+     
+      WAIT ( 0.500000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( wind_outside )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_OUTDOOR_AMBIENCE_LOOP )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_OUTDOOR_WIND_GUST_1_SHOT_1 )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  5.000000  20.000000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_OUTDOOR_WIND_GUST_1_SHOT_2 )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  10.000000  20.000000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_OUTDOOR_WIND_GUST_1_SHOT_3 )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  2.000000  20.000000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PAUSE_ANIMATION ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( wind_inside )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_INDOOR_WIND_LOOP )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_OUTDOOR_WIND_GUST_1_SHOT_1 )
+      
+       VOLUME ( 0.500000 )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  3.000000  20.000000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_OUTDOOR_WIND_GUST_1_SHOT_2 )
+      
+       VOLUME ( 0.400000 )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  6.000000  16.000000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PAUSE_ANIMATION ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

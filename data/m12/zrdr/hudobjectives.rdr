@@ -1,0 +1,222 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "RECON INSERTION AREA" )
+  
+   DESCRIPTION ( "Scan the riverbank for patrols." )
+  
+   VALVE ( POBJ1 )
+  
+   LOCATION ( 1979.000000  1200.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj1 )
+  
+   LINE_IDS ( 1 )
+  
+  )
+ 
+ (
+    NAME ( "ID PATROLS WITH NVG" )
+  
+   DESCRIPTION ( "Use Night Vision Goggles to extend your view range." )
+  
+   VALVE ( SOBJ1 )
+  
+   INVALID_VALVE ( SOBJ1Fail )
+  
+   LOCATION ( 3319.000000  950.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj2 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "ELIMINATE PATROLS" )
+  
+   DESCRIPTION ( "Use stealth and surprise to elimate the patrols." )
+  
+   VALVE ( SOBJ2 )
+  
+   INVALID_VALVE ( SOBJ2Fail )
+  
+   LOCATION ( 3319.000000  950.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj3 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE RIVERBANK" )
+  
+   DESCRIPTION ( "Secure the riverbank." )
+  
+   VALVE ( POBJ2 )
+  
+   LOCATION ( 3939.000000  1880.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj4 )
+  
+   LINE_IDS ( 2 )
+  
+  )
+ 
+ (
+    NAME ( "SECURE COMPOUND" )
+  
+   DESCRIPTION ( "Secure the main compound." )
+  
+   VALVE ( POBJ3 )
+  
+   LOCATION ( 3029.000000  2900.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj6 )
+  
+   LINE_IDS ( 3 )
+  
+  )
+ 
+ (
+    NAME ( "RESTRAIN LEADER" )
+  
+   DESCRIPTION ( "Capture the leader and restrain him." )
+  
+   VALVE ( POBJ4 )
+  
+   INVALID_VALVE ( POBJ4Fail )
+  
+   LOCATION ( 1989.000000  2600.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj14 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "OBSERVE LEADER" )
+  
+   DESCRIPTION ( "Use NVG to ID the leader." )
+  
+   VALVE ( SOBJ3 )
+  
+   INVALID_VALVE ( SOBJ3Fail )
+  
+   LOCATION ( 1989.000000  2600.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj14 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "INFILTRATE TEMPLE" )
+  
+   DESCRIPTION ( "Enter the temple complex." )
+  
+   VALVE ( SOBJ4 )
+  
+   LOCATION ( 2129.000000  2600.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj12 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "OBTAIN INTEL" )
+  
+   DESCRIPTION ( "Scour the temple for any intelligence." )
+  
+   VALVE ( POBJ5 )
+  
+   LOCATION ( 1999.000000  2560.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj15 )
+  
+   LINE_IDS ( 5 )
+  
+  )
+ 
+ (
+    NAME ( "BLOW DOOR WITH C4" )
+  
+   DESCRIPTION ( "Use C4 to blow open the door to access the temple sub-level." )
+  
+   VALVE ( SOBJ8 )
+  
+   LOCATION ( 1969.000000  2490.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj16 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE SUB-LEVEL" )
+  
+   DESCRIPTION ( "Secure the temple sub-level." )
+  
+   VALVE ( POBJ6 )
+  
+   LOCATION ( 1599.000000  2200.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj21 )
+  
+   LINE_IDS ( 6 )
+  
+  )
+ 
+ (
+    NAME ( "CONTAIN ENEMY" )
+  
+   DESCRIPTION ( "Ensure that nobody escapes the temple sub-level." )
+  
+   VALVE ( SOBJ10 )
+  
+   INVALID_VALVE ( SOBJ10Fail )
+  
+   LOCATION ( 1969.000000  2490.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj9 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "OBTAIN BIO-AGENT" )
+  
+   DESCRIPTION ( "Secure the bio-agent.  Lives are at stake." )
+  
+   VALVE ( POBJ7 )
+  
+   LOCATION ( 1459.000000  2010.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj23 )
+  
+   LINE_IDS ( 7 )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,721 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Leader_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Leader_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( startup )
+     
+      ai::DEBUG ( "starting startup" )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      ai::GOTO (
+        node ( Leader_start )
+      
+       speed ( 0.200000 )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      ai::GOTO (
+        node ( LeaderB )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Leader_start )
+      
+       speed ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( "Stand stretch" )
+      
+       postwait ( 4.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( radiocheck )
+     
+      ai::DEBUG ( "Starting radiocheck" )
+     
+      WHILE ( TRUE )
+     
+      WAIT ( EVENT_OFFSET  20.000000  30.000000 )
+     
+      ai::DEBUG ( "report in" )
+     
+      ai::SOUND (
+        name ( SND_VM05_28 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  3.000000 )
+     
+      IF (
+        VALVE ( Building6_valve_alive  ==  1 )
+      
+      )
+     
+      ai::DEBUG ( "Red yes" )
+     
+      ai::SOUND (
+        name ( SND_VM05_29 )
+      
+       entity ( Building6 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "Red no" )
+     
+      ai::SOUND (
+        name ( SND_VM05_40 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_46 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_45 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ai::VALVE ( valve_aware  =  2 )
+     
+      VALVE ( rally  +=  1 )
+     
+      ai::COMM (
+        team ( 4 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( radiocheck )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( EVENT_OFFSET  3.000000 )
+     
+      IF (
+        VALVE ( Patrol1_valve_alive  ==  1 )
+      
+      )
+     
+      ai::DEBUG ( "Yellow yes" )
+     
+      ai::SOUND (
+        name ( SND_VM05_30 )
+      
+       entity ( Patrol1 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "Yellow no" )
+     
+      ai::SOUND (
+        name ( SND_VM05_41 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_47 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_45 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ai::VALVE ( valve_aware  =  2 )
+     
+      VALVE ( rally  +=  1 )
+     
+      ai::COMM (
+        team ( 4 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( radiocheck )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( EVENT_OFFSET  3.000000 )
+     
+      IF (
+        VALVE ( Patrol2_valve_alive  ==  1 )
+      
+      )
+     
+      ai::DEBUG ( "Green yes" )
+     
+      ai::SOUND (
+        name ( SND_VM05_31 )
+      
+       entity ( Patrol2 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "Green no" )
+     
+      ai::SOUND (
+        name ( SND_VM05_42 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_49 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_45 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ai::VALVE ( valve_aware  =  2 )
+     
+      VALVE ( rally  +=  1 )
+     
+      ai::COMM (
+        team ( 4 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( radiocheck )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( EVENT_OFFSET  3.000000 )
+     
+      IF (
+        VALVE ( Patrol3_valve_alive  ==  1 )
+      
+      )
+     
+      ai::DEBUG ( "Blue yes" )
+     
+      ai::SOUND (
+        name ( SND_VM05_32 )
+      
+       entity ( Patrol3 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "Blue no" )
+     
+      ai::SOUND (
+        name ( SND_VM05_43 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_48 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_45 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ai::VALVE ( valve_aware  =  2 )
+     
+      VALVE ( rally  +=  1 )
+     
+      ai::COMM (
+        team ( 4 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( radiocheck )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( EVENT_OFFSET  3.000000 )
+     
+      IF (
+        VALVE ( Patrol4_valve_alive  ==  1 )
+      
+      )
+     
+      ai::DEBUG ( "Black yes" )
+     
+      ai::SOUND (
+        name ( SND_VM05_33 )
+      
+       entity ( Patrol4 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "Black no" )
+     
+      ai::SOUND (
+        name ( SND_VM05_44 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_50 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      WAIT ( EVENT_OFFSET  5.000000 )
+     
+      ai::SOUND (
+        name ( SND_VM05_45 )
+      
+       aware ( 1 )
+      
+       broadcast )
+     
+      ai::VALVE ( valve_aware  =  2 )
+     
+      VALVE ( rally  +=  1 )
+     
+      ai::COMM (
+        team ( 4 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( radiocheck )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( EVENT_OFFSET  120.000000  180.000000 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware1" )
+     
+      ai::MACRO (
+        anim ( Close_call )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      WAIT ( 15.000000  30.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( hold_position )
+      
+      )
+     
+      WAIT ( 15.000000  30.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( detonate_bombs )
+      
+      )
+     
+      WAIT ( 15.000000  30.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( kill_hostages )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware2 )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      WAIT ( 15.000000  30.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( hold_position )
+      
+      )
+     
+      WAIT ( 45.000000  60.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( detonate_bombs )
+      
+      )
+     
+      WAIT ( 30.000000  45.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( kill_hostages )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( on_aware3 )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware4" )
+     
+      STOP_SEQUENCE (
+        NAME ( radiocheck )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       pos ( 0  0  0 )
+      
+       duration ( 1.000000 )
+      
+       range ( 50.000000 )
+      
+      )
+     
+      ai::SOUND (
+        name ( SND_VM05_16 )
+      
+       broadcast )
+     
+      ai::COMM (
+        team ( 4 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::FIREMODE (
+        trigger ( 0.500000  3.000000 )
+      
+       burst )
+     
+      ai::PURSUE ( 15.000000 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( kill_hostages )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SOUND (
+        name ( SND_VM05_21 )
+      
+       broadcast )
+     
+      VALVE ( HostageTarget1  =  1 )
+     
+      VALVE ( HostageTarget2  =  1 )
+     
+      VALVE ( HostageTarget3  =  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( kill_hostages )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( detonate_bombs )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SOUND (
+        name ( SND_VM05_27 )
+      
+       broadcast )
+     
+      IF (
+        VALVE ( Tut4  ==  0 )
+      
+      )
+     
+      HUD_TRIGGER_MISSION_CAM ( m5tut4 )
+     
+      VALVE ( Tut4  =  1 )
+     
+      VALVE ( bombdet  =  1 )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( detonate_bombs )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( hold_position )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SOUND (
+        name ( SND_VM05_23 )
+      
+       broadcast )
+     
+      IF (
+        VALVE ( Tut3  ==  0 )
+      
+      )
+     
+      HUD_TRIGGER_MISSION_CAM ( m5tut3 )
+     
+      VALVE ( Tut3  =  1 )
+     
+      ENDIF ()
+     
+      STOP_SEQUENCE (
+        NAME ( hold_position )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_lowhealth )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_lowhealth" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_noammo )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_noammo" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_corpse" )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

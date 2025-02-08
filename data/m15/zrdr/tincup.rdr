@@ -1,0 +1,72 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( tincup* )
+    
+     HEALTH_ROOT_NAME ( tincup_hit )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  NAME ( tincup* )
+      
+       NAME ( tincup_hit )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_BULLET_METAL_PING_2 )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.500000 )
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.250000 )
+       
+       )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000 )
+      
+       BOUNCE_SOUND (
+         NAME ( SND_BULLET_METAL_PING_2 )
+       
+        FULL_VOLUME_VELOCITY ( 140 )
+       
+       )
+      
+       RUN_TIME ( 4.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

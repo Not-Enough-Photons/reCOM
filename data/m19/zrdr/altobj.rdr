@@ -1,0 +1,74 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( objectives )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( start )
+     
+      WHILE ( TRUE )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/0542.pss )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      MESSAGE (
+        MESSAGE ( "AI and Objectives are under construction." )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "You are in exploration mode." )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      MESSAGE (
+        MESSAGE ( "Pause game and abort mission to return to the main menu." )
+      
+       RED ( 0 )
+      
+       GREEN ( 0 )
+      
+       BLUE ( 0 )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( start )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

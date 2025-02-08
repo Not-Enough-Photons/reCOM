@@ -1,0 +1,219 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( GLOBAL  buoy* )
+    
+     ANIMATION_NAME ( setup_buoy* )
+    
+     LOCAL_NODES_ONLY ()
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( no_lightbulb )
+      
+       NAME ( buoy_flare )
+      
+       NAME ( buoy_light )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( no_lightbulb )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( buoy_flare )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( buoy_light )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sway_buoy )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  sway )
+      
+       XYZ_ROTATION ( -24  0  12  24  0  -12 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  sway )
+      
+       XYZ_ROTATION ( 24  0  -12  -24  0  12 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( LOCAL  sway )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( GLOBAL  buoy* )
+    
+     HEALTH_ROOT_NAME ( no_lightbulb )
+    
+     LOCAL_NODES_ONLY ()
+    
+     HEALTH ( 1 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( LOCAL  buoy_light )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( LOCAL  buoy_flare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( LOCAL  no_lightbulb )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( buoy* )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( lightout_sparks1 )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( no_lightbulb )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.020000 )
+      
+       NUMBER ( 2 )
+      
+       PERTURB_POSITION_X ( -1.500000  1.500000 )
+      
+       PERTURB_POSITION_Y ( -0.300000  0.300000 )
+      
+       PERTURB_POSITION_Z ( -0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -4.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -26.000000  26.000000 )
+      
+       PERTURB_VELOCITY_Y ( 1  -10 )
+      
+       PERTURB_VELOCITY_Z ( -26.000000  26.000000 )
+      
+       RADIUS_RANGE ( 0.300000  0.500000 )
+      
+       LIFESPAN_RANGE ( 1.200000  2.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       GRAVITY ()
+      
+       WIND_FACTOR ( 0.000000 )
+      
+       FRICTION ( 0.100000 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 500.000000  600.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.940000  0.860000  1.000000 )
+       
+       ( 0.300000  0.950000  0.900000  0.800000  0.800000 )
+       
+       ( 0.800000  0.950000  0.900000  0.800000  0.500000 )
+       
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.400000 )
+       
+       ( 0.500000  1.000000 )
+       
+       ( 1.000000  0.450000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  6 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_VERY_SMALL )
+      
+       AT_NODE ( no_lightbulb  0.000000  0.000000  0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

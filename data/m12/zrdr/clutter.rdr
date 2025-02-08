@@ -1,0 +1,685 @@
+(
+  template (
+   template_name ( ground3  g1 )
+ 
+  template_model (
+    base_name ( grass )
+  
+   choices (( 0.200000  shrub )
+   
+   ( 0.800000  grass )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 20.000000 )
+  
+   uv_range (
+     u ( -0.001000  0.001000 )
+   
+    v ( -0.001000  0.001000 )
+   
+   )
+  
+   scale_range ( 0.300000  1.500000 )
+  
+   uniform  scale ( 0.700000  1.500000 )
+  
+   far_fade_range (
+     min ( 250  260 )
+   
+    max ( 300.000000  320.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 35.000000  42.000000 )
+   
+    max ( 43.000000  50.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  120.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( fernlow )
+  
+   choices (( 0.900000  fernlow )
+   
+   ( 0.100000  shrub )
+   
+   )
+  
+   uv_range (
+     u ( -0.001000  0.001000 )
+   
+    v ( -0.001000  0.001000 )
+   
+   )
+  
+   scale_range ( 0.300000  1.400000 )
+  
+   far_fade_range (
+     min ( 250  260 )
+   
+    max ( 300.000000  320.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 35.000000  42.000000 )
+   
+    max ( 43.000000  50.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -45.000000  0.000000 )
+   
+    max ( 0.000000  90.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( shrub )
+  
+   choices (( 0.400000  fernlow )
+   
+   ( 0.600000  shrub )
+   
+   )
+  
+   uv_range (
+     u ( -0.001000  0.001000 )
+   
+    v ( -0.001000  0.001000 )
+   
+   )
+  
+   scale_range ( 0.200000  1.100000 )
+  
+   far_fade_range (
+     min ( 290  300 )
+   
+    max ( 330.000000  340.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 35.000000  42.000000 )
+   
+    max ( 43.000000  50.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  120.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( shrub2 )
+  
+   choices (( 0.800000  shrub2 )
+   
+   ( 0.200000  fernlow )
+   
+   )
+  
+   uv_range (
+     u ( -0.001000  0.001000 )
+   
+    v ( -0.001000  0.001000 )
+   
+   )
+  
+   scale_range ( 0.300000  1.200000 )
+  
+   far_fade_range (
+     min ( 250  260 )
+   
+    max ( 280.000000  290.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 35.000000  42.000000 )
+   
+    max ( 43.000000  50.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -45.000000  0.000000 )
+   
+    max ( 0.000000  90.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( palmtree2 )
+  
+   choices (( 0.600000  palmtree2 )
+   
+   (
+      0.400000  shrub  template_model ( shrub )
+    
+    )
+   
+   )
+  
+   far_fade_range (
+     min ( 600  601 )
+   
+    max ( 650  660 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  120.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( palmtree )
+  
+   choices (( 0.800000  palmtree )
+   
+   (
+      0.200000  grass  template_model ( grass )
+    
+    )
+   
+   )
+  
+   far_fade_range (
+     min ( 600  601 )
+   
+    max ( 650  660 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  120.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ template (
+   template_name ( bambooclutterdummy  g1 )
+ 
+  template_model (
+    base_name ( bamboo1 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo2 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo3 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo4 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo5 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( crate2 )
+  
+   far_fade_range (
+     min ( 350  360 )
+   
+    max ( 380.000000  390.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ clutter_converts ( bamboo1  bamboo2  bamboo3  bamboo4  bush  palmbush2  palmbush1  crate2 )
+
+ template (
+   template_name ( psuedo_template )
+ 
+  template_model (
+    base_name ( bamboo1 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo2 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo3 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bamboo4 )
+  
+   choices (( 0.200000  bamboo1 )
+   
+   ( 0.200000  bamboo2 )
+   
+   ( 0.200000  bamboo3 )
+   
+   ( 0.200000  bamboo4 )
+   
+   ( 0.200000  bamboo5 )
+   
+   )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( bush )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( palmbush2 )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+  template_model (
+    base_name ( palmbush1 )
+  
+   repel (
+     max_angle ( 15  20 )
+   
+   )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 20.000000  20.000000 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   allow_overlap ()
+  
+  )
+ 
+ )
+
+)
+

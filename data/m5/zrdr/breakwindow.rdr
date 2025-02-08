@@ -1,0 +1,296 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( office_window01 )
+    
+     ANIMATION_NAME ( breakapane )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_SMALL )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      DESTRUCTION_SOURCE (
+        NODE ( ROOT_NODE )
+      
+       TEXTURE ( a_window.tif )
+      
+       COLOR (
+         RED ( 40.000000 )
+       
+        GREEN ( 40.000000 )
+       
+        BLUE ( 43.000000 )
+       
+        ALPHA ( 0.500000 )
+       
+       )
+      
+       MAXSIZE ( 13.000000 )
+      
+       VELOCITY_X ( 4.000000  -4.000000 )
+      
+       VELOCITY_Y ( 1.000000  -1.000000 )
+      
+       VELOCITY_Z ( 4.000000  -4.000000 )
+      
+       LIFESPAN_RANGE ( 2.000000  3.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( office_window** )
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( window_plain01 )
+    
+     CREATE_CLONES ()
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( door_slab )
+    
+     CREATE_CLONES ()
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( skylight** )
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( bottle_blue )
+    
+     CREATE_CLONES ()
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( bottle_red )
+    
+     CREATE_CLONES ()
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( glass )
+    
+     CREATE_CLONES ()
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( plate )
+    
+     CREATE_CLONES ()
+    
+     HEALTH_ROOT_NAME ( pane1 )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( pane1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( breakapane )
+      
+       OPERAND_NODE ( pane1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

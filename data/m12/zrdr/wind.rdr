@@ -1,0 +1,108 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( wind_effect )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( fog_mist )
+      
+       TEXTURES ( effect_mist.tif )
+      
+       TRANSLATION ( 20.000000  10.000000  -60.000000 )
+      
+       AT_NODE ( camera )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 2.800000 )
+      
+       DRAW_TYPE ( STREAK )
+      
+       STREAK_LENGTH ( 20.299999 )
+      
+       STREAK_OPACITY ( 0.260000 )
+      
+       NUMBER ( 3 )
+      
+       LOCAL_VELOCITY ( 20.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 30.000000  -1.000000  0.000000 )
+      
+       PERTURB_POSITION_X ( -50.000000  50.000000 )
+      
+       PERTURB_POSITION_Y ( -8.000000  5.000000 )
+      
+       PERTURB_POSITION_Z ( -20.000000  20.000000 )
+      
+       RADIUS_RANGE ( 2.000000  35.000000 )
+      
+       LIFESPAN_RANGE ( 8.500000  24.000000 )
+      
+       WIND_FACTOR ( 8.800000 )
+      
+       FRICTION ( 0.000001 )
+      
+       WORLD_ACCELERATION ( 250.000000  0.000000  0.000000 )
+      
+       FADE_NEAR ( 10.000000  30.000000 )
+      
+       FADE_FAR ( 100.000000  275.000000 )
+      
+       COLORS (( 0.000000  0.700000  0.700000  0.700000  0.000000 )
+       
+       ( 0.500000  0.600000  0.600000  0.600000  0.250000 )
+       
+       ( 1.000000  0.500000  0.500000  0.500000  0.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      IF (
+        CAMERA_INDOORS ()
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( fog_mist )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      PARTICLE_SOURCE (
+        NAME ( fog_mist )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( 1.000000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

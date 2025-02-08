@@ -1,0 +1,567 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( gatman )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( gatman_good )
+      
+       NAME ( gatman_bad )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::PAINT (
+        region ( FG3 )
+      
+       soil ( trans )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatman_good )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatman_bad )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     NAME ( gatman )
+    
+     ANIMATION_NAME ( gatman_hit )
+    
+     HEALTH ( 0.200000 )
+    
+     SHIELD ( 13 )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( call_parts )
+     
+      ai::PAINT (
+        region ( FG3 )
+      
+       soil ( default )
+      
+      )
+     
+      VALVE ( OTHER_WALLS  =  1 )
+     
+      ai::EVENT (
+        type ( GENERIC )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 15.000000 )
+      
+       range ( 900 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatman_good )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatman_bad )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( gatpos )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  PARENT  NAME ( gatpos )
+      
+       NAME ( gatpos_good )
+      
+       NAME ( gatpos_bad )
+      
+       NAME ( gatpos_parts )
+      
+       NAME ( gatpos_part1 )
+      
+       NAME ( gatpos_part2 )
+      
+       NAME ( gatpos_part3 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::PAINT (
+        region ( FG4 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG6 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG1 )
+      
+       soil ( default )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatpos_good )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatpos_bad )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatpos_parts )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     NAME ( gatpos )
+    
+     ANIMATION_NAME ( gatpos_hit )
+    
+     HEALTH ( 0.200000 )
+    
+     SHIELD ( 13 )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( call_parts )
+     
+      ai::PAINT (
+        region ( FG4 )
+      
+       soil ( default )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatpos_good )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatpos_bad )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatpos_parts )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gatpos_part_fly )
+      
+       WITH_NODE ( gatpos_part1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gatpos_part1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gatpos_part_fly )
+      
+       WITH_NODE ( gatpos_part2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gatpos_part2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gatpos_part_fly )
+      
+       WITH_NODE ( gatpos_part3 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gatpos_part3 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( gatpos_hit )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( gatneg )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  PARENT  NAME ( gatneg )
+      
+       NAME ( gatneg_good )
+      
+       NAME ( gatneg_bad )
+      
+       NAME ( gatneg_parts )
+      
+       NAME ( gatneg_part1 )
+      
+       NAME ( gatneg_part2 )
+      
+       NAME ( gatneg_part3 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::PAINT (
+        region ( FG5 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG7 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG2 )
+      
+       soil ( default )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatneg_good )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatneg_bad )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatneg_parts )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     NAME ( gatneg )
+    
+     ANIMATION_NAME ( gatneg_hit )
+    
+     HEALTH ( 0.200000 )
+    
+     SHIELD ( 13 )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( call_parts )
+     
+      ai::PAINT (
+        region ( FG5 )
+      
+       soil ( default )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatneg_good )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatneg_bad )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gatneg_parts )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gatneg_part_fly )
+      
+       WITH_NODE ( gatneg_part1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gatneg_part1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gatneg_part_fly )
+      
+       WITH_NODE ( gatneg_part2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gatneg_part2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gatneg_part_fly )
+      
+       WITH_NODE ( gatneg_part3 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gatneg_part3 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( gatneg_hit )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( gatpos )
+    
+     ANIMATION_NAME ( gatpos_part_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( gatpos_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( gatpos )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  m13 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_INTERSECTIONS ()
+      
+       TRANSLATION_RANGE_MIN ( 0.000000  35.000000  40.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 350.000000  90.000000  80.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( gatneg )
+    
+     ANIMATION_NAME ( gatneg_part_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( gatneg_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( gatneg )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  m13 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_INTERSECTIONS ()
+      
+       TRANSLATION_RANGE_MIN ( 0.000000  35.000000  40.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 350.000000  90.000000  80.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

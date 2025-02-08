@@ -1,0 +1,147 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( fan1 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  ROTATE  NAME ( fan1 )
+      
+       NAME ( fanblade1 )
+      
+       NAME ( fanbox1 )
+      
+       NAME ( wallray1 )
+      
+       NAME ( rays1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( wallray1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( rays1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( fan2 )
+    
+     ANIMATION_NAME ( fanblade2_start )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( fanblade2 )
+      
+       XYZ_ROTATION ( 0.000000  0.000000  230.000000  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( fan2 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( wallray2 )
+      
+       OPACITY_FROM ( 0.250000  OFF )
+      
+       OPACITY_TO ( 0.050000  ON )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( wallray2 )
+      
+       OPACITY_FROM ( 0.050000  ON )
+      
+       OPACITY_TO ( 0.250000  OFF )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( rays2 )
+      
+       OPACITY_FROM ( 0.600000  OFF )
+      
+       OPACITY_TO ( 0.300000  ON )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( rays2 )
+      
+       OPACITY_FROM ( 0.300000  ON )
+      
+       OPACITY_TO ( 0.600000  OFF )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

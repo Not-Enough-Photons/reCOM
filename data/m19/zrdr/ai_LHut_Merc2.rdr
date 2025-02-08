@@ -1,0 +1,402 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LHut_Merc2_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LHut_Merc2_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( ambient )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sleeper_hold )
+     
+      ai::PARAM ( sleep  =  1 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( wakeup_7 )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::PARAM ( sleep  =  0 )
+     
+      ai::PARAM ( aware  =  0 )
+     
+      STOP_SEQUENCE (
+        NAME ( sleeper_hold )
+      
+      )
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( SCaves )
+       
+        team ( 1 )
+       
+       )
+      
+      )
+     
+      ai::PARAM ( sleep  =  0 )
+     
+      ai::PARAM ( aware  =  0 )
+     
+      STOP_SEQUENCE (
+        NAME ( sleeper_hold )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ai::DEBUG ( "starting on_aware1" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Suspicious_2 )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ai::DEBUG ( "starting on_aware2" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        VALVE ( CaveRef  ==  1 )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Alert_2 )
+      
+       blocking )
+     
+      ai::GOTO (
+        node ( LHut_Merc2_sta )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ELSE ()
+     
+      ai::MACRO (
+        anim ( Alert_2 )
+      
+       blocking )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      ai::GOTO (
+        node ( CaveRun1  CaveRun2  CaveRun3 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      VALVE ( CaveRef  =  1 )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 3 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Wave )
+      
+       postwait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ai::DEBUG ( "starting on_aware3" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        VALVE ( BargeRef  ==  1 )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Alert_2 )
+      
+       blocking )
+     
+      ai::GOTO (
+        node ( LHut_Merc2_sta )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ELSE ()
+     
+      ai::MACRO (
+        anim ( Alert_2 )
+      
+       blocking )
+     
+      ai::SIGNAL (
+        signal ( AISIG_BEGINCRITICAL )
+      
+      )
+     
+      ai::GOTO (
+        node ( CaveRun1  CaveRun2  CaveRun3 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      VALVE ( CaveRef  =  1 )
+     
+      ai::COMM (
+        team ( 13 )
+      
+       cmd ( CMD_AWARE )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 3 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Wave )
+      
+       postwait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      ai::SIGNAL (
+        signal ( AISIG_ENDCRITICAL )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ai::DEBUG ( "starting on_aware4" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ELSE ()
+     
+      ai::STANCE (
+        stance ( Prone )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::MACRO (
+        anim ( Combat_Mode_2 )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ai::DEBUG ( "starting on_corpse" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Dead_Guy_2 )
+      
+       blocking )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

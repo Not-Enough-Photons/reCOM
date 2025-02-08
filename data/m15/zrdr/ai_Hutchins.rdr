@@ -1,0 +1,79 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Hutchins_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Hutchins_ambient )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Status )
+     
+      WHILE (
+        VALVE ( Hutchins_valve_alive  ==  1 )
+      
+      )
+     
+      END_WHILE ()
+     
+      STOP_SEQUENCE (
+        NAME ( Vocals )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( Status )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Vocals )
+     
+      WHILE (
+        VALVE ( OBJ1  !=  1 )
+      
+      )
+     
+      END_WHILE ()
+     
+      WAIT ( 3.000000 )
+     
+      SOUND (
+        NAME ( SND_VOC_031 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

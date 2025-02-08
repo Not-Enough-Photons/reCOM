@@ -1,0 +1,1347 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( deactivate_hind )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( hcopter )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  hcopter )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  hind_wreck )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( turret_holdfire  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hind_at_player )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( WORLD  htop )
+      
+       TRANSLATE_TO (
+         AT_NODE ( WORLD  player )
+       
+       )
+      
+       ACCELERATE ( 0  16  2 )
+      
+       DECELERATE ( 16  0  -2 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hind_at_DiMone )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( WORLD  htop )
+      
+       TRANSLATE_TO (
+         AT_NODE ( WORLD  DiMone )
+       
+       )
+      
+       ACCELERATE ( 0  16  2 )
+      
+       DECELERATE ( 16  0  -2 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hind_at_Bailey )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( WORLD  htop )
+      
+       TRANSLATE_TO (
+         AT_NODE ( WORLD  Bailey )
+       
+       )
+      
+       ACCELERATE ( 0  16  2 )
+      
+       DECELERATE ( 16  0  2 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hind_attack )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( hcopter )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( lr24 )
+     
+      WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( clock30 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  0  0  0  3  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( posdir )
+      
+      )
+     
+      WAIT ( 5  15 )
+     
+      STOP_SEQUENCE (
+        NAME ( posdir )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( counter30 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  6  0  0  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  6  0  0  -3  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 2 )
+     
+      CALL_SEQUENCE (
+        NAME ( counter30 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  0  0  0  -3  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( negdir )
+      
+      )
+     
+      WAIT ( 5  15 )
+     
+      STOP_SEQUENCE (
+        NAME ( negdir )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( clock30 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  -6  0  0  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  -6  0  0  3  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( posdir )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  6  0  0  0  0 )
+      
+       RUN_TIME ( 20 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( negdir )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hroot )
+      
+       XYZ_ROTATION ( 0  -6  0  0  0  0 )
+      
+       RUN_TIME ( 20 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( fb1 )
+     
+      WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( backward )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim0 )
+      
+       TRANSLATION ( -90  0  0  10 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim0 )
+      
+       TRANSLATION ( -90  0  40  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( forward )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim0 )
+      
+       TRANSLATION ( -90  0  40  -10 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      WAIT ( 2 )
+     
+      CALL_SEQUENCE (
+        NAME ( forward )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim0 )
+      
+       TRANSLATION ( -90  0  0  -10 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim0 )
+      
+       TRANSLATION ( -90  0  -40  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( backward )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim0 )
+      
+       TRANSLATION ( -90  0  -40  10 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      WAIT ( 2 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  hcopter )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  hindcopter  lgear )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( soundseq )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_GENERATOR_DAMAGED_LOOP )
+      
+       AT_NODE ( WORLD  hcopter )
+      
+       TRANSLATION ( 0.000000  -200.000000  0.000000 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( translate_sound )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( translate_sound )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      SOUND (
+        NAME ( SND_GENERATOR_DAMAGED_LOOP )
+      
+       AT_NODE ( WORLD  hcopter )
+      
+       TRANSLATION ( 0.000000  -200.000000  0.000000 )
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( counter30 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hind )
+      
+       XYZ_ROTATION ( 0  0  0  0  0  15 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hind )
+      
+       XYZ_ROTATION ( 0  0  15  0  0  -15 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hind )
+      
+       XYZ_ROTATION ( 0  0  -15  0  0  15 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( WORLD  hind )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clock30 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hind )
+      
+       XYZ_ROTATION ( 0  0  0  0  0  -15 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hind )
+      
+       XYZ_ROTATION ( 0  0  -15  0  0  15 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hind )
+      
+       XYZ_ROTATION ( 0  0  15  0  0  -15 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( WORLD  hind )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( forward )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim2 )
+      
+       XYZ_ROTATION ( 0  0  0  -15  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim2 )
+      
+       XYZ_ROTATION ( -15  0  0  15  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim2 )
+      
+       XYZ_ROTATION ( 15  0  0  -15  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( WORLD  hanim2 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( backward )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim2 )
+      
+       XYZ_ROTATION ( 0  0  0  15  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim2 )
+      
+       XYZ_ROTATION ( 15  0  0  -15  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hanim2 )
+      
+       XYZ_ROTATION ( -15  0  0  15  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( WORLD  hanim2 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( hcopter )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hindcopter  mainrotor )
+      
+       XYZ_ROTATION ( 0  710  0  0  0 )
+      
+       RUN_TIME ( 20.875000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( WORLD  hindcopter  tailrotor )
+      
+       XYZ_ROTATION ( 726  0  0  0  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( WORLD  hcopter )
+      
+       LIKE_NODE ( WORLD  hind )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( WORLD  hcopter )
+      
+       AT_NODE ( WORLD  hind )
+      
+       UPDATE ( X  Z )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( hdamage )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 1020 )
+    
+     DAMAGE_SEQUENCE (
+       IF (
+        ANIM_HEALTH ( 50 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( blowhind )
+      
+      )
+     
+      ELSEIF (
+        ANIM_HEALTH ( 300 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( hdamage2 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( hdamage3 )
+      
+      )
+     
+      ELSEIF (
+        ANIM_HEALTH ( 610 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( hdamage1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( hdamage2 )
+      
+      )
+     
+      ELSEIF (
+        ANIM_HEALTH ( 810 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( hdamage1 )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hdamage1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       TEXTURES ( smokepuff.tif )
+      
+       DRAW_TYPE ( ROTATED )
+      
+       ROTATE_RATE (
+         VELOCITY ( -1  1 )
+       
+        ACCELERATION ( 0  0 )
+       
+       )
+      
+       AT_NODE (
+         NAME ( WORLD  hindcopter )
+       
+        OFFSET ( 0  -3  5 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.080000 )
+      
+       NUMBER ( 2 )
+      
+       NUM_PERIODS ( -1 )
+      
+       PERTURB_POSITION_X ( 2.000000  5.000000 )
+      
+       PERTURB_POSITION_Y ( 2.000000  5.000000 )
+      
+       PERTURB_POSITION_Z ( 2.000000  5.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -200.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 10.000000  100.000000  10.000000 )
+      
+       PERTURB_VELOCITY_X ( -10  10 )
+      
+       PERTURB_VELOCITY_Y ( -100.000000  -200.000000 )
+      
+       PERTURB_VELOCITY_Z ( -10  10 )
+      
+       RADIUS_RANGE ( 2.000000  4.000000 )
+      
+       LIFESPAN_RANGE ( 1.500000  4.500000 )
+      
+       START_AGE_RANGE ( 0.000000  0.300000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 3.200000 )
+      
+       FRICTION ( 10 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 10.000000  30.000000 )
+      
+       FADE_FAR_RANGE ( 600.000000  750.000000 )
+      
+       MAX_VIEW_DISTANCE ( 750 )
+      
+       SCALE_SEQUENCE (( 0.000000  2 )
+       
+       ( 0.900000  8 )
+       
+       )
+      
+       COLORS (( 0.000000  0.100000  0.100000  0.100000  0.000000 )
+       
+       ( 0.050000  0.100000  0.100000  0.100000  1 )
+       
+       ( 0.300000  0.150000  0.150000  0.150000  0.500000 )
+       
+       ( 0.600000  0.100000  0.100000  0.100000  0.200000 )
+       
+       ( 1.000000  0.150000  0.150000  0.150000  0.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sputter )
+     
+      WHILE ( TRUE )
+     
+      PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 1  2 )
+     
+      PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 2  5 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hdamage2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( smokeblo )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( hdamage1 )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       TEXTURES ( smokepuff.tif )
+      
+       DRAW_TYPE ( ROTATED )
+      
+       ROTATE_RATE (
+         VELOCITY ( -1  1 )
+       
+        ACCELERATION ( 0  0 )
+       
+       )
+      
+       AT_NODE (
+         NAME ( WORLD  hindcopter )
+       
+        OFFSET ( 0  -3  0 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.080000 )
+      
+       NUMBER ( 2 )
+      
+       NUM_PERIODS ( -1 )
+      
+       PERTURB_POSITION_X ( 2.000000  5.000000 )
+      
+       PERTURB_POSITION_Y ( 2.000000  5.000000 )
+      
+       PERTURB_POSITION_Z ( 2.000000  5.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -200.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 10.000000  100.000000  10.000000 )
+      
+       PERTURB_VELOCITY_X ( -10  10 )
+      
+       PERTURB_VELOCITY_Y ( -100.000000  -200.000000 )
+      
+       PERTURB_VELOCITY_Z ( -10  10 )
+      
+       RADIUS_RANGE ( 4.000000  6.000000 )
+      
+       LIFESPAN_RANGE ( 1.500000  4.500000 )
+      
+       START_AGE_RANGE ( 0.000000  0.300000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 3.200000 )
+      
+       FRICTION ( 10 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 10.000000  30.000000 )
+      
+       FADE_FAR_RANGE ( 600.000000  750.000000 )
+      
+       MAX_VIEW_DISTANCE ( 750 )
+      
+       SCALE_SEQUENCE (( 0.000000  2 )
+       
+       ( 0.900000  8 )
+       
+       )
+      
+       COLORS (( 0.000000  0.100000  0.100000  0.100000  0.000000 )
+       
+       ( 0.050000  0.100000  0.100000  0.100000  1 )
+       
+       ( 0.300000  0.150000  0.150000  0.150000  0.500000 )
+       
+       ( 0.600000  0.100000  0.100000  0.100000  0.200000 )
+       
+       ( 1.000000  0.150000  0.150000  0.150000  0.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sputter )
+     
+      WHILE ( TRUE )
+     
+      PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.500000  1 )
+     
+      PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 3  5 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( hdamage3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( e1 )
+      
+       TEXTURES ( smokepuff.tif )
+      
+       DRAW_TYPE ( ROTATED )
+      
+       ROTATE_RATE (
+         VELOCITY ( -1  1 )
+       
+        ACCELERATION ( 0  0 )
+       
+       )
+      
+       AT_NODE (
+         NAME ( WORLD  hindcopter )
+       
+        OFFSET ( 0  -3  0 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.080000 )
+      
+       NUMBER ( 2 )
+      
+       NUM_PERIODS ( -1 )
+      
+       PERTURB_POSITION_X ( 2.000000  5.000000 )
+      
+       PERTURB_POSITION_Y ( 2.000000  5.000000 )
+      
+       PERTURB_POSITION_Z ( 2.000000  5.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -200.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 10.000000  100.000000  10.000000 )
+      
+       PERTURB_VELOCITY_X ( -10  10 )
+      
+       PERTURB_VELOCITY_Y ( -100.000000  -200.000000 )
+      
+       PERTURB_VELOCITY_Z ( -10  10 )
+      
+       RADIUS_RANGE ( 6.000000  8.000000 )
+      
+       LIFESPAN_RANGE ( 1.500000  4.500000 )
+      
+       START_AGE_RANGE ( 0.000000  0.300000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 3.200000 )
+      
+       FRICTION ( 10 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 10.000000  30.000000 )
+      
+       FADE_FAR_RANGE ( 600.000000  750.000000 )
+      
+       MAX_VIEW_DISTANCE ( 750 )
+      
+       SCALE_SEQUENCE (( 0.000000  2 )
+       
+       ( 0.900000  8 )
+       
+       )
+      
+       COLORS (( 0.000000  0.100000  0.100000  0.100000  0.000000 )
+       
+       ( 0.050000  0.100000  0.100000  0.100000  1 )
+       
+       ( 0.300000  0.150000  0.150000  0.150000  0.500000 )
+       
+       ( 0.600000  0.100000  0.100000  0.100000  0.200000 )
+       
+       ( 1.000000  0.150000  0.150000  0.150000  0.000000 )
+       
+       )
+      
+      )
+     
+      PAUSE_ANIMATION ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( blowhind )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( fireball2 )
+     
+      PARTICLE_SOURCE (
+        NAME ( hinde )
+      
+       TEXTURES ( smokepuff.tif )
+      
+       AT_NODE (
+         NAME ( WORLD  hindcopter )
+       
+        OFFSET ( 0  -3  0 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.010000 )
+      
+       NUMBER ( 8 )
+      
+       NUM_PERIODS ( 1 )
+      
+       PERTURB_POSITION_X ( -5.000000  5.000000 )
+      
+       PERTURB_POSITION_Y ( -5.000000  5.000000 )
+      
+       PERTURB_POSITION_Z ( -5.000000  5.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -200.000000  200.000000 )
+      
+       PERTURB_VELOCITY_Y ( -200.000000  200.000000 )
+      
+       PERTURB_VELOCITY_Z ( -200.000000  200.000000 )
+      
+       RADIUS_RANGE ( 20.000000  15.000000 )
+      
+       LIFESPAN_RANGE ( 5.000000  5.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.200000 )
+      
+       FRICTION ( 10 )
+      
+       WORLD_ACCELERATION ( 0.000000  -40.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 200.000000  800.000000 )
+      
+       COLORS (( 0.000000  0.400000  0.400000  0.400000  1.000000 )
+       
+       ( 0.300000  0.400000  0.400000  0.400000  0.200000 )
+       
+       ( 1.000000  0.400000  0.400000  0.400000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
+       
+       ( 0.050000  1.300000 )
+       
+       ( 1.000000  4.000000 )
+       
+       )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( hexplode )
+      
+       TEXTURES ( fireball.tif )
+      
+       DRAW_TYPE ( ROTATED )
+      
+       ROTATE_RATE (
+         VELOCITY ( -2  2 )
+       
+        ACCELERATION ( 0  0 )
+       
+       )
+      
+       AT_NODE (
+         NAME ( WORLD  hindcopter )
+       
+        OFFSET ( 0  -3  0 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.010000 )
+      
+       NUMBER ( 8 )
+      
+       NUM_PERIODS ( 16 )
+      
+       PERTURB_POSITION_X ( -5.000000  5.000000 )
+      
+       PERTURB_POSITION_Y ( -5.000000  5.000000 )
+      
+       PERTURB_POSITION_Z ( -5.000000  5.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -90.000000  90.000000 )
+      
+       PERTURB_VELOCITY_Y ( -90  90 )
+      
+       PERTURB_VELOCITY_Z ( -90.000000  90.000000 )
+      
+       RADIUS_RANGE ( 3.000000  5.000000 )
+      
+       LIFESPAN_RANGE ( 0.300000  0.400000 )
+      
+       START_AGE_RANGE ( 0.000000  0.800000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.200000 )
+      
+       FRICTION ( 1 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 60.000000  70.000000 )
+      
+       FADE_FAR_RANGE ( 600.000000  700.000000 )
+      
+       SCALE_SEQUENCE (( 0.000000  1 )
+       
+       ( 0.300000  8 )
+       
+       ( 1.000000  15 )
+       
+       )
+      
+       COLORS (( 0.000000  1  1  1  0.000000 )
+       
+       ( 0.010000  1  1  1  1 )
+       
+       ( 0.400000  0.700000  0.700000  0.700000  0.500000 )
+       
+       ( 1.000000  0  0  0  0.000000 )
+       
+       )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( hinde )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( hexplode )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      PARTICLE_SOURCE (
+        NAME ( hinde )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( hexplode )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 4 )
+     
+      STOP_ANIMATION (
+        NAME ( hind_attack )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( hdamage )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( hdamage1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( hdamage2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( hdamage3 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( hcopter )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( Hind_Dead  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/m13/hndcrash.pss )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( WORLD  hanim3 )
+      
+       ROTATE_TO ( 0  0  5 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( WORLD  hanim3 )
+      
+       ROTATE_FROM ( 0  0  5 )
+      
+       ROTATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

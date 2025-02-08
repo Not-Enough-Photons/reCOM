@@ -1,0 +1,608 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol1_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol1_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_startup )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored02 anim set" )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( Bridge )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( dead_zone )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      ai::LOOKAT (
+        entity ( player )
+      
+       wait ( 1 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM13_03 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Point )
+      
+       postwait ( 2.200000 )
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ai::PARAM ( aware  =  2 )
+     
+      ELSE ()
+     
+      ai::GOTO (
+        region ( Patrol1_region )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 4  8 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 4  8 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4  8 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ai::DEBUG ( "starting on_aware1" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::PARAM ( aware  =  2 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ai::DEBUG ( "starting on_aware2" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( Tower_Alert  =  1 )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( PF4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( PF5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( PF6 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( PF7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2  5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( PF8 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 2  4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2  4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 2  4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2  4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2  4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ai::DEBUG ( "starting on_aware3" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( Tower_Alert  =  1 )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::PURSUE (
+        duration ( 45 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ai::PURSUE (
+        duration ( 30 )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ai::DEBUG ( "starting on_aware4" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( Tower_Alert  =  1 )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      WHILE (
+        ai::VALVE ( valve_aware  ==  4 )
+      
+      )
+     
+      IF (
+        ai::INREGION (
+         region ( Bridge )
+       
+        team ( 31 )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( dead_zone )
+       
+        team ( 31 )
+       
+       )
+      
+      )
+     
+      ai::PARAM ( accuracy  =  0.900000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VOC_013 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.600000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM13_03 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 1.000000  1.000000 )
+      
+       burst )
+     
+      ELSE ()
+     
+      ai::PARAM ( accuracy  =  0.800000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ELSE ()
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::MACRO (
+        anim ( Combat_Mode_1 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ai::DEBUG ( "starting on_corpse" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Dead_Guy_1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

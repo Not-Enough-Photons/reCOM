@@ -1,0 +1,246 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( tunnel_lite_*** )
+    
+     ANIMATION_NAME ( destroy_tunnel_lite_*** )
+    
+     HEALTH_ROOT_NAME ( light_hit )
+    
+     HEALTH ( 0.100000 )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  NAME ( tunnel_lite_*** )
+      
+       NAME ( light_hit )
+      
+       NAME ( flare_flasher )
+      
+       NAME ( lightsource )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( destroy_tunnel_lite )
+      
+       OPERAND_NODE ( ROOT_NODE )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( destroy_tunnel_lite_*** )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( tunnel_lite_*** )
+    
+     ANIMATION_NAME ( power_out_*** )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( powerout_tunnel_lite )
+      
+       OPERAND_NODE ( ROOT_NODE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( tunnel_lite_101 )
+    
+     ANIMATION_NAME ( powerout_tunnel_lite )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        RANDOM_WEIGHT ( 0.660000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_tunnel_lite )
+      
+       OPERAND_NODE ( ROOT_NODE )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare_flasher )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightsource )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( light_hit )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( tunnel_lite_101 )
+    
+     ANIMATION_NAME ( destroy_tunnel_lite )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_VERY_SMALL )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare_flasher )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightsource )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( light_hit )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( lightout_sparks1 )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( cup )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.010000 )
+      
+       NUMBER ( 4 )
+      
+       PERTURB_POSITION_X ( -0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( -0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( -8.000000  -10.000000  8.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -6.000000  6.000000 )
+      
+       PERTURB_VELOCITY_Y ( -2.000000  2.000000 )
+      
+       PERTURB_VELOCITY_Z ( -6.000000  6.000000 )
+      
+       RADIUS_RANGE ( 0.100000  0.200000 )
+      
+       LIFESPAN_RANGE ( 1.600000  2.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       GRAVITY ()
+      
+       WIND_FACTOR ( 0.000000 )
+      
+       FRICTION ( 0.300000 )
+      
+       WORLD_ACCELERATION ( 0.000000  -12.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 500.000000  600.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.940000  0.860000  1.000000 )
+       
+       ( 0.300000  0.950000  0.900000  0.370000  0.800000 )
+       
+       ( 0.800000  0.950000  0.900000  0.370000  0.500000 )
+       
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.500000 )
+       
+       ( 0.500000  1.200000 )
+       
+       ( 1.000000  0.450000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  2 )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

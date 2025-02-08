@@ -1,0 +1,427 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( maingate_gats1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      IF (
+        VALVE ( INPUT_VALVE  ==  0 )
+      
+      )
+     
+      ai::DOOR (
+        node ( INPUT_NODE )
+      
+       ofs ( 0.000000  0.000000  0.000000 )
+      
+       dist ( 18.719999 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Flipswitch )
+      
+       postwait ( 0.650000 )
+      
+      )
+     
+      ai::EVENT (
+        node ( INPUT_NODE )
+      
+       pos ( 0.000000  0.000000  -13 )
+      
+       range ( 100.000000 )
+      
+       duration ( 0.250000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( switchon_gats1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ghit1hide_on )
+      
+      )
+     
+      VALVE ( INPUT_VALVE  =  1 )
+     
+      ELSE ()
+     
+      ai::DOOR (
+        node ( INPUT_NODE )
+      
+       ofs ( 0.000000  0.000000  0.000000 )
+      
+       dist ( 18.719999 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Flipswitch )
+      
+       postwait ( 0.650000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( switchoff_gats1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ghit1hide_on )
+      
+      )
+     
+      VALVE ( INPUT_VALVE  =  0 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( switchon_gats1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     ANIMATION_ROOT_NAME ( gats1 )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.550000 )
+     
+      CALL_ANIMATION (
+        NAME ( opengate_gatneg )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( opengate_gatpos )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG6 )
+      
+       soil ( default )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG1 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG7 )
+      
+       soil ( default )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG2 )
+      
+       soil ( trans )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  gatehand )
+      
+       ROTATE_FROM ( 0.000000  0.000000  0.000000 )
+      
+       ROTATE_TO ( -100.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_DOOR_OPEN )
+      
+       AT_NODE ( gatehand )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( switchoff_gats1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     ANIMATION_ROOT_NAME ( gats1 )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.550000 )
+     
+      CALL_ANIMATION (
+        NAME ( closegate_gatneg )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( closegate_gatpos )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG6 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG1 )
+      
+       soil ( default )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG7 )
+      
+       soil ( trans )
+      
+      )
+     
+      ai::PAINT (
+        region ( FG2 )
+      
+       soil ( default )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  gatehand )
+      
+       ROTATE_FROM ( -100.000000  0.000000  0.000000 )
+      
+       ROTATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_DOOR_OPEN )
+      
+       AT_NODE ( gatehand )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( opengate_gatneg )
+    
+     ACTIVATION ( ON_CALL )
+    
+     ANIMATION_ROOT_NAME ( gatneg )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( gatneg )
+      
+       ROTATE_FROM ( 0.000000  0.000000  0.000000 )
+      
+       ROTATE_TO ( 0.000000  -100.000000  0.000000 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ghit1hide_off )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( opengate_gatpos )
+    
+     ACTIVATION ( ON_CALL )
+    
+     ANIMATION_ROOT_NAME ( gatpos )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( gatpos )
+      
+       ROTATE_FROM ( 0.000000  0.000000  0.000000 )
+      
+       ROTATE_TO ( 0.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ghit1hide_off )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( closegate_gatneg )
+    
+     ACTIVATION ( ON_CALL )
+    
+     ANIMATION_ROOT_NAME ( gatneg )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( gatneg )
+      
+       ROTATE_FROM ( 0.000000  -100.000000  0.000000 )
+      
+       ROTATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ghit1hide_off )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( closegate_gatpos )
+    
+     ACTIVATION ( ON_CALL )
+    
+     ANIMATION_ROOT_NAME ( gatpos )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( gatpos )
+      
+       ROTATE_FROM ( 0.000000  100.000000  0.000000 )
+      
+       ROTATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ghit1hide_off )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( ghit1hide )
+    
+     ANIMATION_NAME ( setup_ghit1hide )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( ghit1hide )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ghit1hide )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( ghit1hide )
+    
+     ANIMATION_NAME ( ghit1hide_on )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ghit1hide )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( ghit1hide )
+    
+     ANIMATION_NAME ( ghit1hide_off )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ghit1hide )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

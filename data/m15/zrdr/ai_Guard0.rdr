@@ -1,0 +1,586 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Guard0_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Guard0_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( ambient )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+      ai::GOTO (
+        node ( Guard0_c )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2  6 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_65 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      ai::HOLD (
+        wait ( 3  6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 1 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Kicklow )
+      
+       postwait ( 1.100000 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3  5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 3  8 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Guard0_d )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 4 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+      ai::GOTO (
+        node ( Guard0_c )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2  6 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Kicklow )
+      
+       postwait ( 1.100000 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_59 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2  6 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Kicklow )
+      
+       postwait ( 1.100000 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard_bored03 anim set" )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_60 )
+      
+       INPUT_TRANSLATION ()
+      
+       START ()
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 3 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3  8 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Guard0_b )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 4 )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ai::DEBUG ( "starting on_aware1" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Suspicious_1 )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ai::DEBUG ( "starting on_aware2" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Bailey )
+      
+       speed ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.700000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( OC9 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( OC5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_36 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ai::GOTO (
+        node ( OC2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Patrol4_a )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_37 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ai::GOTO (
+        node ( Able )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( CV2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_38 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ai::GOTO (
+        node ( CV1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD ( TRUE )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ai::DEBUG ( "starting on_aware3" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Position_Callout )
+      
+       blocking )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::PURSUE (
+        duration ( 45 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ai::PURSUE (
+        duration ( 45 )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ai::DEBUG ( "starting on_aware4" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( Area_1  =  1 )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_shot  ==  1 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Prone )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      ai::HOLD ( TRUE )
+     
+      END_WHILE ()
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ELSE ()
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( CAUGHT  ==  1 )
+      
+      )
+     
+      ai::PARAM ( param_accuracy  =  0.900000 )
+     
+      ENDIF ()
+     
+      ai::MACRO (
+        anim ( Combat_Mode_2 )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ai::DEBUG ( "starting on_corpse" )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Dead_Guy_1 )
+      
+       blocking )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

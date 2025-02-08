@@ -1,0 +1,972 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( blow* )
+    
+     ANIMATION_ROOT_NAME ( blow* )
+    
+     ANIMATION_NAME ( snowcontrol* )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( rangetest )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( windblowing  ==  0 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( stop_snow )
+      
+      )
+     
+      ELSEIF (
+        RANGE_TEST (
+         P1 (
+          NODE ( GLOBAL  player )
+        
+        )
+       
+        P2 (
+          NODE ( blow* )
+        
+        )
+       
+        TEST ( > )
+       
+        RANGE ( 360.000000 )
+       
+       )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( stop_snow )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_SEQUENCE (
+        NAME ( start_snow )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( 0.500000 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( stop_snow )
+     
+      ACTIVATION ( ON_CALL )
+     
+      STOP_ANIMATION (
+        NAME ( snowblowing*0 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( snowblowing*1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( snowblowing*2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( snowblowing*3 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( start_snow )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_ANIMATION (
+        NAME ( snowblowing*0 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( snowblowing*1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( snowblowing*2 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( snowblowing*3 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( snowblow** )
+    
+     ANIMATION_ROOT_NAME ( snowblow** )
+    
+     ANIMATION_NAME ( snowblowing** )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( small_snow1 )
+      
+       TEXTURES ( effect_snow.tif  effect_snow02.tif  effect_snow03.tif  effect_snow04.tif  effect_snow05.tif )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.060000 )
+      
+       NUMBER ( 14 )
+      
+       PERTURB_POSITION_X ( -50.000000  50.000000 )
+      
+       PERTURB_POSITION_Y ( -60.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( -100.000000  100.000000 )
+      
+       LOCAL_VELOCITY ( -185.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -20.000000  70.000000 )
+      
+       PERTURB_VELOCITY_Y ( -20.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -20.000000  20.000000 )
+      
+       RADIUS_RANGE ( 0.300000  0.800000 )
+      
+       LIFESPAN_RANGE ( 0.700000  4.300000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.005000 )
+      
+       FRICTION ( 1.000000 )
+      
+       WORLD_ACCELERATION ( 0.000000  -12.000000  0.000000 )
+      
+       MAX_VIEW_DISTANCE ( 240 )
+      
+       FADE_FAR_RANGE ( 200.000000  240.000000 )
+      
+       FADE_NEAR_RANGE ( 3.000000  10.000000 )
+      
+       COLORS (( 0.000000  0.700000  0.700000  0.700000  0.000000 )
+       
+       ( 0.100000  0.700000  0.700000  0.700000  0.700000 )
+       
+       ( 0.800000  0.700000  0.700000  0.700000  0.600000 )
+       
+       ( 1.000000  0.700000  0.700000  0.700000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  0.700000 )
+       
+       ( 1.000000  1.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( small_snow2 )
+      
+       TEXTURES ( effect_snow.tif  effect_snow02.tif  effect_snow03.tif  effect_snow04.tif  effect_snow05.tif )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.080000 )
+      
+       NUMBER ( 14 )
+      
+       PERTURB_POSITION_X ( -80.000000  80.000000 )
+      
+       PERTURB_POSITION_Y ( -50.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( -160.000000  160.000000 )
+      
+       LOCAL_VELOCITY ( -240.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -20.000000  40.000000 )
+      
+       PERTURB_VELOCITY_Y ( -20.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -4.000000  4.000000 )
+      
+       RADIUS_RANGE ( 0.500000  1.200000 )
+      
+       LIFESPAN_RANGE ( 0.750000  6.500000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.005000 )
+      
+       FRICTION ( 1.000000 )
+      
+       WORLD_ACCELERATION ( 0.000000  -30.000000  0.000000 )
+      
+       MAX_VIEW_DISTANCE ( 240 )
+      
+       FADE_FAR_RANGE ( 200.000000  240.000000 )
+      
+       FADE_NEAR_RANGE ( 2.000000  6.000000 )
+      
+       COLORS (( 0.100000  0.700000  0.700000  0.700000  0.000000 )
+       
+       ( 0.150000  0.700000  0.700000  0.700000  0.700000 )
+       
+       ( 0.800000  0.700000  0.700000  0.700000  0.600000 )
+       
+       ( 1.000000  0.700000  0.700000  0.700000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  0.800000 )
+       
+       ( 1.000000  1.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( camera_snow1 )
+      
+       TEXTURES ( effect_snow.tif  effect_snow02.tif  effect_snow03.tif  effect_snow04.tif  effect_snow05.tif )
+      
+       AT_NODE ( GLOBAL  camera )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.050000 )
+      
+       NUMBER ( 25 )
+      
+       PERTURB_POSITION_X ( -40.000000  40.000000 )
+      
+       PERTURB_POSITION_Y ( -5.000000  20.000000 )
+      
+       PERTURB_POSITION_Z ( -40.000000  40.000000 )
+      
+       LOCAL_VELOCITY ( 1.000000  0.000000  1.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  -45.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -50.000000  50.000000 )
+      
+       PERTURB_VELOCITY_Y ( -20.000000  10.000000 )
+      
+       PERTURB_VELOCITY_Z ( -50.000000  50.000000 )
+      
+       RADIUS_RANGE ( 0.250000  0.500000 )
+      
+       LIFESPAN_RANGE ( 0.250000  0.500000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.005000 )
+      
+       FRICTION ( 1.000000 )
+      
+       WORLD_ACCELERATION ( 0.000000  -30.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 70.000000  90.000000 )
+      
+       FADE_NEAR_RANGE ( 5.000000  15.000000 )
+      
+       COLORS (( 0.100000  0.700000  0.700000  0.700000  0.000000 )
+       
+       ( 0.700000  0.700000  0.700000  0.700000  0.600000 )
+       
+       ( 1.000000  0.700000  0.700000  0.700000  0.400000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( camera_snow2 )
+      
+       TEXTURES ( effect_snow.tif  effect_snow02.tif  effect_snow03.tif  effect_snow04.tif  effect_snow05.tif )
+      
+       AT_NODE ( GLOBAL  camera )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.100000 )
+      
+       NUMBER ( 80 )
+      
+       PERTURB_POSITION_X ( -60.000000  60.000000 )
+      
+       PERTURB_POSITION_Y ( -5.000000  15.000000 )
+      
+       PERTURB_POSITION_Z ( -60.000000  60.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  20.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  -5.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -75.000000  75.000000 )
+      
+       PERTURB_VELOCITY_Y ( -10.000000  10.000000 )
+      
+       PERTURB_VELOCITY_Z ( -75.000000  75.000000 )
+      
+       RADIUS_RANGE ( 0.200000  0.400000 )
+      
+       LIFESPAN_RANGE ( 0.500000  1.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 10.000000 )
+      
+       WIND_FACTOR ( 0.005000 )
+      
+       FRICTION ( 1.000000 )
+      
+       WORLD_ACCELERATION ( 0.000000  -30.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 60.000000  100.000000 )
+      
+       FADE_NEAR_RANGE ( 15.000000  25.000000 )
+      
+       COLORS (( 0.100000  0.700000  0.700000  0.700000  0.000000 )
+       
+       ( 0.200000  0.700000  0.700000  0.700000  0.600000 )
+       
+       ( 0.800000  0.700000  0.700000  0.700000  0.500000 )
+       
+       ( 1.000000  0.700000  0.700000  0.700000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.000000 )
+       
+       ( 0.600000  1.500000 )
+       
+       ( 1.000000  0.900000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( rangetest )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        RANGE_TEST (
+         P1 (
+          NODE ( GLOBAL  player )
+        
+        )
+       
+        P2 (
+          NODE ( ROOT_NODE )
+        
+        )
+       
+        TEST ( > )
+       
+        RANGE ( 240.000000 )
+       
+       )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow1 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow2 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow1 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow2 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      IF (
+        VALVE ( lodLevel  ==  1 )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow2 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow2 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( lodLevel  ==  25 )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow2 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow2 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( lodLevel  ==  50 )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow2 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow2 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow1 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow1 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( small_snow2 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow2 )
+      
+       ACTIVE_STATE ( INACTIVE )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( camera_snow1 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      WAIT ( 1.000000  3.500000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( outdoor_clip )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clip_out )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( lodLevel  ==  1 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( clip_fast )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( lodLevel  ==  25 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( clip_medfast )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( lodLevel  ==  50 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( clip_med )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( lodLevel  ==  75 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( clip_slow )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_SEQUENCE (
+        NAME ( clip_realslow )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( 2.000000 )
+     
+      CALL_SEQUENCE (
+        NAME ( stop_all )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( stop_all )
+     
+      ACTIVATION ( ON_CALL )
+     
+      STOP_SEQUENCE (
+        NAME ( sky_fade_in )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( sky_fade_out )
+      
+      )
+     
+      VALVE ( skyfading  =  0 )
+     
+      STOP_SEQUENCE (
+        NAME ( clip_realslow )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( clip_slow )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( clip_med )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( clip_medfast )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( clip_fast )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clip_fast )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_SEQUENCE (
+        NAME ( checkskystateoff )
+      
+      )
+     
+      CAMERA (
+        NAME ( GLOBAL  camera )
+      
+       FAR_CLIP ( 902 )
+      
+       MID_CLIP ( 900 )
+      
+       FOG_FAR ( 800 )
+      
+       RUN_TIME ( 7.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clip_medfast )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_SEQUENCE (
+        NAME ( checkskystateoff )
+      
+      )
+     
+      CAMERA (
+        NAME ( GLOBAL  camera )
+      
+       FAR_CLIP ( 702 )
+      
+       MID_CLIP ( 700 )
+      
+       FOG_FAR ( 600 )
+      
+       RUN_TIME ( 6.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clip_med )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_SEQUENCE (
+        NAME ( checkskystateoff )
+      
+      )
+     
+      CAMERA (
+        NAME ( GLOBAL  camera )
+      
+       FAR_CLIP ( 502 )
+      
+       MID_CLIP ( 500 )
+      
+       FOG_FAR ( 400 )
+      
+       RUN_TIME ( 5.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clip_slow )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_SEQUENCE (
+        NAME ( checkskystateon )
+      
+      )
+     
+      CAMERA (
+        NAME ( GLOBAL  camera )
+      
+       FAR_CLIP ( 402 )
+      
+       MID_CLIP ( 400 )
+      
+       FOG_FAR ( 300 )
+      
+       RUN_TIME ( 4.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( clip_realslow )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_SEQUENCE (
+        NAME ( checkskystateon )
+      
+      )
+     
+      CAMERA (
+        NAME ( GLOBAL  camera )
+      
+       FAR_CLIP ( 282 )
+      
+       MID_CLIP ( 280 )
+      
+       FOG_FAR ( 200 )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( checkskystateon )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        VALVE ( skyfading  ==  0 )
+      
+      )
+     
+      IF (
+        VALVE ( skyon  ==  1 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( fade_sky_out )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( checkskystateoff )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        VALVE ( skyfading  ==  0 )
+      
+      )
+     
+      IF (
+        VALVE ( skyon  ==  0 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( fade_sky_in )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( fade_sky_out )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( skyfading  =  1 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  sky )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( GLOBAL  sky )
+      
+       OPACITY_FROM ( 1.000000  ON )
+      
+       OPACITY_TO ( 0.000000  ON )
+      
+       RUN_TIME ( 15.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOABL  sky )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( skyfading  =  0 )
+     
+      VALVE ( skyon  =  0 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( fade_sky_in )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( skyfading  =  1 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  sky )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( GLOBAL  sky )
+      
+       OPACITY_FROM ( 0.000000  ON )
+      
+       OPACITY_TO ( 1.000000  OFF )
+      
+       RUN_TIME ( 15.000000 )
+      
+      )
+     
+      VALVE ( skyfading  =  0 )
+     
+      VALVE ( skyon  =  1 )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

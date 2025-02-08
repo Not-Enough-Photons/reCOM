@@ -1,0 +1,87 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( drips1 )
+    
+     ANIMATION_NAME ( water_drippin1 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( water_drips1 )
+      
+       TEXTURES ( raindrop.tif )
+      
+       AT_NODE ( waterdrips )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.006000 )
+      
+       NUMBER ( 1 )
+      
+       PERTURB_POSITION_X ( -0.300000  0.300000 )
+      
+       PERTURB_POSITION_Y ( -12.000000  2.000000 )
+      
+       PERTURB_POSITION_Z ( -54.000000  54.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -12.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -1.000000  1.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -3.400000  1.000000 )
+      
+       RADIUS_RANGE ( 0.200000  0.300000 )
+      
+       LIFESPAN_RANGE ( 2.000000  2.200000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.000000 )
+      
+       FRICTION ( 0.000000 )
+      
+       WORLD_ACCELERATION ( 0.000000  -37.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 200.000000  400.000000 )
+      
+       COLORS (( 0.000000  0.300000  0.420000  0.380000  0.000000 )
+       
+       ( 0.200000  0.300000  0.420000  0.380000  0.400000 )
+       
+       ( 1.000000  0.480000  0.600000  0.560000  0.500000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

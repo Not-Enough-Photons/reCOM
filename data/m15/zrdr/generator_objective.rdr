@@ -1,0 +1,471 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( generator_objective )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  PARENT  NAME ( stack )
+      
+       NAME ( part1 )
+      
+       NAME ( part2 )
+      
+       NAME ( part3 )
+      
+       NAME ( part4 )
+      
+       NAME ( part5 )
+      
+       NAME ( part6 )
+      
+       NAME ( part7 )
+      
+      )
+     
+     (
+        ACTIVE  NAME ( gen_good )
+      
+       NAME ( gen_parts )
+      
+       NAME ( gen_base )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( gen_good )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gen_parts )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gen_base )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     NAME ( generator_objective )
+    
+     ANIMATION_NAME ( generator_hit_objective )
+    
+     HEALTH ( 1 )
+    
+     SHIELD ( 10 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( gen_good )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gen_parts )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gen_base )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( gen_smoke_objective )
+      
+      )
+     
+      VALVE ( Generator  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part3 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part3 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part4 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part4 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part5 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part5 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part6 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part6 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( part7 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( part7 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gen_part_fly )
+      
+       WITH_NODE ( stack )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( stack )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( generator_hit_objective )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( power_failure )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_101 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_102 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_103 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_104 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_105 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_106 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_107 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_108 )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( power_out_109 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( gen_going_down )
+     
+      SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_GENERATOR_STOP )
+      
+       AT_NODE ( stack )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( generator_objective )
+    
+     ANIMATION_NAME ( gen_part_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( gen_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( generator_objective )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  m15 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_INTERSECTIONS ()
+      
+       TRANSLATION_RANGE_MIN ( 0.000000  35.000000  60.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 350.000000  70.000000  100.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( generator_objective )
+    
+     ANIMATION_NAME ( gen_smoke_objective )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( gen_smoke )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( stack )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.200000 )
+      
+       NUMBER ( 1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  4.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -1.000000  1.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -1.000000  1.000000 )
+      
+       RADIUS_RANGE ( 0.700000  0.900000 )
+      
+       LIFESPAN_RANGE ( 5.000000  7.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.200000 )
+      
+       FRICTION ( 0.100000 )
+      
+       WORLD_ACCELERATION ( 0.000000  1.400000  0.000000 )
+      
+       FADE_FAR_RANGE ( 240.000000  340.000000 )
+      
+       COLORS (( 0.000000  0.000000  0.000000  0.000000  0.700000 )
+       
+       ( 0.400000  0.050000  0.050000  0.050000  0.600000 )
+       
+       ( 1.000000  0.140000  0.130000  0.130000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.500000 )
+       
+       ( 0.400000  3.000000 )
+       
+       ( 1.000000  14.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_GENERATOR_LOOP )
+      
+       AT_NODE ( stack )
+      
+      )
+     
+      PAUSE_ANIMATION ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

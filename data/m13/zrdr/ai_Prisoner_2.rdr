@@ -1,0 +1,127 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Prisoner_2_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Prisoner_2_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_startup )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sleeper_hold )
+     
+      ai::PARAM ( sleep  =  1 )
+     
+      WHILE (
+        !  ai::INREGION (
+         region ( Prisoner3 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      END_WHILE ()
+     
+      ai::PARAM ( sleep  =  0 )
+     
+      ai::SETANIMSET (
+        name ( "POW_sitting02 anim set" )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( chatter )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( sleeper_hold )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( chatter )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD ( TRUE )
+     
+      WHILE (
+        ai::INREGION (
+         region ( Prisoner1 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Prison_chatter )
+      
+      )
+     
+      END_WHILE ()
+     
+      ai::PARAM ( sleep  =  1 )
+     
+      CALL_SEQUENCE (
+        NAME ( sleeper_hold )
+      
+      )
+     
+      STOP_SEQUENCE (
+        NAME ( chatter )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

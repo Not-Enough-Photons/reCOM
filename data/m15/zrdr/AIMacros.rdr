@@ -1,0 +1,2905 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Suspicious_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response_1 )
+     
+      ai::DEBUG ( "Launching Suspicious Response 1" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_25 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Suspicious_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response_2 )
+     
+      ai::DEBUG ( "Launching Suspicious Response 2" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.500000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_26 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::HOLD (
+        wait ( 1  3 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Suspicious_3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Response_3 )
+     
+      ai::DEBUG ( "Launching Suspicious Response 3" )
+     
+      ai::HOLD (
+        wait ( 5  8 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_27 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Shrug )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Alert )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Alert_Response )
+     
+      ai::DEBUG ( "Launching Alert Response" )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_28 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_29 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ELSE ()
+     
+      SOUND (
+        NAME ( SND_VM15_30 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       node ( INPUT_NODE )
+      
+       duration ( 3.000000 )
+      
+       range ( 400 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Warning )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Raise_Alert )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ai::GOTO (
+        region ( warning_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        region ( warning_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( use_radio )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( "Get from surface" )
+      
+       postwait ( 0.650000 )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      VALVE ( CAUGHT  =  1 )
+     
+      WAIT ( 1.000000 )
+     
+      ai::PARAM ( aware  =  2 )
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Search_Area )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Hunting_Season )
+     
+      ai::DEBUG ( "Launching Search Script" )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ai::INREGION (
+         region ( S_Area_1 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA1_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA1_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA1_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA1_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( S_Area_2 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_3b )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 9 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_6 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 9 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA2_7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( S_Area_3 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA3_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 7 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA3_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 5 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA3_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA3_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 7 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA3_5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 7 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( S_Area_4a )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( S_Area_4b )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA4_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA4_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA4_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA4_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 5 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA4_5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 7 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 5 )
+      
+       rate ( 0.600000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( S_Area_5a )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( S_Area_5b )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 2 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 6 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_6 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_8 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA5_9 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( S_Area_6a )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( S_Area_6b )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 9 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 9 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_6 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_6b )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_8 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA6_9 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        ai::INREGION (
+         region ( S_Area_6c )
+       
+        entity ( player )
+       
+       )
+      
+       ||  ai::INREGION (
+         region ( S_Area_7 )
+       
+        entity ( player )
+       
+       )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_2 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 6 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_3 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_4 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 9 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_5 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 14 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_6 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 11 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 3 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( SA7_6b )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 12 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NW )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( S )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( BG10 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( SE )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( BG7 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 8 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( E )
+      
+       wait ( 4 )
+      
+       rate ( 0.800000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Position_Callout )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( SEAL_Locator )
+     
+      ai::DEBUG ( "Launching SEAL_Locator" )
+     
+      IF (
+        ai::INRANGE (
+         entity ( player )
+       
+        range ( 250 )
+       
+       )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Dead_Guy_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Corpse_Found )
+     
+      ai::DEBUG ( "IT'S A DEAD MAN'S PARTY!" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_aware  ==  0 )
+      
+       ||  VALVE ( valve_aware  ==  1 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 2  4 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Kicklow )
+      
+       postwait ( 1.100000 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ELSEIF (
+        ai::VALVE ( valve_aware  ==  2 )
+      
+       ||  VALVE ( valve_aware  ==  3 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 4 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Combat_Mode_1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Rifle_Attack )
+     
+      ai::DEBUG ( "ENTERING COMBAT: Rifle only" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_30 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_31 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_32 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_56 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        ai::VALVE ( valve_aware  ==  4 )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_shot  ==  1 )
+      
+      )
+     
+      ai::PARAM ( param_accuracy  =  0.500000 )
+     
+      ai::PARAM ( param_courage  =  0.600000 )
+     
+      ENDIF ()
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 1.000000  1.000000 )
+      
+       burst )
+     
+      END_WHILE ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Combat_Mode_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Rifle_Attack )
+     
+      ai::DEBUG ( "ENTERING COMBAT: Mixed Trix" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_30 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_31 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_32 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_56 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        ai::VALVE ( valve_aware  ==  4 )
+      
+      )
+     
+      IF (
+        ai::VALVE ( valve_shot  ==  1 )
+      
+      )
+     
+      ai::PARAM ( param_accuracy  =  0.500000 )
+     
+      ai::PARAM ( param_courage  =  0.600000 )
+     
+      ENDIF ()
+     
+      ai::DEBUG ( "Things that go BOOM in the night" )
+     
+      ai::FIREMODE (
+        weapon ( 1 )
+      
+       trigger ( 0.200000  4.000000 )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  3.000000 )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 1.000000  1.000000 )
+      
+       burst )
+     
+      END_WHILE ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Bomb_gambit )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( suicide_run )
+     
+      ai::DEBUG ( "Moving to arm the Nuke" )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( BG1 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( Crouch )
+      
+      )
+     
+      ai::GOTO (
+        node ( "BG1 BG1_b BG2 BG3" )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      ai::DEBUG ( "GOING TO BG8" )
+     
+      ai::GOTO (
+        node ( BG4  BG5  BG6  BG7  BG8 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::LOOKAT (
+        dbnode ( briefcase_nuke1 )
+      
+       wait ( 2 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "defusebomb anim set" )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( "Defusebomb begin" )
+      
+       postwait ( 2.100000 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( "Defusebomb end" )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      VALVE ( Big_Boom  +=  1 )
+     
+      ai::ANIMATE (
+        anim ( "Defusebomb end" )
+      
+       postwait ( 1.700000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_75 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::GOTO (
+        node ( BG13 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( NE )
+      
+       wait ( 15 )
+      
+      )
+     
+      ai::HOLD ( TRUE )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "GOING TO BG11" )
+     
+      ai::STANCE (
+        stance ( Stand )
+      
+      )
+     
+      ai::GOTO (
+        node ( BG9  BG10  BG11 )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::LOOKAT (
+        dbnode ( briefcase_nuke2 )
+      
+       wait ( 2 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "defusebomb anim set" )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( "Defusebomb begin" )
+      
+       postwait ( 2.100000 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( "Defusebomb end" )
+      
+       postwait ( 2.500000 )
+      
+      )
+     
+      ai::SETANIMSET (
+        name ( "Guard anim set" )
+      
+      )
+     
+      VALVE ( Big_Boom  +=  1 )
+     
+      ai::ANIMATE (
+        anim ( "Defusebomb end" )
+      
+       postwait ( 1.700000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VM15_68 )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      ai::GOTO (
+        node ( BG12 )
+      
+       speed ( 1.000000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( N )
+      
+       wait ( 15 )
+      
+      )
+     
+      ai::HOLD ( TRUE )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ( AISIG_ANIMCOMPLETE )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

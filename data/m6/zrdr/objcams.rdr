@@ -1,0 +1,1166 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6setup )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  arrow1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  arrow2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  arrow3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( WORLD  anim_satchel )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1402  157  1625 )
+      
+       ROTATE_FROM ( -45  -42  0 )
+      
+       TRANSLATE_TO ( 1355  163  1200 )
+      
+       ROTATE_TO ( -50  -102  0 )
+      
+       RUN_TIME ( 7 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1467  78  1315 )
+      
+       ROTATE_FROM ( -30  -41  0 )
+      
+       TRANSLATE_TO ( 1480  48  1301 )
+      
+       ROTATE_TO ( -15  -40  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1245  131  1684 )
+      
+       ROTATE_FROM ( -5  -0.500000  0 )
+      
+       TRANSLATE_TO ( 1245  131  1684 )
+      
+       ROTATE_TO ( -3  -69  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_TO ( 1299  131  1664 )
+      
+       ROTATE_TO ( -20  -69  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj4 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+       CLIP_ALL ( 0  4  2000  2200 )
+      
+       FOG_RANGE ( 0  800  1900 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( arrows )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1390  128  1447 )
+      
+       ROTATE_FROM ( -22  110  0 )
+      
+       TRANSLATE_TO ( 1492  128  1725 )
+      
+       ROTATE_TO ( -7  41  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      WAIT ( 7 )
+     
+      STOP_ANIMATION (
+        NAME ( arrow1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( arrow2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( arrow3 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( arrows )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 5 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow1 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1367  84  1093 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow2 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1316  84  1512 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow3 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1359  94  1672 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj5 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1646  81  1179 )
+      
+       ROTATE_FROM ( -21  136  0 )
+      
+       TRANSLATE_TO ( 1589  104  1283 )
+      
+       ROTATE_TO ( -35  98  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow1 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1494  27  1300 )
+       
+       )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_TO ( 1411  108  1297 )
+      
+       ROTATE_TO ( -28  157  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow2 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1371.441040  44  1384.337036 )
+       
+       )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_TO ( 1505  136  1490 )
+      
+       ROTATE_TO ( -17  131  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow3 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1361  70  1611 )
+       
+       )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_TO ( 1559  163  1665 )
+      
+       ROTATE_TO ( -21  45  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      WAIT ( 7 )
+     
+      STOP_ANIMATION (
+        NAME ( arrow1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( arrow2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( arrow3 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj6 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1320  -3  1524 )
+      
+       ROTATE_FROM ( -34  -119  0 )
+      
+       TRANSLATE_TO ( 1319  -3  1532 )
+      
+       ROTATE_TO ( -30  -66  0 )
+      
+       RUN_TIME ( 7 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj7 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( sky )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( water1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( water2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( water3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( sky )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( water1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( water2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( water3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( arrows )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1439  98  1464 )
+      
+       ROTATE_FROM ( -17  90  0 )
+      
+       TRANSLATE_TO ( 1430  108  1381 )
+      
+       ROTATE_TO ( -20  130  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      WAIT ( 7 )
+     
+      STOP_ANIMATION (
+        NAME ( arrow1 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( arrows )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 5 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow1 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1365  50  1438 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj8 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+       CLIP_ALL ( 0  4  2000  2200 )
+      
+       FOG_RANGE ( 0  800  1900 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1513  188  1046 )
+      
+       ROTATE_FROM ( -11  144  0 )
+      
+       TRANSLATE_TO ( 1513  188  1046 )
+      
+       ROTATE_TO ( -18  133  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+       CLIP_ALL ( 0  4  400  600 )
+      
+       FOG_RANGE ( 0  200  350 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1199  6  1238 )
+      
+       ROTATE_FROM ( -16  -10  0 )
+      
+       TRANSLATE_TO ( 1199  6  1238 )
+      
+       ROTATE_TO ( -16  -10  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1199  6  1238 )
+      
+       ROTATE_FROM ( -16  -10  0 )
+      
+       TRANSLATE_TO ( 1199  6  1238 )
+      
+       ROTATE_TO ( -6  -67  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1199  6  1238 )
+      
+       ROTATE_FROM ( -6  -67  0 )
+      
+       TRANSLATE_TO ( 1306  8  1233 )
+      
+       ROTATE_TO ( -16  -23  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      CALL_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj9 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1199  6  1238 )
+      
+       ROTATE_FROM ( -16  -10  0 )
+      
+       TRANSLATE_TO ( 1199  6  1238 )
+      
+       ROTATE_TO ( -16  -10  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1199  6  1238 )
+      
+       ROTATE_FROM ( -16  -10  0 )
+      
+       TRANSLATE_TO ( 1199  6  1238 )
+      
+       ROTATE_TO ( -6  -67  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1199  6  1238 )
+      
+       ROTATE_FROM ( -6  -67  0 )
+      
+       TRANSLATE_TO ( 1306  8  1233 )
+      
+       ROTATE_TO ( -16  -23  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 4 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m6obj10 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( raining_hard )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1342  17  1384 )
+      
+       ROTATE_FROM ( -19  22  0 )
+      
+       TRANSLATE_TO ( 1326  16  1373 )
+      
+       ROTATE_TO ( -31  -32  0 )
+      
+       RUN_TIME ( 7 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( arrow* )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     CLEANUP_SEQUENCE (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATE_FROM ( 0  120  0 )
+      
+       TRANSLATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATION ( 0  90  40  -160 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 1.000000 )
+      
+       OPACITY_TO ( 0.100000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 0.100000 )
+      
+       OPACITY_TO ( 1.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

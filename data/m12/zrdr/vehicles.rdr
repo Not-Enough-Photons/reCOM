@@ -1,0 +1,653 @@
+(((
+    name ( player )
+  
+   display ( Kahuna )
+  
+   character ( jungle_A12 )
+  
+   setup (( startPlayer  2 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Hutchins )
+  
+   display ( Boomer )
+  
+   character ( jungle_B12 )
+  
+   setup (( startBuddyA  2 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Bailey )
+  
+   display ( Jester )
+  
+   character ( jungle_C12 )
+  
+   setup (( startBuddyB  2 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( DiMone )
+  
+   display ( Spectre )
+  
+   character ( jungle_D12 )
+  
+   setup (( startBuddyC  2 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( Patrol1 )
+  
+   character ( m12_terror03 )
+  
+   setup (( P1E  7 )
+   
+   )
+  
+   team ( 4  5  12  30 )
+  
+  )
+ 
+ (
+    name ( Patrol2 )
+  
+   character ( m12_terror01 )
+  
+   setup (( P2A  2 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+  )
+ 
+ (
+    name ( Patrol3 )
+  
+   character ( m12_terror01 )
+  
+   setup (( P3A  1 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+  )
+ 
+ (
+    name ( Patrol4 )
+  
+   character ( m12_terror03 )
+  
+   setup (( P4A  6 )
+   
+   )
+  
+   team ( 4  5  12  30 )
+  
+  )
+ 
+ (
+    name ( City1 )
+  
+   character ( m12_terror01 )
+  
+   setup (( C1A  6 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( City2 )
+  
+   character ( m12_terror03 )
+  
+   setup (( C2D  2 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( City3 )
+  
+   character ( m12_terror01 )
+  
+   setup (( C3C  2 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( City4 )
+  
+   character ( m12_terror03 )
+  
+   setup (( C4A  2 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( Guard1 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( G1A  3 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( Guard2 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( G2A  0 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( Leader )
+  
+   character ( m12_leader )
+  
+   setup (( LeaderStart  2 )
+   
+   )
+  
+   team ( 4  8  11  30 )
+  
+   noshoot ( 1 )
+  
+   ai_params (
+     surrender ( 1.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( LeaderGuard1 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( LeaderGuard1  2 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+  )
+ 
+ (
+    name ( LeaderGuard2 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( LeaderGuard2  2 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+  )
+ 
+ (
+    name ( Ambush1 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Ambush1A  2 )
+   
+   )
+  
+   team ( 4  9  12  30 )
+  
+  )
+ 
+ (
+    name ( Ambush2 )
+  
+   character ( m12_terror02 )
+  
+   setup (( Ambush2A  2 )
+   
+   )
+  
+   team ( 4  9  12  30 )
+  
+  )
+ 
+ (
+    name ( Ambush3 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Ambush3A  0 )
+   
+   )
+  
+   team ( 4  9  12  30 )
+  
+  )
+ 
+ (
+    name ( Ambush4 )
+  
+   character ( m12_terror02 )
+  
+   setup (( Ambush4A  2 )
+   
+   )
+  
+   team ( 4  9  12  30 )
+  
+  )
+ 
+ (
+    name ( Lower1 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( Lower1A  6 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Lower2 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( Lower2A  0 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Lower3 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( Lower3A  4 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Lower4 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( Lower4A  6 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( City5 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( City5A  6 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( Hut1 )
+  
+   character ( m12_terror01 )
+  
+   setup (( Hut1A  3 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( Hut2 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Hut2A  5 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( Patrol6 )
+  
+   character ( m12_terror01 )
+  
+   setup (( P6A  2 )
+   
+   ( P6B  6 )
+   
+   ( P6C  6 )
+   
+   ( P6D  6 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+  )
+ 
+ (
+    name ( Patrol5 )
+  
+   character ( m12_terror01 )
+  
+   setup (( P5A  6 )
+   
+   ( P5B  6 )
+   
+   ( P5C  6 )
+   
+   ( P5D  6 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+  )
+ 
+ (
+    name ( Fire1 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Fire1  3 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( Fire2 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Fire2  5 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( EndRush1 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( EndRush1  4 )
+   
+   ( EndRush1B  4 )
+   
+   )
+  
+   team ( 14  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EndRush2 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( EndRush2  4 )
+   
+   ( EndRush2B  4 )
+   
+   )
+  
+   team ( 14  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EndRush3 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( EndRush3  4 )
+   
+   ( EndRush3B  4 )
+   
+   )
+  
+   team ( 15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EndRush4 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( EndRush4  4 )
+   
+   ( EndRush4B  4 )
+   
+   )
+  
+   team ( 15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EndRush5 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( EndRush5  4 )
+   
+   ( EndRush5B  4 )
+   
+   )
+  
+   team ( 16  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EndRush6 )
+  
+   character ( m12_terror_adv01 )
+  
+   setup (( EndRush6  4 )
+   
+   ( EndRush6B  4 )
+   
+   )
+  
+   team ( 16  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Ruins1 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Ruins1A  4 )
+   
+   ( Ruins1B  3 )
+   
+   ( Ruins1C  6 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   ai_params (
+     respawn ( 3 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Ruins2 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Ruins2A  4 )
+   
+   ( Ruins2B  4 )
+   
+   ( Ruins2C  4 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   ai_params (
+     respawn ( 3 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Ruins3 )
+  
+   character ( m12_terror03 )
+  
+   setup (( Ruins3A  2 )
+   
+   ( Ruins3B  4 )
+   
+   ( Ruins3C  2 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   ai_params (
+     respawn ( 3 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

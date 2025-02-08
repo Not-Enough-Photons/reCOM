@@ -1,0 +1,1063 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 920  105  1376 )
+      
+       ROTATE_FROM ( -2  -94  0 )
+      
+       TRANSLATE_TO ( 1674  128  745 )
+      
+       ROTATE_TO ( -5  -120  0 )
+      
+       RUN_TIME ( 20 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2014  66  1321 )
+      
+       ROTATE_FROM ( 0  -247  0 )
+      
+       TRANSLATE_TO ( 1816  55  1092 )
+      
+       ROTATE_TO ( 0  -217  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  Patrol1 )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj4 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 1884  76  939 )
+      
+       ROTATE_FROM ( -4  -116  0 )
+      
+       TRANSLATE_TO ( 2018  76  857 )
+      
+       ROTATE_TO ( -3  -155  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj6 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2736  230  1988 )
+      
+       ROTATE_FROM ( -5  -180  0 )
+      
+       TRANSLATE_TO ( 3241  225  2236 )
+      
+       ROTATE_TO ( -10  -130  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj7 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2726  110  2210 )
+      
+       ROTATE_FROM ( -19  -33  0 )
+      
+       TRANSLATE_TO ( 2819  110  2200 )
+      
+       ROTATE_TO ( -21  28  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj8 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 3505  143  2920 )
+      
+       ROTATE_FROM ( -12  149  0 )
+      
+       TRANSLATE_TO ( 3505  143  2920 )
+      
+       ROTATE_TO ( -12  149  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj9 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 3590  87  2676 )
+      
+       ROTATE_FROM ( 15  12  0 )
+      
+       TRANSLATE_TO ( 3515  87  2676 )
+      
+       ROTATE_TO ( 15  -14  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 3384  111  3012 )
+      
+       ROTATE_FROM ( 5  -47  0 )
+      
+       TRANSLATE_TO ( 3466  111  3020 )
+      
+       ROTATE_TO ( 7  -28  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 3409  374  3038 )
+      
+       ROTATE_FROM ( -16  44  0 )
+      
+       TRANSLATE_TO ( 3333  374  3153 )
+      
+       ROTATE_TO ( -15  30  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2577  207  3026 )
+      
+       ROTATE_FROM ( 0  47  0 )
+      
+       TRANSLATE_TO ( 2651  207  2888 )
+      
+       ROTATE_TO ( 0  60  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2602  207  2818 )
+      
+       ROTATE_FROM ( -10  145  0 )
+      
+       TRANSLATE_TO ( 2645  207  2920 )
+      
+       ROTATE_TO ( -11  130  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj10 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  Leader )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj11 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2638  216  2952 )
+      
+       ROTATE_FROM ( -12  64  0 )
+      
+       TRANSLATE_TO ( 2638  216  2952 )
+      
+       ROTATE_TO ( -12  64  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj12 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2404  151  2710 )
+      
+       ROTATE_FROM ( 17  55  0 )
+      
+       TRANSLATE_TO ( 2404  151  2710 )
+      
+       ROTATE_TO ( 17  55  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj14 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  Leader )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj15 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 1986  210  2562 )
+      
+       ROTATE_FROM ( -36  28  0 )
+      
+       TRANSLATE_TO ( 1977  214  2559 )
+      
+       ROTATE_TO ( -54  -9  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj16 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 2025  137  2520 )
+      
+       ROTATE_FROM ( -7  66  0 )
+      
+       TRANSLATE_TO ( 2023  111  2455 )
+      
+       ROTATE_TO ( 12  115  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj17 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  DiMone )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj18 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 3606  91  2568 )
+      
+       ROTATE_FROM ( 17  109  0 )
+      
+       TRANSLATE_TO ( 3606  91  2568 )
+      
+       ROTATE_TO ( 17  109  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj21 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 3322  167  2649 )
+      
+       ROTATE_FROM ( -20  113  0 )
+      
+       TRANSLATE_TO ( 3322  167  2649 )
+      
+       ROTATE_TO ( -20  113  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12obj23 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( GLOBAL  biohazard )
+      
+       TRANSLATION ( 1437.574951  -85.556999  1990.650024 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( GLOBAL  biohazard )
+      
+       ROTATION ( 0  -125  0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 4946  1040  5000 )
+      
+       ROTATE_FROM ( -32  -90  0 )
+      
+       TRANSLATE_TO ( 4946  1040  5000 )
+      
+       ROTATE_TO ( -32  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  biohazard )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

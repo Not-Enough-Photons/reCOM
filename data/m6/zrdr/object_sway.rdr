@@ -1,0 +1,203 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( radio1 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( talker )
+      
+       XYZ_ROTATION ( 0  0  8  0  0  -8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( talker )
+      
+       XYZ_ROTATION ( 0  0  -8  0  0  8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( talker )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( radio2 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.500000 )
+     
+      CALL_SEQUENCE (
+        NAME ( swaybaby )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( swaybaby )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( talker )
+      
+       XYZ_ROTATION ( 0  0  8  0  0  -8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( talker )
+      
+       XYZ_ROTATION ( 0  0  -8  0  0  8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( talker )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( escape1 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( boatswing )
+      
+       XYZ_ROTATION ( 0  0  8  0  0  -8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( boatswing )
+      
+       XYZ_ROTATION ( 0  0  -8  0  0  8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( boatswing )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( escape2 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 1 )
+     
+      CALL_SEQUENCE (
+        NAME ( swaybaby )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( swaybaby )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION (
+        NAME ( boatswing )
+      
+       XYZ_ROTATION ( 0  0  8  0  0  -8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( boatswing )
+      
+       XYZ_ROTATION ( 0  0  -8  0  0  8 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( boatswing )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

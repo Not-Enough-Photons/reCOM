@@ -1,0 +1,221 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     NAME ( tunnel_lite_*** )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( bulb )
+      
+       NAME ( frame )
+      
+       NAME ( dilite )
+      
+       NAME ( flare )
+      
+       NAME ( lightsource )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( tunnel_lite_*** )
+    
+     ANIMATION_NAME ( genoff_lite_*** )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     HEALTH ( 0.100000 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( lightsource )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulb )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( tunnel_lite_*** )
+    
+     ANIMATION_NAME ( hit_lite_*** )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     HEALTH ( 0.100000 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( lightsource )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulb )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( dilite )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_aklite )
+      
+       WITH_NODE ( tunnel_lite_*** )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( hit_lite_*** )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     ANIMATION_NAME ( destroy_aklite )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( lightout_sparks1 )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.010000 )
+      
+       NUMBER ( 4 )
+      
+       PERTURB_POSITION_X ( -0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( -0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -18.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -16.000000  16.000000 )
+      
+       PERTURB_VELOCITY_Y ( 2.000000  -6.000000 )
+      
+       PERTURB_VELOCITY_Z ( -16.000000  16.000000 )
+      
+       RADIUS_RANGE ( 0.200000  0.300000 )
+      
+       LIFESPAN_RANGE ( 0.700000  1.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       GRAVITY ()
+      
+       WIND_FACTOR ( 0.000000 )
+      
+       FRICTION ( 0.400000 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 500.000000  600.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.940000  0.860000  1.000000 )
+       
+       ( 0.300000  0.950000  0.900000  0.800000  0.800000 )
+       
+       ( 0.800000  0.950000  0.900000  0.800000  0.500000 )
+       
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.400000 )
+       
+       ( 0.500000  1.000000 )
+       
+       ( 1.000000  0.450000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  2 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_VERY_SMALL )
+      
+       AT_NODE ( INPUT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

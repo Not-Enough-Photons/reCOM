@@ -1,0 +1,2234 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5objsetup )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( turntable_light )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( arrow1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( arrow_rl )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( barrow1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( barrow2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( barrow3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( barrow4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( barrow5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( barrow6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 215  330  1080 )
+      
+       ROTATE_FROM ( -10  -119  0 )
+      
+       TRANSLATE_TO ( 212  339  1098 )
+      
+       ROTATE_TO ( -25  -107  0 )
+      
+       RUN_TIME ( 8 )
+      
+      )
+     
+      WAIT ( 2 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( arrow1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( obj2_arrow )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 197  362  1033 )
+      
+       ROTATE_FROM ( -19  -129  0 )
+      
+       TRANSLATE_TO ( 252  427  1196 )
+      
+       ROTATE_TO ( -52  -40  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 252  427  1196 )
+      
+       ROTATE_FROM ( -52  -40  0 )
+      
+       TRANSLATE_TO ( 391  363  1224 )
+      
+       ROTATE_TO ( -19  44  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( obj2_arrow )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 9 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow1 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 303  318  1130 )
+       
+       )
+      
+      )
+     
+      WAIT ( 4 )
+     
+      STOP_ANIMATION (
+        NAME ( arrow1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 600  365  1303 )
+      
+       ROTATE_FROM ( -19  52  0 )
+      
+       TRANSLATE_TO ( 600  365  1303 )
+      
+       ROTATE_TO ( -19  52  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj4 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 753  443  1393 )
+      
+       ROTATE_FROM ( -21  -40  0 )
+      
+       TRANSLATE_TO ( 753  443  1393 )
+      
+       ROTATE_TO ( -21  -50  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 753  443  1393 )
+      
+       ROTATE_FROM ( -21  -50  0 )
+      
+       TRANSLATE_TO ( 746  388  1216 )
+      
+       ROTATE_TO ( -12  -20  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 746  388  1216 )
+      
+       ROTATE_FROM ( -12  -20  0 )
+      
+       TRANSLATE_TO ( 746  388  1216 )
+      
+       ROTATE_TO ( -12  -30  0 )
+      
+       RUN_TIME ( 3 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj5 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( GLOBAL  bomb01 )
+      
+       TRANSLATION ( 527.799988  300  330.059998 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( GLOBAL  bomb01 )
+      
+       ROTATION ( 0  -120  0 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( turntable_light )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( turntable_light )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      VALVE ( windblowing  =  0 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  bomb01 )
+      
+       TRANSLATE_FROM ( 4990  1011.200012  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 4990  1011.200012  5000 )
+      
+       ROTATE_TO ( 0  356.399994  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj6 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 513  313  306 )
+      
+       ROTATE_FROM ( -19  -149  0 )
+      
+       TRANSLATE_TO ( 500  314  326 )
+      
+       ROTATE_TO ( -20  -98  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj7 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 690  364  1027 )
+      
+       ROTATE_FROM ( -8  61  0 )
+      
+       TRANSLATE_TO ( 667  359  1041 )
+      
+       ROTATE_TO ( 3  0  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj8 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 926  349  1250 )
+      
+       ROTATE_FROM ( -2  -2  0 )
+      
+       TRANSLATE_TO ( 926  348  1232 )
+      
+       ROTATE_TO ( -2  -2  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj9 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      VALVE ( windblowing  =  0 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  Hostage2 )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  356.399994  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj10 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 933  425  540 )
+      
+       ROTATE_FROM ( -26  76  0 )
+      
+       TRANSLATE_TO ( 710  323  504 )
+      
+       ROTATE_TO ( -23  -13  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 710  323  504 )
+      
+       ROTATE_FROM ( -23  -13  0 )
+      
+       TRANSLATE_TO ( 746  315  530 )
+      
+       ROTATE_TO ( 0  33  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj11 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( arrow_rl )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( arrow_rl )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      VALVE ( windblowing  =  0 )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( arrow_rl )
+      
+       ROTATION ( 0  -90  0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( obj11_arrow )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1006  341  611 )
+      
+       ROTATE_FROM ( 1  -74  0 )
+      
+       TRANSLATE_TO ( 1027  341  606 )
+      
+       ROTATE_TO ( 1  -74  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( obj11_arrow )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 3 )
+     
+      CALL_ANIMATION (
+        NAME ( arrow_rl )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1132  341  585 )
+       
+       )
+      
+      )
+     
+      WAIT ( 4 )
+     
+      STOP_ANIMATION (
+        NAME ( arrow_rl )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj12 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      VALVE ( windblowing  =  0 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 4970  1025  5000 )
+      
+       ROTATE_FROM ( -28  -90  0 )
+      
+       TRANSLATE_TO ( 4970  1025  5000 )
+      
+       ROTATE_TO ( -28  -90  0 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  Hostage3 )
+      
+       TRANSLATE_FROM ( 5000  1000  5000 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 5000  1000  5000 )
+      
+       ROTATE_TO ( 0  356.399994  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj13 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CALL_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( sky )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow3 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow4 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow5 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow6 )
+      
+      )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      STOP_ANIMATION (
+        NAME ( check_camera_inside_state )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+      VALVE ( windblowing  =  0 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( sky )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  40  10 )
+      
+       CLIP ( 0  200  2500 )
+      
+       FOG_RANGE ( 0  3000  4000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      CALL_SEQUENCE (
+        NAME ( obj13_arrows )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  camera )
+      
+       SCRIPT_FRAME_RATE ( 4.000000 )
+      
+       SCRIPT_FILENAME ( data/m5/zrdr/orbit.zan )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( obj13_arrows )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WAIT ( 3.500000 )
+     
+      CALL_ANIMATION (
+        NAME ( barrow1 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1439  434  801 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( barrow2 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 393  383  1338 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( barrow3 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 716  381  1089 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( barrow4 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 590  510  1079 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( barrow5 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 1079  400  642 )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      CALL_ANIMATION (
+        NAME ( barrow6 )
+      
+       STOP_ON_EXIT ()
+      
+       WITH_TRANSLATION (
+         XYZ ( 693  373  305 )
+       
+       )
+      
+      )
+     
+      WAIT ( 20 )
+     
+      STOP_ANIMATION (
+        NAME ( barrow1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow3 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow4 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow5 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( barrow6 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj14 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  10 )
+      
+       CLIP ( 0  100  2500 )
+      
+       FOG_RANGE ( 0  3000  4000 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1721  562  970 )
+      
+       ROTATE_FROM ( -30  59  0 )
+      
+       TRANSLATE_TO ( 1721  562  970 )
+      
+       ROTATE_TO ( -30  59  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj15 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  10 )
+      
+       CLIP ( 0  100  2500 )
+      
+       FOG_RANGE ( 0  3000  4000 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 1441  623  1346 )
+      
+       ROTATE_FROM ( -20  51  0 )
+      
+       TRANSLATE_TO ( 1441  623  1346 )
+      
+       ROTATE_TO ( -20  51  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj16 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  10 )
+      
+       CLIP ( 0  100  2500 )
+      
+       FOG_RANGE ( 0  3000  4000 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 142  509  1429 )
+      
+       ROTATE_FROM ( -29  -68  0 )
+      
+       TRANSLATE_TO ( 142  509  1429 )
+      
+       ROTATE_TO ( -29  -68  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj17 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  10 )
+      
+       CLIP ( 0  50  1500 )
+      
+       FOG_RANGE ( 0  1000  1400 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 676  394  1219 )
+      
+       ROTATE_FROM ( -28  -16  0 )
+      
+       TRANSLATE_TO ( 676  394  1219 )
+      
+       ROTATE_TO ( -28  -16  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj18 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  10 )
+      
+       CLIP ( 0  100  2500 )
+      
+       FOG_RANGE ( 0  3000  4000 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 457  567  1255 )
+      
+       ROTATE_FROM ( -15  -35  0 )
+      
+       TRANSLATE_TO ( 457  567  1255 )
+      
+       ROTATE_TO ( -15  -35  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj19 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       CLIP_ALL ( 0  4  400  4000 )
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 733  362  1473 )
+      
+       ROTATE_FROM ( -19  -22  0 )
+      
+       TRANSLATE_TO ( 733  362  1473 )
+      
+       ROTATE_TO ( -19  -22  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m5obj20 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      RESUME_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+      CAMERA_PARAMS (
+        RESTORE_PARAMS ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      PAUSE_ANIMATION (
+        NAME ( outdoor_clip )
+      
+      )
+     
+      CAMERA_PARAMS (
+        SAVE_PARAMS ()
+      
+       FOV ( 0  70  52.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  camera )
+      
+       TRANSLATE_FROM ( 937  430  888 )
+      
+       ROTATE_FROM ( -26  -33  0 )
+      
+       TRANSLATE_TO ( 937  430  888 )
+      
+       ROTATE_TO ( -26  -33  0 )
+      
+       RUN_TIME ( 5 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( arrow* )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     CLEANUP_SEQUENCE (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATE_FROM ( 0  120  0 )
+      
+       TRANSLATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATION ( 0  90  40  -160 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 1.000000 )
+      
+       OPACITY_TO ( 0.100000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 0.100000 )
+      
+       OPACITY_TO ( 1.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( arrow_rl )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     CLEANUP_SEQUENCE (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATE_FROM ( 120  0  0 )
+      
+       TRANSLATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATION ( -90  0  40  -160 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 1.000000 )
+      
+       OPACITY_TO ( 0.100000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 0.100000 )
+      
+       OPACITY_TO ( 1.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( barrow* )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     CLEANUP_SEQUENCE (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATE_FROM ( 0  1120  0 )
+      
+       TRANSLATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  drop_arrow )
+      
+       TRANSLATION ( 0  90  400  -1600 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 1.000000 )
+      
+       OPACITY_TO ( 0.100000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_arrow )
+      
+       OPACITY_FROM ( 0.100000 )
+      
+       OPACITY_TO ( 1.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( question* )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     CLEANUP_SEQUENCE (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( ROOT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( LOCAL  drop_question )
+      
+       TRANSLATE_FROM ( 0  120  0 )
+      
+       TRANSLATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( LOCAL  drop_question )
+      
+       TRANSLATION ( 0  90  40  -160 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_question )
+      
+       OPACITY_FROM ( 1.000000 )
+      
+       OPACITY_TO ( 0.100000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( LOCAL  drop_question )
+      
+       OPACITY_FROM ( 0.100000 )
+      
+       OPACITY_TO ( 1.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( interlacetest )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/common/interlacetest.pss )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run/movies/common/attract.pss )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

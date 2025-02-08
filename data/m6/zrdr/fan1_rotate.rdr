@@ -1,0 +1,174 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( fan1 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  ROTATE  NAME ( fan1 )
+      
+       NAME ( fanblade1 )
+      
+       NAME ( fanbox1 )
+      
+       NAME ( wallray1 )
+      
+       NAME ( rays1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( wallray1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( rays1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( fan1 )
+    
+     ANIMATION_NAME ( fanblade1_start )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( fanblade1 )
+      
+       XYZ_ROTATION ( 0.000000  0.000000  190.000000  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( fan1 )
+    
+     ANIMATION_NAME ( fan_sound )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_FAN_ROTATE_LOOP )
+      
+       AT_NODE ( fan1 )
+      
+      )
+     
+      PAUSE_ANIMATION ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( fan1 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( wallray1 )
+      
+       OPACITY_FROM ( 0.250000  OFF )
+      
+       OPACITY_TO ( 0.050000  ON )
+      
+       RUN_TIME ( 0.060000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( wallray1 )
+      
+       OPACITY_FROM ( 0.050000  ON )
+      
+       OPACITY_TO ( 0.250000  OFF )
+      
+       RUN_TIME ( 0.060000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( rays1 )
+      
+       OPACITY_FROM ( 0.600000  OFF )
+      
+       OPACITY_TO ( 0.300000  ON )
+      
+       RUN_TIME ( 0.060000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( rays1 )
+      
+       OPACITY_FROM ( 0.300000  ON )
+      
+       OPACITY_TO ( 0.600000  OFF )
+      
+       RUN_TIME ( 0.060000 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

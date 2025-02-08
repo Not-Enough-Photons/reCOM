@@ -1,0 +1,71 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( beer_bottle )
+    
+     HEALTH_ROOT_NAME ( beer_bottle )
+    
+     HEALTH ( 1 )
+    
+     CREATE_CLONES ()
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_SMALL )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      DESTRUCTION_SOURCE (
+        NODE ( ROOT_NODE )
+      
+       TEXTURE ( congo_water.tif )
+      
+       COLOR (
+         RED ( 35.000000 )
+       
+        GREEN ( 55.000000 )
+       
+        BLUE ( 35.000000 )
+       
+        ALPHA ( 10 )
+       
+       )
+      
+       MAXSIZE ( 4.000000 )
+      
+       VELOCITY_X ( 5.000000  -5.000000 )
+      
+       VELOCITY_Y ( 1.000000  -1.000000 )
+      
+       VELOCITY_Z ( 5.000000  -5.000000 )
+      
+       LIFESPAN_RANGE ( 0.750000  1.500000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ROOT_NODE )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

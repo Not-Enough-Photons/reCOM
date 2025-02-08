@@ -1,0 +1,160 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( deactivate_boat )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( thaiboat )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12_boat_approach )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( thaiboat )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        ALL_NAMES ( WORLD )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/m12/zrdr/thaiboat1.zan )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( m12_boat_docked )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( leader )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  Leader )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( WORLD  anim_thaiboat )
+      
+       CHILD ( GLOBAL  Leader )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( GLOBAL  Leader )
+      
+       TRANSLATION ( 0  0  0 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12_boat_docked )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        ALL_NAMES ( WORLD )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/m12/zrdr/thaiboat2.zan )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  Leader )
+      
+       TRANSLATE_FROM ( 4188  31  2243 )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       TRANSLATE_TO ( 4188  31  2243 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 3.333300 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION ()
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( m12_boat_exit )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_SI_SCRIPT (
+        ALL_NAMES ( WORLD )
+      
+       SCRIPT_FRAME_RATE ( 5 )
+      
+       SCRIPT_FILENAME ( data/m12/zrdr/thaiboat3.zan )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

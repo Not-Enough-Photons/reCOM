@@ -1,0 +1,656 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( light01 )
+    
+     HEALTH_ROOT_NAME ( light_target )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( forklight )
+      
+       NAME ( glasslight )
+      
+       NAME ( flare )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( forklight )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( glasslight )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( flare )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( desklight )
+    
+     HEALTH_ROOT_NAME ( hit )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( hit )
+      
+       NAME ( bulb )
+      
+       NAME ( desklite )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( desklite )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( hit )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulb )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( bulb )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( nightlight )
+    
+     HEALTH_ROOT_NAME ( hit )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( hit )
+      
+       NAME ( bulb )
+      
+       NAME ( desklite )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( nightlite )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( hit )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulb )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( bulb )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( dependentlight* )
+    
+     HEALTH_ROOT_NAME ( light_target )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( forklight )
+      
+       NAME ( glasslight )
+      
+       NAME ( flare )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( firelighton* )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( forklight )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( glasslight )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( flare )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( smalllight )
+    
+     HEALTH_ROOT_NAME ( lighthit )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( small_light )
+      
+       NAME ( lighthit )
+      
+       NAME ( smlightflare )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( small_light )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lighthit )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( smlightflare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( smlightflare )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( lightcage )
+    
+     HEALTH_ROOT_NAME ( bulbdi )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( wirelite )
+      
+       NAME ( bulbdi )
+      
+       NAME ( wireflare )
+      
+       NAME ( bulbbright )
+      
+      )
+     
+     (
+        SET_INACTIVE  NAME ( bulbbroke )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( wirelite )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulbdi )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulbbright )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( bulbbroke )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( wireflare )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( wireflare )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( lightbox )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight_dim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( lightbox )
+    
+     HEALTH_ROOT_NAME ( bulbdi_2 )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SAVE_NODE_STATES ((
+        ACTIVE  NAME ( bulbdi_1 )
+      
+       NAME ( bulbdi_2 )
+      
+       NAME ( flare1 )
+      
+       NAME ( flare2 )
+      
+       NAME ( lightboxlight )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( bulbdi_2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( flare2 )
+      
+      )
+     
+      IF (
+        NODE_ACTIVE (
+         NAME ( flare1 )
+       
+        STATE ( ACTIVE )
+       
+       )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight_dim )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight_dim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( lightbox )
+    
+     HEALTH_ROOT_NAME ( bulbdi_1 )
+    
+     CREATE_CLONES ()
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     ACTIVATION ( WEAPON_HIT )
+    
+     HEALTH ( 0.100000 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( bulbdi_1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( flare1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( destroy_a_light )
+      
+       WITH_NODE ( flare1 )
+      
+      )
+     
+      IF (
+        NODE_ACTIVE (
+         NAME ( flare2 )
+       
+        STATE ( ACTIVE )
+       
+       )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight_dim )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( lightboxlight_dim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     AUTO_CREATE_ROOT ()
+    
+     ANIMATION_NAME ( destroy_a_light )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( lightout_sparks1 )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.010000 )
+      
+       NUMBER ( 4 )
+      
+       PERTURB_POSITION_X ( -0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( -0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  -18.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -16.000000  16.000000 )
+      
+       PERTURB_VELOCITY_Y ( 2.000000  -6.000000 )
+      
+       PERTURB_VELOCITY_Z ( -16.000000  16.000000 )
+      
+       RADIUS_RANGE ( 0.200000  0.300000 )
+      
+       LIFESPAN_RANGE ( 0.700000  1.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       GRAVITY ()
+      
+       WIND_FACTOR ( 0.000000 )
+      
+       FRICTION ( 0.400000 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 500.000000  600.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.940000  0.860000  1.000000 )
+       
+       ( 0.300000  0.950000  0.900000  0.800000  0.800000 )
+       
+       ( 0.800000  0.950000  0.900000  0.800000  0.500000 )
+       
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  1.400000 )
+       
+       ( 0.500000  1.000000 )
+       
+       ( 1.000000  0.450000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  3 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_GLASS_BREAK_VERY_SMALL )
+      
+       AT_NODE ( INPUT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

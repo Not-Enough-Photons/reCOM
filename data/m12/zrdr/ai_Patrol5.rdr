@@ -1,0 +1,392 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol5_special )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_0 )
+     
+      ai::SPECIAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol5_start )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( startup )
+     
+      ai::DEBUG ( "starting startup" )
+     
+      WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "starting on_aware0" )
+     
+      WHILE (
+        VALVE ( Patrol56  ==  0 )
+      
+      )
+     
+      ai::GOTO (
+        node ( P5B )
+      
+       speed ( 0.200000 )
+      
+      )
+     
+      ai::ANIMATE (
+        anim ( Swatflies )
+      
+       postwait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 1  3 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::GOTO (
+        node ( P5C )
+      
+       speed ( 0.200000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::GOTO (
+        node ( P5D )
+      
+       speed ( 0.200000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      ai::GOTO (
+        node ( P5A )
+      
+       speed ( 0.200000 )
+      
+      )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::HOLD (
+        wait ( 3  5 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ai::STATE (
+        push ( rush )
+      
+       entity ( player )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware1 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware1" )
+     
+      ai::MACRO (
+        anim ( Close_call )
+      
+       blocking )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware2" )
+     
+      VALVE ( Insert  =  1 )
+     
+      ai::COMM (
+        team ( 12 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ai::PARAM ( aware  =  2  Ambush1 )
+     
+      ai::PARAM ( aware  =  2  Ambush2 )
+     
+      ai::PARAM ( aware  =  2  Ambush3 )
+     
+      ai::PARAM ( aware  =  2  Ambush4 )
+     
+      ai::PARAM ( aware  =  2  Patrol1 )
+     
+      ai::PARAM ( aware  =  2  Patrol4 )
+     
+      ai::PARAM ( aware  =  2  Patrol6 )
+     
+      ai::ANIMATE (
+        anim ( Radio )
+      
+       postwait ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( AmbushP561  AmbushP562  AmbushP5A )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+      WHILE (
+        VALVE ( Patrol56  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ai::STATE (
+        push ( rush )
+      
+       entity ( player )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware3 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware3" )
+     
+      VALVE ( Insert  =  1 )
+     
+      ai::COMM (
+        team ( 12 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ai::PARAM ( aware  =  2  Ambush1 )
+     
+      ai::PARAM ( aware  =  2  Ambush2 )
+     
+      ai::PARAM ( aware  =  2  Ambush3 )
+     
+      ai::PARAM ( aware  =  2  Ambush4 )
+     
+      ai::PARAM ( aware  =  2  Patrol1 )
+     
+      ai::PARAM ( aware  =  2  Patrol4 )
+     
+      ai::PARAM ( aware  =  2  Patrol6 )
+     
+      ai::ANIMATE (
+        anim ( Radio )
+      
+       postwait ( 1.000000 )
+      
+      )
+     
+      ai::GOTO (
+        node ( AmbushP561  AmbushP562  AmbushP5A )
+      
+       speed ( 1.000000 )
+      
+       waypts )
+     
+      ai::LOOKAT (
+        dir ( W )
+      
+       wait ( 2.000000 )
+      
+      )
+     
+      ai::STANCE (
+        stance ( crouch )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_aware4 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_aware4" )
+     
+      VALVE ( Insert  =  1 )
+     
+      ai::COMM (
+        team ( 12 )
+      
+       cmd ( CMD_AWAKE )
+      
+      )
+     
+      ai::PARAM ( aware  =  2  Ambush1 )
+     
+      ai::PARAM ( aware  =  2  Ambush2 )
+     
+      ai::PARAM ( aware  =  2  Ambush3 )
+     
+      ai::PARAM ( aware  =  2  Ambush4 )
+     
+      ai::PARAM ( aware  =  2  Patrol1 )
+     
+      ai::PARAM ( aware  =  2  Patrol4 )
+     
+      ai::PARAM ( aware  =  2  Patrol6 )
+     
+      ai::ANIMATE (
+        anim ( Radio )
+      
+       postwait ( 1.000000 )
+      
+      )
+     
+      ai::MACRO (
+        anim ( Spot_shout )
+      
+       blocking )
+     
+      ai::MACRO (
+        anim ( Patrol_guns )
+      
+       blocking )
+     
+      ai::PURSUE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_lowhealth )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_lowhealth" )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_noammo )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_noammo" )
+     
+      ai::STANCE (
+        stance ( prone )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( on_corpse )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ai::DEBUG ( "Starting on_corpse" )
+     
+      VALVE ( Insert  =  1 )
+     
+      ai::ANIMATE (
+        anim ( Kicklow )
+      
+       postwait ( 1.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

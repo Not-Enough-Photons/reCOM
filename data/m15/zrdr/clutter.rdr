@@ -1,0 +1,157 @@
+(
+  template (
+   template_name ( ground  g1 )
+ 
+  template_model (
+    base_name ( shrub2 )
+  
+   choices (( 0.400000  shrub2 )
+   
+   ( 0.400000  shrub )
+   
+   )
+  
+   align_normal ()
+  
+   far_fade_range (
+     min ( 260.000000  265.000000 )
+   
+    max ( 270.000000  275.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( clutterrock )
+  
+   choices (( 0.200000  clutterrock )
+   
+   ( 0.100000  clutterrock1 )
+   
+   ( 0.200000  clutterrock2 )
+   
+   ( 0.200000  clutterrock3 )
+   
+   ( 0.100000  clutterrock4 )
+   
+   )
+  
+   align_normal ()
+  
+   far_fade_range (
+     min ( 220.000000  235.000000 )
+   
+    max ( 250.000000  255.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ clutter_converts ( grasstall_11  grasstall_21  grasstall_31  grasstall_41 )
+
+ template (
+   template_name ( fake_template )
+ 
+  template_model (
+    base_name ( grasstall_11 )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18.500000  19.799999 )
+   
+    max ( 22.400000  24.500000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 520.000000  521.000000 )
+   
+    max ( 550.000000  561.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( grasstall_21 )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18.500000  19.799999 )
+   
+    max ( 22.400000  24.500000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 520.000000  521.000000 )
+   
+    max ( 550.000000  561.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( grasstall_31 )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18.500000  19.799999 )
+   
+    max ( 22.400000  24.500000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 520.000000  521.000000 )
+   
+    max ( 550.000000  561.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( grasstall_41 )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18.500000  19.799999 )
+   
+    max ( 22.400000  24.500000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 520.000000  521.000000 )
+   
+    max ( 550.000000  561.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

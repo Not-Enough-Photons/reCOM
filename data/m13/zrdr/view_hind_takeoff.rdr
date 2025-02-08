@@ -1,0 +1,48 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( view_hind_takeoff )
+    
+     ACTIVATION ( ON_CALL )
+    
+     CLEANUP_SEQUENCE (
+       ai::STOPALL ( false )
+     
+      SET_CAMERA_REGION_TEST ( ON )
+     
+      DYNAMICS_ACQUIRE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ai::STOPALL ( true )
+     
+      SET_CAMERA_REGION_TEST ( OFF )
+     
+      DYNAMICS_RELEASE_CAMERA ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( PlayMPEG )
+      
+       ARGUMENT ( run\movies\m13\hndtkoff.pss )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

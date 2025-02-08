@@ -1,0 +1,400 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Favor_guns )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_70 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.700000 )
+      
+      )
+     
+      ai::DEBUG ( "choosing rifle" )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 0.200000  5 )
+      
+      )
+     
+      ai::DEBUG ( "completed firemode" )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "choosing grenade" )
+     
+      ai::FIREMODE (
+        weapon ( 1 )
+      
+       trigger ( 0.200000  10 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 0.200000  5 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol_guns )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( seq_90 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.900000 )
+      
+      )
+     
+      ai::DEBUG ( "choosing rifle" )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 0.500000  4.000000 )
+      
+       burst )
+     
+      ai::DEBUG ( "completed firemode" )
+     
+      ELSE ()
+     
+      ai::DEBUG ( "choosing grenade" )
+     
+      ai::FIREMODE (
+        weapon ( 1 )
+      
+       trigger ( 0.200000  10 )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      ai::FIREMODE (
+        weapon ( 0 )
+      
+       trigger ( 0.500000  4.000000 )
+      
+       burst )
+     
+      ENDIF ()
+     
+      ai::DEBUG ( ENDIF )
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Close_call )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shout )
+     
+      WAIT ( 1.000000 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_12 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_13 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_14 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_82 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_83 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Spot_shout )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shout )
+     
+      ai::EVENT (
+        type ( VOICE )
+      
+       pos ( 0  0  0 )
+      
+       duration ( 1.000000 )
+      
+       range ( 70.000000 )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_15 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_17 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_18 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_19 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_20 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol_banter )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( chat )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_74 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_75 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_76 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_77 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Patrol_banter2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       NAME ( chat2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_78 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_79 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      ai::SOUND (
+        NAME ( SND_VM05_80 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ELSE ()
+     
+      ai::SOUND (
+        NAME ( SND_VM05_81 )
+      
+       aware ( 1 )
+      
+      )
+     
+      ENDIF ()
+     
+      ai::SIGNAL ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,363 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( WORLD  tarproot )
+    
+     CREATE_CLONES ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( stagger0 )
+     
+      CALL_ANIMATION (
+        NAME ( tarp1 )
+      
+       OPERAND_NODE ( WORLD  tarp1 )
+      
+      )
+     
+      WAIT ( 1  3 )
+     
+      CALL_ANIMATION (
+        NAME ( tarp1 )
+      
+       OPERAND_NODE ( WORLD  tarp2 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( WORLD  tarp1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( stagger0 )
+     
+      CALL_SEQUENCE (
+        NAME ( cloth0a )
+      
+      )
+     
+      WAIT ( 0.333000 )
+     
+      CALL_SEQUENCE (
+        NAME ( cloth0b )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( cloth0b2 )
+      
+      )
+     
+      WAIT ( 0.333000 )
+     
+      CALL_SEQUENCE (
+        NAME ( cloth0c )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( cloth0c2 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( cloth0a )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0a )
+      
+       XYZ_ROTATION ( -4  0  0  8  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0a )
+      
+       XYZ_ROTATION ( 4  0  0  -8  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( cloth0a )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( cloth0b )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0b )
+      
+       XYZ_ROTATION ( -6  0  0  12  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0b )
+      
+       XYZ_ROTATION ( 6  0  0  -12  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( cloth0b )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( cloth0b2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0b_s )
+      
+       SCALE ( 0  0  -1  0  0  2 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0b_s )
+      
+       SCALE ( 0  0  1  0  0  -2 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( cloth0c )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0c )
+      
+       XYZ_ROTATION ( -12  0  0  24  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0c )
+      
+       XYZ_ROTATION ( 12  0  0  -24  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( cloth0c )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( cloth0c2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0c_s )
+      
+       SCALE ( 0  0  -1  0  0  2 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( cloth0c_s )
+      
+       SCALE ( 0  0  1  0  0  -2 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( spindle )
+     
+      OBJECT_MOTION (
+        NAME ( t1xrot )
+      
+       XYZ_ROTATION ( 0  0  0  -6  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( t1xrot )
+      
+       XYZ_ROTATION ( -12  0  0  6  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      WAIT ( 12 )
+     
+      OBJECT_MOTION (
+        NAME ( t1xrot )
+      
+       XYZ_ROTATION ( 0  0  0  6  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( t1xrot )
+      
+       XYZ_ROTATION ( 12  0  0  -6  0  0 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( t1xrot )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( frame )
+     
+      OBJECT_MOTION (
+        NAME ( t1frame )
+      
+       XYZ_ROTATION ( 0  0  0  0.250000  0  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( t1frame )
+      
+       XYZ_ROTATION ( 1  0  0  -0.250000  0  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      WAIT ( 4 )
+     
+      OBJECT_MOTION (
+        NAME ( t1frame )
+      
+       XYZ_ROTATION ( 0  0  0  -0.250000  0  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( t1frame )
+      
+       XYZ_ROTATION ( -1  0  0  0.250000  0  0 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( t1frame )
+      
+       ROTATION ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

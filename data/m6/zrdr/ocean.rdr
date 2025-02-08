@@ -1,0 +1,328 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      NAME ( GLOBAL  water1 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( xlate_water )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  watermove1_1 )
+      
+       TRANSLATE_FROM ( 930  0  1020 )
+      
+       TRANSLATE_TO ( 780  0  1170 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( GLOBAL  water2 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( xlate_water )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  watermove2_1 )
+      
+       TRANSLATE_FROM ( 1740  0  1070 )
+      
+       TRANSLATE_TO ( 1590  0  1220 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      NAME ( GLOBAL  water3 )
+    
+     LOCAL_NODES_ONLY ()
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( xlate_water )
+     
+      WHILE ( TRUE )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( GLOBAL  watermove3_1 )
+      
+       TRANSLATE_FROM ( 1420  0  910 )
+      
+       TRANSLATE_TO ( 1270  0  1060 )
+      
+       RUN_TIME ( 10 )
+      
+      )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( water_on_off )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      WAIT ( 0.500000 )
+     
+      IF (
+        CAMERA_INDOORS ()
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( water1 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( water2 )
+      
+      )
+     
+      PAUSE_ANIMATION (
+        NAME ( water3 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      RESUME_ANIMATION (
+        NAME ( water1 )
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( water2 )
+      
+      )
+     
+      RESUME_ANIMATION (
+        NAME ( water3 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( waterhack )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      IF (
+        CAMERA_3RD_PERSON ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  nvg_mask )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  skytex )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water1  water_nofog )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water2  water_nofog )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water3  water_nofog )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water1  water_fogged )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water2  water_fogged )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water3  water_fogged )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  nvg_mask )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  skytex )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water1  water_nofog )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water2  water_nofog )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water3  water_nofog )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water1  water_fogged )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water2  water_fogged )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  water3  water_fogged )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+
