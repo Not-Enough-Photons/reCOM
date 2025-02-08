@@ -5,6 +5,14 @@ This repository houses the reverse engineered code of the SOCOM games, alongside
 
 It is a work in progress, and a lot needs to make sure the SOCOM experience is one-to-one with the PlayStation 2.
 
+# Compilation
+1. Clone this project by doing ``git clone https://github.com/Not-Enough-Photons/reCOM`` into a directory of your choice, or by downloading the source code ZIP and extracting it anywhere
+2. CD into the main directory of the project
+3. Type ``premake5 vs2022`` or any other build profile you know
+4. Open the project in an IDE and do Left Control + Shift + B, or click the play button
+5. Drag all DLL files into ``output/debug`` or ``output/release``
+6. That's it!
+
 # ROM Information
 - Name: **SCUS_972.05**
 - Build Date: **May 13th, 2002 at 9:10:36 AM PST**
