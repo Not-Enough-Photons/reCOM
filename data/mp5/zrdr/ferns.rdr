@@ -1,0 +1,138 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( fern1 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.100000 )
+     
+      CALL_SEQUENCE (
+        NAME ( sprout1_move )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( sprout0 )
+      
+       XYZ_ROTATION ( 6  4  0  -24  -16  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( sprout0 )
+      
+       XYZ_ROTATION ( -6  -4  0  24  16  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( sprout0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( sprout1_move )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( sprout1 )
+      
+       XYZ_ROTATION ( 3  0  2  -12  0  -8 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( sprout1 )
+      
+       XYZ_ROTATION ( -3  0  -2  12  0  8 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( sprout1 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( fern2 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( sprout0 )
+      
+       XYZ_ROTATION ( -6  4  0  24  -16  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( sprout0 )
+      
+       XYZ_ROTATION ( 6  -4  0  -24  16  0 )
+      
+       RUN_TIME ( 0.500000 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( sprout0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

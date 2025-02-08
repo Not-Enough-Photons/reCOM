@@ -1,0 +1,123 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_camera_inside_state1 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( player_indoors  =  9 )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        PLAYER_INDOORS ()
+      
+       &&  VALVE ( player_indoors  !=  1 )
+      
+      )
+     
+      VALVE ( player_indoors  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( inside_noise )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( outside_noise )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( player_indoors  !=  0 )
+      
+      )
+     
+      VALVE ( player_indoors  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( outside_noise )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( inside_noise )
+      
+      )
+     
+      ENDIF ()
+     
+      WAIT ( 0.500000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( outside_noise )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_OUTDOOR_AMBIENCE_LOOP )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( inside_noise )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       STOP_ON_EXIT ()
+      
+       NAME ( SND_OUTDOOR_AMBIENCE_LOOP )
+      
+       VOLUME ( 0.600000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

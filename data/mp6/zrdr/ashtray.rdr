@@ -1,0 +1,170 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NETWORK_LOG ( ON )
+    
+     NAME ( ashtray )
+    
+     HEALTH_ROOT_NAME ( ashtray )
+    
+     HEALTH ( 1 )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( cig_fly1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( cig_fly2 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( cig_fly3 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.400000 )
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.300000 )
+       
+       )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( cig1 )
+    
+     ANIMATION_NAME ( cig_fly1 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( cig1 )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       BOUNCE_ELASTICITY ( 0.450000 )
+      
+       TRANSLATION_RANGE_MIN ( 170.000000  70.000000  35.000000  0.000000 )
+      
+       TRANSLATION_RANGE_MAX ( 190.000000  80.000000  40.000000  0.000000 )
+      
+       XYZ_ROTATION ( 0.000000  60.000000  30.000000  0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( cig_fly1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( cig2 )
+    
+     ANIMATION_NAME ( cig_fly2 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( cig2 )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       BOUNCE_ELASTICITY ( 0.450000 )
+      
+       TRANSLATION_RANGE_MIN ( 230.000000  60.000000  42.000000  0.000000 )
+      
+       TRANSLATION_RANGE_MAX ( 290.000000  80.000000  55.000000  0.000000 )
+      
+       XYZ_ROTATION ( 0.000000  120.000000  30.000000  0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( cig_fly2 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( cig3 )
+    
+     ANIMATION_NAME ( cig_fly3 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( cig3 )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       BOUNCE_ELASTICITY ( 0.450000 )
+      
+       TRANSLATION_RANGE_MIN ( 30.000000  60.000000  38.000000  0.000000 )
+      
+       TRANSLATION_RANGE_MAX ( 50.000000  80.000000  45.000000  0.000000 )
+      
+       XYZ_ROTATION ( 0.000000  90.000000  30.000000  0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( cig_fly3 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

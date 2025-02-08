@@ -1,0 +1,65 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NETWORK_LOG ( ON )
+    
+     NAME ( plate* )
+    
+     HEALTH_ROOT_NAME ( plate_dis )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  PARENT  NAME ( plate* )
+      
+       NAME ( plate_polys )
+      
+       NAME ( plate_dis )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( ROOT_NODE )
+      
+       GRAVITY ()
+      
+       DO_INTERSECTIONS ()
+      
+       DO_ALTITUDES ()
+      
+       BOUNCE_ELASTICITY ( 0.350000 )
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.300000 )
+       
+       )
+      
+       BOUNCE_SOUND (
+         NAME ( SND_BULLET_METAL_PING_MED )
+       
+        FULL_VOLUME_VELOCITY ( 140 )
+       
+       )
+      
+       RUN_TIME ( 4.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

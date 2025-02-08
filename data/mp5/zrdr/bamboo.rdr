@@ -1,0 +1,269 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bamboo1 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shoot0 )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( -0.250000  -0.100000  0.600000  0.250000  0.100000  -0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( 0.250000  0.100000  -0.600000  -0.250000  -0.100000  0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( shoot0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bamboo2 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.100000 )
+     
+      CALL_SEQUENCE (
+        NAME ( shoot0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shoot0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( -0.250000  -0.100000  0.600000  0.250000  0.100000  -0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( 0.250000  0.100000  -0.600000  -0.250000  -0.100000  0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( shoot0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bamboo3 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.200000 )
+     
+      CALL_SEQUENCE (
+        NAME ( shoot0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shoot0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( -0.250000  -0.100000  0.600000  0.250000  0.100000  -0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( 0.250000  0.100000  -0.600000  -0.250000  -0.100000  0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( shoot0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bamboo4 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.500000 )
+     
+      CALL_SEQUENCE (
+        NAME ( shoot0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shoot0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( -0.250000  -0.100000  0.600000  0.250000  0.100000  -0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( 0.250000  0.100000  -0.600000  -0.250000  -0.100000  0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( shoot0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bamboo5 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.400000 )
+     
+      CALL_SEQUENCE (
+        NAME ( shoot0 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( shoot0 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( -0.250000  -0.100000  0.600000  0.250000  0.100000  -0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( shoot0 )
+      
+       XYZ_ROTATION ( 0.250000  0.100000  -0.600000  -0.250000  -0.100000  0.600000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( shoot0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

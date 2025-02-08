@@ -1,0 +1,70 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( lights_outdoor* )
+    
+     HEALTH_ROOT_NAME ( hit_dis )
+    
+     HEALTH ( 1 )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  NAME ( lights_outdoor* )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        START ()
+      
+       NAME ( SND_BULLET_METAL_PING_LARGE )
+      
+       AT_NODE ( ROOT_NODE  0.000000  0.000000  0.000000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.100000 )
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.070000 )
+       
+       )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000 )
+      
+       BOUNCE_SOUND (
+         NAME ( SND_STEP_LEAVES_L )
+       
+        FULL_VOLUME_VELOCITY ( 20 )
+       
+       )
+      
+       RUN_TIME ( 5.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

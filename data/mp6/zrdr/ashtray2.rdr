@@ -1,0 +1,93 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NETWORK_LOG ( ON )
+    
+     NAME ( ashtray2 )
+    
+     HEALTH_ROOT_NAME ( ashtray2 )
+    
+     HEALTH ( 1 )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( cig_fly4 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( cig_smoker )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( ROOT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.400000 )
+      
+       INPUT_VELOCITY (
+         SCALE ( 0.300000 )
+       
+       )
+      
+       RUN_TIME ( 3.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( cigarette4 )
+    
+     ANIMATION_NAME ( cig_fly4 )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( cigarette4 )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       BOUNCE_ELASTICITY ( 0.450000 )
+      
+       TRANSLATION_RANGE_MIN ( 340.000000  60.000000  45.000000  0.000000 )
+      
+       TRANSLATION_RANGE_MAX ( 20.000000  70.000000  60.000000  0.000000 )
+      
+       XYZ_ROTATION ( 0.000000  60.000000  30.000000  0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 4 )
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( cig_fly4 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

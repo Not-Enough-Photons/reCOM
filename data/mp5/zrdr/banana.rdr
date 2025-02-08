@@ -1,0 +1,340 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bananatree2 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch0 )
+     
+      OBJECT_MOTION (
+        NAME ( branch0 )
+      
+       XYZ_ROTATION ( 4  1  2  -4  -1  -2 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch0 )
+      
+       XYZ_ROTATION ( -4  -1  -2  4  1  2 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch1 )
+     
+      OBJECT_MOTION (
+        NAME ( branch1 )
+      
+       XYZ_ROTATION ( 6  1  4  -6  -1  -4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch1 )
+      
+       XYZ_ROTATION ( -6  -1  -4  6  1  4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch1 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch2 )
+     
+      OBJECT_MOTION (
+        NAME ( branch2 )
+      
+       XYZ_ROTATION ( 2.500000  1  -6  -2.500000  -1  6 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch2 )
+      
+       XYZ_ROTATION ( -2.500000  -1  6  2.500000  1  -6 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch2 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch3 )
+     
+      OBJECT_MOTION (
+        NAME ( branch3 )
+      
+       XYZ_ROTATION ( -2  0.500000  -2.500000  2  -0.500000  2.500000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch3 )
+      
+       XYZ_ROTATION ( 2  -0.500000  2.500000  -2  0.500000  -2.500000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch3 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch4 )
+     
+      OBJECT_MOTION (
+        NAME ( branch4 )
+      
+       XYZ_ROTATION ( -6  0.500000  -4  6  -0.500000  4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch4 )
+      
+       XYZ_ROTATION ( 6  -0.500000  4  -6  0.500000  -4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch4 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_ROOT_NAME ( MODEL  bananatree1 )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch2 )
+     
+      OBJECT_MOTION (
+        NAME ( branch2 )
+      
+       XYZ_ROTATION ( 6  1  4  -6  -1  -4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch2 )
+      
+       XYZ_ROTATION ( -6  -1  -4  6  1  4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch2 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch3 )
+     
+      OBJECT_MOTION (
+        NAME ( branch3 )
+      
+       XYZ_ROTATION ( 2.500000  1  -6  -2.500000  -1  6 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch3 )
+      
+       XYZ_ROTATION ( -2.500000  -1  6  2.500000  1  -6 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch2 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch1 )
+     
+      OBJECT_MOTION (
+        NAME ( branch1 )
+      
+       XYZ_ROTATION ( -2  0.500000  -2.500000  2  -0.500000  2.500000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch1 )
+      
+       XYZ_ROTATION ( 2  -0.500000  2.500000  -2  0.500000  -2.500000 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch1 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( branch0 )
+     
+      OBJECT_MOTION (
+        NAME ( branch0 )
+      
+       XYZ_ROTATION ( -3  0.500000  -4  3  -0.500000  4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( branch0 )
+      
+       XYZ_ROTATION ( 3  -0.500000  4  -3  0.500000  -4 )
+      
+       RUN_TIME ( 2 )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( branch0 )
+      
+       STATE ( 0  0  0 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

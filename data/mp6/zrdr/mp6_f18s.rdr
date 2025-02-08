@@ -1,0 +1,1597 @@
+((
+   ANIMATION_DEFINITIONS (
+    GRAVITY ( -98.000000 )
+  
+   ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mp6_parent )
+    
+     ACTIVATION ( ON_STARTUP )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( random_rotate )
+      
+      )
+     
+      WAIT ( 0  1 )
+     
+      STOP_SEQUENCE (
+        NAME ( random_rotate )
+      
+      )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( mp6_f18s_a )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( mp6_f18s_b )
+      
+      )
+     
+      ELSEIF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( mp6_f18s_c )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 50  80 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( random_rotate )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_MOTION (
+        NAME ( f18s )
+      
+       XYZ_ROTATION ( 0  360  0  0  0  0 )
+      
+       RUN_TIME ( 1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mp6_f18s_a )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_SEQUENCE (
+        NAME ( f181 )
+      
+      )
+     
+      WAIT ( 0  1.500000 )
+     
+      CALL_SEQUENCE (
+        NAME ( f182 )
+      
+      )
+     
+      WAIT ( 11.900000 )
+     
+      STOP_ANIMATION (
+        NAME ( c1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( c2 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( f181 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_FLYBY )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  f18_1 )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/mp6/zrdr/f18_1.zan )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( f182 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  f18_2 )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/mp6/zrdr/f18_2.zan )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mp6_f18s_b )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_SEQUENCE (
+        NAME ( f182 )
+      
+      )
+     
+      WAIT ( 0  1.500000 )
+     
+      CALL_SEQUENCE (
+        NAME ( f181 )
+      
+      )
+     
+      WAIT ( 11.900000 )
+     
+      STOP_ANIMATION (
+        NAME ( c1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( c2 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( f181 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  f18_1 )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/mp6/zrdr/f18_1b.zan )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( f182 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_FLYBY )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  f18_2 )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/mp6/zrdr/f18_2b.zan )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mp6_f18s_c )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_SEQUENCE (
+        NAME ( f181 )
+      
+      )
+     
+      WAIT ( 0  1.500000 )
+     
+      CALL_SEQUENCE (
+        NAME ( f182 )
+      
+      )
+     
+      WAIT ( 11.900000 )
+     
+      STOP_ANIMATION (
+        NAME ( c1 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( c2 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( f181 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        START ()
+      
+       NAME ( SND_FLYBY )
+      
+       VOLUME ( 1.000000 )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  f18_1 )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/mp6/zrdr/f18_1c.zan )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( f182 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_SI_SCRIPT (
+        SPLINE_INTERP ()
+      
+       NAME ( GLOBAL  f18_2 )
+      
+       SCRIPT_FRAME_RATE ( 15 )
+      
+       SCRIPT_FILENAME ( data/mp6/zrdr/f18_2c.zan )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( GLOBAL  f18_2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( random_bombs )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_SEQUENCE (
+        NAME ( bombgroup1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup1 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 707  62  1953 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 707  62  1953 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 738  62  2077 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 738  62  2077 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 850  62  2135 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 850  62  2135 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.100000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 987  62  2136 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 987  62  2136 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup2 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup2 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1055  62  2042 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1055  62  2042 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1093  70  2105 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1093  70  2105 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1260  87  2153 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1260  87  2153 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1349  92  2152 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1349  92  2152 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup3 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup3 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1452  92  2258 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1452  92  2258 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1620  92  2321 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1620  92  2321 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1886  110  2380 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1886  110  2380 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2110  88  2352 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2110  88  2352 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup4 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup4 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2132  74  2127 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2132  74  2127 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2161  109  1953 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2161  109  1953 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2159  133  1791 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2159  133  1791 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2338  133  1743 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2338  133  1743 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup5 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup5 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2189  133  1225 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2189  133  1225 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2013  133  1088 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 2013  133  1088 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1903  133  1018 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1903  133  1018 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1679  133  980 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1679  133  980 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup6 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup6 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1492  133  1139 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1492  133  1139 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1293  103  1188 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1293  103  1188 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1248  95  1291 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1248  95  1291 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1139  66  1340 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1139  66  1340 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup7 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( bombgroup7 )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1025  49  1365 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 1025  49  1365 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 938  59  1475 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 938  59  1475 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 862  33  1592 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 862  33  1592 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 817  55  1720 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 817  55  1720 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      WAIT ( 0.100000  2 )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.200000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( he_grenade )
+      
+       WITH_TRANSLATION (
+         XYZ ( 739  62  1837 )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( artil_camshake )
+      
+       WITH_TRANSLATION (
+         XYZ ( 739  62  1837 )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      CALL_SEQUENCE (
+        NAME ( bombgroup1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( f18contrail )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( c1 )
+      
+       TEXTURES ( effect_dustpuff01.tif  cloudpuff01.tif )
+      
+       AT_NODE (
+         INPUT_NODE  OFFSET ( 10.300000  0  3 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.008000 )
+      
+       NUMBER ( 1 )
+      
+       NUM_PERIODS ( -1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
+      
+       RADIUS_RANGE ( 1.000000  2.000000 )
+      
+       LIFESPAN_RANGE ( 0.500000  1.500000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.200000 )
+      
+       FRICTION ( 1 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 1200.000000  1800.000000 )
+      
+       COLORS (( 0.000000  0.900000  0.900000  0.900000  0.000000 )
+       
+       ( 0.050000  0.900000  0.900000  0.900000  0.300000 )
+       
+       ( 0.300000  0.900000  0.900000  0.900000  0.300000 )
+       
+       ( 1.000000  0.900000  0.900000  0.900000  0.000000 )
+       
+       )
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( c2 )
+      
+       TEXTURES ( effect_dustpuff01.tif  cloudpuff01.tif )
+      
+       AT_NODE (
+         INPUT_NODE  OFFSET ( -10.300000  0  3 )
+       
+       )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.008000 )
+      
+       NUMBER ( 1 )
+      
+       NUM_PERIODS ( -1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( 0.000000  0.000000 )
+      
+       RADIUS_RANGE ( 0.500000  1.500000 )
+      
+       LIFESPAN_RANGE ( 1.000000  2.000000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.200000 )
+      
+       FRICTION ( 1 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_NEAR_RANGE ( 0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 1200.000000  1800.000000 )
+      
+       COLORS (( 0.000000  0.900000  0.900000  0.900000  0.000000 )
+       
+       ( 0.050000  0.900000  0.900000  0.900000  0.300000 )
+       
+       ( 0.300000  0.900000  0.900000  0.900000  0.300000 )
+       
+       ( 1.000000  0.900000  0.900000  0.900000  0.000000 )
+       
+       )
+      
+      )
+     
+      WAIT ( 10000 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( artil_camshake )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( camera_shake )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.250000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( camera_effects )
+      
+       XYZ_ROTATION ( 0  3.200000  32  0  0  0 )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( camera_effects )
+      
+       XYZ_ROTATION ( 0  -3.200000  -32  0  0  0 )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( 3 )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,1036 @@
+((
+   ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION (
+      ACTIVATION ( ON_STARTUP )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     NAME ( truck_stop )
+    
+     ANIMATION_NAME ( truck_stop_setup )
+    
+     SAVE_NODE_STATES ((
+        TRANSLATION  ROTATION  ACTIVE  PARENT  NAME ( gastank )
+      
+       NAME ( gasp1 )
+      
+       NAME ( gasp2 )
+      
+       NAME ( gasp3 )
+      
+       NAME ( exhaust1 )
+      
+       NAME ( exhaust2 )
+      
+       NAME ( wheel1 )
+      
+       NAME ( wheel2 )
+      
+      )
+     
+     (
+        ROTATION  NAME ( body_truck )
+      
+       NAME ( bucket_truck )
+      
+       NAME ( window_right )
+      
+       NAME ( window_left )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( gasp1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gasp2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gasp3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( WEAPON_HIT )
+    
+     NAME ( truck_stop )
+    
+     ANIMATION_NAME ( destroy_truck )
+    
+     HEALTH_ROOT_NAME ( gastank )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     HEALTH ( 80 )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( destroy_all )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( ROOT_NODE )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( truck_stop_hitme )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( ROOT_NODE )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( 50gallon_fuel_explosion )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( ROOT_NODE )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     ANIMATION_NAME ( destroy_all )
+    
+     SEQUENCE_DEFINITION (
+       FIRE_WEAPON (
+        AMMO (
+         NAME ( explosive_stuff )
+       
+       )
+      
+       WEAPON (
+         NAME ( exploding_fuel )
+       
+       )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       DIRECTION (
+         AZ ( 0  0 )
+       
+       )
+      
+       DETONATE_TIME ( 0.001000 )
+      
+       EXPIRATION_TIME ( 0.010000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( truck_stop )
+    
+     ANIMATION_NAME ( truck_stop_hitme )
+    
+     NETWORK_LOG ( ON )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( gastank_explode )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( truck_rotate_parts )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gastank )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gasp1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gasp2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( gasp3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gas_part_right )
+      
+       WITH_NODE ( gasp1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gasp1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gas_part_right )
+      
+       WITH_NODE ( gasp2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gasp2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( gas_part_right )
+      
+       WITH_NODE ( gasp3 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( gasp3 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( exhaust1_fly )
+      
+       WITH_NODE ( exhaust1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( exhaust1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( exhaust2_fly )
+      
+       WITH_NODE ( exhaust2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( exhaust2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( wheel1_fly )
+      
+       WITH_NODE ( wheel1 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( wheel1 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( wheel2_fly )
+      
+       WITH_NODE ( wheel2 )
+      
+       WITH_TRANSLATION (
+         AT_NODE ( wheel2 )
+       
+       )
+      
+       WITH_INPUT_ARGS ()
+      
+      )
+     
+      INVALIDATE_ANIMATION (
+        NAME ( truck_stop_hitme )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( truck_stop )
+    
+     ANIMATION_NAME ( gastank_explode )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_EXPLOSION_1 )
+      
+       AT_NODE ( gastank )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      PARTICLE_SOURCE (
+        NAME ( gastank_explosion1 )
+      
+       TEXTURES ( cloudpuff01.tif )
+      
+       AT_NODE ( gastank )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.030000 )
+      
+       NUMBER ( 2 )
+      
+       PERTURB_POSITION_X ( -3.000000  3.000000 )
+      
+       PERTURB_POSITION_Y ( -1.000000  1.000000 )
+      
+       PERTURB_POSITION_Z ( -3.000000  3.000000 )
+      
+       LOCAL_VELOCITY ( 7.000000  2.000000  -3.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -2.000000  2.000000 )
+      
+       RADIUS_RANGE ( 2.500000  2.700000 )
+      
+       LIFESPAN_RANGE ( 2.100000  3.400000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.300000 )
+      
+       FRICTION ( 0.600000 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 420.000000  640.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.900000  0.700000  0.700000 )
+       
+       ( 0.050000  0.950000  0.800000  0.300000  0.900000 )
+       
+       ( 0.150000  0.950000  0.400000  0.070000  0.700000 )
+       
+       ( 1.000000  0.100000  0.100000  0.100000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  2.000000 )
+       
+       ( 0.500000  4.000000 )
+       
+       ( 1.000000  8.400000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  2 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       PARTICLE_SOURCE (
+        NAME ( gastank_explosion2 )
+      
+       TEXTURES ( explosion2.tif )
+      
+       AT_NODE ( gastank )
+      
+       TRANSLATION ( 0.000000  7.000000  -7.000000 )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.030000 )
+      
+       NUMBER ( 2 )
+      
+       PERTURB_POSITION_X ( -3.000000  3.000000 )
+      
+       PERTURB_POSITION_Y ( -1.000000  1.000000 )
+      
+       PERTURB_POSITION_Z ( -3.000000  3.000000 )
+      
+       LOCAL_VELOCITY ( 3.000000  2.000000  -3.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -2.000000  2.000000 )
+      
+       RADIUS_RANGE ( 2.500000  2.700000 )
+      
+       LIFESPAN_RANGE ( 3.100000  4.400000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.300000 )
+      
+       FRICTION ( 0.600000 )
+      
+       WORLD_ACCELERATION ( 0.000000  0.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 420.000000  640.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.900000  0.700000  0.700000 )
+       
+       ( 0.050000  0.950000  0.800000  0.300000  0.900000 )
+       
+       ( 0.150000  0.950000  0.400000  0.070000  0.700000 )
+       
+       ( 1.000000  0.100000  0.100000  0.100000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  2.000000 )
+       
+       ( 0.500000  4.000000 )
+       
+       ( 1.000000  8.400000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  1 )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ACTIVATION ( ON_CALL )
+     
+      LIGHT (
+        NAME ( tankexplode_light )
+      
+       START ()
+      
+       STOP ()
+      
+       AT_NODE ( gastank )
+      
+       TRANSLATION ( 0.000000  12.000000  0.000000 )
+      
+       DIFFUSE ( 0.900000  0.650000  0.000000 )
+      
+       OPACITY ( 1.000000 )
+      
+       RANGE_SEQUENCE (( 0.000000  0.000000  0.000000 )
+       
+       ( 0.150000  20.000000  57.000000 )
+       
+       ( 0.250000  5.000000  15.000000 )
+       
+       ( 0.400000  22.000000  67.000000 )
+       
+       ( 0.500000  9.000000  22.000000 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     NAME ( truck_stop )
+    
+     ANIMATION_NAME ( truck_rotate_parts )
+    
+     LOCAL_NODES_ONLY ( ON )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( body_truck )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -7.000000  0.000000  0.000000  19.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 1.300000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_C4_EXPLOSION_1 )
+      
+       AT_NODE ( body_truck )
+      
+       START ()
+      
+       STOP ()
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( bucket_truck )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -21.000000  0.000000  0.000000  24.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 2.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( window_right )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -60.000000  0.000000  0.000000  124.000000  0.000000  0.000000 )
+      
+       BOUNCE_SOUND ( SND_BULLET_METAL )
+      
+       RUN_TIME ( 1.400000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( window_right )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -34.000000  0.000000  0.000000  54.000000  0.000000  0.000000 )
+      
+       BOUNCE_SOUND ( SND_BULLET_METAL )
+      
+       RUN_TIME ( 1.300000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( window_right )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -24.000000  0.000000  0.000000  20.000000  0.000000  0.000000 )
+      
+       BOUNCE_SOUND ( SND_BULLET_METAL )
+      
+       RUN_TIME ( 1.650000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION (
+        NAME ( window_left )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -50.000000  0.000000  0.000000  104.000000  0.000000  0.000000 )
+      
+       BOUNCE_SOUND ( SND_BULLET_METAL )
+      
+       RUN_TIME ( 1.700000 )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( window_left )
+      
+       GRAVITY ()
+      
+       XYZ_ROTATION ( -34.000000  0.000000  0.000000  40.000000  0.000000  0.000000 )
+      
+       BOUNCE_SOUND ( SND_BULLET_METAL )
+      
+       RUN_TIME ( 1.450000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     ANIMATION_NAME ( gas_part_right )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( gastank )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( truck_stop )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  mp6 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       TRANSLATION_RANGE_MIN ( 200.000000  25.000000  90.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 350.000000  70.000000  150.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 8 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( calling_effect )
+     
+      IF (
+        RANDOM_WEIGHT ( 0.400000 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( gaspart_effect )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( gaspart_effect )
+     
+      ACTIVATION ( ON_CALL )
+     
+      PARTICLE_SOURCE (
+        NAME ( gas_fire1 )
+      
+       TEXTURES ( fire_hardedge.tif )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       ACTIVE_STATE ( ACTIVE )
+      
+       TIME_INTERVAL ( 0.030000 )
+      
+       NUMBER ( 1 )
+      
+       PERTURB_POSITION_X ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Y ( 0.000000  0.000000 )
+      
+       PERTURB_POSITION_Z ( 0.000000  0.000000 )
+      
+       LOCAL_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       WORLD_VELOCITY ( 0.000000  0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_X ( -2.000000  2.000000 )
+      
+       PERTURB_VELOCITY_Y ( 0.000000  0.000000 )
+      
+       PERTURB_VELOCITY_Z ( -1.000000  2.000000 )
+      
+       RADIUS_RANGE ( 0.500000  0.700000 )
+      
+       LIFESPAN_RANGE ( 2.100000  2.400000 )
+      
+       START_AGE_RANGE ( 0.000000  0.000000 )
+      
+       PRIORITY ( 0.000000 )
+      
+       WIND_FACTOR ( 0.300000 )
+      
+       FRICTION ( 0.200000 )
+      
+       WORLD_ACCELERATION ( 0.000000  4.000000  0.000000 )
+      
+       FADE_FAR_RANGE ( 420.000000  540.000000 )
+      
+       COLORS (( 0.000000  0.950000  0.900000  0.700000  0.700000 )
+       
+       ( 0.200000  0.950000  0.800000  0.300000  0.900000 )
+       
+       ( 0.600000  0.950000  0.400000  0.070000  0.700000 )
+       
+       ( 1.000000  0.950000  0.400000  0.070000  0.000000 )
+       
+       )
+      
+       SCALE_SEQUENCE (( 0.000000  5.000000 )
+       
+       ( 0.500000  2.000000 )
+       
+       ( 1.000000  0.400000 )
+       
+       )
+      
+      )
+     
+      WAIT ( FRAME_COUNT  240 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     ANIMATION_NAME ( exhaust1_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( truck_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( truck_stop )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  mp6 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.300000 )
+      
+       TRANSLATION_RANGE_MIN ( 90.000000  30.000000  62.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 120.000000  40.000000  85.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     ANIMATION_NAME ( exhaust2_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( truck_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( truck_stop )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  mp6 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.300000 )
+      
+       TRANSLATION_RANGE_MIN ( 240.000000  20.000000  70.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 270.000000  30.000000  80.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 6 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     ANIMATION_NAME ( wheel1_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( truck_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( truck_stop )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  mp6 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.100000 )
+      
+       TRANSLATION_RANGE_MIN ( 330.000000  40.000000  95.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 345.000000  60.000000  110.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 8 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ACTIVATION ( ON_CALL )
+    
+     ANIMATION_NAME ( wheel2_fly )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_DELETE_CHILD (
+        PARENT ( truck_parts )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_ROTATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       LIKE_NODE ( truck_stop )
+      
+      )
+     
+      OBJECT_TRANSLATE_STATE (
+        NAME ( INPUT_NODE )
+      
+       INPUT_TRANSLATION ()
+      
+      )
+     
+      OBJECT_ADD_CHILD (
+        PARENT ( GLOBAL  mp6 )
+      
+       CHILD ( INPUT_NODE )
+      
+      )
+     
+      OBJECT_MOTION (
+        NAME ( INPUT_NODE )
+      
+       GRAVITY ()
+      
+       DO_ALTITUDES ()
+      
+       DO_INTERSECTIONS ()
+      
+       BOUNCE_ELASTICITY ( 0.100000 )
+      
+       TRANSLATION_RANGE_MIN ( 40.000000  40.000000  95.000000  -0.300000 )
+      
+       TRANSLATION_RANGE_MAX ( 50.000000  60.000000  110.000000  -0.500000 )
+      
+       FORWARD_ROTATION ( DISTANCE  10.000000  -3.000000 )
+      
+       RUN_TIME ( 8 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+
