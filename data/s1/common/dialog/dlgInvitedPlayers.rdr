@@ -1,0 +1,1738 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgInvitedPlayers.rdr )
+   
+    OBJECTS ((
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "INVITE PLAYERS" )
+      
+       SCALE ( 0.950000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_Yel )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 572 )
+     
+      YPOS ( 25 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonY.tif )
+      
+       SIZE ( 28  28 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_blue )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 581 )
+     
+      YPOS ( 34 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 384 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
+       
+        LONGEVITY ( PERSISTENT )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( txtClanName )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 45 )
+     
+      SPEC (
+        CHILDOF ( letterbar_bottom )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( CLANNAMEVAR )
+       
+        VALUE ( Unaffiliated )
+       
+        TYPE ( PERMANENT )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MainWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 170 )
+     
+      YPOS ( 70 )
+     
+      SPEC (
+        XSIZE ( 460 )
+      
+       YSIZE ( 295 )
+      
+       FILENAME ( eq_CharWinInv.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldTop )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 177 )
+     
+      YPOS ( 75 )
+     
+      SPEC (
+        XSIZE ( 446 )
+      
+       YSIZE ( 16 )
+      
+       FILENAME ( blue_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 178 )
+     
+      YPOS ( 342 )
+     
+      SPEC (
+        XSIZE ( 446 )
+      
+       YSIZE ( 18 )
+      
+       FILENAME ( blue_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorTop )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 338 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( "CLAN ROSTER" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 341 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( "INVITED PLAYERS" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Category2Text )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 500 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( STATUS )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionTextLow )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 357 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( "Select a player and press the X button to remove them" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags2.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( net_monitor )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnInvitePlaystart )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( find_invited_players )
+     
+     )
+    
+    (
+       EVENT ( MP_PLAYER_NOT_FOUND )
+     
+      ANIMATION ( player_not_found )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    (
+       EVENT ( MP_PLAYER_ALREADY_MEMBER )
+     
+      ANIMATION ( player_already_member )
+     
+     )
+    
+    (
+       EVENT ( MP_PLAYER_ALREADY_INVITED )
+     
+      ANIMATION ( player_already_invited )
+     
+     )
+    
+    (
+       EVENT ( MP_PLAYER_IS_LEADER )
+     
+      ANIMATION ( player_is_leader )
+     
+     )
+    
+    (
+       EVENT ( ON_SKB_APPLY )
+     
+      ANIMATION ( do_invite )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( invite )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 68 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        CAPTION ( "INVITE PLAYER" )
+      
+       XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 12 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnInvitePlayAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( invite_player )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( RevokeInv )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 100 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        CAPTION ( "REVOKE INVITE" )
+      
+       XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 12 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnRevokeInvAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( OnRevokeInvPress )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( RosterList )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 80 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 255.000000  104.000000  51.000000 )
+      
+       XSIZE ( 250 )
+      
+       YSIZE ( 255 )
+      
+       NOSELECT ()
+      
+       PADHOG ()
+      
+       SCALE ( 0.350000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 30 )
+      
+       SPACING ( 15 )
+      
+       UIVAR (
+         NAME ( CLAN_ROSTER )
+       
+       )
+      
+       OPTIONS ((
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       (
+          CAPTION ( EMPTY )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( "Invited Players" )
+     
+      XPOS ( 332 )
+     
+      YPOS ( 80 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 255.000000  104.000000  51.000000 )
+      
+       XSIZE ( 250 )
+      
+       YSIZE ( 255 )
+      
+       NOSELECT ()
+      
+       PADHOG ()
+      
+       SCALE ( 0.350000 )
+      
+       LEFT_MARGIN ( 10 )
+      
+       TOP_MARGIN ( 30 )
+      
+       SPACING ( 15 )
+      
+       UIVAR (
+         NAME ( INVITED_PLAYERS )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( TRIANGLE )
+        
+         ANIMATION ( BackToButtons )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( revoke_invite )
+        
+        )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 0 )
+        
+        )
+       
+       (
+          POSITION ( 160 )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( return )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 150 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( RETURN )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( ReturnAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( check_then_save_and_leave )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_then_save_and_leave )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgWorldOfSOCOM.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReturnAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "Press the X button to return to SOCOM online." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( BackToButtons )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( RevokeInv )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( "Invited Players" )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnInvitePlaystart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( RosterList )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( "Invited Players" )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnInvitePlayAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "Press the X button to invite players." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnRevokeInvAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "Press the X button to revoke invitations." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnRevokeInvPress )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( ClanHasInvitations )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "Press the X button to revoke invitations." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( "Invited Players" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( "Invited Players" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "There are no outstanding clan invitations." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( find_invited_players )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetInvitedPlayers )
+      
+      )
+     
+      WAIT ( 20.000000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( get_clan_roster )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( GetClanRoster )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( revoke_invite )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( ClanHasInvitations )
+       
+       )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      VALVE ( AreYouReallySure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Do you really want to remove this player from the invite list?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 190.000000  200.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouReallySure )
+       
+        YES (
+          CAPTION ( Yes )
+        
+         POS ( 45  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( No )
+        
+         POS ( 160  90 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouReallySure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( AreYouReallySure  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RevokeInvite )
+      
+       ARGUMENT ( INPUT_STRING )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopUp )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetInvitedPlayers )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Action cancelled, Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 190.000000  200.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ENDIF ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( player_not_found )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "That player does not exist. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 190.000000  200.000000 )
+      
+       WIDTH ( 350 )
+      
+       HEIGHT ( 96 )
+      
+       SPACING ( 20 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( player_already_invited )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Player has already been invited to join your clan. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 190.000000  200.000000 )
+      
+       WIDTH ( 350 )
+      
+       HEIGHT ( 96 )
+      
+       SPACING ( 20 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( player_already_member )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "That player is already a member of a Clan. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 190.000000  200.000000 )
+      
+       WIDTH ( 350 )
+      
+       HEIGHT ( 96 )
+      
+       SPACING ( 20 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( player_is_leader )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You are the leader of the clan, you cannot invite yourself. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 190.000000  200.000000 )
+      
+       WIDTH ( 350 )
+      
+       HEIGHT ( 96 )
+      
+       SPACING ( 20 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( invite_player )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Name of Player to Invite" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( PLAYER_INVITE_NAME )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  14 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_invite )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( InvitePlayerToClan )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

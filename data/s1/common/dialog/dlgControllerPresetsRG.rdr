@@ -1,0 +1,431 @@
+((
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/uiop )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( multplay_back.tif )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgControllerPresetsRG.rdr )
+  
+   USES_MEMCARD ()
+  
+   OBJECTS ((
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 384 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      SIZE ( 640  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( "PRECISION SHOOTER CONFIGURATION" )
+     
+      SCALE ( 0.800000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dogtags )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 370 )
+    
+     YPOS ( 325 )
+    
+     SPEC (
+       FILENAME ( dogtags2.tif )
+     
+      SIZE ( 256  128 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 18 )
+    
+     YPOS ( 65 )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 85 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "Press the X button to select this controller configuration." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( InstructionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 30 )
+    
+     SPEC (
+       CHILDOF ( letterbar_bottom )
+     
+      COLOR ( 255.000000  204.000000  51.000000 )
+     
+      FONT ( myriad )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic1 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       XSIZE ( 570 )
+     
+      YSIZE ( 250 )
+     
+      FILENAME ( ContPic1.tif )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( OnPreset )
+    
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( ReturnToOptions )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( has_memcard_changed )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( Preset1Btn )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 70 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 300 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 100 )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.600000 )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset1 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReturnToOptions )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgControllerPresetsNewGame.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ChosePresetOnce  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "PRECISION SHOOTER HAS BEEN SELECTED." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetControllerConfig )
+      
+       ARGUMENT ( Default )
+      
+      )
+     
+      VALVE ( SelectedControllerConfig  =  1 )
+     
+      VALVE ( CameFromNewGameButton  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( save_and_leave )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaskaCinematic.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

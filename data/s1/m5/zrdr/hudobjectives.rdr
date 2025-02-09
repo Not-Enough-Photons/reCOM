@@ -1,0 +1,351 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "DEFUSE THE BOMBS" )
+  
+   DESCRIPTION ( "Locate and defuse the bombs." )
+  
+   VALVE ( POBJ2 )
+  
+   LOCATION ( 911.000000  1212.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj5 )
+  
+   LINE_IDS ( 1 )
+  
+  )
+ 
+ (
+    NAME ( "CLEAN INSERTION" )
+  
+   DESCRIPTION ( "Sentries and snipers guard the way.  Eliminate them silently." )
+  
+   VALVE ( POBJ1 )
+  
+   INVALID_VALVE ( POBJ1Fail )
+  
+   LOCATION ( 345.000000  1193.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj1 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NO_COMPASS_ICON ()
+  
+   LINE_IDS ( 5 )
+  
+  )
+ 
+ (
+    NAME ( "NEUTRALIZE SENTRIES" )
+  
+   DESCRIPTION ( "There are two guards around the corner from your start position." )
+  
+   DESCRIPTION2 ( "Neutralize them silently." )
+  
+   VALVE ( SOBJ1 )
+  
+   LOCATION ( 325.000000  1223.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj2 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "IDENTIFY SNIPERS" )
+  
+   DESCRIPTION ( "Use binoculars to pinpoint sniper locations." )
+  
+   VALVE ( SOBJ2 )
+  
+   INVALID_VALVE ( SOBJ2Fail )
+  
+   LOCATION ( 595.000000  1253.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj3 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "NEUTRALIZE SNIPERS" )
+  
+   DESCRIPTION ( "Neutralize the snipers." )
+  
+   VALVE ( SOBJ3 )
+  
+   DISPLAY_VALVE ( SOBJ2 )
+  
+   LOCATION ( 595.000000  1253.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj4 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "DEFUSE BOMB1" )
+  
+   DESCRIPTION ( "Locate and defuse the bombs." )
+  
+   VALVE ( SOBJ5 )
+  
+   LOCATION ( 661.000000  1022.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj7 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "DEFUSE BOMB2" )
+  
+   DESCRIPTION ( "Locate and defuse the bombs." )
+  
+   VALVE ( SOBJ6 )
+  
+   LOCATION ( 911.000000  1212.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj8 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "DEFUSE BOMB3" )
+  
+   DESCRIPTION ( "Locate and defuse the bombs." )
+  
+   VALVE ( SOBJ4 )
+  
+   LOCATION ( 515.000000  313.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj6 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "RESCUE THE HOSTAGES" )
+  
+   DESCRIPTION ( "The oil platform workers have been taken hostage.  Rescue them." )
+  
+   DESCRIPTION2 ( "Intel indicates that there are two groups of hostages in separate" )
+  
+   DESCRIPTION3 ( "locations, one set in the barracks and another set in the office." )
+  
+   VALVE ( POBJ3 )
+  
+   LOCATION ( 1091.000000  522.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj9 )
+  
+   LINE_IDS ( 2 )
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "LOCATE OIL WORKERS" )
+  
+   DESCRIPTION ( "Find where the terrorists are holding the hostages." )
+  
+   DESCRIPTION2 ( "This group is located in the office building." )
+  
+   VALVE ( SOBJ7 )
+  
+   LOCATION ( 715.000000  433.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj10 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "RESTRAIN WORKERS" )
+  
+   DESCRIPTION ( "Restraining hostages once secured is standard operating procedure." )
+  
+   DESCRIPTION2 ( "This group is located in the barracks." )
+  
+   VALVE ( SOBJ9 )
+  
+   LOCATION ( 1091.000000  522.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj12 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE OIL PLATFORM" )
+  
+   DESCRIPTION ( "Secure the oil platform." )
+  
+   VALVE ( POBJ4 )
+  
+   LOCATION ( 835.000000  833.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj13 )
+  
+   LINE_IDS ( 3 )
+  
+   NAV_POINTS ( Charlie  Delta  Echo  Foxtrot  Juliet  Romeo )
+  
+  )
+ 
+ (
+    NAME ( "SECURE HELIPAD" )
+  
+   DESCRIPTION ( "Secure the helipad.  Its raised location makes it susceptible to sniper fire." )
+  
+   VALVE ( SOBJ10 )
+  
+   LOCATION ( 1441.000000  802.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj14 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Foxtrot )
+  
+  )
+ 
+ (
+    NAME ( "SECURE BUILDING A" )
+  
+   DESCRIPTION ( "Secure Building A." )
+  
+   VALVE ( SOBJ14 )
+  
+   LOCATION ( 691.000000  1072.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj17 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Echo )
+  
+  )
+ 
+ (
+    NAME ( "SECURE BUILDING B" )
+  
+   DESCRIPTION ( "Secure Building B." )
+  
+   VALVE ( SOBJ15 )
+  
+   LOCATION ( 581.000000  1072.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj18 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Delta )
+  
+  )
+ 
+ (
+    NAME ( "SECURE BUILDING C" )
+  
+   DESCRIPTION ( "Secure Building C." )
+  
+   VALVE ( SOBJ16 )
+  
+   LOCATION ( 1101.000000  632.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj20 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Juliet )
+  
+  )
+ 
+ (
+    NAME ( "SECURE BUILDING D" )
+  
+   DESCRIPTION ( "Secure Building D." )
+  
+   VALVE ( SOBJ17 )
+  
+   LOCATION ( 385.000000  1323.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj16 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Charlie )
+  
+  )
+ 
+ (
+    NAME ( "SECURE BUILDING E" )
+  
+   DESCRIPTION ( "Secure Building E." )
+  
+   VALVE ( SOBJ18 )
+  
+   LOCATION ( 695.000000  273.000000 )
+  
+   ON_CALL_ANIMATION ( m5obj19 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Romeo )
+  
+  )
+ 
+ )
+
+)
+

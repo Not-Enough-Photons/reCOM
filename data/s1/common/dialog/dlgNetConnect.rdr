@@ -1,0 +1,1808 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgNetConnect.rdr )
+   
+    OBJECTS ((
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 384 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldMid )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 90 )
+     
+      YPOS ( 90 )
+     
+      SPEC (
+        XSIZE ( 480 )
+      
+       YSIZE ( 190 )
+      
+       FILENAME ( blue_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Window )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 90 )
+     
+      YPOS ( 90 )
+     
+      SPEC (
+        XSIZE ( 480 )
+      
+       YSIZE ( 190 )
+      
+       FILENAME ( eq_CharWinInv.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabHorDiv )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 93 )
+     
+      YPOS ( 110 )
+     
+      SPEC (
+        XSIZE ( 475 )
+      
+       YSIZE ( 10 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ONLINE_LOBBY_STATE )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 235 )
+     
+      YPOS ( 20 )
+     
+      SPEC (
+        CHILDOF ( Window )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       HCENTERED ()
+      
+       CAPTION ( Start )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( CONNECTING )
+      
+       SCALE ( 0.950000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
+       
+        LONGEVITY ( PERSISTENT )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ConnectingAnim )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 330 )
+     
+      YPOS ( 200 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       SCALE ( 0.700000 )
+      
+       CAPTION ( "CONNECTING TO SOCOM ONLINE" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ConnectBackAnim )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 225 )
+     
+      YPOS ( 220 )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( init_socom_online )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Connect_flash )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( monitor_timeout )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnNetError )
+     
+     )
+    
+    (
+       EVENT ( MP_INVALID_PASSWORD )
+     
+      ANIMATION ( OnInvalidPassword )
+     
+     )
+    
+    (
+       EVENT ( MP_PLAYER_LOGGED_IN )
+     
+      ANIMATION ( OnPlayerLoggedIn )
+     
+     )
+    
+    (
+       EVENT ( MP_FILTER_FAILURE )
+     
+      ANIMATION ( OnFilterFailure )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( ConnectAnim )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 315 )
+     
+      YPOS ( 360 )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChopperCall )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( ChopperMove )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChopperMove )
+    
+     NAME ( ChopperM )
+    
+     ACTIVATION ( ON_CALL )
+    
+     AUTO_COPY_ANIMATION ()
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( ChopperM )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( ChopperM )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( ChopperM )
+      
+       TRANSLATE_FROM ( 300.000000  -1.100000  290.000000 )
+      
+       TRANSLATE_TO ( 365.000000  -3.100000  305.000000 )
+      
+       RUN_TIME ( 8.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( rot1 )
+      
+       ROTATE_FROM ( 0  0  -20 )
+      
+       ROTATE_TO ( 0  0  -20 )
+      
+       RUN_TIME ( 2.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( tailrotor )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       ROTATE_TO ( 0  0  360 )
+      
+       RUN_TIME ( 0.050000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( rot2 )
+      
+       ROTATE_FROM ( 30  90  0 )
+      
+       ROTATE_TO ( 0  0  0 )
+      
+       RUN_TIME ( 4.000000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( mainrotor )
+      
+       ROTATE_FROM ( 0  0  0 )
+      
+       ROTATE_TO ( 0  360  0 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Connect_flash )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª ª ª ª §" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª ª ª § ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª ª § ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª § ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª § ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª § ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª § ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª § ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª § ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª § ª ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª § ª ª ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "§ ª ª ª ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª § ª ª ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª § ª ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª § ª ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª § ª ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª § ª ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª § ª ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª § ª ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª § ª ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª ª § ª ª" )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ConnectBackAnim )
+      
+       CAPTION ( "ª ª ª ª ª ª ª ª ª ª § ª" )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  0.100000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( init_socom_online )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( UsagePolicyReturnScreen  =  1 )
+     
+      IF (
+        VALVE ( socom_online_initialized  ==  0 )
+      
+      )
+     
+      VALVE ( socom_online_state  =  0 )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( INITNETWORK )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Waiting to Connect" )
+      
+      )
+     
+      WHILE (
+        VALVE ( socom_online_state  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( socom_online_state  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Connected" )
+      
+      )
+     
+      VALVE ( socom_online_initialized  =  1 )
+     
+      CALL_SEQUENCE (
+        NAME ( socom_online_login )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Connect Failure" )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( notify_connect_failure )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Unknown Failure" )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( notify_unknown_failure )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Network Initialization Failure" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Invalid Initialization State" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( socom_online_login )
+     
+      ACTIVATION ( ON_CALL )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( LobbyLogin )
+       
+       )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        VALVE ( socom_online_state  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Session Begin" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Account Login" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Account Registration" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: User Login" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: User Registration" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Screename Login" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Screename Registration" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Login Failure" )
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Player Name not found. Would you like to register this Player Name?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  240.000000 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 125 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( Yes )
+        
+         POS ( 60  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( No )
+        
+         POS ( 180  90 )
+        
+         TEXTOFFSET ( 15  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( LobbyRegister )
+        
+        )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Registration Failure" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( socom_online_state  ==  11 )
+      
+      )
+     
+      BREAK ()
+     
+      ENDIF ()
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( socom_online_state  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Logged In" )
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgUsagePolicy.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_connect_screen )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ConnectingAnim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ConnectAnim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ConnectBackAnim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      IF (
+        VALVE ( socom_online_initialized  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Logout" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( LobbyBailout )
+      
+      )
+     
+      VALVE ( socom_online_initialized  =  0 )
+     
+      WAIT ( 1.000000 )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ONLINE_LOBBY_STATE )
+      
+       CAPTION ( "STATE: Uninit Network" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( UNINITNETWORK )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
+      
+       ARGUMENT ( MULTIPLAYER )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPlayerLoggedIn )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ConfirmPopup  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "The account information you provided is already logged in to SOCOM Online. Please use a different Player Name and Password or log out the other player account. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  245.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 340 )
+      
+       HEIGHT ( 130 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( ConfirmPopup )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( ConfirmPopup  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnFilterFailure )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( init_socom_online )
+      
+      )
+     
+      VALVE ( ConfirmPopup  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "The Player Name you selected could not be registered due to questionable content in the name. Please select another name and try to login again. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  245.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 160 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( ConfirmPopup )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( ConfirmPopup  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      VALVE ( NameIsVulgar  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnInvalidPassword )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ConfirmPopup  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "The password supplied does not match the registered password for this player name. Verify that the player name and the password are input correctly and try again. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  245.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 160 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( ConfirmPopup )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( ConfirmPopup  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( notify_connect_failure )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( init_socom_online )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( monitor_timeout )
+      
+      )
+     
+      VALVE ( ConfirmPopup  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Could not connect to the SOCOM server. Please check to make sure your Internet connection is functioning properly and that the selected Network Configuration settings are correct. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 160.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 360 )
+      
+       HEIGHT ( 160 )
+      
+       XOFFSET ( 25 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( ConfirmPopup )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( ConfirmPopup  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( notify_unknown_failure )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( init_socom_online )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( monitor_timeout )
+      
+      )
+     
+      VALVE ( ConfirmPopup  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "A valid link could not be established with your Internet/Network connection. Please be sure that an ethernet cable is properly connected between the network adaptor (for PlayStation(R)2) or compatible USB to Ethernet adaptor and a live DSL/Cable modem, ethernet hub, router or port. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 130.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 400 )
+      
+       HEIGHT ( 200 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( ConfirmPopup )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( ConfirmPopup  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( LOADING... )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 110.000000  230.000000 )
+      
+       WIDTH ( 400 )
+      
+       HEIGHT ( 80 )
+      
+       XOFFSET ( 168 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( monitor_timeout )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 90.000000 )
+     
+      CALL_ANIMATION (
+        NAME ( notify_unknown_failure )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnNetError )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( init_socom_online )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( monitor_timeout )
+      
+      )
+     
+      VALVE ( ConfirmPopup  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( INPUT_STRING )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 130.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 400 )
+      
+       HEIGHT ( 200 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( ConfirmPopup )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( ConfirmPopup  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( LOADING... )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 110.000000  230.000000 )
+      
+       WIDTH ( 400 )
+      
+       HEIGHT ( 80 )
+      
+       XOFFSET ( 168 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+      WAIT ( 5 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_connect_screen )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

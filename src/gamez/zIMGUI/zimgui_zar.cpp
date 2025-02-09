@@ -27,7 +27,7 @@ void ZARFileCallback(void* userdata, const char * const *filelist, int filter)
         zar_dir = *filelist;
         current_archive = new zar::CZAR();
 
-        if (!current_archive->Open(zar_dir, 0, 0, 16))
+        if (!current_archive->Open_V2(zar_dir, 0, 0, 16))
         {
             SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Failed to open ZAR file!");
         }
@@ -76,7 +76,7 @@ bool CZIMGUI::Tick_ZARDisplay(f32 dT)
     {
         if (ImGui::Button("Open ZAR..."))
         {
-            SDL_ShowOpenFileDialog(ZARFileCallback, NULL, theWindow->GetWindow(), NULL, 0, "D:/", false);
+            SDL_ShowOpenFileDialog(ZARFileCallback, NULL, theWindow->GetWindow(), NULL, 0, "F:/", false);
         }
 
         if (current_archive)

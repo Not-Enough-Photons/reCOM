@@ -116,4 +116,7 @@ public:
 
 	static void OpenAll();
 	static void CloseAll();
+
+	static void OpenAll_ZARV2();
+	static void CloseAll_ZARV2();
 };

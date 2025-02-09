@@ -1,0 +1,757 @@
+((
+   libname ( mp12/assetlib/mp12 )
+ 
+  locked ( 0 )
+ 
+  gearlib ( 0 )
+ 
+  renderphase ( 0 )
+ 
+  textures ((
+     name ( hills2.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( hills.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( rubbleblocksyellow.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( leaf9.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( grasstex.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( shrub1.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( barkstem4.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( bldgtex.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( woodboard.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( water.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( rubblwall3.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( detail_map.tif )
+    
+     uv ( 3.000000 )
+    
+     range ( 160000.000000 )
+    
+     bmode ( SCALEDOWN )
+    
+    )
+   
+   )
+  
+  (
+     name ( rockwall2.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blur ( -3.700000 )
+   
+    mips ( rockwallmip.tif )
+   
+    pal  detail (
+      name ( detail_map4.tif )
+    
+     uv ( 2.000000 )
+    
+     range ( 202500.000000 )
+    
+     bmode ( COLORBLEND )
+    
+    )
+   
+   )
+  
+  (
+     name ( floor5mip.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    32bitpal )
+  
+  (
+     name ( detail_map4.tif )
+   
+    dim2 ( 128  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blur ( -3.400000 )
+   
+    mips ( floor5mip.tif )
+   
+   )
+  
+  (
+     name ( rubblwall4.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( leaf32.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( barkstem5.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( rockwallmip.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( column.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( detail_map.tif )
+    
+     uv ( 2.000000 )
+    
+     range ( 90000.000000 )
+    
+     bmode ( SCALEDOWN )
+    
+    )
+   
+   )
+  
+  (
+     name ( moss.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( treetrunk3.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( congotree.tif )
+   
+    dim2 ( 256  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( congo_reed.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( thai2r_palmstalk.tif )
+   
+    dim2 ( 16  16  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( thai3r_palmtrunk2.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( thai3r_palmtrunk1.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( thai3r_palmfrond1.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( rockwall3.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( detail_map.tif )
+    
+     uv ( 2.000000 )
+    
+     range ( 160000.000000 )
+    
+     bmode ( SCALEDOWN )
+    
+    )
+   
+   )
+  
+  (
+     name ( bldgtexcheditop.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( detail_map.tif )
+   
+    dim2 ( 128  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blur ( -3.700000 )
+   
+    mips ( floor5mip.tif )
+   
+   )
+  
+  (
+     name ( detailmip.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( seal_radio_pole.tif )
+   
+    dim2 ( 16  16  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( metallight.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( radiofrnt3.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( radiofrnt2.tif )
+   
+    dim2 ( 64  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( radiofrnt.tif )
+   
+    dim2 ( 64  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( metaldirt.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( metalhole.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  )
+ 
+  palettes ()
+ 
+ (
+    models ((
+      file ( mp12_terrain.flt )
+    
+     name ( mp12_terrain )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( comtower2.FLT )
+    
+     name ( comtower2 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( seal_comm_base.flt )
+    
+     name ( seal_comm_base )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( seal_comm_antennae.flt )
+    
+     name ( seal_comm_antennae )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tableforbases.flt )
+    
+     name ( tableforbases )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( radiomp.FLT )
+    
+     name ( radiomp )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( shrub.FLT )
+    
+     name ( shrub )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump1.flt )
+    
+     name ( clump1 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump3.flt )
+    
+     name ( clump3 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump5.flt )
+    
+     name ( clump5 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump6.flt )
+    
+     name ( clump6 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump2.flt )
+    
+     name ( clump2 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( grassrepel.flt )
+    
+     name ( grassrepel )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( palmtree.flt )
+    
+     name ( palmtree )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( bamboo.FLT )
+    
+     name ( bamboo )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( grasscombo2.flt )
+    
+     name ( grasscombo2 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( grasscombo.flt )
+    
+     name ( grasscombo )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tree.flt )
+    
+     name ( tree )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tableforbases.flt )
+    
+     name ( table )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( radiomp.FLT )
+    
+     name ( radio )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( fernlow.FLT )
+    
+     name ( fernlow )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( grass.FLT )
+    
+     name ( grass )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( ground01.flt )
+    
+     name ( ground01 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

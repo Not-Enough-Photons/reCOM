@@ -19,7 +19,7 @@ void FileCallback(void* userdata, const char * const *filelist, int filter)
         // rdrArchive.Close();
         rdr_dir = *filelist;
         rdrArchive = *CRdrArchive::AddArchive(rdr_dir, NULL);
-        CRdrArchive::OpenAll();
+        CRdrArchive::OpenAll_ZARV2();
 
         for (auto it = rdrArchive.m_stable->begin(); it != rdrArchive.m_stable->end(); ++it)
         {

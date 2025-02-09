@@ -1,0 +1,899 @@
+(((
+    name ( player )
+  
+   display ( Kahuna )
+  
+   character ( jungle_A19 )
+  
+   setup (( sealstart  5 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Hutchins )
+  
+   display ( Boomer )
+  
+   character ( jungle_B19 )
+  
+   setup (( Hutchins  5 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Bailey )
+  
+   display ( Jester )
+  
+   character ( jungle_C19 )
+  
+   setup (( Bailey  4 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( DiMone )
+  
+   display ( Spectre )
+  
+   character ( jungle_D19 )
+  
+   setup (( DiMone  4 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( Hut_Merc1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( Hut_Merc1_star  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Hut_Merc2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( Hut_Merc2_star  0 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+  )
+ 
+ (
+    name ( Hut_Merc3 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( Hut_Merc3_star  0 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( POW_1 )
+  
+   display ( POW )
+  
+   character ( congo_pow01 )
+  
+   setup (( POW_1  6 )
+   
+   )
+  
+   team ( 17  30  31 )
+  
+   nofade ( 1 )
+  
+   noshoot ( 1 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( POW_2 )
+  
+   display ( POW )
+  
+   character ( congo_pow02 )
+  
+   setup (( POW_2  6 )
+   
+   )
+  
+   team ( 17  30  31 )
+  
+   nofade ( 1 )
+  
+   noshoot ( 1 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( POW_3 )
+  
+   display ( POW )
+  
+   character ( congo_pow03 )
+  
+   setup (( POW_3  4 )
+   
+   )
+  
+   team ( 17  30  31 )
+  
+   nofade ( 1 )
+  
+   noshoot ( 1 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( Torturer )
+  
+   display ( Magnus )
+  
+   character ( m19_torturer )
+  
+   setup (( Torturer_start  2 )
+   
+   )
+  
+   team ( 4  8  14  30 )
+  
+   nofade ( 1 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( LHut_Merc1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( LHut_Merc1_sta  0 )
+   
+   )
+  
+   team ( 4  11  30 )
+  
+  )
+ 
+ (
+    name ( LHut_Merc2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( LHut_Merc2_sta  0 )
+   
+   )
+  
+   team ( 4  11  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( 8_Tower1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_sniper02 )
+  
+   setup (( 8_Tower1_start  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     sensors (
+      aware_decay ( -0.050000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 8_Tower2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_sniper01 )
+  
+   setup (( 8_Tower2_start  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     sensors (
+      aware_decay ( -0.050000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 7_Tower1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_sniper01 )
+  
+   setup (( 7_Tower1_start  0 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     sensors (
+      aware_decay ( -0.050000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 7_Tower2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_sniper02 )
+  
+   setup (( 7_Tower2_start  0 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     sensors (
+      aware_decay ( -0.050000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 6_Tower1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_sniper02 )
+  
+   setup (( 6_Tower1_start  0 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     sensors (
+      aware_decay ( -0.050000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 5_Tower1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_sniper01 )
+  
+   setup (( 5_Tower1_start  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     sensors (
+      aware_decay ( -0.050000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 4_Patrol1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 4_Patrol1_start  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( 4_Patrol2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( 4_Patrol2_start  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( 4_Patrol3 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 4_Patrol3_start  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( 3_Patrol1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 3_Patrol1_start  0 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( 3_Patrol2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 3_Patrol2_start  0 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( 3_Patrol3 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( 3_Patrol3_start  0 )
+   
+   )
+  
+   team ( 4  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( 2_Guard )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 2_Guard_start  0 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( 2_Patrol )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 2_Patrol_start  0 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( 1_Guard )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( 1_Guard_start  4 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     courage ( 100.000000 )
+   
+    sensors (
+      visual_range ( 600.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 1_Patrol1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 1_Patrol1_start  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( 1_Patrol2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( 1_Patrol2_start  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( 0_Patrol )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 0_Patrol_start  0 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nofade ( 1 )
+  
+   ai_params (
+     sensors (
+      visual_range ( 400.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( 0_Patrol2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( Patrol2_start  0 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nofade ( 1 )
+  
+   ai_params (
+     sensors (
+      visual_range ( 400.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( tree_guard )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( tree_guard  0 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( Path_Guard )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( Path_Guard  0 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( 1_Patrol3 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( 1_Patrol3  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( 1_Patrol4 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( 1_Patrol4  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( Field_Patrol )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( Field_Patrol  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( North1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( North1  7 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+  )
+ 
+ (
+    name ( North2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( North2  1 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+  )
+ 
+ (
+    name ( South1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( South1  4 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( South2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( South2  4 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( BCave1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( BCave1  6 )
+   
+   ( BCave1b  6 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+  )
+ 
+ (
+    name ( BCave2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( BCave2  4 )
+   
+   ( BCave2b  4 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+  )
+ 
+ (
+    name ( BCave3 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( BCave3  7 )
+   
+   ( BCave3b  4 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+  )
+ 
+ (
+    name ( AddPatrol1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( AddP1  6 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( Shack1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( Shack1A  3 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+  )
+ 
+ (
+    name ( Shack2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( Shack2A  7 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+  )
+ 
+ (
+    name ( StopPOW1 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc02 )
+  
+   setup (( StopPOW1  4 )
+   
+   ( StopPOW2  4 )
+   
+   )
+  
+   team ( 4  16  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( StopPOW2 )
+  
+   display ( Mercenary )
+  
+   character ( m19_merc01 )
+  
+   setup (( StopPOW3  4 )
+   
+   ( StopPOW4  4 )
+   
+   )
+  
+   team ( 4  16  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

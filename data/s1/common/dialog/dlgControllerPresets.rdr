@@ -1,0 +1,2174 @@
+((
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/uiop )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( multplay_back.tif )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgControllerPresets.rdr )
+  
+   USES_MEMCARD ()
+  
+   OBJECTS ((
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 384 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      SIZE ( 640  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( "PRECISION SHOOTER PRESET" )
+     
+      SCALE ( 0.800000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 18 )
+    
+     YPOS ( 65 )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 85 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindowLow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 18 )
+    
+     YPOS ( 360 )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionTextLow )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 380 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "View controller presets with left/right directional buttons." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindowWayLow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 108 )
+    
+     YPOS ( 15 )
+    
+     SPEC (
+       CHILDOF ( letterbar_bottom )
+     
+      XSIZE ( 420 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionTextWayLow )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 35 )
+    
+     SPEC (
+       CHILDOF ( letterbar_bottom )
+     
+      HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ChatFieldText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 350 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       CHILDOF ( letterbar )
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( InstructionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 30 )
+    
+     SPEC (
+       CHILDOF ( letterbar_bottom )
+     
+      COLOR ( 255.000000  204.000000  51.000000 )
+     
+      FONT ( myriad )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic1 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 80 )
+    
+     SPEC (
+       XSIZE ( 580 )
+     
+      YSIZE ( 260 )
+     
+      FILENAME ( ContPic1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic2 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       XSIZE ( 580 )
+     
+      YSIZE ( 260 )
+     
+      FILENAME ( ContPic2.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic3 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       XSIZE ( 580 )
+     
+      YSIZE ( 260 )
+     
+      FILENAME ( ContPic3.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic4 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       XSIZE ( 580 )
+     
+      YSIZE ( 260 )
+     
+      FILENAME ( ContPic4.tif )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( CPstart )
+    
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( check_then_save_and_leave )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( has_memcard_changed )
+    
+    )
+   
+   (
+      EVENT ( LOADED_FROM_MEMCARD )
+    
+     ANIMATION ( CPstart )
+    
+    )
+   
+   (
+      BUTTON ( UP )
+    
+     ANIMATION ( NULL )
+    
+    )
+   
+   (
+      BUTTON ( DOWN )
+    
+     ANIMATION ( NULL )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( Preset1Btn )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 70 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 300 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 0 )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 1.000000 )
+     
+      ANIMATIONS ((
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnPreset1L )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnPreset1R )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset1 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Preset2Btn )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 70 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 300 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 0 )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 1.000000 )
+     
+      ANIMATIONS ((
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnPreset2L )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnPreset2R )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset2 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Preset3Btn )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 70 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 300 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 0 )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 1.000000 )
+     
+      ANIMATIONS ((
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnPreset3L )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnPreset3R )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset3 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Preset4Btn )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 70 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 600 )
+     
+      YSIZE ( 300 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 0 )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 1.000000 )
+     
+      ANIMATIONS ((
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnPreset4L )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnPreset4R )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset4 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CPstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to select a preset and return to the options screen." )
+      
+      )
+     
+      IF (
+        VALVE ( SelectedControllerConfig  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextWayLow )
+      
+       CAPTION ( "PRECISION SHOOTER HAS BEEN SELECTED." )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnPreset1 )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SelectedControllerConfig  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextWayLow )
+      
+       CAPTION ( "LEFTY HAS BEEN SELECTED." )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnPreset1R )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SelectedControllerConfig  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextWayLow )
+      
+       CAPTION ( "SCOUT HAS BEEN SELECTED." )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnPreset2R )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( SelectedControllerConfig  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextWayLow )
+      
+       CAPTION ( "SURE SHOT HAS BEEN SELECTED." )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( OnPreset3R )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( OnPreset1 )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReturnToOptions )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( BeenPastOptions  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaskaCinematic.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_then_save_and_leave )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( CameFromNewGameButton  ==  1 )
+      
+      )
+     
+      IF (
+        VALVE ( OptionsMenuChanged  ==  1 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      VALVE ( SitHere  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Controller preset selection is complete. If you need to select a different preset in the future this screen is accessible by pressing the X button from the options selection in the title screen." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  180.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 170 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 25 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SitHere )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 105  135 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( SitHere  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      VALVE ( OptionsMenuChanged  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( save_and_leave )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaskaCinematic.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      VALVE ( BeenPastOptions  =  1 )
+     
+      WAIT ( 0.500000 )
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgOptions_Menu.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "PRECISION SHOOTER PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset1Btn )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.000000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.000000 )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -655.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ChosePresetOnce  =  1 )
+     
+      VALVE ( OptionsMenuChanged  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "PRECISION SHOOTER HAS BEEN SELECTED." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetControllerConfig )
+      
+       ARGUMENT ( Default )
+      
+      )
+     
+      VALVE ( SelectedControllerConfig  =  1 )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_then_save_and_leave )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ChosePresetOnce  =  1 )
+     
+      VALVE ( OptionsMenuChanged  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "LEFTY HAS BEEN SELECTED." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetControllerConfig )
+      
+       ARGUMENT ( Reverse )
+      
+      )
+     
+      VALVE ( SelectedControllerConfig  =  2 )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_then_save_and_leave )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ChosePresetOnce  =  1 )
+     
+      VALVE ( OptionsMenuChanged  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "SCOUT HAS BEEN SELECTED." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetControllerConfig )
+      
+       ARGUMENT ( Config4 )
+      
+      )
+     
+      VALVE ( SelectedControllerConfig  =  3 )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_then_save_and_leave )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset4 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( ChosePresetOnce  =  1 )
+     
+      VALVE ( OptionsMenuChanged  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "SURE SHOT HAS BEEN SELECTED." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetControllerConfig )
+      
+       ARGUMENT ( Goldeneye )
+      
+      )
+     
+      VALVE ( SelectedControllerConfig  =  4 )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( check_then_save_and_leave )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset1R )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -665.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "LEFTY PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset2Btn )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset1L )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -655.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "SURE SHOT PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset4Btn )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset2R )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -665.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "SCOUT PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset3Btn )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( -665.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset2L )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "PRECISION SHOOTER PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset1Btn )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -655.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset3R )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( -665.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -665.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "SURE SHOT PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset4Btn )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset3L )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "LEFTY PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset2Btn )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -655.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset4R )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "PRECISION SHOOTER PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset1Btn )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -655.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPreset4L )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic2 )
+      
+       TRANSLATE_FROM ( 1300.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( -655.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic1 )
+      
+       TRANSLATE_FROM ( 650.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 1300.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic3 )
+      
+       TRANSLATE_FROM ( -655.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 25.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  bar_title )
+      
+       CAPTION ( "SCOUT PRESET" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset3Btn )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  ContPic4 )
+      
+       TRANSLATE_FROM ( 25.000000  100.000000  0.000000 )
+      
+       TRANSLATE_TO ( 650.000000  100.000000  0.000000 )
+      
+       RUN_TIME ( 0.200000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ContPic4 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

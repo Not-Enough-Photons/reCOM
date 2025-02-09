@@ -1,0 +1,731 @@
+(((
+    name ( player )
+  
+   display ( Kahuna )
+  
+   character ( arctic_A8 )
+  
+   setup (( startPlayer  7 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Hutchins )
+  
+   display ( Boomer )
+  
+   character ( arctic_B8 )
+  
+   setup (( startHutchins  7 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Bailey )
+  
+   display ( Jester )
+  
+   character ( arctic_C8 )
+  
+   setup (( startBailey  7 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( DiMone )
+  
+   display ( Spectre )
+  
+   character ( arctic_D8 )
+  
+   setup (( startDimone  7 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( OutPatrol1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Outp1_start  4 )
+   
+   ( Outp1C  4 )
+   
+   ( Outp1B  4 )
+   
+   ( Outp1E  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror01 )
+  
+   setup (( Outp2_start  3 )
+   
+   ( Outp2A  3 )
+   
+   ( Outp2E  3 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Outp3_start  4 )
+   
+   ( Outp3B  4 )
+   
+   ( Outp3D  4 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol4 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Outp4C  3 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol5 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror01 )
+  
+   setup (( Outp5_start  3 )
+   
+   ( Outp5A  2 )
+   
+   ( Outp5E  3 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol6 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Outp6_start  4 )
+   
+   ( Outp6A  4 )
+   
+   ( Outp6C  5 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol7 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Outp7_start  2 )
+   
+   ( Outp7A  2 )
+   
+   ( Outp7C  2 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol8 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror01 )
+  
+   setup (( Outp8_start  4 )
+   
+   ( Outp8C  3 )
+   
+   ( Outp8B  6 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( Shed1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( Shed1_start  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+  )
+ 
+ (
+    name ( Shed2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Shed2_start  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+  )
+ 
+ (
+    name ( Bunk1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Bunk1_start  2 )
+   
+   )
+  
+   team ( 4  11  30 )
+  
+  )
+ 
+ (
+    name ( Bunk2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( Bunk2_start  3 )
+   
+   )
+  
+   team ( 4  11  30 )
+  
+  )
+ 
+ (
+    name ( Snow1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( Snow1_start  2 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+  )
+ 
+ (
+    name ( Snow2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Snow2_start  4 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+  )
+ 
+ (
+    name ( Snow3 )
+  
+   display ( Pincushion )
+  
+   character ( m8_Kola )
+  
+   setup (( Snow3_start  0 )
+   
+   )
+  
+   team ( 4  12  17  30 )
+  
+   noshoot ( 1 )
+  
+   ai_params (
+     courage ( -1.000000 )
+   
+    surrender ( 1.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Dredge1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( Dredge1_start  4 )
+   
+   ( Dredge1B  6 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( Dredge2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Dredge2_start  0 )
+   
+   ( Dredge2B  2 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( Leader )
+  
+   display ( "Iron Leader" )
+  
+   character ( m8_art_terror03 )
+  
+   setup (( Leader_start  2 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     courage ( 100.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Sniper1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror02 )
+  
+   setup (( Snipe1  5 )
+   
+   ( Snipe2  6 )
+   
+   ( Snipe3  4 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+  )
+ 
+ (
+    name ( Sniper2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror02 )
+  
+   setup (( Snipe4  4 )
+   
+   ( Snipe5  3 )
+   
+   ( Snipe6  4 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+  )
+ 
+ (
+    name ( Dredge3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Dredge3A  0 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( Bunk3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Bunk3A  4 )
+   
+   )
+  
+   team ( 4  11  30 )
+  
+  )
+ 
+ (
+    name ( OutPatrol9 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror01 )
+  
+   setup (( Outp9_start  2 )
+   
+   ( Outp9B  0 )
+   
+   ( Outp9D  3 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( Snowrider2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Snowrider2  4 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( LeaderBud1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror03 )
+  
+   setup (( LeaderBud1  3 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Help1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Help1  3 )
+   
+   )
+  
+   team ( 8  30 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Help2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror01 )
+  
+   setup (( Help2  3 )
+   
+   )
+  
+   team ( 8  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Alarm1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( AlarmPop1  0 )
+   
+   )
+  
+   team ( 6  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Alarm3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( AlarmPop3  0 )
+   
+   )
+  
+   team ( 6  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Alarm2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( AlarmPop2  0 )
+   
+   )
+  
+   team ( 6  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Rush1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( PostD1  0 )
+   
+   )
+  
+   team ( 7  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Rush3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( PostD3  7 )
+   
+   )
+  
+   team ( 7  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Rush4 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( PostD4  7 )
+   
+   )
+  
+   team ( 7  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Rush5 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( PostD5  2 )
+   
+   )
+  
+   team ( 7  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Wait1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Wait1  1 )
+   
+   ( Wait1B  1 )
+   
+   )
+  
+   team ( 5  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 3 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Wait3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_art_terror02 )
+  
+   setup (( Wait3  0 )
+   
+   ( Wait3b  0 )
+   
+   ( Wait3c  0 )
+   
+   )
+  
+   team ( 5  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Wait2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m8_terror03 )
+  
+   setup (( Wait2  1 )
+   
+   ( Wait2B  1 )
+   
+   )
+  
+   team ( 5  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 3 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

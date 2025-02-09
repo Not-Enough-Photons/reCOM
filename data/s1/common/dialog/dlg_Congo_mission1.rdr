@@ -1,0 +1,2414 @@
+((
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/uibf )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( multplay_back.tif )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlg_Congo_mission1.rdr )
+  
+   OBJECTS ((
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( "MISSION BRIEFING" )
+     
+      SCALE ( 0.950000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 361 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      SIZE ( 640  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_plate )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 190 )
+    
+     YPOS ( 115 )
+    
+     SPEC (
+       FILENAME ( common_teletype_plate.tif )
+     
+      XSIZE ( 430 )
+     
+      YSIZE ( 235 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 200 )
+    
+     YPOS ( 135 )
+    
+     SPEC (
+       COLOR ( 255.000000  204.000000  51.000000 )
+     
+      SCALE ( 0.450000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_text )
+    
+     TYPE ( TELETYPE )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 45 )
+    
+     SPEC (
+       CHILDOF ( teletype_plate )
+     
+      MAXLENGTH ( 270 )
+     
+      MAXHEIGHT ( 170 )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.400000 )
+     
+      PULSERATE ( 10.000000 )
+     
+      INTERVAL ( 500.000000 )
+     
+      SPACING ( 20 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( CloseFolder )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 280 )
+    
+     YPOS ( 160 )
+    
+     SPEC (
+       FILENAME ( op_closed.tif )
+     
+      SIZE ( 240  165 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( OpenFolder )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 245 )
+    
+     YPOS ( 155 )
+    
+     SPEC (
+       FILENAME ( open_congo.tif )
+     
+      SIZE ( 300  185 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( StartAct )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 240 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       FILENAME ( StartActJungle.tif )
+     
+      SIZE ( 320  260 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( WeapLocker )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 300 )
+    
+     YPOS ( 150 )
+    
+     SPEC (
+       FILENAME ( op_locker.tif )
+     
+      SIZE ( 220  190 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( MapIcon )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 250 )
+    
+     YPOS ( 165 )
+    
+     SPEC (
+       FILENAME ( op_map.tif )
+     
+      SIZE ( 285  185 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( CEnvelope )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 270 )
+    
+     YPOS ( 155 )
+    
+     SPEC (
+       FILENAME ( op_envelope.tif )
+     
+      SIZE ( 269  170 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( title_bar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 60 )
+    
+     SPEC (
+       FILENAME ( undefined.tif )
+     
+      SIZE ( 700  32 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Mission_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 80 )
+    
+     YPOS ( 15 )
+    
+     SPEC (
+       COLOR ( 73.000000  76.000000  81.000000 )
+     
+      CHILDOF ( title_bar )
+     
+      CAPTION ( "OPERATION SWIFT JUSTICE: MERCENARY STAGING AREA" )
+     
+      SCALE ( 0.550000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dogtags )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 370 )
+    
+     YPOS ( 320 )
+    
+     SPEC (
+       FILENAME ( dogtags.tif )
+     
+      SIZE ( 256  128 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( anchor )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 335 )
+    
+     SPEC (
+       FILENAME ( anchor_ferns.tif )
+     
+      SIZE ( 200  105 )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( UiBackWhere )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( teletype_plate_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( mission_details_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( overview_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( objective_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( map_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( equipment_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( deploy_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( title_oilplatform_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( CallMusic )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( CallSetMission )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( anchor )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 55 )
+    
+     SPEC (
+       FILENAME ( anchor_congo.tif )
+     
+      SIZE ( 240  350 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( overview_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 176 )
+    
+     SPEC (
+       SIZE ( 167  32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( OVERVIEW )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( mission1_overview_folder )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( teletype_mission1_overview )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( mission_details_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 211 )
+    
+     SPEC (
+       SIZE ( 167  32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "MISSION DETAILS" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( teletype_mission1_MD )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( teletype_mission1_details )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( objective_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 245 )
+    
+     SPEC (
+       SIZE ( 167  32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( OBJECTIVES )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( teletype_mission1_Obj )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( teletype_mission1_tactical )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( map_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 311 )
+    
+     SPEC (
+       SIZE ( 167  32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( MAP )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgCo17_map.rdr )
+       
+       )
+      
+      (
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( map_alaska_mission1_turn_on )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( equipment_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 340 )
+    
+     SPEC (
+       SIZE ( 167  32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( ARMORY )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_eq_menu_set_return_valve )
+       
+        ARGUMENT ( dlg_equipment_main.rdr )
+       
+       )
+      
+      (
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( all_window_pictures_off )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( deploy_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 379 )
+    
+     SPEC (
+       SIZE ( 167  32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( START )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( LoadMission )
+       
+       )
+      
+      (
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnDeployAct )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LoadMission )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( FadeAllSounds )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( LOAD_SCREEN )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallSetMission )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( DontSetMission  ==  1 )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m17 )
+      
+      )
+     
+      ENDIF ()
+     
+      VALVE ( DontSetMission  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallMusic )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( CameFromMap  ==  0 )
+      
+       &&  VALVE ( CameFromDebriefing  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_MISSION )
+      
+       START ()
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiBackWhere )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  >=  2 )
+      
+      )
+     
+      VALVE ( BackFromBrief  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_areaop_congo.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMenu.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( goto_eq_menu_set_return_valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiEquipReturnScreen  =  17 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( INPUT_STRING )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mission1_overview_folder )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( teletype_mission1_overview )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_details )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_tactical )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button for an overview." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  StartAct )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission1_Obj )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( teletype_mission1_overview )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_details )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_tactical )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button for mission objectives." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  StartAct )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission1_MD )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( teletype_mission1_overview )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_details )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_tactical )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button for mission details." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  StartAct )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_alaska_mission1_turn_on )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( teletype_mission1_overview )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_details )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_tactical )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  StartAct )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to view the mission map." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( all_window_pictures_off )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( teletype_mission1_overview )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_details )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_tactical )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to select equipment." )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  StartAct )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnDeployAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  StartAct )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_overview )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_details )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( teletype_mission1_tactical )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to enter mission." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission1_overview )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO17_UIOV )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "MERCENARY STAGING AREA MISSION OVERVIEW" )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "THE CONGOLESE GOVERNMENT HAS REQUESTED OUR AID, TEAM. #P1 #N A NEW MERCENARY ORGANIZATION, CALLING THEMSELVES PREEMPTIVE STRIKE, HAVE ESTABLISHED A BASE OF OPERATIONS DEEP IN THE JUNGLE.  THEY ARE RECRUITING EUROPEAN STRONG-ARMS AND ARE ACTIVELY STOCKPILING WEAPONS AND AMMUNITION. WE ARE CONCERNED ABOUT THIS NEW THREAT, BUT WE NEED MORE INFORMATION REGARDING THEIR AGENDA AND FUTURE PLANS.  #P1 #N INFILTRATE THEIR CAMP, DESTROY TARGETS OF OPPORTUNITY AND GATHER AS MUCH INTEL AS POSSIBLE." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission1_details )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO17_UIMD )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "MERCENARY STAGING AREA MISSION DETAILS" )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "THE CONGOLESE JUNGLE IS DENSE AND ISOLATED, MAKING IT THE PERFECT HIDING PLACE FOR ILLEGAL ENDEAVORS.  INTEL ON THE PREEMPTIVE STRIKE MERCENARIES IS ESSENTIALLY NON-EXISTENT, BUT WE CAN ASSUME THEY ARE UP TO NO GOOD. #P1 THE CONGOLESE GOVERNMENT IS SUPPORTIVE OF OUR EFFORTS TO INVESTIGATE THIS THREAT, SO USE YOUR SKILLS TO GATHER AS MUCH INTEL AS POSSIBLE AND ELIMINATE THIS TERRORIST STRONGHOLD." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_mission1_tactical )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO17_UIOB )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "MERCENARY STAGING AREA MISSION OBJECTIVES" )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MapIcon )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  WeapLocker )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CloseFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  OpenFolder )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CEnvelope )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "SPECIFIC OBJECTIVES: #P1 #N 1. DISABLE COMMUNICATIONS. #P1 #N 2. OBTAIN INTEL. #P1 #N 3. DESTROY AMMUNITION STOCKPILES. #P1 4. ELIMINATE ALL THREATS." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_plate_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  teletype_plate )
+      
+       TRANSLATE_FROM ( 645.000000  115.000000  0.000000 )
+      
+       TRANSLATE_TO ( 190.000000  115.000000  0.000000 )
+      
+       RUN_TIME ( 0.400000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( overview_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  overview_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  overview_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  overview_button )
+      
+       TRANSLATE_FROM ( -50.000000  112.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  112.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( mission_details_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  mission_details_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  mission_details_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  mission_details_button )
+      
+       TRANSLATE_FROM ( -50.000000  142.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  142.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( objective_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  objective_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  objective_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  objective_button )
+      
+       TRANSLATE_FROM ( -50.000000  172.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  172.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  map_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  map_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  map_button )
+      
+       TRANSLATE_FROM ( -50.000000  202.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  202.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( equipment_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  equipment_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  equipment_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  equipment_button )
+      
+       TRANSLATE_FROM ( -50.000000  232.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  232.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( deploy_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  deploy_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.600000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  deploy_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  deploy_button )
+      
+       TRANSLATE_FROM ( -50.000000  320.000000  0.000000 )
+      
+       TRANSLATE_TO ( 20.000000  320.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( title_oilplatform_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  title_bar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  title_bar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  title_bar )
+      
+       TRANSLATE_FROM ( 640.000000  85.000000  0.000000 )
+      
+       TRANSLATE_TO ( -60.000000  85.000000  0.000000 )
+      
+       RUN_TIME ( 0.400000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.400000 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_plate_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  teletype_plate )
+      
+       TRANSLATE_FROM ( 645.000000  115.000000  0.000000 )
+      
+       TRANSLATE_TO ( 190.000000  115.000000  0.000000 )
+      
+       RUN_TIME ( 0.400000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( tty_speed_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SetTtySpeedFactor )
+      
+       ARGUMENT ( "100" )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   :end  of  List )
+ 
+  :end  of  Def's )
+
+ :end  of  file )
+

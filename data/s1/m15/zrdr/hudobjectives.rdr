@@ -1,0 +1,160 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "INSERT INTO CAVES" )
+  
+   DESCRIPTION ( "Insert into the first cave network." )
+  
+   VALVE ( OBJ1 )
+  
+   LOCATION ( 2245.800049  1784.199951 )
+  
+   ON_CALL_ANIMATION ( m15obj6 )
+  
+   LINE_IDS ( 1 )
+  
+  )
+ 
+ (
+    NAME ( "DISABLE RADIO COMM" )
+  
+   DESCRIPTION ( "Disable the radio before the guards alert the base." )
+  
+   VALVE ( OBJ2 )
+  
+   INVALID_VALVE ( OBJ2Fail )
+  
+   LOCATION ( 2055.800049  1654.199951 )
+  
+   ON_CALL_ANIMATION ( m15obj4 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 2 )
+  
+  )
+ 
+ (
+    NAME ( "LOCATE VAULT" )
+  
+   DESCRIPTION ( "Locate the vault where the nukes are being held." )
+  
+   VALVE ( OBJ3 )
+  
+   LOCATION ( 3795.800049  914.200012 )
+  
+   ON_CALL_ANIMATION ( m15obj10 )
+  
+  )
+ 
+ (
+    NAME ( "DISABLE GENERATOR" )
+  
+   DESCRIPTION ( "Destroy the generator within the second cave network's entrance." )
+  
+   VALVE ( SOBJ1 )
+  
+   DISPLAY_VALVE ( DV_SOBJ1 )
+  
+   INVALID_VALVE ( SOBJ1Fail )
+  
+   LOCATION ( 4365.799805  2254.199951 )
+  
+   ON_CALL_ANIMATION ( m15obj9 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 3 )
+  
+  )
+ 
+ (
+    NAME ( "SECURE NUKES" )
+  
+   DESCRIPTION ( "Eliminate all of the guards protecting the nuke vault." )
+  
+   DESCRIPTION2 ( "Be sure to clear each of the rooms within the vault." )
+  
+   VALVE ( OBJ4 )
+  
+   LOCATION ( 3765.800049  394.200012 )
+  
+   ON_CALL_ANIMATION ( m15obj8a )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "DISARM NUKE" )
+  
+   DESCRIPTION ( "Disarm the nuke before it detonates." )
+  
+   DESCRIPTION2 ( "You will know the armed nuclear device by its flashing red light." )
+  
+   VALVE ( SOBJ2 )
+  
+   DISPLAY_VALVE ( DV_SOBJ2 )
+  
+   LOCATION ( 3765.800049  394.200012 )
+  
+   ON_CALL_ANIMATION ( m15obj11 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "RESET NUKE" )
+  
+   DESCRIPTION ( "Rearm one of the nukes for detonation." )
+  
+   VALVE ( SOBJ3 )
+  
+   DISPLAY_VALVE ( DV_SOBJ3 )
+  
+   LOCATION ( 3765.800049  394.200012 )
+  
+   ON_CALL_ANIMATION ( m15obj1 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "ARM NUKE" )
+  
+   DESCRIPTION ( "Arm one of the nukes for detonation." )
+  
+   VALVE ( SOBJ4 )
+  
+   DISPLAY_VALVE ( DV_SOBJ4 )
+  
+   LOCATION ( 3765.800049  394.200012 )
+  
+   ON_CALL_ANIMATION ( m15obj1 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "MOVE TO EXTRACTION" )
+  
+   DESCRIPTION ( "You have seven minutes to return to the extraction before detonation." )
+  
+   VALVE ( OBJ5 )
+  
+   LOCATION ( 1915.800049  1644.199951 )
+  
+   ON_CALL_ANIMATION ( m15obj14 )
+  
+  )
+ 
+ )
+
+)
+

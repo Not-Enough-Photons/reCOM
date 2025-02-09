@@ -1,0 +1,585 @@
+(((
+    name ( player )
+  
+   display ( Kahuna )
+  
+   character ( scuba_A5 )
+  
+   setup (( PlayerStart  2 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Hutchins )
+  
+   display ( Boomer )
+  
+   character ( scuba_B5 )
+  
+   setup (( Hutch_start  2 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Bailey )
+  
+   display ( Jester )
+  
+   character ( scuba_C5 )
+  
+   setup (( Bailey_start  2 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( DiMone )
+  
+   display ( Spectre )
+  
+   character ( scuba_D5 )
+  
+   setup (( DiMone_start  2 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( Patrol1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Patrol1_start  1 )
+   
+   ( P1B  2 )
+   
+   ( P1C  4 )
+   
+   ( P1D  6 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+  )
+ 
+ (
+    name ( Patrol2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Patrol2_start  0 )
+   
+   )
+  
+   team ( 4  30 )
+  
+  )
+ 
+ (
+    name ( Patrol3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( P3B  2 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+  )
+ 
+ (
+    name ( Patrol4 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Patrol4_start  2 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( Snipe1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman01 )
+  
+   setup (( Snipe1A  2 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   ai_params (
+     courage ( 100.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Snipe2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman01 )
+  
+   setup (( Snipe2A  3 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     courage ( 100.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Snipe3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman01 )
+  
+   setup (( Snipe3A  0 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     courage ( 100.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Leader )
+  
+   display ( "Iron Leader" )
+  
+   character ( m5_terror01 )
+  
+   setup (( Leader_start  3 )
+   
+   )
+  
+   team ( 4  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     courage ( 100.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( LeaderHench )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Hench_start  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+  )
+ 
+ (
+    name ( Building4 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Build4_start  3 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+   ai_params (
+     courage ( 2.000000 )
+   
+    surrender ( 1.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Building6 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Build6_start  1 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+   ai_params (
+     courage ( 2.000000 )
+   
+    surrender ( 1.000000 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Hostage2 )
+  
+   display ( "Oil Worker" )
+  
+   character ( alaska_oilworker02 )
+  
+   setup (( Host2_start  2 )
+   
+   )
+  
+   team ( 28  30  31 )
+  
+   nofade ( 1 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( Hostage3 )
+  
+   display ( "Oil Worker" )
+  
+   character ( alaska_oilforeman )
+  
+   setup (( Host3_start  0 )
+   
+   )
+  
+   team ( 28  30  31 )
+  
+   nofade ( 1 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( Duck1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Duck1  3 )
+   
+   )
+  
+   team ( 4  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( Duck2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Duck2  4 )
+   
+   )
+  
+   team ( 4  30 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( Helo1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Helo1A  6 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( Floor1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Floor1A  4 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+  )
+ 
+ (
+    name ( Helo2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Helo2A  2 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( Tunnel1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Tunnel1A  7 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+  )
+ 
+ (
+    name ( Tunnel2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Tunnel2A  3 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+  )
+ 
+ (
+    name ( SoloTunnel1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( SoloTunnel1A  0 )
+   
+   ( SoloTunnel1C  0 )
+   
+   ( SoloTunnel1E  4 )
+   
+   ( SoloTunnel1B  6 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( SoloTunnel2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( SoloTunnel2A  4 )
+   
+   ( SoloTunnel2D  6 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( BombP1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( BombP1A  4 )
+   
+   )
+  
+   team ( 11  30 )
+  
+  )
+ 
+ (
+    name ( BombP2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( BombP2A  0 )
+   
+   )
+  
+   team ( 16  30 )
+  
+  )
+ 
+ (
+    name ( BombP3 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( BombP3A  4 )
+   
+   )
+  
+   team ( 11  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( BombP4 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( BombP4A  0 )
+   
+   )
+  
+   team ( 16  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Hench2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Hench2  3 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+  )
+ 
+ (
+    name ( Building1 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman02 )
+  
+   setup (( Building1A  4 )
+   
+   ( Building1B  0 )
+   
+   ( Building1C  0 )
+   
+   ( Building1D  4 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+  )
+ 
+ (
+    name ( Building2 )
+  
+   display ( "Iron Brother" )
+  
+   character ( m5_gunman03 )
+  
+   setup (( Building2A  0 )
+   
+   ( Building2B  2 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,132 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "DISABLE COMMUNICATIONS" )
+  
+   DESCRIPTION ( "Destroy the communications tower before the mercs can radio" )
+  
+   DESCRIPTION2 ( "for help and compromise the operation." )
+  
+   VALVE ( POBJ1 )
+  
+   LOCATION ( 1511.420044  1180.979980 )
+  
+   ON_CALL_ANIMATION ( m17obj1 )
+  
+   LINE_IDS ( 1 )
+  
+   NAV_POINTS ( Charlie )
+  
+  )
+ 
+ (
+    NAME ( "OBTAIN INTEL" )
+  
+   DESCRIPTION ( "Obtain intel regarding the whereabouts of the POWs." )
+  
+   VALVE ( POBJ2 )
+  
+   LOCATION ( 2251.419922  1389.979980 )
+  
+   ON_CALL_ANIMATION ( m17obj6 )
+  
+   LINE_IDS ( 2 )
+  
+   NAV_POINTS ( Delta )
+  
+  )
+ 
+ (
+    NAME ( "DESTROY MUNITIONS" )
+  
+   DESCRIPTION ( "Destroy the enemy's munitions depot." )
+  
+   VALVE ( POBJ3 )
+  
+   LOCATION ( 4291.419922  1859.979980 )
+  
+   ON_CALL_ANIMATION ( m17obj7 )
+  
+   LINE_IDS ( 3 )
+  
+   NAV_POINTS ( Foxtrot  Juliet )
+  
+  )
+ 
+ (
+    NAME ( "SECURE AREA" )
+  
+   DESCRIPTION ( "Secure the area around NAV ECHO." )
+  
+   VALVE ( SOBJ6 )
+  
+   INVALID_VALVE ( SOBJ6Fail )
+  
+   LOCATION ( 3711.419922  1769.979980 )
+  
+   ON_CALL_ANIMATION ( m17obj9 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Echo )
+  
+  )
+ 
+ (
+    NAME ( "SITE ONE SATCHEL" )
+  
+   DESCRIPTION ( "Order Bravo to DEPLOY SATCHEL at site one." )
+  
+   VALVE ( SOBJ8 )
+  
+   LOCATION ( 4491.419922  1970.979980 )
+  
+   ON_CALL_ANIMATION ( m17obj11 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Foxtrot )
+  
+  )
+ 
+ (
+    NAME ( "SITE TWO SATCHEL" )
+  
+   DESCRIPTION ( "Deploy a satchel charge at site two." )
+  
+   VALVE ( SOBJ9 )
+  
+   LOCATION ( 4691.419922  1290.979980 )
+  
+   ON_CALL_ANIMATION ( m17obj12 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Juliet )
+  
+  )
+ 
+ (
+    NAME ( "PREVENT ENEMY ESCAPE" )
+  
+   DESCRIPTION ( "Prevent the remaining mercenaries from escaping to warn their comrades." )
+  
+   VALVE ( POBJ4 )
+  
+   LOCATION ( 4251.419922  550.000000 )
+  
+   ON_CALL_ANIMATION ( m17obj14 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ )
+
+)
+

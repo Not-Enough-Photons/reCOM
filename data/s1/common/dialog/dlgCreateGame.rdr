@@ -1,0 +1,4432 @@
+((
+   SCREENS ((
+     LIBRARIES ( ui/assetlib/uimp  ui/assetlib/wsmp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgCreateGame.rdr )
+   
+    OBJECTS ((
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "CREATE GAME" )
+      
+       SCALE ( 0.950000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 384 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_Yel )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 572 )
+     
+      YPOS ( 25 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonY.tif )
+      
+       SIZE ( 28  28 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_blue )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 581 )
+     
+      YPOS ( 34 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
+       
+        LONGEVITY ( PERSISTENT )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( txtClanName )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 45 )
+     
+      SPEC (
+        CHILDOF ( letterbar_bottom )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( CLANNAMEVAR )
+       
+        VALUE ( Unaffiliated )
+       
+        TYPE ( PERMANENT )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 60 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 90 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 120 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 150 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 180 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 210 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 330 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 240 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 270 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 167 )
+     
+      YPOS ( 300 )
+     
+      SPEC (
+        XSIZE ( 455 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( JoiningAnim )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 352 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( JoiningAnimRed )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 352 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 80 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( gamename_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 110 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       UIVAR (
+         NAME ( GAMENAMEVAR )
+       
+        VALUE ( "Player's game" )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ClanAffiliationDesc )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 320 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( "Clan Members are randomally assigned." )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( numplayers_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 140 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( "99" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map_title_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 170 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map_type_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 420 )
+     
+      YPOS ( 170 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map2_title_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 200 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map2_type_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 420 )
+     
+      YPOS ( 200 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map3_title_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 230 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map3_type_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 420 )
+     
+      YPOS ( 230 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FF_type_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 290 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( passwd_toggle_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 260 )
+     
+      SPEC (
+        SCALE ( 0.350000 )
+      
+       CAPTION ( No )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( passwd_field )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 280 )
+     
+      YPOS ( 260 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( password_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 264 )
+     
+      SPEC (
+        FONT ( myriad_password )
+      
+       SCALE ( 0.450000 )
+      
+       UIVAR (
+         NAME ( PlayerGamePassword )
+       
+        VALUE ( " " )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( net_monitor )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( SetGames2_3toNone )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( GameNameAct )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( create_game_exit )
+     
+     )
+    
+    (
+       BUTTON ( SELECT )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( dlgCreateGame.rdr )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( init_cg_screen )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnMultiplayerDisconnect )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_JOIN_GAME_FAILURE )
+     
+      ANIMATION ( create_game_failure )
+     
+     )
+    
+    (
+       EVENT ( MP_GAME_NAME_EXISTS )
+     
+      ANIMATION ( game_name_exists )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( gamename_btn )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 90 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( "GAME NAME" )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( GameNameAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( set_game_name )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( numplayers_btn )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 120 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "# OF PLAYERS" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( NumPlayersAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( incr_num_players )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map1_btn )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 150 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "CHOOSE MAP #1" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( ChooseMap1Act )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( incr_map )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map2_btn )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 180 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "CHOOSE MAP #2" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( ChooseMap2Act )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( incr_map2 )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( map3_btn )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 210 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "CHOOSE MAP #3" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( ChooseMap3Act )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( incr_map3 )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( passwd_toggle )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 240 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "SET PASSWORD" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( passwd_toggleAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( toggle_password )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FF_btn )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 270 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "FRIENDLY FIRE" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( FF_btnAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( set_FF_valve )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ClanAffiliation )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 300 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( "CLAN MEMBERS" )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( clan_members_act )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( FiddleClanAffiliation )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( launch )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 330 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 155 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       CAPTION ( CREATE )
+      
+       SCALE ( 0.400000 )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( launchAct )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( create_game )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetGames2_3toNone )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( MapValve2  =  11 )
+     
+      VALVE ( MapValve3  =  11 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( GameNameAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  passwd_toggle )
+      
+       CAPTION ( PASSWORD )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to enter the name of your game." )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( mp_persistent  =  1 )
+     
+      IF (
+        VALVE ( mp_friendly_fire  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FF_type_val )
+      
+       CAPTION ( "Friendly fire is disabled." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_friendly_fire  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FF_type_val )
+      
+       CAPTION ( "Friendly fire is enabled." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( FiddleClanAffiliation )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( CreateClanAffiliation  ==  0 )
+      
+      )
+     
+      VALVE ( CreateClanAffiliation  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ClanAffiliationDesc )
+      
+       CAPTION ( "Your clan is assigned to the terrorist team." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CreateClanAffiliation  ==  1 )
+      
+      )
+     
+      VALVE ( CreateClanAffiliation  =  2 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ClanAffiliationDesc )
+      
+       CAPTION ( "Your clan is assigned to the SEAL team." )
+      
+      )
+     
+      ELSE ()
+     
+      VALVE ( CreateClanAffiliation  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ClanAffiliationDesc )
+      
+       CAPTION ( "Clan Members are randomally assigned." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( NumPlayersAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to set the max. number of players." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChooseMap1Act )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to cycle through maps." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChooseMap2Act )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to cycle through maps." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ChooseMap3Act )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to cycle through maps." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( passwd_toggleAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to set a password." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( clan_members_act )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to assign your clan to a team." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( passwd_btnAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "What is the password?" )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( FF_btnAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to set friendly fire option." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( launchAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to create this game." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_cg_buttons )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( gamename_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( numplayers_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( map1_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( map2_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( map3_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( passwd_toggle )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( FF_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( launch )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemberOfClan )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( ClanAffiliation )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ClanAffiliationDesc )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ClanAffiliation )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ClanAffiliationDesc )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_cg_buttons )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( gamename_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( numplayers_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( map1_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( map2_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( map3_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( passwd_toggle )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( FF_btn )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( launch )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemberOfClan )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ClanAffiliation )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ClanAffiliation )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ClanAffiliationDesc )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( init_cg_screen )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( NumPlayersValve  =  8 )
+     
+      VALVE ( MapValve  =  2 )
+     
+      VALVE ( MapValve2  =  0 )
+     
+      VALVE ( MapValve3  =  0 )
+     
+      VALVE ( PasswordValve  =  0 )
+     
+      VALVE ( CreateGameGuardValve  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( refresh_cg_screen )
+      
+      )
+     
+      VALVE ( CreateClanAffiliation  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ClanAffiliationDesc )
+      
+       CAPTION ( "Clan Members are randomally assigned." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( gamename_btn )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( enable_cg_buttons )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ClearUIVar )
+      
+       ARGUMENT ( GAMENAMEVAR )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( refresh_cg_screen )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( NumPlayersValve  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "10" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "12" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  14 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "14" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( NumPlayersValve  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( "16" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  numplayers_val )
+      
+       CAPTION ( XXX )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( MapValve  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( ANY )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( RANDOM )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( BLIZZARD )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( FROSTFIRE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "SOMEWHERE TBD" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( "SOMEGAME TBD" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "THAILAND AIRSTRIP" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( EXTRACT )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( ABANDONED )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "DESERT GLORY" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "NIGHT STALKER" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "RAT'S NEST" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "BITTER JUNGLE" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "BLOOD LAKE" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "DEATH TRAP" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_mission_val )
+      
+       CAPTION ( MP12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_title_val )
+      
+       CAPTION ( "THE RUINS" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( MapValve2  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( NONE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( NONE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( BLIZZARD )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( FROSTFIRE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "SOMEWHERE TBD" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( "SOMEGAME TBD" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "THAILAND TBD" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( EXTRACT )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( ABANDONED )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( SUPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "DESERT GLORY" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "NIGHT STALKER" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "RAT'S NEST" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "BITTER JUNGLE" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "BLOOD LAKE" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "DEATH TRAP" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( MP12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( "THE RUINS" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve2  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_mission_val )
+      
+       CAPTION ( ANY )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_title_val )
+      
+       CAPTION ( RANDOM )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map2_type_val )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( MapValve3  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( NONE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( NONE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( BLIZZARD )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( FROSTFIRE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "SOMEWHERE TBD" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( "SOMEGAME TBD" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "THAILAND TBD" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( EXTRACT )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( ABANDONED )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "DESERT GLORY" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "NIGHT STALKER" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "RAT'S NEST" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( SUPPRESSION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "BITTER JUNGLE" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "BLOOD LAKE" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "DEATH TRAP" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( EXTRACTION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( MP12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( "THE RUINS" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( DEMOLITION )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MapValve3  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_mission_val )
+      
+       CAPTION ( ANY )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_title_val )
+      
+       CAPTION ( RANDOM )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  map3_type_val )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( game_name_exists )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( create_game )
+      
+      )
+     
+      VALVE ( GameExistsValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "The game you selected is already in use. Please try another game name and try again. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 150.000000  200.000000 )
+      
+       WIDTH ( 265 )
+      
+       HEIGHT ( 160 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( GameExistsValve )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 85  120 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( GameExistsValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( gamename_btn )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( enable_cg_buttons )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( create_game_failure )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( create_game )
+      
+      )
+     
+      VALVE ( OKValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Create Game Failed!. Press X to return to briefing room." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 175.000000  230.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 70  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( OKValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( create_game )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Join_flash )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( SeenPopup  =  0 )
+     
+      VALVE ( mp_x_sec_clock  =  11 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . . . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . . . . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . . . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnim )
+      
+       CAPTION ( "CREATING GAME. " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnim )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  JoiningAnimRed )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . . . . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . . . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. . ." )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  JoiningAnimRed )
+      
+       CAPTION ( "CREATING GAME. ." )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  0.100000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( PruneUIVarSpaces )
+      
+       ARGUMENT ( GAMENAMEVAR )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( TestUIVar )
+       
+        ARGUMENT ( GAMENAMEVAR )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( disable_cg_buttons )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( Join_flash )
+      
+      )
+     
+      VALVE ( CreateGameGuardValve  =  1 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( INPUT_NODE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( CreateMPGame )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( socom_online_state  !=  17 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ConnectToGameServer )
+      
+      )
+     
+      VALVE ( mp_join_game  =  9 )
+     
+      WAIT ( 5.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetMPMissionSeq )
+      
+      )
+     
+      WHILE (
+        VALVE ( mp_join_game  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CheckJoinMP )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( JoinGameServer )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgGameLobby.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      VALVE ( CreateGameGuardValve  =  0 )
+     
+      ELSE ()
+     
+      VALVE ( OKValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You must enter a valid game name before game creation can occur. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 175.000000  230.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 140 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 70  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( OKValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_game_name )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Game Name" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( GAMENAMEVAR )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  15 )
+     
+      WHILE (
+        VALVE ( skb_done  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCensorText )
+      
+       ARGUMENT ( GAMENAMEVAR )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_num_players )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      VALVE ( NumPlayersValve  +=  2 )
+     
+      IF (
+        VALVE ( NumPlayersValve  >  16 )
+      
+      )
+     
+      VALVE ( NumPlayersValve  =  2 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_cg_screen )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_map )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      VALVE ( MapValve  +=  1 )
+     
+      IF (
+        VALVE ( MapValve  >  12 )
+      
+      )
+     
+      VALVE ( MapValve  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( MapValve  ==  3 )
+      
+      )
+     
+      VALVE ( MapValve  =  5 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_cg_screen )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_map2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      VALVE ( MapValve2  +=  1 )
+     
+      IF (
+        VALVE ( MapValve2  >  13 )
+      
+      )
+     
+      VALVE ( MapValve2  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( MapValve2  ==  3 )
+      
+      )
+     
+      VALVE ( MapValve2  =  5 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_cg_screen )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_map3 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      VALVE ( MapValve3  +=  1 )
+     
+      IF (
+        VALVE ( MapValve3  >  13 )
+      
+      )
+     
+      VALVE ( MapValve3  =  0 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( MapValve3  ==  3 )
+      
+      )
+     
+      VALVE ( MapValve3  =  5 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_cg_screen )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_game_password )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Game Password" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( PlayerGamePassword )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  25 )
+     
+      WHILE (
+        VALVE ( skb_done  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( NetCensorText )
+      
+       ARGUMENT ( PlayerGamePassword )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( toggle_password )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( PasswordValve  ==  1 )
+      
+      )
+     
+      VALVE ( PasswordValve  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  passwd_toggle )
+      
+       CAPTION ( PASSWORD )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  passwd_toggle_val )
+      
+       CAPTION ( No )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  passwd_field )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  password_val )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( PasswordValve  ==  0 )
+      
+      )
+     
+      VALVE ( PasswordValve  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  passwd_toggle )
+      
+       CAPTION ( "CREATE PASSWORD" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  passwd_toggle_val )
+      
+       CAPTION ( Yes )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  passwd_field )
+      
+       CAPTION ( PASSWORD )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( set_game_password )
+      
+      )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( refresh_cg_screen )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_FF_valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( mp_friendly_fire  ==  0 )
+      
+      )
+     
+      VALVE ( mp_friendly_fire  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FF_type_val )
+      
+       CAPTION ( "Friendly fire is enabled." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_friendly_fire  ==  1 )
+      
+      )
+     
+      VALVE ( mp_friendly_fire  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FF_type_val )
+      
+       CAPTION ( "Friendly fire is disabled." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( create_game_exit )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( CreateGameGuardValve  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( PREVIOUS_SCREEN )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

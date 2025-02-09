@@ -1,0 +1,71 @@
+((
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
+  
+   BACKGROUND (
+     TYPE ( MPEG )
+   
+    FILENAME ( run/movies/0100.pss )
+   
+   )
+  
+   FONT ( arialblack )
+  
+   SCRIPT_LIBRARY ( dlgAlaskaCinematic.rdr )
+  
+   OBJECTS ()
+  
+   ANIMATIONS ((
+      EVENT ( ONMPEGEND )
+    
+     ANIMATION ( goto_menu_silent )
+    
+     ARGUMENT ( dlgAlaska_mission2.rdr )
+    
+    )
+   
+   (
+      BUTTON ( START )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgAlaska_mission2.rdr )
+    
+    )
+   
+   (
+      BUTTON ( CROSS )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgAlaska_mission2.rdr )
+    
+    )
+   
+   )
+  
+   CONTROLS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LoadM6 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION ()
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

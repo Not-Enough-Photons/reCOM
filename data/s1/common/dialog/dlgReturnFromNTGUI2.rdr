@@ -1,0 +1,72 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( " " )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgReturnFromNTGUI2.rdr )
+   
+    USES_MEMCARD ()
+   
+    OBJECTS ()
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( do_onstart )
+     
+     )
+    
+    )
+   
+    BUTTONS ()
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_onstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( intro_onstart )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgNetLogin.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

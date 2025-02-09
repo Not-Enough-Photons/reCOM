@@ -1,0 +1,74 @@
+((
+   actions ((
+     node ( get_bio_hazard )
+   
+    valve ( hazard )
+   
+    anim ( get_bio )
+   
+    type ( SWITCH )
+   
+    range ( 30 )
+   
+    bitmap ( action_pickup_item.tif )
+   
+    descriptor ( BIO-HAZARD )
+   
+   )
+  
+  (
+     node ( get_planbook )
+   
+    valve ( binder )
+   
+    anim ( GetDocs )
+   
+    type ( SWITCH )
+   
+    range ( 30 )
+   
+    bitmap ( action_pickup_item.tif )
+   
+    descriptor ( BINDER )
+   
+   )
+  
+  (
+     node ( breach_door1 )
+   
+    valve ( hut_breech1 )
+   
+    type ( ACT_BREACH )
+   
+    range ( 30 )
+   
+   )
+  
+  (
+     node ( breach_door2 )
+   
+    valve ( hut_breech2 )
+   
+    type ( ACT_BREACH )
+   
+    range ( 30 )
+   
+   )
+  
+  (
+     node ( breach_door3 )
+   
+    valve ( hut_breech3 )
+   
+    type ( ACT_BREACH )
+   
+    range ( 30 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

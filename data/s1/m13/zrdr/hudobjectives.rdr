@@ -1,0 +1,163 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "INFILTRATE PRISON" )
+  
+   DESCRIPTION ( "Insert your team into the prison by climbing over the northern wall." )
+  
+   VALVE ( OBJ1 )
+  
+   LOCATION ( 2786.500000  2565.399902 )
+  
+   ON_CALL_ANIMATION ( m13obj1 )
+  
+   LINE_IDS ( 6 )
+  
+  )
+ 
+ (
+    NAME ( "EXPLOSIVE DIVERSION" )
+  
+   DESCRIPTION ( "Use a satchel to damage a section of the western wall." )
+  
+   DESCRIPTION2 ( "This diversion should allow you to enter undetected." )
+  
+   DESCRIPTION3 ( "Try to stay undetected enroute." )
+  
+   VALVE ( SOBJ1 )
+  
+   INVALID_VALVE ( SOBJ1Fail )
+  
+   LOCATION ( 1921.500000  3295.399902 )
+  
+   ON_CALL_ANIMATION ( m13obj2 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 1 )
+  
+  )
+ 
+ (
+    NAME ( "DISABLE GENERATOR" )
+  
+   DESCRIPTION ( "Disable the prison's generator to cut the prison lights." )
+  
+   DESCRIPTION2 ( "Either use explosives to destroy the generator or disable it manually." )
+  
+   VALVE ( SOBJ2 )
+  
+   INVALID_VALVE ( SOBJ2Fail )
+  
+   LOCATION ( 2671.520020  2655.429932 )
+  
+   ON_CALL_ANIMATION ( m13obj3 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 2 )
+  
+  )
+ 
+ (
+    NAME ( "RELEASE INFORMANT" )
+  
+   DESCRIPTION ( "Locate and release the informant from his holding cell." )
+  
+   VALVE ( OBJ2 )
+  
+   LOCATION ( 3291.500000  2895.399902 )
+  
+   ON_CALL_ANIMATION ( m13obj4 )
+  
+   LINE_IDS ( 3 )
+  
+  )
+ 
+ (
+    NAME ( "ACQUIRE MAP" )
+  
+   DESCRIPTION ( "The informant's map & intel are located somewhere within the armory." )
+  
+   VALVE ( OBJ3 )
+  
+   DISPLAY_VALVE ( DV_OBJ3 )
+  
+   LOCATION ( 2091.500000  3090.399902 )
+  
+   ON_CALL_ANIMATION ( m13obj6 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "SECURE INFORMANT" )
+  
+   DESCRIPTION ( "Move the informant away from the holding cells and into an empty building." )
+  
+   DESCRIPTION2 ( "Be sure that he's not left alone or he may get killed." )
+  
+   VALVE ( SOBJ3 )
+  
+   DISPLAY_VALVE ( DV_OBJ3b )
+  
+   INVALID_VALVE ( SOBJ3Fail )
+  
+   LOCATION ( 2811.500000  3075.399902 )
+  
+   ON_CALL_ANIMATION ( m13obj5 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 5 )
+  
+  )
+ 
+ (
+    NAME ( "EXTRACT INFORMANT" )
+  
+   DESCRIPTION ( "Move the informant to the extraction zone Northwest of the prison." )
+  
+   VALVE ( OBJ4 )
+  
+   LOCATION ( 1131.500000  2735.399902 )
+  
+   ON_CALL_ANIMATION ( m13obj7 )
+  
+   LINE_IDS ( 7 )
+  
+  )
+ 
+ (
+    NAME ( "RECON ENCAMPMENT" )
+  
+   DESCRIPTION ( "Observe the troop movement in the enemy encampment." )
+  
+   VALVE ( SOBJ4 )
+  
+   DISPLAY_VALVE ( DV_SOBJ4 )
+  
+   INVALID_VALVE ( SOBJ4Fail )
+  
+   LOCATION ( 1991.500000  1885.400024 )
+  
+   ON_CALL_ANIMATION ( m13obj8 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 8 )
+  
+  )
+ 
+ )
+
+)
+

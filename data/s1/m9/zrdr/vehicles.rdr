@@ -1,0 +1,759 @@
+(((
+    name ( player )
+  
+   display ( Kahuna )
+  
+   character ( jungle_A9 )
+  
+   setup (( player_start  1 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Hutchins )
+  
+   display ( Boomer )
+  
+   character ( jungle_B9 )
+  
+   setup (( BuddyA_start  1 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Bailey )
+  
+   display ( Jester )
+  
+   character ( jungle_C9 )
+  
+   setup (( BuddyB_start  1 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( DiMone )
+  
+   display ( Spectre )
+  
+   character ( jungle_D9 )
+  
+   setup (( BuddyC_start  1 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+  )
+ 
+ (
+    name ( EnemyA )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( EnemyA_start  6 )
+   
+   )
+  
+   team ( 8  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( EnemyB )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( EnemyB_start  6 )
+   
+   )
+  
+   team ( 9  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( EnemyC )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror03 )
+  
+   setup (( EnemyC_start  4 )
+   
+   ( EnemyC1  2 )
+   
+   )
+  
+   team ( 5  30 )
+  
+  )
+ 
+ (
+    name ( EnemyD )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( EnemyD_start  6 )
+   
+   ( EnemyD1  7 )
+   
+   )
+  
+   team ( 5  30 )
+  
+  )
+ 
+ (
+    name ( Patrol1 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( EnemyP1_start  6 )
+   
+   ( P1A  0 )
+   
+   )
+  
+   team ( 6  30 )
+  
+  )
+ 
+ (
+    name ( Patrol2 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( EnemyP2_start  1 )
+   
+   ( P2A  1 )
+   
+   )
+  
+   team ( 6  30 )
+  
+  )
+ 
+ (
+    name ( Patrol3 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( EnemyP3_start  2 )
+   
+   ( P3A  2 )
+   
+   )
+  
+   team ( 6  30 )
+  
+  )
+ 
+ (
+    name ( Talk1 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( Talk1_start  1 )
+   
+   )
+  
+   team ( 10  30 )
+  
+   nofade ( 1 )
+  
+   ai_params (
+     sensors (
+      visual_sens ( 0.400000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Talk2 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Talk2_start  5 )
+   
+   )
+  
+   team ( 10  30 )
+  
+   ai_params (
+     sensors (
+      visual_sens ( 0.400000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EnemyE )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( EnemyE_start  4 )
+   
+   ( EnemyE1  2 )
+   
+   )
+  
+   team ( 5  30 )
+  
+  )
+ 
+ (
+    name ( EnemyF )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( EnemyF_start  1 )
+   
+   ( EnemyF1  2 )
+   
+   )
+  
+   team ( 5  30 )
+  
+  )
+ 
+ (
+    name ( EnemyG )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( EnemyG_start  5 )
+   
+   )
+  
+   team ( 10  30 )
+  
+  )
+ 
+ (
+    name ( EnemyH )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( EnemyH_start  6 )
+   
+   )
+  
+   team ( 10  30 )
+  
+  )
+ 
+ (
+    name ( Island1 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( Island1A  1 )
+   
+   )
+  
+   team ( 11  30 )
+  
+  )
+ 
+ (
+    name ( Island2 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Island2A  5 )
+   
+   )
+  
+   team ( 11  30 )
+  
+  )
+ 
+ (
+    name ( Final1 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( Final1A  5 )
+   
+   ( Final1Alt  5 )
+   
+   ( Final1Alt2  5 )
+   
+   )
+  
+   team ( 12  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Final2 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror03 )
+  
+   setup (( Final2A  5 )
+   
+   ( Final2Alt  5 )
+   
+   ( Final2Alt2  5 )
+   
+   )
+  
+   team ( 12  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Final3 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Final3A  5 )
+   
+   ( Final3Alt  5 )
+   
+   ( Final3Alt2  5 )
+   
+   )
+  
+   team ( 12  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Island3 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Island3A  5 )
+   
+   ( Island3C  0 )
+   
+   )
+  
+   team ( 13  30 )
+  
+  )
+ 
+ (
+    name ( Island4 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( Island4A  4 )
+   
+   ( Island4B  7 )
+   
+   ( Island4C  1 )
+   
+   )
+  
+   team ( 14  30 )
+  
+  )
+ 
+ (
+    name ( Island5 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror03 )
+  
+   setup (( Island5A  0 )
+   
+   ( Island5B  6 )
+   
+   )
+  
+   team ( 14  30 )
+  
+  )
+ 
+ (
+    name ( Talk3 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( Talk3_start  0 )
+   
+   )
+  
+   team ( 10  30 )
+  
+   nofade ( 1 )
+  
+   ai_params (
+     sensors (
+      visual_fov ( 60.000000 )
+    
+     visual_sens ( 0.400000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush1 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( IslandRush1A  4 )
+   
+   ( IslandRush1B  4 )
+   
+   )
+  
+   team ( 15  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush2 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( IslandRush2A  4 )
+   
+   ( IslandRush2B  4 )
+   
+   )
+  
+   team ( 15  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush3 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( IslandRush3A  4 )
+   
+   ( IslandRush3B  4 )
+   
+   )
+  
+   team ( 15  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush4 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( IslandRush4A  5 )
+   
+   ( IslandRush4B  5 )
+   
+   )
+  
+   team ( 16  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush5 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( IslandRush5A  5 )
+   
+   ( IslandRush5B  5 )
+   
+   )
+  
+   team ( 16  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush6 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( IslandRush6A  5 )
+   
+   ( IslandRush6B  5 )
+   
+   )
+  
+   team ( 16  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( EnemyI )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( EnemyI_start  6 )
+   
+   )
+  
+   team ( 5  30 )
+  
+  )
+ 
+ (
+    name ( EnemyJ )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_pirate01 )
+  
+   setup (( EnemyJ_start  4 )
+   
+   )
+  
+   team ( 5  30 )
+  
+  )
+ 
+ (
+    name ( IslandRush7 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( IslandRush7A  2 )
+   
+   ( IslandRush7B  2 )
+   
+   )
+  
+   team ( 7  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( IslandRush8 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( IslandRush8A  2 )
+   
+   ( IslandRush8B  2 )
+   
+   )
+  
+   team ( 7  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Log1 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Log1  2 )
+   
+   )
+  
+   team ( 4  30 )
+  
+  )
+ 
+ (
+    name ( Log2 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Log2  2 )
+   
+   )
+  
+   team ( 4  30 )
+  
+  )
+ 
+ (
+    name ( Final4 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror02 )
+  
+   setup (( Final4  5 )
+   
+   ( Final4Alt  5 )
+   
+   )
+  
+   team ( 12  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ (
+    name ( Final5 )
+  
+   display ( "Riddah Rouge" )
+  
+   character ( m9_terror01 )
+  
+   setup (( Final5  5 )
+   
+   ( Final5Alt  5 )
+   
+   ( Final5Alt2  5 )
+   
+   )
+  
+   team ( 12  30 )
+  
+   recycle ( 1 )
+  
+  )
+ 
+ )
+
+)
+

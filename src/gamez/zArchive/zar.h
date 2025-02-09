@@ -54,7 +54,7 @@ namespace zar
 		s32 key_count;
 		s32 stable_size;
 		s32 stable_ofs;
-		s32 alignment;
+		s32 padding;
 		s32 reserved[16];
 		s32 offset;
 		s32 crc;
@@ -132,6 +132,16 @@ namespace zar
 		bool Open(const char* name, int version, unsigned int mode, size_t padded_size);
 
 		/// <summary>
+		/// Opens a ZAR file for reading into main memory. Only works on release S1 and demos of S2.
+		/// </summary>
+		/// <param name="name"> - The name of the archive.</param>
+		/// <param name="version"> - The version of the archive.</param>
+		/// <param name="mode"> - The read mode for opening the file.</param>
+		/// <param name="padded_size"> - The amount of padding bytes labelled "P" that exist in the file.</param>
+		/// <returns>Whether or not the operation was successful.</returns>
+		bool Open_V2(const char* name, s32 version, u32 mode, size_t padded_size);
+		
+		/// <summary>
 		/// Closes the ZAR file descriptor, and frees the resources associated with it.
 		/// </summary>
 		void Close();
@@ -156,7 +166,7 @@ namespace zar
 		bool ReOpen(s32 appver, s32 mode);
 
 		/// <summary>
-		/// Re-opens a previously closed ZAR file. Will read ZAR version 2.
+		/// Re-opens a previously closed ZAR file. Only works on release S1 and demos of S2.
 		/// </summary>
 		/// <param name="count"> - The size of the archive.</param>
 		/// <param name="mode"> - The read mode.</param>
@@ -204,8 +214,22 @@ namespace zar
 		CKey* Insert(const char* name, u32 value);
 		CKey* Insert(const char* name, s32 value);
 
+		/// <summary>
+		/// Reads all keys and strings into memory.
+		/// </summary>
+		/// <param name="appver"> - The internal "FTS" version.</param>
+		/// <param name="mode"> - The file mode represented by a number.</param>
+		/// <returns>Whether or not the reading was successful.</returns>
 		bool ReadDirectory(int appver, u32 mode);
+
+		/// <summary>
+		/// Reads all keys and strings into memory. Only works on release S1 and demos of S2.
+		/// </summary>
+		/// <param name="appver"> - The internal "FTS" version.</param>
+		/// <param name="mode"> - The file mode represented by a number.</param>
+		/// <returns>Whether or not the reading was successful.</returns>
 		bool ReadDirectory_V2(s32 appver, u32 mode);
+		
 		bool WriteDirectory();
 		bool WriteDirectory(FILE* file);
 

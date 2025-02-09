@@ -1,0 +1,331 @@
+((
+   SCREENS (
+    BACKGROUND (
+     TYPE ( MPEG )
+   
+    FILENAME ( run/movies/common/menuloop.pss )
+   
+   )
+  
+   LIBRARY ( ui/assetlib/ui2d )
+  
+   FONT ( arialblack )
+  
+   SCRIPT_LIBRARY ( dlgPlayTutMovies.rdr )
+  
+   OBJECTS ()
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( PlayMovie )
+    
+    )
+   
+   (
+      EVENT ( ONMPEGEND )
+    
+     ANIMATION ( goto_menu_silent )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( START )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( CIRCLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( SQUARE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( CROSS )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( UP )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( DOWN )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( RIGHT )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      BUTTON ( LEFT )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      TRIGGER ( R1 )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      TRIGGER ( R2 )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      TRIGGER ( L1 )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   (
+      TRIGGER ( L2 )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlg_tutorial.rdr )
+    
+    )
+   
+   )
+  
+   ANIMATION_DEFINITIONS (
+     ANIMATION_LIST (
+      ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+    
+     ANIMATION_DEFINITION (
+       ANIMATION_NAME ( PlayMovie )
+     
+      ACTIVATION ( ON_CALL )
+     
+      SEQUENCE_DEFINITION (
+        NAME ( switch )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( OFF )
+       
+       )
+      
+       IF (
+         VALVE ( uiDocChapter  ==  1 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam06.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  2 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam10.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  3 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam05.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  4 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam08.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  5 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam04.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  6 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam03.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  7 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam02.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  8 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam01.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  9 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam09.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  10 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam12.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  11 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam11.pss )
+       
+       )
+      
+       ELSEIF (
+         VALVE ( uiDocChapter  ==  12 )
+       
+       )
+      
+       ui::UI_COMMAND (
+         TYPE ( BackgroundMPEG )
+       
+        ARGUMENT ( run/movies/common/tutcam07.pss )
+       
+       )
+      
+       ENDIF ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

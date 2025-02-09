@@ -1,0 +1,2142 @@
+((
+   SCREENS (
+    BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( multplay_back.tif )
+   
+   )
+  
+   LIBRARY ( ui/assetlib/ui2d )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlg_tutorial.rdr )
+  
+   OBJECTS ((
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( TUTORIALS )
+     
+      SCALE ( 0.900000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Description  Window )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 70 )
+    
+     SPEC (
+       XSIZE ( 590 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( instText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 361 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      SIZE ( 640  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dogtags )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 340 )
+    
+     YPOS ( 280 )
+    
+     SPEC (
+       FILENAME ( common_dogtags.tif )
+     
+      SIZE ( 296  158 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_text )
+    
+     TYPE ( TELETYPE )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 40 )
+    
+     SPEC (
+       CHILDOF ( teletype_plate )
+     
+      MAXLENGTH ( 240 )
+     
+      MAXHEIGHT ( 170 )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.800000 )
+     
+      INTERVAL ( 330.000000 )
+     
+      SPACING ( 20 )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      BUTTON ( SQUARE )
+    
+     ANIMATION ( switch_menu )
+    
+     ARGUMENT ( dlgReplayCinematic.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap1_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap2_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap3_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap4_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap5_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap6_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap7_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap8_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap9_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap10_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap11_button_slide )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Chap12_button_slide )
+    
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( BackOutWithMusic )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Call_Music )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( Chap1_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 140 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "CHANGE STANCE" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap1_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap2_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 190 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "SELECT WEAPON" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap2_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap3_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 240 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "USE NVG/SCOPE" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap3_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap4_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 290 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "PICK UP OBJECT" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap4_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap5_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 340 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "PICK UP WEAPON" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap5_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap6_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 140 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "USE LEVER" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap6_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap7_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 340 )
+    
+     YPOS ( 140 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "KNIFE KILL" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap7_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap8_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 190 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "SWITCH ACTIONS" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap8_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap9_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 240 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "BODY CARRY" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap9_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap10_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 290 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "USING THE TCM" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap10_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap11_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 340 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "ESCORTEE FOLLOW" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap11_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Chap12_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 390 )
+    
+     SPEC (
+       XSIZE ( 185 )
+     
+      YSIZE ( 32 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 23 )
+     
+      SCALE ( 0.500000 )
+     
+      CAPTION ( "DEPLOY ITEMS" )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( Set_Chap12_Valve )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( Go_to_movies )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( BackOutWithMusic )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMenu.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Call_Music )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_MENU_THEME )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Go_to_movies )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgPlayTutMovies.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap1_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to change your stance. " )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap2_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  2 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to use your weapon inventory in game." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap3_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  3 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to use night vision goggles and scopes." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap4_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  4 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to pick up objects, like intel." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap5_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  5 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to pick up dropped weapons." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap6_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  6 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to use levers and buttons." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap7_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  7 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to knife kill enemies." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap8_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  8 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to perform a precise action." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap9_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  9 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to remove the bodies of enemies." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap10_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  10 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to command your SEAL team." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap11_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  11 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to command an escortee." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Set_Chap12_Valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( uiDocChapter  =  12 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to learn how to safely deploy items." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap1_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap1_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap1_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap1_button )
+      
+       TRANSLATE_FROM ( -50.000000  120.000000  0.000000 )
+      
+       TRANSLATE_TO ( 110.000000  120.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap2_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap2_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap2_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap2_button )
+      
+       TRANSLATE_FROM ( -50.000000  160.000000  0.000000 )
+      
+       TRANSLATE_TO ( 110.000000  160.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap3_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap3_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap3_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap3_button )
+      
+       TRANSLATE_FROM ( -50.000000  200.000000  0.000000 )
+      
+       TRANSLATE_TO ( 110.000000  200.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap4_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap4_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap4_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap4_button )
+      
+       TRANSLATE_FROM ( -50.000000  240.000000  0.000000 )
+      
+       TRANSLATE_TO ( 110.000000  240.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap5_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap5_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap5_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap5_button )
+      
+       TRANSLATE_FROM ( -50.000000  280.000000  0.000000 )
+      
+       TRANSLATE_TO ( 110.000000  280.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap6_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap6_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap6_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap6_button )
+      
+       TRANSLATE_FROM ( -50.000000  320.000000  0.000000 )
+      
+       TRANSLATE_TO ( 110.000000  320.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap7_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap7_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap7_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap7_button )
+      
+       TRANSLATE_FROM ( 750.000000  120.000000  0.000000 )
+      
+       TRANSLATE_TO ( 340.000000  120.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap8_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap8_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap8_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap8_button )
+      
+       TRANSLATE_FROM ( 750.000000  160.000000  0.000000 )
+      
+       TRANSLATE_TO ( 340.000000  160.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap9_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap9_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap9_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap9_button )
+      
+       TRANSLATE_FROM ( 750.000000  200.000000  0.000000 )
+      
+       TRANSLATE_TO ( 340.000000  200.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap10_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap10_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap10_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap10_button )
+      
+       TRANSLATE_FROM ( 750.000000  240.000000  0.000000 )
+      
+       TRANSLATE_TO ( 340.000000  240.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap11_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap11_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap11_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap11_button )
+      
+       TRANSLATE_FROM ( 750.000000  280.000000  0.000000 )
+      
+       TRANSLATE_TO ( 340.000000  280.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Chap12_button_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap12_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Chap12_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  Chap12_button )
+      
+       TRANSLATE_FROM ( 750.000000  320.000000  0.000000 )
+      
+       TRANSLATE_TO ( 340.000000  320.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

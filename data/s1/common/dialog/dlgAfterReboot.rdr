@@ -1,0 +1,229 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgAfterReboot.rdr )
+   
+    USES_MEMCARD ()
+   
+    OBJECTS ((
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "NETWORK ERROR" )
+      
+       SCALE ( 0.950000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 384 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( do_onstart )
+     
+     )
+    
+    )
+   
+    CONTROLS ()
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_onstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( intro_onstart )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      VALVE ( OKValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You have been disconnected from SOCOM Online." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 175.000000  230.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+        YES (
+          CAPTION ( "MAIN MENU" )
+        
+         POS ( 60  90 )
+        
+         TEXTOFFSET ( 10  20 )
+        
+         WIDTH ( 130 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( OKValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMenu.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

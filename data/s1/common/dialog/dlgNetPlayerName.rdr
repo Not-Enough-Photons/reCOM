@@ -1,0 +1,1639 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgNetPlayerName.rdr )
+   
+    USES_MEMCARD ()
+   
+    OBJECTS ((
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "CONNECT TO SOCOM" )
+      
+       SCALE ( 0.950000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FieldOnly2 )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 168 )
+     
+      YPOS ( 100 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 168 )
+     
+      YPOS ( 130 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 168 )
+     
+      YPOS ( 70 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 91 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 121 )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( PLAYERNAMEVAR )
+       
+        LONGEVITY ( PERSISTENT )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( password_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 180 )
+     
+      YPOS ( 153 )
+     
+      SPEC (
+        COLOR ( 255  255  255 )
+      
+       FONT ( myriad_password )
+      
+       SCALE ( 0.450000 )
+      
+       UIVAR (
+         NAME ( PLAYERPASSWORD )
+       
+        LONGEVITY ( PERSISTENT )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 384 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       BUTTON ( SELECT )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( dlgNetPlayerName.rdr )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( check_store_password )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( goto_menu )
+     
+      ARGUMENT ( PREVIOUS_SCREEN )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnLoginRoomstart )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( CheckConnectEnable )
+     
+     )
+    
+    (
+       EVENT ( ON_SKB_APPLY )
+     
+      ANIMATION ( OnSKBApply )
+     
+     )
+    
+    (
+       EVENT ( MEMCARD_ERROR )
+     
+      ANIMATION ( handle_memcard_error )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( has_memcard_changed )
+     
+     )
+    
+    (
+       EVENT ( LOADED_FROM_MEMCARD )
+     
+      ANIMATION ( CheckConnectEnable )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( TabSmWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 168 )
+     
+      YPOS ( 160 )
+     
+      SPEC (
+        XSIZE ( 140 )
+      
+       YSIZE ( 30 )
+      
+       FILENAME ( infoWin1.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 100 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 145 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( "PLAYER NAME" )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnPnameactive )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( set_player_name )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( passwd_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 130 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 145 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( PASSWORD )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( set_player_password )
+        
+        )
+       
+       (
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnPasswordactive )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Store_Password )
+     
+      TYPE ( RADIOSTRIP )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 160 )
+     
+      SPEC (
+        XSIZE ( 145 )
+      
+       YSIZE ( 30 )
+      
+       CAPTION ( "SAVE PASSWORD" )
+      
+       SCALE ( 0.400000 )
+      
+       XOFFSET ( 9 )
+      
+       YOFFSET ( 21 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnPassAct )
+        
+        )
+       
+       )
+      
+       SUBORDINATES ((
+          NAME ( Store_password_yes )
+        
+         XPOS ( 150 )
+        
+         YPOS ( -2 )
+        
+         TYPE ( CHECKBOX )
+        
+         SPEC (
+           CHILDOF ( Store_Password )
+         
+          CHECK_X ( 7 )
+         
+          CHECK_Y ( 7 )
+         
+          CHECKSIZE_X ( 20 )
+         
+          CHECKSIZE_Y ( 20 )
+         
+          CHECK_TEXTURE ( op_check.tif )
+         
+          ONCHECK (
+            BUTTON ( NONE )
+          
+           ANIMATION ( enable_store_password )
+          
+          )
+         
+          CAPTION ( YES )
+         
+          SCALE ( 0.350000 )
+         
+          XOFFSET ( 35 )
+         
+          YOFFSET ( 22 )
+         
+          PRESSED ( op_checkbox.tif )
+         
+          NORMAL ( op_checkbox.tif )
+         
+          ACTIVE ( op_checkbox.tif )
+         
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+         
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+         
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+         
+          XSIZE ( 35 )
+         
+          YSIZE ( 35 )
+         
+         )
+        
+        )
+       
+       (
+          NAME ( Store_password_no )
+        
+         XPOS ( 215 )
+        
+         YPOS ( -2 )
+        
+         TYPE ( CHECKBOX )
+        
+         SPEC (
+           CHILDOF ( Store_Password )
+         
+          CHECK_X ( 7 )
+         
+          CHECK_Y ( 7 )
+         
+          CHECKSIZE_X ( 20 )
+         
+          CHECKSIZE_Y ( 20 )
+         
+          CHECK_TEXTURE ( op_check.tif )
+         
+          ONCHECK (
+            BUTTON ( NONE )
+          
+           ANIMATION ( disable_store_password )
+          
+          )
+         
+          CAPTION ( NO )
+         
+          SCALE ( 0.350000 )
+         
+          XOFFSET ( 35 )
+         
+          YOFFSET ( 22 )
+         
+          PRESSED ( op_checkbox.tif )
+         
+          NORMAL ( op_checkbox.tif )
+         
+          ACTIVE ( op_checkbox.tif )
+         
+          PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+         
+          NORMAL_COLOR ( 128.000000  128.000000  128.000000 )
+         
+          ACTIVE_COLOR ( 255.000000  204.000000  51.000000 )
+         
+          XSIZE ( 35 )
+         
+          YSIZE ( 35 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( connect_btn )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 210 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 145 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 10 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( CONNECT )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnConnectactive )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( register_new_account )
+        
+        )
+       
+       (
+          BUTTON ( DOWN )
+        
+         ANIMATION ( OnPasswordBtnDwn )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_store_password )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( SecurePassword  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Store_Password )
+      
+       SELECTION (
+         INDEX ( 1 )
+       
+       )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( enable_store_password )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( SecurePassword  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( disable_store_password )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( SecurePassword  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPassAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Save your password to the memory card (PS2)?" )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnLoginRoomstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( NameIsVulgar  ==  1 )
+      
+      )
+     
+      VALVE ( NameIsVulgar  =  0 )
+     
+      ELSE ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( TestUIVar )
+       
+        ARGUMENT ( PLAYERNAMEVAR )
+       
+       )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( TestUIVar )
+       
+        ARGUMENT ( PLAYERPASSWORD )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( connect_btn )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( passwd_btn )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( playername_btn )
+      
+      )
+     
+      VALVE ( NameOrPassChanged  =  0 )
+     
+      VALVE ( PasswordChanged  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPnameactive )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to enter your player name." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CheckConnectEnable )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( PruneUIVarSpaces )
+      
+       ARGUMENT ( PLAYERNAMEVAR )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( TestUIVar )
+       
+        ARGUMENT ( PLAYERNAMEVAR )
+       
+       )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( TestUIVar )
+       
+        ARGUMENT ( PLAYERPASSWORD )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( connect_btn )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( connect_btn )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( connect_btn )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSKBApply )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( NmaeChanged  ==  1 )
+      
+      )
+     
+      VALVE ( NameOrPassChanged  =  1 )
+     
+      ELSE ()
+     
+      IF (
+        VALVE ( SecurePassword  ==  1 )
+      
+      )
+     
+      VALVE ( NameOrPassChanged  =  1 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( CheckConnectEnable )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPasswordactive )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to enter your password." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnConnectactive )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to connect." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnPasswordBtnDwn )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( playername_btn )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_player_name )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Player Name" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( PLAYERNAMEVAR )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  14 )
+     
+      VALVE ( NameChanged  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( memcard_error  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( set_player_password )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Player Password" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  MPPLAYERNAME )
+      
+       ARGUMENT ( PLAYERPASSWORD )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  12 )
+     
+      VALVE ( PasswordChanged  =  1 )
+     
+      VALVE ( NameChanged  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CanWeSavePassword )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( num_memcards  =  0 )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      VALVE ( MainMenuCardSlot  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "0" )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+      )
+     
+      VALVE ( num_memcards  +=  1 )
+     
+      ENDIF ()
+     
+      VALVE ( MainMenuCardSlot  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "1" )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+      )
+     
+      VALVE ( num_memcards  +=  1 )
+     
+      ELSE ()
+     
+      VALVE ( MainMenuCardSlot  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "0" )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( num_memcards  >  0 )
+      
+      )
+     
+      VALVE ( AreYouSure  =  1 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( register_new_account )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( PasswordChanged  ==  1 )
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Be sure to write down your name and password. If you forget your password and do not have access to the memory card (PS2) where you saved your password, you will need a new name and password." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 160.000000  210.000000 )
+      
+       WIDTH ( 356 )
+      
+       HEIGHT ( 175 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( CONTINUE )
+        
+         POS ( 120  135 )
+        
+         TEXTOFFSET ( 20  20 )
+        
+         WIDTH ( 120 )
+        
+         HEIGHT ( 30 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        VALVE ( NameOrPassChanged  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( CanWeSavePassword )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      VALVE ( ShouldLeaveOnSaveAndLeave  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( save_and_leave )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      VALVE ( ShouldLeaveOnSaveAndLeave  =  0 )
+     
+      ELSE ()
+     
+      IF (
+        VALVE ( num_memcards  ==  0 )
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "No Memory Card (PS2) inserted. Cannot Save Name and Password." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 160.000000  210.000000 )
+      
+       WIDTH ( 356 )
+      
+       HEIGHT ( 175 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( CONTINUE )
+        
+         POS ( 120  135 )
+        
+         TEXTOFFSET ( 20  20 )
+        
+         WIDTH ( 120 )
+        
+         HEIGHT ( 30 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Name and Password Save Cancelled." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  210.000000 )
+      
+       HEIGHT ( 128 )
+      
+       WIDTH ( 300 )
+      
+       SPACING ( 20 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ENDIF ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgNetConnect.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

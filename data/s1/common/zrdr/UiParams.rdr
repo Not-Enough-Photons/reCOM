@@ -1,0 +1,6563 @@
+((
+   CommonSoftKeyboardProps (
+    RepeatDelay ( 0.250000 )
+  
+   RepeatSpeedStart ( 5.000000 )
+  
+   RepeatAccelTime ( 0.500000 )
+  
+   RepeatSpeedEnd ( 15.000000 )
+  
+   ScaleUpSound ( SND_SLIDE )
+  
+   ScaleDownSound ( SND_SLIDE )
+  
+   KeyPressSound ( SND_SKB_TYPE )
+  
+   KeyPressEnterSound ( SND_SKB_ENTER )
+  
+   NavigationSound ( SND_THUNK )
+  
+   NegativeSound ( SND_NEG )
+  
+   Legend (
+     Texture ( SkbLegend.tif )
+   
+    Size ( 194  180 )
+   
+    SlideInSec ( 0.250000 )
+   
+    SlideOutSec ( 0.250000 )
+   
+   )
+  
+  )
+ 
+  SoftKeyboards ((
+     Name ( KEYBOARD )
+   
+    Background ( SkbBg.tif )
+   
+    Grid (( ~  !  @  #  $  %  ^  &  *  ParenL  ParenR  _  +  BackSpace  BackSpace  BackSpace )
+    
+    ( `  "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "0"  -  =  [  ]  ] )
+    
+    ( CapsLock  CapsLock  Q  W  E  R  T  Y  U  I  O  P  \  Enter  Enter  Enter )
+    
+    ( CapsLock  CapsLock  A  S  D  F  G  H  J  K  L  ";"  Quote1  Enter  Enter  Enter )
+    
+    ( Shift  Shift  Z  X  C  V  B  N  M  ,  .  /  Exit  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Recip  Recip  {  }  :  Quote2  <  >  ?  |  |  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Legend  Legend  Legend )
+    
+    )
+   
+    StartGridPos ( 3  4 )
+   
+    SkbPos ( 15  250 )
+   
+    SkbHeight ( 180 )
+   
+    SkbWidth ( 360 )
+   
+    UserStringWidth ( 310 )
+   
+    UserStringProps (
+      POSITION ( 15  40 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    CursorY ( 27 )
+   
+    CursorSize ( 8  14 )
+   
+    PurposeStringProps (
+      POSITION ( 15  15 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    ScaleUpSec ( 0.250000 )
+   
+    ScaleDownSec ( 0.250000 )
+   
+    IgnoreUnchangedString ()
+   
+    KeyProps ((
+       Key ( ~ )
+     
+      Pos ( 7  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ! )
+     
+      Pos ( 29  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( @ )
+     
+      Pos ( 52  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( # )
+     
+      Pos ( 75  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( $ )
+     
+      Pos ( 97  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( % )
+     
+      Pos ( 120  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ^ )
+     
+      Pos ( 142  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( & )
+     
+      Pos ( 164  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( * )
+     
+      Pos ( 186  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenL )
+     
+      Pos ( 209  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenR )
+     
+      Pos ( 232  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( _ )
+     
+      Pos ( 254  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( + )
+     
+      Pos ( 277  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ` )
+     
+      Pos ( 7  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "1" )
+     
+      Pos ( 29  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "2" )
+     
+      Pos ( 53  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "3" )
+     
+      Pos ( 75  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "4" )
+     
+      Pos ( 97  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "5" )
+     
+      Pos ( 120  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "6" )
+     
+      Pos ( 142  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "7" )
+     
+      Pos ( 164  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "8" )
+     
+      Pos ( 186  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "9" )
+     
+      Pos ( 209  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "0" )
+     
+      Pos ( 232  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( - )
+     
+      Pos ( 254  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( = )
+     
+      Pos ( 277  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( [ )
+     
+      Pos ( 300  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ] )
+     
+      Pos ( 322  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Q )
+     
+      Pos ( 53  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( W )
+     
+      Pos ( 75  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( E )
+     
+      Pos ( 98  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( R )
+     
+      Pos ( 120  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( T )
+     
+      Pos ( 142  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Y )
+     
+      Pos ( 164  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( U )
+     
+      Pos ( 186  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( I )
+     
+      Pos ( 209  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( O )
+     
+      Pos ( 232  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( P )
+     
+      Pos ( 254  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( \ )
+     
+      Pos ( 277  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( A )
+     
+      Pos ( 64  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( S )
+     
+      Pos ( 87  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( D )
+     
+      Pos ( 109  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( F )
+     
+      Pos ( 131  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( G )
+     
+      Pos ( 153  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( H )
+     
+      Pos ( 175  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( J )
+     
+      Pos ( 197  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( K )
+     
+      Pos ( 221  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( L )
+     
+      Pos ( 243  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ";" )
+     
+      Pos ( 266  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote1 )
+     
+      Pos ( 288  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Z )
+     
+      Pos ( 75  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( X )
+     
+      Pos ( 98  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( C )
+     
+      Pos ( 120  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( V )
+     
+      Pos ( 142  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( B )
+     
+      Pos ( 164  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( N )
+     
+      Pos ( 187  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( M )
+     
+      Pos ( 209  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( , )
+     
+      Pos ( 233  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( . )
+     
+      Pos ( 254  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( / )
+     
+      Pos ( 277  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( { )
+     
+      Pos ( 120  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( } )
+     
+      Pos ( 142  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( : )
+     
+      Pos ( 164  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote2 )
+     
+      Pos ( 187  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( < )
+     
+      Pos ( 209  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( > )
+     
+      Pos ( 231  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ? )
+     
+      Pos ( 254  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( | )
+     
+      Pos ( 277  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( BackSpace )
+     
+      Pos ( 300  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 52  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Enter )
+     
+      Pos ( 311  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Exit )
+     
+      Pos ( 300  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Legend )
+     
+      Pos ( 300  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( CapsLock )
+     
+      Pos ( 7  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Shift )
+     
+      Pos ( 7  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Alt )
+     
+      Pos ( 7  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Recip )
+     
+      Pos ( 64  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 53  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Space )
+     
+      Pos ( 65  160 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 230  17 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CapsLockOn (
+      Pos ( 7  84 )
+    
+     Size ( 43  36 )
+    
+    )
+   
+    ShiftOn (
+      Pos ( 7  122 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    LegendOn (
+      Pos ( 300  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    AltSkb ( AlternateKeyboard )
+   
+   )
+  
+  (
+     Name ( ChatSkb )
+   
+    Background ( SkbBg.tif )
+   
+    Grid (( ~  !  @  #  $  %  ^  &  *  ParenL  ParenR  _  +  BackSpace  BackSpace  BackSpace )
+    
+    ( `  "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "0"  -  =  [  ]  ] )
+    
+    ( CapsLock  CapsLock  Q  W  E  R  T  Y  U  I  O  P  \  Enter  Enter  Enter )
+    
+    ( CapsLock  CapsLock  A  S  D  F  G  H  J  K  L  ";"  Quote1  Enter  Enter  Enter )
+    
+    ( Shift  Shift  Z  X  C  V  B  N  M  ,  .  /  Exit  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Recip  Recip  {  }  :  Quote2  <  >  ?  |  |  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Legend  Legend  Legend )
+    
+    )
+   
+    StartGridPos ( 3  4 )
+   
+    SkbPos ( 15  73 )
+   
+    SkbHeight ( 180 )
+   
+    SkbWidth ( 360 )
+   
+    UserStringWidth ( 310 )
+   
+    UserStringProps (
+      POSITION ( 15  40 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    CursorY ( 27 )
+   
+    CursorSize ( 8  14 )
+   
+    PurposeStringProps (
+      POSITION ( 15  15 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    ScaleUpSec ( 0.250000 )
+   
+    ScaleDownSec ( 0.250000 )
+   
+    KeyProps ((
+       Key ( ~ )
+     
+      Pos ( 7  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ! )
+     
+      Pos ( 29  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( @ )
+     
+      Pos ( 52  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( # )
+     
+      Pos ( 75  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( $ )
+     
+      Pos ( 97  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( % )
+     
+      Pos ( 120  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ^ )
+     
+      Pos ( 142  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( & )
+     
+      Pos ( 164  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( * )
+     
+      Pos ( 186  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenL )
+     
+      Pos ( 209  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenR )
+     
+      Pos ( 232  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( _ )
+     
+      Pos ( 254  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( + )
+     
+      Pos ( 277  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ` )
+     
+      Pos ( 7  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "1" )
+     
+      Pos ( 29  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "2" )
+     
+      Pos ( 53  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "3" )
+     
+      Pos ( 75  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "4" )
+     
+      Pos ( 97  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "5" )
+     
+      Pos ( 120  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "6" )
+     
+      Pos ( 142  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "7" )
+     
+      Pos ( 164  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "8" )
+     
+      Pos ( 186  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "9" )
+     
+      Pos ( 209  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "0" )
+     
+      Pos ( 232  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( - )
+     
+      Pos ( 254  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( = )
+     
+      Pos ( 277  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( [ )
+     
+      Pos ( 300  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ] )
+     
+      Pos ( 322  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Q )
+     
+      Pos ( 53  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( W )
+     
+      Pos ( 75  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( E )
+     
+      Pos ( 98  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( R )
+     
+      Pos ( 120  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( T )
+     
+      Pos ( 142  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Y )
+     
+      Pos ( 164  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( U )
+     
+      Pos ( 186  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( I )
+     
+      Pos ( 209  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( O )
+     
+      Pos ( 232  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( P )
+     
+      Pos ( 254  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( \ )
+     
+      Pos ( 277  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( A )
+     
+      Pos ( 64  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( S )
+     
+      Pos ( 87  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( D )
+     
+      Pos ( 109  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( F )
+     
+      Pos ( 131  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( G )
+     
+      Pos ( 153  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( H )
+     
+      Pos ( 175  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( J )
+     
+      Pos ( 197  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( K )
+     
+      Pos ( 221  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( L )
+     
+      Pos ( 243  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ";" )
+     
+      Pos ( 266  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote1 )
+     
+      Pos ( 288  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Z )
+     
+      Pos ( 75  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( X )
+     
+      Pos ( 98  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( C )
+     
+      Pos ( 120  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( V )
+     
+      Pos ( 142  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( B )
+     
+      Pos ( 164  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( N )
+     
+      Pos ( 187  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( M )
+     
+      Pos ( 209  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( , )
+     
+      Pos ( 233  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( . )
+     
+      Pos ( 254  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( / )
+     
+      Pos ( 277  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( { )
+     
+      Pos ( 120  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( } )
+     
+      Pos ( 142  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( : )
+     
+      Pos ( 164  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote2 )
+     
+      Pos ( 187  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( < )
+     
+      Pos ( 209  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( > )
+     
+      Pos ( 231  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ? )
+     
+      Pos ( 254  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( | )
+     
+      Pos ( 277  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( BackSpace )
+     
+      Pos ( 300  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 52  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Enter )
+     
+      Pos ( 311  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Exit )
+     
+      Pos ( 300  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Legend )
+     
+      Pos ( 300  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( CapsLock )
+     
+      Pos ( 7  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Shift )
+     
+      Pos ( 7  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Alt )
+     
+      Pos ( 7  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Recip )
+     
+      Pos ( 64  141 )
+     
+      Size ( 53  17 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 53  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Space )
+     
+      Pos ( 65  160 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 230  17 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CapsLockOn (
+      Pos ( 7  84 )
+    
+     Size ( 43  36 )
+    
+    )
+   
+    ShiftOn (
+      Pos ( 7  122 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    LegendOn (
+      Pos ( 300  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    AltSkb ( AlternateKeyboard2 )
+   
+   )
+  
+  (
+     Name ( MPPLAYERNAME )
+   
+    Background ( SkbBg.tif )
+   
+    Grid (( ~  !  @  #  $  %  ^  &  *  ParenL  ParenR  _  +  BackSpace  BackSpace  BackSpace )
+    
+    ( `  "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "0"  -  =  [  ]  ] )
+    
+    ( CapsLock  CapsLock  Q  W  E  R  T  Y  U  I  O  P  \  Enter  Enter  Enter )
+    
+    ( CapsLock  CapsLock  A  S  D  F  G  H  J  K  L  ";"  Quote1  Enter  Enter  Enter )
+    
+    ( Shift  Shift  Z  X  C  V  B  N  M  ,  .  /  Exit  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Recip  Recip  {  }  :  Quote2  <  >  ?  |  |  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Legend  Legend  Legend )
+    
+    )
+   
+    StartGridPos ( 3  4 )
+   
+    SkbPos ( 15  250 )
+   
+    SkbHeight ( 180 )
+   
+    SkbWidth ( 360 )
+   
+    UserStringWidth ( 310 )
+   
+    UserStringProps (
+      POSITION ( 15  40 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    CursorY ( 27 )
+   
+    CursorSize ( 8  14 )
+   
+    PurposeStringProps (
+      POSITION ( 15  15 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    ScaleUpSec ( 0.250000 )
+   
+    ScaleDownSec ( 0.250000 )
+   
+    IgnoreUnchangedString ()
+   
+    KeyProps ((
+       Key ( ~ )
+     
+      Pos ( 7  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ! )
+     
+      Pos ( 29  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( @ )
+     
+      Pos ( 52  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( # )
+     
+      Pos ( 75  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( $ )
+     
+      Pos ( 97  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( % )
+     
+      Pos ( 120  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ^ )
+     
+      Pos ( 142  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( & )
+     
+      Pos ( 164  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( * )
+     
+      Pos ( 186  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenL )
+     
+      Pos ( 209  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenR )
+     
+      Pos ( 232  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( _ )
+     
+      Pos ( 254  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( + )
+     
+      Pos ( 277  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ` )
+     
+      Pos ( 7  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "1" )
+     
+      Pos ( 29  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "2" )
+     
+      Pos ( 53  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "3" )
+     
+      Pos ( 75  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "4" )
+     
+      Pos ( 97  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "5" )
+     
+      Pos ( 120  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "6" )
+     
+      Pos ( 142  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "7" )
+     
+      Pos ( 164  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "8" )
+     
+      Pos ( 186  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "9" )
+     
+      Pos ( 209  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "0" )
+     
+      Pos ( 232  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( - )
+     
+      Pos ( 254  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( = )
+     
+      Pos ( 277  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( [ )
+     
+      Pos ( 300  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ] )
+     
+      Pos ( 322  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Q )
+     
+      Pos ( 53  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( W )
+     
+      Pos ( 75  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( E )
+     
+      Pos ( 98  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( R )
+     
+      Pos ( 120  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( T )
+     
+      Pos ( 142  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Y )
+     
+      Pos ( 164  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( U )
+     
+      Pos ( 186  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( I )
+     
+      Pos ( 209  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( O )
+     
+      Pos ( 232  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( P )
+     
+      Pos ( 254  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( \ )
+     
+      Pos ( 277  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( A )
+     
+      Pos ( 64  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( S )
+     
+      Pos ( 87  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( D )
+     
+      Pos ( 109  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( F )
+     
+      Pos ( 131  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( G )
+     
+      Pos ( 153  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( H )
+     
+      Pos ( 175  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( J )
+     
+      Pos ( 197  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( K )
+     
+      Pos ( 221  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( L )
+     
+      Pos ( 243  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ";" )
+     
+      Pos ( 266  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote1 )
+     
+      Pos ( 288  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Z )
+     
+      Pos ( 75  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( X )
+     
+      Pos ( 98  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( C )
+     
+      Pos ( 120  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( V )
+     
+      Pos ( 142  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( B )
+     
+      Pos ( 164  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( N )
+     
+      Pos ( 187  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( M )
+     
+      Pos ( 209  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( , )
+     
+      Pos ( 233  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( . )
+     
+      Pos ( 254  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( / )
+     
+      Pos ( 277  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( { )
+     
+      Pos ( 120  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( } )
+     
+      Pos ( 142  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( : )
+     
+      Pos ( 164  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote2 )
+     
+      Pos ( 187  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( < )
+     
+      Pos ( 209  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( > )
+     
+      Pos ( 231  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ? )
+     
+      Pos ( 254  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( | )
+     
+      Pos ( 277  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( BackSpace )
+     
+      Pos ( 300  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 52  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Enter )
+     
+      Pos ( 311  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Exit )
+     
+      Pos ( 300  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Legend )
+     
+      Pos ( 300  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( CapsLock )
+     
+      Pos ( 7  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Shift )
+     
+      Pos ( 7  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Alt )
+     
+      Pos ( 7  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Recip )
+     
+      Pos ( 64  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 53  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Space )
+     
+      Pos ( 65  160 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 230  17 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CapsLockOn (
+      Pos ( 7  84 )
+    
+     Size ( 43  36 )
+    
+    )
+   
+    ShiftOn (
+      Pos ( 7  122 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    LegendOn (
+      Pos ( 300  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    AltSkb ( AlternateKeyboard )
+   
+   )
+  
+  (
+     Name ( AlternateKeyboard )
+   
+    Background ( SkbEuro.tif )
+   
+    Grid (( ~  !  @  #  $  %  ^  &  *  ParenL  ParenR  _  +  BackSpace  BackSpace  BackSpace )
+    
+    ( `  "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "0"  -  =  [  ]  ] )
+    
+    ( CapsLock  CapsLock  Ä  À  Á  Â  Ë  È  É  Ê  Ï  Í  \  Enter  Enter  Enter )
+    
+    ( CapsLock  CapsLock  Î  Ö  Ò  Ó  Ô  Ü  Ù  Ú  Û  ";"  Quote1  Enter  Enter  Enter )
+    
+    ( Shift  Shift  ß  Ç  Ñ  ¿  null  null  null  ,  .  /  Exit  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Recip  Recip  {  }  :  Quote2  <  >  ?  |  |  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Legend  Legend  Legend )
+    
+    )
+   
+    StartGridPos ( 1  7 )
+   
+    SkbPos ( 15  250 )
+   
+    SkbHeight ( 180 )
+   
+    SkbWidth ( 360 )
+   
+    UserStringWidth ( 310 )
+   
+    UserStringProps (
+      POSITION ( 15  40 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    CursorY ( 27 )
+   
+    CursorSize ( 8  14 )
+   
+    PurposeStringProps (
+      POSITION ( 15  15 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    ScaleUpSec ( 0.250000 )
+   
+    ScaleDownSec ( 0.250000 )
+   
+    KeyProps ((
+       Key ( ~ )
+     
+      Pos ( 7  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ! )
+     
+      Pos ( 29  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( @ )
+     
+      Pos ( 52  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( # )
+     
+      Pos ( 75  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( $ )
+     
+      Pos ( 97  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( % )
+     
+      Pos ( 120  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ^ )
+     
+      Pos ( 142  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( & )
+     
+      Pos ( 164  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( * )
+     
+      Pos ( 186  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenL )
+     
+      Pos ( 209  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenR )
+     
+      Pos ( 232  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( _ )
+     
+      Pos ( 254  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( + )
+     
+      Pos ( 277  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ` )
+     
+      Pos ( 7  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "1" )
+     
+      Pos ( 29  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "2" )
+     
+      Pos ( 53  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "3" )
+     
+      Pos ( 75  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "4" )
+     
+      Pos ( 97  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "5" )
+     
+      Pos ( 120  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "6" )
+     
+      Pos ( 142  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "7" )
+     
+      Pos ( 164  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "8" )
+     
+      Pos ( 186  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "9" )
+     
+      Pos ( 209  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "0" )
+     
+      Pos ( 232  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( - )
+     
+      Pos ( 254  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( = )
+     
+      Pos ( 277  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( [ )
+     
+      Pos ( 300  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ] )
+     
+      Pos ( 322  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ä )
+     
+      Pos ( 53  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( À )
+     
+      Pos ( 75  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Á )
+     
+      Pos ( 98  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Â )
+     
+      Pos ( 120  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ë )
+     
+      Pos ( 142  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( È )
+     
+      Pos ( 164  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( É )
+     
+      Pos ( 186  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ê )
+     
+      Pos ( 209  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ï )
+     
+      Pos ( 232  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Í )
+     
+      Pos ( 254  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( \ )
+     
+      Pos ( 277  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Î )
+     
+      Pos ( 64  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ö )
+     
+      Pos ( 87  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ò )
+     
+      Pos ( 109  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ó )
+     
+      Pos ( 131  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ô )
+     
+      Pos ( 153  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ü )
+     
+      Pos ( 175  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ù )
+     
+      Pos ( 197  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ú )
+     
+      Pos ( 221  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Û )
+     
+      Pos ( 243  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ";" )
+     
+      Pos ( 266  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote1 )
+     
+      Pos ( 288  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ß )
+     
+      Pos ( 75  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ç )
+     
+      Pos ( 98  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ñ )
+     
+      Pos ( 120  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ¿ )
+     
+      Pos ( 142  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( , )
+     
+      Pos ( 233  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( . )
+     
+      Pos ( 254  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( / )
+     
+      Pos ( 277  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( { )
+     
+      Pos ( 120  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( } )
+     
+      Pos ( 142  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( : )
+     
+      Pos ( 164  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote2 )
+     
+      Pos ( 187  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( < )
+     
+      Pos ( 209  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( > )
+     
+      Pos ( 231  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ? )
+     
+      Pos ( 254  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( | )
+     
+      Pos ( 277  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( BackSpace )
+     
+      Pos ( 300  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 52  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Enter )
+     
+      Pos ( 311  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Exit )
+     
+      Pos ( 300  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Legend )
+     
+      Pos ( 300  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( CapsLock )
+     
+      Pos ( 7  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Shift )
+     
+      Pos ( 7  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Alt )
+     
+      Pos ( 7  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Recip )
+     
+      Pos ( 64  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 53  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Space )
+     
+      Pos ( 65  160 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 230  17 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CapsLockOn (
+      Pos ( 7  84 )
+    
+     Size ( 43  36 )
+    
+    )
+   
+    ShiftOn (
+      Pos ( 7  122 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    AltOn (
+      Pos ( 7  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    LegendOn (
+      Pos ( 300  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+   )
+  
+  (
+     Name ( AlternateKeyboard2 )
+   
+    Background ( SkbEuro.tif )
+   
+    Grid (( ~  !  @  #  $  %  ^  &  *  ParenL  ParenR  _  +  BackSpace  BackSpace  BackSpace )
+    
+    ( `  "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "0"  -  =  [  ]  ] )
+    
+    ( CapsLock  CapsLock  Ä  À  Á  Â  Ë  È  É  Ê  Ï  Í  \  Enter  Enter  Enter )
+    
+    ( CapsLock  CapsLock  Î  Ö  Ò  Ó  Ô  Ü  Ù  Ú  Û  ";"  Quote1  Enter  Enter  Enter )
+    
+    ( Shift  Shift  ß  Ç  Ñ  ¿  null  null  null  ,  .  /  Exit  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Recip  Recip  {  }  :  Quote2  <  >  ?  |  |  Exit  Exit  Exit )
+    
+    ( Alt  Alt  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Space  Legend  Legend  Legend )
+    
+    )
+   
+    StartGridPos ( 1  7 )
+   
+    SkbPos ( 15  250 )
+   
+    SkbHeight ( 180 )
+   
+    SkbWidth ( 360 )
+   
+    UserStringWidth ( 310 )
+   
+    UserStringProps (
+      POSITION ( 15  40 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    CursorY ( 27 )
+   
+    CursorSize ( 8  14 )
+   
+    PurposeStringProps (
+      POSITION ( 15  15 )
+    
+     SCALE ( 0.400000 )
+    
+     COLOR ( 255  255  255 )
+    
+     FONT ( myriad )
+    
+    )
+   
+    ScaleUpSec ( 0.250000 )
+   
+    ScaleDownSec ( 0.250000 )
+   
+    KeyProps ((
+       Key ( ~ )
+     
+      Pos ( 7  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ! )
+     
+      Pos ( 29  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( @ )
+     
+      Pos ( 52  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( # )
+     
+      Pos ( 75  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( $ )
+     
+      Pos ( 97  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( % )
+     
+      Pos ( 120  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ^ )
+     
+      Pos ( 142  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( & )
+     
+      Pos ( 164  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( * )
+     
+      Pos ( 186  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenL )
+     
+      Pos ( 209  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ParenR )
+     
+      Pos ( 232  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( _ )
+     
+      Pos ( 254  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( + )
+     
+      Pos ( 277  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ` )
+     
+      Pos ( 7  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "1" )
+     
+      Pos ( 29  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "2" )
+     
+      Pos ( 53  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "3" )
+     
+      Pos ( 75  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "4" )
+     
+      Pos ( 97  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "5" )
+     
+      Pos ( 120  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "6" )
+     
+      Pos ( 142  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "7" )
+     
+      Pos ( 164  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "8" )
+     
+      Pos ( 186  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "9" )
+     
+      Pos ( 209  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( "0" )
+     
+      Pos ( 232  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( - )
+     
+      Pos ( 254  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( = )
+     
+      Pos ( 277  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( [ )
+     
+      Pos ( 300  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ] )
+     
+      Pos ( 322  66 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ä )
+     
+      Pos ( 53  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( À )
+     
+      Pos ( 75  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Á )
+     
+      Pos ( 98  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Â )
+     
+      Pos ( 120  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ë )
+     
+      Pos ( 142  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( È )
+     
+      Pos ( 164  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( É )
+     
+      Pos ( 186  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ê )
+     
+      Pos ( 209  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ï )
+     
+      Pos ( 232  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Í )
+     
+      Pos ( 254  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( \ )
+     
+      Pos ( 277  85 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Î )
+     
+      Pos ( 64  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ö )
+     
+      Pos ( 87  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ò )
+     
+      Pos ( 109  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ó )
+     
+      Pos ( 131  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ô )
+     
+      Pos ( 153  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ü )
+     
+      Pos ( 175  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ù )
+     
+      Pos ( 197  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ú )
+     
+      Pos ( 221  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Û )
+     
+      Pos ( 243  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ";" )
+     
+      Pos ( 266  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote1 )
+     
+      Pos ( 288  103 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ß )
+     
+      Pos ( 75  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ç )
+     
+      Pos ( 98  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Ñ )
+     
+      Pos ( 120  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ¿ )
+     
+      Pos ( 142  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( , )
+     
+      Pos ( 233  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( . )
+     
+      Pos ( 254  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( / )
+     
+      Pos ( 277  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( { )
+     
+      Pos ( 120  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( } )
+     
+      Pos ( 142  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( : )
+     
+      Pos ( 164  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Quote2 )
+     
+      Pos ( 187  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( < )
+     
+      Pos ( 209  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( > )
+     
+      Pos ( 231  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( ? )
+     
+      Pos ( 254  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( | )
+     
+      Pos ( 277  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 21  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( BackSpace )
+     
+      Pos ( 300  48 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 52  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Enter )
+     
+      Pos ( 311  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Exit )
+     
+      Pos ( 300  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Legend )
+     
+      Pos ( 300  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( CapsLock )
+     
+      Pos ( 7  84 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 43  36 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Shift )
+     
+      Pos ( 7  122 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Alt )
+     
+      Pos ( 7  150 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 54  26 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Recip )
+     
+      Size ( 53  17 )
+     
+      Pos ( 64  141 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 53  17 )
+      
+      )
+     
+     )
+    
+    (
+       Key ( Space )
+     
+      Pos ( 65  160 )
+     
+      ButtonSpec (
+        PRESSED ( SkbDepress.tif )
+      
+       ACTIVE ( SkbHighlight.tif )
+      
+       SIZE ( 230  17 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CapsLockOn (
+      Pos ( 7  84 )
+    
+     Size ( 43  36 )
+    
+    )
+   
+    ShiftOn (
+      Pos ( 7  122 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    AltOn (
+      Pos ( 7  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+    LegendOn (
+      Pos ( 300  150 )
+    
+     Size ( 54  26 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

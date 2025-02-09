@@ -1,0 +1,3291 @@
+((
+   SCREENS ((
+     LIBRARY ( common/assetlib/spmp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( MP_Game_Complete.tif )
+    
+    )
+   
+    FONT ( arialblack )
+   
+    SCRIPT_LIBRARY ( dlgMultiplayerFinalReally.rdr )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ListSwitch )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( CallRoundATie )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ReturnFlash )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ExitOnStart )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( MaintainDoneCounting )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( TimeoutMonitor )
+     
+     )
+    
+    )
+   
+    OBJECTS ((
+       NAME ( RTGL )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 340 )
+     
+      YPOS ( 423 )
+     
+      SPEC (
+        CAPTION ( " " )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Kills )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 298 )
+     
+      YPOS ( 95 )
+     
+      SPEC (
+        CAPTION ( KILLS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( headshot )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 378 )
+     
+      YPOS ( 85 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HEAD )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( shots )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        CHILDOF ( headshot )
+      
+       HCENTERED ()
+      
+       CAPTION ( SHOTS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hit% )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 422 )
+     
+      YPOS ( 95 )
+     
+      SPEC (
+        CAPTION ( "HIT %" )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hits )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 500 )
+     
+      YPOS ( 85 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HITS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( taken )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( hits )
+      
+       CAPTION ( TAKEN )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hostages )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 576 )
+     
+      YPOS ( 85 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HOSTAGES )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( rescued )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( hostages )
+      
+       CAPTION ( RESCUED )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bases )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 576 )
+     
+      YPOS ( 85 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( BASES )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( destroyed )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( bases )
+      
+       CAPTION ( DESTROYED )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Kills )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 298 )
+     
+      YPOS ( 176 )
+     
+      SPEC (
+        CAPTION ( KILLS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( headshot2 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 378 )
+     
+      YPOS ( 166 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HEAD )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( shots )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        CHILDOF ( headshot2 )
+      
+       HCENTERED ()
+      
+       CAPTION ( SHOTS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hit% )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 422 )
+     
+      YPOS ( 176 )
+     
+      SPEC (
+        CAPTION ( "HIT %" )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hits2 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 500 )
+     
+      YPOS ( 166 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HITS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( taken )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( hits2 )
+      
+       CAPTION ( TAKEN )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hostages2 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 576 )
+     
+      YPOS ( 166 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HOSTAGES )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( rescued )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( hostages2 )
+      
+       CAPTION ( RESCUED )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bases2 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 576 )
+     
+      YPOS ( 166 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( BASES )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( destroyed )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( bases2 )
+      
+       CAPTION ( DESTROYED )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Kills )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 298 )
+     
+      YPOS ( 258 )
+     
+      SPEC (
+        CAPTION ( KILLS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( headshot3 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 378 )
+     
+      YPOS ( 248 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HEAD )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( shots )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        CHILDOF ( headshot3 )
+      
+       HCENTERED ()
+      
+       CAPTION ( SHOTS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hit% )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 422 )
+     
+      YPOS ( 258 )
+     
+      SPEC (
+        CAPTION ( "HIT %" )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hits3 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 500 )
+     
+      YPOS ( 248 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HITS )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( taken )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( hits3 )
+      
+       CAPTION ( TAKEN )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( hostages3 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 576 )
+     
+      YPOS ( 248 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( HOSTAGES )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( rescued )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( hostages3 )
+      
+       CAPTION ( RESCUED )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bases3 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 576 )
+     
+      YPOS ( 248 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( BASES )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( destroyed )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( bases3 )
+      
+       CAPTION ( DESTROYED )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SealText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 26 )
+     
+      YPOS ( 127 )
+     
+      SPEC (
+        SCALE ( 0.700000 )
+      
+       CAPTION ( "SEALS' TOTALS" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TerrText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 26 )
+     
+      YPOS ( 208 )
+     
+      SPEC (
+        SCALE ( 0.700000 )
+      
+       CAPTION ( "TERRORISTS' TOTALS" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MVPText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 130 )
+     
+      YPOS ( 258 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 1.200000 )
+      
+       CAPTION ( MVP )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MVPText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 26 )
+     
+      YPOS ( 291 )
+     
+      SPEC (
+        SCALE ( 0.700000 )
+      
+       UIVAR (
+         NAME ( MvpName )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Time )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 85 )
+     
+      YPOS ( 327 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( TIME )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Played )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( Time )
+      
+       CAPTION ( PLAYED )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TimePlayed )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( -30 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        CHILDOF ( Time )
+      
+       SCALE ( 0.800000 )
+      
+       UIVAR (
+         NAME ( TimeInGame )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( roundswonS )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 220 )
+     
+      YPOS ( 327 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( SEALS )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( byseals )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        CHILDOF ( roundswonS )
+      
+       HCENTERED ()
+      
+       CAPTION ( "ROUNDS WON" )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( RoundsWonSeals )
+     
+      TYPE ( COUNTER )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        CHILDOF ( roundswonS )
+      
+       HCENTERED ()
+      
+       SCALE ( 0.800000 )
+      
+       StartTime ( 3.500000 )
+      
+       EndTime ( 4.000000 )
+      
+       ValVar ( RoundsWonSeals )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( roundswonT )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 360 )
+     
+      YPOS ( 327 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CAPTION ( TERRORISTS )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( byterr )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 15 )
+     
+      SPEC (
+        CHILDOF ( roundswonT )
+      
+       HCENTERED ()
+      
+       CAPTION ( "ROUNDS WON" )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( RoundsWonTerrs )
+     
+      TYPE ( COUNTER )
+     
+      XPOS ( -5 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        CHILDOF ( roundswonT )
+      
+       SCALE ( 0.800000 )
+      
+       StartTime ( 4.000000 )
+      
+       EndTime ( 4.500000 )
+      
+       ValVar ( RoundsWonTerrs )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DrawRoundS )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 131 )
+     
+      SPEC (
+        COLOR ( 255  104  51 )
+      
+       CAPTION ( DRAW )
+      
+       SCALE ( 0.800000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DrawRoundT )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 213 )
+     
+      SPEC (
+        COLOR ( 255  104  51 )
+      
+       CAPTION ( DRAW )
+      
+       SCALE ( 0.800000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( SealsTotals )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 127 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 40 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( GameSealsTotLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 307 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SealsTotals2 )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 127 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 40 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( GameSealsTotLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 307 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SealsTotals3 )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 127 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 40 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( GameSealsTotLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TerrsTotals )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 208 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 50 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( GameTerrsTotLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 307 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TerrsTotals2 )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 208 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 50 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( GameTerrsTotLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 307 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TerrsTotals3 )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 208 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 50 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( GameTerrsTotLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 455 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MvpTotals )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 290 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 40 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( MvpLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 307 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 890 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MvpTotals2 )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 290 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 40 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( MvpLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 890 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 307 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MvpTotals3 )
+     
+      TYPE ( LISTBOX )
+     
+      XPOS ( 273 )
+     
+      YPOS ( 290 )
+     
+      SPEC (
+        PRESSED_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       NOSELECT ()
+      
+       XSIZE ( 128 )
+      
+       YSIZE ( 40 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.750000 )
+      
+       LEFT_MARGIN ( 0 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( MvpLbContents )
+       
+       )
+      
+       COLUMNS ((
+          POSITION ( 50 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 110 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 170 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 230 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 890 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       (
+          POSITION ( 890 )
+        
+         RIGHT_JUSTIFIED ()
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ListSwitch )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( uiEquipReturnScreen  ==  31 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  32 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  35 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  36 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  37 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  38 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  39 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  40 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  41 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( uiEquipReturnScreen  ==  42 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SealsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  TerrsTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  hostages3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  bases3 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MvpTotals3 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallRoundATie )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( TerrsTotals )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SealsTotals )
+      
+      )
+     
+      IF (
+        VALVE ( mp_score00  >  mp_score08 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DrawRoundT )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DrawRoundS )
+      
+       CAPTION ( ¥ )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DrawRoundS )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DrawRoundT )
+      
+       CAPTION ( ¥ )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReturnFlash )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( Join_flash )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RTGL )
+      
+       CAPTION ( "RETURNING TO LOBBY." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RTGL )
+      
+       CAPTION ( "RETURNING TO LOBBY. ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RTGL )
+      
+       CAPTION ( "RETURNING TO LOBBY. . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RTGL )
+      
+       CAPTION ( "RETURNING TO LOBBY. . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RTGL )
+      
+       CAPTION ( "RETURNING TO LOBBY. . . . ." )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RTGL )
+      
+       CAPTION ( "RETURNING TO LOBBY. . . . . . " )
+      
+      )
+     
+      WAIT ( EVENT_OFFSET  0.300000 )
+     
+      LOOP (
+        LOOP_COUNT ( -1 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ExitOnStart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( UpdateMpFinalStatsUiVars )
+      
+      )
+     
+      VALVE ( IDFromBriefing  =  0 )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( HaveBeenBannedFromGame )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BanSelfFromGame )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( GameStatePopCommand )
+      
+       ARGUMENT ( dlgNetBanned.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlgGameLobby.rdr )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( watch_for_switch_to_master )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_SEQUENCE (
+        NAME ( watch_for_switch_to_client )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( watch_for_switch_to_master )
+     
+      ACTIVATION ( ON_CALL )
+     
+      WHILE ( TRUE )
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( watch_for_switch_to_client )
+      
+      )
+     
+      BREAK ()
+     
+      ENDIF ()
+     
+      WAIT ( 1.000000 )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( watch_for_switch_to_client )
+     
+      ACTIVATION ( ON_CALL )
+     
+      CALL_ANIMATION (
+        NAME ( call_gamelobby )
+      
+      )
+     
+      WHILE ( TRUE )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( watch_for_switch_to_master )
+      
+      )
+     
+      BREAK ()
+     
+      ENDIF ()
+     
+      WAIT ( 1.000000 )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( call_gamelobby )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 10 )
+     
+      CALL_ANIMATION (
+        NAME ( return_to_gamelobby )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( return_to_gamelobby )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( ExitOnStart )
+      
+      )
+     
+      VALVE ( player_ready_count  =  0 )
+     
+      VALVE ( mp_x_sec_clock  =  11 )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlgGameLobby.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MaintainDoneCounting )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( DoneCounting  =  0 )
+     
+      WAIT ( 5.000000 )
+     
+      VALVE ( DoneCounting  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MpFinalOnOk )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( DoneCounting  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( return_to_gamelobby )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SealsTotals )
+      
+       FINISH ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TerrsTotals )
+      
+       FINISH ()
+      
+      )
+     
+      VALVE ( DoneCounting  =  1 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( TimeoutMonitor )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 90.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( GameStatePopCommand )
+      
+       ARGUMENT ( dlgNetError.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

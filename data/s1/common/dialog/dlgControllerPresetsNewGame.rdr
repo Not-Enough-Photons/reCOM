@@ -1,0 +1,752 @@
+((
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/uiop )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( multplay_back.tif )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgControllerPresetsNewGame.rdr )
+  
+   USES_MEMCARD ()
+  
+   OBJECTS ((
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 384 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      SIZE ( 640  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( "SELECT A CONTROLLER CONFIGURATION" )
+     
+      SCALE ( 0.800000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dogtags )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 370 )
+    
+     YPOS ( 330 )
+    
+     SPEC (
+       FILENAME ( dogtags2.tif )
+     
+      SIZE ( 256  128 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 68 )
+    
+     SPEC (
+       XSIZE ( 605 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 87 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "Press the X button to view a controller configuration." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindowLow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 330 )
+    
+     SPEC (
+       XSIZE ( 605 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( DescriptionTextLow )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 325 )
+    
+     YPOS ( 350 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "Additional controller configurations are available in the options menu." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( RunGunText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 339 )
+    
+     YPOS ( 125 )
+    
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.800000 )
+     
+      CAPTION ( "PRECISION SHOOTER" )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ClassicText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 95 )
+    
+     YPOS ( 125 )
+    
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.800000 )
+     
+      CAPTION ( "SURE SHOT" )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( RunGunDesc )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 340 )
+    
+     YPOS ( 320 )
+    
+     SPEC (
+       SCALE ( 0.450000 )
+     
+      CAPTION ( "Precise dual analog stick control." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ClassicDesc )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 320 )
+    
+     SPEC (
+       SCALE ( 0.450000 )
+     
+      CAPTION ( "Classic single analog stick control." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( InstructionText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 30 )
+    
+     SPEC (
+       CHILDOF ( letterbar_bottom )
+     
+      COLOR ( 255.000000  204.000000  51.000000 )
+     
+      FONT ( myriad )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContBack1 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       XSIZE ( 300 )
+     
+      YSIZE ( 230 )
+     
+      FILENAME ( op_background.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContBack2 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 325 )
+    
+     YPOS ( 100 )
+    
+     SPEC (
+       XSIZE ( 300 )
+     
+      YSIZE ( 230 )
+     
+      FILENAME ( op_background.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic1 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 50 )
+    
+     YPOS ( 135 )
+    
+     SPEC (
+       XSIZE ( 250 )
+     
+      YSIZE ( 160 )
+     
+      FILENAME ( op_controller.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ContPic2 )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 345 )
+    
+     YPOS ( 135 )
+    
+     SPEC (
+       XSIZE ( 250 )
+     
+      YSIZE ( 160 )
+     
+      FILENAME ( op_controller.tif )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( OnPreset )
+    
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( ReturnToOptions )
+    
+    )
+   
+   (
+      BUTTON ( UP )
+    
+     ANIMATION ( NULL )
+    
+    )
+   
+   (
+      BUTTON ( DOWN )
+    
+     ANIMATION ( NULL )
+    
+    )
+   
+   (
+      BUTTON ( SELECT )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgControllerPresetsNewGame.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( has_memcard_changed )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( Preset2Btn )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 100 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 300 )
+     
+      YSIZE ( 230 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 100 )
+     
+      ACTIVE ( op_windowAct.tif )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset2 )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( activate_Preset1_button )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( activate_Preset1_button )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Preset1Btn )
+    
+     XPOS ( 325 )
+    
+     YPOS ( 100 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 300 )
+     
+      YSIZE ( 230 )
+     
+      XOFFSET ( 0 )
+     
+      YOFFSET ( 100 )
+     
+      ACTIVE ( op_windowAct.tif )
+     
+      PRESSED ( op_background.tif )
+     
+      CAPTION ( " " )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( PressPreset1 )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( activate_Preset2_button )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( activate_Preset2_button )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( activate_Preset1_button )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset1Btn )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( activate_Preset2_button )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Preset2Btn )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReturnToOptions )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMenu.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgControllerPresetsRG.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( PressPreset2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgControllerPresetsCS.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,375 @@
+(
+  template (
+   template_name ( ground  g1 )
+ 
+  template_model (
+    base_name ( congo_tree1 )
+  
+   choices (( 0.500000  congo_tree1 )
+   
+   ( 0.500000  congo_tree4 )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 20.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.700000  1.200000 )
+  
+   far_fade_range (
+     min ( 560  570 )
+   
+    max ( 610.000000  620.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -200.000000  0.000000 )
+   
+    max ( 0.000000  200.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( congo_tree4 )
+  
+   choices (( 0.200000  congo_tree4 )
+   
+   ( 0.800000  blank )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 20.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.700000  1.200000 )
+  
+   far_fade_range (
+     min ( 560  570 )
+   
+    max ( 610.000000  620.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -200.000000  0.000000 )
+   
+    max ( 0.000000  200.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( blank )
+  
+  )
+ 
+  template_model (
+    base_name ( bananatree )
+  
+   choices (( 0.700000  bananatree )
+   
+   ( 0.300000  fernlow )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 33.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.500000  1.700000 )
+  
+   far_fade_range (
+     min ( 400  420 )
+   
+    max ( 440.000000  460.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -200.000000  0.000000 )
+   
+    max ( 0.000000  220.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( fernlow )
+  
+   choices (( 0.800000  fernlow )
+   
+   ( 0.200000  blank )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 33.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.700000  2.100000 )
+  
+   far_fade_range (
+     min ( 300  320 )
+   
+    max ( 380.000000  400.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -200.000000  0.000000 )
+   
+    max ( 0.000000  220.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ clutter_converts ( bananatree  clump1  clump2  clump3  clump4  clump5  clump6 )
+
+ template (
+   template_name ( fake_template )
+ 
+  template_model (
+    base_name ( clump1 )
+  
+   choices (( 0.500000  clump1 )
+   
+   ( 0.500000  crap )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   align_normal ()
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 420.000000  421.000000 )
+   
+    max ( 450.000000  461.000000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.200000 )
+  
+  )
+ 
+  template_model (
+    base_name ( clump2 )
+  
+   choices (( 0.600000  clump2 )
+   
+   ( 0.400000  crap )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   align_normal ()
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 420.000000  421.000000 )
+   
+    max ( 450.000000  461.000000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.200000 )
+  
+  )
+ 
+  template_model (
+    base_name ( clump3 )
+  
+   choices (( 0.400000  clump3 )
+   
+   ( 0.600000  crap )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   align_normal ()
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 420.000000  421.000000 )
+   
+    max ( 450.000000  461.000000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.200000 )
+  
+  )
+ 
+  template_model (
+    base_name ( clump4 )
+  
+   choices (( 0.600000  clump4 )
+   
+   ( 0.400000  crap )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   align_normal ()
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 420.000000  421.000000 )
+   
+    max ( 450.000000  461.000000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.200000 )
+  
+  )
+ 
+  template_model (
+    base_name ( clump5 )
+  
+   choices (( 0.500000  clump5 )
+   
+   ( 0.500000  crap )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   align_normal ()
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 420.000000  421.000000 )
+   
+    max ( 450.000000  461.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -200.000000  0.000000 )
+   
+    max ( 0.000000  220.000000  0.000000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.200000 )
+  
+  )
+ 
+  template_model (
+    base_name ( clump6 )
+  
+   choices (( 0.600000  clump6 )
+   
+   ( 0.400000  crap )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   align_normal ()
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 420.000000  421.000000 )
+   
+    max ( 450.000000  461.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -200.000000  0.000000 )
+   
+    max ( 0.000000  220.000000  0.000000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.200000 )
+  
+  )
+ 
+ )
+
+)
+

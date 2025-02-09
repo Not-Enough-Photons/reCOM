@@ -1,0 +1,68 @@
+((
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( " " )
+   
+   )
+  
+   FONT ( arialblack )
+  
+   SCRIPT_LIBRARY ( dlgMPswitch.rdr )
+  
+   USES_MEMCARD ()
+  
+   OBJECTS ()
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( StopStreaming )
+    
+    )
+   
+   )
+  
+   CONTROLS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( StopStreaming )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgNetLogin.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

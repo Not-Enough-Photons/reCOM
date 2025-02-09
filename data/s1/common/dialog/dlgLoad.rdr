@@ -1,0 +1,1476 @@
+((
+   SCREENS ((
+     LIBRARY ( common/assetlib/loading )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( LittleBlack.tif )
+    
+    )
+   
+    FONT ( myriad_load )
+   
+    NOFONTLIB ()
+   
+    SCRIPT_LIBRARY ( dlgLoad.rdr )
+   
+    OBJECTS ((
+       NAME ( LoadingPicture )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 30 )
+     
+      YPOS ( 120 )
+     
+      SPEC (
+        XSIZE ( 580 )
+      
+       YSIZE ( 210 )
+      
+       UIVAR (
+         NAME ( load_picture )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( LoadingBackground )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 350 )
+     
+      YPOS ( 344 )
+     
+      SPEC (
+        XSIZE ( 260 )
+      
+       YSIZE ( 6 )
+      
+       UIVAR (
+         NAME ( load_progress_back )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( load_progress_filling )
+     
+      TYPE ( PROGRESSBAR )
+     
+      XPOS ( 354 )
+     
+      YPOS ( 346 )
+     
+      SPEC (
+        FILENAME_IS_UIVAR ()
+      
+       FILENAME ( load_progress_line )
+      
+       XSIZE ( 254 )
+      
+       YSIZE ( 2 )
+      
+       UIVAR (
+         NAME ( Load_progress )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 30 )
+     
+      YPOS ( 110 )
+     
+      SPEC (
+        COLOR ( 40  50  60 )
+      
+       UIVAR (
+         NAME ( mission_title )
+       
+       )
+      
+       SCALE ( 0.650000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description5 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 319 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description5 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description6 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 298 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description6 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description8 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 460 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description8 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description9 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description9 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description11 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 418 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description11 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description12 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 493 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description12 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description13 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 490 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description13 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description15 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 426 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description15 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description16 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 408 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description16 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description17 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 436 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description17 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description19 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 494 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description19 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( description21 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 502 )
+     
+      YPOS ( 105 )
+     
+      SPEC (
+        WIDTH ( 640 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mission_description21 )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( mp_description )
+     
+      TYPE ( WRAPPEDTEXT )
+     
+      XPOS ( 32 )
+     
+      YPOS ( 375 )
+     
+      SPEC (
+        WIDTH ( 550 )
+      
+       SPACING ( 15 )
+      
+       COLOR ( 15  30  45 )
+      
+       UIVAR (
+         NAME ( mp_mission_description )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ReturnToLobby )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 320 )
+     
+      YPOS ( 420 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       COLOR ( 33  65  97 )
+      
+       CAPTION ( "PRESS THE TRIANGLE BUTTON TO RETURN TO THE LOBBY." )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( LeadingEdge )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( " " )
+      
+       XSIZE ( 0 )
+      
+       YSIZE ( 0 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Leader_follow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( " " )
+      
+       XSIZE ( 0 )
+      
+       YSIZE ( 0 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( RateLevel )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 30 )
+     
+      YPOS ( 351 )
+     
+      SPEC (
+        COLOR ( 15  30  45 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.500000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( RateDisplay )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ShowObjectiveText )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnMenuStart )
+     
+     )
+    
+    (
+       EVENT ( ON_LOAD_COMPLETE )
+     
+      ANIMATION ( load_complete )
+     
+     )
+    
+    (
+       EVENT ( MP_VERSION_NUMBER_ERROR )
+     
+      ANIMATION ( exit_load_screen )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( SetMPWeaponValves )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( exit_load_screen )
+     
+     )
+    
+    )
+   
+    CONTROLS ()
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( RateDisplay )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      IF (
+        VALVE ( AutoAim  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: ENSIGN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: LT. JUNIOR GRADE" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: LIEUTENANT" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: LT. COMMANDER" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: COMMANDER" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  5 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: CAPTAIN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  6 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: REAR ADMIRAL" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  7 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: VICE ADMIRAL" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  8 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( "RANK: ADMIRAL" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  RateLevel )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ShowObjectiveText )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description8 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description9 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description11 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description12 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description13 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description15 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description16 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description17 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description19 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description21 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  mp_description )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ReturnToLobby )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RateLevel )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description6 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description8 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description5 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description9 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description11 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description12 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description17 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description19 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description21 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description13 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description15 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description16 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ReturnToLobby )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  mp_description )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description6 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description8 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description5 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description9 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description11 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description12 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description13 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description15 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description16 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description17 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description19 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  description21 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RateLevel )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnMenuStart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( IsNetwork )
+       
+       )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsSessionMaster )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( Did_SM_lock  ==  1 )
+      
+      )
+     
+      VALVE ( mp_locked_game  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( mp_locked_game  =  0 )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_load_screen )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( IsNetwork )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AbortLoad )
+      
+       ARGUMENT ( dlgNetAbort.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetMPWeaponValves )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( Enable_satchel  =  0 )
+     
+      VALVE ( Enable_m4Acarbine_203  =  0 )
+     
+      VALVE ( Enable_M16203  =  0 )
+     
+      VALVE ( Enable_LasDes  =  0 )
+     
+      VALVE ( Enable_203HE  =  0 )
+     
+      VALVE ( Enable_203SMK  =  0 )
+     
+      VALVE ( Enable_203FRAG  =  0 )
+     
+      VALVE ( Enable_GLFRAG  =  0 )
+     
+      VALVE ( Enable_GLSMK  =  0 )
+     
+      VALVE ( Enable_GLHE  =  0 )
+     
+      VALVE ( Enable_m79  =  0 )
+     
+      VALVE ( Enable_mglmk1  =  0 )
+     
+      VALVE ( Enable_c4  =  0 )
+     
+      VALVE ( Enable_M16  =  1 )
+     
+      VALVE ( Enable_mp5sd  =  1 )
+     
+      VALVE ( Enable_mp5  =  1 )
+     
+      VALVE ( Enable_ak47  =  1 )
+     
+      VALVE ( Enable_aks74  =  1 )
+     
+      VALVE ( Enable_m14_gun  =  1 )
+     
+      VALVE ( Enablesig_commando  =  1 )
+     
+      VALVE ( Enable_uzi  =  1 )
+     
+      VALVE ( Enable_remington700  =  1 )
+     
+      VALVE ( Enable_m60e  =  1 )
+     
+      VALVE ( Enable_m63a  =  1 )
+     
+      VALVE ( Enable_barret_lightm82A1  =  1 )
+     
+      VALVE ( Enable_EquipmcmillanM87  =  1 )
+     
+      VALVE ( Enable_m4Acarbine  =  1 )
+     
+      VALVE ( Enable_stoner_sr25  =  1 )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  1 )
+     
+      VALVE ( Enable_M4A1_SD  =  1 )
+     
+      VALVE ( Enable_FNP  =  1 )
+     
+      VALVE ( Enable_glock18  =  1 )
+     
+      VALVE ( Enable_fiveseven  =  1 )
+     
+      VALVE ( Enable_beretta_m9  =  1 )
+     
+      VALVE ( Enable_desert_eagle  =  1 )
+     
+      VALVE ( Enable_Mark23  =  1 )
+     
+      VALVE ( Enable_mark23sd  =  1 )
+     
+      VALVE ( Enable_Sig226  =  1 )
+     
+      VALVE ( Enable_HkP9s  =  1 )
+     
+      VALVE ( Enable_smoke  =  1 )
+     
+      VALVE ( Enable_flash  =  1 )
+     
+      VALVE ( Enable_claymore  =  1 )
+     
+      VALVE ( Enable_2xammo  =  1 )
+     
+      VALVE ( Enable_frag  =  1 )
+     
+      VALVE ( Enable_HEgren  =  1 )
+     
+      IF (
+        VALVE ( player_team  ==  0 )
+      
+      )
+     
+      VALVE ( Enable_ak47  =  0 )
+     
+      VALVE ( Enable_aks74  =  0 )
+     
+      VALVE ( Enablesig_commando  =  0 )
+     
+      VALVE ( Enable_barret_lightm82A1  =  0 )
+     
+      VALVE ( Enable_uzi  =  0 )
+     
+      VALVE ( Enable_m60e  =  0 )
+     
+      VALVE ( Enable_FNP  =  0 )
+     
+      VALVE ( Enable_glock18  =  0 )
+     
+      VALVE ( Enable_fiveseven  =  0 )
+     
+      VALVE ( Enable_beretta_m9  =  0 )
+     
+      VALVE ( Enable_desert_eagle  =  0 )
+     
+      VALVE ( Enable_satchel  =  0 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_EquipmcmillanM87  =  0 )
+     
+      VALVE ( Enable_m63a  =  0 )
+     
+      VALVE ( Enable_M16  =  0 )
+     
+      VALVE ( Enable_mp5sd  =  0 )
+     
+      VALVE ( Enable_mp5  =  0 )
+     
+      VALVE ( Enable_m4Acarbine  =  0 )
+     
+      VALVE ( Enable_stoner_sr25  =  0 )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  0 )
+     
+      VALVE ( Enable_M4A1_SD  =  0 )
+     
+      VALVE ( Enable_Mark23  =  0 )
+     
+      VALVE ( Enable_mark23sd  =  0 )
+     
+      VALVE ( Enable_Sig226  =  0 )
+     
+      VALVE ( Enable_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( load_complete )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( late_joiner  ==  1 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  RedDown )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  LoadingText )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

@@ -1,0 +1,553 @@
+((
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
+  
+   BACKGROUND (
+     TYPE ( MPEG )
+   
+    FILENAME ( run/movies/common/flagwave.pss )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgGameComplete.rdr )
+  
+   OBJECTS ((
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( CONGRATULATIONS )
+     
+      SCALE ( 0.950000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 384 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_plate )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 105 )
+    
+     SPEC (
+       FILENAME ( common_teletype_plate.tif )
+     
+      XSIZE ( 596 )
+     
+      YSIZE ( 235 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_text )
+    
+     TYPE ( TELETYPE )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 45 )
+    
+     SPEC (
+       CHILDOF ( teletype_plate )
+     
+      PULSERATE ( 10.000000 )
+     
+      MAXLENGTH ( 485 )
+     
+      MAXHEIGHT ( 180 )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.450000 )
+     
+      INTERVAL ( 1400.000000 )
+     
+      SPACING ( 20 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Objtext )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 22 )
+    
+     SPEC (
+       COLOR ( 255.000000  204.000000  51.000000 )
+     
+      CHILDOF ( teletype_plate )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.500000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dogtags )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 370 )
+    
+     YPOS ( 325 )
+    
+     SPEC (
+       FILENAME ( dogtags_db1.tif )
+     
+      SIZE ( 256  128 )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      EVENT ( ONMPEGEND )
+    
+     ANIMATION ( GoWhere )
+    
+    )
+   
+   (
+      BUTTON ( CROSS )
+    
+     ANIMATION ( GoWhere )
+    
+    )
+   
+   (
+      BUTTON ( SELECT )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgGameComplete.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( ReplayOptions )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide )
+    
+    )
+   
+   )
+  
+   CONTROLS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( GoWhere )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgCredits.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallMusic )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_CREDITS )
+      
+       START ()
+      
+       FADEOUT ( 0.500000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReplayOptions )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( GoToGameCompleteScreen  =  0 )
+     
+      IF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Lt. Junior Grade" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "You have served your country well. #P1 #NYou have upheld the ideals and the honor of the U.S.Navy SEALs. #P1 #N Democracy has once again won out over terror. You are a hero. Now continue your career as a SEAL by replaying the missions against more challenging opponents. As terrorists grow increasingly aggressive only the SEALs can stop them. You now have greater access to weapons beginning with your first mission." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Lieutenant" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Once again you have proven yourself a hero and as a hero you are due a reward. The Area of Operations screen is now available. You have earned the right to revisit any mission in any order but be careful. The terrorists are now even better trained and out for blood." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Lt. Commander" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Congratulations, commander. You have survived the worst that the scum of the earth could throw at you. The Multiple Grenade Launcher or MGL is now available to you in all missions. Use it to neutralize the now even more vengeful terrorists." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Commander" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Only a few have the dedication and ability to be a U.S. Navy SEAL. You can take pride in that, Lt. Commander for you have proven yourself a hero time and again. #N #NYou may continue to replay missions at your discretion. The Enemy will continue to get more difficult to subdue." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Captain" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Only a few have the dedication and ability to be a U.S. Navy SEAL. You can take pride in that, Captain for you have proven yourself a hero time and again. #N #NYou may continue to replay missions at your discretion. The Enemy will continue to get more difficult to subdue." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Rear Admiral" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Only a few have the dedication and ability to be a U.S. Navy SEAL. You can take pride in that, Rear Admiral for you have proven yourself a hero time and again. #N #NYou may continue to replay missions at your discretion. The Enemy will continue to get more difficult to subdue." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Vice Admiral" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Only a few have the dedication and ability to be a U.S. Navy SEAL. You can take pride in that, Vice Admiral for you have proven yourself a hero time and again. #N #NYou may continue to replay missions at your discretion. The Enemy will continue to get more difficult to subdue." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Objtext )
+      
+       CAPTION ( "New Rank: Admiral" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "Only a few have the dedication and ability to be a U.S. Navy SEAL. You can take pride in that, Admiral for you have proven yourself a hero time and again. #N #NYou may continue to replay missions at your discretion. The Enemy will continue to get more difficult to subdue." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.400000 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

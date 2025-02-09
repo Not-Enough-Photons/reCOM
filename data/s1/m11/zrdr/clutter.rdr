@@ -1,0 +1,115 @@
+(
+  template (
+   template_name ( lawn01  g1 )
+ 
+  template_model (
+    base_name ( bush )
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.000000 )
+  
+   far_fade_range (
+     min ( 0.100000  0.200000 )
+   
+    max ( 390.000000  400.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ clutter_converts ( bamboo  junglegrass  a_palmtree  palmtree1 )
+
+ template (
+   template_name ( converts )
+ 
+  template_model (
+    base_name ( bamboo )
+  
+   repel (
+     max_angle ( 5.000000  10.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 825  825 )
+   
+    max ( 850.000000  850.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 25  25 )
+   
+    max ( 35.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( junglegrass )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 425  425 )
+   
+    max ( 450.000000  450.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 15.000000  15.000000 )
+   
+    max ( 20.000000  20.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( a_palmtree )
+  
+   far_fade_range (
+     min ( 825  825 )
+   
+    max ( 850.000000  850.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( palmtree1 )
+  
+   far_fade_range (
+     min ( 825  825 )
+   
+    max ( 850.000000  850.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

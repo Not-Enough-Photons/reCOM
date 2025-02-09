@@ -1,0 +1,1433 @@
+((
+   libname ( m17/assetlib/m17 )
+ 
+  locked ( 0 )
+ 
+  gearlib ( 0 )
+ 
+  renderphase ( 0 )
+ 
+  textures ((
+     name ( detail_map.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blur ( -2.800000 )
+   
+    mips ( mipdetail.tif )
+   
+    pal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( mipdetail.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( ground.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( ground_detail.tif )
+    
+     uv ( 5.000000 )
+    
+     range ( 490000.000000 )
+    
+     bmode ( SCALEDOWN )
+    
+    )
+   
+    blendmode ( name )
+   
+   )
+  
+  (
+     name ( water.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blendmode ( name )
+   
+   )
+  
+  (
+     name ( woodboards.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( weatherwood2.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( camonet2.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( bark2.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blendmode ( name )
+   
+   )
+  
+  (
+     name ( bark3.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blendmode ( name )
+   
+   )
+  
+  (
+     name ( moss.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( cover2.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( bark4.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blendmode ( name )
+   
+   )
+  
+  (
+     name ( bark5.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( barkstem5.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  blendmode ( name )
+   
+   )
+  
+  (
+     name ( dirtground.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( detail_map.tif )
+    
+     uv ( 3.000000 )
+    
+     range ( 160000.000000 )
+    
+     bmode ( COLORBLEND )
+    
+    )
+   
+    blendmode ( name )
+   
+   )
+  
+  (
+     name ( barrelside.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( metalroof.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( hut03_moss02.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  16bitpal  32bitpal )
+  
+  (
+     name ( canvas_tent.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( sky.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  32bitpal )
+  
+  (
+     name ( metaldirt.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( radiofrnt.tif )
+   
+    dim2 ( 64  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( radiofrnt2.tif )
+   
+    dim2 ( 64  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( radiofrnt3.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( metalhole.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( map1.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( map2.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( metallight.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( boulder3.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( rustpot.tif )
+   
+    dim2 ( 16  16  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( burntground.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( box_lightwood_side1.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( box_lightwood_top.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( box_wood_light1.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( box_wood_dark1.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( box_woodfaded.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( barrel_blue.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( barrel_brown.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( dynamite01.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( dynostrap01.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( dynobox01.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( dynobox02.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( window01.tif )
+   
+    dim2 ( 32  32  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( shore1.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( skybase.tif )
+   
+    dim2 ( 16  16  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( hilltest.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( congo_reed.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( can1.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( can2.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( shadow1.tif )
+   
+    dim2 ( 16  16  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( metal_roof05.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( barkpeel.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( tree_green.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( treetrunk3.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( ground_detail.tif )
+   
+    dim2 ( 128  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    mips ( ground_detailmip1.tif )
+   
+   )
+  
+  (
+     name ( ground_detailmip1.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( congotree.tif )
+   
+    dim2 ( 256  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( leaf9.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( foliagetest.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( leaf.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( grasstex.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( blast.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( lamp.tif )
+   
+    dim2 ( 16  16  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  )
+ 
+  palettes ()
+ 
+ (
+    models ((
+      file ( m17_terrain.FLT )
+    
+     name ( m17_terrain )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( lamp1.flt )
+    
+     name ( lamp1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( arrow.flt )
+    
+     name ( arrow )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( questionmark.flt )
+    
+     name ( questionmark )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( radio.FLT )
+    
+     name ( radio )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( m17map01.FLT )
+    
+     name ( m17map01 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( campfire.flt )
+    
+     name ( campfire )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( campfire_pot.flt )
+    
+     name ( campfire_pot )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( dock.flt )
+    
+     name ( dock )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( shack3.flt )
+    
+     name ( shack3 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( shack1.flt )
+    
+     name ( shack1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( woodladder_section.flt )
+    
+     name ( woodladder_section )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( guardtower.flt )
+    
+     name ( guardtower )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( crate_lightwood_nap.flt )
+    
+     name ( crate_lightwood_nap )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( crate_weathered_ap.flt )
+    
+     name ( crate_weathered_ap )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( crate_marked_ap.flt )
+    
+     name ( crate_marked_ap )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrel_blue_closed.flt )
+    
+     name ( barrel_blue_closed )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrel_gray_closed.flt )
+    
+     name ( barrel_gray_closed )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrelbase.flt )
+    
+     name ( barrelbase )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrel_blue_open.flt )
+    
+     name ( barrel_blue_open )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrel_burried_blue_open.flt )
+    
+     name ( barrel_burried_blue_open )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrel_gray_open.flt )
+    
+     name ( barrel_gray_open )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( barrel_burried_gray_open.flt )
+    
+     name ( barrel_burried_gray_open )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( can_crushed1.flt )
+    
+     name ( can_crushed1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( can_crushed2.flt )
+    
+     name ( can_crushed2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( can_closed1.flt )
+    
+     name ( can_closed1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( can_closed2.flt )
+    
+     name ( can_closed2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_stool.flt )
+    
+     name ( kit_stool )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_benchseat.flt )
+    
+     name ( kit_benchseat )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_table.flt )
+    
+     name ( kit_table )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_pot.flt )
+    
+     name ( kit_pot )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_pan.flt )
+    
+     name ( kit_pan )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_plate.flt )
+    
+     name ( kit_plate )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( kit_cup.flt )
+    
+     name ( kit_cup )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( door01.flt )
+    
+     name ( door01 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tnt_group.flt )
+    
+     name ( tnt_group )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( crate_weathered_onepiece.flt )
+    
+     name ( crate_weathered_onepiece )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( camotarps.flt )
+    
+     name ( camotarps )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( sleepbag.flt )
+    
+     name ( sleepbag )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( sleepbag2.flt )
+    
+     name ( sleepbag2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tent.flt )
+    
+     name ( tent )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( crate_lightwood_onepiece.flt )
+    
+     name ( crate_lightwood_onepiece )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( comtower2.FLT )
+    
+     name ( comtower2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( comtowerbase.FLT )
+    
+     name ( comtowerbase )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump5.flt )
+    
+     name ( clump5 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump6.flt )
+    
+     name ( clump6 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump2.flt )
+    
+     name ( clump2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( grassrepel.flt )
+    
+     name ( grassrepel )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump1.flt )
+    
+     name ( clump1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump3.flt )
+    
+     name ( clump3 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( clump4.flt )
+    
+     name ( clump4 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( cshrub12.FLT )
+    
+     name ( cshrub12 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( congo_tree3.flt )
+    
+     name ( congo_tree3 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( bananatree.flt )
+    
+     name ( bananatree )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( land.FLT )
+    
+     name ( land )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( sky.FLT )
+    
+     name ( sky )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( ground.flt )
+    
+     name ( ground )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( congo_tree1.FLT )
+    
+     name ( congo_tree1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( cshrub10.FLT )
+    
+     name ( cshrub10 )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( fernlow.FLT )
+    
+     name ( fernlow )
+    
+     flatten ( true )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

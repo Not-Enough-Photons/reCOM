@@ -1,0 +1,1915 @@
+((
+   SCREENS ((
+     LIBRARY ( common/assetlib/splash )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( LittleBlack.tif )
+    
+    )
+   
+    FONT ( arialblack )
+   
+    SCRIPT_LIBRARY ( dlgExitState.rdr )
+   
+    OBJECTS ((
+       NAME ( Stealth )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 140 )
+     
+      SPEC (
+        CAPTION ( STEALTH )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( StealthPercent )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Stealth )
+      
+       SCALE ( 1.300000 )
+      
+       UIVAR (
+         NAME ( StatStealthPct )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SPercentSymbol )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 400 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Stealth )
+      
+       CAPTION ( % )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Accuracy )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 170 )
+     
+      SPEC (
+        CAPTION ( ACCURACY )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( AccPercent )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Accuracy )
+      
+       SCALE ( 1.300000 )
+      
+       UIVAR (
+         NAME ( StatAccuracyPct )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( APercentSymbol )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 400 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Accuracy )
+      
+       CAPTION ( % )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Teamwork )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 200 )
+     
+      SPEC (
+        CAPTION ( TEAMWORK )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TeamPercent )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Teamwork )
+      
+       SCALE ( 1.300000 )
+      
+       UIVAR (
+         NAME ( statTeamworkPct )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TPercentSymbol )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 400 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Teamwork )
+      
+       CAPTION ( % )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PrimaryObjComp )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 230 )
+     
+      SPEC (
+        CAPTION ( "PRIMARY OBJECTIVES COMPLETE" )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PrimCompCntr )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      CHILDOF ( PrimaryObjComp )
+     
+      SPEC (
+        SCALE ( 1.200000 )
+      
+       UIVAR (
+         NAME ( StatPrimaryObjectivesComplete )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Of )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 387 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( PrimaryObjComp )
+      
+       CAPTION ( of )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PrimaryTotal )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 420 )
+     
+      YPOS ( 0 )
+     
+      CHILDOF ( PrimaryObjComp )
+     
+      SPEC (
+        SCALE ( 1.200000 )
+      
+       UIVAR (
+         NAME ( StatPrimaryObjectivesTotal )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Secondary )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 260 )
+     
+      SPEC (
+        CAPTION ( "SECONDARY OBJECTIVES COMPLETE" )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SecCompCntr )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      CHILDOF ( Secondary )
+     
+      SPEC (
+        SCALE ( 1.200000 )
+      
+       UIVAR (
+         NAME ( StatSecondaryObjectivesComplete )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Of )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 392 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( Secondary )
+      
+       CAPTION ( of )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SecondaryTotal )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 425 )
+     
+      YPOS ( 0 )
+     
+      CHILDOF ( Secondary )
+     
+      SPEC (
+        SCALE ( 1.200000 )
+      
+       UIVAR (
+         NAME ( StatSecondaryObjectivesTotal )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( CPercent )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 290 )
+     
+      SPEC (
+        CAPTION ( "PERCENTAGE COMPLETED" )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PercentCntr )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( CPercent )
+      
+       SCALE ( 1.300000 )
+      
+       UIVAR (
+         NAME ( StatObjectivesPct )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PercentSymbol )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 400 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( CPercent )
+      
+       CAPTION ( % )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TimeInGame )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 310 )
+     
+      YPOS ( 40 )
+     
+      SPEC (
+        CAPTION ( "TIME IN GAME:" )
+      
+       SCALE ( 0.900000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PercentCntr )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 440 )
+     
+      YPOS ( 40 )
+     
+      SPEC (
+        SCALE ( 0.900000 )
+      
+       UIVAR (
+         NAME ( TimeInGame )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( OverallGrade )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 100 )
+     
+      YPOS ( 340 )
+     
+      SPEC (
+        CAPTION ( "OVERALL GRADE" )
+      
+       SCALE ( 1.300000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( OMPercentGrade )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 365 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CHILDOF ( OverallGrade )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 1.300000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( OMPercentGradeUn )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 300 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CHILDOF ( OverallGrade )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 1.300000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ToDebrief )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 470 )
+     
+      YPOS ( 400 )
+     
+      SPEC (
+        CHILDOF ( MENUFADER )
+      
+       COLOR ( 15  30  45 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 1.200000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MissStat )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 28 )
+     
+      YPOS ( 95 )
+     
+      SPEC (
+        CAPTION ( "MISSION STATISTICS" )
+      
+       SCALE ( 1.100000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MissStat2 )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 212 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( MissStat )
+      
+       CAPTION ( FOR: )
+      
+       SCALE ( 1.100000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ThisMiss )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 60 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        CHILDOF ( MissStat2 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 1.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( SuccessBackground )
+     
+      TYPE ( IMAGE )
+     
+      SPEC (
+        FILENAME ( db_back.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 448 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FailureBackground )
+     
+      TYPE ( IMAGE )
+     
+      SPEC (
+        FILENAME ( miss_fail_back.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 448 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ExitOnStart )
+     
+     )
+    
+    (
+       BUTTON ( CROSS )
+     
+      ANIMATION ( ExitOnCross )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( ExitOnTriangle )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( DebriefingAnim )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ToDebrief )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( LOADING. )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . . . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( LOADING. )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . . . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( LOADING. )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . . ." )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ToDebrief )
+      
+       CAPTION ( "LOADING. . . . ." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ExitOnStart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      WAIT ( 0.250000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ToDebrief )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMissionSuccessful )
+       
+       )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  FailureBackground )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.750000 )
+     
+      SOUND (
+        NAME ( MUS_SUCCESS )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Call_Music )
+      
+      )
+     
+      ELSE ()
+     
+      WAIT ( 0.750000 )
+     
+      SOUND (
+        NAME ( MUS_FAILURE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SuccessBackground )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "DEATH AT SEA" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "GHOST TOWN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "OIL PLATFORM TAKEDOWN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "GOLDEN TRIANGLE HOLIDAY" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "TEMPLE AT HOHN KAEN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "CITY OF THE FORGOTTEN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "MERCENARY STAGING AREA" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "POW CAMP" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "MOUNTAIN ASSAULT" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "PRISON BREAK" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( "MOUTH OF THE BEAST" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ThisMiss )
+      
+       CAPTION ( DEATHBLOW )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMissionSuccessful )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( StatOverallPct  >=  93 )
+      
+       &&  VALVE ( StatOverallPct  <=  100 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGrade )
+      
+       CAPTION ( A )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGradeUn )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatOverallPct  >=  80 )
+      
+       &&  VALVE ( StatOverallPct  <=  92 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGrade )
+      
+       CAPTION ( B )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGradeUn )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatOverallPct  >=  69 )
+      
+       &&  VALVE ( StatOverallPct  <=  79 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGrade )
+      
+       CAPTION ( C )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGradeUn )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatOverallPct  >=  55 )
+      
+       &&  VALVE ( StatOverallPct  <=  68 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGradeUn )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGrade )
+      
+       CAPTION ( D )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatOverallPct  <=  54 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGrade )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGradeUn )
+      
+       CAPTION ( UNSATISFACTORY )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGrade )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  OMPercentGradeUn )
+      
+       CAPTION ( UNSATISFACTORY )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Call_Music )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WHILE ( TRUE )
+     
+      END_WHILE ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO8_UI_SUC )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO9_UI_SUC )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO11_UI_SUC )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO12_UI_SUC )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO15_UI_SUC )
+      
+       START ()
+      
+       STOP_ON_EXIT ()
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ExitOnCross )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMissionSuccessful )
+       
+       )
+      
+      )
+     
+      VALVE ( ReplayMissAnyway  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlgDebriefing.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      WAIT ( 0.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( FadeAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ReplayMission )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ExitOnTriangle )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMissionSuccessful )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlgAlaska_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlgAlaska_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlgAlaska_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_thai_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_thai_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_thai_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_congo_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_congo_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_congo_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_turk_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( DebriefingAnim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CloseAndSwitch )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

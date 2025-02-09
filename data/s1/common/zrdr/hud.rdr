@@ -1,0 +1,2246 @@
+((
+   static_radio ( 529.000000  388.000000 )
+ 
+  dynamic_radio ( 575.000000  388.000000 )
+ 
+  TacMap (
+    Polygons ((
+      Type ( 0 )
+    
+     Color ( 240  240  240 )
+    
+     Opacity ( 0.400000 )
+    
+    )
+   
+   (
+      Type ( 1 )
+    
+     Color ( 0  200  0 )
+    
+     Opacity ( 0.000000 )
+    
+    )
+   
+   (
+      Type ( 2 )
+    
+     Color ( 148  126  91 )
+    
+     Opacity ( 0.200000 )
+    
+    )
+   
+   (
+      Type ( 3 )
+    
+     Color ( 81  176  110 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 4 )
+    
+     Color ( 87  112  176 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 5 )
+    
+     Color ( 176  93  27 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 6 )
+    
+     Color ( 176  60  161 )
+    
+     Opacity ( 0.000000 )
+    
+    )
+   
+   (
+      Type ( 7 )
+    
+     Color ( 130  130  20 )
+    
+     Opacity ( 0.200000 )
+    
+    )
+   
+   (
+      Type ( 8 )
+    
+     Color ( 176  60  161 )
+    
+     Opacity ( 0.300000 )
+    
+    )
+   
+   )
+  
+   Lines ((
+      Type ( 0 )
+    
+     Color ( 240  240  240 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 1 )
+    
+     Color ( 0  200  0 )
+    
+     Opacity ( 0.000000 )
+    
+    )
+   
+   (
+      Type ( 2 )
+    
+     Color ( 148  126  91 )
+    
+     Opacity ( 0.400000 )
+    
+    )
+   
+   (
+      Type ( 3 )
+    
+     Color ( 81  176  110 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 4 )
+    
+     Color ( 87  112  176 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 5 )
+    
+     Color ( 255  139  40 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   (
+      Type ( 6 )
+    
+     Color ( 176  60  161 )
+    
+     Opacity ( 0.000000 )
+    
+    )
+   
+   (
+      Type ( 7 )
+    
+     Color ( 130  130  20 )
+    
+     Opacity ( 0.300000 )
+    
+     Width ( 3.000000 )
+    
+    )
+   
+   (
+      Type ( 8 )
+    
+     Color ( 176  60  161 )
+    
+     Opacity ( 0.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+  EventPopups (
+    Common (
+     TopMargin ( 10.000000 )
+   
+    LeftMargin ( 20.000000 )
+   
+    BottomMargin ( 10.000000 )
+   
+    PromptText ( "                    PRESS £ TO CONTINUE" )
+   
+    BackgroundOpacity ( 0.500000 )
+   
+    ForceOpenTime ( 1.000000 )
+   
+    OpeningSound ( SND_METAL )
+   
+    ClosingSound ( SND_BACK )
+   
+   )
+  
+   PopupDefinitions ((
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_close_combat.tif )
+     
+      Mission ( m8 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "When the RIFLE BUTT icon is visible onscreen"  "press £ to deliver a crushing blow to your"  "opponent's skull. This action always results"  "in death for your target."  " "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_conceal_body.tif )
+     
+      Mission ( m6 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  201 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Pressing £ when the PICK UP BODY icon is"  "onscreen causes your character to pick up"  "the nearest corpse. You may carry bodies"  "into shadow in this manner. When you are"  "ready to drop the body, press £ again."  " "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_button.tif )
+     
+      Mission ( m6 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You may push a button or flip a switch in"  "the environment by placing the cross hairs "  "over the button or switch and pressing £."  "  "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_mp_bomb.tif )
+     
+      Mission ( m6 )
+     
+     )
+    
+     WindowPos ( 110  94 )
+    
+     WindowSize ( 412  241 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Satchel charges create very powerful"  "explosions and so must only be placed in "  "specific areas. You will know when you may"  "place a satchel when the SATCHEL icon "  "appears on screen. To place one, move the"  "crosshairs over your target until the "  "satchel icon appears then press £."  " "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_pickup_item1.tif  action_pickup_item2.tif )
+     
+      Mission ( m6 )
+     
+     )
+    
+     WindowPos ( 110  94 )
+    
+     WindowSize ( 410  241 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "When you are standing on or near a dropped"  "weapon you have the opportunity to "  "exchange either your primary or secondary"  "weapon for the weapon on the ground as"  "appropriate. Just press £ to make the "  "swap. You can always switch back to your"  "old weapon if you want."  "  "  "If you are using Sure Shot controls, press ¤ "  "instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_restrain.tif )
+     
+      Mission ( m8 )
+     
+     )
+    
+     WindowPos ( 110  104 )
+    
+     WindowSize ( 412  241 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You can restrain individuals that are"  "compliant. Just move behind them and put"  "the crosshairs over them until the RESTRAIN"  "icon appears on screen. Press £ and you "  "will apply the restraints. The restrained"  "person can no longer attack. Some may follow"  "orders from you."  "   "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_talk.tif )
+     
+      Mission ( m8 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  201 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "To order an ESCORTEE to follow you, just "  "place the crosshairs over them. When the "  "FOLLOW icon appears on screen press £. "  "This gives the order for the escortee"  "to follow you."  "   "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_knife.tif )
+     
+      Mission ( m6 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  201 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "If you approach an enemy silently and from"  "behind, the KNIFE KILL icon will appear."  "Press £ and you will knife the enemy and "  "lower him quietly to the ground. The knife"  "kill is even quieter than the rifle butt."  " "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( ActionIcon1stTime )
+     
+      Icons ( action_pickup_item.tif )
+     
+      Mission ( m6 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  201 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "When the icon for picking up an item on a"  "desk or table appears, you may take the"  "object by pressing £. To make the icon "  "appear you need to be facing in the general"  "direction of the object you want to pick up."  " "  "If you are using Sure Shot controls, press"  "¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_SHADOWS_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Your enemies may not detect you when you"  "are hidden by shadows. The darker the "  "shadow the better it can hide you." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_TRANSLATORS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "As long as someone on your team speaks"  "the language, you can understand what your"  "enemies are saying. If your translator is"  "incapacitated you won't understand foreign"  tongues. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_ELIMINATE_LEADER )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The terrorist leader will not hesitate to"  "destroy the oil platform and everyone on it."  "Your priority must be to locate and "  "neutralize him." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_LEADER_AGITATED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 400  92 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "When his comrades don't answer him, the"  "leader will grow more agitated." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_TIMER_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The leader of the Iron Brotherhood will"  "continue to grow more agitated. When he"  "cracks, he will detonate the bombs. Watch"  "the clock to estimate how much time remains." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( HudObjective )
+     
+      Valve ( POBJ2 )
+     
+      Mission ( m5 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 400  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Defusing bombs takes time. Watch the meter"  "to gauge how much time remains when"  "defusing a bomb." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_TEAM_DEFUSE )
+     
+     )
+    
+     WindowPos ( 110  94 )
+    
+     WindowSize ( 410  241 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Your teammates can perform tasks for you,"  "tasks such as defusing a bomb. To do this,"  "place the crosshairs over a bomb then press"  "¤. Select BRAVO, press ¤, then select"  "DEFUSE and press ¤ again. One member of"  "Bravo will move into place and defuse the"  bomb.  " "  "When using Sure Shot controls use ¢"  "instead of ¤." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_COVER_AREA )
+     
+     )
+    
+     WindowPos ( 110  94 )
+    
+     WindowSize ( 410  242 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You can also use your teammates to take out"  "enemies while you perform a task. First "  "indicate the general area you want covered"  "with the crosshairs. Then open the Team "  "Command menu by pressing ¤. Select Bravo"  "and then COVER AREA. Bravo element will "  "cover the area you indicated."  " "  "When using Sure Shot controls, open the"  "Team Command menu with ¢." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_USING_RESTRAINTS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  201 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Restraints must be applied from behind. If"  "you need to restrain someone you must move"  "behind them until the RESTRAIN icon appears."  "After that just press £ to restrain your"  target.  " "  "If you are using Sure Shot controls,"  "press ¤ instead of £." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_TIMER_02 )
+     
+     )
+    
+     WindowPos ( 114  124 )
+    
+     WindowSize ( 408  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The leader of the Iron Brotherhood,"  "Aleksei Borisova has been eliminated, but"  "the bombs remain a threat. They have"  "backup timers. When the timers run out"  "the bombs will detonate." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M06_SENTRY_KILL )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Don't leave bodies lying in open sight. Move "  "them into the shadows to hide them from"  "your enemies and avoid early detection." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M06_SECOND_SATCHEL )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Each man on your team can carry only one"  "satchel charge. Place the cross hairs over"  "the remaining location for placing a "  "satchel. Then, using the Team Command Menu,"  "order your TEAM to DEPLOY, SATCHEL. A"  "member of your team will move to place the"  satchel. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M06_USE_TEAM )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Your partner, Boomer, will follow you while"  "element Bravo stays here until you need"  them. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M06_MORE_SHADOW )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "If no one on the freighter has detected your"  "activities on the barge, you can stealth to"  "the pilot house of the freighter without "  "being spotted. Keep a low profile and try not"  "to fire on enemies that don't notice you." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M06_USING_ABLE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Your partner Boomer will always follow you"  "and try to stay close. He will respond to"  "many of the same orders as element Bravo"  "and also watch your back." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_TCM_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "When your team is in HOLD FIRE mode, they "  "will fire on enemies that target them and"  "raise their weapons. In FIRE AT WILL mode,"  "teammates will fire on any target of "  opportunity. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_USE_C4 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Destroy the weapon caches with C4. Move"  "close to the caches until the PLACE C4"  "icon appears. Press £ to place the C4 then"  "move away before the meter counts down." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_NAV_POINTS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "NAV points are represented in the radar "  "and the TACMAP as letters inside a square."  "The letters are taken from the first letter"  "in the words Charlie, Whiskey, Zulu and so on."  "NAV points appear on a route to objectives." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_CREEPING )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The faster you move, the more noise you"  "make. Your enemies will hear you. Proceed"  "cautiously if you want to remain undetected." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_USING_GRASS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Grass and foliage offer cover. The denser"  "the plants, the better the cover. " )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_GOTO_TACMAP )
+     
+     )
+    
+     WindowPos ( 130  120 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You have a new mission objective. Press the"  "SELECT button to open the TACMAP and"  "view your objective and a map of the area."  "You can also find intel on how to complete"  "an objective on this screen." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_HIDE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Move element Bravo out of sight and take"  "cover. A patrol will show up any minute." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_KILL_SENTRY )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Eliminate the terrorist silently to avoid"  "warning his comrades. Use a knife kill, a "  "rifle butt attack or a suppressed weapon." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_STANCE_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Your stance affects how well enemies can"  "see you. Prone offers the least visibility"  "and even crouching is better than standing."  "To change stances, press ¡." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_STANCE_02 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Stance also affects your accuracy. Firing  "  "while crouched is an improvement but"  "accuracy is best when prone. Press ¡ to"  "change stance." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_TCM_02 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Open the Team Command Menu by pressing"  "¤. Select BRAVO then RUN TO and then"  "CHARLIE. Element Bravo will now run"  "to NAV point Charlie."  "  "  "If you are using Sure Shot controls,"  "press ¢ to open the Team Command Menu." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_HEY_TACMAP )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "If you are having trouble navigating the area"  "or don't know what to do next, press the "  "SELECT button to open the Tactical Map also"  "known as the TACMAP. All your objectives "  "and a map of the mission area are available"  "on this screen." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_RADAR_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Now that you have restrained Pincushion,"  "you can track his location on the radar."  "All restrained ESCORTEES are represented"  "by an 'H' inside a circle. If you leave"  "an ESCORTEE too far behind, they will"  "eventually drop off your radar." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( HudObjective )
+     
+      Valve ( SOBJ9 )
+     
+      Mission ( m8 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Element Bravo can provide overwatch for "  "you when they are in position at NAV point"  "ZULU. Be sure they are in FIRE AT WILL mode"  "or they will only fire when fired upon." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_RADAR_02 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  182 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The pulsing star in the TACMAP and the solid"  "star in the radar indicate the location of an"  "objective. Gold represents primary"  "objectives and silver represents secondary"  "objectives. Some objectives do not have a"  "specific location so they will not be"  "indicated by stars." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_FOLIAGE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Foliage offers cover and can hide you from"  "enemies. Thick foliage offers the best cover"  "but even sparse cover has some value as"  "long as you are in it." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_WATER_COVER )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "By itself water offers cover. If the water is"  "deep enough for you to crouch enemies can"  "see less of you and you are less likely to"  "be detected." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_TACTICS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 400  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Do not allow the terrorists to reach their"  "boats. If the Riddah Rouge escape upriver,"  "the bio-data is lost. Using the Team"  "Command Menu send element Bravo to NAV "  "point Whiskey and then order them to FIRE"  "AT WILL if they are not already in this mode." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_EXTRACTION )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Hold this position until all healthy teammates"  "reach the extraction zone." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_WEATHER )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "All weather affects camouflage. The worse"  "the weather, the better you like it. Add"  "heavy rain to a dark night and you can be"  "almost invisible to your enemies." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M11_STATS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You may have noticed the STEALTH heading"  "on the mission stats screen after each "  "mission. To improve your stealth rating"  "you do not have to remain completely"  "hidden for the entire mission--you just"  "cannot allow any enemy who sees you to"  live. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M11_SHADOW )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "No matter where an Area of Operation takes"  "you, remember that the shadows are your "  "friends and stealth is your best weapon." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M12_FORCED_SURRENDER )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "To force Thongkon to surrender you must"  "separate him from his bodyguards. Also, try"  "to apprehend him before he can see the river."  "The closer he is to escape the less likely he"  "is to surrender." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M12_THONGKON_RUNS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Thongkon is leaving the temple and is on the"  "run. Do not allow him to reach the river and"  escape. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_STEALTH )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Stealth is a priority here. The terrorists in"  "the prison greatly outnumber you. Your best"  "chance to complete this mission successfully"  "is to plant a satchel at the far side of the"  "prison and use the explosion as a diversion."  "It is possible to infiltrate the prison"  "without being seen." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_DIVERSION )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You failed to create a diversion. The prison "  "interior will be much more difficult to secure"  "because the terrorists will not be drawn to a"  "remote area of the prison and away from"  "your point of insertion." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_WALL_NOT_HOLE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Find the rock by the wall and climb over the"  "prison wall after the satchel detonates. The"  "terrorists will be drawn to the noise and"  "away from you." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_GENERATOR )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "If you disable the generator, lights in the"  "prison are extinguished. This can give you a"  "tactical advantage. The best way to stop the"  "generator is to turn it off, but you may use"  "C4 on it if you wish." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_MOVE_BODIES )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Recon the area for enemies ahead then move"  "the bodies of the first two mercenaries into"  "grass or behind a rock so that they will not "  "be seen by their comrades." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_MOVE_BUDDY )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Before a satchel charge can be detonated,"  "you must remove your injured teammates"  "from the blast area." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_STEALTH )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Carefully recon the habits of the mercenaries"  "and proceed only when the area is clear or "  "the mercenaries turn their backs to you." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_GET_THOSE_MERCS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Eliminate or restrain all remaining"  "mercenaries. They must not be allowed to"  "escape and warn their comrades that you"  "are here." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M19_MAGNUS_DEAD )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Escort all the POWs to the extraction site. "  "Until you have all three POWs in hand, you "  "will want to hide any POW you have already"  "secured. Remember that mercenary patrols "  "will kill any POWs you have secured, so you"  "should consider leaving element Bravo to"  "guard them." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M19_STEALTH_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The best approach to reaching the POWs is"  "to stay out of sight as much as possible."  "With stealth you can reach a recon point"  "without alerting Magnus to your location." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M21_LASER )
+     
+     )
+    
+     WindowPos ( 110  100 )
+    
+     WindowSize ( 410  240 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "To call for a missile strike, use the laser"  "designator to paint the target, in this case"  "a bunker. The designator is held like a pistol"  "and will make a chirping sound when you "  "press the fire button, hold it, and paint"  "your target. Note that it takes more than a"  "few seconds before a target is locked on so"  "watch the the meter on screen for an"  "indication of how much time remains before"  "lock on." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M21_MORE_BUNKERS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Two bunkers remain to be destroyed. You will"  "need to use the laser designator to call for"  "missile strikes." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M11_SWEEP_01 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You can call for air support and a helo will"  "sweep the area. This can eliminate many "  "enemies but the survivors will know that you"  "are here." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M11_SWEEP_02 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Open the team command menu and select "  "SUPPORT and SWEEP. A helo will approach"  "and begin to fire on all hostiles in the"  area. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_WATCH )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Hold your position for a while and observe"  "the actions of the terrorists. While they"  "are unaware of you, you can watch them on "  "their patrols and learn their habits. This"  "intel can be invaluable when you need to"  "stealth kill your enemies." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_BBC )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Your teammates will breach, bang, and clear"  "rooms for you. Place the cross hairs over a"  "door and open the team command menu. "  "Select BRAVO BREACH, BANG, CLEAR. Your"  "team will force entry, throw a flashbang"  "and take out any hostiles on the other side." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M05_COVER )
+     
+     )
+    
+     WindowPos ( 110  104 )
+    
+     WindowSize ( 410  241 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Use Bravo to cover areas where you think"  "enemies will travel. This can prevent "  "terrorists from executing their plans. Just"  "open the Team Command menu by pressing"  "¤ and select BRAVO, COVER AREA. Element"  "Bravo will cover the general area indicated"  "by your cross hairs."  " "  "If you are using Sure Shot controls, press"  "¢ instead of ¤." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_GUARDS_KILLED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Clear this building. Use your teammates to"  "take down any enemies that may be waiting"  inside. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_DREDGE_ARRIVAL )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "With Bravo in position at Nav point Zulu"  "you will have a much better chance of "  "retrieving the laptop computer." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_HELLO_PINCUSHION )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Pincushion spotted and identified. Control "  "your fire around the defector. You want to "  "bring him back alive. He is of no use dead." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_USE_COVER )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Move between cover locations to reach the"  "island unseen. Remember that foliage can"  "hide you from enemies." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_BE_SNEAKY )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Move under the huts without being seen. "  "Wait there to overhear the conversation"  "of the terrorists." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_ALERTED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The terrorists know you are here. They will"  "attempt to reach the river and escape by air"  "boat. You must reach the boats and destroy "  "them. Open the TACMAP for details." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_RETREATING )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The terrorists will attempt to scatter and"  "hide in the jungle. Hunt them down and "  "eliminate them." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_GET_THOSE_MERCS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "A group of mercenaries is trying to flee the"  "area. They will notifiy their comrades of"  "your presence. Eliminate all mercenaries."  "Do not allow any to escape." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_TEAM_SPOTTED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You have been spotted. The mercenaries will"  "attempt to reach their comm shack and radio"  "their camp deeper in the jungle. This could"  "cause serious problems in extracting the"  "POWs. Do not allow the mercenaries to radio"  "their comrades." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_HEADED_TO_RADIO )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Mercenaries have reached the comm shack"  "and are attempting to radio the main"  "mercenary camp deep in the jungle. Prevent"  "them from disclosing your presence." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_SATCHELS_PLANTED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Now that all satchels are planted you must"  "move your team out of the blast area. The "  "satchels cannot be detonated until all "  "members of your team are out of the blast"  area. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_MERCS_FLEE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "A group of mercenaries is trying to flee"  "the area. They will notifiy their comrades"  "of your presence. Eliminate all mercenaries."  "Do not allow any to escape." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M17_MERCS_ELIMINATED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  70 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The fleeing mercenaries have been eliminated." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M19_SET_AMBUSH )
+     
+     )
+    
+     WindowPos ( 112  124 )
+    
+     WindowSize ( 408  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "This appears to be a good area to set an"  "ambush. Order Bravo to Charlie and then "  "take up a position across the path from"  "them. When a mercenary patrol moves "  "through the area, order Bravo to open fire."  "The teams' combined firepower should be"  "enough to eliminate the patrol." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M19_ID_SENTRY )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The mercenaries will have posted sentries"  "here. Use your binoculars to scan the area"  "and identify any sentries." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( HELP_OFF )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You can turn the HELP features on or off"  "in the PAUSE MENU or in the configuration"  "screens. This will deactivate pop-up windows." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_OBSERVE_AI )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Before you move any farther, take time to"  "observe your enemies. They may turn their"  "backs to you or move away temporarily. At"  "these times you will have the best chance"  "to sneak under the huts." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M11_LOOK_A_PATH )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "There is a darkened path that branches off"  "this atrium. You may be able to take out"  "some of the terrorists from this stealthy"  route. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( SWITCH_SPECIAL_ACTIONS )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 400  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "When two or more action icons are on"  "the screen you may scroll through them by"  "holding down £ and thumbing left or right"  "on the directional pad. When you release £"  "your character performs the action linked"  "to the current icon." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( HOW_TO_STEALTH )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The longer you remain undetected the more"  "likely your are to succeed in your mission."  "Take advantage of shadow, cover, and "  "surprise to outsmart your enemy." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_NO_DIVERSION_NOW )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "A terrorist is heading for the prison gate."  "He is shouting a warning to his comrades."  "The EXPLOSIVE DIVERSION objective cannot be"  "completed. Expect much more resistance from"  "the Sadikahu." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M15_ONE_NUKE_ONLY )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You need to arm only one of the nukes. The"  "blast from the first will take care of the"  second. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( HOW_TO_GRENADE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  181 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "To throw a grenade, hold down the fire"  "button. The harder you press the button,"  "the farther you will throw the grenade."  "The strength of the throw is indicated"  "by a meter on the crosshairs. If the"  "meter is white when you release the fire"  "button, you will not throw the grenade." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( TEAMMATES_STOPPED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  142 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Teammates will try to avoid crossing into "  "your line of fire. If you turn to face them"  "while they are on the move they will stop"  "in place until you turn away. This practice"  "helps minimize friendly fire fatalities." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( HOLD_POSITION )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  161 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The HOLD POSITION command causes element "  "Bravo to stop where they are and wait for"  "further instructions. Note that your partner,"  "Boomer, will always remain near you and "  "cannot be given the HOLD POSITION"  command. )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( AREA_SECURED )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  125 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You have eliminated the terrorists that "  "were in this area initially. However, "  "the sound of weapon fire may have alerted"  "and attracted additional terrorists." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M09_ESCAPING )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The terrorists will have escaped when"  "this timer runs out. Do not allow them"  "to reach their boats and escape." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_CLEAR_BUILDING )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "Remember to clear the building before "  "taking the informant inside. No terrorists"  "should remain within the building." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_GET_MAP )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You must have the informant's map before"  "moving on to the extraction site. Return"  "to the armory and take the map." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_BEGINNING_RECON )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "To complete your recon you must remain"  "undetected and in place while you observe"  "the enemy. Hold this position. " )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_RECON_FAILED_1 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You have been detected by the enemy."  "The RECON objective is now impossible." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_RECON_FAILED_2 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You have engaged the enemy. The RECON"  "objective is now impossible. " )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_RECON_FAILED_3 )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The enemy is on the move. The RECON "  "objective cannot be completed." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M13_ABORTING_RECON )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  90 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "You have left the RECON area. The RECON"  "objective is now impossible." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M15_DISARM_NUKE )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "One of the nukes has been armed. You will"  "know the armed nuclear device by its flashing"  "red light." )
+    
+    )
+   
+   (
+      Trigger (
+       Type ( AnimCmd )
+     
+      Name ( M08_DATA_DESTRUCTION )
+     
+     )
+    
+     WindowPos ( 110  124 )
+    
+     WindowSize ( 410  110 )
+    
+     TextSize ( 0.850000 )
+    
+     LineInterval ( 19.000000 )
+    
+     TextLines ( "The terrorists are destroying the data on"  "the laptop. Data loss will be complete when"  "the onscreen timer reaches zero." )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

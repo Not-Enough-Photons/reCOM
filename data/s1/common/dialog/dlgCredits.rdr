@@ -1,0 +1,137 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
+   
+    BACKGROUND (
+      TYPE ( MPEG )
+    
+     FILENAME ( run/movies/common/credits.pss )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgCredits.rdr )
+   
+    OBJECTS ()
+   
+    ANIMATIONS ((
+       EVENT ( ONMPEGEND )
+     
+      ANIMATION ( BackOutWithMusic )
+     
+     )
+    
+    (
+       BUTTON ( CROSS )
+     
+      ANIMATION ( BackOutWithMusic )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( BackOutWithMusic )
+     
+     )
+    
+    )
+   
+    CONTROLS ()
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( BackOutWithMusic )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( CameFromMap  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  2 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

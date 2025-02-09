@@ -1,0 +1,4749 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/ui2d )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgDebriefing.rdr )
+   
+    OBJECTS ((
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "MISSION DEBRIEFING" )
+      
+       SCALE ( 0.950000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 384 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( title_bar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 60 )
+     
+      SPEC (
+        FILENAME ( undefined.tif )
+      
+       SIZE ( 700  32 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags_db1.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags2 )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags_db2.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( StatusDisplay )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 123 )
+     
+      SPEC (
+        COLOR ( 73.000000  76.000000  81.000000 )
+      
+       CHILDOF ( title_bar )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.650000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( teletype_plate )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 115 )
+     
+      SPEC (
+        FILENAME ( common_teletype_plate.tif )
+      
+       XSIZE ( 596 )
+      
+       YSIZE ( 235 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Medal )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 480 )
+     
+      YPOS ( 160 )
+     
+      SPEC (
+        FILENAME ( Medal.tif )
+      
+       SIZE ( 94  158 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Medal1 )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 480 )
+     
+      YPOS ( 160 )
+     
+      SPEC (
+        FILENAME ( Medal1.tif )
+      
+       SIZE ( 94  158 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Medal2 )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 480 )
+     
+      YPOS ( 160 )
+     
+      SPEC (
+        FILENAME ( Medal2.tif )
+      
+       SIZE ( 94  158 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( teletype_text )
+     
+      TYPE ( TELETYPE )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 45 )
+     
+      SPEC (
+        CHILDOF ( teletype_plate )
+      
+       PULSERATE ( 10.000000 )
+      
+       MAXLENGTH ( 330 )
+      
+       MAXHEIGHT ( 180 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.350000 )
+      
+       INTERVAL ( 1400.000000 )
+      
+       SPACING ( 18 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( NextMiss )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 23 )
+     
+      SPEC (
+        CHILDOF ( teletype_plate )
+      
+       COLOR ( 73.000000  76.000000  81.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.600000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( CallMusic )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( ShowGameReview )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Progress_flash )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide )
+     
+     )
+    
+    (
+       EVENT ( MEMCARD_ERROR )
+     
+      ANIMATION ( handle_memcard_error )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( DoSaveButton )
+     
+      TYPE ( BUTTON )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 112 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        SIZE ( 172  32 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 23 )
+      
+       SCALE ( 0.500000 )
+      
+       CAPTION ( " " )
+      
+       PRESSED (
+         TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( TRIANGLE )
+        
+         ANIMATION ( SaveFromReplay )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( MemCheckSave )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SavedGames )
+     
+      XPOS ( 75 )
+     
+      YPOS ( 155 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        CHILDOF ( MENUFADER )
+      
+       PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+      
+       NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+      
+       ACTIVE_COLOR ( 255.000000  104.000000  51.000000 )
+      
+       NOSELECT ()
+      
+       PADHOG ()
+      
+       FILENAME ( popup_load.tif )
+      
+       XSIZE ( 490 )
+      
+       YSIZE ( 200 )
+      
+       SPACING ( 22 )
+      
+       SCALE ( 0.500000 )
+      
+       LEFT_MARGIN ( 20 )
+      
+       TOP_MARGIN ( 50 )
+      
+       COLUMNS ((
+          POSITION ( -8 )
+        
+        )
+       
+       (
+          POSITION ( 284 )
+        
+        )
+       
+       (
+          POSITION ( 137 )
+        
+        )
+       
+       (
+          POSITION ( 47 )
+        
+        )
+       
+       )
+      
+       UIVAR (
+         NAME ( SavedGames )
+       
+       )
+      
+       ANIMATIONS ((
+          BUTTON ( CROSS )
+        
+         ANIMATION ( SaveGameOnListBox )
+        
+        )
+       
+       (
+          BUTTON ( TRIANGLE )
+        
+         ANIMATION ( CancelLoadGame )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_spec_mission_comp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      VALVE ( incr_miss_6  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_6  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_6  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      VALVE ( incr_miss_8  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_8  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_8  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      VALVE ( incr_miss_5  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_5  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_5  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      VALVE ( incr_miss_9  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_9  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_9  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      VALVE ( incr_miss_11  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_11  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_11  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      VALVE ( incr_miss_12  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_12  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_12  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      VALVE ( incr_miss_17  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_17  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_17  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      VALVE ( incr_miss_19  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_19  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_19  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      VALVE ( incr_miss_21  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_21  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_21  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      VALVE ( incr_miss_13  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_13  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_13  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      VALVE ( incr_miss_15  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_15  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_15  =  8 )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      VALVE ( incr_miss_16  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_16  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_16  =  8 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ShowCompletionLevel )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "0 Ensign" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "1 Lt. Junior Grade" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "2 Lieutenant" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "3 Lt. Commander" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "4 Commander" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "5 Captain" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "6 Rear Admiral" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "7 Vice Admiral" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "8 Admiral" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( ? )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( ForGameCompleteScreen  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GoToGameCompleteScreen  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameCompSet )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GoToGameCompleteScreen  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameCompSet )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( ai_difficulty  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( TestForCompletionLevel )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( ShowCompletionLevel )
+      
+      )
+     
+      VALVE ( GameComplete  =  999 )
+     
+      IF (
+        VALVE ( incr_miss_6  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_6 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_8  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_8 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_5  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_5 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_9  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_9 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_11  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_11 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_12  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_12 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_17  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_17 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_19  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_19 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_21  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_21 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_13  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_13 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_15  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_15 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( incr_miss_16  <  GameComplete )
+      
+      )
+     
+      VALVE ( GameComplete  =  incr_miss_16 )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( GameComplete  >=  ForGameCompleteScreen )
+      
+      )
+     
+      VALVE ( ForGameCompleteScreen  +=  1 )
+     
+      VALVE ( GoToGameCompleteScreen  =  1 )
+     
+      ENDIF ()
+     
+      VALVE ( ai_difficulty  =  GameComplete )
+     
+      CALL_ANIMATION (
+        NAME ( ShowCompletionLevel )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallMusic )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO6_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO8_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO5_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO9_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO11_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO12_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO17_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO19_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO21_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO13_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO15_UIDB )
+      
+       START ()
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_VO16_UIDB )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ShowGameReview )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( DoSaveButton )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( CallCorrectText )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  dogtags2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      VALVE ( ReplayMissionMusic  =  0 )
+     
+      IF (
+        VALVE ( StatObjectivesPct  >  90 )
+      
+       &&  VALVE ( StatObjectivesPct  <  100 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatObjectivesPct  >  90 )
+      
+       &&  VALVE ( StatObjectivesPct  <  100 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatObjectivesPct  <  90 )
+      
+       &&  VALVE ( StatObjectivesPct  >  69 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal1 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal2 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( StatObjectivesPct  <  69 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal1 )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Medal2 )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallCorrectText )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( switch )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "GOOD JOB, COMMANDER. THE INTEL YOU AND YOUR TEAM RECOVERED HAS BEEN INVALUABLE IN SHUTTING DOWN THE ZEMIY AND SOME OF THEIR BLACK MARKET ASSOCIATES. THIS WILL CURTAIL THE SPREAD OF ILLEGAL WEAPONS SIGNIFICANTLY HERE IN THE UNITED STATES AND ABROAD. #P1 #N YOUR FOCUS NOW IS NEUTRALIZING THE IRON BROTHERHOOD. WE HAVE NEW INTEL THAT INDICATES THEY HAVE ESTABLISHED A BASE OF OPERATIONS IN REMOTE ALASKA. TO PUT A STOP TO THEIR THREAT, YOU WILL HAVE TO INFILTRATE THE CAMP AND UNCOVER THEIR AGENDA." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "ANOTHER PROFESSIONALLY COMPLETED MISSION, COMMANDER. CONGRATULATIONS. #P1 #N WITH PETRENKO IN OUR CUSTODY IT IS ONLY A MATTER OF TIME BEFORE WE KNOW THE WHEREABOUTS OF ANY SURVIVING MEMBERS OF THE IRON BROTHERHOOD. WE CAN BE CERTAIN THAT THEIR ORGANIZATION IS IN CHAOS NOW, THOUGH THE MEMBERS AT LARGE MAY BE CAPABLE OF CAUSING SERIOUS DAMAGE." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "GOOD WORK, COMMANDER. YOUR WORK ON THE OIL PLATFORM PREVENTED AN ECOLOGICAL CATASTROPHE AND YOU ELIMINATED THE LAST OF THE TERRORIST GROUP, THE IRON BROTHERHOOD.  #P1 #N WE HAVE STUDIED THE HARD DRIVE OF THE LAPTOP YOU RECOVERED FROM THE DREDGE. AFTER RECONSTRUCTING SOME ERASED FILES WE NOTED REFERENCES TO AN ANONYMOUS FINANCIAL BACKER. THE BROTHERHOOD MUST HAVE BEEN FUNDED BY A SOURCE UNKNOWN TO US. HOPEFULLY YOUR RECENT MISSIONS WILL CONVINCE HIM THAT TERRORISM IS A BAD INVESTMENT." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "ANOTHER WELL EXECUTED MISSION, COMMANDER. UNFORTUNATELY THE RIDDAH ROUGE HAD MOVED THE BIO-DATA UP RIVER BEFORE WE DEPLOYED YOU, ALTHOUGH BY THE LOOKS OF IT WE JUST MISSED THEM.  UNTIL ADDITIONAL INTEL IS AVAILABLE WE WILL HAVE TO WAIT FOR THE RIDDAH ROUGE TO SHOW THEMSELVES." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "REMARKABLE WORK, COMMANDER. THE AMBASSADOR AND HIS WIFE ARE RECOVERING FROM THEIR ORDEAL BUT SEND THEIR THANKS. #P1 #N OF COURSE THIS ISN'T THE END OF THE TERRORIST THREAT. IF THEY'RE BOLD ENOUGH TO KIDNAP AND RANSOM AN AMBASSADOR, THEY NEED CASH FOR BIGGER PLANS. THERE CAN BE NO DOUBT THAT THE RIDDAH ROUGE IS PLANNING TO MASS-PRODUCE A DEADLY BIOLOGICAL AGENT. YOU WILL HAVE TO STOP THEM." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "UNDER QUESTIONING THONGKON REVEALED HIS PLANS FOR THE DEADLY BIOLOGICAL AGENT HE WAS MANUFACTURING. BEGINNING WITH HIS OWN COUNTRY HE PLANNED TO RELEASE THE AGENT INTO THE WATER SUPPLY; THE RESULTS WOULD HAVE BEEN CATASTROPHIC. THIS TERRORIST LEADER NOT ONLY WANTED RECOGNITION, HE WANTED NOTHING LESS THAN GENOCIDE. THE PSYCHIATRIC PROFILE ON THONGKON REVEALS THAT HE WOULD NOT HAVE STOPPED WITH THAILAND. #P1 #N THE WORLD OWES YOU ITS GRATITUDE, COMMANDER. " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "YOU AND YOUR MEN ARE CONSUMMATE PROFESSIONALS, COMMANDER. WE ARE CERTAIN THAT NO MERCENARIES ESCAPED THE AREA TO WARN THEIR COMRADES AT THEIR MAIN ENCAMPMENT DEEPER IN THE JUNGLE. UNTIL WE KNOW THE PRECISE LOCATION OF THIS CAMP, STAY READY. WHEN THE ORDERS COME DOWN YOU WILL NEED TO MOVE OUT FAST." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "A FINE JOB, COMMANDER. THOSE MARINES OWE YOU THEIR LIVES. NOW ONE MORE NEEDS YOUR HELP. IN THEIR DEBRIEFING THE MARINES INDICATED THAT THEIR PATROL LEADER, MAJOR NORRIS, WAS ALIVE WHEN THEY LAST SAW HIM. THE MERCENARIES MAY BE HOLDING HIM HOSTAGE WITH THE MISGUIDED UNDERSTANDING THAT THEY CAN USE A U.S. SERVICEMAN AS A HUMAN SHIELD. STUDY THE DATA AND EXECUTE YOUR ORDERS.  " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "LESSER MEN WOULD NOT HAVE MADE IT OUT OF THAT JUNGLE ALIVE, COMMANDER. YOU AND YOUR MEN NOT ONLY SURVIVED BUT RESCUED OUR OTHER SERVICE MEN AND STAMPED OUT THE MERCENARY MENACE AT THE SAME TIME. OUTSTANDING." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "UNDER QUESTIONING MACCEK INDICATED THAT THERE ARE AT LEAST TWO SUITCASE NUKES IN TRANSIT THROUGH THE DESERT. THEIR PROBABLE DESTINATION IS A SERIES OF MOUNTAIN CAVES USED BY THE SADIKAHU BOTH AS TRAINING CAMPS AND AS A STRONGHOLD.  #P1 #N THANKS TO YOUR WORK WE KNOW THAT THE TERRORISTS HAVE NUCLEAR WEAPONS. WE CAN ASSUME THAT THEY WILL USE THEM TO THEIR ADVANTAGE. YOU MUST STOP THEM FROM RELOCATING THE NUKES." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "WHILE YOU WERE ABLE TO ELIMINATE THE SUITCASE NUKES AND MANY SADIKAHU TRAINEES, MULLAH AL-QADI AND HIS BROTHER ESCAPED AND ARE ON THE RUN. COMMANDEER LOCAL TRANSPORTATION AND INTERCEPT THE TERRORIST LEADERS BEFORE THEY RENDEZVOUS WITH AN ESCAPE VEHICLE THAT COULD TAKE THEM OUT OF COUNTRY AND TO SAFETY. #P1 #N WE DON'T HAVE TIME TO DEPLOY ANY OTHER TEAMS, COMMANDER. YOU ARE OUR ONLY HOPE TO PREVENT THE MULLAH'S ESCAPE." )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "WELCOME HOME, COMMANDER. ALL PORTABLE NUCLEAR DEVICES HAVE BEEN ACCOUNTED FOR AND DISARMED. SEVERAL OF THESE WERE FOUND HIDDEN IN OTHER CAVES THROUGHOUT THE DESERT. IF YOU HAD NOT NEUTRALIZED MULLAH AL-QADI AND HIS BROTHER WHEN YOU DID, THEY WOULD HAVE USED THESE NUKES TO DO THE MOST DAMAGE POSSIBLE. #P1 #N THANKS TO YOUR EFFORTS, THE TERRORIST ORGANIZATION SADIKAHU HAS BEEN BROKEN--AT LEAST FOR NOW. ANOTHER LEADER MAY ARISE, SO WE MUST REMAIN VIGILANT. " )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( incr_mission_comp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( incr_miss_6  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_6  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_6  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_8  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_8  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_8  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_5  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_5  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_5  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_9  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_9  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_9  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_11  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_11  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_11  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_12  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_12  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_12  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_17  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_17  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_17  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_19  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_19  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_19  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_21  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_21  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_21  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_13  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_13  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_13  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_15  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_15  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_15  =  8 )
+     
+      ENDIF ()
+     
+      VALVE ( incr_miss_16  +=  1 )
+     
+      IF (
+        VALVE ( incr_miss_16  >=  8 )
+      
+      )
+     
+      VALVE ( incr_miss_16  =  8 )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ShowCompletionLevel )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( decr_mission_comp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( incr_miss_6  -=  1 )
+     
+      VALVE ( incr_miss_8  -=  1 )
+     
+      VALVE ( incr_miss_5  -=  1 )
+     
+      VALVE ( incr_miss_9  -=  1 )
+     
+      VALVE ( incr_miss_11  -=  1 )
+     
+      VALVE ( incr_miss_12  -=  1 )
+     
+      VALVE ( incr_miss_17  -=  1 )
+     
+      VALVE ( incr_miss_19  -=  1 )
+     
+      VALVE ( incr_miss_21  -=  1 )
+     
+      VALVE ( incr_miss_13  -=  1 )
+     
+      VALVE ( incr_miss_15  -=  1 )
+     
+      VALVE ( incr_miss_16  -=  1 )
+     
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CancelLoadGame )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( DoSaveButton )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SaveFromReplay )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GameComplete  >=  2 )
+      
+      )
+     
+      VALVE ( ReplayMissAnyway  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( MemCheckSave )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MoveToNextMiss )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( switch )
+     
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
+      
+      )
+     
+      WAIT ( 0.100000 )
+     
+      IF (
+        VALVE ( GoToGameCompleteScreen  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      VALVE ( GoToGameCompleteScreen  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgGameComplete.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission3.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission1.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgThailandCinematic.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission2.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission3.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgCongoCinematic.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission2.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission3.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgTurkmenCinematic.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      IF (
+        VALVE ( GameComplete  <  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission2.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Progress_flash )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( mission )
+     
+      CALL_ANIMATION (
+        NAME ( incr_spec_mission_comp )
+      
+      )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: GHOST TOWN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: OIL PLATFORM TAKEDOWN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT AREA OF OPERATIONS: THAILAND" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: TEMPLE AT HOHN KAEN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: CITY OF THE FORGOTTEN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT AREA OF OPERATIONS: CONGO" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: POW CAMP" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: MOUNTAIN ASSAULT" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT AREA OF OPERATIONS: TURKMENISTAN" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: MOUTH OF THE BEAST" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( "NEXT MISSION: DEATHBLOW" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  NextMiss )
+      
+       CAPTION ( VICTORY! )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MemCheckSave )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      VALVE ( SaveToMemory  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Would you like to save your progress to the memory card (PS2)?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 30 )
+      
+       YOFFSET ( 30 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       CANCELLABLE ()
+      
+       YESNO (
+         VALVE ( SaveToMemory )
+       
+        YES (
+          CAPTION ( Yes )
+        
+         POS ( 55  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( No )
+        
+         POS ( 190  90 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( SaveToMemory  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      IF (
+        VALVE ( SaveToMemory  !=  66 )
+      
+      )
+     
+      IF (
+        VALVE ( SaveToMemory  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( DoSaveButton )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
+      
+      )
+     
+      ELSE ()
+     
+      VALVE ( MainMenuCardSlot  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Select MEMORY CARD slot:" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 35 )
+      
+       YOFFSET ( 40 )
+      
+       SPACING ( 10 )
+      
+       SCALE ( 0.400000 )
+      
+       CANCELLABLE ()
+      
+       YESNO (
+         VALVE ( MainMenuCardSlot )
+       
+        YES (
+          CAPTION ( "Slot 1" )
+        
+         POS ( 40  85 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 75 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( "Slot 2" )
+        
+         POS ( 190  85 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 75 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( MainMenuCardSlot  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( MainMenuCardSlot  !=  66 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Checking... Do not remove memory card (PS2) at this time." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       PROTECTED ()
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 10 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        VALVE ( MainMenuCardSlot  ==  1 )
+      
+      )
+     
+      VALVE ( MainMenuCardSlot  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "0" )
+      
+      )
+     
+      ELSE ()
+     
+      VALVE ( MainMenuCardSlot  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "1" )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMemCardFormatted )
+        
+        )
+       
+       )
+      
+      )
+     
+      VALVE ( NotDone  =  0 )
+     
+      WHILE (
+        VALVE ( NotDone  ==  0 )
+      
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+       &&  ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMemCardFormatted )
+        
+        )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( AskToFormat )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+       &&  ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMemCardFormatted )
+        
+        )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  !=  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( AreYouSureYouWantToFormat )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  !=  1 )
+      
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+       &&  ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMemCardFormatted )
+        
+        )
+       
+       )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( do_formatting )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      VALVE ( MemcardGotFormatted  =  1 )
+     
+      VALVE ( NotDone  =  1 )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( AreYouSureYouDontWantToFormat )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      VALVE ( NotDone  =  1 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      END_WHILE ()
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( LoadGameOnStart )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      VALVE ( CannotLoadNoFormat  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Memory card (PS2) not formatted. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( CannotLoadNoFormat )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( CannotLoadNoFormat  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      VALVE ( CannotLoadNoFormat  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Memory card (PS2) not inserted. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( CannotLoadNoFormat )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( CannotLoadNoFormat  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( memcard_error  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SaveGameOnListBox )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsMemCardFormatted )
+        
+        )
+       
+       )
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( AskToFormat )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Formatting...Do not remove memory card (PS2)." )
+      
+       PROTECTED ()
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( FormatMemCard )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Copying system files...Do not remove memory card (PS2)." )
+      
+       PROTECTED ()
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+       )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( DoesSlotHaveGame )
+       
+        ARGUMENT ( INPUT_STRING )
+       
+       )
+      
+      )
+     
+      VALVE ( WantToOverwrite  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "That slot is already used, do you want to overwrite?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       COLOR ( 255  204  51 )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 10 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( WantToOverwrite )
+       
+        YES (
+          CAPTION ( No )
+        
+         POS ( 180  90 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( Yes )
+        
+         POS ( 65  90 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( WantToOverwrite  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( WantToOverwrite  ==  2 )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( SaveIt )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_SEQUENCE (
+        NAME ( SaveIt )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( SaveIt )
+     
+      ACTIVATION ( ON_CALL )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Saving...Do not remove memory card (PS2)..." )
+      
+       PROTECTED ()
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      VALVE ( memcard_error  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs_Fast )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SaveSavedGame )
+      
+       ARGUMENT ( INPUT_STRING )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SaveConfig )
+      
+       ARGUMENT ( BASCUS-97134SOCOM )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ListSavedGames )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      IF (
+        VALVE ( memcard_error  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( DisplayErrorSaving )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Game saved successfully." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 90 )
+      
+       XOFFSET ( 40 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReplayFromDebriefing )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( ReplayFromDebriefingSeq )
+     
+      IF (
+        VALVE ( ReplayMissAnyway  ==  1 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  >=  1 )
+      
+      )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( MoveToNextMiss )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       WAIT ( 0.400000 )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_THUNK )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

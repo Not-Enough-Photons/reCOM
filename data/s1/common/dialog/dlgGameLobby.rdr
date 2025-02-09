@@ -1,0 +1,5683 @@
+((
+   SCREENS ((
+     LIBRARY ( ui/assetlib/uimp )
+   
+    BACKGROUND (
+      TYPE ( IMAGE )
+    
+     FILENAME ( multplay_back.tif )
+    
+    )
+   
+    FONT ( myriad )
+   
+    SCRIPT_LIBRARY ( dlgGameLobby.rdr )
+   
+    OBJECTS ((
+       NAME ( letterbar )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        FILENAME ( blank_top_bar.tif )
+      
+       XSIZE ( 640 )
+      
+       YSIZE ( 64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( bar_title )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 15 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( letterbar )
+      
+       CAPTION ( "GAME LOBBY" )
+      
+       SCALE ( 0.850000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MissionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 210 )
+     
+      YPOS ( 50 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FONT ( Gothic_13 )
+      
+       SCALE ( 0.600000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_Yel )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 572 )
+     
+      YPOS ( 25 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonY.tif )
+      
+       SIZE ( 28  28 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( net_conn_ind_blue )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 581 )
+     
+      YPOS ( 34 )
+     
+      SPEC (
+        CHILDOF ( letterbar )
+      
+       FILENAME ( NetMonB.tif )
+      
+       SIZE ( 10  12 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( gamename_val )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 195 )
+     
+      YPOS ( 0 )
+     
+      SPEC (
+        COLOR ( 0  6  13 )
+      
+       CHILDOF ( bar_title )
+      
+       SCALE ( 0.600000 )
+      
+       UIVAR (
+         NAME ( GAMENAMEVAR )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( roomname )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 0 )
+     
+      YPOS ( -20 )
+     
+      SPEC (
+        FONT ( Gothic_13 )
+      
+       CHILDOF ( MissionText )
+      
+       SCALE ( 0.600000 )
+      
+       UIVAR (
+         NAME ( MEDIUS_LOBBY_NAME )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( letterbar_bottom )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 0 )
+     
+      YPOS ( 361 )
+     
+      SPEC (
+        FILENAME ( common_bar_bottom.tif )
+      
+       SIZE ( 640  64 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( dogtags )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 370 )
+     
+      YPOS ( 325 )
+     
+      SPEC (
+        FILENAME ( dogtags2.tif )
+      
+       SIZE ( 256  128 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playertext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Player: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( clantext )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 45 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        SCALE ( 0.400000 )
+      
+       CAPTION ( Clan: )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( playername )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 25 )
+     
+      CHILDOF ( letterbar_bottom )
+     
+      SPEC (
+        UIVAR (
+         NAME ( PLAYERNAMEVAR )
+       
+        LONGEVITY ( PERSISTENT )
+       
+       )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( txtClanName )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 80 )
+     
+      YPOS ( 45 )
+     
+      SPEC (
+        CHILDOF ( letterbar_bottom )
+      
+       SCALE ( 0.400000 )
+      
+       UIVAR (
+         NAME ( CLANNAMEVAR )
+       
+        VALUE ( Unaffiliated )
+       
+        TYPE ( PERMANENT )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( MainWindow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 170 )
+     
+      YPOS ( 70 )
+     
+      SPEC (
+        XSIZE ( 460 )
+      
+       YSIZE ( 295 )
+      
+       FILENAME ( eq_CharWinInv.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorTop )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 335 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldTopSeal )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 177 )
+     
+      YPOS ( 75 )
+     
+      SPEC (
+        XSIZE ( 223 )
+      
+       YSIZE ( 16 )
+      
+       FILENAME ( blue_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldTopTerr )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 402 )
+     
+      YPOS ( 75 )
+     
+      SPEC (
+        XSIZE ( 223 )
+      
+       YSIZE ( 16 )
+      
+       FILENAME ( Red_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldMid )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 178 )
+     
+      YPOS ( 231 )
+     
+      SPEC (
+        XSIZE ( 446 )
+      
+       YSIZE ( 15 )
+      
+       FILENAME ( blue_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescFieldLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 178 )
+     
+      YPOS ( 340 )
+     
+      SPEC (
+        XSIZE ( 446 )
+      
+       YSIZE ( 20 )
+      
+       FILENAME ( blue_back_plate.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( eq_divVert )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 395 )
+     
+      YPOS ( 76 )
+     
+      SPEC (
+        FILENAME ( Tab_Vert_Divider.tif )
+      
+       SIZE ( 9  153 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 356 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( DescriptionTextLow )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 20 )
+     
+      YPOS ( 382 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorChatTop )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 225 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TabDivHorChatLow )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 175 )
+     
+      YPOS ( 242 )
+     
+      SPEC (
+        XSIZE ( 450 )
+      
+       YSIZE ( 8 )
+      
+       FILENAME ( Tab_HorGold_Divider.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FLcount )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 15 )
+     
+      YPOS ( 382 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 0.500000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ChatFieldText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 185 )
+     
+      YPOS ( 242 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.350000 )
+      
+       CAPTION ( "Press the Circle button to chat" )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( CountDownFrame )
+     
+      TYPE ( IMAGE )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 245 )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 120 )
+      
+       FILENAME ( popupOp.tif )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( CountDown )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 70 )
+     
+      YPOS ( 320 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       CAPTION ( " " )
+      
+       SCALE ( 1.000000 )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( LaunchText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 12 )
+     
+      YPOS ( -45 )
+     
+      SPEC (
+        CHILDOF ( CountDown )
+      
+       HCENTERED ()
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( SecondText )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 12 )
+     
+      YPOS ( 30 )
+     
+      SPEC (
+        HCENTERED ()
+      
+       CHILDOF ( CountDown )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Category2Text )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 195 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( SEALS )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Category3Text )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 420 )
+     
+      YPOS ( 88 )
+     
+      SPEC (
+        COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.400000 )
+      
+       CAPTION ( TERRORISTS )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATIONS ((
+       EVENT ( ONSTART )
+     
+      ANIMATION ( net_monitor )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( OnStartGameLock )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Session_master_migration )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( bottom_bar_slide_up )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( Enable_SM_Launch )
+     
+     )
+    
+    (
+       EVENT ( ON_SKB_APPLY )
+     
+      ANIMATION ( send_chat )
+     
+     )
+    
+    (
+       BUTTON ( TRIANGLE )
+     
+      ANIMATION ( exit_lobby )
+     
+     )
+    
+    (
+       BUTTON ( CIRCLE )
+     
+      ANIMATION ( do_chat )
+     
+     )
+    
+    (
+       EVENT ( USBKBD_ENTER )
+     
+      ANIMATION ( do_chat )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( check_loop )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( FromBriefing )
+     
+     )
+    
+    (
+       EVENT ( ONSTART )
+     
+      ANIMATION ( letterbar_slide_down )
+     
+     )
+    
+    (
+       EVENT ( ON_FORCE_NEW_DB )
+     
+      ANIMATION ( force_new_db )
+     
+     )
+    
+    (
+       EVENT ( MP_MEDIUS_ERROR )
+     
+      ANIMATION ( OnNetError )
+     
+     )
+    
+    (
+       EVENT ( MP_VERSION_NUMBER_ERROR )
+     
+      ANIMATION ( version_failure_2 )
+     
+     )
+    
+    )
+   
+    CONTROLS ((
+       NAME ( B_SEALLIST )
+     
+      XPOS ( 152 )
+     
+      YPOS ( 77 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        NOSELECT  AUTOSCROLL  XSIZE ( 256 )
+      
+       YSIZE ( 170 )
+      
+       SPACING ( 16 )
+      
+       SCALE ( 0.400000 )
+      
+       LEFT_MARGIN ( 30 )
+      
+       TOP_MARGIN ( 30 )
+      
+       UIVAR (
+         NAME ( BSEALLISTVAR )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( B_REDLIST )
+     
+      XPOS ( 378 )
+     
+      YPOS ( 77 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        NOSELECT  AUTOSCROLL  XSIZE ( 256 )
+      
+       YSIZE ( 170 )
+      
+       SPACING ( 16 )
+      
+       SCALE ( 0.400000 )
+      
+       LEFT_MARGIN ( 30 )
+      
+       TOP_MARGIN ( 30 )
+      
+       UIVAR (
+         NAME ( BTERRLISTVAR )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( B_CHATLIST )
+     
+      XPOS ( 155 )
+     
+      YPOS ( 261 )
+     
+      TYPE ( LISTBOX )
+     
+      SPEC (
+        NOSELECT ()
+      
+       AUTOSCROLL ()
+      
+       XSIZE ( 256 )
+      
+       YSIZE ( 105 )
+      
+       SPACING ( 15 )
+      
+       SCALE ( 0.350000 )
+      
+       LEFT_MARGIN ( 30 )
+      
+       TOP_MARGIN ( 0 )
+      
+       UIVAR (
+         NAME ( BCHATLISTVAR )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( weaponselect )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 68 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( ARMORY )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnGameweaponstart )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( goto_eq_mp_set_return_valve )
+        
+         ARGUMENT ( dlg_equipment_mp.rdr )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Glswitchteams )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 98 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( "SWITCH TEAMS" )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnSteamStart )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( switch_teams_anim )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( PlayerReady )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 128 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( READY )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnReadystart )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( ready_anim )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TenCountPR )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 130 )
+     
+      YPOS ( 22 )
+     
+      SPEC (
+        CHILDOF ( PlayerReady )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.450000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( Lock )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 180 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( "LOCK GAME" )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnstartGameLock )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( OnGameLockPress )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( ForceLaunch )
+     
+      XPOS ( 10 )
+     
+      YPOS ( 210 )
+     
+      TYPE ( BUTTON )
+     
+      SPEC (
+        XSIZE ( 150 )
+      
+       YSIZE ( 30 )
+      
+       XOFFSET ( 15 )
+      
+       YOFFSET ( 21 )
+      
+       CAPTION ( "FORCE LAUNCH" )
+      
+       SCALE ( 0.400000 )
+      
+       PRESSED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+       
+       )
+      
+       NORMAL (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+       
+       )
+      
+       ACTIVE (
+         IMAGE ( brown_back_real.tif )
+       
+        TEXT_GLOW (
+          RANGE ( 0.500000  1.000000 )
+        
+         TIME ( 0.500000 )
+        
+        )
+       
+        TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+       
+       )
+      
+       DISABLED (
+         IMAGE ( brown_back.tif )
+       
+        TEXT_COLOR ( 50  50  50 )
+       
+       )
+      
+       ANIMATIONS ((
+          EVENT ( ONACTIVATE )
+        
+         ANIMATION ( OnSMlaunchstart )
+        
+        )
+       
+       (
+          BUTTON ( CROSS )
+        
+         ANIMATION ( launch_10sec_anim )
+        
+        )
+       
+       )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( TenCountWS )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 130 )
+     
+      YPOS ( 22 )
+     
+      SPEC (
+        CHILDOF ( weaponselect )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.450000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FiveCountST )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 135 )
+     
+      YPOS ( 22 )
+     
+      SPEC (
+        CHILDOF ( Glswitchteams )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.450000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    (
+       NAME ( FiveCount )
+     
+      TYPE ( TEXT )
+     
+      XPOS ( 135 )
+     
+      YPOS ( 22 )
+     
+      SPEC (
+        CHILDOF ( PlayerReady )
+      
+       COLOR ( 255.000000  104.000000  51.000000 )
+      
+       SCALE ( 0.450000 )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ArmButtonClock )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( NoReadyButton  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "10" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "9" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      VALVE ( NoReadyButton  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CountButtonFiveST )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CountButtonFive )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  FiveCount )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCount )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCount )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCount )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCount )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCount )
+      
+       CAPTION ( " " )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnReadystart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( FirstReadyText  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button if you're ready to play." )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button if you're not ready to play." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_loop )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GoneToArmory  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AdvanceMPMission )
+      
+      )
+     
+      ENDIF ()
+     
+      VALVE ( GoneToArmory  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMENUSTATE )
+      
+      )
+     
+      WHILE (
+        VALVE ( mp_major_game_state  !=  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( CheckForcedLaunch )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( CountDown )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( LOAD_SCREEN )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Enable_SM_Launch )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( FirstReadyText  =  0 )
+     
+      VALVE ( MayBeExiting  =  0 )
+     
+      VALVE ( NoTriangle  =  0 )
+     
+      VALVE ( AlreadyHandlingError  =  0 )
+     
+      VALVE ( NoExitState  =  0 )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( NotOnCorrectClanTeam )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SwitchSides )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsTeamGame )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ENDIF ()
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( ComeFromBriefing  ==  0 )
+      
+      )
+     
+      IF (
+        VALVE ( SeenPopup  ==  0 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      VALVE ( HostValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You are the Host of this game. The FORCE LAUNCH and READY buttons will be available in 30 seconds. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 165.000000  230.000000 )
+      
+       WIDTH ( 340 )
+      
+       HEIGHT ( 125 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( HostValve )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( HostValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      VALVE ( SeenPopup  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( ComeFromBriefing  ==  0 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ArmButtonClock )
+      
+      )
+     
+      ELSE ()
+     
+      IF (
+        VALVE ( TakenBack  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( B_CHATLIST )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( B_REDLIST )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( B_SEALLIST )
+      
+      )
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  MasterText )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      IF (
+        VALVE ( mp_persistent  ==  0 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        VALVE ( mp_45_sec_clock  !=  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "   Seconds until the Force launch and ready buttons are available." )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Watch45SecClock )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "There must be players on both teams to launch." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( late_joiner  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  ChatFieldText )
+      
+       CAPTION ( "Chat disabled for late joiners" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      IF (
+        VALVE ( ComeFromBriefing  ==  0 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ArmButtonClock )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "This game has already started. Would you like to appear as a ghost in the current game, and wait until the next round to join?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 150 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( Yes )
+        
+         POS ( 50  115 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( No )
+        
+         POS ( 190  115 )
+        
+         TEXTOFFSET ( 15  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( AreYouSure  ==  1 )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      WHILE (
+        VALVE ( late_joiner  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RefreshGamePlayerList )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      END_WHILE ()
+     
+      ELSE ()
+     
+      VALVE ( NoExitState  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( exit_lobby )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      IF (
+        VALVE ( ComeFromBriefing  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( ClientDAReadyButton )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( TakenBack  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      VALVE ( TakenBack  =  0 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Watch45SecClock )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_45_sec_clock  ==  45 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "45" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  44 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "44" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  43 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "43" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  42 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "42" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  41 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "41" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  40 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "40" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  39 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "39" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  38 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "38" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  37 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "37" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  36 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "36" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  35 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "35" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  34 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "34" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  33 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "33" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  32 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "32" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  31 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "31" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  30 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "30" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  29 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "29" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  28 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "28" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  27 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "27" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  26 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "26" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  25 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "25" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  24 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "24" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  23 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "23" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  22 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "22" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  21 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "21" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  20 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "20" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  19 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "19" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  18 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "18" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  17 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "17" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  16 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "16" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  15 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "15" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  14 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "14" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  13 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "13" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  12 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "12" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "11" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "10" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "9" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_45_sec_clock  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FLcount )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CycleReadyButton )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_minor_game_state  ==  2 )
+      
+      )
+     
+      VALVE ( FirstReadyText  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  PlayerReady )
+      
+       CAPTION ( "NOT READY" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( CountButtonFive )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( ArmButtonClock )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_minor_game_state  ==  1 )
+      
+      )
+     
+      VALVE ( FirstReadyText  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  PlayerReady )
+      
+       CAPTION ( READY )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( CountButtonFive )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      IF (
+        VALVE ( mp_persistent  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ready_anim )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( CountButtonFiveST )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( switch_teams_anim )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( SetMPWeaponValves )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ReadyToLoad )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( CycleReadyButton )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetMPWeaponValves )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( Enable_satchel  =  0 )
+     
+      VALVE ( Enable_m4Acarbine_203  =  0 )
+     
+      VALVE ( Enable_M16203  =  0 )
+     
+      VALVE ( Enable_LasDes  =  0 )
+     
+      VALVE ( Enable_203HE  =  0 )
+     
+      VALVE ( Enable_203SMK  =  0 )
+     
+      VALVE ( Enable_203FRAG  =  0 )
+     
+      VALVE ( Enable_GLFRAG  =  0 )
+     
+      VALVE ( Enable_GLSMK  =  0 )
+     
+      VALVE ( Enable_GLHE  =  0 )
+     
+      VALVE ( Enable_m79  =  0 )
+     
+      VALVE ( Enable_mglmk1  =  0 )
+     
+      VALVE ( Enable_c4  =  0 )
+     
+      VALVE ( Enable_M16  =  1 )
+     
+      VALVE ( Enable_mp5sd  =  1 )
+     
+      VALVE ( Enable_mp5  =  1 )
+     
+      VALVE ( Enable_ak47  =  1 )
+     
+      VALVE ( Enable_aks74  =  1 )
+     
+      VALVE ( Enable_m14_gun  =  1 )
+     
+      VALVE ( Enablesig_commando  =  1 )
+     
+      VALVE ( Enable_uzi  =  1 )
+     
+      VALVE ( Enable_remington700  =  1 )
+     
+      VALVE ( Enable_m60e  =  1 )
+     
+      VALVE ( Enable_m63a  =  1 )
+     
+      VALVE ( Enable_barret_lightm82A1  =  1 )
+     
+      VALVE ( Enable_EquipmcmillanM87  =  1 )
+     
+      VALVE ( Enable_m4Acarbine  =  1 )
+     
+      VALVE ( Enable_stoner_sr25  =  1 )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  1 )
+     
+      VALVE ( Enable_M4A1_SD  =  1 )
+     
+      VALVE ( Enable_FNP  =  1 )
+     
+      VALVE ( Enable_glock18  =  1 )
+     
+      VALVE ( Enable_fiveseven  =  1 )
+     
+      VALVE ( Enable_beretta_m9  =  1 )
+     
+      VALVE ( Enable_desert_eagle  =  1 )
+     
+      VALVE ( Enable_Mark23  =  1 )
+     
+      VALVE ( Enable_mark23sd  =  1 )
+     
+      VALVE ( Enable_Sig226  =  1 )
+     
+      VALVE ( Enable_HkP9s  =  1 )
+     
+      VALVE ( Enable_smoke  =  1 )
+     
+      VALVE ( Enable_flash  =  1 )
+     
+      VALVE ( Enable_claymore  =  1 )
+     
+      VALVE ( Enable_2xammo  =  1 )
+     
+      VALVE ( Enable_frag  =  1 )
+     
+      VALVE ( Enable_HEgren  =  1 )
+     
+      IF (
+        VALVE ( player_team  ==  0 )
+      
+      )
+     
+      VALVE ( Enable_ak47  =  0 )
+     
+      VALVE ( Enable_aks74  =  0 )
+     
+      VALVE ( Enablesig_commando  =  0 )
+     
+      VALVE ( Enable_barret_lightm82A1  =  0 )
+     
+      VALVE ( Enable_uzi  =  0 )
+     
+      VALVE ( Enable_m63a  =  0 )
+     
+      VALVE ( Enable_FNP  =  0 )
+     
+      VALVE ( Enable_glock18  =  0 )
+     
+      VALVE ( Enable_fiveseven  =  0 )
+     
+      VALVE ( Enable_beretta_m9  =  0 )
+     
+      VALVE ( Enable_desert_eagle  =  0 )
+     
+      VALVE ( Enable_satchel  =  0 )
+     
+      ELSE ()
+     
+      VALVE ( Enable_EquipmcmillanM87  =  0 )
+     
+      VALVE ( Enable_m60e  =  0 )
+     
+      VALVE ( Enable_M16  =  0 )
+     
+      VALVE ( Enable_mp5sd  =  0 )
+     
+      VALVE ( Enable_mp5  =  0 )
+     
+      VALVE ( Enable_m4Acarbine  =  0 )
+     
+      VALVE ( Enable_stoner_sr25  =  0 )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  0 )
+     
+      VALVE ( Enable_M4A1_SD  =  0 )
+     
+      VALVE ( Enable_Mark23  =  0 )
+     
+      VALVE ( Enable_mark23sd  =  0 )
+     
+      VALVE ( Enable_Sig226  =  0 )
+     
+      VALVE ( Enable_HkP9s  =  0 )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Session_master_migration )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( watch_for_switch_to_master )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      WAIT ( 1.000000 )
+     
+      END_WHILE ()
+     
+      WHILE (
+        VALVE ( MayBeExiting  !=  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  ForceLaunch )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      CALL_SEQUENCE (
+        NAME ( CallPopup )
+      
+      )
+     
+      IF (
+        VALVE ( mp_45_sec_clock  !=  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ELSE ()
+     
+      ENDIF ()
+     
+      IF (
+        VALVE ( mp_persistent  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  Lock )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( OnStartGameLock )
+      
+      )
+     
+      WHILE (
+        VALVE ( mp_45_sec_clock  !=  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "   Seconds until the Force launch and ready buttons are available." )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Watch45SecClock )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "There must be players on both teams to launch." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       NAME ( CallPopup )
+     
+      ACTIVATION ( ON_CALL )
+     
+      VALVE ( HostMigValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You are the new Host of this game. The previous Host was disconnected or backed out to the briefing room. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 195.000000  230.000000 )
+      
+       WIDTH ( 280 )
+      
+       HEIGHT ( 130 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( HostMigValve )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( HostMigValve  ==  0 )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CountDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_x_sec_clock  ==  11 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  10 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( exit_lobby )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( team_monitor )
+      
+      )
+     
+      VALVE ( NoTriangle  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( CycleReadyButton )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( CountButtonFiveST )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( switch_teams_anim )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( ClientDAReadyButton )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  FiveCountST )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( ArmButtonClock )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountWS )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "10" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "9" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_x_sec_clock  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 3 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  CountDownFrame )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  LaunchText )
+      
+       CAPTION ( "GAME STARTS IN" )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  SecondText )
+      
+       CAPTION ( SECONDS )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CountDown )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( FromBriefing )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( Enable_SM_Launch )
+      
+      )
+     
+      IF (
+        VALVE ( IDFromBriefing  ==  0 )
+      
+      )
+     
+      IF (
+        VALVE ( player_team  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ChangeCharacterType )
+      
+       ARGUMENT ( "1" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ChangeCharacterType )
+      
+       ARGUMENT ( "5" )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( launch_10sec_anim )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( mp_team_unbalance  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "There needs to be players on both teams." )
+      
+      )
+     
+      ELSE ()
+     
+      STOP_ANIMATION (
+        NAME ( switch_teams_anim )
+      
+      )
+     
+      VALVE ( NoTriangle  =  1 )
+     
+      VALVE ( mp_locked_game  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMPLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Lock )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnStartGameLock )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( mp_locked_game  ==  0 )
+      
+      )
+     
+      VALVE ( Did_SM_lock  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to lock the game." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
+      
+       CAPTION ( UNLOCKED )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_locked_game  ==  1 )
+      
+      )
+     
+      VALVE ( Did_SM_lock  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to unlock the game." )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
+      
+       CAPTION ( LOCKED )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameLockPress )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( OnStartGameLock )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( mp_locked_game  ==  0 )
+      
+      )
+     
+      VALVE ( mp_locked_game  =  1 )
+     
+      VALVE ( Did_SM_lock  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
+      
+       CAPTION ( LOCKED )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( mp_locked_game  ==  1 )
+      
+      )
+     
+      VALVE ( mp_locked_game  =  0 )
+     
+      VALVE ( Did_SM_lock  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  Lock )
+      
+       CAPTION ( UNLOCKED )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ForceMediusStatusReport )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( goto_eq_mp_set_return_valve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( team_monitor )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      VALVE ( GoneToArmory  =  1 )
+     
+      VALVE ( NoTriangle  =  1 )
+     
+      VALVE ( ComeFromBriefing  =  1 )
+     
+      VALVE ( Enable_satchel  =  0 )
+     
+      VALVE ( Enable_m4Acarbine_203  =  0 )
+     
+      VALVE ( Enable_M16203  =  0 )
+     
+      VALVE ( Enable_LasDes  =  0 )
+     
+      VALVE ( Enable_203HE  =  0 )
+     
+      VALVE ( Enable_203SMK  =  0 )
+     
+      VALVE ( Enable_203FRAG  =  0 )
+     
+      VALVE ( Enable_GLFRAG  =  0 )
+     
+      VALVE ( Enable_GLSMK  =  0 )
+     
+      VALVE ( Enable_GLHE  =  0 )
+     
+      VALVE ( Enable_m79  =  0 )
+     
+      VALVE ( Enable_mglmk1  =  0 )
+     
+      VALVE ( Enable_c4  =  0 )
+     
+      VALVE ( Enable_M16  =  1 )
+     
+      VALVE ( Enable_mp5sd  =  1 )
+     
+      VALVE ( Enable_mp5  =  1 )
+     
+      VALVE ( Enable_ak47  =  1 )
+     
+      VALVE ( Enable_aks74  =  1 )
+     
+      VALVE ( Enable_m14_gun  =  1 )
+     
+      VALVE ( Enablesig_commando  =  1 )
+     
+      VALVE ( Enable_uzi  =  1 )
+     
+      VALVE ( Enable_remington700  =  1 )
+     
+      VALVE ( Enable_m60e  =  1 )
+     
+      VALVE ( Enable_m63a  =  1 )
+     
+      VALVE ( Enable_barret_lightm82A1  =  1 )
+     
+      VALVE ( Enable_EquipmcmillanM87  =  1 )
+     
+      VALVE ( Enable_m4Acarbine  =  1 )
+     
+      VALVE ( Enable_stoner_sr25  =  1 )
+     
+      VALVE ( Enable_stoner_sr25_SD  =  1 )
+     
+      VALVE ( Enable_M4A1_SD  =  1 )
+     
+      VALVE ( Enable_FNP  =  1 )
+     
+      VALVE ( Enable_glock18  =  1 )
+     
+      VALVE ( Enable_fiveseven  =  1 )
+     
+      VALVE ( Enable_beretta_m9  =  1 )
+     
+      VALVE ( Enable_desert_eagle  =  1 )
+     
+      VALVE ( Enable_Mark23  =  1 )
+     
+      VALVE ( Enable_mark23sd  =  1 )
+     
+      VALVE ( Enable_Sig226  =  1 )
+     
+      VALVE ( Enable_HkP9s  =  1 )
+     
+      VALVE ( Enable_smoke  =  1 )
+     
+      VALVE ( Enable_flash  =  1 )
+     
+      VALVE ( Enable_claymore  =  1 )
+     
+      VALVE ( Enable_2xammo  =  1 )
+     
+      VALVE ( Enable_frag  =  1 )
+     
+      VALVE ( Enable_HEgren  =  1 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( INPUT_STRING )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnGameweaponstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to select character and weapons." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSteamStart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to switch teams." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnSMlaunchstart )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  DescriptionText )
+      
+       CAPTION ( "Press the X button to launch all players, ready or not." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnArmBtnUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( ForceLaunch )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnForceLaunchBtnDwn )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_chat )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( late_joiner  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( "Sorry, no chat for late joiners." )
+      
+      )
+     
+      WAIT ( 7 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  DescriptionTextLow )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Chat" )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  MAX_CHAT_TEXT_LENGTH )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       NODE ( MENU  ChatSkb )
+      
+       ARGUMENT ( CHATTEXT )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( send_chat )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SendChatText )
+      
+       ARGUMENT ( CHATTEXT )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( version_failure_2 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgNetAbort.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( switch_teams_anim )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( team_monitor )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SwitchSides )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      IF ((
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( weaponselect )
+      
+      )
+     
+      ELSE ()
+     
+      IF (
+        VALVE ( NoReadyButton  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      CALL_ANIMATION (
+        NAME ( CountButtonFiveST )
+      
+      )
+     
+      WAIT ( 5.000000 )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( Glswitchteams )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( exit_lobby )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( NoTriangle  ==  1 )
+      
+      )
+     
+      ELSE ()
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      VALVE ( MayBeExiting  =  1 )
+     
+      VALVE ( AreYouSure  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Returning to the briefing room will remove you from this game. Are you sure you want to do this?" )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 150 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( AreYouSure )
+       
+        YES (
+          CAPTION ( No )
+        
+         POS ( 50  115 )
+        
+         TEXTOFFSET ( 12  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( Yes )
+        
+         POS ( 190  115 )
+        
+         TEXTOFFSET ( 13  18 )
+        
+         WIDTH ( 50 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( AreYouSure  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( AreYouSure  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Please wait a moment while you are disconnected from the game and returned to the briefing room." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  200.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       PROTECTED ()
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 110 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMPBriefingRoom.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      VALVE ( MayBeExiting  =  0 )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnNetError )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( AlreadyHandlingError  !=  1 )
+      
+      )
+     
+      VALVE ( AlreadyHandlingError  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( Enable_SM_Launch )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( Session_master_migration )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( OnGameLobbystart )
+      
+      )
+     
+      VALVE ( OKValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      IF (
+        VALVE ( mp_net_errno  ==  32 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "You have been disconnected from SOCOM Online." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 175.000000  230.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+        YES (
+          CAPTION ( "MAIN MENU" )
+        
+         POS ( 60  90 )
+        
+         TEXTOFFSET ( 10  20 )
+        
+         WIDTH ( 130 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( INPUT_STRING )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 175.000000  230.000000 )
+      
+       WIDTH ( 256 )
+      
+       HEIGHT ( 128 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+        YES (
+          CAPTION ( "BRIEFING ROOM" )
+        
+         POS ( 60  90 )
+        
+         TEXTOFFSET ( 10  20 )
+        
+         WIDTH ( 130 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( brown_back.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.350000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        VALVE ( OKValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      STOP_ANIMATION (
+        NAME ( net_monitor )
+      
+      )
+     
+      IF (
+        VALVE ( mp_net_errno  ==  32 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( REBOOT )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMPBriefingRoom.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( force_new_db )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( AdvanceMPMission )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( GameTypeName )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ClientDAReadyButton )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "10" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "9" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      WAIT ( 1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  TenCountPR )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( team_monitor )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( team_monitor )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( CheckTeamStatus )
+        
+        )
+       
+       )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( Enable_SM_Launch )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( Session_master_migration )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( OnGameLobbystart )
+      
+      )
+     
+      VALVE ( OKValve  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Team Assignment Error. Press the X button to exit to the Briefing Room." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 165.000000  230.000000 )
+      
+       WIDTH ( 340 )
+      
+       HEIGHT ( 125 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( OKValve )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( OKValve  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      STOP_ANIMATION (
+        NAME ( net_monitor )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisconnectFromGameServer )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMPBriefingRoom.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      IF (
+        ! (
+         ui::UI_COMMAND (
+          TYPE ( IsSessionMaster )
+        
+        )
+       
+       )
+      
+      )
+     
+      IF (
+        VALVE ( GoneToArmory  =  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( PlayerReady )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

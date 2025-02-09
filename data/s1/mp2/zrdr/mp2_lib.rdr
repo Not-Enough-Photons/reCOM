@@ -1,0 +1,972 @@
+((
+   libname ( mp2/assetlib/mp2 )
+ 
+  locked ( 0 )
+ 
+  gearlib ( 0 )
+ 
+  renderphase ( 0 )
+ 
+  textures ((
+     name ( a_floor.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( a_floordetail.tif )
+    
+     uv ( 8.000000 )
+    
+     range ( 90000.000000 )
+    
+     bmode ( ADDITIVE )
+    
+    )
+   
+   )
+  
+  (
+     name ( flooroil_detail.tif )
+   
+    dim2 ( 128  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    blur ( -2.000000 )
+   
+    mips ( flooroil_detail64.tif )
+   
+   )
+  
+  (
+     name ( flooroil_detail64.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( floor_oilgrime.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  detail (
+      name ( flooroil_detail.tif )
+    
+     uv ( 8.000000 )
+    
+     range ( 250000.000000 )
+    
+     bmode ( ADDITIVE )
+    
+    )
+   
+   )
+  
+  (
+     name ( container_door1.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_dumpster.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( crane1.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_window.tif )
+   
+    dim2 ( 32  32  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( crane4.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( crane5.tif )
+   
+    dim2 ( 64  64  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( a_steel20.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( sign04.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal  32bitpal )
+  
+  (
+     name ( a_steel06.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_brushed_metal02.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_steel07.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_steel23.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_brushed_metal.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_steel08.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_steel05b.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( h-grate.tif )
+   
+    dim2 ( 128  128  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( a_iron.tif )
+   
+    dim2 ( 16  16  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( lightpole01.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_ball_pipe.tif )
+   
+    dim2 ( 32  32  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( lightglow01.tif )
+   
+    dim2 ( 32  32  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( lightglow02.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( lightrays.tif )
+   
+    dim2 ( 32  32  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( grate01.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( h-grate_low.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( red_white.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_steel04.tif )
+   
+    dim2 ( 32  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( lightDark.tif )
+   
+    dim2 ( 16  16  16 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( a_shadow.tif )
+   
+    dim2 ( 16  16  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( door.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( cuba1a_sky01.tif )
+   
+    dim2 ( 256  256  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_water.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( barrel.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( barrel_top.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( steeldeckstructure.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( interiorwall.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( floortile.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_ceiling.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( monitor_01.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( monitor_02.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( monitor_03.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( monitor_04.tif )
+   
+    dim2 ( 64  32  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( wall_metal01.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_concrete01.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( trestlegirder.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( wallsidingdull.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_steel26.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( pipe_swirl_rusty.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( valve_cover1.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( vent1.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( tunnel_top.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( tunnel_botm.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( tunnel_top_red.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( tunnel_botm_red.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( pipe_bolts.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( metal_siding1.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( tank_green.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( sign_30k.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( sign_25.tif )
+   
+    dim2 ( 64  64  32 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+   )
+  
+  (
+     name ( wall_galvanized.tif )
+   
+    dim2 ( 128  128  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( a_cieling_light.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  (
+     name ( light_tunnel.tif )
+   
+    dim2 ( 64  64  8 )
+   
+    typeU ( 1 )
+   
+    typeV ( 1 )
+   
+    pal )
+  
+  )
+ 
+  palettes ()
+ 
+ (
+    models ((
+      file ( grate_midlod.flt )
+    
+     name ( grate_midlod )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( grate_lowlod.flt )
+    
+     name ( grate_lowlod )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( tankrailsupport.flt )
+    
+     name ( tankrailsupport )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tankrailbarslo.flt )
+    
+     name ( tankrailbarslo )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tankrailbarshi.flt )
+    
+     name ( tankrailbarshi )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tankrail1.flt )
+    
+     name ( tankrail1 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( railstraithi1.flt )
+    
+     name ( railstraithi1 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( railstraitlo1.flt )
+    
+     name ( railstraitlo1 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( railstrait1.flt )
+    
+     name ( railstrait1 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( railpostfiller.flt )
+    
+     name ( railpostfiller )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tankrail2.flt )
+    
+     name ( tankrail2 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tankrail3.flt )
+    
+     name ( tankrail3 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( tankrail4.flt )
+    
+     name ( tankrail4 )
+    
+     flatten ( false )
+    
+     charcommonasset ( false )
+    
+    )
+   
+   (
+      file ( widetank_a1.flt )
+    
+     name ( widetank_a1 )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( widetank_a2.flt )
+    
+     name ( widetank_a2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( railramp_sl8n.flt )
+    
+     name ( railramp_sl8n )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( rampland8.flt )
+    
+     name ( rampland8 )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( railramp_d8n.flt )
+    
+     name ( railramp_d8n )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   (
+      file ( mp2.flt )
+    
+     name ( mp2 )
+    
+     flatten ( true )
+    
+     charcommonasset ( true )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

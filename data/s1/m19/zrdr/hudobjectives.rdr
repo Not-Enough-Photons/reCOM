@@ -1,0 +1,172 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "INFILTRATE PERIMETER" )
+  
+   DESCRIPTION ( "Infiltrate the perimeter of the mercenary camp." )
+  
+   VALVE ( OBJ1 )
+  
+   LOCATION ( 2028.680054  1675.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj1 )
+  
+   LINE_IDS ( 1 )
+  
+   NAV_POINTS ( Delta )
+  
+  )
+ 
+ (
+    NAME ( "ELIMINATE MERCS" )
+  
+   DESCRIPTION ( "Finish clearing the perimeter of any mercenaries." )
+  
+   VALVE ( SOBJ2 )
+  
+   LOCATION ( 2028.680054  1675.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj3 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE ENTRY AREA" )
+  
+   DESCRIPTION ( "Secure the entry area by eliminating the sentry and any other" )
+  
+   DESCRIPTION2 ( "mercenaries that you find." )
+  
+   VALVE ( OBJ2 )
+  
+   LOCATION ( 2178.679932  2125.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj8 )
+  
+   LINE_IDS ( 2 )
+  
+   NAV_POINTS ( Delta )
+  
+  )
+ 
+ (
+    NAME ( "RECON SENTRY" )
+  
+   DESCRIPTION ( "Recon sentry at the lookout point." )
+  
+   VALVE ( SOBJ3 )
+  
+   INVALID_VALVE ( SOBJ3Fail )
+  
+   LOCATION ( 2278.679932  2325.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj5 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE AREA TWO" )
+  
+   DESCRIPTION ( "Clear the southwestern area of the mercenary base.  Maintain a stealth" )
+  
+   DESCRIPTION2 ( "profile and watch for roaming patrols." )
+  
+   VALVE ( OBJ3 )
+  
+   LOCATION ( 2228.679932  2805.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj4 )
+  
+   LINE_IDS ( 3 )
+  
+   NAV_POINTS ( Echo )
+  
+  )
+ 
+ (
+    NAME ( "SECURE POWS" )
+  
+   DESCRIPTION ( "Eliminate the leader, Magnus, and any other mercenaries around the POWs." )
+  
+   DESCRIPTION2 ( "Restrain the POWs once the area is secure." )
+  
+   VALVE ( OBJ4 )
+  
+   LOCATION ( 2308.679932  3885.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj14 )
+  
+   LINE_IDS ( 4 )
+  
+   NAV_POINTS ( Juliet )
+  
+  )
+ 
+ (
+    NAME ( "VERIFY POW LOCATION" )
+  
+   DESCRIPTION ( "Get a visual confirmation of POWs being held near Magnus' shack." )
+  
+   VALVE ( SOBJ10 )
+  
+   LOCATION ( 2338.679932  4015.790039 )
+  
+   ON_CALL_ANIMATION ( m19obj13 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Juliet )
+  
+  )
+ 
+ (
+    NAME ( "CLEAR CAVES" )
+  
+   DESCRIPTION ( "Infiltrate the caves and eliminate any mercs within the cave complex." )
+  
+   VALVE ( OBJ5 )
+  
+   LOCATION ( 3818.679932  2925.790039 )
+  
+   DISPLAY_VALVE ( CaveMove )
+  
+   ON_CALL_ANIMATION ( m19obj15 )
+  
+   LINE_IDS ( 5 )
+  
+  )
+ 
+ (
+    NAME ( "EXTRACT POWS" )
+  
+   DESCRIPTION ( "Move the POWs to the extraction zone." )
+  
+   VALVE ( OBJ6 )
+  
+   LOCATION ( 3648.679932  3405.800049 )
+  
+   DISPLAY_VALVE ( OBJ5 )
+  
+   ON_CALL_ANIMATION ( m19obj16 )
+  
+   LINE_IDS ( 6 )
+  
+   ISEXTRACTION ()
+  
+   NAV_POINTS ( Zulu )
+  
+  )
+ 
+ )
+
+)
+

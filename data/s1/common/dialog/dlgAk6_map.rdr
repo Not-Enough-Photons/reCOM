@@ -1,0 +1,856 @@
+((
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/mm/mm06 )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( LittleBlack.tif )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgAk6_map.rdr )
+  
+   OBJECTS ((
+      NAME ( teletype_plate )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 190 )
+    
+     YPOS ( 80 )
+    
+     SPEC (
+       FILENAME ( common_teletype_Op_plate.tif )
+     
+      XSIZE ( 250 )
+     
+      YSIZE ( 255 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( InstructionText )
+    
+     TYPE ( TELETYPE )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 25 )
+    
+     SPEC (
+       COLOR ( 255.000000  204.000000  51.000000 )
+     
+      MAXLENGTH ( 450 )
+     
+      MAXHEIGHT ( 200 )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.350000 )
+     
+      INTERVAL ( 1400.000000 )
+     
+      SPACING ( 17 )
+     
+      SCALE ( 0.100000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( teletype_text )
+    
+     TYPE ( TELETYPE )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 45 )
+    
+     SPEC (
+       CHILDOF ( teletype_plate )
+     
+      MAXLENGTH ( 130 )
+     
+      MAXHEIGHT ( 200 )
+     
+      CAPTION ( " " )
+     
+      SCALE ( 0.350000 )
+     
+      INTERVAL ( 400.000000 )
+     
+      SPACING ( 17 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( Objtext )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 25 )
+    
+     SPEC (
+       COLOR ( 255.000000  204.000000  51.000000 )
+     
+      CHILDOF ( teletype_plate )
+     
+      CAPTION ( OBJECTIVES )
+     
+      SCALE ( 0.500000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( circle )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 15 )
+    
+     SPEC (
+       FILENAME ( action_circle.tif )
+     
+      SIZE ( 18  18 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( CircleFieldText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 15 )
+    
+     SPEC (
+       CHILDOF ( circle )
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "For objectives" )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( L_1 )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 275 )
+    
+     YPOS ( 30 )
+    
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "Pan with the left analog stick." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( L_2 )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 275 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "Use right analog stick to zoom in/out." )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( triangle )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 30 )
+    
+     YPOS ( 35 )
+    
+     SPEC (
+       FILENAME ( action_triangle.tif )
+     
+      SIZE ( 18  18 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TriFieldText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 25 )
+    
+     YPOS ( 15 )
+    
+     SPEC (
+       CHILDOF ( triangle )
+     
+      COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "Return to briefing" )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_up )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 295 )
+    
+     YPOS ( 45 )
+    
+     SPEC (
+       FILENAME ( arrow_top.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_dwn )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 345 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_botm.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_lft )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( -290 )
+    
+     YPOS ( 185 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_left.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_rt )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 295 )
+    
+     YPOS ( 195 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_right.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( GoBack )
+    
+    )
+   
+   (
+      BUTTON ( CIRCLE )
+    
+     ANIMATION ( DoObjectives )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( MapScreenSet )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( teletype_plate_frame )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 15 )
+    
+     YPOS ( 10 )
+    
+     SPEC (
+       FILENAME ( common_teletype_plate.tif )
+     
+      XSIZE ( 620 )
+     
+      YSIZE ( 420 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( map_alaska_mission1 )
+    
+     TYPE ( MAPCONTROL )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 23 )
+    
+     SPEC (
+       UPPERLEFT ( 20  61 )
+     
+      LOWERRIGHT ( 630  425 )
+     
+      ELEMENTS ((
+         TYPE ( IMAGE )
+       
+        XOFFSET ( 0 )
+       
+        YOFFSET ( 0 )
+       
+        SPEC (
+          FILENAME ( ui_map06_01.tif )
+        
+         XSIZE ( 512 )
+        
+         YSIZE ( 512 )
+        
+        )
+       
+       )
+      
+      (
+         TYPE ( IMAGE )
+       
+        XOFFSET ( 512 )
+       
+        YOFFSET ( 0 )
+       
+        SPEC (
+          FILENAME ( ui_map06_02.tif )
+        
+         XSIZE ( 512 )
+        
+         YSIZE ( 512 )
+        
+        )
+       
+       )
+      
+      (
+         TYPE ( TEXT )
+       
+        XOFFSET ( 50 )
+       
+        YOFFSET ( 150 )
+       
+        SPEC (
+          CAPTION ( " " )
+        
+        )
+       
+       )
+      
+      (
+         TYPE ( TEXT )
+       
+        XOFFSET ( 537 )
+       
+        YOFFSET ( 625 )
+       
+        SPEC (
+          CAPTION ( " " )
+        
+        )
+       
+       )
+      
+      )
+     
+      ANIMATIONS ((
+         BUTTON ( UP )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_up )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_left )
+       
+       )
+      
+      (
+         BUTTON ( DOWN )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_down )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_right )
+       
+       )
+      
+      (
+         BUTTON ( TRIGGER_L1 )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_zoomin )
+       
+       )
+      
+      (
+         BUTTON ( TRIGGER_L2 )
+       
+        STATE ( DOWN )
+       
+        ANIMATION ( map_zoomout )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MapScreenSet )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromMap  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( GoBack )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( UiTriangleBack  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission2.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( DoObjectives )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( UiTriangleBack  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( teletype_plate_slide_back )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( " " )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CircleFieldText )
+      
+       CAPTION ( "For objectives" )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( teletype_plate_slide )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  CircleFieldText )
+      
+       CAPTION ( "To close objectives" )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_text )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      WAIT ( 0.200000 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  teletype_text )
+      
+       CAPTION ( "SPECIFIC OBJECTIVES: #P1 1. SECURE THE BARGE. #P1 2. DISABLE THE TERRORISTS' COMMUNICATIONS. #P1 #N 3. GATHER INTEL. #P1 #N 4. SCUTTLE THE FREIGHTER." )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_plate_slide )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( UiTriangleBack  =  1 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_rt )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  teletype_plate )
+      
+       TRANSLATE_FROM ( 645.000000  60.000000  0.000000 )
+      
+       TRANSLATE_TO ( 380.000000  60.000000  0.000000 )
+      
+       RUN_TIME ( 0.400000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( teletype_plate_slide_back )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( UiTriangleBack  =  0 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  teletype_plate )
+      
+       TRANSLATE_FROM ( 380.000000  60.000000  0.000000 )
+      
+       TRANSLATE_TO ( 645.000000  60.000000  0.000000 )
+      
+       RUN_TIME ( 0.400000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  arrow_rt )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  teletype_plate )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       PAN (
+         DIRECTION ( UP )
+       
+        SPEED ( 30 )
+       
+        ACCEL ( 10 )
+       
+        LIMIT ( 1000 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_left )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       PAN (
+         DIRECTION ( LEFT )
+       
+        SPEED ( 30 )
+       
+        ACCEL ( 10 )
+       
+        LIMIT ( 1000 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       PAN (
+         DIRECTION ( DOWN )
+       
+        SPEED ( 30 )
+       
+        ACCEL ( 10 )
+       
+        LIMIT ( 1000 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_right )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       PAN (
+         DIRECTION ( RIGHT )
+       
+        SPEED ( 30 )
+       
+        ACCEL ( 10 )
+       
+        LIMIT ( 1000 )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_zoomin )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       ZOOM_IN ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( map_zoomout )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  map_alaska_mission1 )
+      
+       ZOOM_OUT ()
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

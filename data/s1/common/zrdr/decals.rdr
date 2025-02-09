@@ -1,0 +1,475 @@
+(
+  TEMP_DECAL_POOL_SIZE ( 198 )
+
+ PERM_DECAL_POOL_SIZE ( 202 )
+
+ TEMP_DECAL_POOL (
+   BASE ( 300 )
+ 
+  ,  OVERFLOW ( 50 )
+ 
+ )
+
+ PERM_DECAL_POOL (
+   BASE ( 30 )
+ 
+  ,  OVERFLOW ( 0 )
+ 
+ )
+
+ BLOOD_DECALS ((
+    TEXTURENAME ( stamp_blood_med01.tif )
+  
+   MIN_SIZE ( 8.000000 )
+  
+   MAX_SIZE ( 20.000000 )
+  
+  )
+ 
+ (
+    TEXTURENAME ( stamp_blood_med02.tif )
+  
+   MIN_SIZE ( 8.000000 )
+  
+   MAX_SIZE ( 20.000000 )
+  
+  )
+ 
+ (
+    TEXTURENAME ( stamp_blood_med03.tif )
+  
+   MIN_SIZE ( 8.000000 )
+  
+   MAX_SIZE ( 20.000000 )
+  
+  )
+ 
+ )
+
+ FAR_BLOOD_DECALS ((
+    TEXTURENAME ( stamp_blood_med01.tif )
+  
+   MIN_SIZE ( 5.000000 )
+  
+   MAX_SIZE ( 10.000000 )
+  
+  )
+ 
+ (
+    TEXTURENAME ( stamp_blood_med02.tif )
+  
+   MIN_SIZE ( 5.000000 )
+  
+   MAX_SIZE ( 10.000000 )
+  
+  )
+ 
+ (
+    TEXTURENAME ( stamp_blood_med03.tif )
+  
+   MIN_SIZE ( 5.000000 )
+  
+   MAX_SIZE ( 10.000000 )
+  
+  )
+ 
+ )
+
+ BLOOD_DRIP_DECALS ((
+    TEXTURENAME ( stamp_blood_med01.tif )
+  
+   MIN_SIZE ( 4.000000 )
+  
+   MAX_SIZE ( 6.000000 )
+  
+  )
+ 
+ (
+    TEXTURENAME ( stamp_blood_med02.tif )
+  
+   MIN_SIZE ( 4.000000 )
+  
+   MAX_SIZE ( 6.000000 )
+  
+  )
+ 
+ (
+    TEXTURENAME ( stamp_blood_med03.tif )
+  
+   MIN_SIZE ( 4.000000 )
+  
+   MAX_SIZE ( 6.000000 )
+  
+  )
+ 
+ )
+
+ FOOTSTEP_DECALS ((
+    MATERIALNAME ( SAND )
+  
+   TEXTURENAME ( stamp_footprint01.tif )
+  
+  )
+ 
+ (
+    MATERIALNAME ( SNOW )
+  
+   TEXTURENAME ( stamp_footprint_snow.tif )
+  
+  )
+ 
+ )
+
+ DECAL_SETS (((
+     SETNAME ( GRENADE_BLAST )
+   
+   )
+  
+  (
+     PERMENANT ( testdata )
+   
+   )
+  
+  (
+     MATERIALNAME ( SAND )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 30.000000 )
+   
+    MAX_SIZE ( 50.000000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( DIRT )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 20.200001 )
+   
+    MAX_SIZE ( 30.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( STONE )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 20.200001 )
+   
+    MAX_SIZE ( 30.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( SNOW )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 20.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( PERSON )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 20.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( METAL_THICK )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 20.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( METAL_THIN )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 20.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( WOOD_THICK )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 20.900000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( WOOD_THIN )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 16.000000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( ASPHALT )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.200000 )
+   
+    MAX_SIZE ( 16.000000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( GLASS )
+   
+    TEXTURENAME ( grenade_mark.tif )
+   
+    MIN_SIZE ( 10.000000 )
+   
+    MAX_SIZE ( 13.000000 )
+   
+   )
+  
+  )
+ 
+ ((
+     SETNAME ( BULLET_MARK_SMALL )
+   
+   )
+  
+  (
+     MATERIALNAME ( SAND )
+   
+    TEXTURENAME ( bullet_mark_sand.tif )
+   
+    MIN_SIZE ( 1.000000 )
+   
+    MAX_SIZE ( 1.500000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( GRASS )
+   
+    TEXTURENAME ( bullet_mark_sand.tif )
+   
+    MIN_SIZE ( 1.000000 )
+   
+    MAX_SIZE ( 1.500000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( DIRT )
+   
+    TEXTURENAME ( bullet_mark_sand.tif )
+   
+    MIN_SIZE ( 1.000000 )
+   
+    MAX_SIZE ( 1.500000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( STONE )
+   
+    TEXTURENAME ( bullet_mark_stone.tif )
+   
+    MIN_SIZE ( 1.000000 )
+   
+    MAX_SIZE ( 1.800000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( SNOW )
+   
+    TEXTURENAME ( bullet_mark_sand.tif )
+   
+    MIN_SIZE ( 1.000000 )
+   
+    MAX_SIZE ( 1.800000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( PERSON )
+   
+    TEXTURENAME ( bullet_mark_blood.tif )
+   
+    MIN_SIZE ( 0.300000 )
+   
+    MAX_SIZE ( 1.800000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( METAL_THICK )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 0.750000 )
+   
+    MAX_SIZE ( 1.800000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( METAL_THIN )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 0.750000 )
+   
+    MAX_SIZE ( 1.800000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( WOOD_THICK )
+   
+    TEXTURENAME ( bullet_mark_wood.tif )
+   
+    MIN_SIZE ( 2.000000 )
+   
+    MAX_SIZE ( 3.400000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( WOOD_THIN )
+   
+    TEXTURENAME ( bullet_mark_wood.tif )
+   
+    MIN_SIZE ( 2.000000 )
+   
+    MAX_SIZE ( 3.400000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( ASPHALT )
+   
+    TEXTURENAME ( bullet_mark_stone.tif )
+   
+    MIN_SIZE ( 0.750000 )
+   
+    MAX_SIZE ( 1.500000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( GLASS )
+   
+    TEXTURENAME ( bullet_mark_glass.tif )
+   
+    MIN_SIZE ( 1.100000 )
+   
+    MAX_SIZE ( 1.300000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( GLASS_THICK )
+   
+    TEXTURENAME ( bullet_mark_glass.tif )
+   
+    MIN_SIZE ( 1.100000 )
+   
+    MAX_SIZE ( 1.300000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( GASTANK )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 1.200000 )
+   
+    MAX_SIZE ( 1.700000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( PIPE_STEAM )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 1.200000 )
+   
+    MAX_SIZE ( 1.700000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( FABRIC_CLOTH )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 0.750000 )
+   
+    MAX_SIZE ( 1.200000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( FABRIC_HEAVY )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 0.750000 )
+   
+    MAX_SIZE ( 1.200000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( LEATHER )
+   
+    TEXTURENAME ( bullet_mark_metal.tif )
+   
+    MIN_SIZE ( 0.750000 )
+   
+    MAX_SIZE ( 1.200000 )
+   
+   )
+  
+  (
+     MATERIALNAME ( PLASTER )
+   
+    TEXTURENAME ( bullet_mark_wood.tif )
+   
+    MIN_SIZE ( 1.200000 )
+   
+    MAX_SIZE ( 2.200000 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

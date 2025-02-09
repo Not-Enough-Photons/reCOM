@@ -1,0 +1,250 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "RECON INSERTION AREA" )
+  
+   DESCRIPTION ( "Scan the riverbank for patrols and eliminate them silently if possible." )
+  
+   DESCRIPTION2 ( "Intel indicates that they're using radios to communicate with each other." )
+  
+   DESCRIPTION3 ( "Try to reach nav point CHARLIE without being detected." )
+  
+   VALVE ( POBJ1 )
+  
+   LOCATION ( 4289.000000  1210.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj1 )
+  
+   LINE_IDS ( 1 )
+  
+   NAV_POINTS ( Charlie )
+  
+  )
+ 
+ (
+    NAME ( "ID PATROLS WITH NVG" )
+  
+   DESCRIPTION ( "Use Night Vision Goggles to extend your view range." )
+  
+   VALVE ( SOBJ1 )
+  
+   INVALID_VALVE ( SOBJ1Fail )
+  
+   LOCATION ( 3319.000000  950.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj2 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "ELIMINATE PATROLS" )
+  
+   DESCRIPTION ( "Use stealth and surprise to eliminate the patrols." )
+  
+   VALVE ( SOBJ2 )
+  
+   INVALID_VALVE ( SOBJ2Fail )
+  
+   LOCATION ( 3319.000000  950.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj2 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE RIVERBANK" )
+  
+   DESCRIPTION ( "Eliminate all enemies along the riverbank." )
+  
+   VALVE ( POBJ2 )
+  
+   LOCATION ( 3669.000000  1961.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj4 )
+  
+   LINE_IDS ( 2 )
+  
+  )
+ 
+ (
+    NAME ( "SECURE COMPOUND" )
+  
+   DESCRIPTION ( "Eliminate all enemies in the main compound." )
+  
+   VALVE ( POBJ3 )
+  
+   LOCATION ( 3139.000000  3240.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj6 )
+  
+   LINE_IDS ( 3 )
+  
+   NAV_POINTS ( Delta  Echo )
+  
+  )
+ 
+ (
+    NAME ( "PREVENT LEADER ESCAPE" )
+  
+   DESCRIPTION ( "Prevent the leader from escaping by any means necessary." )
+  
+   DESCRIPTION2 ( "Capturing him is preferred but use of deadly force is authorized." )
+  
+   VALVE ( POBJ8 )
+  
+   LOCATION ( 1989.000000  2600.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj14 )
+  
+   LINE_IDS ( 4 )
+  
+   NAV_POINTS ( Foxtrot )
+  
+  )
+ 
+ (
+    NAME ( "RESTRAIN LEADER" )
+  
+   DESCRIPTION ( "Capture the leader and restrain him if possible." )
+  
+   VALVE ( POBJ4 )
+  
+   INVALID_VALVE ( POBJ4Fail )
+  
+   LOCATION ( 1989.000000  2600.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj14b )
+  
+   LINE_IDS ( 4 )
+  
+   NAV_POINTS ( Foxtrot )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "INFILTRATE TEMPLE" )
+  
+   DESCRIPTION ( "Enter the temple complex." )
+  
+   VALVE ( SOBJ4 )
+  
+   LOCATION ( 2129.000000  2600.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj12 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Foxtrot )
+  
+  )
+ 
+ (
+    NAME ( "OBTAIN INTEL" )
+  
+   DESCRIPTION ( "Scour the temple for any intelligence." )
+  
+   VALVE ( POBJ5 )
+  
+   LOCATION ( 1999.000000  2560.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj15 )
+  
+   LINE_IDS ( 5 )
+  
+   NAV_POINTS ( Foxtrot )
+  
+   NO_COMPASS_ICON ()
+  
+  )
+ 
+ (
+    NAME ( "BLOW DOOR WITH C4" )
+  
+   DESCRIPTION ( "Use C4 to blow open the door to access the temple sub-level." )
+  
+   VALVE ( SOBJ8 )
+  
+   LOCATION ( 1969.000000  2490.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj16 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Juliet )
+  
+  )
+ 
+ (
+    NAME ( "SECURE SUB-LEVEL" )
+  
+   DESCRIPTION ( "Eliminate all enemies in the temple sub-level." )
+  
+   VALVE ( POBJ6 )
+  
+   LOCATION ( 1599.000000  2200.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj21 )
+  
+   LINE_IDS ( 6 )
+  
+   NAV_POINTS ( Juliet  Romeo )
+  
+  )
+ 
+ (
+    NAME ( "CONTAIN ENEMY" )
+  
+   DESCRIPTION ( "Ensure that nobody escapes the temple sub-level." )
+  
+   VALVE ( SOBJ10 )
+  
+   INVALID_VALVE ( SOBJ10Fail )
+  
+   LOCATION ( 1969.000000  2490.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj9 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   NAV_POINTS ( Juliet )
+  
+  )
+ 
+ (
+    NAME ( "OBTAIN BIO-AGENT" )
+  
+   DESCRIPTION ( "Secure the bio-agent.  Lives are at stake." )
+  
+   VALVE ( POBJ7 )
+  
+   LOCATION ( 1459.000000  2010.000000 )
+  
+   ON_CALL_ANIMATION ( m12obj23 )
+  
+   LINE_IDS ( 7 )
+  
+   NAV_POINTS ( Romeo )
+  
+  )
+ 
+ )
+
+)
+

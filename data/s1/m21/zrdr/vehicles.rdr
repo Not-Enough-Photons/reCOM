@@ -1,0 +1,1282 @@
+(((
+    name ( player )
+  
+   display ( Kahuna )
+  
+   character ( jungle_A21 )
+  
+   setup (( sealStart  7 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+  )
+ 
+ (
+    name ( Hutchins )
+  
+   display ( Boomer )
+  
+   character ( jungle_B21 )
+  
+   setup (( BuddyB  2 )
+   
+   )
+  
+   team ( 1  2  31 )
+  
+   ai_params (
+     sensors (
+      visual_sens ( 1.400000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Bailey )
+  
+   display ( Jester )
+  
+   character ( jungle_C21 )
+  
+   setup (( BuddyC  2 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+   ai_params (
+     sensors (
+      visual_sens ( 1.400000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( DiMone )
+  
+   display ( Spectre )
+  
+   character ( jungle_D21 )
+  
+   setup (( BuddyD  2 )
+   
+   )
+  
+   team ( 1  3  31 )
+  
+   ai_params (
+     sensors (
+      visual_sens ( 1.400000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bridge )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bridge_start  0 )
+   
+   ( reg1_spawn1  4 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 1 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.300000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bridge2 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bridge2A  4 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nosnooze ( 1 )
+  
+  )
+ 
+ (
+    name ( Patrol01 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol1_start  2 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+  )
+ 
+ (
+    name ( Patrol02 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( Patrol2_start  2 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 80.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol04 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( Patrol4_start  2 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 80.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( tower1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc03 )
+  
+   setup (( tower1A  5 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.680000 )
+   
+    courage ( 50.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( tower2 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc03 )
+  
+   setup (( tower2A  0 )
+   
+   )
+  
+   team ( 4  6  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.680000 )
+   
+    courage ( 50.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Hostage )
+  
+   display ( POW )
+  
+   character ( congo_pow01 )
+  
+   setup (( Hostage  1 )
+   
+   )
+  
+   team ( 17  30  31 )
+  
+   nosnooze ( 1 )
+  
+   nofade ( 1 )
+  
+  )
+ 
+ (
+    name ( Rush1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( Rush1A  2 )
+   
+   ( rush_spawn1  0 )
+   
+   ( rush_spawn4  4 )
+   
+   ( rush_spawn7  4 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   ai_params (
+     accuracy ( 0.750000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 1 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Rush2 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Rush2A  2 )
+   
+   ( rush_spawn2  6 )
+   
+   ( rush_spawn5  4 )
+   
+   ( rush_spawn7  6 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   ai_params (
+     accuracy ( 0.400000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 1 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Rush4 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( Rush4A  3 )
+   
+   ( rush_spawn3  7 )
+   
+   ( rush_spawn6  6 )
+   
+   ( rush_spawn7  6 )
+   
+   )
+  
+   team ( 4  7  30 )
+  
+   ai_params (
+     accuracy ( 0.400000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 1 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol5 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( Patrol5A  0 )
+   
+   ( reg3_spawn1  3 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   ai_params (
+     accuracy ( 0.700000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 2 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol6 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc03 )
+  
+   setup (( Patrol6A  3 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol7 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol7A  0 )
+   
+   ( reg3_spawn2  4 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   ai_params (
+     accuracy ( 0.800000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 2 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( gate1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( gate1A  4 )
+   
+   ( reg3_spawn1  0 )
+   
+   ( Patrol9A  0 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   ai_params (
+     respawn ( 2 )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol9 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol9A  0 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+  )
+ 
+ (
+    name ( Patrol10 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( Patrol10A  3 )
+   
+   )
+  
+   team ( 4  9  30 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol11 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol11A  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol12 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol12A  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol13 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc03 )
+  
+   setup (( Patrol13A  4 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   ai_params (
+     accuracy ( 0.700000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol14 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol14A  3 )
+   
+   ( Patrol15B  6 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 1 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 75.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( Patrol15 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( Patrol15A  6 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.500000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( pillbox1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc03 )
+  
+   setup (( pillbox1A  4 )
+   
+   )
+  
+   team ( 4  8  30 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( pillbox2 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( pillbox2A  2 )
+   
+   )
+  
+   team ( 4  10  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( pillbox3 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( pillbox3A  2 )
+   
+   )
+  
+   team ( 4  12  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk1A  6 )
+   
+   ( top_spawn2  0 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 80.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk2 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk2A  2 )
+   
+   ( top_spawn3  0 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 80.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk3 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk3A  4 )
+   
+   ( top_spawn1  6 )
+   
+   )
+  
+   team ( 4  13  30 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk4 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk4A  2 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+   ai_params (
+     sensors (
+      visual_range ( 150.000000 )
+    
+     visual_sens ( 0.800000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk5 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk5A  6 )
+   
+   )
+  
+   team ( 4  14  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     sensors (
+      visual_range ( 150.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk6 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk6A  6 )
+   
+   ( bot_spawn1  0 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     respawn ( 1 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk7 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk7A  2 )
+   
+   ( bot_spawn2  0 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 1 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 70.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk8 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk8A  2 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 70.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk9 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( bunk9A  4 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 70.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( bunk10 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( bunk10A  2 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 75.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( killer1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( killer1A  0 )
+   
+   ( reg1_spawn2  6 )
+   
+   ( reg1_spawn7  6 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.500000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 2 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( killer2 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc07 )
+  
+   setup (( killer2A  0 )
+   
+   ( reg1_spawn3  6 )
+   
+   ( reg1_spawn6  6 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 2 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( killer3 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( killer3A  0 )
+   
+   ( reg1_spawn4  6 )
+   
+   ( reg1_spawn5  6 )
+   
+   )
+  
+   team ( 4  5  30 )
+  
+   nosnooze ( 1 )
+  
+   ai_params (
+     accuracy ( 0.700000 )
+   
+    courage ( 1.000000 )
+   
+    respawn ( 2 )
+   
+    sensors (
+      visual_range ( -1.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.600000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ (
+    name ( guard1 )
+  
+   display ( Mercenary )
+  
+   character ( m21_merc02 )
+  
+   setup (( guard1A  0 )
+   
+   )
+  
+   team ( 4  15  30 )
+  
+   recycle ( 1 )
+  
+   ai_params (
+     accuracy ( 0.600000 )
+   
+    courage ( 1.000000 )
+   
+    sensors (
+      visual_range ( 150.000000 )
+    
+     visual_fov ( 90.000000 )
+    
+     visual_sens ( 1.000000 )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

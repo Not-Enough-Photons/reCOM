@@ -1,0 +1,64 @@
+((
+   SCREENS (
+    BACKGROUND (
+     TYPE ( MPEG )
+   
+    FILENAME ( run/movies/socom.pss )
+   
+   )
+  
+   LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/mm/mm11 )
+  
+   FONT ( arialblack )
+  
+   SCRIPT_LIBRARY ( dlg_documentary.rdr )
+  
+   OBJECTS ()
+  
+   ANIMATIONS ((
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgMenu.rdr )
+    
+    )
+   
+   (
+      EVENT ( ONMPEGEND )
+    
+     ANIMATION ( goto_menu_silent )
+    
+     ARGUMENT ( dlgMenu.rdr )
+    
+    )
+   
+   (
+      BUTTON ( START )
+    
+     ANIMATION ( goto_menu )
+    
+     ARGUMENT ( dlgMenu.rdr )
+    
+    )
+   
+   )
+  
+   CONTROLS ()
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

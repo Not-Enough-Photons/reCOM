@@ -1,0 +1,6546 @@
+((
+   SCREENS (
+    LIBRARY ( ui/assetlib/ui2d )
+  
+   BACKGROUND (
+     TYPE ( MPEG_LOOPING )
+   
+    FILENAME ( run/movies/common/menuloop.pss )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgMenu.rdr )
+  
+   USES_MEMCARD ()
+  
+   OBJECTS ((
+      NAME ( SplashLogo )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 85 )
+    
+     YPOS ( 32 )
+    
+     SPEC (
+       XSIZE ( 470 )
+     
+      YSIZE ( 216 )
+     
+      FILENAME ( SplashLogo.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( LEGALEZE )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 320 )
+    
+     YPOS ( 395 )
+    
+     SPEC (
+       COLOR ( 30  60  90 )
+     
+      CHILDOF ( LEGALEZE )
+     
+      FONT ( myriad )
+     
+      CAPTION ( "Developed by Zipper Interactive, Inc." )
+     
+      SCALE ( 0.400000 )
+     
+      HCENTERED ()
+     
+     )
+    
+    )
+   
+   (
+      NAME ( LEGALEZE1 )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 17 )
+    
+     CHILDOF ( LEGALEZE )
+    
+     SPEC (
+       COLOR ( 30  60  90 )
+     
+      CAPTION ( "©2002 Sony Computer Entertainment America Inc." )
+     
+      SCALE ( 0.400000 )
+     
+      HCENTERED ()
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_up )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 283 )
+    
+     YPOS ( 233 )
+    
+     SPEC (
+       FILENAME ( arrow_top.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( arrow_dwn )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 112 )
+    
+     SPEC (
+       CHILDOF ( arrow_up )
+     
+      FILENAME ( arrow_botm.tif )
+     
+      XSIZE ( 50 )
+     
+      YSIZE ( 50 )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( ShowCompletionLevel )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( UiStopAttract )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( SetMenuValve )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( fadelogo )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( has_memcard_changed )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( CleanupMissionMemory )
+    
+    )
+   
+   (
+      EVENT ( MEMCARD_ERROR )
+    
+     ANIMATION ( handle_memcard_error )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( Demo_pane )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 185 )
+    
+     YPOS ( 263 )
+    
+     SPEC (
+       FILENAME ( blue.tif )
+     
+      XSIZE ( 250 )
+     
+      YSIZE ( 102 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( new_game_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 256 )
+    
+     YPOS ( 330 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      XSIZE ( 256 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 55 )
+     
+      YOFFSET ( 22 )
+     
+      SCALE ( 0.600000 )
+     
+      CAPTION ( "NEW GAME" )
+     
+      PRESSED (
+        TEXT_COLOR ( 255  74  8 )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_COLOR ( 255  104  28 )
+      
+       TEXT_GLOW (
+         RANGE ( 0.300000  1.000000 )
+       
+        TIME ( 0.800000 )
+       
+       )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+      NORMAL (
+        SCALE ( 0.600000 )
+      
+       TEXT_COLOR ( 30  30  50 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 15  30  45 )
+      
+      )
+     
+      SCALE ( 0.200000 )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( UiprepMission1 )
+       
+       )
+      
+      (
+         BUTTON ( DOWN )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( UP )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( load_game_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 256 )
+    
+     YPOS ( 300 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      XSIZE ( 250 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 55 )
+     
+      YOFFSET ( 22 )
+     
+      SCALE ( 0.600000 )
+     
+      CAPTION ( "LOAD GAME" )
+     
+      PRESSED (
+        TEXT_COLOR ( 255  74  8 )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_COLOR ( 255  104  28 )
+      
+       TEXT_GLOW (
+         RANGE ( 0.300000  1.000000 )
+       
+        TIME ( 0.800000 )
+       
+       )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+      NORMAL (
+        SCALE ( 0.600000 )
+      
+       TEXT_COLOR ( 30  30  50 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 15  30  45 )
+      
+      )
+     
+      SCALE ( 0.200000 )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( MainMenuOnLoad )
+       
+       )
+      
+      (
+         BUTTON ( DOWN )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( UP )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( multiplayer_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 256 )
+    
+     YPOS ( 360 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      XSIZE ( 200 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 55 )
+     
+      YOFFSET ( 22 )
+     
+      SCALE ( 0.600000 )
+     
+      CAPTION ( ONLINE )
+     
+      PRESSED (
+        TEXT_COLOR ( 255  74  8 )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_COLOR ( 255  104  28 )
+      
+       TEXT_GLOW (
+         RANGE ( 0.300000  1.000000 )
+       
+        TIME ( 0.800000 )
+       
+       )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+      NORMAL (
+        SCALE ( 0.600000 )
+      
+       TEXT_COLOR ( 30  30  50 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 15  30  45 )
+      
+      )
+     
+      SCALE ( 0.200000 )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( do_multi_or_medius )
+       
+       )
+      
+      (
+         BUTTON ( DOWN )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( UP )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( options_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 256 )
+    
+     YPOS ( 390 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      XSIZE ( 250 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 55 )
+     
+      YOFFSET ( 22 )
+     
+      SCALE ( 0.600000 )
+     
+      CAPTION ( OPTIONS )
+     
+      PRESSED (
+        TEXT_COLOR ( 255  74  8 )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_COLOR ( 255  104  28 )
+      
+       TEXT_GLOW (
+         RANGE ( 0.300000  1.000000 )
+       
+        TIME ( 0.800000 )
+       
+       )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+      NORMAL (
+        SCALE ( 0.600000 )
+      
+       TEXT_COLOR ( 30  30  50 )
+      
+      )
+     
+      DISABLED (
+        TEXT_COLOR ( 15  30  45 )
+      
+      )
+     
+      SCALE ( 0.200000 )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( CallOptions )
+       
+       )
+      
+      (
+         BUTTON ( DOWN )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( UP )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( tutorial_button )
+    
+     TYPE ( BUTTON )
+    
+     XPOS ( 256 )
+    
+     YPOS ( 420 )
+    
+     SPEC (
+       HCENTERED ()
+     
+      XSIZE ( 150 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 55 )
+     
+      YOFFSET ( 22 )
+     
+      SCALE ( 0.600000 )
+     
+      CAPTION ( DOCUMENTARY )
+     
+      PRESSED (
+        TEXT_COLOR ( 255  74  8 )
+      
+       SCALE ( 0.700000 )
+      
+      )
+     
+      ACTIVE (
+        TEXT_COLOR ( 255  104  28 )
+      
+       TEXT_GLOW (
+         RANGE ( 0.300000  1.000000 )
+       
+        TIME ( 0.800000 )
+       
+       )
+      
+       SCALE ( 0.750000 )
+      
+      )
+     
+      NORMAL (
+        SCALE ( 0.600000 )
+      
+       TEXT_COLOR ( 30  30  50 )
+      
+      )
+     
+      SCALE ( 0.200000 )
+     
+      DISABLED (
+        TEXT_COLOR ( 15  30  45 )
+      
+      )
+     
+      SCALE ( 0.200000 )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( CallDocumentary )
+       
+       )
+      
+      (
+         BUTTON ( DOWN )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( LEFT )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      (
+         BUTTON ( RIGHT )
+       
+        ANIMATION ( OnMenuBtnDown )
+       
+       )
+      
+      (
+         BUTTON ( UP )
+       
+        ANIMATION ( OnMenuBtnUp )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( SavedGames )
+    
+     XPOS ( 200 )
+    
+     YPOS ( -360 )
+    
+     TYPE ( LISTBOX )
+    
+     SPEC (
+       CHILDOF ( MENUFADER )
+     
+      PRESSED_COLOR ( 255.000000  74.000000  8.000000 )
+     
+      NORMAL_COLOR ( 158.000000  158.000000  158.000000 )
+     
+      ACTIVE_COLOR ( 255.000000  104.000000  51.000000 )
+     
+      NOSELECT ()
+     
+      PADHOG ()
+     
+      FILENAME ( popup_load.tif )
+     
+      XSIZE ( 490 )
+     
+      YSIZE ( 200 )
+     
+      SPACING ( 22 )
+     
+      SCALE ( 0.500000 )
+     
+      LEFT_MARGIN ( 20 )
+     
+      TOP_MARGIN ( 50 )
+     
+      COLUMNS ((
+         POSITION ( -8 )
+       
+       )
+      
+      (
+         POSITION ( 284 )
+       
+       )
+      
+      (
+         POSITION ( 137 )
+       
+       )
+      
+      (
+         POSITION ( 47 )
+       
+       )
+      
+      )
+     
+      UIVAR (
+        NAME ( SavedGames )
+      
+      )
+     
+      ANIMATIONS ((
+         BUTTON ( CROSS )
+       
+        ANIMATION ( LoadGameOnListBox )
+       
+       )
+      
+      (
+         BUTTON ( TRIANGLE )
+       
+        ANIMATION ( CancelLoadGame )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+   MODELS ()
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( data\common\dialog\uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( data\common\dialog\UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( SetMenuValve )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( OptionsMenuChanged  =  0 )
+     
+      VALVE ( BackFromBrief  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( FlushMenuHistory )
+      
+      )
+     
+      VALVE ( MenuSpot  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( Documentary_button )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( NewSetDown )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  SavedGames )
+      
+       TRANSLATE_FROM ( 0.000000  400.000000  0.000000 )
+      
+       TRANSLATE_TO ( 75.000000  185.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CleanupMissionMemory )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( CleanupMissionMemory )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallOptions )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgOptions_Menu.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallTutorial )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_tutorial.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallDocumentary )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_documentary.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CallMissionSelection )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      VALVE ( CameFromMap  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      VALVE ( NoDefaultOnTriangle  =  0 )
+     
+      VALVE ( ReplayMissionMusic  =  0 )
+     
+      VALVE ( NoDefaultOnTriangle  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ShowCompletionLevel )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "0 Ensign" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "1 Lt. Junior Grade" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "2 Lieutenant" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "3 Lt. Commander" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "4 Commander" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "5 Captain" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "6 Rear Admiral" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "7 Vice Admiral" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "8 Admiral" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  9 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( "9 Tom" )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GCtext )
+      
+       CAPTION ( ? )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( ForGameCompleteScreen  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ForGameCompleteScreen  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameComptext )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( GoToGameCompleteScreen  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameCompSet )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GoToGameCompleteScreen  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  GameCompSet )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( ai_difficulty  ==  0 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "0" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  1 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "1" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "2" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "3" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "4" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  5 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "5" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  6 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "6" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  7 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "7" )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( ai_difficulty  ==  8 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  aimult )
+      
+       CAPTION ( "8" )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiprepMission1 )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      VALVE ( ReplayMissionMusic  =  0 )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      VALVE ( CameFromMap  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      VALVE ( GameComplete  =  0 )
+     
+      VALVE ( ai_difficulty  =  0 )
+     
+      VALVE ( incr_miss_6  =  0 )
+     
+      VALVE ( incr_miss_8  =  0 )
+     
+      VALVE ( incr_miss_5  =  0 )
+     
+      VALVE ( incr_miss_9  =  0 )
+     
+      VALVE ( incr_miss_11  =  0 )
+     
+      VALVE ( incr_miss_12  =  0 )
+     
+      VALVE ( incr_miss_17  =  0 )
+     
+      VALVE ( incr_miss_19  =  0 )
+     
+      VALVE ( incr_miss_21  =  0 )
+     
+      VALVE ( incr_miss_13  =  0 )
+     
+      VALVE ( incr_miss_15  =  0 )
+     
+      VALVE ( incr_miss_16  =  0 )
+     
+      VALVE ( ForGameCompleteScreen  =  1 )
+     
+      VALVE ( GoToGameCompleteScreen  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      IF (
+        VALVE ( ChosePresetOnce  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaskaCinematic.rdr )
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgControllerPresetsNewGame.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiStopAttract )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       STOP_ANIMATION (
+        NAME ( UiAttractMode )
+      
+      )
+     
+      WAIT ( 110 )
+     
+      CALL_ANIMATION (
+        NAME ( UiAttractMode )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( UiAttractMode )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAttractCinematic.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnMenuBtnUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      IF (
+        VALVE ( MenuSpot  ==  1 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  5 )
+     
+      CALL_ANIMATION (
+        NAME ( LoadSetUp )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( new_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  5 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  4 )
+     
+      CALL_ANIMATION (
+        NAME ( tutorialSetUp )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  4 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  3 )
+     
+      CALL_ANIMATION (
+        NAME ( optionSetUp )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  3 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  2 )
+     
+      CALL_ANIMATION (
+        NAME ( MPSetUp )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  2 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( NewSetUp )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( new_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( new_game_button )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnMenuBtnDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_SLIDE )
+      
+       START ()
+      
+      )
+     
+      IF (
+        VALVE ( MenuSpot  ==  1 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  2 )
+     
+      CALL_ANIMATION (
+        NAME ( MPSetDown )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( new_game_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  2 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  3 )
+     
+      CALL_ANIMATION (
+        NAME ( optionSetDown )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( multiplayer_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  3 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  4 )
+     
+      CALL_ANIMATION (
+        NAME ( tutorialSetDown )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( options_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  4 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  5 )
+     
+      CALL_ANIMATION (
+        NAME ( LoadSetDown )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( tutorial_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( MenuSpot  ==  5 )
+      
+      )
+     
+      VALVE ( MenuSpot  =  1 )
+     
+      CALL_ANIMATION (
+        NAME ( NewSetDown )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      WAIT ( 0.050000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( new_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( new_game_button )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( NewSetUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MPSetUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( optionSetUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( tutorialSetUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LoadSetUp )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( NewSetDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MPSetDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( optionSetDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( TutorialSetDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LoadSetDown )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  options_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  options_button )
+      
+       TRANSLATE_FROM ( 256.000000  275.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  250.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  tutorial_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  tutorial_button )
+      
+       TRANSLATE_FROM ( 256.000000  300.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  275.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  load_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  load_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  325.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  300.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  new_game_button )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  new_game_button )
+      
+       TRANSLATE_FROM ( 256.000000  350.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  325.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  multiplayer_button )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  multiplayer_button )
+      
+       TRANSLATE_FROM ( 256.000000  250.000000  0.000000 )
+      
+       TRANSLATE_TO ( 256.000000  350.000000  0.000000 )
+      
+       RUN_TIME ( 0.100000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( fadeLogo )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SplashLogo )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.250000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SplashLogo )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  SplashLogo )
+      
+       RUN_TIME ( 0.330000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( do_multi_or_medius )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( CurrentMission  =  0 )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMPswitch.rdr )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( memcard_error  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MissionShortcutSKB )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( SetSkbPurpose )
+      
+       ARGUMENT ( "Enter Mission Name" )
+      
+      )
+     
+      VALVE ( SkbMaxChars  =  25 )
+     
+      ui::UI_COMMAND (
+        TYPE ( GetTextInput )
+      
+       ARGUMENT ( MISSION_SHORTCUT )
+      
+      )
+     
+      WHILE (
+        VALVE ( skb_done  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( MISSION_SHORTCUT )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( RebootIOP )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( LOAD_SCREEN )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( CancelLoadGame )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( MainMenuOnLoad )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       SOUND (
+        NAME ( SND_DINK )
+      
+       AT_NODE ( ROOT_NODE )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      VALVE ( NoDefaultOnTriangle  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      VALVE ( CameFromMap  =  0 )
+     
+      VALVE ( MainMenuCardSlotChoice  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Select which MEMORY CARD slot to use: Press the Triangle button to return to the title menu." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 120 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 25 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       CANCELLABLE ()
+      
+       YESNO (
+         VALVE ( MainMenuCardSlotChoice )
+       
+        YES (
+          CAPTION ( "Slot 1" )
+        
+         POS ( 40  80 )
+        
+         TEXTOFFSET ( 13  20 )
+        
+         WIDTH ( 75 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+        NO (
+          CAPTION ( "Slot 2" )
+        
+         POS ( 190  80 )
+        
+         TEXTOFFSET ( 13  20 )
+        
+         WIDTH ( 75 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( Pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+        )
+       
+       )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.700000 )
+      
+      )
+     
+      WHILE (
+        VALVE ( MainMenuCardSlotChoice  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      IF (
+        VALVE ( MainMenuCardSlotChoice  !=  66 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Checking. Do not remove memory card (PS2) at this time." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      WAIT ( 0.500000 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      IF (
+        VALVE ( MainMenuCardSlotChoice  ==  1 )
+      
+      )
+     
+      VALVE ( MainMenuCardSlot  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "0" )
+      
+      )
+     
+      ELSE ()
+     
+      VALVE ( MainMenuCardSlot  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_ChPort )
+      
+       ARGUMENT ( "1" )
+      
+      )
+     
+      ENDIF ()
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+       &&  ui::UI_COMMAND (
+         TYPE ( IsMemCardFormatted )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( LoadGameOnStart )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      VALVE ( CannotLoadNoFormat  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( IsMemCardInserted )
+       
+       )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Memory card (PS2) not formatted. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( CannotLoadNoFormat )
+       
+       )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Memory card (PS2) not inserted. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 100 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( CannotLoadNoFormat )
+       
+       )
+      
+      )
+     
+      ENDIF ()
+     
+      WHILE (
+        VALVE ( CannotLoadNoFormat  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( LoadGameOnListBox )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  SavedGames )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_Init )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( Ensure_MC_Dirs_Fast )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      IF (
+        ui::UI_COMMAND (
+         TYPE ( DoesSlotHaveGame )
+       
+        ARGUMENT ( INPUT_STRING )
+       
+       )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      VALVE ( LoadingSavedGame  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( LOADING... )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 110.000000  230.000000 )
+      
+       WIDTH ( 400 )
+      
+       HEIGHT ( 80 )
+      
+       XOFFSET ( 168 )
+      
+       YOFFSET ( 40 )
+      
+       SCALE ( 0.450000 )
+      
+      )
+     
+      WAIT ( 0.300000 )
+     
+      VALVE ( memcard_error  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( LoadSavedGame )
+      
+       ARGUMENT ( INPUT_STRING )
+      
+      )
+     
+      WHILE (
+        VALVE ( LoadingSavedGame  ==  1 )
+      
+      )
+     
+      END_WHILE ()
+     
+      WAIT ( 0.300000 )
+     
+      IF (
+        VALVE ( memcard_error  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( DisplayErrorLoading )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( LoadGameOnListBox )
+      
+      )
+     
+      WAIT ( 2.000000 )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( KillPopup )
+      
+      )
+     
+      VALVE ( LoadedPopupResult  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "Game loaded successfully. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 120.000000  230.000000 )
+      
+       WIDTH ( 400 )
+      
+       HEIGHT ( 80 )
+      
+       XOFFSET ( 30 )
+      
+       YOFFSET ( 30 )
+      
+       SCALE ( 0.450000 )
+      
+       YESNO (
+         VALVE ( LoadedPopupResult )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( LoadedPopupResult  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( TestForCompletionLevel )
+      
+      )
+     
+      VALVE ( ReplayMissionMusic  =  0 )
+     
+      IF (
+        VALVE ( CurrentMission  ==  6 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  8 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaska_mission1.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  5 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgThailandCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgThailandCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  9 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  11 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_thai_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  12 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgCongoCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgCongoCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  17 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  19 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_congo_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  21 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgTurkmenCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgTurkmenCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  13 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m15 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m16 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission2.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  15 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  ==  0 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m16 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      VALVE ( CameFromDebriefing  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SETMISSION )
+      
+       ARGUMENT ( m16 )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlg_turk_mission3.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ELSEIF (
+        VALVE ( CurrentMission  ==  16 )
+      
+      )
+     
+      IF (
+        VALVE ( GameComplete  <  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  0 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaskaCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  1 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgAlaskaCinematic.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  2 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  ==  3 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ELSEIF (
+        VALVE ( GameComplete  >=  4 )
+      
+      )
+     
+      VALVE ( NoAutoAim  =  1 )
+     
+      ui::UI_COMMAND (
+        TYPE ( AutoAim )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      STOP_ANIMATION (
+        NAME ( menu_fade_up )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.500000 )
+      
+       OPACITY_FROM ( 0.000000 )
+      
+       OPACITY_TO ( 0.990000 )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMISSIONSELECTION.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+      ENDIF ()
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( POPUPDIALOG )
+      
+      )
+     
+      VALVE ( SitHere  =  0 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  POPUP )
+      
+       CAPTION ( "No saved game in that slot. Load will be aborted. Press the X button to continue." )
+      
+       BACKGROUND ( popupOp.tif )
+      
+       POSITION ( 170.000000  285.000000 )
+      
+       TEXT_COLOR ( 255  204  51 )
+      
+       WIDTH ( 300 )
+      
+       HEIGHT ( 120 )
+      
+       XOFFSET ( 20 )
+      
+       YOFFSET ( 35 )
+      
+       SPACING ( 20 )
+      
+       SCALE ( 0.400000 )
+      
+       YESNO (
+         VALVE ( SitHere )
+       
+        YES (
+          CAPTION ( Continue )
+        
+         POS ( 90  80 )
+        
+         TEXTOFFSET ( 10  18 )
+        
+         WIDTH ( 90 )
+        
+         HEIGHT ( 25 )
+        
+         PRESSED (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 100  0  0 )
+         
+         )
+        
+         ACTIVE (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 255  204  51 )
+         
+         )
+        
+         NORMAL (
+           IMAGE ( pop_butt.tif )
+         
+          TEXT_COLOR ( 128  128  128 )
+         
+         )
+        
+         SCALE ( 0.400000 )
+        
+        )
+       
+       )
+      
+      )
+     
+      WHILE (
+        VALVE ( SitHere  ==  0 )
+      
+      )
+     
+      END_WHILE ()
+     
+      SOUND (
+        NAME ( SND_NEG )
+      
+       START ()
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( DisableButton )
+      
+       ARGUMENT ( SavedGames )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( ActivateButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( EnableButton )
+      
+       ARGUMENT ( load_game_button )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( BackgroundMPEG )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( UiStopAttract )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( has_memcard_changed )
+      
+      )
+     
+      OBJECT_OPACITY_FROM_TO (
+        NAME ( MENU  MENUFADER )
+      
+       RUN_TIME ( 0.050000 )
+      
+       OPACITY_FROM ( 0.700000 )
+      
+       OPACITY_TO ( 0.000000 )
+      
+      )
+     
+      ENDIF ()
+     
+      ui::UI_COMMAND (
+        TYPE ( MC_UnInit )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

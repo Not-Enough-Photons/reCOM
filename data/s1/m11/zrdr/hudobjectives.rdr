@@ -1,0 +1,164 @@
+(
+  HUD_OBJECTIVES ((
+    NAME ( "CLEAR INSERTION AREA" )
+  
+   DESCRIPTION ( "Eliminate all terrorists in area." )
+  
+   VALVE ( insertkill )
+  
+   LOCATION ( 1271.000000  4749.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj1 )
+  
+   LINE_IDS ( 7 )
+  
+  )
+ 
+ (
+    NAME ( "EAVESDROP ON LOCALS" )
+  
+   DESCRIPTION ( "Sneak up on the huts to overhear the peasants talking inside." )
+  
+   VALVE ( SOBJ2 )
+  
+   INVALID_VALVE ( SOBJ2Fail )
+  
+   LOCATION ( 1764.000000  4381.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj3 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+   LINE_IDS ( 1 )
+  
+  )
+ 
+ (
+    NAME ( "SECURE FLANK" )
+  
+   DESCRIPTION ( "The flank of the temple is heavily guarded. Try to eliminate guards" )
+  
+   DESCRIPTION2 ( "silently to avoid alerting any terrorists of your presence." )
+  
+   VALVE ( POBJ3 )
+  
+   LOCATION ( 1944.000000  1831.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj7 )
+  
+   LINE_IDS ( 2 )
+  
+  )
+ 
+ (
+    NAME ( "IDENTIFY SENTRIES" )
+  
+   DESCRIPTION ( "Use NVG at NAV POINT DELTA to verify the presence of any" )
+  
+   DESCRIPTION2 ( "terrorists near the temple entrance." )
+  
+   VALVE ( SOBJ5 )
+  
+   INVALID_VALVE ( SOBJ5Fail )
+  
+   LOCATION ( 1944.000000  1831.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj8 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "AMBUSH FLANK GUARDS" )
+  
+   DESCRIPTION ( "Eliminate any existing terrorists near temple entrance." )
+  
+   VALVE ( SOBJ10 )
+  
+   LOCATION ( 1974.000000  1931.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj13 )
+  
+   ISSECONDARY ()
+  
+   ISSUB_OBJECTIVE ()
+  
+  )
+ 
+ (
+    NAME ( "SECURE WIFE" )
+  
+   DESCRIPTION ( "Secure and extract the ambassador's wife." )
+  
+   VALVE ( POBJ4 )
+  
+   INVALID_VALVE ( POBJ4Fail )
+  
+   LOCATION ( 1384.000000  1161.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj14 )
+  
+   LINE_IDS ( 3 )
+  
+  )
+ 
+ (
+    NAME ( "CLEAR TEMPLE AREA" )
+  
+   DESCRIPTION ( "Eliminate all terrorists in temple area." )
+  
+   VALVE ( POBJ6 )
+  
+   INVALID_VALVE ( POBJ6Fail )
+  
+   LOCATION ( 1384.000000  1161.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj24 )
+  
+   LINE_IDS ( 6 )
+  
+  )
+ 
+ (
+    NAME ( "HELICOPTER EXTRACTION" )
+  
+   DESCRIPTION ( "Escort the ambassador's wife to point ZULU and use the" )
+  
+   DESCRIPTION2 ( "voice commands or TCM to call SUPPORT EXTRACT." )
+  
+   VALVE ( SOBJ16 )
+  
+   INVALID_VALVE ( SOBJ16Fail )
+  
+   LOCATION ( 1384.000000  1161.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj20 )
+  
+   LINE_IDS ( 4 )
+  
+  )
+ 
+ (
+    NAME ( "SECURE AMBASSADOR" )
+  
+   DESCRIPTION ( "Find and secure the ambassador." )
+  
+   VALVE ( POBJ5 )
+  
+   LOCATION ( 324.000000  1101.000000 )
+  
+   ON_CALL_ANIMATION ( m11obj23 )
+  
+   LINE_IDS ( 5 )
+  
+  )
+ 
+ )
+
+)
+

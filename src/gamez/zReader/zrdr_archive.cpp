@@ -35,7 +35,7 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 
 	if (output == NULL)
 	{
-		output = new zar::CZAR(archiveName, NULL);
+		output = new CZAR(archiveName, NULL);
 		m_list.insert(m_list.begin(), output);
 	}
 
@@ -146,6 +146,24 @@ void CRdrArchive::OpenAll()
 }
 
 void CRdrArchive::CloseAll()
+{
+	for (auto it = m_list.begin(); it != m_list.end(); it++)
+	{
+		zar::CZAR* archive = *it;
+		archive->Close();
+	}
+}
+
+void CRdrArchive::OpenAll_ZARV2()
+{
+	for (auto it = m_list.begin(); it != m_list.end(); it++)
+	{
+		CZAR* archive = *it;
+		archive->ReOpen_V2(1, OpenFlags::READ);
+	}
+}
+
+void CRdrArchive::CloseAll_ZARV2()
 {
 	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{

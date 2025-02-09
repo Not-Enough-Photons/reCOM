@@ -1,0 +1,931 @@
+((
+   SCREENS (
+    LIBRARIES ( ui/assetlib/ui2d  ui/assetlib/uiop )
+  
+   BACKGROUND (
+     TYPE ( IMAGE )
+   
+    FILENAME ( multplay_back.tif )
+   
+   )
+  
+   FONT ( myriad )
+  
+   SCRIPT_LIBRARY ( dlgOptions_Menu.rdr )
+  
+   USES_MEMCARD ()
+  
+   OBJECTS ((
+      NAME ( letterbar )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 0 )
+    
+     SPEC (
+       FILENAME ( blank_top_bar.tif )
+     
+      XSIZE ( 640 )
+     
+      YSIZE ( 64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( bar_title )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 20 )
+    
+     YPOS ( 50 )
+    
+     SPEC (
+       FONT ( Gothic_13 )
+     
+      CHILDOF ( letterbar )
+     
+      CAPTION ( OPTIONS )
+     
+      SCALE ( 0.950000 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( letterbar_bottom )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 0 )
+    
+     YPOS ( 384 )
+    
+     SPEC (
+       FILENAME ( common_bar_bottom.tif )
+     
+      SIZE ( 640  64 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( TabSmWindow )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 195 )
+    
+     YPOS ( 70 )
+    
+     SPEC (
+       XSIZE ( 435 )
+     
+      YSIZE ( 30 )
+     
+      FILENAME ( infoWin1.tif )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( dogtags )
+    
+     TYPE ( IMAGE )
+    
+     XPOS ( 360 )
+    
+     YPOS ( 320 )
+    
+     SPEC (
+       FILENAME ( dogtags.tif )
+     
+      SIZE ( 256  128 )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( instText )
+    
+     TYPE ( TEXT )
+    
+     XPOS ( 205 )
+    
+     YPOS ( 90 )
+    
+     SPEC (
+       COLOR ( 255.000000  104.000000  51.000000 )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( " " )
+     
+     )
+    
+    )
+   
+   )
+  
+   ANIMATIONS ((
+      EVENT ( ONSTART )
+    
+     ANIMATION ( Call_Music )
+    
+    )
+   
+   (
+      BUTTON ( TRIANGLE )
+    
+     ANIMATION ( check_then_save_and_leave )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( OnAudioAct )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( letterbar_slide_down )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( bottom_bar_slide_up )
+    
+    )
+   
+   (
+      EVENT ( MEMCARD_ERROR )
+    
+     ANIMATION ( handle_memcard_error )
+    
+    )
+   
+   (
+      EVENT ( ONSTART )
+    
+     ANIMATION ( has_memcard_changed )
+    
+    )
+   
+   )
+  
+   CONTROLS ((
+      NAME ( AudioOpBtn )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 70 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 180 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 22 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      SCALE ( 0.400000 )
+     
+      CAPTION ( "AUDIO OPTIONS" )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnAudioAct )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgOptions_Audio.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( VideoOpBtn )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 100 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 180 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 22 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      CAPTION ( "VIDEO OPTIONS" )
+     
+      SCALE ( 0.400000 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnVideoAct )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgOptions_Video.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ControlOpBtn )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 130 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 180 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 22 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      CAPTION ( "CONTROLLER OPTIONS" )
+     
+      SCALE ( 0.400000 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnContSelAct )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( goto_menu )
+       
+        ARGUMENT ( dlgControllerSelection.rdr )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( ControlPresetBtn )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 160 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 180 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 22 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      CAPTION ( "CONTROLLER PRESETS" )
+     
+      SCALE ( 0.400000 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( OnContPreAct )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( GoToPresets )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   (
+      NAME ( SaveAndLeaveBtn )
+    
+     XPOS ( 10 )
+    
+     YPOS ( 220 )
+    
+     TYPE ( BUTTON )
+    
+     SPEC (
+       XSIZE ( 180 )
+     
+      YSIZE ( 30 )
+     
+      XOFFSET ( 10 )
+     
+      YOFFSET ( 22 )
+     
+      PRESSED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 255.000000  74.000000  8.000000 )
+      
+      )
+     
+      NORMAL (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 128.000000  128.000000  128.000000 )
+      
+      )
+     
+      ACTIVE (
+        IMAGE ( brown_back_real.tif )
+      
+       TEXT_GLOW (
+         RANGE ( 0.500000  1.000000 )
+       
+        TIME ( 0.500000 )
+       
+       )
+      
+       TEXT_COLOR ( 255.000000  204.000000  51.000000 )
+      
+      )
+     
+      DISABLED (
+        IMAGE ( brown_back.tif )
+      
+       TEXT_COLOR ( 50  50  50 )
+      
+      )
+     
+      CAPTION ( RETURN )
+     
+      SCALE ( 0.400000 )
+     
+      ANIMATIONS ((
+         EVENT ( ONACTIVATE )
+       
+        ANIMATION ( ReturnToMainMenu )
+       
+       )
+      
+      (
+         BUTTON ( CROSS )
+       
+        ANIMATION ( check_then_save_and_leave )
+       
+       )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+  ANIMATION_DEFINITIONS (
+    ANIMATION_LIST (
+     ANIMATION_DEFINITION_FILE ( uianim.rdr )
+   
+    ANIMATION_DEFINITION_FILE ( UIMemCardAnim.rdr )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( GoToStickSetup )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgStickSetup.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( GoToPresets )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgControllerPresets.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( Call_Music )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       IF (
+        VALVE ( OptionsMenuChanged  ==  0 )
+      
+      )
+     
+      VALVE ( OptionsHaveNotChanged  =  1 )
+     
+      ELSE ()
+     
+      VALVE ( OptionsHaveNotChanged  =  0 )
+     
+      ENDIF ()
+     
+      VALVE ( CameFromNewGameButton  =  0 )
+     
+      IF (
+        VALVE ( BeenPastOptions  ==  1 )
+      
+      )
+     
+      ELSE ()
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( ON )
+      
+      )
+     
+      SOUND (
+        NAME ( MUS_MENU_THEME )
+      
+       START ()
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( check_then_save_and_leave )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( BeenPastOptions  =  0 )
+     
+      ui::UI_COMMAND (
+        TYPE ( StopAllSounds )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( VagStreaming )
+      
+       ARGUMENT ( OFF )
+      
+      )
+     
+      IF (
+        VALVE ( OptionsMenuChanged  ==  1 )
+      
+      )
+     
+      CALL_ANIMATION (
+        NAME ( save_and_leave )
+      
+       WAIT_FOR_COMPLETION ()
+      
+      )
+     
+      ELSE ()
+     
+      CALL_ANIMATION (
+        NAME ( menu_fade_down )
+      
+      )
+     
+      ui::UI_COMMAND (
+        TYPE ( SWITCHMENU )
+      
+       ARGUMENT ( dlgMenu.rdr )
+      
+      )
+     
+      ENDIF ()
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnAudioAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( CameFromOther  =  1 )
+     
+      ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to adjust audio options." )
+      
+      )
+     
+      VALVE ( FirstAudio  =  0 )
+     
+      VALVE ( FirstVideo  =  0 )
+     
+      VALVE ( FirstController  =  0 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( handle_memcard_error )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       VALVE ( memcard_error  =  1 )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnVideoAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to adjust video options." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( ReturnToMainMenu )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to return to main menu." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnContSelAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to adjust controller options." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( OnContPreAct )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       ui::UI_COMMAND (
+        NODE ( MENU  instText )
+      
+       CAPTION ( "Press the X button to select controller presets." )
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( bottom_bar_slide_up )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar_bottom )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar_bottom )
+      
+       TRANSLATE_FROM ( 0.000000  448.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  384.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+      SOUND (
+        NAME ( SND_METAL )
+      
+       START ()
+      
+      )
+     
+     )
+    
+    )
+   
+    ANIMATION_DEFINITION (
+      ANIMATION_NAME ( letterbar_slide_down )
+    
+     ACTIVATION ( ON_CALL )
+    
+     SEQUENCE_DEFINITION (
+       OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( INACTIVE )
+      
+      )
+     
+      WAIT ( 0.400000 )
+     
+      OBJECT_ACTIVE_STATE (
+        NAME ( MENU  letterbar )
+      
+       STATE ( ACTIVE )
+      
+      )
+     
+      OBJECT_MOTION_FROM_TO (
+        NAME ( MENU  letterbar )
+      
+       TRANSLATE_FROM ( 0.000000  -64.000000  0.000000 )
+      
+       TRANSLATE_TO ( 0.000000  0.000000  0.000000 )
+      
+       RUN_TIME ( 0.250000 )
+      
+      )
+     
+     )
+    
+    )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

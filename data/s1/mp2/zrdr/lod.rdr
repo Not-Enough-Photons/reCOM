@@ -1,0 +1,93 @@
+((
+   LOD_Definititions ((
+     midgrate  nearFade ( 0  0 )
+   
+    farFade ( 360  360 )
+   
+   )
+  
+  (
+     lowgrate  nearFade ( 230  230 )
+   
+    farFade ( 500  500 )
+   
+   )
+  
+  (
+     ramp_parts  nearFade ( 0  0 )
+   
+    farFade ( 420  440 )
+   
+   )
+  
+  (
+     railings_high  nearFade ( 0  0 )
+   
+    farFade ( 100  120 )
+   
+   )
+  
+  (
+     railings_low  nearFade ( 100  120 )
+   
+    farFade ( 420  440 )
+   
+   )
+  
+  (
+     tankrails_high  nearFade ( 0  0 )
+   
+    farFade ( 420  440 )
+   
+   )
+  
+  (
+     furniture  nearFade ( 0  0 )
+   
+    farFade ( 250  260 )
+   
+   )
+  
+  )
+ 
+  LOD_Connection ((
+     LODTYPE1  midgrate  ObjectList ( grate_midlod )
+   
+   )
+  
+  (
+     LODTYPE1  lowgrate  ObjectList ( grate_lowlod )
+   
+   )
+  
+  (
+     LODTYPE1  railings_high  ObjectList ( railstraithi1  railramphigh1  railcornerhi1  railstraitshorthi  railpostfiller )
+   
+   )
+  
+  (
+     LODTYPE1  tankrails_high  ObjectList ( tankrailsupport  tankrailbarshi )
+   
+   )
+  
+  (
+     LODTYPE1  railings_low  ObjectList ( railstraitlo1  railramplo1  railcornerlo1  railstraitshortlo  tankrailbarslo )
+   
+   )
+  
+  (
+     LODTYPE1  ramp_parts  ObjectList ( rampland5  rampland6  rampup6  rampupn8  rampup5  rampup3  railramp_d6  railramp_sl3  railramp_sl5  railramp_sl6  railramp_sl7  railramp_sl8n  railramp_sr3  railramp_sr5 )
+   
+   )
+  
+  (
+     LODTYPE1  furniture  ObjectList ( chair_office )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

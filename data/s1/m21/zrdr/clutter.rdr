@@ -1,0 +1,652 @@
+(
+  template (
+   template_name ( ground  g1 )
+ 
+  template_model (
+    base_name ( bush_vol )
+  
+  )
+ 
+  template_model (
+    base_name ( fern )
+  
+   max_slope ( 80.000000 )
+  
+   set_region ()
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.600000 )
+  
+   far_fade_range (
+     min ( 480  480 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( bush03 )
+  
+   choices (( 0.600000  bush03 )
+   
+   ( 0.400000  bush02 )
+   
+   )
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.500000 )
+  
+   far_fade_range (
+     min ( 450  450 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( bush04 )
+  
+   max_slope ( 80.000000 )
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.500000 )
+  
+   far_fade_range (
+     min ( 450.000000  450.000000 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( congo2_bush8flt )
+  
+   set_region ()
+  
+   max_slope ( 80.000000 )
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.000000 )
+  
+   far_fade_range (
+     min ( 450.000000  450.000000 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( bananatree )
+  
+   set_region ()
+  
+   max_slope ( 80.000000 )
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.000000 )
+  
+   far_fade_range (
+     min ( 480.000000  480.000000 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( banana_bush )
+  
+   set_region ()
+  
+   max_slope ( 80.000000 )
+  
+   uv_range (
+     u ( -0.010000  0.010000 )
+   
+    v ( -0.010000  0.010000 )
+   
+   )
+  
+   scale_range ( 0.700000  1.000000 )
+  
+   far_fade_range (
+     min ( 450.000000  450.000000 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ clutter_converts ( congo_treestand  congo2_tree2  congo2_tree3  congo2_tree3a  congo2_tree3b  congo2_bush8flt  canapy_leaves  canopy_trunk  canopy_trunk2  tree_bent01  tree_bent02  vines2  rock_branch  rock_branch_noleaf  rock_bush  bananatree  bush02  bush03  bush05  stump01  test_bush  leafy_bush  green_bush  rock_branch02  dead_bush  palm_bush )
+
+ template (
+   template_name ( converts )
+ 
+  template_model (
+    base_name ( congo2_tree2 )
+  
+   far_fade_range (
+     min ( 450  450 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   max_slope ( 30 )
+  
+  )
+ 
+  template_model (
+    base_name ( test_bush )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 425  425 )
+   
+    max ( 450.000000  450.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 25  25 )
+   
+    max ( 35.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( leafy_bush )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 425  425 )
+   
+    max ( 450.000000  450.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 25  25 )
+   
+    max ( 35.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( green_bush )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 425  425 )
+   
+    max ( 450.000000  450.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 25  25 )
+   
+    max ( 35.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( bush05 )
+  
+   far_fade_range (
+     min ( 450  450 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 25  25 )
+   
+    max ( 35.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( congo_treestand )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+   max_slope ( 30 )
+  
+  )
+ 
+  template_model (
+    base_name ( congo2_tree3 )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   choices (( 0.400000  fern )
+   
+   ( 0.600000  congo2_tree3 )
+   
+   )
+  
+   max_slope ( 30 )
+  
+   align_normal ()
+  
+  )
+ 
+  template_model (
+    base_name ( congo2_tree3a )
+  
+   far_fade_range (
+     min ( 450  450 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   choices (( 0.400000  congo2_tree3 )
+   
+   ( 0.600000  congo2_tree3a )
+   
+   )
+  
+   max_slope ( 30 )
+  
+   align_normal ()
+  
+  )
+ 
+  template_model (
+    base_name ( congo2_tree3b )
+  
+   far_fade_range (
+     min ( 450  450 )
+   
+    max ( 500.000000  500.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   max_slope ( 30 )
+  
+   align_normal ()
+  
+  )
+ 
+  template_model (
+    base_name ( canapy_leaves )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( canopy_trunk )
+  
+   far_fade_range (
+     min ( 600  600 )
+   
+    max ( 650.000000  650.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( canopy_trunk2 )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( tree_bent01 )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( tree_bent02 )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( stump01 )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( vines2 )
+  
+   far_fade_range (
+     min ( 500  500 )
+   
+    max ( 600.000000  600.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( rock_branch )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600  600 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( rock_branch_noleaf )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600  600 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( rock_bush )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600  600 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( rock_branch02 )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600  600 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( dead_bush )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600  600 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( palm_bush )
+  
+   near_fade_range (
+     min ( 18  18 )
+   
+    max ( 30.000000  30.000000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 550  550 )
+   
+    max ( 600  600 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

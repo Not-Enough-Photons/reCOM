@@ -1,0 +1,512 @@
+(
+  template (
+   template_name ( congo3r_ground1  g4 )
+ 
+  template_model (
+    base_name ( grass1 )
+  
+   choices (( 0.500000  grass1 )
+   
+   ( 0.500000  crap )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 30.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.950000  1.500000 )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( grass2 )
+  
+   choices (( 0.500000  grass2 )
+   
+   ( 0.500000  crap )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 30.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.950000  1.500000 )
+  
+   far_fade_range (
+     min ( 300.000000  325.000000 )
+   
+    max ( 425.000000  450.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( grass4 )
+  
+   choices (( 0.500000  grass4 )
+   
+   ( 0.500000  crap )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 30.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.950000  1.500000 )
+  
+   far_fade_range (
+     min ( 200.000000  225.000000 )
+   
+    max ( 225.000000  250.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( fern )
+  
+   choices (( 0.700000  fern )
+   
+   ( 0.300000  crap )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 30.000000 )
+  
+   align_normal ()
+  
+   far_fade_range (
+     min ( 300.000000  325.000000 )
+   
+    max ( 325.000000  350.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( fern_sm )
+  
+   choices (( 0.700000  fern_sm )
+   
+   ( 0.300000  crap )
+   
+   )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 30.000000 )
+  
+   align_normal ()
+  
+   far_fade_range (
+     min ( 200.000000  225.000000 )
+   
+    max ( 225.000000  250.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+ clutter_converts ( bananatree  bananatree2  grass2  junglecanopy_vines  junglecanopy_vines2  junglereeds  jungletree_cliff_facade  jungletree_dead_sm  jungletree_dead3  pampas_grass  post_grass  vol_thicket  vol_thicket_tall )
+
+ template (
+   template_name ( psuedo_template )
+ 
+  template_model (
+    base_name ( bananatree )
+  
+   far_fade_range (
+     min ( 200.000000  225.000000 )
+   
+    max ( 225.000000  250.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( bananatree2 )
+  
+   far_fade_range (
+     min ( 200.000000  225.000000 )
+   
+    max ( 225.000000  250.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( grass2 )
+  
+   min_slope ( 0.000000 )
+  
+   max_slope ( 30.000000 )
+  
+   align_normal ()
+  
+   scale_range ( 0.700000  1.000000 )
+  
+   far_fade_range (
+     min ( 300.000000  325.000000 )
+   
+    max ( 425.000000  450.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   rotation_range (
+     min ( 0.000000  -30.000000  0.000000 )
+   
+    max ( 0.000000  30.000000  0.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( junglecanopy_vines )
+  
+   uv_range (
+     u ( -0.100000  0.100000 )
+   
+    v ( -0.100000  0.100000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( junglecanopy_vines2 )
+  
+   uv_range (
+     u ( -0.100000  0.100000 )
+   
+    v ( -0.100000  0.100000 )
+   
+   )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( junglereeds )
+  
+   far_fade_range (
+     min ( 320.000000  341.000000 )
+   
+    max ( 362.000000  363.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( jungletree_cliff_facade )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( jungletree_dead_sm )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( jungletree_dead3 )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( pampas_grass )
+  
+   far_fade_range (
+     min ( 200.000000  225.000000 )
+   
+    max ( 225.000000  250.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  30.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( post_grass )
+  
+   far_fade_range (
+     min ( 420.000000  441.000000 )
+   
+    max ( 462.000000  463.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( vol_thicket )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+  )
+ 
+  template_model (
+    base_name ( vol_thicket_tall )
+  
+   far_fade_range (
+     min ( 500.000000  550.000000 )
+   
+    max ( 550.000000  575.000000 )
+   
+   )
+  
+   near_fade_range (
+     min ( 0.000000  0.000000 )
+   
+    max ( 30.000000  35.000000 )
+   
+   )
+  
+   repel (
+     max_angle ( 10.000000  20.000000 )
+   
+   )
+  
+  )
+ 
+ )
+
+)
+

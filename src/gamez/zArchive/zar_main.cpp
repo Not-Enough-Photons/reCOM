@@ -72,7 +72,7 @@ namespace zar
 			m_size = key_t.m_size;
 			m_offset = key_t.m_offset;
 		}
-
+		
 		while (key_t.m_count != 0)
 		{
 			CKey* archiveKey = archive->NewKey(NULL);
@@ -597,6 +597,154 @@ namespace zar
 		return success;
 	}
 
+	bool CZAR::Open_V2(const char* name, s32 version, u32 mode, size_t padded_size)
+	{
+		if (name == NULL)
+		{
+			return false;
+		}
+
+		if (m_pFile == NULL)
+		{
+			m_pFileAlloc = new CFileIO();
+			m_pFile = new CBufferIO();
+		}
+
+		bool isOpen = m_pFileAlloc->Open(name);
+
+		if (!isOpen)
+		{
+			return false;
+		}
+
+		if (m_filename && m_filename != "DEFAULT_ZAR_NAME")
+		{
+			if (m_filename == name)
+			{
+				m_data_padded = padded_size;
+
+				bool success = ReadDirectory_V2(version, mode);
+
+				if (success)
+				{
+					m_tail.appversion = version;
+				}
+				else
+				{
+					isOpen = false;
+
+					if (m_pFile != NULL)
+					{
+						isOpen = m_pFile->IsOpen();
+					}
+
+					if (isOpen)
+					{
+						isOpen = false;
+
+						if (m_pFile == NULL)
+						{
+							isOpen = m_pFile->IsOpen();
+						}
+
+						if (isOpen && m_modified)
+						{
+							WriteDirectory();
+							m_modified = false;
+						}
+					}
+
+					if (m_pFileAlloc == NULL)
+					{
+						if (m_pFile != NULL)
+						{
+							m_pFile->Close();
+						}
+					}
+					else
+					{
+						m_pFileAlloc->Close();
+						delete m_pFileAlloc;
+						m_pFileAlloc = NULL;
+						m_pFile = NULL;
+					}
+
+					m_key_buffer.clear();
+					m_root->erase(m_root->begin(), m_root->end());
+					m_stable->Destroy();
+				}
+			}
+
+			zfree(m_filename);
+			m_filename = NULL;
+		}
+
+		if (name == NULL && name == "DEFAULT_ZAR_NAME")
+		{
+			m_filename = "DEFAULT_ZAR_NAME";
+		}
+		else
+		{
+			m_filename = strdup(name);
+		}
+
+		m_data_padded = padded_size;
+
+		bool success = ReadDirectory_V2(version, mode);
+
+		if (success)
+		{
+			m_tail.appversion = version;
+		}
+		else
+		{
+			isOpen = false;
+
+			if (m_pFile != NULL)
+			{
+				isOpen = m_pFile->IsOpen();
+			}
+
+			if (isOpen)
+			{
+				isOpen = false;
+
+				if (m_pFile == NULL)
+				{
+					isOpen = m_pFile->IsOpen();
+				}
+
+				if (isOpen && m_modified)
+				{
+					WriteDirectory();
+					m_modified = false;
+				}
+			}
+
+			if (m_pFileAlloc == NULL)
+			{
+				if (m_pFile != NULL)
+				{
+					m_pFile->Close();
+				}
+			}
+			else
+			{
+				m_pFileAlloc->Close();
+				delete m_pFileAlloc;
+				m_pFileAlloc = NULL;
+				m_pFile = NULL;
+			}
+
+			m_key_buffer.clear();
+			m_root->erase(m_root->begin(), m_root->end());
+			m_stable->Destroy();
+		}
+
+		return success;
+	}
+
+
 	bool CZAR::ReOpen(s32 appver, s32 mode)
 	{
 		if (m_pFileAlloc == NULL)
@@ -911,7 +1059,7 @@ namespace zar
 
 	bool CZAR::ReadDirectory_V2(s32 appver, u32 mode)
 	{
-		s32 alignment = 0;
+		s32 padding = 0;
 		s32 key_ofs = 0;
 		
 		bool success = false;
@@ -943,7 +1091,7 @@ namespace zar
 		if (size == sizeof(HEAD) && m_head.version == ZAR_VERSION_2)
 		{
 			s32 stable_size = m_head.stable_size;
-			void* stable_ptr = malloc(stable_size);
+			void* stable_ptr = zmalloc(stable_size);
 
 			m_pFileAlloc->fread(stable_ptr, stable_size);
 
@@ -955,9 +1103,8 @@ namespace zar
 			s32 ofs = m_head.stable_ofs;
 			m_key_buffer.clear();
 			m_key_buffer.reserve(m_head.key_count);
-
-			CKey* root_key = m_root;
-			root_key->erase(root_key->begin(), root_key->end());
+			
+			m_root->erase(m_root->begin(), m_root->end());
 
 			CBufferIO bufferIO;
 
@@ -972,28 +1119,25 @@ namespace zar
 			success = m_root->Read(this, &bufferIO, (s64)stable_ptr - ofs);
 			bufferIO.Close();
 
-			alignment = m_head.alignment;
+			padding = m_head.padding;
 			key_ofs = key_size + stable_size + sizeof(HEAD);
-			s32 calc_alignment = key_ofs % alignment;
-
+			s32 calc_alignment = key_ofs % padding;
+	
 			if (calc_alignment == 0)
 			{
-				alignment = 0;
+				padding = 0;
 			}
 			else
 			{
-				alignment = alignment - calc_alignment;
+				padding = padding - calc_alignment;
 			}
-
-			m_pFileAlloc->fseek(alignment, SEEK_CUR);
-			
-			m_databuffer_size = m_head.offset;
-			size = m_databuffer_size;
 			
 			if (size != 0)
 			{
-				m_databuffer = malloc(size);
-				m_rootOffset = alignment + key_ofs;
+				m_databuffer_size = m_head.offset;
+				m_databuffer = zmalloc(m_databuffer_size);
+				m_rootOffset = padding + key_ofs;
+				m_pFileAlloc->fseek(m_rootOffset, SEEK_CUR);
 				m_pFileAlloc->fread(m_databuffer, m_databuffer_size);
 				Unsecurify(m_databuffer, m_databuffer_size);
 			
@@ -1015,7 +1159,7 @@ namespace zar
 		}
 		else
 		{
-			m_rootOffset = alignment + key_ofs;
+			m_rootOffset = padding + key_ofs;
 		}
 
 		return success;
