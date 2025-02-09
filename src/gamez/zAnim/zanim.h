@@ -500,9 +500,10 @@ public:
 	void Open() {}
 	bool InitCommands();
 	_zanim_cmd_hdr* AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
-public:
+	_zanim_cmd_hdr* AnimParseExpression(_zanim_cmd_hdr* header, _zrdr* reader);
+	
 	static bool m_LoadFromZAR;
-private:
+
 	bool m_IsOpen;
 	bool m_IsStarted;
 
@@ -544,6 +545,12 @@ private:
 
 	s32 m_RunningAnimCount;
 	s32 m_CurrentFrame;
+};
+
+class CZAnimExpression
+{
+public:
+	static bool IsOperator(const char* operation);
 };
 
 class CActiveAnimPool
@@ -637,13 +644,6 @@ private:
 	f32 m_downT;
 	f32 m_currT;
 };
-
-
-//
-// 	_zanim_cmd_hdr*(*parser)(_zrdr*),
-// 	void(*begin)(_zanim_cmd_hdr*),
-// 	bool(*tick)(_zanim_cmd_hdr*, f32*),
-// 	void(*end)(_zanim_cmd_hdr*));
 
 _zanim_cmd_hdr* zAnimLoad_If(_zrdr*);
 _zanim_cmd_hdr* zAnimLoad_Else(_zrdr*);
