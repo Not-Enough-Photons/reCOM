@@ -57,7 +57,36 @@ bool CZAnimMain::InitCommands()
 	ZAnim.AddCmd("OBJECT_ACTIVE_STATE", zAnimLoadObjectActiveState, NULL, zAnimObjectActiveStateTick, NULL);
 	ZAnim.AddCmd("OBJECT_TRANSLATE_STATE", zAnimLoadObjectTranslateState, NULL, zAnimObjectTranslateStateTick, NULL);
 	ZAnim.AddCmd("OBJECT_ROTATE_STATE", zAnimLoadObjectRotateState, NULL, zAnimObjectRotateStateTick, NULL);
-	ZAnim.AddCmd("OBJECT_MOTION", zAnimLoadObjectMotion, NULL, zAnimObjectMotionTick, NULL);
+	ZAnim.AddCmd("OBJECT_MOTION", zAnimLoadObjectMotion, zAnimObjectMotionBegin, zAnimObjectMotionTick, NULL);
+	ZAnim.AddCmd("OBJECT_MOTION_FROM_TO", zAnimLoadObjectMotionFromTo, zAnimObjectMotionFromToBegin, zAnimObjectMotionFromToTick, NULL);
+	ZAnim.AddCmd("OBJECT_OPACITY_FROM_TO", zAnimLoadObjectOpacityFromTo, zAnimObjectOpacityFromToBegin, zAnimObjectOpacityFromToTick, NULL);
+	ZAnim.AddCmd("OBJECT_MOTION_SI_SCRIPT", zAnimLoadObjectMotionSIScript, zAnimMultiObjectMotionScriptBegin, zAnimMultiObjectMotionScriptTick, NULL);
+	ZAnim.AddCmd("PARTICLE_SOURCE", zAnimLoadParticleSource, NULL, zAnimParticleSourceTick, NULL);
+	ZAnim.AddCmd("CAMERA", zAnimLoadCamera, zAnimCameraBegin, zAnimCameraTick, NULL);
+	ZAnim.AddCmd("DESTRUCTION_SOURCE", zAnimLoadDestructor, NULL, zAnimDestructorTick, NULL);
+	ZAnim.AddCmd("SOUND", zAnimLoadSound, NULL, zAnimSoundTick, NULL);
+	ZAnim.AddCmd("LIGHT", zAnimLoadLight, NULL, zAnimLightTick, NULL);
+	ZAnim.AddCmd("WHILE", zAnimLoadWhile, NULL, zAnimWhileTick, NULL);
+
+	ZAnim.m_cmd_endwhile = *ZAnim.AddCmd("END_WHILE", zAnimLoadEndWhile, NULL, zAnimEndWhileTick, NULL);
+	ZAnim.m_cmd_ExprOperator = *ZAnim.AddCmd("EXPRESSION", NULL, NULL, NULL, NULL);
+
+	ZAnim.AddCmd("BREAK", zAnimLoadBreak, NULL, zAnimBreakTick, NULL);
+	ZAnim.AddCmd("CALL_ANIMATION", zAnimLoadCallAnim, zAnimCallAnimBegin, zAnimCallAnimTick, NULL);
+	ZAnim.AddCmd("STOP_ANIMATION", zAnimLoadStopAnim, NULL, zAnimStopAnimTick, NULL);
+	ZAnim.AddCmd("PAUSE_ANIMATION", zAnimLoadPauseAnim, NULL, zAnimPauseAnimTick, NULL);
+	ZAnim.AddCmd("RESUME_ANIMATION", zAnimLoadResumeAnim, NULL, zAnimResumeAnimTick, NULL);
+	ZAnim.AddCmd("INVALIDATE_ANIMATION", zAnimLoadInvalidateAnim, NULL, zAnimInvalidateAnimTick, NULL);
+	ZAnim.AddCmd("CALL_SEQUENCE", zAnimLoadCallSequence, NULL, zAnimCallSequenceTick, NULL);
+	ZAnim.AddCmd("STOP_SEQUENCE", zAnimLoadStopSequence, NULL, zAnimStopSequenceTick, NULL);
+	ZAnim.AddCmd("DEBUG", zAnimLoadDebug, NULL, zAnimDebugTick, NULL);
+	ZAnim.AddCmd("OBJECT_ADD_CHILD", zAnimLoadObjectAddChild, NULL, zAnimObjectAddChildTick, NULL);
+	ZAnim.AddCmd("OBJECT_DELETE_CHILD", zAnimLoadObjectDeleteChild, NULL, zAnimObjectDeleteChildTick, NULL);
+	ZAnim.AddCmd("MESSAGE", zAnimLoadMessage, NULL, zAnimMessageTick, NULL);
+	ZAnim.AddCmd("TIMER", zAnimLoadTimer, NULL, zAnimTimerTick, NULL);
+	ZAnim.AddCmd("FIRE_WEAPON", zAnimLoadFireWeapon, NULL, zAnimFireWeaponTick, NULL);
+	ZAnim.AddCmd("ui::UI_COMMAND", zAnimLoadUIMenu, NULL, zAnimUIMenuTick, NULL);
+	ZAnim.AddCmd("ui::UI_APP_COMMAND", zAnimLoadUIAppMenu, NULL, zAnimUIAppMenuTick, NULL);
 }
 
 _zanim_cmd_hdr* CZAnimMain::AddCmd(const char* name,

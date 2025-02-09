@@ -659,6 +659,7 @@ _zanim_cmd_hdr* zAnimLoadObjectAddChild(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadObjectDeleteChild(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadObjectMotion(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadObjectMotionFromTo(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectMotionSIScript(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadObjectMotionSIScriptForObject(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadObjectTranslateState(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadObjectRotateState(_zrdr*);
@@ -668,9 +669,11 @@ _zanim_cmd_hdr* zAnimLoadObjectBlendMode(_zrdr*);
 
 _zanim_cmd_hdr* zAnimLoadNodeActive(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadNodeRendered(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadLight(_zrdr*);
 
 _zanim_cmd_hdr* zAnimLoadAnimHealthTest(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadAnimLODTest(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadInvalidateAnim(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadCallAnim(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadCallSequence(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadCamera(_zrdr*);
@@ -678,6 +681,7 @@ _zanim_cmd_hdr* zAnimLoadDebug(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadDestructor(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadFail(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadFireWeapon(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadMessage(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadMotionSIScript(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadParticleSource(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadPauseAnim(_zrdr*);
@@ -688,13 +692,17 @@ _zanim_cmd_hdr* zAnimLoadSound(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadStopAnim(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadStopSequence(_zrdr*);
 _zanim_cmd_hdr* zAnimLoadTimer(_zrdr*);
+
+_zanim_cmd_hdr* zAnimLoadUIMenu(_zrdr*);
 _zanim_cmd_hdr* zAnimUIAppMenu(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadUIAppMenu(_zrdr*);
 
 void zAnimCallAnimBegin(_zanim_cmd_hdr*);
 void zAnimCameraBegin(_zanim_cmd_hdr*);
 void zAnimMultiObjectMotionScriptBegin(_zanim_cmd_hdr*);
 void zAnimWaitBegin(_zanim_cmd_hdr*);
 void zAnimObjectOpacityFromToBegin(_zanim_cmd_hdr*);
+void zAnimObjectMotionBegin(_zanim_cmd_hdr*);
 void zAnimObjectMotionFromToBegin(_zanim_cmd_hdr*);
 
 bool zAnimCallAnimTick(_zanim_cmd_hdr*, f32*);
@@ -715,7 +723,7 @@ bool zAnimLightTick(_zanim_cmd_hdr*, f32*);
 bool zAnimLODTestTick(_zanim_cmd_hdr*, f32*);
 bool zAnimLoopTick(_zanim_cmd_hdr*, f32*);
 bool zAnimMessageTick(_zanim_cmd_hdr*, f32*);
-bool zAnimMultiObjectMotinoScriptTick(_zanim_cmd_hdr*, f32*);
+bool zAnimMultiObjectMotionScriptTick(_zanim_cmd_hdr*, f32*);
 bool zAnimNodeActiveTick(_zanim_cmd_hdr*, f32*);
 bool zAnimNodeRenderedTick(_zanim_cmd_hdr*, f32*);
 bool zAnimObjectActiveStateTick(_zanim_cmd_hdr*, f32*);
