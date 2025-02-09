@@ -45,7 +45,7 @@ void CSnd::Init()
 	if (!vagArchiveIsOpen)
 	{
 		vagArchiveIsOpen = true;
-		m_vagArchive.Open("D:/RUN/SOUNDS/VAGSTORE.ZAR", 0, 33, 16);
+		m_vagArchive.Open_V2("F:/RUN/SOUNDS/VAGSTORE.ZAR", 0, 0x21, 16);
 	}
 }
 
@@ -137,7 +137,7 @@ void CSnd::LoadVAG(const char* name)
 
 	size_t size = key->GetSize();
 	u8* buffer = (u8*)zmalloc(size);
-	m_vagArchive.Fetch(key, buffer, size);
+	m_vagArchive.Fetch_V2(key, buffer, size);
 
 	CBufferIO io;
 	std::vector<s16> samples;

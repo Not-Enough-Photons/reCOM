@@ -26,7 +26,7 @@ namespace zar
 			{
 				s32 offset = key->m_offset;
 				size_t position = m_pFile->fseek(offset, SEEK_SET);
-	
+
 				success = offset == position;
 
 				if (success && size <= key->m_size)

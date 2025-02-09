@@ -219,7 +219,6 @@ struct BLENDABLE_ANIM
 	AnimType m_animtype;
 };
 
-
 struct zanim_cmd_index
 {
 	u8 cmd;
@@ -500,7 +499,7 @@ public:
 
 	void Open() {}
 	bool InitCommands();
-	u32 AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
+	_zanim_cmd_hdr* AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
 public:
 	static bool m_LoadFromZAR;
 private:
@@ -638,3 +637,108 @@ private:
 	f32 m_downT;
 	f32 m_currT;
 };
+
+
+//
+// 	_zanim_cmd_hdr*(*parser)(_zrdr*),
+// 	void(*begin)(_zanim_cmd_hdr*),
+// 	bool(*tick)(_zanim_cmd_hdr*, f32*),
+// 	void(*end)(_zanim_cmd_hdr*));
+
+_zanim_cmd_hdr* zAnimLoad_If(_zrdr*);
+_zanim_cmd_hdr* zAnimLoad_Else(_zrdr*);
+_zanim_cmd_hdr* zAnimLoad_ElseIf(_zrdr*);
+_zanim_cmd_hdr* zAnimLoad_EndIf(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadWhile(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadEndWhile(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadBreak(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadWait(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadLoop(_zrdr*);
+
+_zanim_cmd_hdr* zAnimLoadObjectAddChild(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectDeleteChild(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectMotion(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectMotionFromTo(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectMotionSIScriptForObject(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectTranslateState(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectRotateState(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectActiveState(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectOpacityFromTo(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadObjectBlendMode(_zrdr*);
+
+_zanim_cmd_hdr* zAnimLoadNodeActive(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadNodeRendered(_zrdr*);
+
+_zanim_cmd_hdr* zAnimLoadAnimHealthTest(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadAnimLODTest(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadCallAnim(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadCallSequence(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadCamera(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadDebug(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadDestructor(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadFail(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadFireWeapon(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadMotionSIScript(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadParticleSource(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadPauseAnim(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadRandomWeight(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadRangeTest(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadResumeAnim(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadSound(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadStopAnim(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadStopSequence(_zrdr*);
+_zanim_cmd_hdr* zAnimLoadTimer(_zrdr*);
+_zanim_cmd_hdr* zAnimUIAppMenu(_zrdr*);
+
+void zAnimCallAnimBegin(_zanim_cmd_hdr*);
+void zAnimCameraBegin(_zanim_cmd_hdr*);
+void zAnimMultiObjectMotionScriptBegin(_zanim_cmd_hdr*);
+void zAnimWaitBegin(_zanim_cmd_hdr*);
+void zAnimObjectOpacityFromToBegin(_zanim_cmd_hdr*);
+void zAnimObjectMotionFromToBegin(_zanim_cmd_hdr*);
+
+bool zAnimCallAnimTick(_zanim_cmd_hdr*, f32*);
+bool zAnimCallSequenceTick(_zanim_cmd_hdr*, f32*);
+bool zAnimCameraTick(_zanim_cmd_hdr*, f32*);
+bool zAnimBreakTick(_zanim_cmd_hdr*, f32*);
+bool zAnimIfTick(_zanim_cmd_hdr*, f32*);
+bool zAnimEndIfTick(_zanim_cmd_hdr*, f32*);
+bool zAnimGoToEndIf(_zanim_cmd_hdr*, f32*);
+bool zAnimFireWeaponTick(_zanim_cmd_hdr*, f32*);
+bool zAnimDebugTick(_zanim_cmd_hdr*, f32*);
+bool zAnimDestructorTick(_zanim_cmd_hdr*, f32*);
+bool zAnimEndWhileTick(_zanim_cmd_hdr*, f32*);
+bool zAnimFailTick(_zanim_cmd_hdr*, f32*);
+bool zAnimHealthTestTick(_zanim_cmd_hdr*, f32*);
+bool zAnimInvalidateAnimTick(_zanim_cmd_hdr*, f32*);
+bool zAnimLightTick(_zanim_cmd_hdr*, f32*);
+bool zAnimLODTestTick(_zanim_cmd_hdr*, f32*);
+bool zAnimLoopTick(_zanim_cmd_hdr*, f32*);
+bool zAnimMessageTick(_zanim_cmd_hdr*, f32*);
+bool zAnimMultiObjectMotinoScriptTick(_zanim_cmd_hdr*, f32*);
+bool zAnimNodeActiveTick(_zanim_cmd_hdr*, f32*);
+bool zAnimNodeRenderedTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectActiveStateTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectAddChildTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectBlendModeTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectDeleteChildTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectMotionFromToTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectMotionScriptTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectMotionTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectOpacityFromToTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectRotateStateTick(_zanim_cmd_hdr*, f32*);
+bool zAnimObjectTranslateStateTick(_zanim_cmd_hdr*, f32*);
+bool zAnimParticleSourceTick(_zanim_cmd_hdr*, f32*);
+bool zAnimPauseAnimTick(_zanim_cmd_hdr*, f32*);
+bool zAnimQuadAlignTick(_zanim_cmd_hdr*, f32*);
+bool zAnimRandomWeightTick(_zanim_cmd_hdr*, f32*);
+bool zAnimRangeTestTick(_zanim_cmd_hdr*, f32*);
+bool zAnimResumeAnimTick(_zanim_cmd_hdr*, f32*);
+bool zAnimSoundTick(_zanim_cmd_hdr*, f32*);
+bool zAnimStopAnimTick(_zanim_cmd_hdr*, f32*);
+bool zAnimStopSequenceTick(_zanim_cmd_hdr*, f32*);
+bool zAnimTimerTick(_zanim_cmd_hdr*, f32*);
+bool zAnimUIAppMenuTick(_zanim_cmd_hdr*, f32*);
+bool zAnimUIMenuTick(_zanim_cmd_hdr*, f32*);
+bool zAnimWaitTick(_zanim_cmd_hdr*, f32*);
+bool zAnimWhileTick(_zanim_cmd_hdr*, f32*);

@@ -1131,35 +1131,39 @@ namespace zar
 			{
 				padding = padding - calc_alignment;
 			}
-			
-			if (size != 0)
+
+			m_pFileAlloc->fseek(padding, SEEK_CUR);
+
+			if ((mode & 32) == 0)
 			{
-				m_databuffer_size = m_head.offset;
-				m_databuffer = zmalloc(m_databuffer_size);
-				m_rootOffset = padding + key_ofs;
-				m_pFileAlloc->fseek(m_rootOffset, SEEK_CUR);
-				m_pFileAlloc->fread(m_databuffer, m_databuffer_size);
-				Unsecurify(m_databuffer, m_databuffer_size);
-			
-				if (m_pFileAlloc != NULL)
+				if (size != 0)
 				{
-					m_pFileAlloc->Close();
-					delete m_pFileAlloc;
+					m_databuffer_size = m_head.offset;
+					m_databuffer = zmalloc(m_databuffer_size);
+					m_rootOffset = padding + key_ofs;
+					m_pFileAlloc->fread(m_databuffer, m_databuffer_size);
+					Unsecurify(m_databuffer, m_databuffer_size);
 			
-					m_pFile = NULL;
-					m_pFileAlloc = NULL;
+					if (m_pFileAlloc != NULL)
+					{
+						m_pFileAlloc->Close();
+						delete m_pFileAlloc;
 			
-					m_pFileAlloc = new CFileIO();
-					m_pFile = new CBufferIO();
+						m_pFile = NULL;
+						m_pFileAlloc = NULL;
 			
-					m_pFile->Open(m_databuffer, m_databuffer_size);
-					m_rootOffset = 0;
+						m_pFileAlloc = new CFileIO();
+						m_pFile = new CBufferIO();
+			
+						m_pFile->Open(m_databuffer, m_databuffer_size);
+						m_rootOffset = 0;
+					}
 				}
 			}
-		}
-		else
-		{
-			m_rootOffset = padding + key_ofs;
+			else
+			{
+				m_rootOffset = padding + key_ofs;
+			}
 		}
 
 		return success;
