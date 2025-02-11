@@ -10,8 +10,8 @@ project "fts"
 	flags { "MultiProcessorCompile" }
 
     includedirs {
-		"vendor",
-		"src"
+		"src",
+		"vendor"
 	}
 	
     libdirs { "lib" }
@@ -25,6 +25,8 @@ project "fts"
 		"src/gamez/**.h",
         "vendor/**.cpp",
 		"vendor/**.h",
+        "data/**.rdr",
+        "data/**.zrdr"
     }
 
     filter { "configurations:Debug" }

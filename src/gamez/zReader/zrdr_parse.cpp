@@ -422,8 +422,6 @@ _zrdr* CRdrFile::ReadArray()
 {
 	std::list<_zrdr*> arrays;
 	_zrdr* array = NULL;
-	_zrdr* parent = NULL;
-	_zrdr* child = NULL;
 	char token = 1;
 	bool endtag = false;
 	
@@ -431,45 +429,57 @@ _zrdr* CRdrFile::ReadArray()
 	{
 		token = ReadToken(&array);
 
-		if (token != 0)
+		if (token == 0)
 		{
-			if (array)
-			{
-				arrays.insert(arrays.begin(), array);
-			}
+			continue;
+		}
+		
+		if (array)
+		{
+			arrays.insert(arrays.begin(), array);
+		}
 
-			if (token == '(')
-			{
-				array = ReadArray();
-				arrays.insert(arrays.begin(), array);
-			}
-			else if (token == ')')
-			{
-				endtag = true;
-			}
+		// Is the token the start of a new tag?
+		if (token == '(')
+		{
+			arrays.insert(arrays.begin(), ReadArray());
+		}
+		// Is the token the end of the tag we're in?
+		else if (token == ')')
+		{
+			endtag = true;
 		}
 	}
 
-	parent = zrdr_alloc(sizeof(_zrdr), 1);
+	// Allocate a parent and child node
+	_zrdr* parent = zrdr_alloc(sizeof(_zrdr), 1);
 	parent->type = ZRDR_ARRAY;
 
-	child = zrdr_alloc(sizeof(_zrdr), arrays.size());
+	_zrdr* child = zrdr_alloc(sizeof(_zrdr), arrays.size());
 	child->type = ZRDR_INTEGER;
 
+	// Set parent node equal to child, and append the size of
+	// the child node to the first array element
 	parent->array = child;
 	parent->array->type = ZRDR_INTEGER;
 	parent->array->integer = arrays.size();
 
-	u32 i = 1;
-	
-	while (!arrays.empty())
+	// When working with readers of this version,
+	// The first index (0) is ALWAYS used to store the length.
+	// In future zReader versions this was put into the
+	// "length" bitfield.
+	// When iterating through them, target the second index to access
+	// the arrays.
+	for (u32 i = 1; i < parent->array->integer; i++)
 	{
+		// The arrangement of each zReader node should go as follows:
+		// Length, name, array
 		array = arrays.front();
 		arrays.erase(arrays.begin());
 
-		_zrdr* node = parent->array;
-		node[i] = *array;
-		i++;
+		parent->array[i] = *array;
+		parent->array[i].array[0] = *array;
+		zfree(array);
 	}
 	
 	return parent;

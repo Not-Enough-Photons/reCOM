@@ -66,7 +66,7 @@ public:
 	};
 
 	CEntity(TYPE type, zdb::CNode* node);
-public:
+
 	void IncrementAwareCounter();
 	void DecrementAwareCounter();
 

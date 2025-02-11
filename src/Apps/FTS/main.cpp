@@ -34,12 +34,12 @@ int main(int argc, char** argv)
 
 	zUtilInit(log);
 
-	theGame.StartEngine();
-	theGame.StartPlay();
+	// theGame.StartEngine();
+	// theGame.StartPlay();
 	
-	do
-	{
-		theGame.Tick(zVid.frameTime);
-	} 
-	while (true);
+	//do
+	//{
+		//theGame.Tick(zVid.frameTime);
+	//} 
+	//while (true);
 }
