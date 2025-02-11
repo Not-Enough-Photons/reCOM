@@ -11,7 +11,7 @@ bool LoadWorld(const char* name);
 int main(int argc, char** argv)
 {
 	process_arguments(argc, argv);
-	// zSysInit();
+	zSysInit();
 
 	if (postinit)
 	{

@@ -12,8 +12,6 @@ CWindow* theWindow = NULL;
 
 void zVid_Init(_zvid_mode mode)
 {
-	zVid_Assert(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_GAMEPAD | SDL_INIT_JOYSTICK), LONG_MAX, __FILE__, __LINE__);
-
 	zVid.runTime = 0.0f;
 	zVid.renderWidth = 1280;
 	zVid.renderHeight = 960;

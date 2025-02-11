@@ -105,7 +105,7 @@ public:
 class CRdrArchive : public zar::CZAR
 {
 public:
-	static s32 version;
+	static s32 version; 
 	
 	static std::list<zar::CZAR*> m_list;
 

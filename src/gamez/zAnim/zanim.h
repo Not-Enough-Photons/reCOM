@@ -12,6 +12,8 @@ class CZAnimMain;
 class CBlendable;
 class CAnimsByFP;
 
+class CSched_Manager;
+
 namespace zar
 {
 	class CZAR;
@@ -472,10 +474,9 @@ private:
 	f32 m_health_max;
 };
 
-class CZAnimSet
+class CZAnimExVector : public std::vector<CZAnimEx*>
 {
-public:
-	void GetName();
+	
 };
 
 class CZAnimZAR : public zar::CZAR {};
@@ -484,6 +485,30 @@ class CZAnimNameTable
 {
 public:
 
+};
+
+class CZAnimSet
+{
+public:
+	void GetName();
+
+	bool m_WasStarted;
+	bool m_IsStarted;
+	bool m_IsAvailable;
+
+	char* m_name;
+	CZAnimNameTable m_name_table;
+
+	s32 m_si_script_count;
+	_zanim_si_script* m_si_script;
+
+	CZAnimExVector* m_AnimExList;
+
+	s32 m_anim_count;
+	s32 m_anim_max;
+	CZAnim* m_anim_list;
+	// CZAnimSetSave* m_node_states;
+	CSched_Manager* m_task_scheduler;
 };
 
 class CZAnimNameIndexTable
@@ -495,12 +520,15 @@ public:
 class CZAnimMain : public _zanim_main_params
 {
 public:
-	bool SplitName(char* name, char** splitname);
+	char* SplitName(char* name, char** splitname);
 
 	void Open() {}
 	bool InitCommands();
 	_zanim_cmd_hdr* AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
 	_zanim_cmd_hdr* AnimParseExpression(_zanim_cmd_hdr* header, _zrdr* reader);
+
+	_zanim_cmd_set* GetCmdEntry(char* name, bool param_2);
+	_zanim_cmd_set* GetCmdSet(char* name, bool param_2);
 	
 	static bool m_LoadFromZAR;
 
@@ -526,7 +554,7 @@ public:
 
 	CZAnim* m_UserActionAnim;
 
-	// LOD m_Lod;
+	u8 m_Lod;
 	void(*m_network_activation_callback)();
 	void(*m_block_activation_callback)();
 
@@ -551,6 +579,7 @@ class CZAnimExpression
 {
 public:
 	static bool IsOperator(const char* operation);
+	static _zanim_cmd_hdr* NewCmd(const char* operation);
 };
 
 class CActiveAnimPool

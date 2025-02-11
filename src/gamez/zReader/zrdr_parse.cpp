@@ -5,6 +5,7 @@
 
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"
+#include "SDL3/SDL_egl.h"
 
 std::list<char*> zrdr_symbols;
 
@@ -396,7 +397,7 @@ CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 				rdrfile->array = array->array;
 
 				// Why is this here?
-				// zfree(array);
+				zfree(array);
 			}
 			// Syntax error check failed
 			else
@@ -421,12 +422,12 @@ _zrdr* CRdrFile::ReadArray()
 {
 	std::list<_zrdr*> arrays;
 	_zrdr* array = NULL;
-	_zrdr* rdr = NULL;
+	_zrdr* parent = NULL;
 	_zrdr* child = NULL;
 	char token = 1;
-	bool tag = false;
+	bool endtag = false;
 	
-	while (!tag && token != 0)
+	while (!endtag && token != 0)
 	{
 		token = ReadToken(&array);
 
@@ -444,35 +445,34 @@ _zrdr* CRdrFile::ReadArray()
 			}
 			else if (token == ')')
 			{
-				tag = true;
+				endtag = true;
 			}
 		}
 	}
 
-	rdr = zrdr_alloc(sizeof(_zrdr), 1);
-	rdr->type = ZRDR_ARRAY;
+	parent = zrdr_alloc(sizeof(_zrdr), 1);
+	parent->type = ZRDR_ARRAY;
 
 	child = zrdr_alloc(sizeof(_zrdr), arrays.size());
 	child->type = ZRDR_INTEGER;
 
-	rdr->array = child;
-	*rdr->string = 0x1;
-	rdr->array->integer = arrays.size();
+	parent->array = child;
+	parent->array->type = ZRDR_INTEGER;
+	parent->array->integer = arrays.size();
 
-	u32 i = 0;
+	u32 i = 1;
 	
 	while (!arrays.empty())
 	{
 		array = arrays.front();
 		arrays.erase(arrays.begin());
-		_zrdr* r = rdr->array;
-		r[i] = *array;
-		r->array = array;
+
+		_zrdr* node = parent->array;
+		node[i] = *array;
 		i++;
-		zfree(array);
 	}
 	
-	return rdr;
+	return parent;
 }
 
 char CRdrFile::ReadToken(_zrdr** array)

@@ -27,7 +27,7 @@ void ZARFileCallback(void* userdata, const char * const *filelist, int filter)
         zar_dir = *filelist;
         current_archive = new zar::CZAR();
 
-        if (!current_archive->Open_V2(zar_dir, 0, 0, 16))
+        if (!current_archive->Open(zar_dir, 0, 0, 16))
         {
             SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Failed to open ZAR file!");
         }
@@ -59,6 +59,12 @@ void DisplayKeys(zar::CKey* root, s32 depth)
         ImGui::PushID(depth * 1000 + i++);
         if (ImGui::TreeNode(key->GetName()))
         {
+            if (ImGui::Button("Open"))
+            {
+                auto k = current_archive->OpenKey(key);
+                current_archive->CloseKey(k);
+            }
+            
             if (key->size() > 1)
             {
                 DisplayKeys(key, depth + 1);
@@ -87,38 +93,7 @@ bool CZIMGUI::Tick_ZARDisplay(f32 dT)
                 zar::CKey* key = *it;
 
                 ImGui::PushID(i++);
-                if (ImGui::TreeNode(key->GetName()))
-                {
-                    if (ImGui::Button("Open"))
-                    {
-                        std::vector<u32*> vertices;
-                        _word128* data = NULL;
-                        u32 mtx_count = 0;
-                        _word128 meshword;
-                        char buf[256];
-                        sprintf_s(buf, 192, "%s", key->GetName());
-
-                        zar::CKey* meshkey = current_archive->OpenKey(buf);
-
-                        if (meshkey)
-                        {
-                            if (current_archive->FetchLIP(meshkey, (void**)&meshword))
-                            {
-                                u32 ofs = 0;
-			
-                                strcat_s(buf, "_START");
-
-                                current_archive->Fetch(buf, &ofs);
-                                current_archive->Fetch("mtx_count", &mtx_count);
-
-                                data = (_word128*)((s32)meshword.u32[0] + ofs);
-                            }
-
-                            current_archive->CloseKey(meshkey);
-                        }
-                    }
-                    ImGui::TreePop();
-                }
+                DisplayKeys(key, 0);
                 ImGui::PopID();
             }
         }

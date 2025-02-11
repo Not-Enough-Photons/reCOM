@@ -1,10 +1,32 @@
+#include "zsys.h"
+
 #include <iostream>
 #include <stdio.h>
 
-#include "zsys.h"
+#include <SDL3/SDL.h>
+#include <SDL3/SDL_iostream.h>
+#include <SDL3/SDL_dialog.h>
+
+#include "gamez/zReader/zrdr.h"
 
 bool postinited = false;
 size_t _HeapSize = 0;
+
+bool path_inited = false;
+const char* gamez_FilePath;
+
+void zVid_OpenFileDialog(void* userdata, const char * const *filelist, int filter)
+{
+	while (!path_inited)
+	{
+		if (strlen(*filelist) > 0)
+		{
+			path_inited = true;
+		}
+	}
+
+	gamez_FilePath = *filelist;
+}
 
 int InterruptDmacBusError()
 {
@@ -15,8 +37,11 @@ int InterruptDmacBusError()
 
 void zSysInit()
 {
-	size_t allocsize = zsys_FullAllocAndFree();
-	zSys.isT10K = 0x1ffffff < allocsize;
+	// size_t allocsize = zsys_FullAllocAndFree();
+	// zSys.isT10K = 0x1ffffff < allocsize;
+	u32 flags = SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_GAMEPAD | SDL_INIT_JOYSTICK;
+	zVid_Assert(SDL_Init(flags), LONG_MAX, __FILE__, __LINE__);
+	
 	zSys.isCdBoot = false;
 }
 

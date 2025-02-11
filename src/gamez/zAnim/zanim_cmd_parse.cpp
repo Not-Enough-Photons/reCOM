@@ -114,7 +114,7 @@ _zanim_cmd_hdr* CZAnimMain::AnimParseExpression(_zanim_cmd_hdr* header, _zrdr* r
 
                 if (i < reader_length)
                 {
-                    node = reader->array[i] + 1;
+                    node = &reader->array[i] + 1;
                 }
                 else
                 {
@@ -145,4 +145,6 @@ _zanim_cmd_hdr* zAnimLoad_If(_zrdr* reader)
         header->data_type = 0;
         header = ZAnim.AnimParseExpression(header, reader);
     }
+
+    return header;
 }
