@@ -72,7 +72,7 @@ Currently, I (adamdev) am the sole contributor to this project. I have been usin
 I have sourced a demo disk that contains all debug symbols (thank you Zero1UP!), which is indispensable to this project.
 
 # Disclaimer
-This repository **will NOT** contain any copyrighted assets. Models, textures, sounds will be sourced from a legal copy game disc.
+This repository **will NOT** contain any copyrighted assets. Models, textures, and sounds will be sourced from a legal copy game disc.
 
 If you are using this project to play SOCOM titles, you **MUST** own legal copies of the games for this to work. Borrowing does **NOT** count. Any technical assistance given will be for owners who legally own the game. We will not distribute illegal copies of the game with the project.
 
