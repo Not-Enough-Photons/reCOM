@@ -40,7 +40,7 @@ bool COurGame::StartEngine()
 	bool success = CGame::StartEngine();
 	if (success)
 	{
-		CVideo::RestoreImage("D:/RUN/LOADING.RAW", true);
+		CVideo::RestoreImage("E:/RUN/LOADING.RAW", true);
 		zVid_Swap(true);
 		zdb::CTexManager::m_texmanager->doAddBuffer("default", 0.0f, 0.0f);
 		

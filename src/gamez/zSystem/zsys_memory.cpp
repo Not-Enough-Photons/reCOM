@@ -8,24 +8,41 @@
 #include <SDL3/SDL_dialog.h>
 
 #include "gamez/zReader/zrdr.h"
+#include "gamez/zVideo/zvid.h"
 
 bool postinited = false;
 size_t _HeapSize = 0;
 
+bool path_failed = false;
 bool path_inited = false;
 const char* gamez_FilePath;
 
-void zVid_OpenFileDialog(void* userdata, const char * const *filelist, int filter)
-{
-	while (!path_inited)
-	{
-		if (strlen(*filelist) > 0)
-		{
-			path_inited = true;
-		}
-	}
+SDL_Thread* file_thread;
 
-	gamez_FilePath = *filelist;
+void zSys_OpenFileDialog(void* userdata, const char * const *filelist, int filter)
+{
+	// I have to find some way to block the main thread -
+	// and wait for our file selection to be finished.
+	if (!*filelist)
+	{
+		path_inited = false;
+		gamez_FilePath = NULL;
+		return;
+	}
+	
+	size_t length = strlen(*filelist);
+	
+	if (length > 0)
+	{
+		path_inited = true;
+		gamez_FilePath = *filelist;
+	}
+	else
+	{
+		path_failed = true;
+		path_failed = false;
+		gamez_FilePath = NULL;
+	}
 }
 
 int InterruptDmacBusError()
@@ -77,6 +94,49 @@ void zSysPostInit()
 	if (!postinited)
 	{
 		postinited = true;
+	}
+
+	file_thread = SDL_CreateThread();
+
+	const SDL_DialogFileFilter filters[] =
+	{
+		{ ".ELF Binary", ".elf" },
+		{ ".ISO Image", ".iso" }
+	};
+	
+	SDL_ShowOpenFileDialog(zSys_OpenFileDialog, NULL, NULL, filters, 2, "D:/", false);
+
+	while (!path_inited && !path_failed)
+	{
+		
+	}
+
+	if (path_failed)
+	{
+		const SDL_MessageBoxButtonData buttons[]
+		{
+			{
+				SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT,
+				0,
+				"OK"
+			}
+		};
+		
+		const SDL_MessageBoxData data =
+		{
+			SDL_MESSAGEBOX_ERROR,
+			NULL,
+			"GameZ - Initialization Error",
+			"You must provide a valid game directory for GameZ to run!",
+			1,
+			buttons,
+			NULL
+		};
+
+		SDL_DestroyMutex(mutex);
+		mutex = NULL;
+		SDL_ShowMessageBox(&data, NULL);
+		SDL_Quit();
 	}
 }
 

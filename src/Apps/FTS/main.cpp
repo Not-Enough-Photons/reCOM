@@ -12,13 +12,7 @@ int main(int argc, char** argv)
 {
 	process_arguments(argc, argv);
 	zSysInit();
-
-	if (postinit)
-	{
-		CSnd::Close();
-		zSysPostInit();
-		CSnd::UIOpen();
-	}
+	zSysPostInit();
 
 	if (dumpLog)
 	{
