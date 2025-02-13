@@ -41,15 +41,6 @@ void zSysInit()
 	// zSys.isT10K = 0x1ffffff < allocsize;
 	u32 flags = SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_GAMEPAD | SDL_INIT_JOYSTICK;
 	zVid_Assert(SDL_Init(flags), LONG_MAX, __FILE__, __LINE__);
-
-	auto settings = zrdr_read("data/s1/common/zrdr/test.rdr", NULL, 0);
-	auto tag = zrdr_findtag(settings, "settings");
-	s32 width = 0;
-	s32 height = 0;
-	char* appname = NULL;
-	zrdr_findint(tag, "width", &width, 0);
-	zrdr_findint(tag, "height", &height, 0);
-	appname = zrdr_findstring(tag, "appname");
 	
 	zSys.isCdBoot = false;
 }

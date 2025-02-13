@@ -311,8 +311,8 @@ namespace zdb
 
 		static CModel* GetModel(const char* name);
 		
-		void Init() {}
-		void Uninit() {}
+		static void Init() {}
+		static void Uninit() {}
 
 		void diTick();
 		void Update();

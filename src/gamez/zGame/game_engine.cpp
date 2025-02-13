@@ -17,7 +17,7 @@ bool CGame::StartEngine()
 	zVid_Init(ZVID_MODE_NTSC);
 	zdb::CTexture::Init();
 	C2D::Init();
-	// zdb::CWorld::Init();
+	zdb::CWorld::Init();
 	// zSysReset();
 	zVid_Open();
 	C2D::Open();

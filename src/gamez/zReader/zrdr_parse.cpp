@@ -428,11 +428,6 @@ _zrdr* CRdrFile::ReadArray()
 	while (!endtag && token != 0)
 	{
 		token = ReadToken(&array);
-
-		if (token == 0)
-		{
-			continue;
-		}
 		
 		if (array)
 		{
@@ -455,14 +450,14 @@ _zrdr* CRdrFile::ReadArray()
 	_zrdr* parent = zrdr_alloc(sizeof(_zrdr), 1);
 	parent->type = ZRDR_ARRAY;
 
-	_zrdr* child = zrdr_alloc(sizeof(_zrdr), arrays.size());
+	_zrdr* child = zrdr_alloc(sizeof(_zrdr), arrays.size() + 1);
 	child->type = ZRDR_INTEGER;
 
 	// Set parent node equal to child, and append the size of
 	// the child node to the first array element
 	parent->array = child;
 	parent->array->type = ZRDR_INTEGER;
-	parent->array->integer = arrays.size();
+	parent->array->integer = arrays.size() + 1;
 
 	// When working with readers of this version,
 	// The first index (0) is ALWAYS used to store the length.
@@ -478,7 +473,7 @@ _zrdr* CRdrFile::ReadArray()
 		arrays.erase(arrays.begin());
 
 		parent->array[i] = *array;
-		parent->array[i].array[0] = *array;
+		
 		zfree(array);
 	}
 	
@@ -621,6 +616,8 @@ char CRdrFile::ReadToken(_zrdr** array)
 	}
 	while (true);
 }
+
+
 
 _zrdr* CRdrFile::MakeUnion(const char* name, bool isstr)
 {

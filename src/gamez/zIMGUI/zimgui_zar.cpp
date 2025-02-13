@@ -59,6 +59,7 @@ void DisplayKeys(zar::CKey* root, s32 depth)
         ImGui::PushID(depth * 1000 + i++);
         if (ImGui::TreeNode(key->GetName()))
         {
+            ImGui::Text("Size: %u bytes\nOffset: %u bytes", key->GetSize(), key->GetOffset());
             if (ImGui::Button("Open"))
             {
                 auto k = current_archive->OpenKey(key);
@@ -72,7 +73,7 @@ void DisplayKeys(zar::CKey* root, s32 depth)
             ImGui::TreePop();
         }
         ImGui::PopID();
-        ++key_iterator;
+        key_iterator++;
     }
 }
 
@@ -82,7 +83,7 @@ bool CZIMGUI::Tick_ZARDisplay(f32 dT)
     {
         if (ImGui::Button("Open ZAR..."))
         {
-            SDL_ShowOpenFileDialog(ZARFileCallback, NULL, theWindow->GetWindow(), NULL, 0, "F:/", false);
+            SDL_ShowOpenFileDialog(ZARFileCallback, NULL, theWindow->GetWindow(), NULL, 0, "D:/", false);
         }
 
         if (current_archive)
