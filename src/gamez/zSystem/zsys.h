@@ -76,6 +76,7 @@ extern _zsys_public zSys;
 extern CTTY theTerminal;
 extern bool postinit;
 extern bool postinited;
+extern char gamez_GamePath[256];
 
 union _word128
 {

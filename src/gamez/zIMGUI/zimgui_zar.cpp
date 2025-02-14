@@ -62,8 +62,25 @@ void DisplayKeys(zar::CKey* root, s32 depth)
             ImGui::Text("Size: %u bytes\nOffset: %u bytes", key->GetSize(), key->GetOffset());
             if (ImGui::Button("Open"))
             {
-                auto k = current_archive->OpenKey(key);
-                current_archive->CloseKey(k);
+                zdb::CMesh* mesh;
+                u32* data = NULL;
+                _word128* meshword = NULL;
+                auto meshkey = current_archive->OpenKey(key);
+                if (meshkey)
+                {
+                    if (current_archive->FetchLIP(meshkey, reinterpret_cast<void**>(meshword)))
+                    {
+                        u32 ofs = 0;
+
+                        current_archive->Fetch(key->GetName(), &ofs);
+                        current_archive->Fetch(key->GetName(), &mesh->m_mtx_count);
+
+                        data = &meshword->u32[ofs];
+                    }
+
+                    current_archive->CloseKey(meshkey);
+                }
+                current_archive->CloseKey(key);
             }
             
             if (key->size() > 1)

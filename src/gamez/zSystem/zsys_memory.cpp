@@ -6,6 +6,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_iostream.h>
 #include <SDL3/SDL_dialog.h>
+#include <SDL3/SDL_thread.h>
 
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zVideo/zvid.h"
@@ -15,7 +16,7 @@ size_t _HeapSize = 0;
 
 bool path_failed = false;
 bool path_inited = false;
-const char* gamez_FilePath;
+char gamez_GamePath[256];
 
 SDL_Thread* file_thread;
 
@@ -25,8 +26,8 @@ void zSys_OpenFileDialog(void* userdata, const char * const *filelist, int filte
 	// and wait for our file selection to be finished.
 	if (!*filelist)
 	{
-		path_inited = false;
-		gamez_FilePath = NULL;
+		path_failed = true;
+		path_inited = true;
 		return;
 	}
 	
@@ -34,14 +35,9 @@ void zSys_OpenFileDialog(void* userdata, const char * const *filelist, int filte
 	
 	if (length > 0)
 	{
-		path_inited = true;
-		gamez_FilePath = *filelist;
-	}
-	else
-	{
-		path_failed = true;
 		path_failed = false;
-		gamez_FilePath = NULL;
+		path_inited = true;
+		strcpy_s(gamez_GamePath, 256, *filelist);
 	}
 }
 
@@ -95,22 +91,11 @@ void zSysPostInit()
 	{
 		postinited = true;
 	}
-
-	file_thread = SDL_CreateThread();
-
-	const SDL_DialogFileFilter filters[] =
-	{
-		{ ".ELF Binary", ".elf" },
-		{ ".ISO Image", ".iso" }
-	};
 	
-	SDL_ShowOpenFileDialog(zSys_OpenFileDialog, NULL, NULL, filters, 2, "D:/", false);
+	SDL_ShowOpenFolderDialog(zSys_OpenFileDialog, NULL, NULL, "D:/", false);
 
-	while (!path_inited && !path_failed)
-	{
-		
-	}
-
+	while (!path_inited) { }
+	
 	if (path_failed)
 	{
 		const SDL_MessageBoxButtonData buttons[]
@@ -132,11 +117,38 @@ void zSysPostInit()
 			buttons,
 			NULL
 		};
-
-		SDL_DestroyMutex(mutex);
-		mutex = NULL;
+		
 		SDL_ShowMessageBox(&data, NULL);
 		SDL_Quit();
+		exit(-1);
+	}
+
+	strcat_s(gamez_GamePath, 256, "RUN");
+	if (!SDL_GetPathInfo(gamez_GamePath, NULL))
+	{
+		const SDL_MessageBoxButtonData buttons[]
+		{
+			{
+				SDL_MESSAGEBOX_BUTTONS_LEFT_TO_RIGHT,
+				0,
+				"OK"
+			}
+		};
+		
+		const SDL_MessageBoxData data =
+		{
+			SDL_MESSAGEBOX_ERROR,
+			NULL,
+			"GameZ - Initialization Error",
+			"Game directory does not have a RUN folder!",
+			1,
+			buttons,
+			NULL
+		};
+		
+		SDL_ShowMessageBox(&data, NULL);
+		SDL_Quit();
+		exit(-1);
 	}
 }
 

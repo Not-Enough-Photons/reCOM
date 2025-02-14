@@ -11,7 +11,8 @@ CMission theMission;
 
 void UpdateMissionArchive(const char* type, const char* path)
 {
-	std::string pathstr = "D:/run/";
+	std::string pathstr;
+	pathstr.append(gamez_GamePath);
 
 	if (type)
 	{
@@ -34,6 +35,7 @@ void UpdateMissionArchive(const char* type, const char* path)
 	{
 		if (strlen(path) != 0)
 		{
+			pathstr.assign(gamez_GamePath, pathstr.length());
 			pathstr.assign("D:/run/", pathstr.length());
 
 			if (strncmp(path, "mp", 2) == 0)
@@ -87,6 +89,8 @@ s32 FilterMissionFolder(const char* prefix, const char* infix, const char* postf
 
 bool CMission::Init()
 {
+	char path_buf[256];
+	
 	// TODO:
 	// Implement all these
 	ZAnim.Open();
@@ -104,8 +108,10 @@ bool CMission::Init()
 
 	m_chars_loaded = false;
 
-	CRdrArchive::AddArchive("readerc.zar", "d:/run");
-	CRdrArchive::AddArchive("readerc.zar", "d:/run/ui");
+	sprintf_s(path_buf, 256, "%s/ui", gamez_GamePath);
+	
+	CRdrArchive::AddArchive("readerc.zar", gamez_GamePath);
+	CRdrArchive::AddArchive("readerc.zar", path_buf);
 	CRdrArchive::OpenAll();
 
 	zBoneInit();
@@ -164,7 +170,7 @@ bool CMission::Init()
 	// hudInit();
 
 	// CTurret::Init("ai_turrets.rdr", "data/common");
-	CRdrArchive::RemoveArchive("readerc.zar", "d:/run");
+	CRdrArchive::RemoveArchive("readerc.zar", gamez_GamePath);
 
 	return true;
 }
