@@ -93,3 +93,13 @@ void vag_decode(CBufferIO* io, std::vector<s16>& out)
         hist1 = sample;
     }
 }
+
+void vpk_read_header(CBufferIO* io, tag_VPKHeader* header)
+{
+    if (!io)
+    {
+        return;
+    }
+
+    io->fread(header, sizeof(tag_VAGHeader));
+}

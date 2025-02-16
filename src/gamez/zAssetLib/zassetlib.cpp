@@ -161,4 +161,43 @@ namespace zdb
         
         return true;
     }
+
+    CModel* CAssetLib::AddModel(CModel* model)
+    {
+        CAssetLib* library = NULL;
+        CAssetLib* resolved = NULL;
+        CModel* asset = NULL;
+        
+        if (m_locked)
+        {
+            return asset;
+        }
+
+        char* name = model->m_name;
+        library = NULL;
+        asset = model;
+
+        auto it = CAssetMgr::m_assets.begin();
+        while (it != CAssetMgr::m_assets.end())
+        {
+            CModel* m = (*it)->m_models.GetModel(name);
+
+            if (m)
+            {
+                library = *it;
+                break;
+            }
+            
+            ++it;
+        }
+
+        if (!library)
+        {
+            m_models.insert(m_models.begin(), asset);
+            asset->m_AssetLib = this;
+        }
+
+        return asset;
+    }
+
 }

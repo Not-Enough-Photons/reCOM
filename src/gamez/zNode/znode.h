@@ -219,13 +219,13 @@ namespace zdb
 		CVisualVector m_visual;
 		char* m_name;
 		CNodeEx* m_nodeEx;
-		bool m_customGlobalLight;
+		s8 m_customGlobalLight;
 		bool m_frameRendered;
-		bool m_flatten;
-		bool m_modified;
-		bool m_character;
-		bool m_character_infov;
-		s32 m_unused;
+		u16 m_flatten : 1;
+		u16 m_modified : 1;
+		u16 m_character : 1;
+		u16 m_character_infov : 1;
+		u16 m_unused : 12;
 		f32 m_Opacity;
 		CGridAtom** m_Atom;
 		s32 m_TickNum;
@@ -325,6 +325,7 @@ namespace zdb
 		void ReserveChildren(s32 count);
 
 		s32 GenerateLandmarkList();
+		void LandmarkList_Search(CNode* node, CStack& matstack, CNodeVector& landmarks);
 		
 		void DeleteChildren();
 		void DeleteLandmark(const CNode& landmark);
@@ -413,13 +414,12 @@ namespace zdb
 	{
 	public:
 		CModel(const char* name);
-		~CModel();
 
-		static CModel* Create(CSaveLoad& saver, CAssetLib* library);
-	public:
+		static CModel* Create(CSaveLoad& sload, CAssetLib* library);
+
 		bool Read(CSaveLoad& sload);
 		void Release(CNode* node);
-	private:
+
 		s32 m_variant;
 		bool m_bForceExport;
 		bool m_bbox_valid;

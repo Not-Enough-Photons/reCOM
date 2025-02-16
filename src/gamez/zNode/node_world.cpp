@@ -248,14 +248,30 @@ namespace zdb
 
 	s32 CWorld::GenerateLandmarkList()
 	{
+		CNodeVector landmarks;
+		CStack stack;
+		
 		CStack::m_pointer++;
 		CStack::m_top++;
 
-		*CStack::m_top = CMatrix::identity;
+		// *CStack::m_top = CMatrix::identity;
 
 		m_numNoFarClipNodes = 0;
+		LandmarkList_Search(this, stack, landmarks);
 
+		auto it = landmarks.begin();
+		while (it != landmarks.end())
+		{
+			AddChild(*it);
+			++it;
+		}
+		
 		return 1;
+	}
+
+	void CWorld::LandmarkList_Search(CNode* node, CStack& matstack, CNodeVector& landmarks)
+	{
+		
 	}
 
 	void CWind::Reset()

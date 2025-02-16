@@ -20,22 +20,16 @@ namespace zdb
 
     bool CSaveLoad::LoadAssetLib_PS2(CWorld* world, CAssetLib* library, u32 type)
     {
-        char rootnamebuf[4];
         bool success = true;
         
         m_world = world;
-
-        if ((type & TYPE_TEXTURES) == 0)
+        
+        if ((type & TYPE_TEXTURES) != 0)
         {
-            char* rootname = library->RootName();
-            strcpy_s(rootnamebuf, 4, rootname);
-
-            if (strlen(rootnamebuf) < 4)
-            {
-                // variable = 0?
-            }
-
-            sprintf_s(m_zed_filename, "D:/run/%s/%s%s.zed", library->m_name, rootnamebuf, "_txr");
+            std::string temp(library->RootName());
+            temp.assign(temp.substr(0, 4));
+    
+            sprintf_s(m_zed_filename, 256, "%s%s/%s%s.zed", gamez_GamePath, library->m_name, temp.c_str(), "_txr");
 
             if (!m_zfile.Open(m_zed_filename, CWorld::GetVersion(), 1, 16))
             {
@@ -49,6 +43,61 @@ namespace zdb
             }
         }
 
+        if ((type & TYPE_PALETTES) != 0)
+        {
+            std::string temp(library->RootName());
+            temp.assign(temp.substr(0, 4));
+            
+            sprintf_s(m_zed_filename, 256, "%s%s/%s%s.zed", gamez_GamePath, library->m_name, temp.c_str(), "_pal");
+
+            if (!m_zfile.Open(m_zed_filename, CWorld::GetVersion(), 1, 16))
+            {
+                m_zfile.Close();
+                success = false;
+            }
+            else
+            {
+                success = LoadPalettes_PS2(library);
+                m_zfile.Close();
+            }
+        }
+
+        if ((type & TYPE_MODELS) != 0)
+        {
+            std::string temp(library->RootName());
+            temp.assign(temp.substr(0, 4));
+    
+            sprintf_s(m_zed_filename, 256, "%s%s/%s%s.zed", gamez_GamePath, library->m_name, temp.c_str(), "_mdl");
+
+            if (!m_zfile.Open(m_zed_filename, CWorld::GetVersion(), 1, 16))
+            {
+                m_zfile.Close();
+                success = false;
+            }
+            else
+            {
+                if (auto key = m_zfile.OpenKey("models"))
+                {
+                    auto it = key->begin();
+                    while (it != key->end())
+                    {
+                        if (auto model_key = m_zfile.OpenKey(*it))
+                        {
+                            CModel* model = CModel::Create(*this, NULL);
+                            library->AddModel(model);
+                            m_zfile.CloseKey(model_key);
+                        }
+
+                        ++it;
+                    }
+
+                    m_zfile.CloseKey(key);
+                }
+                
+                m_zfile.Close();
+            }
+        }
+        
         return success;
     }
     

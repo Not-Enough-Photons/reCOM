@@ -40,7 +40,13 @@ void hookupMesh(zar::CZAR* archive, zdb::CModel* model)
 
 void hookupVisuals(zar::CZAR* archive, zar::CKey* key, zdb::CNode* node, zdb::CModel* model, zdb::CVisBase* vis)
 {
-		
+	if (node)
+	{
+		if (node->m_hasMesh)
+		{
+			
+		}
+	}
 }
 
 void hookupVisuals(zar::CZAR* archive, zdb::CModel* model)

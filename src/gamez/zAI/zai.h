@@ -14,7 +14,7 @@ class CEntity;
 
 class CSealCtrlAi;
 
-enum ASTAR_STATUS
+enum class ASTAR_STATUS
 {
 	ASTAR_STATUS_UNKNOWN,
 	ASTAR_SUCCESS,
@@ -26,13 +26,13 @@ enum ASTAR_STATUS
 	ASTAR_FAILURE_UNKNOWN
 };
 
-enum TYPE
+enum class TYPE
 {
 	LINEAR,
 	EXPONENTIAL
 };
 
-enum PATH_TYPE
+enum class PATH_TYPE
 {
 	PATH_DEFAULT,
 	PATH_BASIC,
@@ -40,7 +40,7 @@ enum PATH_TYPE
 	PATH_RESTRAINED
 };
 
-enum PATH_STATE
+enum class PATH_STATE
 {
 	UNKNOWN,
 	INQUEUE,
@@ -50,7 +50,7 @@ enum PATH_STATE
 	FAILED
 };
 
-enum FIRETEAM
+enum class FIRETEAM
 {
 	FT_MP_PLAYER,
 	FT_FIRETEAM,

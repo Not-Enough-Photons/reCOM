@@ -75,14 +75,14 @@ class CGame
 {
 public:
 	CGame();
-public:
+
 	virtual bool StartEngine();
 	void StartPlay();
 	bool Tick(f32 dT);
 	CGameState* Switch(CGameState* state, u32 index);
-public:
+
 	f32 m_maxtick;
-protected:
+
 	bool m_Active;
 
 	CGameState* m_InitialState;

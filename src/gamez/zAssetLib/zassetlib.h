@@ -29,6 +29,7 @@ namespace zdb
 		
 		bool AddTexture(const char* name);
 		bool AddTexture(zdb::CTexture* texture);
+		CModel* AddModel(CModel* model);
 		
 		bool IsNamed(const char* name) const;
 		char* RootName() const;

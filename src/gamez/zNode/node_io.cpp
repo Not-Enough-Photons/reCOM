@@ -1,4 +1,5 @@
 #include "znode.h"
+#include "gamez/zAssetLib/zassetlib.h"
 
 #include "gamez/zSave/zsave.h"
 
@@ -305,6 +306,35 @@ namespace zdb
 		}
 		
 		return true;
+	}
+
+	CModel::CModel(const char* name)
+	{
+		m_AssetLib = NULL;
+		m_type = 7;
+		m_bbox_valid = false;
+		SetName(name);
+		m_variant = 0;
+		m_bForceExport = false;
+	}
+	
+	CModel* CModel::Create(CSaveLoad& sload, CAssetLib* library)
+	{
+		CModel* model = new CModel(NULL);
+
+		if (library && model)
+		{
+			library->AddModel(model);
+		}
+
+		if (!model->Read(sload))
+		{
+			// TODO: Destroy the model after adding to the list. Node data is invalid.
+
+			model = NULL;
+		}
+
+		return model;
 	}
 	
 	bool CModel::Read(CSaveLoad& sload)

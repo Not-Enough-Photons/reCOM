@@ -352,7 +352,7 @@ public:
 	void OnMissionStart() {}
 	void OnMissionEnd() {}
 	void OnWeaponHit(zdb::IntersectStruct* intersection, CZProjectile* projectile);
-	void OnDeath();
+	void OnDeath() {}
 	void OnRecycleEntity() {}
 
 	/// -------------------------------------------

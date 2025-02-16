@@ -4,6 +4,7 @@
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zSystem/zsys.h"
+#include "SDL3/SDL_log.h"
 
 s32 g_iReverbTime = 0;
 
@@ -45,7 +46,9 @@ void CSnd::Init()
 	if (!vagArchiveIsOpen)
 	{
 		vagArchiveIsOpen = true;
-		m_vagArchive.Open_V2("F:/RUN/SOUNDS/VAGSTORE.ZAR", 0, 0x21, 16);
+		char path_buf[256];
+		sprintf_s(path_buf, "%s/SOUNDS/VAGSTORE.ZAR", gamez_GamePath);
+		m_vagArchive.Open(path_buf, 0, 0x21, 16);
 	}
 }
 
@@ -65,7 +68,7 @@ void CSnd::UIOpen()
 void CSnd::Close()
 {
 	m_max_num_vags = 0;
-	Headset::ftsDeleteHeadset();
+	// Headset::ftsDeleteHeadset();
 }
 
 bool CSnd::vagReadOffset(const char* name, u32& offset, u32& size)
@@ -137,7 +140,7 @@ void CSnd::LoadVAG(const char* name)
 
 	size_t size = key->GetSize();
 	u8* buffer = (u8*)zmalloc(size);
-	m_vagArchive.Fetch_V2(key, buffer, size);
+	m_vagArchive.Fetch(key, buffer, size);
 
 	CBufferIO io;
 	std::vector<s16> samples;
@@ -161,6 +164,63 @@ void CSnd::LoadVAG(const char* name)
 		SDL_AUDIO_S16,
 		1,
 		(s32)header.rate
+	};
+	
+	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);
+
+	SDL_ResumeAudioStreamDevice(m_audiostream);
+
+	if (SDL_GetAudioStreamAvailable(m_audiostream) < (s32)m_snd_len)
+	{
+		SDL_PutAudioStreamData(m_audiostream, samples.data(), samples.size() * sizeof(s16));
+	}
+	
+	m_vagArchive.CloseKey(key);
+}
+
+void CSnd::LoadVPK(const char* name)
+{
+	SDL_PauseAudioStreamDevice(m_audiostream);
+	m_snd_data = NULL;
+	m_snd_len = 0;
+	
+	zar::CKey* key = m_vagArchive.OpenKey(name);
+
+	if (!key)
+	{
+		return;
+	}
+
+	size_t size = key->GetSize();
+	u8* buffer = (u8*)zmalloc(size);
+	m_vagArchive.Fetch(key, buffer, size);
+
+	CBufferIO io;
+	std::vector<s16> samples;
+	
+	io.Open(buffer, size);
+	
+	tag_VPKHeader header;
+	vpk_read_header(&io, &header);
+
+	io.fseek(header.start_offset, SEEK_SET);
+	
+	m_snd_len = (header.channel_size / 2 - sizeof(tag_VPKHeader)) / sizeof(tag_VAGChunk);
+
+	SDL_Log("%ui", m_snd_len);
+	
+	for (u32 i = 0; i < m_snd_len; i++)
+	{
+		vag_decode(&io, samples);
+	}
+	
+	io.Close();
+	
+	SDL_AudioSpec audioSpec
+	{
+		SDL_AUDIO_S16,
+		1,
+		header.sample_rate
 	};
 	
 	m_audiostream = SDL_OpenAudioDeviceStream(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, &audioSpec, NULL, NULL);

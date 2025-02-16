@@ -1,5 +1,4 @@
 #pragma once
-#include "gamez/zAI/zai.h"
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zNode/znode.h"
 #include "gamez/zSystem/zsys.h"
@@ -11,11 +10,14 @@ struct throw_params;
 class CEntity;
 class CEntityCtrl;
 class CCharacterType;
+class CTarget;
 class CharacterDynamics;
 class CZSealBody;
 class CZBodyPart;
 class CModel;
 class CCameraParams;
+
+class CTargetList : public std::vector<CTarget*> {};
 
 struct HEALTH_PARAMS;
 
@@ -38,7 +40,8 @@ enum class SEAL_CONTROL_TYPE
 	CTRL_MISC
 };
 
-extern int recycler_index;
+extern CEntity* recycler;
+extern u32 recycler_index;
 extern CSealAnim* m_sealanim;
 extern CharacterDynamics theCharacterDynamics;
 
@@ -67,17 +70,22 @@ public:
 
 	CEntity(TYPE type, zdb::CNode* node);
 
+	static bool EntityIsValid(CEntity* entity);
+	static std::vector<CEntity*>& GetEntityList();
+	static void OpenRecycler(u32 index);
+	static CEntity* CreateRecycler();
+	
 	void IncrementAwareCounter();
 	void DecrementAwareCounter();
 
 	// Recycler functions
 	virtual void OnRecycleEntity() {}
-	CEntity* CreateRecycler() { return NULL; }
 	void OpenRecycler() {}
 
 	// Mission callback functions
 	virtual void OnMissionStart() {}
 	virtual void OnMissionEnd() {}
+	virtual void OnDeath();
 
 	// Tick virtual functions
 	virtual void PreTick() {};
@@ -86,16 +94,20 @@ public:
 	virtual void Tick() {};
 	virtual void PostTick() {};
 
-	void SetDisplayName(const char* displayName);
+	void JoinTeam(u32 team);
+	
+	void SetDisplayName(const char* name);
 
 	virtual void TeleportTo(const CMatrix& mat) {}
 
+	u32 GetEntityIndex() const;
 	zdb::CNode* GetNode() const;
+	bool IsAlive() const;
 	bool IsValid() const;
 
 	void SetController(CEntityCtrl* controller);
-public:
-	CEntityCtrl* m_control;
+
+	static std::vector<CEntity*> m_list;
 	
 	u32 m_id;
 	u32 m_index;
@@ -103,7 +115,7 @@ public:
 
 	TYPE m_type;
 
-	const char* m_display_name;
+	char* m_display_name;
 	u32 m_UnitsSeenBy;
 
 	zdb::CNode* m_node;
@@ -115,21 +127,29 @@ public:
 	CPnt3D m_next_velw; // Model-relative wish velocity
 	CQuat m_next_quat; // Next wish rotation
 	CMatrix m_next_matrix; // Next wish transformation
-
+	
+	CEntityCtrl* m_control;
+	
+	u32 m_team;
+	
+	f32 m_max_range_target_sq;
+	
+	CTargetList m_targets;
+	
 	u32 m_aware_counter;
 
-	bool m_blink_eyes;
-	bool m_drip_blood;
-	bool m_animate_footsteps;
-	bool m_interpolate_animations;
-	bool m_lean_into_turns;
-	bool m_do_weapon_recoil;
-	bool m_check_player_collision;
-	bool m_get_new_altitude;
-	bool m_noshoot;
-	bool m_update_targetlist;
-	bool m_include_in_targetlist;
-	bool m_isAlive;
+	u32 m_blink_eyes : 1;
+	u32 m_drip_blood : 1;
+	u32 m_animate_footsteps : 1;
+	u32 m_interpolate_animations : 1;
+	u32 m_lean_into_turns : 1;
+	u32 m_do_weapon_recoil : 1;
+	u32 m_check_player_collision : 1;
+	u32 m_get_new_altitude : 1;
+	u32 m_noshoot : 1;
+	u32 m_update_targetlist : 1;
+	u32 m_include_in_targetlist : 1;
+	u32 m_isAlive : 1;
 
 	// CAiMapLoc m_mapLoc;
 	// CAiMapLoc m_mapLocValid;
@@ -149,7 +169,7 @@ public:
 	virtual void GetRemoteControl() const;
 
 	virtual void OnDeath();
-protected:
+
 	CEntity* m_entity;
 	f32 m_throttle[3];
 };
@@ -158,6 +178,27 @@ class CftsPlayer : public CEntity
 {
 public:
 	static void RegisterAnimCommands();
+};
+
+class CTarget
+{
+public:
+	CEntity* m_ent;
+	CPnt3D m_vec;
+
+	f32 m_distSq;
+	f32 m_dist;
+	f32 m_visibility;
+	f32 m_aware;
+	s32 m_diHandle;
+
+	u32 m_d_computed : 1;
+	u32 m_known : 1;
+	u32 m_visible : 1;
+	u32 m_hostile : 1;
+	u32 m_targeted : 1;
+	u32 m_dirty_di : 1;
+	u32 m_unused : 26;
 };
 
 class CPickup

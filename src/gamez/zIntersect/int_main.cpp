@@ -56,6 +56,12 @@ namespace zdb
             if (sload.m_zfile.Fetch("params", this, sizeof(DI_PARAMS)))
             {
                 m_refcount = 0;
+
+                if (!m_pts)
+                {
+                    return false;
+                }
+                
                 return sload.m_zfile.Fetch("points", m_pts, m_ptcount);
             }
         }

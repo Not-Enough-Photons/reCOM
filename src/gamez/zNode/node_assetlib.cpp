@@ -26,6 +26,8 @@ namespace zdb
 				{
 					break;
 				}
+
+				++it;
 			}
 
 			m_cache_model = model;
@@ -90,7 +92,7 @@ namespace zdb
 	{
 		size_t length = strlen(m_name);
 
-		for (int i = length - 1; i > -1; i--)
+		for (s32 i = length - 1; i > -1; i--)
 		{
 			char c = m_name[i];
 
@@ -151,7 +153,7 @@ namespace zdb
 								libname = alib->m_name + idx + 1;
 							}
 
-							idx++;
+							idx--;
 						}
 						while (idx > -1);
 					}
@@ -194,6 +196,8 @@ namespace zdb
 
 				CSaveLoad sload;
 				CAssetLib* assetlib = new CAssetLib(name);
+				m_assets.insert(m_assets.begin(), assetlib);
+				sload.LoadAssetLib(NULL, assetlib, 255);
 			}
 			else
 			{

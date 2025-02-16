@@ -14,6 +14,7 @@
 bool postinited = false;
 size_t _HeapSize = 0;
 
+SDL_Condition* wait_cond = NULL;
 bool path_failed = false;
 bool path_inited = false;
 char gamez_GamePath[256];
@@ -22,12 +23,11 @@ SDL_Thread* file_thread;
 
 void zSys_OpenFileDialog(void* userdata, const char * const *filelist, int filter)
 {
-	// I have to find some way to block the main thread -
-	// and wait for our file selection to be finished.
 	if (!*filelist)
 	{
 		path_failed = true;
 		path_inited = true;
+		SDL_SignalCondition(wait_cond);
 		return;
 	}
 	
@@ -38,6 +38,7 @@ void zSys_OpenFileDialog(void* userdata, const char * const *filelist, int filte
 		path_failed = false;
 		path_inited = true;
 		strcpy_s(gamez_GamePath, 256, *filelist);
+		SDL_SignalCondition(wait_cond);
 	}
 }
 
@@ -91,10 +92,20 @@ void zSysPostInit()
 	{
 		postinited = true;
 	}
-	
-	SDL_ShowOpenFolderDialog(zSys_OpenFileDialog, NULL, NULL, "D:/", false);
 
-	while (!path_inited) { }
+	SDL_Mutex* mutex = SDL_CreateMutex();
+	wait_cond = SDL_CreateCondition();
+	
+	SDL_LockMutex(mutex);
+	SDL_ShowOpenFolderDialog(zSys_OpenFileDialog, NULL, NULL, "D:/", false);
+	SDL_WaitCondition(wait_cond, mutex);
+	SDL_UnlockMutex(mutex);
+
+	SDL_DestroyMutex(mutex);
+	mutex = NULL;
+
+	SDL_DestroyCondition(wait_cond);
+	wait_cond = NULL;
 	
 	if (path_failed)
 	{

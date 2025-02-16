@@ -37,13 +37,6 @@ typedef int64_t    s64; // long
 typedef float      f32; // float
 typedef double     f64;
 
-/// -------------------------------------------
-/// USEFUL MACROS
-/// -------------------------------------------
-
-#define BITFIELD_INT(x, cnt) int x : cnt
-#define BITFIELD_UINT(x, cnt) unsigned int x : cnt
-
 class _zsys_public;
 
 class CTTY;
@@ -201,7 +194,8 @@ public:
 		LVL_ERROR,
 		LVL_CRITICAL
 	};
-	
+
+	void Print(char* string, ZLOG_LEVEL level = ZLOG_LEVEL::LVL_INFO);
 	void Print(char* buffer, size_t size);
 	void Render();
 private:

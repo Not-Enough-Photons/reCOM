@@ -100,56 +100,39 @@ bool _zrdr::Write(FILE* file)
 
 _zrdr* zrdr_findtag(_zrdr* reader, const char* name)
 {
-	if (reader != NULL && reader->type == ZRDR_ARRAY)
-	{
-		for (u32 iterations = 1; iterations < reader->array->integer; iterations++)
-		{
-			_zrdr* rdr = &reader->array[iterations];
-
-			if (rdr->type == ZRDR_ARRAY)
-			{
-				rdr = zrdr_findtag_startidx(rdr, name, 1);
-
-				if (rdr != NULL)
-				{
-					return rdr;
-				}
-			}
-			else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
-			{
-				return &rdr[1];
-			}
-		}
-	}
-
-	return NULL;
+	return zrdr_findtag_startidx(reader, name, 1);
 }
 
-_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 depth)
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
 {
-	if (reader && reader->type == ZRDR_ARRAY)
+	if (!reader)
 	{
-		for (; depth < reader->array->integer; depth++)
-		{
-			_zrdr* rdr = &reader->array[depth];
-
-			if (rdr->type == ZRDR_ARRAY)
-			{
-				rdr = zrdr_findtag_startidx(rdr, name, 1);
-
-				if (rdr)
-				{
-					return rdr;
-				}
-			}
-			else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
-			{
-				return rdr + 1;
-			}
-		}
+		return NULL;
 	}
 
-	return NULL;
+	if (reader->type != ZRDR_ARRAY)
+	{
+		return NULL;
+	}
+	
+	for (; startidx < reader->array->integer; startidx++)
+	{
+		_zrdr* rdr = &reader->array[startidx];
+
+		if (rdr->type == ZRDR_ARRAY)
+		{
+			rdr = zrdr_findtag_startidx(rdr, name, 1);
+
+			if (rdr)
+			{
+				return rdr;
+			}
+		}
+		else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
+		{
+			return rdr + 1;
+		}
+	}
 }
 
 char* zrdr_findstring(_zrdr* reader, const char* name)

@@ -89,10 +89,10 @@ bool CMenuState::Init()
 			zrdr_free(uisounds);
 		}
 
-		// CSnd::Close();
+		CSnd::Close();
 		// CSnd::LoadSounds("sounds.rdr", "HUDUI");
 		// CSnd::LoadSounds("sounds.rdr", "SMUS");
-		// CSnd::UIOpen();
+		CSnd::UIOpen();
 	}
 
 	return true;

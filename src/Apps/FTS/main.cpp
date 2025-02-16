@@ -22,7 +22,7 @@ int main(int argc, char** argv)
 
 	char* log = NULL;
 
-	if (gopt.doLog != false)
+	if (gopt.doLog)
 	{
 		log = "ftslog.txt";
 	}

@@ -5,6 +5,8 @@
 #include "gamez/zPhysics/zphysics.h"
 #include "gamez/zUI/zui.h"
 
+enum class FIRETEAM;
+
 class CMissionCam;
 
 extern CHUD* theHUD;

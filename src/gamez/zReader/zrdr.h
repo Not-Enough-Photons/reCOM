@@ -49,7 +49,7 @@ bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
 bool zrdr_findPNT2D(_zrdr* reader, const char* tag, PNT2D* output);
 bool zrdr_findPNT3D(_zrdr* reader, const char* tag, PNT3D* output);
 _zrdr* zrdr_findtag(_zrdr* reader, const char* tag);
-_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, u32 depth);
+_zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, u32 startidx);
 
 bool zrdr_toINT(_zrdr* reader, s32* output, s32 size);
 bool zrdr_tobool(_zrdr* reader, bool* output);

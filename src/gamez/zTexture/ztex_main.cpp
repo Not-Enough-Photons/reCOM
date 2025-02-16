@@ -272,11 +272,13 @@ namespace zdb
 
 	CTexHandle* CTexList::GetHandle(const char* name)
 	{
+		CTexHandle* handle = NULL;
+		
 		auto it = begin();
 
 		while (it != end())
 		{
-			CTexHandle* handle = *it;
+			handle = *it;
 
 			if (!handle->m_texture || !handle->m_name)
 			{
@@ -291,7 +293,7 @@ namespace zdb
 			++it;
 		}
 
-		return *it;
+		return handle;
 	}
 
 }

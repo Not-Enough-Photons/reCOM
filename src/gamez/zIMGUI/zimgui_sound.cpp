@@ -21,7 +21,20 @@ bool CZIMGUI::Tick_SoundDisplay(f32 dT)
             {
                 if (ImGui::Button("Play"))
                 {
-                    CSnd::LoadVAG(*it);
+                    if (SDL_strstr(*it, ".wav") || SDL_strstr(*it, ".WAV"))
+                    {
+                        CSnd::LoadWAV(*it);
+                    }
+                    
+                    if (SDL_strstr(*it, ".vag") || SDL_strstr(*it, ".VAG"))
+                    {
+                        CSnd::LoadVAG(*it);
+                    }
+
+                    if (SDL_strstr(*it, ".vpk") || SDL_strstr(*it, ".VPK"))
+                    {
+                        CSnd::LoadVPK(*it);
+                    }
                 }
                 
                 ImGui::TreePop();

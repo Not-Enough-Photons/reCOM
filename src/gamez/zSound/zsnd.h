@@ -77,8 +77,38 @@ struct tag_VAGChunk
 	u8 sample[VAG_SAMPLES];
 };
 
+struct tag_VPKHeader
+{
+	char magic[4];
+	u32 channel_size;
+	u32 start_offset;
+	u32 interleave_block_size;
+	s32 sample_rate;
+	u32 channels;
+};
+
+// https://github.com/vgmstream/vgmstream/blob/master/src/meta/bnk_sony.c#L491
+struct tag_VABHeader
+{
+	u32 version;
+	u32 sections;
+	u32 sblk_offset;
+	u32 unused;
+	u32 data_offset;
+	u32 data_size;
+};
+
+struct tag_SBLKHeader
+{
+	char magic[4];
+	u32 version;
+};
+
 void vag_read_header(CBufferIO* io, tag_VAGHeader* header);
 void vag_decode(CBufferIO* io, std::vector<s16>& out);
+void vpk_read_header(CBufferIO* io, tag_VPKHeader* header);
+void vpk_decode(CBufferIO* io, std::vector<s16>& out);
+void vab_read_header(CBufferIO* io, tag_VABHeader* header);
 
 class CSnd
 {
@@ -94,6 +124,7 @@ public:
 	static bool vagReadOffset(const char* name, u32& offset, u32& size);
 	static void LoadWAV(const char* name);
 	static void LoadVAG(const char* name);
+	static void LoadVPK(const char* name);
 	
 	void LoadCSnd(_zrdr* reader);
 	float CalcVol(f32 volume, f32 masterVolume);

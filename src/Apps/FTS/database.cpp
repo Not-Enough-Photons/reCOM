@@ -45,7 +45,7 @@ extern bool LoadWorld(const char* name)
 	}
 	
 	appCamera = new CAppCamera(theWorld, theWorld->m_camera);
-	char* pathbuf = NULL;
+	char pathbuf[64];
 		 
 	for (auto it = zdb::CAssetMgr::m_assets.begin(); it != zdb::CAssetMgr::m_assets.end(); ++it)
 	{
@@ -53,7 +53,7 @@ extern bool LoadWorld(const char* name)
 
 		if (library->m_autoload)
 		{
-			sprintf_s(pathbuf, 64, "D:/run/%s/models.zar", library->m_name);
+			sprintf_s(pathbuf, 64, "%s/%s/models.zar", gamez_GamePath, library->m_name);
 	
 			if (archive.Open(pathbuf, -1, 1, 16))
 			{
