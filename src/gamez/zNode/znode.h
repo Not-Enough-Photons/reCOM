@@ -317,7 +317,7 @@ namespace zdb
 		static void Uninit() {}
 
 		void diTick();
-		void Update();
+		void Update() {}
 
 		bool Initalize();
 

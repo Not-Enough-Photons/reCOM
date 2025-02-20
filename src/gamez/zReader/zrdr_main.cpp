@@ -117,20 +117,20 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
 	
 	for (; startidx < reader->array->integer; startidx++)
 	{
-		_zrdr* rdr = &reader->array[startidx];
+		_zrdr* node = &reader->array[startidx];
 
-		if (rdr->type == ZRDR_ARRAY)
+		if (node->type == ZRDR_ARRAY)
 		{
-			rdr = zrdr_findtag_startidx(rdr, name, 1);
+			node = zrdr_findtag_startidx(node, name, 1);
 
-			if (rdr)
+			if (node)
 			{
-				return rdr;
+				return node;
 			}
 		}
-		else if (rdr->type == ZRDR_STRING && strcmp(rdr->string, name) == 0)
+		else if (node->type == ZRDR_STRING && strcmp(node->string, name) == 0)
 		{
-			return rdr + 1;
+			return &node[1];
 		}
 	}
 }

@@ -55,6 +55,15 @@ void zSysInit()
 	// zSys.isT10K = 0x1ffffff < allocsize;
 	u32 flags = SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_GAMEPAD | SDL_INIT_JOYSTICK;
 	zVid_Assert(SDL_Init(flags), LONG_MAX, __FILE__, __LINE__);
+
+	auto settings = zrdr_read("./output/debug/settings.rdr", 0, NULL);
+
+	s32 width = 0;
+	s32 height = 0;
+	
+	auto tag = zrdr_findtag(settings, "settings");
+	zrdr_findint(tag, "width", &width, 1);
+	zrdr_findint(tag, "height", &height, 1);
 	
 	zSys.isCdBoot = false;
 }

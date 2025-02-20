@@ -5,6 +5,7 @@
 #include "gamez/zMath/zmath.h"
 
 class CShader;
+class CTextureRelocMgr;
 
 namespace zar
 {
@@ -112,7 +113,7 @@ namespace zdb
 		};
 	public:
 		static void AddLocalLight(CLight* light, CPnt3D* position);
-		static void AlphaEnable(bool enableAlpha);
+		static void AlphaEnable(bool enableAlpha) {}
 		static s32 ApplyDecal(u32 vertex, f32 opacity, CPnt3D* position, CMatrix* mat, CTexHandle* handle);
 		static CVisual* Create(zar::CZAR& archive);
 		static void LandmarkEnable(bool enableLandmarks);
