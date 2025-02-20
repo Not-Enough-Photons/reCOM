@@ -56,9 +56,11 @@ void C2D::Draw(zdb::CCamera* camera)
 {
 	if (m_on)
 	{
-		for (auto twod = begin(); twod != end(); twod++)
+		auto it = begin();
+		while (it != end())
 		{
-			(*twod)->Draw(camera);
+			(*it)->Draw(camera);
+			++it;
 		}
 	}
 }
@@ -238,7 +240,7 @@ void C2DBitmap::Draw(const CMatrix& transform, zdb::CTextureRelocMgr* reloc)
 
 void C2DBitmap::Draw(zdb::CCamera* camera)
 {
-
+	
 }
 
 void C2DBitmap::TickFade()

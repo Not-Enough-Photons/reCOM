@@ -8,6 +8,7 @@ class CGameStateChangeCmd;
 class CHUD;
 class CSnd;
 class CZAnimZAR;
+class CGameDlgDesign;
 
 namespace zdb
 {
@@ -114,9 +115,12 @@ class CGameMenu
 {
 public:
 	void Tick(f32 dT) {}
+
+	void LoadFromDesign(CGameDlgDesign* design, CZAnimZAR* animfile);
 	
 	void DrawForeplane();
-
+	void Draw2DOnly();
+	
 	zdb::CNode m_nodeTop;
 
 	CZAnimZAR* animfile;

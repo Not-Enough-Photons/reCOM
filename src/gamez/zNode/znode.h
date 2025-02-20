@@ -6,6 +6,8 @@
 #include "gamez/zVisual/zvis.h"
 #include "gamez/zTexture/ztex.h"
 
+#define MAX_NUM_CELL_ATOMS 1600
+
 /// -------------------------------------------
 /// FORWARD DECLARATIONS
 /// -------------------------------------------
@@ -493,11 +495,12 @@ namespace zdb
 
 	class COrderedCell
 	{
-	private:
+	public:
 		s32 m_gridCellAtomCnt;
 		s32 m_rt_gridCellAtomCnt;
 		s32 m_viewX;
 		s32 m_viewZ;
+		CCell::GRIDCELLATOM m_Atoms[MAX_NUM_CELL_ATOMS];
 	};
 
 	class CGrid : tag_GRID_PARAMS
@@ -510,6 +513,9 @@ namespace zdb
 		bool Read(CSaveLoad& sload);
 		
 		void Insert(CNode* node);
+
+		CGridAtom* StartTraversalOrdered();
+		CGridAtom* GetNextAtomOrdered();
 
 		static u32 N_ATOMS;
 	private:

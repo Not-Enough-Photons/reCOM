@@ -60,6 +60,8 @@ enum class _RenderPhase
 void zRndrInit();
 
 extern CPipe thePipe;
+extern u32 numCharactersRendered;
+extern f32 bilinearDistance;
 
 struct LOD
 {

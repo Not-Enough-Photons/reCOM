@@ -50,5 +50,21 @@ public:
 	CUIVariable* Add(const char* name, _zrdr* reader, UIVAR_LONGEVITY longevity);
 };
 
+class CGameDlgDesign
+{
+public:
+	void LoadFromRdr(_zrdr* reader);
+	void LoadModels(_zrdr* reader);
+};
+
+class CDlgDesignModel
+{
+public:
+	char* m_name;
+	f32 m_elevation;
+	f32 m_distance;
+	bool m_usemodeluivar;
+};
+
 extern CUIVarManager theUIVarManager;
 

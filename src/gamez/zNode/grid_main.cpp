@@ -160,4 +160,46 @@ namespace zdb
 
         return false;
     }
+
+    CGridAtom* CGrid::StartTraversalOrdered()
+    {
+        m_NextAtom = NULL;
+        return m_NextAtom = GetNextAtomOrdered();
+    }
+
+    CGridAtom* CGrid::GetNextAtomOrdered()
+    {
+        CNode* atom_node = NULL;
+
+        while (!m_NextAtom)
+        {
+            if (!m_NextAtom)
+            {
+                s32 runtimeAtomCnt = m_orderedCells.m_rt_gridCellAtomCnt;
+
+                if (runtimeAtomCnt == m_orderedCells.m_gridCellAtomCnt)
+                {
+                    return NULL;
+                }
+
+                m_ring = m_orderedCells.m_Atoms[runtimeAtomCnt].ring;
+                runtimeAtomCnt = m_orderedCells.m_rt_gridCellAtomCnt;
+                m_orderedCells.m_rt_gridCellAtomCnt = runtimeAtomCnt + 1;
+                m_NextAtom = m_orderedCells.m_Atoms[runtimeAtomCnt].cellAtom;
+            }
+            else
+            {
+                m_NextAtom = m_NextAtom->Next;
+            }
+
+            atom_node = m_NextAtom->Ent;
+
+            if (!atom_node->m_active)
+            {
+                break;
+            }
+        }
+        
+        return m_NextAtom;
+    }
 }

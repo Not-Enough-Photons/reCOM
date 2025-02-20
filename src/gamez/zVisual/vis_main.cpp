@@ -101,6 +101,8 @@ namespace zdb
 	
 	CCamera* CVisual::m_camera = NULL;
 
+	f32 CVisual::m_adjustBilinearRange = 0.0f;
+	
 	CVisBase::CVisBase(size_t size)
 	{
 		m_data_buffer = NULL;

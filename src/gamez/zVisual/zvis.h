@@ -13,6 +13,8 @@ namespace zar
 
 namespace zdb
 {
+	class C2D;
+	
 	class CNode;
 	class CModel;
 
@@ -157,6 +159,8 @@ namespace zdb
 
 		static f32 m_opacity;
 
+		static f32 m_adjustBilinearRange;
+
 		bool m_has_lods;
 		
 		u32 m_refcount;
@@ -191,6 +195,13 @@ namespace zdb
 	class CDecal : public CVisual
 	{
 
+	};
+
+	class C2DVisual : public CVisual
+	{
+	public:
+		C2D* m_node2d;
+		CTextureRelocMgr* m_reloc;
 	};
 
 	class CVisualVector : public std::vector<CVisual*>

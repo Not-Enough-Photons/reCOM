@@ -59,6 +59,14 @@ bool CGame::Tick(f32 dT)
 	return false;
 }
 
+void CGameMenu::Draw2DOnly()
+{
+	thePipe.m_node = m_pBackplaneNode;
+	thePipe.m_simpletrans = true;
+	thePipe.RenderUINode(&m_nodeTop);
+	thePipe.m_simpletrans = false;
+}
+
 void CGameMenu::DrawForeplane()
 {
 	thePipe.m_node = m_pForeplaneNode;
@@ -67,4 +75,9 @@ void CGameMenu::DrawForeplane()
 	thePipe.RenderUINode(m_pForeplaneNode);
 	// Disable orthographic view for UI layer
 	thePipe.m_simpletrans = false;
+}
+
+void CGameMenu::LoadFromDesign(CGameDlgDesign* design, CZAnimZAR* animfile)
+{
+	
 }

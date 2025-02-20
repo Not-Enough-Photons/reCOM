@@ -1,4 +1,6 @@
 #pragma once
+#include <SDL3/SDL.h>
+
 #include "gamez/zAnim/zanim.h"
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zInput/zinput.h"
@@ -40,7 +42,7 @@ public:
 	static f32 m_boty;
 	static f32 m_fXPixel;
 	static f32 m_fYPixel;
-public:
+
 	virtual void Draw(const CMatrix& transform, zdb::CTextureRelocMgr* manager) {}
 	virtual void Draw(zdb::CCamera* camera);
 	virtual void Reset() {}
@@ -90,7 +92,7 @@ class C2DBitmap : public C2D, protected C2DFade
 {
 public:
 	C2DBitmap();
-public:
+
 	void Load(f32 x, f32 y, zdb::CTexHandle* handle);
 	void Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handle);
 
@@ -118,6 +120,7 @@ private:
 	f32 m_NewUV[2][4];
 
 	zdb::CTexHandle* m_pTexHandle;
+	SDL_Surface* m_surface2d;
 
 	s32 m_iWidth;
 	s32 m_iHeight;
@@ -131,7 +134,6 @@ public:
 
 class C2DBitmapPoly : public C2D, protected C2DFade
 {
-private:
 	s32 x1;
 	s32 x2;
 	s32 y1;
@@ -149,7 +151,6 @@ public:
 
 class C2DString : public C2D
 {
-private:
 	C2DFont* m_font;
 
 	char* m_string;
@@ -195,7 +196,6 @@ class C2DMessageString : public C2D
 
 class C2DOrderItem : public C2DBitmap
 {
-private:
 	f32 m_width;
 	f32 m_height;
 	f32 m_speed;
@@ -227,7 +227,6 @@ private:
 
 class PoseBitmap : public C2DBitmap
 {
-private:
 	s32 m_curpose;
 
 	zdb::CTexture* m_posetex[3];
@@ -246,7 +245,6 @@ private:
 
 class C2DFontEntry
 {
-private:
 	char m_char;
 	s32 m_offset;
 	s32 m_width;
@@ -262,6 +260,9 @@ private:
 class C2DFont : public C2D
 {
 public:
+	C2DFont();
+	void Load(CRdrFile* font, const char* name);
+	
 	std::vector<C2DFontEntry> m_charlist;
 	zdb::CTexHandle* m_pTexHandle;
 	zdb::CTexHandle* m_pGlowTexHandle;
@@ -275,7 +276,6 @@ public:
 
 class C2DMessage_Q : public C2D
 {
-private:
 	C2DFont* m_font;
 
 	C2DBitmap m_background1;
