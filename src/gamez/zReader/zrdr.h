@@ -101,7 +101,7 @@ bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output);
 /// @return Successful if true, failure otherwise.
 bool zrdr_findPNT2D(_zrdr* reader, const char* tag, PNT2D* output);
 
-/// Finds a vector consisting of X and Y coordinates.
+/// Finds a vector consisting of X, Y, and Z coordinates.
 /// @param reader A zReader array node.
 /// @param tag The name of the tag to find.
 /// @param output The output of the search, stored as a pointer.
