@@ -68,31 +68,34 @@ CWindow::CWindow(CRdrFile* reader)
 	zrdr_finduint(tag, "height", &m_height, 1);
 
 	auto window_flags_tag = zrdr_findtag(tag, "window_flags");
-
+	
 	u32 window_flags = 0;
 	
-	for (u32 i = 1; i < window_flags_tag->array->integer; i++)
+	if (window_flags_tag)
 	{
-		char* flag = window_flags_tag->array[i].string;
+		for (u32 i = 1; i < window_flags_tag->array->integer; i++)
+		{
+			char* flag = window_flags_tag->array[i].string;
 
-		if (SDL_strcasecmp(flag, "FULLSCREEN") == 0)
-		{
-			window_flags |= SDL_WINDOW_FULLSCREEN;
-		}
-		else if (SDL_strcasecmp(flag, "BORDERLESS") == 0)
-		{
-			window_flags |= SDL_WINDOW_BORDERLESS;
-		}
-		else if (SDL_strcasecmp(flag, "MINIMIZED") == 0)
-		{
-			window_flags |= SDL_WINDOW_MINIMIZED;
-		}
-		else if (SDL_strcasecmp(flag, "MAXIMIZED") == 0)
-		{
-			window_flags |= SDL_WINDOW_MAXIMIZED;
-		}
+			if (SDL_strcasecmp(flag, "FULLSCREEN") == 0)
+			{
+				window_flags |= SDL_WINDOW_FULLSCREEN;
+			}
+			else if (SDL_strcasecmp(flag, "BORDERLESS") == 0)
+			{
+				window_flags |= SDL_WINDOW_BORDERLESS;
+			}
+			else if (SDL_strcasecmp(flag, "MINIMIZED") == 0)
+			{
+				window_flags |= SDL_WINDOW_MINIMIZED;
+			}
+			else if (SDL_strcasecmp(flag, "MAXIMIZED") == 0)
+			{
+				window_flags |= SDL_WINDOW_MAXIMIZED;
+			}
 		
-		SDL_Log(window_flags_tag->array[i].string);
+			SDL_Log(window_flags_tag->array[i].string);
+		}
 	}
 	
 	m_window = SDL_CreateWindow(m_name, m_width, m_height, window_flags);
