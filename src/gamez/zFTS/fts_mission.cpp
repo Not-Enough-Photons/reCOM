@@ -6,6 +6,7 @@
 #include "gamez/zSeal/zseal.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zVehicle/zvehicle.h"
+#include "gamez/zVideo/zvid.h"
 
 CMission theMission;
 
@@ -228,5 +229,172 @@ void CMission::Read(_zrdr* reader)
 		{
 			m_ai_params.recycle_range *= m_ai_params.recycle_range;
 		}
+	}
+}
+
+void CMission::OnMissionComplete(MISSION_STATE state)
+{
+	if (state != m_state)
+	{
+		m_state = state;
+	}
+
+	if (!theNetwork.m_bNetwork)
+	{
+		if (m_state == MISSION_ABORTED || !ftsPlayer->m_isAlive)
+		{
+			if (m_valve_nofade)
+			{
+				m_DelayEndMission = false;
+
+				_OnMissionComplete();
+				CVideo::Clear(0, 0, 0, 0);
+				// CFlashFXVector::Reset();
+				theMission.m_DelayEndMission = false;
+				m_FadingToEndMission = false;
+				appCamera->ResetDeathCam();
+				// theGame.Push(&m_exitState, 0);
+			}
+			else if (!m_FadingToEndMission)
+			{
+				m_FadingToEndMission = true;
+				theMission.m_FadingToEndMission = true;
+				m_fade_counter = 0;
+				m_next_fade_time = 1.0f;
+
+				// zTaskScheduler.AddTask("MissionFader", MissionFadeToEnd, fadeToEndMissionTick, 0.98f, this);
+			}
+			else
+			{
+				if (m_next_fade_time > 1.0f)
+				{
+					m_next_fade_time = 1.0f;
+				}
+
+				if (m_fade_counter > 0)
+				{
+					m_fade_counter = 0;
+				}
+			}
+		}
+	}
+	else
+	{
+		if (m_pNetGame)
+		{
+			// CZBombState::UninitBomb;
+
+			if (state == MISSION_ABORTED)
+			{
+				if (m_delay <= 1.0f)
+				{
+					m_delay = m_timer + 3.0f;
+				}
+				else if (m_delay < m_timer)
+				{
+					strncpy(theGame.)
+				}
+			}
+		}
+	}
+}
+
+void CMission::Tick(f32 dT)
+{
+	m_timer += dT;
+
+	if (m_wait_before_falling > 0.0f)
+	{
+		m_wait_before_falling -= dT;
+	}
+
+	m_winlosstimer += m_winlossinc * dT;
+
+	if (!theNetwork.m_bNetwork)
+	{
+		if (m_pNetGame == NULL)
+		{
+			// TickObjectives(dT);
+		}
+	}
+	else
+	{
+		// CNetClock::Tick();
+	}
+
+	if (!m_ignore_objectives)
+	{
+		if (!m_valve_timeout->m_value)
+		{
+			OnMissionComplete(MISSION_TIMEOUT);
+		}
+
+		if (!m_valve_abort->m_value)
+		{
+			OnMissionComplete(MISSION_ABORTED);
+		}
+
+		if (!m_valve_failure->m_value)
+		{
+			OnMissionComplete(MISSION_FAILURE);
+		}
+
+		if (!m_valve_complete->m_value)
+		{
+			OnMissionComplete(MISSION_SUCCESS);
+		}
+	}
+	else if (m_valve_abort->m_value)
+	{
+		OnMissionComplete(MISSION_ABORTED);
+	}
+
+	// spawners.Tick(dT);
+	TickInFirefight(dT);
+}
+
+void CMission::TickInFirefight(f32 dT)
+{
+	// The "awareness counter" keeps track of how many entities -
+	// saw the player. Enemies update the aware counter from -
+	// animation events and their state machine.
+
+	// This also controls the jukebox, where it will play combat -
+	// music if at least ONE enemy entity saw you.
+	
+	u32 aware_counter = 0;
+	
+	if (ftsPlayer)
+	{
+		aware_counter = ftsPlayer->m_aware_counter;
+	}
+
+	// Is the player seen by anyone else?
+	if (aware_counter < 1)
+	{
+		// Decrease the fight timer
+		if (m_fighttimer > 0.0f)
+		{
+			m_fighttimer =- dT;
+		}
+
+		// We are no longer fighting enemies.
+		// Go back to using stealth music.
+		if (m_fighttimer <= 0.0f)
+		{
+			m_fighttimer = 0.0f;
+			CSndJukebox::IsInFight(false);
+		}
+	}
+	else
+	{
+		// Player is currently in a fight
+		// Let the jukebox know!
+		if (m_fighttimer <= 0.0f)
+		{
+			CSndJukebox::IsInFight(true);
+		}
+
+		m_fighttimer = 4.0f;
 	}
 }
