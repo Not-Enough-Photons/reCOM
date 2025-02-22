@@ -162,13 +162,13 @@ char* zrdr_findstring(_zrdr* reader, const char* name)
 	return str;
 }
 
-bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 iterations)
+bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 startidx)
 {
 	u32 i = 0;
 	bool found = false;
 	_zrdr* tag = zrdr_findtag_startidx(reader, name, 1);
 
-	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < iterations + 1)
+	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < startidx + 1)
 	{
 		found = false;
 	}
@@ -176,7 +176,7 @@ bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 iterations)
 	{
 		i = 0;
 
-		if (iterations > 0)
+		if (startidx > 0)
 		{
 			do
 			{
@@ -198,7 +198,7 @@ bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 iterations)
 				
 				i++;
 				*output = real;
-			} while (i < iterations);
+			} while (i < startidx);
 		}
 
 		found = true;
@@ -207,13 +207,13 @@ bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 iterations)
 	return found;
 }
 
-bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 iterations)
+bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 startidx)
 {
 	u32 i = 0;
 	bool found = false;
 	_zrdr* tag = zrdr_findtag_startidx(reader, name, 1);
 
-	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < iterations + 1)
+	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < startidx + 1)
 	{
 		found = false;
 	}
@@ -221,7 +221,7 @@ bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 iterations)
 	{
 		i = 0;
 
-		if (iterations > 0)
+		if (startidx > 0)
 		{
 			do
 			{
@@ -243,7 +243,7 @@ bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 iterations)
 				
 				i++;
 				*output = integer;
-			} while (i < iterations);
+			} while (i < startidx);
 		}
 
 		found = true;
@@ -252,10 +252,10 @@ bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 iterations)
 	return found;
 }
 
-bool zrdr_finduint(_zrdr* reader, const char* name, u32* output, s32 iterations)
+bool zrdr_finduint(_zrdr* reader, const char* name, u32* output, s32 startidx)
 {
-	_zrdr* tag = zrdr_findtag_startidx(reader, name, iterations);
-	return zrdr_toINT(tag, reinterpret_cast<s32*>(output), iterations);
+	_zrdr* tag = zrdr_findtag_startidx(reader, name, startidx);
+	return zrdr_toINT(tag, reinterpret_cast<s32*>(output), startidx);
 }
 
 bool zrdr_findbool(_zrdr* reader, const char* tag, bool* output)
