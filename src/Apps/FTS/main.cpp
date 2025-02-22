@@ -11,9 +11,6 @@ int main(int argc, char** argv)
 {
 	process_arguments(argc, argv);
 	zSysInit();
-
-	return 0;
-	
 	zSysPostInit();
 	
 	SDL_Log("%s selected for GameZ.", gamez_GamePath);

@@ -1,4 +1,7 @@
 #pragma once
+#include <stack>
+#include <vector>
+
 #include "zrdr.h"
 
 #include <ctype.h>
@@ -11,10 +14,15 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset);
 class CRdrEditor : public CRdrFile
 {
 public:
-	int push(const char* str);
-	int pop();
+	bool push(const char* tag);
+	bool pop();
 
-	int addint(const char* tag, s32 value);
-	int addintnode(const char* tag, s32 value);
-	int addSTRING(const char* tag, const char* value);
+	bool addint(const char* tag, s32 value);
+	bool addintnode(s32 value);
+	bool addSTRING(const char* tag, const char* value);
+	bool addPNT3D(const char* tag, const PNT3D& value);
+	bool addrdrnode(_zrdr* node);
+	bool addstringnode(const char* node);
+
+	std::stack<std::vector<_zrdr*>> m_stack;
 };

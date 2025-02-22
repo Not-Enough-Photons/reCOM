@@ -365,11 +365,11 @@ bool zrdr_toINT(_zrdr* reader, s32* output, s32 size)
 	{
 		if (size > 0)
 		{
-			i = 0;
+			i = 1;
 
 			do
 			{
-				_zrdr* array = reader->array;
+				_zrdr* array = &reader->array[i];
 				s32 integer = 0;
 				
 				if (array->type == ZRDR_REAL)
