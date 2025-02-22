@@ -93,8 +93,6 @@ CWindow::CWindow(CRdrFile* reader)
 			{
 				window_flags |= SDL_WINDOW_MAXIMIZED;
 			}
-		
-			SDL_Log(window_flags_tag->array[i].string);
 		}
 	}
 	
