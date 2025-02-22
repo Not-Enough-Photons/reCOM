@@ -247,7 +247,7 @@ void CMission::OnMissionComplete(MISSION_STATE state)
 			{
 				m_DelayEndMission = false;
 
-				_OnMissionComplete();
+				// _OnMissionComplete();
 				CVideo::Clear(0, 0, 0, 0);
 				// CFlashFXVector::Reset();
 				theMission.m_DelayEndMission = false;
@@ -292,7 +292,7 @@ void CMission::OnMissionComplete(MISSION_STATE state)
 				}
 				else if (m_delay < m_timer)
 				{
-					strncpy(theGame.)
+					
 				}
 			}
 		}

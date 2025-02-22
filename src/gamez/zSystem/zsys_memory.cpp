@@ -60,8 +60,9 @@ void zSysInit()
 
 	s32 width = 0;
 	s32 height = 0;
-	
+
 	auto tag = zrdr_findtag(settings, "settings");
+	char* appname = zrdr_findstring(tag, "name");
 	zrdr_findint(tag, "width", &width, 1);
 	zrdr_findint(tag, "height", &height, 1);
 	

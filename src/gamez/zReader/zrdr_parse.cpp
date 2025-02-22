@@ -431,13 +431,13 @@ _zrdr* CRdrFile::ReadArray()
 		
 		if (array)
 		{
-			arrays.insert(arrays.begin(), array);
+			arrays.insert(arrays.end(), array);
 		}
 
 		// Is the token the start of a new tag?
 		if (token == '(')
 		{
-			arrays.insert(arrays.begin(), ReadArray());
+			arrays.insert(arrays.end(), ReadArray());
 		}
 		// Is the token the end of the tag we're in?
 		else if (token == ')')
@@ -461,6 +461,7 @@ _zrdr* CRdrFile::ReadArray()
 
 	// When working with readers of this version,
 	// The first index (0) is ALWAYS used to store the length.
+	// This means that zReader arrays start at index 1.
 	// In future zReader versions this was put into the
 	// "length" bitfield.
 	// When iterating through them, target the second index to access

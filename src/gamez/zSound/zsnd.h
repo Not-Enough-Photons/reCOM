@@ -205,11 +205,11 @@ public:
 	
 	static void NormalizeWeights();
 
-	static bool IsInFight(bool inFight);
-private:
+	static void IsInFight(bool inFight) { m_isinfight = inFight; }
+	
+	static bool m_isinfight;
 	f32 m_weights;
 	MUSIC_MODE m_currentmode;
-	bool m_isinfight;
 };
 
 class CSndSequence

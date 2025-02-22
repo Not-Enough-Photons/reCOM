@@ -133,6 +133,8 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
 			return &node[1];
 		}
 	}
+
+	return NULL;
 }
 
 char* zrdr_findstring(_zrdr* reader, const char* name)

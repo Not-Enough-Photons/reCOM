@@ -100,7 +100,7 @@ private:
 class CVideo
 {
 public:
-	static void Clear(u8 r, u8 g, u8 b, u8 a);
+	static void Clear(u8 r, u8 g, u8 b, u8 a) { }
 	static void RestoreImage(const char* img, bool raw = false);
 };
 
