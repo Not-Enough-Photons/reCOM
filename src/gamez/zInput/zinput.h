@@ -83,13 +83,15 @@ public:
 	CPad() { }
 	CPad(u32 port, u32 slot);
 
+	void SetButtonState(PAD_BUTTON button, KEY_STATE state);
+	
 	void Flush();
 	
 	void Tick(f32 delta);
 
 	bool GetTwoButtons(PAD_BUTTON button1, PAD_BUTTON button2);
 	bool IsOpen();
-private:
+
 	s32 m_port;
 	s32 m_slot;
 	s32 m_open;

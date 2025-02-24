@@ -173,6 +173,12 @@ public:
 	f32 m_cosMaxAimPitch;
 	f32 m_cosMinAimPitch;
 	f32 m_cosMaxAimYaw;
+	f32 m_cosProneMaxAimPitch;
+	f32 m_cosProneMinAimPitch;
+	f32 m_cosProneMaxAimYaw;
+	f32 m_cosMaxLookPitch;
+	f32 m_cosMinLookPitch;
+	f32 m_cosMaxLookYaw;
 	f32 m_cosMaxEyelookPitch;
 	f32 m_cosMinEyelookPitch;
 	f32 m_cosMaxEyelookYaw;

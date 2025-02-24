@@ -71,6 +71,11 @@ CHUD::CHUD()
 
 }
 
+CZSealBody* CHUD::GetHUDOwner()
+{
+    return appCamera->m_entity;
+}
+
 void CHUD::Init(zdb::CWorld* world)
 {
 

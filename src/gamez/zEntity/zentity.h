@@ -178,6 +178,10 @@ class CftsPlayer : public CEntity
 {
 public:
 	static void RegisterAnimCommands();
+
+	u32 m_is_player_node : 1;
+	u32 m_inside : 1;
+	u32 m_unused : 30;
 };
 
 class CTarget

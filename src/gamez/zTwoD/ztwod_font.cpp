@@ -118,3 +118,38 @@ void C2DFont::Load(CRdrFile* font, const char* name)
         }
     }
 }
+
+C2DFontEntry* C2DFont::GetEntry(char character)
+{
+    C2DFontEntry* entry = NULL;
+
+    for (u32 i = 0; i < m_charlist.size(); i++)
+    {
+        entry = m_charlist[i * 0x28];
+
+        if (character == entry->m_char)
+        {
+            return entry;
+        }
+    }
+
+    u32 i = 0;
+    while (true)
+    {
+        if (i >= m_charlist.size())
+        {
+            return m_charlist[character % m_charlist.size() * 0x28];
+        }
+
+        entry = m_charlist[i * 0x28];
+
+        if ((character % 0x26 + 'A') == entry->m_char)
+        {
+            break;
+        }
+
+        i++;
+    }
+
+    return entry;
+}

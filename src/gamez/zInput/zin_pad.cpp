@@ -12,6 +12,12 @@ CPad::CPad(u32 port, u32 slot)
     }
 }
 
+void CPad::SetButtonState(PAD_BUTTON button, KEY_STATE state)
+{
+    m_state[(u8)button] = state;
+    m_click[(u8)button] = -3;
+}
+
 void CPad::Flush()
 {
     

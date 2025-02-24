@@ -168,9 +168,10 @@ bool CMission::Init()
 	// CCtrlrConfigs::Init()
 	
 	// ZuiInit();
-	// hudInit();
+	hudInit();
 
-	// CTurret::Init("ai_turrets.rdr", "data/common");
+	// TODO: Implement CTurret
+	//CTurret::Init("ai_turrets.rdr", "data/common");
 	CRdrArchive::RemoveArchive("readerc.zar", gamez_GamePath);
 
 	return true;

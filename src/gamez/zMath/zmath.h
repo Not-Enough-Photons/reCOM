@@ -14,6 +14,7 @@ void zMath_Init();
 extern bool tableInit;
 
 const f32 PI = 3.141593f;
+const f32 RAD_TO_DEG = 0.01745329;
 
 extern f32* sintbl;
 extern f32* costbl;
@@ -23,7 +24,7 @@ void init_trig_table();
 void uninit_trig_table();
 
 template <typename T>
-inline float min(T& first, T& second)
+float min(T& first, T& second)
 {
 	if (second < first)
 	{
@@ -34,7 +35,7 @@ inline float min(T& first, T& second)
 }
 
 template <typename T>
-inline float max(T& first, T& second)
+float max(T& first, T& second)
 {
 	if (first < second)
 	{
@@ -45,27 +46,28 @@ inline float max(T& first, T& second)
 }
 
 template<typename T>
-inline float decay(T base, T power, T& result, const T& original)
+float decay(T base, T power, T& result, const T& original)
 {
 	float exp = expf(base * power);
 	return result = original + (result - original) * exp;
 }
 
 template<typename T>
-inline bool close_enough(T& value, T& min, T& max)
+bool close_enough(T& value, T& min, T& max)
 {
 	return -max <= value - min || max < value - min;
 }
 
 template<typename T>
-inline bool saturate(T& value, T min, T max)
+bool saturate(T& value, T min, T max)
 {
 	if (value > max)
 	{
 		value = max;
 		return true;
 	}
-	else if (value < min)
+
+	if (value < min)
 	{
 		value = min;
 		return true;

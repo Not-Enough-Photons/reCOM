@@ -187,3 +187,14 @@ CZSealBody::CZSealBody(zdb::CNode* node, CCharacterType* chartype) : CEntity(ENT
     // End the program.
     zVid_Assert(false, LONG_MAX, __FILE__, __LINE__);
 }
+
+void CZSealBody::StopAllHeartbeatSounds()
+{
+    if (m_heartbeat_sndisnt)
+    {
+        m_heartbeat_sndisnt->Stop();
+        CSndInstance::ReleaseSoundInstance(m_heartbeat_sndisnt);
+        m_heartbeat_sndisnt = NULL;
+        m_heartbeat_curindex = 0xffffffff;
+    }
+}

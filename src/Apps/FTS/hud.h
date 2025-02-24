@@ -42,7 +42,9 @@ public:
 		SLIDE_IN,
 		SLIDE_OUT
 	};
-private:
+
+	void AddLetterbox();
+	
 	C2DBitmap m_bitmap[2];
 	SLIDE_DIRECTION m_slidedir;
 	f32 m_curpos;
@@ -145,7 +147,9 @@ public:
 
 class CZNewHudMap : public C2D
 {
-private:
+public:
+	void SwitchToCompassMap() { }
+	
 	std::list<void*> m_itemlist;
 
 	CZSealBody* m_viewer;
@@ -412,7 +416,12 @@ private:
 
 class CZPauseTest : public C2D
 {
-private:
+public:
+	CZPauseTest();
+
+	void OpenPauseMenu();
+	void ClosePauseMenu();
+
 	C2DString m_selections[5];
 	C2DBitmap m_background;
 
@@ -558,8 +567,13 @@ class CHUD
 public:
 	CHUD();
 
+	static CZSealBody* GetHUDOwner();
+
+	void On() {}
+	void Off() {}
+	
 	void Init(zdb::CWorld* world);
-private:
+
 	// CDynTexList m_dyntexlist;
 
 	s32 m_hudrettype;

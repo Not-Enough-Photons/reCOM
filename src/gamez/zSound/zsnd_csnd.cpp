@@ -2,7 +2,9 @@
 
 #include "gamez/zArchive/zar.h"
 #include "gamez/zFTS/zfts.h"
+#include "gamez/zNetwork/znet.h"
 #include "gamez/zReader/zrdr.h"
+#include "gamez/zSeal/zseal.h"
 #include "gamez/zSystem/zsys.h"
 #include "SDL3/SDL_log.h"
 
@@ -15,9 +17,15 @@ bool snd_system_initialized = false;
 zar::CZAR CSnd::m_bnkArchive;
 zar::CZAR CSnd::m_vagArchive;
 
+CSnd* CSnd::m_listener = NULL;
+bool CSnd::m_hasreverb = false;
+bool CSnd::m_listenerIsValid = false;
+
 SDL_AudioStream* CSnd::m_audiostream = NULL;
 u8* CSnd::m_snd_data = NULL;
 u32 CSnd::m_snd_len = 0;
+
+f32 CSnd::m_fadetime = 0.0f;
 
 s32 CSnd::m_max_num_vags = 0;
 bool CSnd::m_isDisabled = false;
@@ -50,6 +58,56 @@ void CSnd::Init()
 		sprintf_s(path_buf, "%s/SOUNDS/VAGSTORE.ZAR", gamez_GamePath);
 		m_vagArchive.Open(path_buf, 0, 0x21, 16);
 	}
+}
+
+bool CSnd::PostTick(f32 dT, void* buf)
+{
+	if (!m_listenerIsValid)
+	{
+		m_listenerIsValid = true;
+	}
+
+	if (m_listener)
+	{
+		if (zdb::CWorld::m_world->m_camera->m_IsInside || ftsPlayer->m_inside)
+		{
+			if (!m_hasreverb)
+			{
+				// TODO: Handle reverb using some audio engine
+				// snd_AutoReverb(3, g_iReverbDepth, 3);
+				m_hasreverb = true;
+			}
+		}
+		else if (m_hasreverb)
+		{
+			// snd_AutoReverb(3, 0, g_iReverbTime, 3);
+			m_hasreverb = false;
+		}
+
+		// CSnd::m_listener = CSnd::m_listenermatrix;
+		// TODO: Do inverse matrix transform on listener
+	}
+
+	if (m_fadetime > 0.0f)
+	{
+		f32 time = m_fadetime - dT;
+
+		if (time <= 0.0f)
+		{
+			// ResetGroupVolTemp();
+		}
+	}
+
+	PostTick(dT, buf);
+	CSndJukebox::Tick(dT);
+
+	if (!theNetwork.m_bNetwork)
+	{
+		// Headset::ftsGetHeadset();
+		// Headset::Tick(dT);
+	}
+	
+	return false;
 }
 
 void CSnd::UIOpen()

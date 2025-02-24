@@ -125,11 +125,17 @@ public:
 	static void LoadWAV(const char* name);
 	static void LoadVAG(const char* name);
 	static void LoadVPK(const char* name);
+
+	static bool PostTick(f32 dT, void* buf);
 	
 	void LoadCSnd(_zrdr* reader);
 	float CalcVol(f32 volume, f32 masterVolume);
 	void SetupJukebox();
 
+	static CSnd* m_listener;
+
+	static f32 m_fadetime;
+	
 	static SDL_AudioStream* m_audiostream;
 	static u8* m_snd_data;
 	static u32 m_snd_len;
@@ -140,6 +146,7 @@ public:
 	static bool m_bShowSubtitles;
 	static bool m_hasreverb;
 	static bool m_vagEnabled;
+	static bool m_listenerIsValid;
 	static zar::CZAR m_vagArchive;
 	static zar::CZAR m_bnkArchive;
 	static s32 m_bnkoffset;
@@ -180,10 +187,34 @@ protected:
 class CSndInstance : public CSnd
 {
 public:
-	static f32 m_mastervol;
-	static std::vector<CSnd*> m_sound_instance_pool;
-
 	static void InitInstancePool(s32 count);
+	static void ReleaseSoundInstance(CSndInstance* instance);
+	static void PauseAllSounds();
+
+	void Stop();
+
+	static bool m_allpaused;
+	static f32 m_mastervol;
+	static std::list<CSndInstance*> m_instancelist;
+	static std::vector<CSnd*> m_sound_instance_pool;
+	
+	u32 m_handle;
+	CSnd* m_parent;
+
+	f32 m_vol;
+
+	CPnt3D m_pos;
+	
+	bool m_is3D;
+	bool m_forcedLoop;
+	bool m_paused;
+	bool m_terminateOnFinish;
+	bool m_terminateASAP;
+	bool m_pauseASAP;
+	bool m_continueASAP;
+
+	f32 m_fadeTime;
+	u32 m_entityID;
 };
 
 class CSndJukebox
@@ -197,7 +228,7 @@ public:
 	static void LoadMusicLists();
 
 	static void Start();
-	static void Tick(f32 delta);
+	static void Tick(f32 delta) {}
 	static void Stop();
 
 	static void Play(MUSIC_MODE mode, CSnd* sound);

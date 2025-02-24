@@ -151,6 +151,11 @@ public:
 
 class C2DString : public C2D
 {
+public:
+	C2DString();
+
+	void AddCharacter(char character);
+	
 	C2DFont* m_font;
 
 	char* m_string;
@@ -245,6 +250,7 @@ class PoseBitmap : public C2DBitmap
 
 class C2DFontEntry
 {
+public:
 	char m_char;
 	s32 m_offset;
 	s32 m_width;
@@ -262,8 +268,10 @@ class C2DFont : public C2D
 public:
 	C2DFont();
 	void Load(CRdrFile* font, const char* name);
+
+	C2DFontEntry* GetEntry(char character);
 	
-	std::vector<C2DFontEntry> m_charlist;
+	std::vector<C2DFontEntry*> m_charlist;
 	zdb::CTexHandle* m_pTexHandle;
 	zdb::CTexHandle* m_pGlowTexHandle;
 	s32 m_displaytop;
@@ -276,6 +284,10 @@ public:
 
 class C2DMessage_Q : public C2D
 {
+public:
+	void ScrollUp();
+	void SetBkgColor(f32 r, f32 g, f32 b);
+	
 	C2DFont* m_font;
 
 	C2DBitmap m_background1;

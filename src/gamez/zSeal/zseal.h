@@ -20,6 +20,8 @@ class CAppCamera;
 
 class CCharacterGear;
 
+class CSndInstance;
+
 enum class PLAYER_CAM_STATE;
 
 /// -------------------------------------------
@@ -411,6 +413,8 @@ public:
 	/// (Damage, world interactions, etc.)
 	/// -------------------------------------------
 
+	static void StopAllHeartbeatSounds();
+	
 	void HandleBloodDrip(f32 delta);
 	void HandleBombDefuse() {}
 	void HandleDamage(CZProjectile* projectile);
@@ -447,10 +451,13 @@ public:
 	void HandleKiller(const CZSealBody& killer);
 
 	CZBodyPart* GetRootPart() const;
-public:
+
 	static CSealAnim* m_sealanim;
 	static CRdrFile* m_motionRdrFile;
-private:
+
+	static CSndInstance* m_heartbeat_sndisnt;
+	static s32 m_heartbeat_curindex;
+
 	s32 m_MaxFollowerDistance;
 	s32 m_MaxFollowerDistanceNext;
 
@@ -793,9 +800,19 @@ public:
 	virtual bool IsRemote() const;
 
 	bool CreateAiEvent(CAiEvent::EVENT event, f32 expiration, f32 radius, bool flag, CPnt3D* position, s32 dummy);
-public:
+
+	MENU_STATE GetMenuState();
+	void SetMenuState(MENU_STATE state);
+	
+	void StopRumbler();
+	
+	static f32 m_bobbing1stperson_amplitude;
+	static f32 m_bobbing1stperson_rate;
+	static f32 m_crawl1stperson_amplitude;
+	static f32 m_crawl1stperson_rate;
+	
 	u32 m_padid;
-private:
+
 	f32 m_look_timer;
 	Rfloat m_look_rate;
 	AI_LOOK m_look_mode;
