@@ -32,7 +32,10 @@ bool CMenuState::Init()
 
 	if (m_skip == 0)
 	{
-		zar::CZAR* archive = CRdrArchive::AddArchive("readerc.zar", "D:/run/ui");
+		char pathbuf[64];
+		sprintf_s(pathbuf, 64, "%s/ui", gamez_GamePath);
+		
+		zar::CZAR* archive = CRdrArchive::AddArchive("readerc.zar", pathbuf);
 
 		if (archive)
 		{
