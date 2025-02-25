@@ -312,7 +312,7 @@ bool zrdr_findPNT3D(_zrdr* reader, const char* name, PNT3D* output)
 	bool found = false;
 	_zrdr* tag = zrdr_findtag_startidx(reader, name, 1);
 
-	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < 3)
+	if (!tag || tag->type != ZRDR_ARRAY || tag->array->integer < 4)
 	{
 		found = false;
 	}
