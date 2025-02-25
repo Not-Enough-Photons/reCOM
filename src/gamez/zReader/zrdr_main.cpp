@@ -280,9 +280,9 @@ bool zrdr_findPNT2D(_zrdr* reader, const char* name, PNT2D* output)
 
 		f32 axis = 0.0f;
 
-		do
+		for (u32 i = 0; i < 2; i++)
 		{
-			_zrdr* array = tag->array;
+			_zrdr* array = &tag->array[1];
 
 			if (array[i].type == ZRDR_REAL)
 			{
@@ -294,13 +294,11 @@ bool zrdr_findPNT2D(_zrdr* reader, const char* name, PNT2D* output)
 			}
 			else
 			{
-				axis = *(f32*)(output + i);
+				axis = (&output->x)[i];
 			}
 
-			*(f32*)(output + i) = axis;
-				
-			i++;
-		} while (i < 2);
+			(&output->x)[i] = axis;
+		}
 
 		found = true;
 	}
@@ -320,31 +318,27 @@ bool zrdr_findPNT3D(_zrdr* reader, const char* name, PNT3D* output)
 	}
 	else
 	{
-		i = 1;
-
 		f32 axis = 0.0f;
 
-		do
+		for (u32 i = 0; i < 3; i++)
 		{
-			_zrdr* array = tag->array;
+			_zrdr* array = &tag->array[1];
 
-			if (array[1].array[i].type == ZRDR_REAL)
+			if (array[i].type == ZRDR_REAL)
 			{
-				axis = array[1].array[i].real;
+				axis = array[i].real;
 			}
-			else if (array[1].array[i].type == ZRDR_INTEGER)
+			else if (array[i].type == ZRDR_INTEGER)
 			{
-				axis = static_cast<f32>(array[1].array[i].integer);
+				axis = static_cast<f32>(array[i].integer);
 			}
 			else
 			{
-				axis = *(f32*)(output + i);
+				axis = (&output->x)[i];
 			}
 
-			*(f32*)(output + i) = axis;
-				
-			i++;
-		} while (i < 3);
+			(&output->x)[i] = axis;
+		}
 
 		found = true;
 	}
