@@ -91,23 +91,23 @@ protected:
 class C2DBitmap : public C2D, protected C2DFade
 {
 public:
-	C2DBitmap();
+	C2DBitmap() {}
 
 	void Load(f32 x, f32 y, zdb::CTexHandle* handle);
 	void Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handle);
 
-	void Draw(const CMatrix& transform, zdb::CTextureRelocMgr* reloc);
-	void Draw(zdb::CCamera* camera);
+	void Draw(const CMatrix& transform, zdb::CTextureRelocMgr* reloc) {}
+	void Draw(zdb::CCamera* camera) {}
 
 	void TickFade();
 
 	void MakePacket(zdb::CCamera* camera, zdb::CTextureRelocMgr* reloc, const CMatrix& transform);
 
-	void Reset();
+	void Reset() {}
 
 	bool GetTrans() const;
 
-	void SetTrans(float translation);
+	void SetTrans(float translation) {}
 	void SetPos(s32 x, s32 y, s32 width, s32 height);
 	void SetPos(s32 x, s32 y);
 	void SetUV(f32 u0, f32 v0, f32 u1, f32 v1);
@@ -152,7 +152,7 @@ public:
 class C2DString : public C2D
 {
 public:
-	C2DString();
+	C2DString() {}
 
 	void AddCharacter(char character);
 	

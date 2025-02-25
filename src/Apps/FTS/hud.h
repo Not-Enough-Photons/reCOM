@@ -446,7 +446,7 @@ public:
 
 class BitmapReticule : public C2D
 {
-private:
+public:
 	CHUD* m_parent;
 
 	C2DBitmap m_bitmap;
