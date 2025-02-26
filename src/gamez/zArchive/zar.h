@@ -120,7 +120,7 @@ namespace zar
 	public:
 		CZAR(const char* name = NULL, CIO* io = NULL);
 		~CZAR();
-	public:
+
 		/// <summary>
 		/// Opens a ZAR file for reading into main memory.
 		/// </summary>
@@ -305,6 +305,10 @@ namespace zar
 
 		bool FetchAll(s32(*callback)(CZAR*, char*, void*, s32, void*), void* buf);
 
+		/// Fetches a list of pointers.
+		/// @param key The key to fetch the list of pointers.
+		/// @param buf The list of pointers.
+		/// @return Whether or not the fetch was successful.
 		bool FetchLIP(CKey* key, void** buf);
 
 		bool Fetch_V2(CKey* key, void* buf, size_t size);

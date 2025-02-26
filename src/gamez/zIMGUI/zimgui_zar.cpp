@@ -59,31 +59,32 @@ void DisplayKeys(zar::CKey* root, s32 depth)
         ImGui::PushID(depth * 1000 + i++);
         if (ImGui::TreeNode(key->GetName()))
         {
-            ImGui::Text("Size: %u bytes\nOffset: %u bytes", key->GetSize(), key->GetOffset());
-            if (ImGui::Button("Open"))
+            if (key->GetSize() > 0)
             {
-                zdb::CMesh* mesh;
-                u32* data = NULL;
-                _word128* meshword = NULL;
-                auto meshkey = current_archive->OpenKey(key);
-                if (meshkey)
+                if (ImGui::Button("Open"))
                 {
-                    if (current_archive->FetchLIP(meshkey, reinterpret_cast<void**>(meshword)))
+                    auto meshkey = current_archive->OpenKey(key);
+
+                    std::string meshname(meshkey->GetName());
+                    if (meshname.rfind("MESH_", 0) == 0)
                     {
+                        _word128 mesh_word;
                         u32 ofs = 0;
-
-                        current_archive->Fetch(key->GetName(), &ofs);
-                        current_archive->Fetch(key->GetName(), &mesh->m_mtx_count);
-
-                        data = &meshword->u32[ofs];
+                        if (current_archive->FetchLIP(meshkey, (void**)&mesh_word))
+                        {
+                            current_archive->Fetch(meshname.c_str(), &ofs);
+                            _word128* data = (_word128*)((s32*)&mesh_word + ofs);
+                            std::cout << data->f32[0] << std::endl;
+                        }
                     }
-
-                    current_archive->CloseKey(meshkey);
+                    
+                    current_archive->CloseKey(key);
                 }
-                current_archive->CloseKey(key);
+                
+                ImGui::Text("Size: %u bytes\nOffset: %u bytes", key->GetSize(), key->GetOffset());
             }
             
-            if (key->size() > 1)
+            if (key->size() > 0)
             {
                 DisplayKeys(key, depth + 1);
             }
