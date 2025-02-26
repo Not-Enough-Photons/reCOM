@@ -13,13 +13,13 @@ f32 C2D::m_fYPixel;
 
 C2D::C2D()
 {
-	first = false;
+	m_on = true;
+	first = true;
 	m_isAA = false;
 	m_isTrans = false;
-	m_hasTexture = false;
+	m_hasTexture = true;
 	m_isFrameAlpha = false;
-	m_on = false;
-
+	
 	m_uivar = NULL;
 	m_active_and_handling_input = true;
 }

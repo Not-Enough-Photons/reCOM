@@ -8,15 +8,24 @@
 #include "gamez/zSound/zsnd.h"
 
 class CZAnim;
+class CZAnimEx;
 class CZAnimMain;
+class CZAnimHealth;
 class CBlendable;
 class CAnimsByFP;
 
 class CSched_Manager;
 
+class Particle;
+
 namespace zar
 {
 	class CZAR;
+}
+
+namespace zdb
+{
+	class CTexHandle;
 }
 
 extern CZAnimMain ZAnim;
@@ -273,28 +282,28 @@ struct _zanim_anim_params
 	u8 m_root_node_index;
 
 	bool m_paused;
-	s8 m_state;
-	s8 m_activation;
-	bool m_network_anim;
-	s8 node_search_scope;
+	u8 m_state;
+	
+	u32 m_activation : 2;
+	u32 m_network_anim : 1;
+	u32 node_search_scope : 2;
 
-	bool m_auto_copy_anim;
-	bool m_auto_add_to_world;
-	bool m_create_instance;
-	bool m_copy_instance;
-	bool m_clone_anim;
-	bool m_create_root;
-
-	s32 m_max_anim_copies;
-	s32 m_unused;
+	u32 m_auto_copy_anim : 1;
+	u32 m_auto_add_to_world : 1;
+	u32 m_create_instance : 1;
+	u32 m_copy_instance : 1;
+	u32 m_clone_anim : 1;
+	u32 m_create_root : 1;
+	s32 m_max_anim_copies : 6;
+	s32 m_unused : 15;
 
 	f32 m_timer;
 	f32 m_priority;
 
-	s32 m_damage_seq_offset;
-	s32 m_activation_seq_offset;
-	s32 m_execution_seq_offset;
-	s32 m_cleanup_seq_offset;
+	u32 m_damage_seq_offset : 16;
+	u32 m_activation_seq_offset : 16;
+	u32 m_execution_seq_offset : 16;
+	u32 m_cleanup_seq_offset : 16;
 };
 
 struct _zanim_si_script
@@ -338,6 +347,18 @@ struct _zanim_node_ref
 	zdb::CNode* node_ptr;
 };
 
+struct _zanim_particle
+{
+	s32 name_index;
+	Particle* particle;
+};
+
+struct _zanim_tex_ref
+{
+	s32 name_index;
+	zdb::CTexHandle* texh;
+};
+
 struct _zanim_valve_ref
 {
 	s32 name_index;
@@ -354,15 +375,15 @@ struct _zanim_sound
 
 struct _zsequence
 {
-	s32 name_index;
-	s32 loop_counter;
-	bool paused;
+	u32 name_index : 16;
+	s32 loop_counter : 16;
+	u32 paused : 1;
 	
-	s8 activation;
-	s8 state;
-	s8 cmd_state;
+	u32 activation : 7;
+	u32 state : 8;
+	u32 cmd_state : 8;
 
-	s32 m_IF_NestLevel;
+	u32 m_IF_NestLevel : 8;
 
 	s8* cmd_pc;
 	s32 seq_data_size;
@@ -449,12 +470,44 @@ class CActiveAnimList
 
 };
 
-class CZAnim
+class CZAnim : public _zanim_anim_params
 {
 public:
 	void AddNewNodeRef();
 	void OnWeaponHitInit();
 	void GetNode();
+
+	// CZAnimArgList* m_arg_list;
+	// CZAnimNameIndexTable m_nameindex_table;
+
+	CZAnimEx* m_animEx;
+	CZAnimHealth* m_health;
+
+	u32 m_invalid : 1;
+	u32 m_added_to_world_internally : 1;
+	u32 m_debug : 1;
+	u32 m_animset_index : 8;
+	u32 m_node_ref_count : 8;
+	u32 m_tex_ref_count : 8;
+	u32 m_particle_count : 8;
+	u32 m_sound_ref_count : 8;
+	u32 m_valve_ref_count : 8;
+	u32 m_call_anim_ref_count : 8;
+
+	zdb::CNode* m_instance_node;
+
+	_zanim_node_ref* m_node_ref_list;
+	_zanim_tex_ref* m_tex_ref_list;
+	_zanim_valve_ref* m_valve_ref_list;
+	_zanim_particle* m_particle_list;
+	_zanim_sound* m_sound_ref_list;
+	_zanim_call_anim_ref* m_call_anim_ref_list;
+	_zanim_cmd_hdr** m_user_cmd;
+
+	char* m_seq_data;
+	s32 m_seq_data_size;
+
+	CZAnim* m_sibling_anim;
 };
 
 class CZAnimEx : public zdb::CNodeEx
@@ -524,6 +577,11 @@ public:
 
 	void Open() {}
 	bool InitCommands();
+
+	void CmdNext();
+	void CmdNext(s32 program_counter);
+	void CmdSet(s32 program_counter);
+	
 	_zanim_cmd_hdr* AddCmd(const char* name, _zanim_cmd_hdr*(*parser)(_zrdr*), void(*begin)(_zanim_cmd_hdr*), bool(*tick)(_zanim_cmd_hdr*, f32*), void(*end)(_zanim_cmd_hdr*));
 	_zanim_cmd_hdr* AnimParseExpression(_zanim_cmd_hdr* header, _zrdr* reader);
 
@@ -580,6 +638,7 @@ class CZAnimExpression
 public:
 	static bool IsOperator(const char* operation);
 	static _zanim_cmd_hdr* NewCmd(const char* operation);
+	static bool ProcExpr(f32* dT);
 };
 
 class CActiveAnimPool

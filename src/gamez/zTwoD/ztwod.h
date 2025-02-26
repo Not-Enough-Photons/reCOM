@@ -64,7 +64,7 @@ public:
 	bool IsOn() const;
 	bool CanHandleInput();
 	void SetCanHandleInput(bool enable);
-protected:
+
 	CUIVariable* m_uivar;
 
 	bool m_active_and_handling_input;
@@ -285,6 +285,10 @@ public:
 class C2DMessage_Q : public C2D
 {
 public:
+	C2DMessage_Q();
+
+	void Init(C2DFont* font, CRdrFile* reader);
+	
 	void ScrollUp();
 	void SetBkgColor(f32 r, f32 g, f32 b);
 	

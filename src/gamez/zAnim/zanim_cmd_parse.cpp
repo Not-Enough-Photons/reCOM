@@ -2,6 +2,28 @@
 
 #include "gamez/zSystem/zsys.h"
 
+bool CZAnimExpression::ProcExpr(f32* dT)
+{
+    s8* program_counter = NULL;
+    
+    if (!ZAnim.m_CurSeq)
+    {
+        return false;
+    }
+    else
+    {
+        program_counter = ZAnim.m_CurSeq->cmd_pc;
+    }
+
+    do
+    {
+        
+    }
+    while (true);
+
+    return true;
+}
+
 bool CZAnimExpression::IsOperator(const char* operation)
 {
     bool is_not = strcmp(operation, "!") == 0;

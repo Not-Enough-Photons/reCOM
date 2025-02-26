@@ -43,8 +43,8 @@ void C2DBitmap::Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handl
 	m_y = static_cast<s32>(y);
 	m_iWidth = static_cast<s32>(width) - m_x;
 	m_iHeight = static_cast<s32>(height) - m_y;
-
-	if (!m_hasTexture)
+ 
+	if (m_hasTexture)
 	{
 		zdb::CTexture* texture = NULL;
 
@@ -55,7 +55,7 @@ void C2DBitmap::Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handl
 
 		if (texture == NULL && first)
 		{
-			m_hasTexture = false;
+			first = false;
 		}
 	}
 }
@@ -73,12 +73,12 @@ void C2DBitmap::Load(f32 x, f32 y, zdb::CTexHandle* handle)
 			texture = handle->m_texture;
 		}
 
-		if (texture == NULL && m_hasTexture)
+		if (texture == NULL && !first)
 		{
-			m_hasTexture = false;
 			return;
 		}
 
+		first = false;
 		return;
 	}
 

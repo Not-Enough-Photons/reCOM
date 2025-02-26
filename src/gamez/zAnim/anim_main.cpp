@@ -3,6 +3,24 @@
 CZAnimMain ZAnim;
 bool CZAnimMain::m_LoadFromZAR = false;
 
+void CZAnimMain::CmdNext()
+{
+	m_CurSeq->cmd_pc += *m_CurSeq->cmd_pc;
+	m_CurSeq->cmd_state = 2;
+}
+
+void CZAnimMain::CmdNext(s32 program_counter)
+{
+	m_CurSeq->cmd_pc += program_counter;
+	m_CurSeq->cmd_state = 2;
+}
+
+void CZAnimMain::CmdSet(s32 program_counter)
+{
+	m_CurSeq->cmd_pc = (s8*)m_CurSeq->loop_counter + program_counter;
+	m_CurSeq->cmd_state = 2;
+}
+
 _zanim_cmd_set* CZAnimMain::GetCmdEntry(char* name, bool param_2)
 {
 	char* buf = NULL;
