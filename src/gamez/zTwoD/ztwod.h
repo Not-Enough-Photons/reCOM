@@ -91,7 +91,7 @@ protected:
 class C2DBitmap : public C2D, protected C2DFade
 {
 public:
-	C2DBitmap() {}
+	C2DBitmap();
 
 	void Load(f32 x, f32 y, zdb::CTexHandle* handle);
 	void Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handle);
