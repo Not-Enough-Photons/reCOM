@@ -210,14 +210,15 @@ class CQuat
 {
 public:
 	static const CQuat identity;
-public:
+
 	static CQuat Apply(CQuat& quat, CPnt3D& point);
 	static CQuat Normalize(CQuat& quat, CQuat& rhs);
+	static CQuat Div(CQuat& left, CQuat& right);
 	static CQuat Mul(CQuat& left, CQuat& right);
 	static void ToMatrix(CQuat& quat, CMatrix& matrix);
 	static CQuat Exp(CQuat& quat, CPnt3D& point);
 	static void MakeYXZ(f32 x, f32 y, f32 z, CQuat& quat);
-public:
+
 	CPnt3D vec;
 	f32 w;
 };

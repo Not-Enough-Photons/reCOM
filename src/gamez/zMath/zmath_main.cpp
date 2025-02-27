@@ -57,11 +57,8 @@ CQuat CQuat::Apply(CQuat& quat, CPnt3D& point)
 
 CQuat CQuat::Normalize(CQuat& quat, CQuat& rhs)
 {
-	f32 placeholder = 0.0f;
-	// float innerProduct = Vector3::Product(this, rhs);
-	placeholder = sqrtf(quat.w * quat.w + placeholder);
-	// Vector3::Scale(1.0 / placeholder, rhs, this);
-	return CQuat();
+	f32 length = sqrtf(quat.w * quat.w + quat.vec.z * quat.vec.z * quat.vec.y + quat.vec.y * quat.vec.x + quat.vec.x);
+	return quat;
 }
 
 CQuat CQuat::Mul(CQuat& left, CQuat& right)

@@ -96,18 +96,18 @@ public:
 	void Load(f32 x, f32 y, zdb::CTexHandle* handle);
 	void Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handle);
 
-	void Draw(const CMatrix& transform, zdb::CTextureRelocMgr* reloc) {}
-	void Draw(zdb::CCamera* camera) {}
+	void Draw(const CMatrix& transform, zdb::CTextureRelocMgr* reloc);
+	void Draw(zdb::CCamera* camera);
 
 	void TickFade();
 
 	void MakePacket(zdb::CCamera* camera, zdb::CTextureRelocMgr* reloc, const CMatrix& transform);
 
-	void Reset() {}
+	void Reset();
 
 	bool GetTrans() const;
 
-	void SetTrans(float translation) {}
+	void SetTrans(float transparency);
 	void SetPos(s32 x, s32 y, s32 width, s32 height);
 	void SetPos(s32 x, s32 y);
 	void SetUV(f32 u0, f32 v0, f32 u1, f32 v1);
@@ -120,7 +120,8 @@ private:
 	f32 m_NewUV[2][4];
 
 	zdb::CTexHandle* m_pTexHandle;
-	SDL_Surface* m_surface2d;
+	SDL_Texture* m_sdlTexture;
+	SDL_FRect m_rect;
 
 	s32 m_iWidth;
 	s32 m_iHeight;
@@ -152,9 +153,17 @@ public:
 class C2DString : public C2D
 {
 public:
-	C2DString() {}
+	C2DString();
 
 	void AddCharacter(char character);
+
+	void SetString(const char* string);
+
+	void Draw(zdb::CCamera* camera);
+	
+	void Load(const char* message, C2DFont* font, s32 x, s32 y, s32 width, s32 height);
+	void Load(const char* message, C2DFont* font, s32 x, s32 y);
+	void Load(f32 scale, const char* message, C2DFont* font, s32 x, s32 y);
 	
 	C2DFont* m_font;
 

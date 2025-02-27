@@ -9,6 +9,11 @@ enum class FIRETEAM;
 
 class CMissionCam;
 
+namespace zdb
+{
+	class CCamera;
+}
+
 extern CHUD* theHUD;
 
 enum HUD_MODE
@@ -36,6 +41,8 @@ struct tacmap_line
 class CLetterBox : C2D
 {
 public:
+	CLetterBox();
+	
 	enum SLIDE_DIRECTION
 	{
 		SLIDE_NONE,
@@ -44,6 +51,9 @@ public:
 	};
 
 	void AddLetterbox();
+	void RemoveLetterbox();
+	void Tick(f32 dT);
+	void Draw(zdb::CCamera* camera);
 	
 	C2DBitmap m_bitmap[2];
 	SLIDE_DIRECTION m_slidedir;
@@ -419,6 +429,10 @@ class CZPauseTest : public C2D
 public:
 	CZPauseTest();
 
+	void Draw(zdb::CCamera* camera);
+	
+	void ReInit();
+	
 	void OpenPauseMenu();
 	void ClosePauseMenu();
 

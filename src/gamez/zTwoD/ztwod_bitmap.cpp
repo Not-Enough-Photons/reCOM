@@ -1,4 +1,5 @@
 ﻿#include "ztwod.h"
+#include "gamez/zVideo/zvid.h"
 
 C2DBitmap::C2DBitmap()
 {
@@ -38,12 +39,17 @@ C2DBitmap::C2DBitmap()
 void C2DBitmap::Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handle)
 {
 	m_pTexHandle = handle;
-
+	
 	m_x = static_cast<s32>(x);
 	m_y = static_cast<s32>(y);
 	m_iWidth = static_cast<s32>(width) - m_x;
 	m_iHeight = static_cast<s32>(height) - m_y;
- 
+
+	m_rect.x = m_x;
+	m_rect.y = m_y;
+	m_rect.w = m_iWidth;
+	m_rect.h = m_iHeight;
+	
 	if (m_hasTexture)
 	{
 		zdb::CTexture* texture = NULL;
@@ -138,7 +144,35 @@ void C2DBitmap::Draw(const CMatrix& transform, zdb::CTextureRelocMgr* reloc)
 
 void C2DBitmap::Draw(zdb::CCamera* camera)
 {
-	
+	if (!IsOn())
+	{
+		return;
+	}
+
+	if (!m_hasTexture)
+	{
+		zdb::CTexture* texture = NULL;
+		
+		if (!m_pTexHandle)
+		{
+			texture = NULL;
+		}
+		else
+		{
+			texture = m_pTexHandle->m_texture;
+		}
+
+		if (!texture)
+		{
+			if (first)
+			{
+				first = false;
+			}
+
+			SDL_SetRenderDrawColor(theWindow->GetRenderer(), m_RGB[0][0], m_RGB[0][1], m_RGB[0][2], 255);
+			SDL_RenderFillRect(theWindow->GetRenderer(), &m_rect);
+		}
+	}
 }
 
 void C2DBitmap::TickFade()
@@ -195,10 +229,10 @@ bool C2DBitmap::GetTrans() const
 	return m_isTrans;
 }
 
-void C2DBitmap::SetTrans(float translation)
+void C2DBitmap::SetTrans(float transparency)
 {
-	m_RGB[0][3] = translation;
-	m_RGB[1][3] = translation;
+	m_RGB[0][3] = transparency;
+	m_RGB[1][3] = transparency;
 	m_isTrans = true;
 }
 

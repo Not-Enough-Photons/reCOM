@@ -1,4 +1,5 @@
 ﻿#include "ztwod.h"
+#include "gamez/zVideo/zvid.h"
 
 C2DString::C2DString()
 {
@@ -57,3 +58,52 @@ void C2DString::AddCharacter(char character)
         }
     }
 }
+
+void C2DString::Draw(zdb::CCamera* camera)
+{
+    SDL_SetRenderScale(theWindow->GetRenderer(), m_scale * 2, m_scale * 2);
+    SDL_SetRenderDrawColor(theWindow->GetRenderer(), m_color.x, m_color.y, m_color.z, 255);
+    SDL_RenderDebugText(theWindow->GetRenderer(), m_pos.x, m_pos.y, m_string);
+    SDL_SetRenderScale(theWindow->GetRenderer(), 1.0f, 1.0f);
+}
+
+void C2DString::SetString(const char* string)
+{
+    m_string = zstrdup(string);
+}
+
+void C2DString::Load(const char* message, C2DFont* font, s32 x, s32 y)
+{
+    m_pos.x = x;
+    m_pos.y = y;
+    SetString(message);
+    m_font = font;
+
+    if (m_color.w >= 128.0f)
+    {
+        SetTrans(m_color.w);
+    }
+}
+
+void C2DString::Load(const char* message, C2DFont* font, s32 x, s32 y, s32 width, s32 height)
+{
+    m_pos.x = x;
+    m_pos.y = y;
+    SetString(message);
+    m_font = font;
+
+    if (m_color.w >= 128.0f)
+    {
+        SetTrans(m_color.w);
+    }
+
+    m_charwidth = width;
+    m_charheight = height;
+}
+
+void C2DString::Load(f32 scale, const char* message, C2DFont* font, s32 x, s32 y)
+{
+    m_scale = scale;
+    Load(message, font, x, y);
+}
+

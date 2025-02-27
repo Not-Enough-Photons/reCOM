@@ -6,6 +6,7 @@
 
 #include <stb/stb_image.h>
 
+#include "hud.h"
 #include "gamez/zFTS/fts_state.h"
 #include "gamez/zFTS/zfts.h"
 #include "gamez/zIMGUI/zimgui.h"
@@ -18,6 +19,9 @@ extern zar::CZAR texarchive;
 extern zar::CZAR palarchive;
 
 extern const char* dir;
+
+CLetterBox* letterbox;
+CZPauseTest* pausemenu;
 
 bool LoadWorld(const char* db);
 
@@ -43,13 +47,19 @@ CTestState::CTestState()
 
 bool CTestState::Init()
 {
+    letterbox = new CLetterBox();
+    letterbox->AddLetterbox();
+    pausemenu = new CZPauseTest();
+    pausemenu->ReInit();
     return true;
 }
 
 void CTestState::Tick(f32 dT)
 {
-    SDL_RenderClear(theWindow->GetRenderer());
     SDL_SetRenderDrawColor(theWindow->GetRenderer(), 15, 15, 15, 255);
-    CZIMGUI::Tick(dT);
+    SDL_RenderClear(theWindow->GetRenderer());
+    letterbox->Tick(dT);
+    letterbox->Draw(NULL);
+    pausemenu->Draw(NULL);
     SDL_RenderPresent(theWindow->GetRenderer());
 }
