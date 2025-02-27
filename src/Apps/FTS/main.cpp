@@ -12,9 +12,11 @@ int main(int argc, char** argv)
 	process_arguments(argc, argv);
 	zSysInit();
 	zSysPostInit();
-	
-	SDL_Log("%s selected for GameZ.", gamez_GamePath);
 
+	#ifndef NOGAME
+	SDL_Log("%s selected for GameZ.", gamez_GamePath);
+	#endif
+	
 	if (dumpLog)
 	{
 		COutput::DumpLog("ftslog.txt");

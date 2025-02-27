@@ -22,7 +22,8 @@ extern const char* dir;
 
 CLetterBox* letterbox;
 CZPauseTest* pausemenu;
-C2DString strings[8];
+C2DString* strings;
+u32 num_strings;
 
 bool LoadWorld(const char* db);
 
@@ -54,18 +55,28 @@ bool CTestState::Init()
     pausemenu->ReInit();
 
     auto reader = zrdr_read("./data/zrdr/test_text.rdr", NULL, 0);
+    auto test_text = zrdr_findtag(reader, "test_text");
 
-    for (u32 i = 1; reader->array->integer; i++)
+    if (test_text->array->integer > 1)
     {
-        auto node = &reader->array[i];
+        num_strings = test_text->array->integer;
+        strings = new C2DString[num_strings];
+    }
+    
+    for (u32 i = 0; i < test_text->array->integer - 1; i++)
+    {
+        auto node = &test_text->array[i + 1];
         PNT3D color;
         PNT2D position;
+        f32 scale;
         
         char* text = zrdr_findstring(node, "text");
         zrdr_findPNT3D(node, "color", &color);
         zrdr_findPNT2D(node, "position", &position);
+        zrdr_findreal(node, "scale", &scale, 1);
 
-        strings[i].Load(text, NULL, 250, 250 * i - 0.25f);
+        strings[i].m_scale = scale;
+        strings[i].Load(text, NULL, position.x, position.y);
         strings[i].m_color.x = color.x;
         strings[i].m_color.y = color.y;
         strings[i].m_color.z = color.z;
@@ -85,7 +96,7 @@ void CTestState::Tick(f32 dT)
     // letterbox->Draw(NULL);
     // pausemenu->Draw(NULL);
 
-    for (u32 i = 0; i < 2; i++)
+    for (u32 i = 0; i < num_strings; i++)
     {
         strings[i].Draw(NULL);
     }

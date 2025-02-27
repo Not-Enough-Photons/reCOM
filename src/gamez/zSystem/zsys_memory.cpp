@@ -88,6 +88,10 @@ size_t zsys_FullAllocAndFree()
 
 void zSysPostInit()
 {
+	#if NOGAME
+	return;
+	#endif
+	
 	if (!postinited)
 	{
 		postinited = true;

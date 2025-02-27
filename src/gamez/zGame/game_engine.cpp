@@ -37,8 +37,11 @@ bool CGame::StartEngine()
 
 bool COurGame::StartEngine()
 {
-	bool success = CGame::StartEngine();
-	if (success)
+	#ifdef NOGAME
+	CGame::StartEngine();
+	return true;
+	#endif
+	if (CGame::StartEngine())
 	{
 		char img_dir[256];
 		sprintf_s(img_dir, 256, "%s/LOADING.RAW", gamez_GamePath);

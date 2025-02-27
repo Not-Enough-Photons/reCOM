@@ -61,10 +61,10 @@ void C2DString::AddCharacter(char character)
 
 void C2DString::Draw(zdb::CCamera* camera)
 {
-    SDL_SetRenderScale(theWindow->GetRenderer(), m_scale * 2, m_scale * 2);
+    SDL_SetRenderScale(theWindow->GetRenderer(), m_scale, m_scale);
     SDL_SetRenderDrawColor(theWindow->GetRenderer(), m_color.x, m_color.y, m_color.z, 255);
     SDL_RenderDebugText(theWindow->GetRenderer(), m_pos.x, m_pos.y, m_string);
-    SDL_SetRenderScale(theWindow->GetRenderer(), 1.0f, 1.0f);
+    SDL_SetRenderScale(theWindow->GetRenderer(), m_scale, m_scale);
 }
 
 void C2DString::SetString(const char* string)

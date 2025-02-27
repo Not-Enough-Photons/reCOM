@@ -18,7 +18,7 @@ project "fts"
 	
 	links { "opengl32.lib", "SDL3.lib", "SDL3_image.lib", "glew32.lib" }
 
-    files { 
+    files {
         "src/Apps/FTS/**.cpp",
 		"src/Apps/FTS/**.h",
         "src/gamez/**.cpp",
@@ -29,8 +29,12 @@ project "fts"
         "data/**.zrdr"
     }
 
+	removefiles {
+		"vendor/glm/glm.cppm"
+	}
+
     filter { "configurations:Debug" }
-        defines { "DEBUG" }
+        defines { "DEBUG", "NOGAME" }
         symbols "On"
 		targetdir "output/debug"
 

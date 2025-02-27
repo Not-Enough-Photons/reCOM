@@ -181,7 +181,7 @@ bool zrdr_findreal(_zrdr* reader, const char* name, f32* output, s32 startidx)
 			do
 			{
 				f32 real = 0.0f;
-				_zrdr* array = tag->array;
+				_zrdr* array = &tag->array[startidx];
 
 				if (array->type == ZRDR_REAL)
 				{

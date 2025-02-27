@@ -59,64 +59,6 @@ void C2DFont::Load(CRdrFile* font, const char* name)
     {
         length = 0;
     }
-
-    if (length > 0)
-    {
-        for (u32 i = 0; i < length; i++)
-        {
-            _zrdr* node = NULL;
-            char letter = 0;
-            u32 node_length = 0;
-
-            if (charoffsets->type == ZRDR_ARRAY)
-            {
-                node_length = charoffsets->array->integer - 1;
-            }
-
-            if (i < node_length)
-            {
-                node = &charoffsets->array[i + 1];
-            }
-            else
-            {
-                node = NULL;
-            }
-
-            if (node->type == ZRDR_ARRAY)
-            {
-                node_length = node->array->integer - 1;
-            }
-            else
-            {
-                node_length = 0;
-            }
-
-            if (node_length == 0)
-            {
-                node = NULL;
-            }
-            else
-            {
-                node = &node->array[1];
-            }
-
-            if (node->type == ZRDR_STRING)
-            {
-                letter = *node->string;
-            }
-            else if (node->type == ZRDR_INTEGER)
-            {
-                letter = (char)node->integer;
-            }
-
-            node_length = 0;
-
-            if (node->type == ZRDR_ARRAY)
-            {
-                node_length = node->array->integer - 1;
-            }
-        }
-    }
 }
 
 C2DFontEntry* C2DFont::GetEntry(char character)

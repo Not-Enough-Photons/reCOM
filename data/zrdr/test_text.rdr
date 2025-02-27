@@ -1,12 +1,37 @@
-(test_text
+; FILE: test_text.rdr
+; PURPOSE: This file demonstrates custom strings defined using the zReader format.
+;          You can define custom properties, just as long as they are also defined -
+;          from the C++ side.
+
+test_text (
 	(
-		text ("This is custom text from a reader file.")
+		text ( "This is custom text from a reader file." )
 		color ( 86 63 27 )
-		position ( 240 240)
+		position ( 0 50 )
+		scale ( 2.0 )
 	)
 	(
-		text ("This is another custom text from a reader file. This is awesome!")
+		text ( "This is another custom text from a reader file. This is awesome!" )
 		color ( 86 63 27 )
-		position ( 240 260 )
+		position ( 0 100 )
+		scale ( 2.0 )
+	)
+	(
+		text ( "I can't really imagine writing all this text out by hand." )
+		color ( 86 63 27 )
+		position ( 0 150 )
+		scale ( 2.0 )
+	)
+	(
+		text ( "Text can also be a different color." )
+		color ( 113 93 243 )
+		position ( 0 200 )
+		scale ( 2.0 )
+	)
+	(
+		text ( "...Or a different scale." )
+		color ( 86 63 27 )
+		position ( 0 200 )
+		scale ( 2.5 )
 	)
 )

@@ -1,8 +1,9 @@
 #pragma once
 #include <vector>
+#include <SDL3/SDL.h>
+#include <SDL3/SDL_pixels.h>
 
 #include "gamez/zSystem/zsys.h"
-#include "SDL3/SDL_pixels.h"
 
 namespace zar
 {
@@ -48,7 +49,7 @@ namespace zdb
 
 	class CLoadImage
 	{
-
+		
 	};
 	
 	class CTexPalette : public PALETTE_PARAMS
@@ -174,7 +175,7 @@ namespace zdb
 	{
 	public:
 		static CTexHandle* Create(CTexture* texture);
-	public:
+		
 		char* m_name;
 		s32 m_count;
 		u32 m_gsAddr;

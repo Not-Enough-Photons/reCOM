@@ -6,6 +6,7 @@
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"
 #include "SDL3/SDL_egl.h"
+#include "SDL3/SDL_log.h"
 
 std::list<char*> zrdr_symbols;
 
@@ -402,6 +403,7 @@ CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 			// Syntax error check failed
 			else
 			{
+				SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Syntax error in zReader file %s!", name);
 				// delete array;
 				rdrfile = NULL;
 			}
@@ -510,22 +512,9 @@ char CRdrFile::ReadToken(_zrdr** array)
 					break;
 				}
 				
-				while (true)
+				if (!file->fread(&token, 1))
 				{
-					file = fstack.front();
-
-					if (!file->fread(&token, 1))
-					{
-						break;
-					}
-					
-					if (fstack.size() < 2)
-					{
-						valid = false;
-						return 0;
-					}
-
-					fstack.pop(true);
+					break;
 				}
 
 				valid = true;
@@ -606,16 +595,16 @@ char CRdrFile::ReadToken(_zrdr** array)
 
 			continue;
 		}
-
-		if (fstack.size() < 2)
-		{
-			valid = false;
-			return 0;
-		}
-		
-		fstack.pop(true);
 	}
 	while (true);
+
+	if (fstack.size() < 2)
+	{
+		valid = false;
+		return 0;
+	}
+		
+	fstack.pop(true);
 }
 
 
