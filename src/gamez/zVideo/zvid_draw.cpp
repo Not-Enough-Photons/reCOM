@@ -20,10 +20,10 @@ void zVid_Swap(bool doSwap)
 	SDL_GL_SwapWindow(theWindow->GetWindow());
 	curRenderTime = SDL_GetTicks();
 
-	zVid.frameTime = (curRenderTime - lastRenderTime) * zSys.timerScale;
-	zVid.frameRate = 1.0f / zVid.frameTime + 0.5f;
-	zVid.runTime += zVid.frameTime;
-	zVid.frameNumber++;
+	// zVid.frameTime = (curRenderTime - lastRenderTime) * zSys.timerScale;
+	// zVid.frameRate = 1.0f / zVid.frameTime + 0.5f;
+	// zVid.runTime += zVid.frameTime;
+	// zVid.frameNumber++;
 }
 
 void zVid_ClearColor(f32 red, f32 green, f32 blue)

@@ -442,6 +442,7 @@ public:
 	s32 m_curselection;
 
 	C2DFont* m_font;
+	C2DTTFFont* m_ttf_font;
 
 	bool m_on;
 	bool m_wason;

@@ -6,16 +6,15 @@
 #include "SDL3/SDL_log.h"
 
 bool LoadWorld(const char* name);
+char* SetDatabase(const char* db);
 
 int main(int argc, char** argv)
 {
 	process_arguments(argc, argv);
 	zSysInit();
 	zSysPostInit();
-
-	#ifndef NOGAME
+	
 	SDL_Log("%s selected for GameZ.", gamez_GamePath);
-	#endif
 	
 	if (dumpLog)
 	{
@@ -31,11 +30,28 @@ int main(int argc, char** argv)
 
 	zUtilInit(log);
 
+	SetDatabase("ui");
+	
 	theGame.StartEngine();
 	theGame.StartPlay();
 
+	u64 current_t = 0;
+	u64 last_t = 0;
+	
 	while (true)
 	{
-		theGame.Tick(0.000025f);
+		current_t = SDL_GetTicks();
+
+		zVid.frameTime = (f32)(current_t - last_t) / 1000.0f;
+		
+		if (zVid.frameTime >= 0.025f)
+		{
+			zVid.frameTime = 0.025f;
+		}
+		
+		theGame.Tick(zVid.frameTime);
+
+		last_t = SDL_GetTicks();
 	}
+	
 }

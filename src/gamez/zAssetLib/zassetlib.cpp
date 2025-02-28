@@ -129,8 +129,10 @@ namespace zdb
         return false;
     }
     
-    bool CAssetLib::AddTexture(zdb::CTexture* texture)
+    bool CAssetLib::AddTexture(CTexture* texture)
     {
+        CTexHandle* handle = NULL;
+        
         if (m_locked)
         {
             return false;
@@ -145,15 +147,17 @@ namespace zdb
 
         while (it != CAssetMgr::m_assets.end())
         {
-            auto handle = (*it)->m_textures.GetHandle(texture->m_name);
+            handle = (*it)->m_textures.GetHandle(texture->m_name);
 
             if (handle)
             {
                 break;
             }
+
+            ++it;
         }
 
-        if (!*it)
+        if (!handle)
         {
             m_textures.Append(texture, true);
             texture->m_AssetLib = this;

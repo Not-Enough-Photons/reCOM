@@ -127,7 +127,7 @@ namespace zdb
                     char* name = texturekey->GetName();
                     CTexHandle* handle = CAssetMgr::m_assets.GetTexHandle(name);
 
-                    if (handle && library->AddTexture(name))
+                    if (!handle && !library->AddTexture(name))
                     {
                         texture = new CTexture(name);
                         texture->Read(*this);

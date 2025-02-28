@@ -5,9 +5,11 @@
 #include "gamez/zCamera/zcam.h"
 #include "gamez/zInput/zinput.h"
 #include "gamez/zSystem/zsys.h"
+#include "SDL3/SDL_ttf.h"
 
 class C2D;
 class C2DFont;
+class C2DTTFFont;
 class CUIVariable;
 
 namespace zdb
@@ -120,7 +122,7 @@ private:
 	f32 m_NewUV[2][4];
 
 	zdb::CTexHandle* m_pTexHandle;
-	SDL_Texture* m_sdlTexture;
+	SDL_Texture* m_pSDLTexture;
 	SDL_FRect m_rect;
 
 	s32 m_iWidth;
@@ -160,13 +162,22 @@ public:
 	void SetString(const char* string);
 
 	void Draw(zdb::CCamera* camera);
+
+	void Load(const char* message, C2DTTFFont* font, s32 x, s32 y, s32 width, s32 height);
+	void Load(const char* message, C2DTTFFont* font, s32 x, s32 y);
+	void Load(f32 scale, const char* message, C2DTTFFont* font, s32 x, s32 y);
 	
 	void Load(const char* message, C2DFont* font, s32 x, s32 y, s32 width, s32 height);
 	void Load(const char* message, C2DFont* font, s32 x, s32 y);
 	void Load(f32 scale, const char* message, C2DFont* font, s32 x, s32 y);
 	
 	C2DFont* m_font;
+	C2DTTFFont* m_ttf_font;
 
+	SDL_FRect m_rect;
+
+	SDL_Texture* m_strTexture;
+	
 	char* m_string;
 	s32 m_stringlen_max;
 	s32 m_numChars;
@@ -279,6 +290,25 @@ public:
 	void Load(CRdrFile* font, const char* name);
 
 	C2DFontEntry* GetEntry(char character);
+	u32 GetIndex(char character);
+	
+	std::vector<C2DFontEntry*> m_charlist;
+	zdb::CTexHandle* m_pTexHandle;
+	zdb::CTexHandle* m_pGlowTexHandle;
+	s32 m_displaytop;
+	s32 m_displaybottom;
+	s32 XPadding;
+	f32 m_avgWidth;
+	f32 m_opacity;
+	f32 m_scale_factor;
+};
+
+class C2DTTFFont : public C2D
+{
+public:
+	void Load(const char* path);
+
+	TTF_Font* m_ttf_font;
 	
 	std::vector<C2DFontEntry*> m_charlist;
 	zdb::CTexHandle* m_pTexHandle;

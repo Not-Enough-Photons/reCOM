@@ -10,6 +10,7 @@
 
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zVideo/zvid.h"
+#include "SDL3/SDL_ttf.h"
 
 bool postinited = false;
 size_t _HeapSize = 0;
@@ -57,6 +58,17 @@ void zSysInit()
 	zVid_Assert(SDL_Init(flags), LONG_MAX, __FILE__, __LINE__);
 	
 	zSys.isCdBoot = false;
+
+	if (!TTF_Init())
+	{
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Failed to load SDL TTF!");
+	}
+}
+
+void zSysReset()
+{
+	zSys.timerTicksPerSecond = static_cast<u32>(zVid.hblnkRate);
+	zSys.timerScale = 1.0f / zSys.timerTicksPerSecond;
 }
 
 size_t zsys_FullAllocAndFree()
@@ -88,10 +100,6 @@ size_t zsys_FullAllocAndFree()
 
 void zSysPostInit()
 {
-	#if NOGAME
-	return;
-	#endif
-	
 	if (!postinited)
 	{
 		postinited = true;

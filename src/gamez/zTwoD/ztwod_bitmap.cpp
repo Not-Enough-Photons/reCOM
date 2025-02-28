@@ -47,8 +47,8 @@ void C2DBitmap::Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handl
 
 	m_rect.x = m_x;
 	m_rect.y = m_y;
-	m_rect.w = m_iWidth;
-	m_rect.h = m_iHeight;
+	m_rect.w = width;
+	m_rect.h = height;
 	
 	if (m_hasTexture)
 	{
@@ -57,6 +57,56 @@ void C2DBitmap::Load(f32 x, f32 y, f32 width, f32 height, zdb::CTexHandle* handl
 		if (handle != NULL)
 		{
 			texture = handle->m_texture;
+
+			s32 pitch = 0;
+
+			if (texture->m_format == SDL_PIXELFORMAT_RGBA32 || texture->m_format == SDL_PIXELFORMAT_RGBA8888)
+			{
+				pitch = texture->m_width * sizeof(u8) * 4;
+			}
+			else if (texture->m_format == SDL_PIXELFORMAT_RGB24)
+			{
+				pitch = texture->m_width * sizeof(u8) * 3;
+			}
+			else if (texture->m_format == SDL_PIXELFORMAT_RGBA5551 || texture->m_format == SDL_PIXELFORMAT_RGBA4444 || texture->m_format == SDL_PIXELFORMAT_BGRA5551)
+			{
+				pitch = texture->m_width * sizeof(u8) * 2;
+			}
+			else if (texture->m_format == SDL_PIXELFORMAT_INDEX8)
+			{
+				pitch = texture->m_width * sizeof(u8);
+			}
+
+			SDL_Palette* palette = SDL_CreatePalette(8);
+			SDL_Surface* surface = SDL_CreateSurfaceFrom(texture->m_width, texture->m_height, SDL_PIXELFORMAT_INDEX8, texture->m_buffer, texture->m_width * sizeof(u8));
+			SDL_SetSurfacePalette(surface, palette);
+			
+			if (!surface)
+			{
+				SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, SDL_GetError());
+				return;
+			}
+			
+			m_pSDLTexture = SDL_CreateTextureFromSurface(theWindow->GetRenderer(), surface);
+
+			if (!m_pSDLTexture)
+			{
+				SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, SDL_GetError());
+				return;
+			}
+			
+			if (texture->m_bilinear)
+			{
+				SDL_SetTextureScaleMode(m_pSDLTexture, SDL_SCALEMODE_LINEAR);
+			}
+			else
+			{
+				SDL_SetTextureScaleMode(m_pSDLTexture, SDL_SCALEMODE_NEAREST);
+			}
+
+			m_hasTexture = true;
+			
+			SDL_DestroySurface(surface);
 		}
 
 		if (texture == NULL && first)
@@ -173,6 +223,10 @@ void C2DBitmap::Draw(zdb::CCamera* camera)
 			SDL_RenderFillRect(theWindow->GetRenderer(), &m_rect);
 		}
 	}
+	else
+	{
+		SDL_RenderTexture(theWindow->GetRenderer(), m_pSDLTexture, NULL, &m_rect);
+	}
 }
 
 void C2DBitmap::TickFade()
@@ -281,5 +335,5 @@ void C2DBitmap::SetColor(f32 red, f32 green, f32 blue)
 	m_RGB[0][2] = blue;
 	m_RGB[1][2] = red;
 	m_RGB[1][2] = green;
-	m_RGB[1][2] = blue;
+	m_RGB[2][2] = blue;
 }

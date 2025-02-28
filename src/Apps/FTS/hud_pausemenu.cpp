@@ -17,29 +17,32 @@ CZPauseTest::CZPauseTest()
 
 void CZPauseTest::ReInit()
 {
+    m_ttf_font = new C2DTTFFont();
+    m_ttf_font->Load("Z:/ARIALNB.ttf");
+    
     m_numselections = 5;
     
-    m_selections[0].Load(1.2f, "RESUME", NULL, 240, 200);
+    m_selections[0].Load(1.2f, "RESUME", m_ttf_font, 240, 200);
     m_selections[0].m_color.x = 86.0f;
     m_selections[0].m_color.y = 63.0f;
     m_selections[0].m_color.z = 27.0f;
 
-    m_selections[1].Load(1.2f, "ABORT", NULL, 240, 232);
+    m_selections[1].Load(1.2f, "ABORT", m_ttf_font, 240, 232);
     m_selections[1].m_color.x = 86.0f;
     m_selections[1].m_color.y = 63.0f;
     m_selections[1].m_color.z = 27.0f;
 
-    m_selections[2].Load(1.2f, "INVERT PITCH: OFF", NULL, 240, 264);
+    m_selections[2].Load(1.2f, "INVERT PITCH: OFF", m_ttf_font, 240, 264);
     m_selections[2].m_color.x = 86.0f;
     m_selections[2].m_color.y = 63.0f;
     m_selections[2].m_color.z = 27.0f;
 
-    m_selections[3].Load(1.2f, "AUTO AIM: OFF", NULL, 240, 296);
+    m_selections[3].Load(1.2f, "AUTO AIM: OFF", m_ttf_font, 240, 296);
     m_selections[3].m_color.x = 86.0f;
     m_selections[3].m_color.y = 63.0f;
     m_selections[3].m_color.z = 27.0f;
 
-    m_selections[4].Load(1.2f, "REPLAY", NULL, 240, 328);
+    m_selections[4].Load(1.2f, "REPLAY", m_ttf_font, 240, 328);
     m_selections[4].m_color.x = 86.0f;
     m_selections[4].m_color.y = 63.0f;
     m_selections[4].m_color.z = 27.0f;

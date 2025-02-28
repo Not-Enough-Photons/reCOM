@@ -31,7 +31,7 @@ bool CGame::Tick(f32 dT)
 	theNetwork.zNetUpdate();
 	theVoice.PreTick();
 	// CConsole::m_console->Tick();
-
+	
 	if (m_CurrentState < 16)
 	{
 		state = m_Stack[m_CurrentState];

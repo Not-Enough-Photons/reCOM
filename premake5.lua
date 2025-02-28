@@ -16,7 +16,7 @@ project "fts"
 	
     libdirs { "lib" }
 	
-	links { "opengl32.lib", "SDL3.lib", "SDL3_image.lib", "glew32.lib" }
+	links { "opengl32.lib", "SDL3.lib", "SDL3_image.lib", "SDL3_ttf.lib", "glew32.lib" }
 
     files {
         "src/Apps/FTS/**.cpp",

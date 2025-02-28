@@ -23,7 +23,8 @@ void zVid_Init(_zvid_mode mode)
 	zVid.aspect[0] = 1.0f;
 	zVid.aspect[1] = 1.0f;
 	zVid.displayBuf = NULL;
-	zVid.frameTime = 0.025f;
+	zVid.frameRate = 144.0f;
+	zVid.hblnkRate = 15750.0f;
 	zvid_SetVideoMode(mode);
 
 	auto settings_rdr_file = zrdr_read("./data/zrdr/settings.rdr", NULL, 0);

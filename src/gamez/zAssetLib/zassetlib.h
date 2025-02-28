@@ -58,7 +58,7 @@ namespace zdb
 		CTexHandle* GetTexHandle(const char* name);
 		CAssetLib* FindLib(const char* name);
 		CModel* GetModel(const char* name);
-	private:
+
 		CModel* m_cache_model;
 	};
 

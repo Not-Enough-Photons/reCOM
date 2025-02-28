@@ -72,9 +72,8 @@ namespace zdb
 		{
 			success = true;
 			memcpy(this, lipbuf, sizeof(TEXTURE_PARAMS));
-			void* texalloc = zmalloc(sizeof(CTexture));
 			u32 ofs = lipbuf[1].u32[0];
-			m_buffer = &lipbuf->u8[ofs] + 24;
+			m_buffer = lipbuf->u8 + ofs + 0x18;
 		}
 
 		if (m_texelBitSize == 4)
@@ -278,15 +277,17 @@ namespace zdb
 
 		while (it != end())
 		{
-			handle = *it;
+			CTexHandle* cur_handle = *it;
 
-			if (!handle->m_texture || !handle->m_name)
+			if (!cur_handle->m_texture || !cur_handle->m_name)
 			{
+				++it;
 				continue;
 			}
 
-			if (strcasecmp(handle->m_name, name) == 0)
+			if (strcasecmp(cur_handle->m_name, name) == 0)
 			{
+				handle = cur_handle;
 				break;
 			}
 			

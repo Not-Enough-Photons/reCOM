@@ -196,7 +196,7 @@ void CMission::PreOpen(const char* db)
 
 	if (!loadingscreenassets)
 	{
-		m_strLoadingScrLib.replace(0, 0, 0);
+		m_strLoadingScrLib = "";
 	}
 	else
 	{

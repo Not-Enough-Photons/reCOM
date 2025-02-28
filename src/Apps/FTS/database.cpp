@@ -6,7 +6,7 @@
 #include "gamez/zSave/zsave.h"
 #include "gamez/zVisual/zvis.h"
 
-char* database = "";
+char database[32];
 
 extern zar::CZAR archive = zar::CZAR();
 extern zdb::CWorld* theWorld = NULL;

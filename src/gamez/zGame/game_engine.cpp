@@ -18,7 +18,7 @@ bool CGame::StartEngine()
 	zdb::CTexture::Init();
 	C2D::Init();
 	zdb::CWorld::Init();
-	// zSysReset();
+	zSysReset();
 	zVid_Open();
 	C2D::Open();
 	CInput::Init();
@@ -37,10 +37,6 @@ bool CGame::StartEngine()
 
 bool COurGame::StartEngine()
 {
-	#ifdef NOGAME
-	CGame::StartEngine();
-	return true;
-	#endif
 	if (CGame::StartEngine())
 	{
 		char img_dir[256];
