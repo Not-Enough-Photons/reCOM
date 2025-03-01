@@ -19,11 +19,11 @@ void FileCallback(void* userdata, const char * const *filelist, int filter)
         // rdrArchive.Close();
         rdr_dir = *filelist;
         rdrArchive = *CRdrArchive::AddArchive(rdr_dir, NULL);
-        CRdrArchive::OpenAll_ZARV2();
+        CRdrArchive::OpenAll();
 
         for (auto it = rdrArchive.m_stable->begin(); it != rdrArchive.m_stable->end(); ++it)
         {
-            CRdrFile* reader = zrdr_read(*it, NULL, 0);
+            CRdrFile* reader = zrdr_read(*it);
             sprintf_s(path, 256, "%s/%s", input_path, *it);
             FILE* file = fopen(path, "w");
             reader->Write(file);

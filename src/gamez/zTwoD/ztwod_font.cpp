@@ -47,10 +47,10 @@ void C2DFont::Load(CRdrFile* font, const char* name)
     char* texture = zrdr_findstring(font_name, "texture");
     char* glowtexture = zrdr_findstring(font_name, "glowtexture");
 
-    zrdr_findint(font_name, "topy", &topy, 1);
-    zrdr_findint(font_name, "boty", &boty, 1);
-    zrdr_findint(font_name, "xspacing", &xspacing, 1);
-    zrdr_findreal(font_name, "opacity", &m_opacity, 1);
+    zrdr_findint(font_name, "topy", &topy);
+    zrdr_findint(font_name, "boty", &boty);
+    zrdr_findint(font_name, "xspacing", &xspacing);
+    zrdr_findreal(font_name, "opacity", &m_opacity);
 
     if (!zrdr_findtag(font_name, "scale"))
     {
@@ -58,7 +58,7 @@ void C2DFont::Load(CRdrFile* font, const char* name)
     }
     else
     {
-        zrdr_findreal(font_name, "scale", &m_scale_factor, 1);
+        zrdr_findreal(font_name, "scale", &m_scale_factor);
     }
 
     if (texture)
@@ -312,9 +312,9 @@ void C2DFont::Load(CRdrFile* font, const char* name)
 
                 C2DFontEntry entry;
 
-                zrdr_findint(node, "baseline", &entry.m_baseline, 1);
-                zrdr_findint(node, "lKerning", &entry.m_lKerning, 1);
-                zrdr_findint(node, "rKerning", &entry.m_rKerning, 1);
+                zrdr_findint(node, "baseline", &entry.m_baseline);
+                zrdr_findint(node, "lKerning", &entry.m_lKerning);
+                zrdr_findint(node, "rKerning", &entry.m_rKerning);
 
                 entry.m_offset = entry.m_baseline << 4;
                 entry.m_width = entry.m_lKerning << 4;

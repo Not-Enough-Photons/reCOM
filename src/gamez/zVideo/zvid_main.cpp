@@ -2,6 +2,7 @@
 #include <SDL3/SDL.h>
 
 #include "zvid.h"
+#include "Apps/FTS/gamever.h"
 
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zValve/zvalve.h"
@@ -27,7 +28,7 @@ void zVid_Init(_zvid_mode mode)
 	zVid.hblnkRate = 15750.0f;
 	zvid_SetVideoMode(mode);
 
-	auto settings_rdr_file = zrdr_read("./data/zrdr/settings.rdr", NULL, 0);
+	auto settings_rdr_file = zrdr_read("./data/zrdr/settings.rdr");
 	
 	theWindow = new CWindow(settings_rdr_file);
 
@@ -65,11 +66,13 @@ CWindow::CWindow()
 CWindow::CWindow(CRdrFile* reader)
 {
 	auto tag = zrdr_findtag(reader, "settings");
-	m_name = zrdr_findstring(tag, "name");
-	zrdr_finduint(tag, "width", &m_width, 1);
-	zrdr_finduint(tag, "height", &m_height, 1);
+	auto window_settings = zrdr_findtag(tag, "window_settings");
+	auto game_specific_settings = zrdr_findtag(tag, "game_specific_settings");
 
-	auto window_flags_tag = zrdr_findtag(tag, "window_flags");
+	zrdr_finduint(window_settings, "width", &m_width, 1);
+	zrdr_finduint(window_settings, "height", &m_height, 1);
+
+	auto window_flags_tag = zrdr_findtag(window_settings, "window_flags");
 	
 	u32 window_flags = 0;
 	
@@ -95,6 +98,15 @@ CWindow::CWindow(CRdrFile* reader)
 			{
 				window_flags |= SDL_WINDOW_MAXIMIZED;
 			}
+		}
+	}
+	
+	if (game_specific_settings)
+	{
+		auto name_tag = zrdr_findtag(game_specific_settings, game_info.name);
+		if (name_tag)
+		{
+			m_name = name_tag->array[1].string;
 		}
 	}
 	

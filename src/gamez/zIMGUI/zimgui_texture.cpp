@@ -15,11 +15,6 @@ ImGuiIO CZIMGUI::m_io;
 zar::CZAR texarchive;
 zar::CZAR palarchive;
 
-bool LoadTexture(zdb::CTexture texture);
-bool LoadPalette(zdb::CTexPalette pal);
-
-void LoadZAR();
-
 const char* dir;
 
 void FileDialogCallback_ZAR(void* userdata, const char * const *filelist, int filter)
@@ -83,7 +78,7 @@ bool CZIMGUI::Tick_TextureDisplay(f32 dT)
                         auto texkey = texarchive.OpenKey(*it);
                         zdb::CTexture tex;
                         tex.Read(texarchive);
-                        LoadTexture(tex);
+                        // LoadTexture(tex);
                         texarchive.CloseKey(texkey);
                         texarchive.CloseKey(root);
                     }
@@ -127,7 +122,7 @@ bool CZIMGUI::Tick_TextureDisplay(f32 dT)
                         auto palkey = palarchive.OpenKey(*it);
                         zdb::CTexPalette pal;
                         pal.Read(palarchive);
-                        LoadPalette(pal);
+                        // LoadPalette(pal);
                         palarchive.CloseKey(palkey);
                         palarchive.CloseKey(root);
                     }

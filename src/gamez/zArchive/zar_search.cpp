@@ -1,4 +1,5 @@
 #include "zar.h"
+#include "Apps/FTS/gamever.h"
 
 #include "gamez/zutil/util_stable.h"
 #include "gamez/zutil/util_systemio.h"
@@ -24,18 +25,38 @@ namespace zar
 		{
 			if (key->m_size != 0)
 			{
-				s32 offset = key->m_offset;
-				size_t position = m_pFile->fseek(offset, SEEK_SET);
-
-				success = offset == position;
-
-				if (success && size <= key->m_size)
+				GameZ_FTSGame game = GetGame();
+				if (game == game_SOCOM1_BETA)
 				{
-					offset = m_pFile->fread(buf, size);
+					s32 offset = key->m_offset;
+					size_t position = m_pFile->fseek(offset, SEEK_SET);
 
-					success = size == offset;
+					success = offset == position;
 
-					ZAR_SECURE(m_bSecure, buf, size);
+					if (success && size <= key->m_size)
+					{
+						offset = m_pFile->fread(buf, size);
+
+						success = size == offset;
+
+						ZAR_SECURE(m_bSecure, buf, size);
+					}
+				}
+				else if (game == game_SOCOM1 || game == game_SOCOM2_BETA)
+				{
+					s32 offset = key->m_offset;
+					size_t position = m_pFile->fseek(m_rootOffset + offset, SEEK_SET);
+
+					success = m_rootOffset + offset == position;
+
+					if (success && size <= key->m_size)
+					{
+						offset = m_pFile->fread(buf, size);
+
+						success = size == offset;
+
+						ZAR_SECURE(m_bSecure, buf, size);
+					}
 				}
 			}
 
@@ -406,43 +427,5 @@ namespace zar
 		}
 
 		return keyOffset;
-	}
-
-	bool CZAR::Fetch_V2(CKey* key, void* buf, size_t size)
-	{
-		bool isOpen = false;
-		bool success = false;
-
-		if (m_pFile == NULL)
-		{
-			return false;
-		}
-		
-		isOpen = m_pFile->IsOpen();
-
-		CKey* openKey = OpenKey(key);
-		if (isOpen && openKey != NULL)
-		{
-			if (key->m_size != 0)
-			{
-				s32 offset = key->m_offset;
-				size_t position = m_pFile->fseek(m_rootOffset + offset, SEEK_SET);
-
-				success = m_rootOffset + offset == position;
-
-				if (success && size <= key->m_size)
-				{
-					offset = m_pFile->fread(buf, size);
-
-					success = size == offset;
-
-					ZAR_SECURE(m_bSecure, buf, size);
-				}
-			}
-
-			CloseKey(key);
-		}
-
-		return success;
 	}
 }

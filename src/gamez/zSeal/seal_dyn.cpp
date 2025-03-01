@@ -4,7 +4,7 @@
 
 void SealInitCharacterDynamics()
 {
-    CRdrFile* dynamics = zrdr_read("dynamics.rdr", NULL, 0);
+    CRdrFile* dynamics = zrdr_read("dynamics.rdr");
     if (!theCharacterDynamics.m_loaded && dynamics)
     {
         theCharacterDynamics.Load(dynamics);

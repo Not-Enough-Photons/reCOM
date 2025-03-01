@@ -6,3 +6,8 @@ s32 InitKeyreadStuff()
 {
     return SDL_HasKeyboard();
 }
+
+void CKeyboard::Tick(f32 delta)
+{
+
+}

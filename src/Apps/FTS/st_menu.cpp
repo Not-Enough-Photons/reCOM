@@ -33,7 +33,7 @@ bool CMenuState::Init()
 	if (m_skip == 0)
 	{
 		char pathbuf[64];
-		sprintf_s(pathbuf, 64, "%s/ui", gamez_GamePath);
+		sprintf_s(pathbuf, 64, "%s/ui", gamez_GameRunPath);
 		
 		zar::CZAR* archive = CRdrArchive::AddArchive("readerc.zar", pathbuf);
 
@@ -58,7 +58,7 @@ bool CMenuState::Init()
 
 		m_menu = new CGameMenu();
 
-		CRdrFile* uisounds = zrdr_read("uisounds.rdr", "data/common/dialog", 0);
+		CRdrFile* uisounds = zrdr_read("uisounds.rdr", "data/common/dialog");
 
 		if (uisounds)
 		{

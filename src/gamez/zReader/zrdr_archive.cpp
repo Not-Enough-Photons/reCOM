@@ -1,17 +1,16 @@
-#include "freebsd/strcasecmp.h"
-
 #include "zrdr.h"
 
 #include "gamez/zUtil/zutil.h"
 #include "gamez/zUtil/util_stable.h"
 #include "gamez/zUtil/util_systemio.h"
+#include "SDL3/SDL_stdinc.h"
 
 std::list<zar::CZAR*> CRdrArchive::m_list;
 
 zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 {
-	char archiveName[1024];
-	zar::CZAR* output = NULL;
+	char archiveName[256];
+	CZAR* output = NULL;
 
 	if (!path)
 	{
@@ -19,14 +18,14 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 	}
 	else
 	{
-		sprintf_s(archiveName, 64, "%s/%s", path, name);
+		sprintf_s(archiveName, 256, "%s/%s", path, name);
 	}
 
 	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{
-		zar::CZAR* archive = *it;
+		CZAR* archive = *it;
 
-		if (strcasecmp(archive->m_filename, archiveName) == 0)
+		if (SDL_strcasecmp(archive->m_filename, archiveName) == 0)
 		{
 			output = archive;
 			break;
@@ -36,7 +35,7 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 	if (output == NULL)
 	{
 		output = new CZAR(archiveName, NULL);
-		m_list.insert(m_list.begin(), output);
+		m_list.insert(m_list.end(), output);
 	}
 
 	return output;
@@ -44,8 +43,8 @@ zar::CZAR* CRdrArchive::AddArchive(const char* name, const char* path)
 
 bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 {
-	char fullPath[64];
-	sprintf_s(fullPath, 64, "%s/%s", path, name);
+	char fullPath[256];
+	sprintf_s(fullPath, 256, "%s/%s", path, name);
 
 	auto it = m_list.begin();
 
@@ -146,24 +145,6 @@ void CRdrArchive::OpenAll()
 }
 
 void CRdrArchive::CloseAll()
-{
-	for (auto it = m_list.begin(); it != m_list.end(); it++)
-	{
-		zar::CZAR* archive = *it;
-		archive->Close();
-	}
-}
-
-void CRdrArchive::OpenAll_ZARV2()
-{
-	for (auto it = m_list.begin(); it != m_list.end(); it++)
-	{
-		CZAR* archive = *it;
-		archive->ReOpen_V2(1, OpenFlags::READ);
-	}
-}
-
-void CRdrArchive::CloseAll_ZARV2()
 {
 	for (auto it = m_list.begin(); it != m_list.end(); it++)
 	{

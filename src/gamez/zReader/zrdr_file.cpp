@@ -1,4 +1,5 @@
 #include "zrdr.h"
+#include "Apps/FTS/gamever.h"
 
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"

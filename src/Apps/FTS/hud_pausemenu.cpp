@@ -66,7 +66,7 @@ void CZPauseTest::OpenPauseMenu()
     {
         control = static_cast<CSealCtrl*>(owner->m_control);
     }
-
+    
     control->StopRumbler();
 
     if (control->m_padid < 2)

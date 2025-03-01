@@ -1,6 +1,7 @@
 #include <freebsd/strcasecmp.h>
 
 #include "zar.h"
+#include "Apps/FTS/gamever.h"
 #include "gamez/zUtil/zutil.h"
 
 namespace zar
@@ -476,7 +477,16 @@ namespace zar
 			{
 				m_data_padded = padded_size;
 
-				bool success = ReadDirectory(version, mode);
+				bool success = false;
+				
+				if (GetGame() == game_SOCOM1_BETA)
+				{
+					success = ReadDirectory(version, mode);
+				}
+				else if (GetGame() == game_SOCOM1 || GetGame() == game_SOCOM2_BETA)
+				{
+					success = ReadDirectory_V2(version, mode);
+				}
 
 				if (success)
 				{
@@ -543,7 +553,16 @@ namespace zar
 
 		m_data_padded = padded_size;
 
-		bool success = ReadDirectory(version, mode);
+		bool success = false;
+				
+		if (GetGame() == game_SOCOM1_BETA)
+		{
+			success = ReadDirectory(version, mode);
+		}
+		else if (GetGame() == game_SOCOM1 || GetGame() == game_SOCOM2_BETA)
+		{
+			success = ReadDirectory_V2(version, mode);
+		}
 
 		if (success)
 		{
@@ -596,155 +615,7 @@ namespace zar
 
 		return success;
 	}
-
-	bool CZAR::Open_V2(const char* name, s32 version, u32 mode, size_t padded_size)
-	{
-		if (name == NULL)
-		{
-			return false;
-		}
-
-		if (m_pFile == NULL)
-		{
-			m_pFileAlloc = new CFileIO();
-			m_pFile = new CBufferIO();
-		}
-
-		bool isOpen = m_pFileAlloc->Open(name);
-
-		if (!isOpen)
-		{
-			return false;
-		}
-
-		if (m_filename && m_filename != "DEFAULT_ZAR_NAME")
-		{
-			if (m_filename == name)
-			{
-				m_data_padded = padded_size;
-
-				bool success = ReadDirectory_V2(version, mode);
-
-				if (success)
-				{
-					m_tail.appversion = version;
-				}
-				else
-				{
-					isOpen = false;
-
-					if (m_pFile != NULL)
-					{
-						isOpen = m_pFile->IsOpen();
-					}
-
-					if (isOpen)
-					{
-						isOpen = false;
-
-						if (m_pFile == NULL)
-						{
-							isOpen = m_pFile->IsOpen();
-						}
-
-						if (isOpen && m_modified)
-						{
-							WriteDirectory();
-							m_modified = false;
-						}
-					}
-
-					if (m_pFileAlloc == NULL)
-					{
-						if (m_pFile != NULL)
-						{
-							m_pFile->Close();
-						}
-					}
-					else
-					{
-						m_pFileAlloc->Close();
-						delete m_pFileAlloc;
-						m_pFileAlloc = NULL;
-						m_pFile = NULL;
-					}
-
-					m_key_buffer.clear();
-					m_root->erase(m_root->begin(), m_root->end());
-					m_stable->Destroy();
-				}
-			}
-
-			zfree(m_filename);
-			m_filename = NULL;
-		}
-
-		if (name == NULL && name == "DEFAULT_ZAR_NAME")
-		{
-			m_filename = "DEFAULT_ZAR_NAME";
-		}
-		else
-		{
-			m_filename = strdup(name);
-		}
-
-		m_data_padded = padded_size;
-
-		bool success = ReadDirectory_V2(version, mode);
-
-		if (success)
-		{
-			m_tail.appversion = version;
-		}
-		else
-		{
-			isOpen = false;
-
-			if (m_pFile != NULL)
-			{
-				isOpen = m_pFile->IsOpen();
-			}
-
-			if (isOpen)
-			{
-				isOpen = false;
-
-				if (m_pFile == NULL)
-				{
-					isOpen = m_pFile->IsOpen();
-				}
-
-				if (isOpen && m_modified)
-				{
-					WriteDirectory();
-					m_modified = false;
-				}
-			}
-
-			if (m_pFileAlloc == NULL)
-			{
-				if (m_pFile != NULL)
-				{
-					m_pFile->Close();
-				}
-			}
-			else
-			{
-				m_pFileAlloc->Close();
-				delete m_pFileAlloc;
-				m_pFileAlloc = NULL;
-				m_pFile = NULL;
-			}
-
-			m_key_buffer.clear();
-			m_root->erase(m_root->begin(), m_root->end());
-			m_stable->Destroy();
-		}
-
-		return success;
-	}
-
-
+	
 	bool CZAR::ReOpen(s32 appver, s32 mode)
 	{
 		if (m_pFileAlloc == NULL)
@@ -769,56 +640,27 @@ namespace zar
 					SetFilename(name);
 					m_data_padded = 16;
 
-					if (ReadDirectory(appver, mode))
+					if (GetGame() == game_SOCOM1_BETA)
 					{
-						m_tail.appversion = appver;
+						if (ReadDirectory(appver, mode))
+						{
+							m_tail.appversion = appver;
+						}
+						else
+						{
+							Close();
+						}	
 					}
-					else
+					else if (GetGame() == game_SOCOM1 || GetGame() == game_SOCOM2_BETA)
 					{
-						Close();
-					}
-				}
-			}
-		}
-		else
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-	bool CZAR::ReOpen_V2(s32 appver, s32 mode)
-	{
-		if (m_pFileAlloc == NULL)
-		{
-			return false;
-		}
-		
-		if (m_pFileAlloc->IsOpen())
-		{
-			char* name = m_filename;
-
-			if (name)
-			{
-				if (!m_pFileAlloc)
-				{
-					m_pFileAlloc = new CFileIO();
-					m_pFile = new CBufferIO();
-				}
-
-				if (m_pFileAlloc->Open(name))
-				{
-					SetFilename(name);
-					m_data_padded = 16;
-
-					if (ReadDirectory_V2(appver, mode))
-					{
-						m_tail.appversion = appver;
-					}
-					else
-					{
-						Close();
+						if (ReadDirectory_V2(appver, mode))
+						{
+							m_tail.appversion = appver;
+						}
+						else
+						{
+							Close();
+						}
 					}
 				}
 			}
@@ -830,7 +672,7 @@ namespace zar
 
 		return false;
 	}
-
+	
 	void CZAR::CloseKey(CKey* key)
 	{
 		if (key != NULL && !m_keys.empty())
@@ -1141,6 +983,7 @@ namespace zar
 					m_databuffer_size = m_head.offset;
 					m_databuffer = zmalloc(m_databuffer_size);
 					m_rootOffset = padding + key_ofs;
+					m_pFileAlloc->fseek(m_rootOffset, SEEK_CUR);
 					m_pFileAlloc->fread(m_databuffer, m_databuffer_size);
 					Unsecurify(m_databuffer, m_databuffer_size);
 			

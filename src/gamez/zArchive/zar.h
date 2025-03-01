@@ -130,16 +130,6 @@ namespace zar
 		/// <param name="padded_size"> - The amount of padding bytes labelled "P" that exist in the file.</param>
 		/// <returns>Whether or not the operation was successful.</returns>
 		bool Open(const char* name, int version, unsigned int mode, size_t padded_size);
-
-		/// <summary>
-		/// Opens a ZAR file for reading into main memory. Only works on release S1 and demos of S2.
-		/// </summary>
-		/// <param name="name"> - The name of the archive.</param>
-		/// <param name="version"> - The version of the archive.</param>
-		/// <param name="mode"> - The read mode for opening the file.</param>
-		/// <param name="padded_size"> - The amount of padding bytes labelled "P" that exist in the file.</param>
-		/// <returns>Whether or not the operation was successful.</returns>
-		bool Open_V2(const char* name, s32 version, u32 mode, size_t padded_size);
 		
 		/// <summary>
 		/// Closes the ZAR file descriptor, and frees the resources associated with it.
@@ -164,14 +154,6 @@ namespace zar
 		/// <param name="mode"> - The read mode.</param>
 		/// <returns>Whether or not the operation was successful.</returns>
 		bool ReOpen(s32 appver, s32 mode);
-
-		/// <summary>
-		/// Re-opens a previously closed ZAR file. Only works on release S1 and demos of S2.
-		/// </summary>
-		/// <param name="count"> - The size of the archive.</param>
-		/// <param name="mode"> - The read mode.</param>
-		/// <returns>Whether or not the operation was successful.</returns>
-		bool ReOpen_V2(s32 appver, s32 mode);
 
 		CKey* CreateKey(const char* name);
 
@@ -311,8 +293,6 @@ namespace zar
 		/// @return Whether or not the fetch was successful.
 		bool FetchLIP(CKey* key, void** buf);
 
-		bool Fetch_V2(CKey* key, void* buf, size_t size);
-		
 		size_t FetchString(const char* name, char* buf, size_t length);
 
 		CKey* GetOpenKey() const;

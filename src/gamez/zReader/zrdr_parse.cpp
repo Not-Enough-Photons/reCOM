@@ -2,6 +2,7 @@
 
 #include "zrdr.h"
 #include "zrdr_local.h"
+#include "Apps/FTS/gamever.h"
 
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"
@@ -332,33 +333,37 @@ void _resolveA(_zrdr* reader, const _zrdr* other, char* name)
 
 void _resolveB(_zrdr* self, _zrdr* root, char* name)
 {
-	if (self->type == ZRDR_STRING)
+	if (GetGame() == game_SOCOM1 || GetGame() == game_SOCOM1_BETA)
 	{
-		// Assign string pointer to point at the entry in the string table
-		self->string += (s32)name;
-	}
-	else if (self->type == ZRDR_ARRAY)
-	{
-		self->string += (s32)root;
-	
-		for (u32 i = 1; i < self->array->integer; i++)
+		if (self->type == ZRDR_STRING)
 		{
-			_zrdr* child = &self->array[i];
-			
-			if (child->type == ZRDR_STRING)
+			// Assign string pointer to point at the entry in the string table
+			self->string += (s32)name;
+		}
+		else if (self->type == ZRDR_ARRAY)
+		{
+			self->string += (s32)root;
+                
+			for (u32 i = 1; i < self->array->integer; i++)
 			{
-				child->string += (s32)name;
-			}
-			else if (child->type == ZRDR_ARRAY)
-			{
-				child->string += (s32)root;
-				for (u32 j = 1; j < child->array->integer; j++)
+				_zrdr* child = &self->array[i];
+                		
+				if (child->type == ZRDR_STRING)
 				{
-					_resolveB(&child->array[j], root, name);
+					child->string += (s32)name;
+				}
+				else if (child->type == ZRDR_ARRAY)
+				{
+					child->string += (s32)root;
+					for (u32 j = 1; j < child->array->integer; j++)
+					{
+						_resolveB(&child->array[j], root, name);
+					}
 				}
 			}
 		}
 	}
+	
 }
 
 CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
@@ -396,6 +401,7 @@ CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 				_zrdr* array = rdrfile->ReadArray();
 				rdrfile->type = array->type;
 				rdrfile->array = array->array;
+				rdrfile->length = 1;
 
 				// Why is this here?
 				zfree(array);
@@ -451,33 +457,56 @@ _zrdr* CRdrFile::ReadArray()
 	// Allocate a parent and child node
 	_zrdr* parent = zrdr_alloc(sizeof(_zrdr), 1);
 	parent->type = ZRDR_ARRAY;
-
-	_zrdr* child = zrdr_alloc(sizeof(_zrdr), arrays.size() + 1);
-	child->type = ZRDR_INTEGER;
-
-	// Set parent node equal to child, and append the size of
-	// the child node to the first array element
-	parent->array = child;
-	parent->array->type = ZRDR_INTEGER;
-	parent->array->integer = arrays.size() + 1;
-
-	// When working with readers of this version,
-	// The first index (0) is ALWAYS used to store the length.
-	// This means that zReader arrays start at index 1.
-	// In future zReader versions this was put into the
-	// "length" bitfield.
-	// When iterating through them, target the second index to access
-	// the arrays.
-	for (u32 i = 1; i < parent->array->integer; i++)
+	
+	if (GetGame() <= game_SOCOM1)
 	{
-		// The arrangement of each zReader node should go as follows:
-		// Length, name, array
-		array = arrays.front();
-		arrays.erase(arrays.begin());
+		_zrdr* child = zrdr_alloc(sizeof(_zrdr), arrays.size() + 1);
+		child->type = ZRDR_INTEGER;
+        
+		// Set parent node equal to child, and append the size of
+		// the child node to the first array element
+		parent->array = child;
+		parent->array->type = ZRDR_INTEGER;
+        
+		parent->array->integer = arrays.size() + 1;
 
-		parent->array[i] = *array;
+		// When working with readers of version 2,
+		// The first index (0) is ALWAYS used to store the length.
+		// This means that zReader arrays start at index 1.
+		// In future zReader versions this was put into the
+		// "length" bitfield.
+		// When iterating through them, target the second index to access
+		// the arrays.
+		for (u32 i = 1; i < parent->array->integer; i++)
+		{
+			// The arrangement of each zReader node should go as follows:
+			// Length, name, array
+			array = arrays.front();
+			arrays.erase(arrays.begin());
+
+			parent->array[i] = *array;
 		
-		zfree(array);
+			zfree(array);
+		}
+	}
+	else if (GetGame() > game_SOCOM1)
+	{
+		_zrdr* child = zrdr_alloc(sizeof(_zrdr), arrays.size());
+        
+		// Set parent node equal to child, and append the size of
+		// the child node to the parents length
+		parent->array = child;
+		parent->length = arrays.size();
+		
+		for (u32 i = 0; i < parent->length; i++)
+		{
+			array = arrays.front();
+			arrays.erase(arrays.begin());
+
+			parent->array[i] = *array;
+		
+			zfree(array);
+		}
 	}
 	
 	return parent;

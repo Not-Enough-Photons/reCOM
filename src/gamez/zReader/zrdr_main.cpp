@@ -5,6 +5,7 @@
 #include <freebsd/strcasecmp.h>
 
 #include "zrdr_local.h"
+#include "Apps/FTS/gamever.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_systemio.h"
@@ -100,7 +101,14 @@ bool _zrdr::Write(FILE* file)
 
 _zrdr* zrdr_findtag(_zrdr* reader, const char* name)
 {
-	return zrdr_findtag_startidx(reader, name, 1);
+	if (GetGame() <= game_SOCOM1)
+	{
+		return zrdr_findtag_startidx(reader, name, 1);
+	}
+	else if (GetGame() > game_SOCOM1)
+	{
+		return zrdr_findtag_startidx(reader, name, 0);
+	}
 }
 
 _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
@@ -114,8 +122,19 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
 	{
 		return NULL;
 	}
+
+	u32 length = 0;
 	
-	for (; startidx < reader->array->integer; startidx++)
+	if (GetGame() == game_SOCOM1_BETA || GetGame() == game_SOCOM1)
+	{
+		length = reader->array->integer;
+	}
+	else if (GetGame() == game_SOCOM2_BETA || GetGame() == game_SOCOM2)
+	{
+		length = reader->length;
+	}
+	
+	for (; startidx < length; startidx++)
 	{
 		_zrdr* node = &reader->array[startidx];
 

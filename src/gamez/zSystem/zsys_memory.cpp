@@ -7,10 +7,11 @@
 #include <SDL3/SDL_iostream.h>
 #include <SDL3/SDL_dialog.h>
 #include <SDL3/SDL_thread.h>
+#include <SDL3/SDL_ttf.h>
 
+#include "Apps/FTS/gamever.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zVideo/zvid.h"
-#include "SDL3/SDL_ttf.h"
 
 bool postinited = false;
 size_t _HeapSize = 0;
@@ -18,7 +19,8 @@ size_t _HeapSize = 0;
 SDL_Condition* wait_cond = NULL;
 bool path_failed = false;
 bool path_inited = false;
-char gamez_GamePath[256];
+char gamez_GameRoot[256];
+char gamez_GameRunPath[256];
 
 SDL_Thread* file_thread;
 
@@ -38,7 +40,8 @@ void zSys_OpenFileDialog(void* userdata, const char * const *filelist, int filte
 	{
 		path_failed = false;
 		path_inited = true;
-		strcpy_s(gamez_GamePath, 256, *filelist);
+		strcpy_s(gamez_GameRoot, 256, *filelist);
+		strcpy_s(gamez_GameRunPath, 256, *filelist);
 		SDL_SignalCondition(wait_cond);
 	}
 }
@@ -145,9 +148,9 @@ void zSysPostInit()
 		SDL_Quit();
 		exit(-1);
 	}
-
-	strcat_s(gamez_GamePath, 256, "RUN");
-	if (!SDL_GetPathInfo(gamez_GamePath, NULL))
+	
+	strcat_s(gamez_GameRunPath, 256, "/RUN");
+	if (!SDL_GetPathInfo(gamez_GameRunPath, NULL))
 	{
 		const SDL_MessageBoxButtonData buttons[]
 		{
@@ -173,6 +176,8 @@ void zSysPostInit()
 		SDL_Quit();
 		exit(-1);
 	}
+
+	GetGame();
 }
 
 void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)

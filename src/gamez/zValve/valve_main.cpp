@@ -26,7 +26,7 @@ bool CValve::Open(const char* name, VALVE_TYPE type)
 {
 	if (name)
 	{
-		CRdrFile* file = zrdr_read(name, NULL, 0);
+		CRdrFile* file = zrdr_read(name);
 		Parse(file, type);
 		zrdr_free(file);
 	}
@@ -70,7 +70,7 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 				_zrdr* node = &valves->array[idx];
 
 				name = zrdr_findstring(node, "name");
-				zrdr_findint(node, "value", &value, 1);
+				zrdr_findint(node, "value", &value);
 				valve_type = zrdr_findstring(node, "type");
 
 				VALVE_TYPE rdr_valve_type = VALVE_TYPE::VTYPE_NONE;

@@ -53,7 +53,7 @@ extern bool LoadWorld(const char* name)
 
 		if (library->m_autoload)
 		{
-			sprintf_s(pathbuf, 64, "%s/%s/models.zar", gamez_GamePath, library->m_name);
+			sprintf_s(pathbuf, 64, "%s/%s/models.zar", gamez_GameRunPath, library->m_name);
 	
 			if (archive.Open(pathbuf, -1, 1, 16))
 			{
@@ -111,7 +111,7 @@ extern bool LoadWorld(const char* name)
 			continue;
 		}
 		
-		sprintf_s(pathbuf, 64, "%s/%s/models.zar", gamez_GamePath, library->m_name);
+		sprintf_s(pathbuf, 64, "%s/%s/models.zar", gamez_GameRunPath, library->m_name);
 		
 		if (archive.Open(strbuf, -1, 1, 16))
 		{

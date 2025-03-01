@@ -35,7 +35,7 @@ void CInput::Tick(f32 dT)
 {
 	if (m_keyboard != NULL)
 	{
-		// m_keyboard->Tick(dT);
+		m_keyboard->Tick(dT);
 	}
 
 	for (s32 pad = 0; pad < 2; pad++)

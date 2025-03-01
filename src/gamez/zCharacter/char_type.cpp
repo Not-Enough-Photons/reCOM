@@ -18,7 +18,7 @@ CCharacterType::CCharacterType()
 
 bool CCharacterType::Open(const char* path)
 {
-    _zrdr* reader = zrdr_read(path, NULL, 0);
+    _zrdr* reader = zrdr_read(path);
 
     if (reader)
     {

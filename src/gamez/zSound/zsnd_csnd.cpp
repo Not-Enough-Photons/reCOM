@@ -55,7 +55,7 @@ void CSnd::Init()
 	{
 		vagArchiveIsOpen = true;
 		char path_buf[256];
-		sprintf_s(path_buf, "%s/SOUNDS/VAGSTORE.ZAR", gamez_GamePath);
+		sprintf_s(path_buf, "%s/SOUNDS/VAGSTORE.ZAR", gamez_GameRunPath);
 		m_vagArchive.Open(path_buf, 0, 0x21, 16);
 	}
 }
@@ -114,7 +114,7 @@ void CSnd::UIOpen()
 {
 	if (sound_rdr == NULL)
 	{
-		sound_rdr = zrdr_read("sounds.rdr", NULL, 0);
+		sound_rdr = zrdr_read("sounds.rdr");
 	}
 
 	if (m_vagEnabled)

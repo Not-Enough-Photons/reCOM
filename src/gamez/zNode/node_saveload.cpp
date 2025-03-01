@@ -83,7 +83,7 @@ namespace zdb
 		
 		zdb::CWorld* world = NULL;
 		
-		FilterMissionFolder(name, gamez_GamePath, name, m_zed_filename);
+		FilterMissionFolder(name, gamez_GameRunPath, name, m_zed_filename);
 		strcat_s(m_zed_filename, "/");
 		strcat_s(m_zed_filename, name);
 		strcat_s(m_zed_filename, ".zed");

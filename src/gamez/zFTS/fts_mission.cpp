@@ -13,7 +13,7 @@ CMission theMission;
 void UpdateMissionArchive(const char* type, const char* path)
 {
 	std::string pathstr;
-	pathstr.append(gamez_GamePath);
+	pathstr.append(gamez_GameRunPath);
 
 	if (type)
 	{
@@ -36,7 +36,7 @@ void UpdateMissionArchive(const char* type, const char* path)
 	{
 		if (strlen(path) != 0)
 		{
-			pathstr.assign(gamez_GamePath, pathstr.length());
+			pathstr.assign(gamez_GameRunPath, pathstr.length());
 			pathstr.assign("D:/run/", pathstr.length());
 
 			if (strncmp(path, "mp", 2) == 0)
@@ -109,9 +109,9 @@ bool CMission::Init()
 
 	m_chars_loaded = false;
 
-	sprintf_s(path_buf, 256, "%s/ui", gamez_GamePath);
+	sprintf_s(path_buf, 256, "%s/ui", gamez_GameRunPath);
 	
-	CRdrArchive::AddArchive("readerc.zar", gamez_GamePath);
+	CRdrArchive::AddArchive("readerc.zar", gamez_GameRunPath);
 	CRdrArchive::AddArchive("readerc.zar", path_buf);
 	CRdrArchive::OpenAll();
 
@@ -133,7 +133,7 @@ bool CMission::Init()
 
 	m_pNetGame = netgame;
 
-	CRdrFile* hud_rdr = zrdr_read("hud.rdr", NULL, 0);
+	CRdrFile* hud_rdr = zrdr_read("hud.rdr");
 
 	if (hud_rdr)
 	{
@@ -150,13 +150,13 @@ bool CMission::Init()
 	m_valve_timeout = CValve::Create("mission_timeout", VALVE_TYPE::VTYPE_PERM);
 	m_valve_nofade = CValve::Create("mission_nofade", VALVE_TYPE::VTYPE_PERM);
 
-	m_ordersRdr = zrdr_read("orders.rdr", NULL, 0);
-	m_materialsRdr = zrdr_read("materials.rdr", NULL, 0);
-	m_decalsRdr = zrdr_read("decals.rdr", NULL, 0);
-	m_fontsRdr = zrdr_read("fonts.rdr", NULL, 0);
-	m_messagesRdr = zrdr_read("messages.rdr", NULL, 0);
-	m_subtitlesRdr = zrdr_read("subtitles.rdr", NULL, 0);
-	m_smallmessagesRdr = zrdr_read("small_messages.rdr", NULL, 0);
+	m_ordersRdr = zrdr_read("orders.rdr");
+	m_materialsRdr = zrdr_read("materials.rdr");
+	m_decalsRdr = zrdr_read("decals.rdr");
+	m_fontsRdr = zrdr_read("fonts.rdr");
+	m_messagesRdr = zrdr_read("messages.rdr");
+	m_subtitlesRdr = zrdr_read("subtitles.rdr");
+	m_smallmessagesRdr = zrdr_read("small_messages.rdr");
 
 	// Particle::Init();
 	SealInitCharacterDynamics();
@@ -172,7 +172,7 @@ bool CMission::Init()
 
 	// TODO: Implement CTurret
 	//CTurret::Init("ai_turrets.rdr", "data/common");
-	CRdrArchive::RemoveArchive("readerc.zar", gamez_GamePath);
+	CRdrArchive::RemoveArchive("readerc.zar", gamez_GameRunPath);
 
 	return true;
 }
@@ -191,7 +191,7 @@ void CMission::PreOpen(const char* db)
 		return;
 	}
 
-	_zrdr* mission = zrdr_read("mission.rdr", NULL, 0);
+	_zrdr* mission = zrdr_read("mission.rdr");
 	char* loadingscreenassets = zrdr_findstring(mission, "LoadingScreenAssets");
 
 	if (!loadingscreenassets)

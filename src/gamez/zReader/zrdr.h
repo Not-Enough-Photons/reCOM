@@ -39,7 +39,7 @@ bool _eval_defined(char* token);
 /// @param path Path to the reader file.
 /// @param dummy Unused.
 /// @return A zReader instance.
-CRdrFile* zrdr_read(const char* reader, const char* path, s32 dummy);
+CRdrFile* zrdr_read(const char* reader, const char* path = NULL, s32 dummy = 0);
 
 /// Concatenates a path to a zReader file.
 /// @param file The name of the file.
@@ -68,7 +68,7 @@ char* zrdr_findstring(_zrdr* reader, const char* tag);
 /// @param output The output of the search, stored as a pointer.
 /// @param startidx The start index of the array. Usually 1.
 /// @return Successful if true, failure otherwise.
-bool zrdr_findint(_zrdr* reader, const char* tag, s32* output, s32 startidx);
+bool zrdr_findint(_zrdr* reader, const char* tag, s32* output, s32 startidx = 1);
 
 /// Finds an unsigned integer. Will convert to a signed integer.
 /// @param reader A zReader array node.
@@ -76,7 +76,7 @@ bool zrdr_findint(_zrdr* reader, const char* tag, s32* output, s32 startidx);
 /// @param output The output of the search, stored as a pointer.
 /// @param startidx The start index of the array. Usually 1.
 /// @return Successful if true, failure otherwise.
-bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 startidx);
+bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 startidx = 1);
 
 /// Finds a float, or a real decimal number.
 /// @param reader A zReader array node.
@@ -84,7 +84,7 @@ bool zrdr_finduint(_zrdr* reader, const char* tag, u32* output, s32 startidx);
 /// @param output The output of the search, stored as a pointer.
 /// @param startidx The start index of the array. Usually 1.
 /// @return Successful if true, failure otherwise.
-bool zrdr_findreal(_zrdr* reader, const char* tag, f32* output, s32 startidx);
+bool zrdr_findreal(_zrdr* reader, const char* tag, f32* output, s32 startidx = 1);
 
 /// Finds a boolean.
 /// @param reader A zReader array node.
@@ -204,7 +204,4 @@ public:
 
 	static void OpenAll();
 	static void CloseAll();
-
-	static void OpenAll_ZARV2();
-	static void CloseAll_ZARV2();
 };

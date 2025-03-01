@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 	zSysInit();
 	zSysPostInit();
 	
-	SDL_Log("%s selected for GameZ.", gamez_GamePath);
+	SDL_Log("%s selected for GameZ.", gamez_GameRunPath);
 	
 	if (dumpLog)
 	{
@@ -35,23 +35,8 @@ int main(int argc, char** argv)
 	theGame.StartEngine();
 	theGame.StartPlay();
 
-	u64 current_t = 0;
-	u64 last_t = 0;
-	
 	while (true)
 	{
-		current_t = SDL_GetTicks();
-
-		zVid.frameTime = (f32)(current_t - last_t) / 1000.0f;
-		
-		if (zVid.frameTime >= 0.025f)
-		{
-			zVid.frameTime = 0.025f;
-		}
-		
-		theGame.Tick(zVid.frameTime);
-
-		last_t = SDL_GetTicks();
+		theGame.Tick(0);
 	}
-	
 }

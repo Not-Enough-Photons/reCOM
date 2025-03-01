@@ -33,17 +33,17 @@ void C2DMessage_Q::Init(C2DFont* font, CRdrFile* reader)
 
         if (color)
         {
-            zrdr_findint(color, "red", &m_red, 1);
-            zrdr_findint(color, "green", &m_green, 1);
-            zrdr_findint(color, "blue", &m_blue, 1);
+            zrdr_findint(color, "red", &m_red);
+            zrdr_findint(color, "green", &m_green);
+            zrdr_findint(color, "blue", &m_blue);
         }
 
-        zrdr_findreal(reader, "scale", &m_scale, 1);
-        zrdr_findreal(reader, "fadetime", &m_transstep, 1);
-        zrdr_findint(reader, "left", &m_left, 1);
-        zrdr_findint(reader, "bottom", &m_top, 1);
-        zrdr_findint(reader, "maxsize", &m_maxsize, 1);
-        zrdr_findint(reader, "spacing", &m_spacing, 1);
+        zrdr_findreal(reader, "scale", &m_scale);
+        zrdr_findreal(reader, "fadetime", &m_transstep);
+        zrdr_findint(reader, "left", &m_left);
+        zrdr_findint(reader, "bottom", &m_top);
+        zrdr_findint(reader, "maxsize", &m_maxsize);
+        zrdr_findint(reader, "spacing", &m_spacing);
 
         if (zrdr_findtag(reader, "centered"))
         {
@@ -73,8 +73,8 @@ void C2DMessage_Q::Init(C2DFont* font, CRdrFile* reader)
             m_YMargin = 0;
             m_XMargin = 0;
 
-            zrdr_findint(reader, "XMargin", &m_XMargin, 1);
-            zrdr_findint(reader, "YMargin", &m_YMargin, 1);
+            zrdr_findint(reader, "XMargin", &m_XMargin);
+            zrdr_findint(reader, "YMargin", &m_YMargin);
 
             zdb::CTexHandle* handle = zdb::CAssetMgr::m_assets.GetTexHandle(background);
 
