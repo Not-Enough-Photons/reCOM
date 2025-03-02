@@ -20,6 +20,7 @@ enum _zvid_mode
 
 void zVid_Init(_zvid_mode mode);
 void zVid_Uninit();
+void zVid_CreateWindow();
 void zVid_Open();
 void zVid_Swap(bool doSwap);
 void zVid_FrameRestore();

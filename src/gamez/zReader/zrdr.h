@@ -126,9 +126,9 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, u32 startidx);
 /// Converts an output value into an integer.
 /// @param reader A zReader array node.
 /// @param output The output of the search, stored as a pointer.
-/// @param size The size of the element in bytes.
+/// @param startidx The size of the element in bytes.
 /// @return Whether or not the cast/search was successful.
-bool zrdr_toINT(_zrdr* reader, s32* output, s32 size);
+bool zrdr_toINT(_zrdr* reader, s32* output, s32 startidx);
 
 /// Converts an output value into a true or false value.
 /// @param reader A zReader array node.
@@ -148,11 +148,11 @@ struct _zrdr
 {
 	_zrdr();
 	_zrdr(_zrdr* reader, CSTable* stable);
-
+	
 	bool IsArray() const;
 	void Clone(const _zrdr* other, const CSTable* table);
 	int GetInt() const;
-	char* Get(int offset) const;
+	_zrdr* Get(s32 offset) const;
 	bool Write(FILE* file);
 
 	u32 type : 8;

@@ -25,38 +25,18 @@ namespace zar
 		{
 			if (key->m_size != 0)
 			{
-				GameZ_FTSGame game = GetGame();
-				if (game == game_SOCOM1_BETA)
+				s32 offset = key->m_offset;
+				size_t position = m_pFile->fseek(m_rootOffset + offset, SEEK_SET);
+
+				success = m_rootOffset + offset == position;
+
+				if (success && size <= key->m_size)
 				{
-					s32 offset = key->m_offset;
-					size_t position = m_pFile->fseek(offset, SEEK_SET);
+					offset = m_pFile->fread(buf, size);
 
-					success = offset == position;
+					success = size == offset;
 
-					if (success && size <= key->m_size)
-					{
-						offset = m_pFile->fread(buf, size);
-
-						success = size == offset;
-
-						ZAR_SECURE(m_bSecure, buf, size);
-					}
-				}
-				else if (game == game_SOCOM1 || game == game_SOCOM2_BETA)
-				{
-					s32 offset = key->m_offset;
-					size_t position = m_pFile->fseek(m_rootOffset + offset, SEEK_SET);
-
-					success = m_rootOffset + offset == position;
-
-					if (success && size <= key->m_size)
-					{
-						offset = m_pFile->fread(buf, size);
-
-						success = size == offset;
-
-						ZAR_SECURE(m_bSecure, buf, size);
-					}
+					ZAR_SECURE(m_bSecure, buf, size);
 				}
 			}
 
