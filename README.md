@@ -14,6 +14,7 @@ It is a work in progress, and a lot needs to make sure the SOCOM experience is o
 6. That's it!
 
 # ROM Information
+The ROM information used in this decompilation project is listed below:
 - Name: **SCUS_972.05**
 - Build Date: **May 13th, 2002 at 9:10:36 AM PST**
 - sha256: **00c9cee7f75b921fda1e848d04f64881b5a0b7841300591cac91371bb23d4f8a**
