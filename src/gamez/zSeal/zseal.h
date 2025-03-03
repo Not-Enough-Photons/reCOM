@@ -331,7 +331,7 @@ public:
 	void InitDatabaseHandles();
 	void InitDecalHandles();
 	void InitHandSignals();
-	CRdrFile* InitMotionRdrFile();
+	CRdrIO* InitMotionRdrFile();
 
 	void SetupGear();
 	void SetupEyes();
@@ -453,7 +453,7 @@ public:
 	CZBodyPart* GetRootPart() const;
 
 	static CSealAnim* m_sealanim;
-	static CRdrFile* m_motionRdrFile;
+	static CRdrIO* m_motionRdrFile;
 
 	static CSndInstance* m_heartbeat_sndisnt;
 	static s32 m_heartbeat_curindex;

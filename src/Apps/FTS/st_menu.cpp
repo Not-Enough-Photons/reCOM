@@ -58,7 +58,7 @@ bool CMenuState::Init()
 
 		m_menu = new CGameMenu();
 
-		CRdrFile* uisounds = zrdr_read("uisounds.rdr", "data/common/dialog");
+		CRdrIO* uisounds = zrdr_read("uisounds.rdr", "data/common/dialog");
 
 		if (uisounds)
 		{

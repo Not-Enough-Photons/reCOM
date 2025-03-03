@@ -72,9 +72,9 @@ bool CRdrArchive::RemoveArchive(const char* name, const char* path)
 	return false;
 }
 
-CRdrFile* CRdrArchive::FindRdr(const char* reader)
+CRdrIO* CRdrArchive::FindRdr(const char* reader)
 {
-	CRdrFile* rdr = NULL;
+	CRdrIO* rdr = NULL;
 	char keyName[1024];
 	const char* subpath = strrchr(reader, '/');
 
@@ -122,7 +122,7 @@ CRdrFile* CRdrArchive::FindRdr(const char* reader)
 		zar::CKey* key = archive->OpenKey(keyName);
 		if (key)
 		{
-			rdr = CRdrFile::Load(archive, key);
+			rdr = CRdrIO::Load(archive, key);
 			archive->CloseKey(key);
 		}
 

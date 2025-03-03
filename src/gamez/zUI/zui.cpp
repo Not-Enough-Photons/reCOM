@@ -4,7 +4,7 @@ CUIVarManager theUIVarManager;
 
 s32 ZuiInit()
 {
-    CRdrFile* params = zrdr_read("UiParams.rdr", "data/common");
+    CRdrIO* params = zrdr_read("UiParams.rdr", "data/common");
 
     return zrdr_free(params);
 }

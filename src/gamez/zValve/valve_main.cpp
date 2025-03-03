@@ -26,7 +26,7 @@ bool CValve::Open(const char* name, VALVE_TYPE type)
 {
 	if (name)
 	{
-		CRdrFile* file = zrdr_read(name);
+		CRdrIO* file = zrdr_read(name);
 		Parse(file, type);
 		zrdr_free(file);
 	}

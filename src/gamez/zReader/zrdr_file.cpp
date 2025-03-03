@@ -8,7 +8,7 @@ char* buffer = NULL;
 
 s32 CRdrArchive::version = 1;
 
-CRdrFile::CRdrFile() : _zrdr()
+CRdrIO::CRdrIO() : _zrdr()
 {
 	m_buffer = NULL;
 	m_size = 0;
@@ -25,7 +25,7 @@ const char* zrdr_findfile(const char* name, const char* dir)
 	return name;
 }
 
-int zrdr_free(CRdrFile* file)
+int zrdr_free(CRdrIO* file)
 {
 	if (file != NULL)
 	{
@@ -50,7 +50,7 @@ int zrdr_free(CRdrFile* file)
 	return 0;
 }
 
-bool CRdrFile::ValidateFormat()
+bool CRdrIO::ValidateFormat()
 {
 	CBufferIO* file = NULL;
 	char symbol = '\0';
@@ -140,9 +140,9 @@ bool CRdrFile::ValidateFormat()
 	} while (true);
 }
 
-CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
+CRdrIO* CRdrIO::Load(zar::CZAR* archive, zar::CKey* key)
 {
-	CRdrFile* rdrFile = new CRdrFile();
+	CRdrIO* rdrFile = new CRdrIO();
 
 	if (key != NULL)
 	{
@@ -168,7 +168,7 @@ CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key)
 	return rdrFile;
 }
 
-bool CRdrFile::Resolve(bool resolveA)
+bool CRdrIO::Resolve(bool resolveA)
 {
 	_zrdr* header = reinterpret_cast<_zrdr*>(m_buffer);
 	_zrdr* resolved = NULL;

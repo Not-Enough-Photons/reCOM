@@ -139,13 +139,13 @@ private:
 	s32 m_CharLoadSem; // Likely a semaphore
 
 	CVehicleRdr* m_vehicleRdr;
-	CRdrFile* m_ordersRdr;
-	CRdrFile* m_materialsRdr;
-	CRdrFile* m_decalsRdr;
-	CRdrFile* m_fontsRdr;
-	CRdrFile* m_messagesRdr;
-	CRdrFile* m_subtitlesRdr;
-	CRdrFile* m_smallmessagesRdr;
+	CRdrIO* m_ordersRdr;
+	CRdrIO* m_materialsRdr;
+	CRdrIO* m_decalsRdr;
+	CRdrIO* m_fontsRdr;
+	CRdrIO* m_messagesRdr;
+	CRdrIO* m_subtitlesRdr;
+	CRdrIO* m_smallmessagesRdr;
 
 	CSaferStr m_strLoadingScrLib;
 	// 

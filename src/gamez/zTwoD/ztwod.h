@@ -287,7 +287,7 @@ class C2DFont : public C2D
 {
 public:
 	C2DFont();
-	void Load(CRdrFile* font, const char* name);
+	void Load(CRdrIO* font, const char* name);
 
 	C2DFontEntry* GetEntry(char character);
 	u32 GetIndex(char character);
@@ -326,7 +326,7 @@ class C2DMessage_Q : public C2D
 public:
 	C2DMessage_Q();
 
-	void Init(C2DFont* font, CRdrFile* reader);
+	void Init(C2DFont* font, CRdrIO* reader);
 	
 	void ScrollUp();
 	void SetBkgColor(f32 r, f32 g, f32 b);

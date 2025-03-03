@@ -8,7 +8,7 @@ class _zvid_public;
 
 class CValve;
 class CWindow;
-class CRdrFile;
+class CRdrIO;
 
 enum _zvid_mode
 {
@@ -86,7 +86,7 @@ class CWindow
 {
 public:
 	CWindow();
-	CWindow(CRdrFile* reader);
+	CWindow(CRdrIO* reader);
 	CWindow(const char* name, u32 width, u32 height);
 	
 	SDL_Window* GetWindow() const;

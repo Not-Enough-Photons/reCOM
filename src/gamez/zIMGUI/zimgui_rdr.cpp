@@ -23,7 +23,7 @@ void FileCallback(void* userdata, const char * const *filelist, int filter)
 
         for (auto it = rdrArchive.m_stable->begin(); it != rdrArchive.m_stable->end(); ++it)
         {
-            CRdrFile* reader = zrdr_read(*it);
+            CRdrIO* reader = zrdr_read(*it);
             sprintf_s(path, 256, "%s/%s", input_path, *it);
             FILE* file = fopen(path, "w");
             reader->Write(file);

@@ -11,7 +11,7 @@
 bool _NeedQuotes(_zrdr* reader);
 bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset);
 
-class CRdrEditor : public CRdrFile
+class CRdrEditor : public CRdrIO
 {
 public:
 	bool push(const char* tag);

@@ -20,7 +20,7 @@ CWindow::CWindow()
 	m_renderer = NULL;
 }
 
-CWindow::CWindow(CRdrFile* reader)
+CWindow::CWindow(CRdrIO* reader)
 {
 	auto tag = zrdr_findtag(reader, "settings");
 	auto window_settings = zrdr_findtag(tag, "window_settings");

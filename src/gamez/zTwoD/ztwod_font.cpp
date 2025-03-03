@@ -35,7 +35,7 @@ u32 C2DFont::GetIndex(char character)
 }
 
 // TODO: Finish this function for loading fonts from a reader file
-void C2DFont::Load(CRdrFile* font, const char* name)
+void C2DFont::Load(CRdrIO* font, const char* name)
 {
     s32 topy = 0;
     s32 boty = 0;

@@ -13,7 +13,7 @@
 #define pptoken_undef 4
 
 struct _zrdr;
-class CRdrFile;
+class CRdrIO;
 
 enum ZRDR_TYPE
 {
@@ -39,7 +39,7 @@ bool _eval_defined(char* token);
 /// @param path Path to the reader file.
 /// @param dummy Unused.
 /// @return A zReader instance.
-CRdrFile* zrdr_read(const char* reader, const char* path = NULL, s32 dummy = 0);
+CRdrIO* zrdr_read(const char* reader, const char* path = NULL, s32 dummy = 0);
 
 /// Concatenates a path to a zReader file.
 /// @param file The name of the file.
@@ -50,7 +50,7 @@ const char* zrdr_findfile(const char* file, const char* path);
 /// Frees a zReader object's memory.
 /// @param reader The reader to free.
 /// @return The number of bytes freed.
-s32 zrdr_free(CRdrFile* reader);
+s32 zrdr_free(CRdrIO* reader);
 
 /// Frees a node inside of a zReader array.
 /// @param array The array to free.
@@ -170,12 +170,12 @@ struct _zrdr
 	};
 };
 
-class CRdrFile : public _zrdr
+class CRdrIO : public _zrdr
 {
 public:
-	CRdrFile();
+	CRdrIO();
 
-	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key);
+	static CRdrIO* Load(zar::CZAR* archive, zar::CKey* key);
 
 	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);
 	_zrdr* MakeUnion(const char* name, bool isstr);
@@ -200,7 +200,7 @@ public:
 	static zar::CZAR* AddArchive(const char* name, const char* path);
 	static bool RemoveArchive(const char* name, const char* path);
 
-	static CRdrFile* FindRdr(const char* reader);
+	static CRdrIO* FindRdr(const char* reader);
 
 	static void OpenAll();
 	static void CloseAll();

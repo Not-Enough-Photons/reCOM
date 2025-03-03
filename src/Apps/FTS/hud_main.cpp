@@ -4,7 +4,7 @@ CHUD* theHUD;
 
 s32 hudInit()
 {
-    CRdrFile* hud = zrdr_read("hud.rdr", "data/common");
+    CRdrIO* hud = zrdr_read("hud.rdr", "data/common");
     _zrdr* tacmap = zrdr_findtag(hud, "TacMap");
     _zrdr* polygons = zrdr_findtag(tacmap, "Polygons");
     _zrdr* lines = zrdr_findtag(tacmap, "Lines");

@@ -366,7 +366,7 @@ void _resolveB(_zrdr* self, _zrdr* root, char* name)
 	
 }
 
-CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
+CRdrIO* zrdr_read(const char* name, const char* path, s32 flags)
 {
 	if (path && strlen(path) < MAX_ZRDR_PATH_LEN)
 	{
@@ -375,7 +375,7 @@ CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 
 	cur_zrdr_flags = flags;
 
-	CRdrFile* rdrfile = CRdrArchive::FindRdr(name);
+	CRdrIO* rdrfile = CRdrArchive::FindRdr(name);
 
 	// Is the zrdr file non-compiled?
 	if (flags & 1U != 0 || !rdrfile)
@@ -392,7 +392,7 @@ CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 			// Insert into file stack
 			fstack.insert(fstack.begin(), io);
 
-			rdrfile = new CRdrFile();
+			rdrfile = new CRdrIO();
 
 			// Check for any syntax errors
 			if (rdrfile->ValidateFormat())
@@ -426,7 +426,7 @@ CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 	return rdrfile;
 }
 
-_zrdr* CRdrFile::ReadArray()
+_zrdr* CRdrIO::ReadArray()
 {
 	std::list<_zrdr*> arrays;
 	_zrdr* array = NULL;
@@ -478,7 +478,7 @@ _zrdr* CRdrFile::ReadArray()
 	return parent;
 }
 
-char CRdrFile::ReadToken(_zrdr** array)
+char CRdrIO::ReadToken(_zrdr** array)
 {
 	CBufferIO* file = NULL;
 	char pathbuf[783];
@@ -604,7 +604,7 @@ char CRdrFile::ReadToken(_zrdr** array)
 
 
 
-_zrdr* CRdrFile::MakeUnion(const char* name, bool isstr)
+_zrdr* CRdrIO::MakeUnion(const char* name, bool isstr)
 {
 	char* end;
 	_zrdr* zunion = zrdr_alloc(sizeof(_zrdr), 1);
