@@ -12,8 +12,10 @@
 #define pptoken_include 3
 #define pptoken_undef 4
 
+#define ZRDR_FLAG_ALLOC 0x4
+
 struct _zrdr;
-class CRdrIO;
+class CRdrFile;
 
 enum ZRDR_TYPE
 {
@@ -28,7 +30,7 @@ extern s32 cur_zrdr_flags;
 extern char cur_zrdr_path[256];
 extern std::list<char*> zrdr_symbols;
 
-void _resolveA(_zrdr* reader, const _zrdr* other, char* tag);
+void _resolveA(_zrdr* self, const _zrdr* other, char* tag);
 void _resolveB(_zrdr* self, _zrdr* root, char* tag);
 int _get_pptoken(char* token);
 bool _preproc_filter(char* token, bool param_2);
@@ -39,7 +41,7 @@ bool _eval_defined(char* token);
 /// @param path Path to the reader file.
 /// @param dummy Unused.
 /// @return A zReader instance.
-CRdrIO* zrdr_read(const char* reader, const char* path = NULL, s32 dummy = 0);
+CRdrFile* zrdr_read(const char* reader, const char* path = NULL, s32 dummy = 0);
 
 /// Concatenates a path to a zReader file.
 /// @param file The name of the file.
@@ -50,7 +52,7 @@ const char* zrdr_findfile(const char* file, const char* path);
 /// Frees a zReader object's memory.
 /// @param reader The reader to free.
 /// @return The number of bytes freed.
-s32 zrdr_free(CRdrIO* reader);
+s32 zrdr_free(CRdrFile* reader);
 
 /// Frees a node inside of a zReader array.
 /// @param array The array to free.
@@ -149,10 +151,14 @@ struct _zrdr
 	_zrdr();
 	_zrdr(_zrdr* reader, CSTable* stable);
 	
-	bool IsArray() const;
 	void Clone(const _zrdr* other, const CSTable* table);
-	int GetInt() const;
-	_zrdr* Get(s32 offset) const;
+	
+	_zrdr*    Get(s32 offset) const;
+	u32       GetLength()     const;
+	s32       GetInt()        const;
+	ZRDR_TYPE GetType()       const;
+	bool      IsArray()       const;
+	
 	bool Write(FILE* file);
 
 	u32 type : 8;
@@ -170,12 +176,15 @@ struct _zrdr
 	};
 };
 
-class CRdrIO : public _zrdr
+extern ZRDR_TYPE zrdr_file_type;
+
+class CRdrFile : public _zrdr
 {
 public:
-	CRdrIO();
+	CRdrFile();
 
-	static CRdrIO* Load(zar::CZAR* archive, zar::CKey* key);
+	static CRdrFile* Load(zar::CZAR* archive, zar::CKey* key, u32 flags);
+	static CRdrFile* Read(_zrdr* reader, size_t size, u32 flags);
 
 	zar::CKey* Insert(zar::CZAR* archive, zar::CKey* key);
 	_zrdr* MakeUnion(const char* name, bool isstr);
@@ -188,6 +197,7 @@ public:
 	CSTable m_strings;
 	char* m_buffer;
 	u32 m_size;
+	u32 m_flags;
 };
 
 class CRdrArchive : public zar::CZAR
@@ -195,13 +205,21 @@ class CRdrArchive : public zar::CZAR
 public:
 	static s32 version; 
 	
-	static std::list<zar::CZAR*> m_list;
+	static std::list<CZAR*> m_list;
 
-	static zar::CZAR* AddArchive(const char* name, const char* path);
+	static CZAR* AddArchive(const char* name, const char* path);
 	static bool RemoveArchive(const char* name, const char* path);
 
-	static CRdrIO* FindRdr(const char* reader);
+	static CRdrFile* FindRdr(const char* reader);
 
 	static void OpenAll();
 	static void CloseAll();
+};
+
+class CRdrIO : public CBufferIO
+{
+public:
+	CRdrIO();
+
+	size_t fread(void* buf, size_t size);
 };

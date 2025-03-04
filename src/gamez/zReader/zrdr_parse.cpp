@@ -306,67 +306,102 @@ bool _eval_defined(char* token)
 	while (true);
 }
 
-void _resolveA(_zrdr* reader, const _zrdr* other, char* name)
+void _resolveA(_zrdr* self, _zrdr* root, char* name)
 {
-	s32 idx = 0;
-	s32 rdridx = 8;
-	
-	if (reader->type == ZRDR_STRING)
+	if (self->type == ZRDR_STRING)
 	{
-		reader->string = zstrdup(name);
+		self->string -= (s32)name;
 	}
-	else
+	else if (self->type == ZRDR_ARRAY && !self->isclone)
 	{
-		idx = 1;
-
-		if (reader->type == ZRDR_ARRAY)
+		if (self->length != 0)
 		{
-			rdridx = 8;
-
-			while (true)
+			for (u32 i = 0; i < self->length; i++)
 			{
-				
+				_zrdr* node = &self->array[i];
+
+				if (node->type == ZRDR_STRING)
+				{
+					node->string -= (s32)name;
+				}
+				else if (node->type == ZRDR_ARRAY && !node->isclone)
+				{
+					if (node->IsArray())
+					{
+						if (node->length != 0)
+						{
+							for (u32 j = 0; j < node->length; j++)
+							{
+								_zrdr* child_node = node->Get(j);
+
+								if (child_node->GetType() == ZRDR_STRING)
+								{
+									child_node->string -= (s32)name;
+								}
+								else if (child_node->GetType() == ZRDR_ARRAY && !child_node->isclone)
+								{
+									u32 child_node_length = child_node->GetLength();
+									
+									if (child_node_length != 0)
+									{
+										for (u32 j = 0; j < child_node_length; j++)
+										{
+											_resolveA(child_node->Get(j), root, name);
+										}
+									}
+								}
+
+								child_node->string -= (s32)name;
+							}
+						}
+					}
+				}
+
+				node->string -= (s32)name;
 			}
 		}
 	}
+
+	self->string -= (s32)root;
 }
 
 void _resolveB(_zrdr* self, _zrdr* root, char* name)
 {
-	if (GetGame() == game_SOCOM1 || GetGame() == game_SOCOM1_BETA)
-	{
-		if (self->type == ZRDR_STRING)
+	if (self->type == ZRDR_STRING)
+    {
+		if (self->integer < 0)
+		{
+			self->integer = 0;
+			self->type = ZRDR_INTEGER;
+		}
+		else
 		{
 			// Assign string pointer to point at the entry in the string table
-			self->string += (s32)name;
+			self->string = name + self->integer;
 		}
-		else if (self->type == ZRDR_ARRAY)
-		{
-			self->string += (s32)root;
-                
-			for (u32 i = 1; i < self->array->integer; i++)
-			{
-				_zrdr* child = &self->array[i];
-                		
-				if (child->type == ZRDR_STRING)
-				{
-					child->string += (s32)name;
-				}
-				else if (child->type == ZRDR_ARRAY)
-				{
-					child->string += (s32)root;
-					for (u32 j = 1; j < child->array->integer; j++)
-					{
-						_resolveB(&child->array[j], root, name);
-					}
-				}
-			}
-		}
-	}
-	
+    }
+    else if (self->type == ZRDR_ARRAY && !self->unused)
+    {
+    	self->string = (char*)root + self->integer;
+    	
+    	for (u32 i = 0; i < self->length; i++)
+    	{
+    		u32 child_length = 0;
+
+    		if (self->type == ZRDR_ARRAY)
+    		{
+    			child_length = self->length;
+    		}
+
+    		if (i < child_length)
+    		{
+    			_resolveB(&self->array[i], root, name);
+    		}
+    	}
+    }
 }
 
-CRdrIO* zrdr_read(const char* name, const char* path, s32 flags)
+CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)
 {
 	if (path && strlen(path) < MAX_ZRDR_PATH_LEN)
 	{
@@ -375,7 +410,7 @@ CRdrIO* zrdr_read(const char* name, const char* path, s32 flags)
 
 	cur_zrdr_flags = flags;
 
-	CRdrIO* rdrfile = CRdrArchive::FindRdr(name);
+	CRdrFile* rdrfile = CRdrArchive::FindRdr(name);
 
 	// Is the zrdr file non-compiled?
 	if (flags & 1U != 0 || !rdrfile)
@@ -392,7 +427,7 @@ CRdrIO* zrdr_read(const char* name, const char* path, s32 flags)
 			// Insert into file stack
 			fstack.insert(fstack.begin(), io);
 
-			rdrfile = new CRdrIO();
+			rdrfile = new CRdrFile();
 
 			// Check for any syntax errors
 			if (rdrfile->ValidateFormat())
@@ -426,7 +461,7 @@ CRdrIO* zrdr_read(const char* name, const char* path, s32 flags)
 	return rdrfile;
 }
 
-_zrdr* CRdrIO::ReadArray()
+_zrdr* CRdrFile::ReadArray()
 {
 	std::list<_zrdr*> arrays;
 	_zrdr* array = NULL;
@@ -478,7 +513,7 @@ _zrdr* CRdrIO::ReadArray()
 	return parent;
 }
 
-char CRdrIO::ReadToken(_zrdr** array)
+char CRdrFile::ReadToken(_zrdr** array)
 {
 	CBufferIO* file = NULL;
 	char pathbuf[783];
@@ -604,7 +639,7 @@ char CRdrIO::ReadToken(_zrdr** array)
 
 
 
-_zrdr* CRdrIO::MakeUnion(const char* name, bool isstr)
+_zrdr* CRdrFile::MakeUnion(const char* name, bool isstr)
 {
 	char* end;
 	_zrdr* zunion = zrdr_alloc(sizeof(_zrdr), 1);

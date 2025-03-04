@@ -3,12 +3,13 @@
 
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_stack.h"
+#include "SDL3/SDL_log.h"
 
 char* buffer = NULL;
 
 s32 CRdrArchive::version = 1;
 
-CRdrIO::CRdrIO() : _zrdr()
+CRdrFile::CRdrFile()
 {
 	m_buffer = NULL;
 	m_size = 0;
@@ -25,7 +26,7 @@ const char* zrdr_findfile(const char* name, const char* dir)
 	return name;
 }
 
-int zrdr_free(CRdrIO* file)
+int zrdr_free(CRdrFile* file)
 {
 	if (file != NULL)
 	{
@@ -50,7 +51,7 @@ int zrdr_free(CRdrIO* file)
 	return 0;
 }
 
-bool CRdrIO::ValidateFormat()
+bool CRdrFile::ValidateFormat()
 {
 	CBufferIO* file = NULL;
 	char symbol = '\0';
@@ -140,43 +141,75 @@ bool CRdrIO::ValidateFormat()
 	} while (true);
 }
 
-CRdrIO* CRdrIO::Load(zar::CZAR* archive, zar::CKey* key)
+CRdrFile* CRdrFile::Load(zar::CZAR* archive, zar::CKey* key, u32 flags)
 {
-	CRdrIO* rdrFile = new CRdrIO();
+	bool got_list = false;
+	CRdrFile* file = NULL;
 
-	if (key != NULL)
+	if (key)
 	{
-		size_t keySize = key->GetSize();
-
-		if (keySize != -1)
+		if (key->GetSize() != -1)
 		{
-			void* zrdr_buf = zmalloc(keySize);
+			CRdrFile* buf = NULL;
 
-			if (archive->Fetch(key, zrdr_buf, keySize))
+			if ((flags & ZRDR_FLAG_ALLOC) == 0)
 			{
-				CSTable stable = CSTable(0, 1024);
-				rdrFile->m_strings = stable;
-				rdrFile->m_buffer = static_cast<char*>(zrdr_buf);
-				rdrFile->m_size = keySize;
-				rdrFile->type = ZRDR_ARRAY;
-				rdrFile->array = NULL;
-				rdrFile->Resolve(false);
+				buf = static_cast<CRdrFile*>(zcalloc(key->GetSize(), 1));
+				got_list = archive->Fetch(key, buf, key->GetSize());
+			}
+			else
+			{
+				got_list = archive->FetchLIP(key, reinterpret_cast<void**>(&buf));
+			}
+
+			if (got_list)
+			{
+				file = Read(buf, key->GetSize(), flags);
 			}
 		}
 	}
 
-	return rdrFile;
+	return file;
 }
 
-bool CRdrIO::Resolve(bool resolveA)
+CRdrFile* CRdrFile::Read(_zrdr* reader, size_t size, u32 flags)
 {
-	_zrdr* header = reinterpret_cast<_zrdr*>(m_buffer);
+	CRdrFile* file = NULL;
+
+	if (reader->type == zrdr_file_type)
+	{
+		file = new CRdrFile();
+	}
+
+	file->m_buffer = reinterpret_cast<char*>(reader);
+	file->type = ZRDR_ARRAY;
+	file->array = NULL;
+
+	if (!file->Resolve(false))
+	{
+		// TODO: cleanup after resolution failure
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "zReader file failed to read!");
+		file = NULL;
+	}
+	
+	return file;
+}
+
+bool CRdrFile::Resolve(bool resolveA)
+{
+	struct zrdr_file_header
+	{
+		_zrdr reader;
+		u32 offset;
+	} *header_t;
+	
+	header_t = reinterpret_cast<zrdr_file_header*>(m_buffer);
 	_zrdr* resolved = NULL;
 	char* start = NULL;
 	char* str = NULL;
 	char* table = NULL;
 
-	if (!header)
+	if (!header_t)
 	{
 		return false;
 	}
@@ -184,10 +217,10 @@ bool CRdrIO::Resolve(bool resolveA)
 	str = NULL;
 	resolved = NULL;
 
-	if (header)
+	if (header_t)
 	{
-		str = reinterpret_cast<char*>(header + 1);
-		resolved = reinterpret_cast<_zrdr*>(m_buffer + header->integer);
+		str = reinterpret_cast<char*>(header_t + 1);
+		resolved = reinterpret_cast<_zrdr*>(m_buffer + header_t->offset);
 	}
 
 	if (type == ZRDR_STRING)
@@ -203,19 +236,14 @@ bool CRdrIO::Resolve(bool resolveA)
 
 			if (start)
 			{
-				table = start + sizeof(_zrdr);
+				table = start + sizeof(zrdr_file_header);
 			}
 
 			m_strings.LoadTable(table, reinterpret_cast<u32>(start), false);
 			return true;
 		}
 
-		this->array = resolved;
-		
-		for (u32 i = 1; i < this->array->integer; i++)
-		{
-			_resolveB(&this->array[i], resolved, str);
-		}
+		_resolveB(resolved, resolved, str);
 	}
 
 	start = m_buffer;
@@ -224,9 +252,11 @@ bool CRdrIO::Resolve(bool resolveA)
 
 	if (start)
 	{
-		table = start + sizeof(_zrdr);
+		table = start + sizeof(zrdr_file_header);
 	}
 
-	m_strings.LoadTable(table, *(u32*)start, false);
+	m_strings.LoadTable(table, header_t->reader.integer, false);
+	this->array = resolved;
+	this->length = 1;
 	return true;
 }

@@ -224,7 +224,7 @@ public:
 	CSndJukebox() = delete;
 public:
 	static void Cleanup();
-	CRdrIO* LoadPlaylists();
+	CRdrFile* LoadPlaylists();
 	static void LoadMusicLists();
 
 	static void Start();

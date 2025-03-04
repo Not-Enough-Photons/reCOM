@@ -17,6 +17,8 @@ bool warnonce = false;
 char cur_zrdr_path[256];
 s32 cur_zrdr_flags = 0;
 
+ZRDR_TYPE zrdr_file_type = ZRDR_INTEGER;
+
 _zrdr::_zrdr()
 {
 	type = ZRDR_NULL;
@@ -88,6 +90,21 @@ _zrdr* _zrdr::Get(s32 offset) const
 	return NULL;
 }
 
+u32 _zrdr::GetLength() const
+{
+	if (type == ZRDR_ARRAY)
+	{
+		return length;
+	}
+
+	return 0;
+}
+
+ZRDR_TYPE _zrdr::GetType() const
+{
+	return (ZRDR_TYPE)type;
+}
+
 bool _zrdr::Write(FILE* file)
 {
 	return _OutputASCII(file, this, 0);
@@ -125,7 +142,7 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
 		}
 		else if (node->type == ZRDR_STRING && strcmp(node->string, name) == 0)
 		{
-			return &node[1];
+			return &reader->array[startidx + 1];
 		}
 	}
 
@@ -226,13 +243,13 @@ bool zrdr_findint(_zrdr* reader, const char* name, s32* output, s32 startidx)
 			s32 integer = 0;
 			_zrdr* array = tag->array;
             
-			if (array[1].type == ZRDR_REAL)
+			if (array->type == ZRDR_REAL)
 			{
-				integer = static_cast<s32>(array[1].real);
+				integer = static_cast<s32>(array->real);
 			}
-			else if (array[1].type == ZRDR_INTEGER)
+			else if (array->type == ZRDR_INTEGER)
 			{
-				integer = array[1].integer;
+				integer = array->integer;
 			}
 			else
 			{

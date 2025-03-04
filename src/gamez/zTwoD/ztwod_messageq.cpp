@@ -23,7 +23,7 @@ C2DMessage_Q::C2DMessage_Q()
     m_bEnabled = true;
 }
 
-void C2DMessage_Q::Init(C2DFont* font, CRdrIO* reader)
+void C2DMessage_Q::Init(C2DFont* font, CRdrFile* reader)
 {
     m_font = font;
 

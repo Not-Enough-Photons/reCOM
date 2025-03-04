@@ -69,11 +69,11 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
         return true;
     }
 
-    for (u32 i = 0; i + 1 < reader->array->integer - 1; i++)
+    for (u32 i = 0; i < reader->length; i++)
     {
         _zrdr* node = NULL;
         
-        if (i < reader->array->integer - 1)
+        if (i < reader->length)
         {
             node = &reader->array[i] + 1;
         }
@@ -84,7 +84,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
         if (node && node->type == ZRDR_STRING)
         {
-            if (i + 1 < reader->array->integer - 1)
+            if (i < reader->length)
             {
                 node = &reader->array[i] + 2;
             }
@@ -101,11 +101,11 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
     }
 
     bool grouparray = false;
-    for (u32 i = 0; i + 1 < reader->array->integer - 1; i++)
+    for (u32 i = 0; i < reader->length; i++)
     {
         _zrdr* node = NULL;
         
-        if (i < reader->array->integer - 1)
+        if (i < reader->length)
         {
             node = &reader->array[i] + 1;
         }
@@ -116,7 +116,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
         if (node && node->type == ZRDR_STRING)
         {
-            if (i + 1 < reader->array->integer - 1)
+            if (i < reader->length)
             {
                 node = &reader->array[i] + 2;
             }
@@ -163,7 +163,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
         if (type == ZRDR_ARRAY)
         {
-            child_count = reader->array->integer - 1;
+            child_count = reader->length;
         }
 
         if (child_count <= node_idx)
@@ -175,7 +175,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
         if (type == ZRDR_ARRAY)
         {
-            child_count = reader->array->integer - 1;
+            child_count = reader->length;
         }
 
         if (node_idx < child_count)
@@ -201,7 +201,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
         
         if (type == ZRDR_ARRAY)
         {
-            child_count = reader->array->integer - 1;
+            child_count = reader->length;
         }
         else
         {
@@ -217,7 +217,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
         if (type == ZRDR_ARRAY)
         {
-            child_count = reader->array->integer - 1;
+            child_count = reader->length;
         }
 
         if (node_idx < child_count)
@@ -235,7 +235,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
             if (type == ZRDR_ARRAY)
             {
-                child_count = reader->array->integer - 1;
+                child_count = reader->length;
             }
 
             if (node_idx + 1 < child_count)
@@ -277,7 +277,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
             if (type == ZRDR_ARRAY)
             {
-                node_idx = reader->array->integer - 1;
+                node_idx = reader->length;
             }
 
             if (child_count == node_idx)
@@ -309,7 +309,7 @@ bool _OutputASCII(FILE* out, _zrdr* reader, s32 offset)
 
     if (type == ZRDR_ARRAY)
     {
-        node_idx = reader->array->integer - 1;
+        node_idx = reader->length;
     }
 
     if (child_count == node_idx)

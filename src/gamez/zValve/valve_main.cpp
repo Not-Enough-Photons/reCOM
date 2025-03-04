@@ -26,7 +26,7 @@ bool CValve::Open(const char* name, VALVE_TYPE type)
 {
 	if (name)
 	{
-		CRdrIO* file = zrdr_read(name);
+		CRdrFile* file = zrdr_read(name);
 		Parse(file, type);
 		zrdr_free(file);
 	}
@@ -56,18 +56,16 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 
 	if (valves)
 	{
-		s32 idx = 1;
-		
-		if (valves->array->integer > 1)
+		if (valves->length > 0)
 		{
-			do
+			for (u32 i = 0; i < valves->length; i++)
 			{
 				VALVE_STATE vstate;
 				char* name = NULL;
 				s32 value = 0;
 				char* valve_type = NULL;
 				
-				_zrdr* node = &valves->array[idx];
+				_zrdr* node = &valves->array[i];
 
 				name = zrdr_findstring(node, "name");
 				zrdr_findint(node, "value", &value);
@@ -124,10 +122,7 @@ bool CValve::Parse(_zrdr* reader, VALVE_TYPE type)
 
 					m_list.insert(m_list.begin(), valve);
 				}
-				
-				idx++;
 			}
-			while (idx < valves->array->integer);
 		}
 	}
 	

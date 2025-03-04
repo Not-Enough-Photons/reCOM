@@ -133,7 +133,7 @@ bool CMission::Init()
 
 	m_pNetGame = netgame;
 
-	CRdrIO* hud_rdr = zrdr_read("hud.rdr");
+	CRdrFile* hud_rdr = zrdr_read("hud.rdr");
 
 	if (hud_rdr)
 	{
