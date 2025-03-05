@@ -77,18 +77,18 @@ int _zrdr::GetInt() const
 	return 0;
 }
 
-char* _zrdr::Get(s32 offset) const
+_zrdr* _zrdr::Get(s32 offset) const
 {
-	s32 length = 0;
+	u32 len = 0;
 
 	if (type == ZRDR_ARRAY)
 	{
-		length = array->integer - 1;
+		len = array->integer - 1;
 	}
 
-	if (offset < length)
+	if (offset < len)
 	{
-		return string + (offset + 1) * 8;
+		return &array[offset + 1];
 	}
 
 	return NULL;

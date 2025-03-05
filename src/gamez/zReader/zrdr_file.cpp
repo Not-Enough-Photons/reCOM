@@ -184,6 +184,36 @@ bool CRdrFile::Resolve(bool resolveA)
 	str = NULL;
 	resolved = NULL;
 
+	// Legacy version of zReader supported by the following games:
+	// - Top Gun Hornet's Nest
+	// - MechWarrior 3
+	// - MechWarrior 3 Pirate's Moon
+	// - Recoil
+	// - Crimson Skies
+	if (resolveA)
+	{
+		str = NULL;
+
+		if (header)
+		{
+			str = reinterpret_cast<char*>(&header[1]);
+			resolved = reinterpret_cast<_zrdr*>(m_buffer[header->integer]);
+		}
+
+		if (this->type != ZRDR_STRING && this->type == ZRDR_ARRAY)
+		{
+			for (u32 i = 1; i < this->array->integer; i++)
+			{
+				_resolveA(&this->array[i], resolved, str);
+			}
+			
+			return true;
+		}
+
+		this->string = this->string - (s32)resolved;
+		return true;
+	}
+	
 	if (header)
 	{
 		str = reinterpret_cast<char*>(header + 1);

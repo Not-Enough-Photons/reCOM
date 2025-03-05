@@ -306,64 +306,67 @@ bool _eval_defined(char* token)
 	while (true);
 }
 
-void _resolveA(_zrdr* reader, const _zrdr* other, char* name)
+void _resolveA(_zrdr* self, _zrdr* root, char* name)
 {
-	s32 idx = 0;
-	s32 rdridx = 8;
-	
-	if (reader->type == ZRDR_STRING)
+	if (self->type == ZRDR_STRING)
 	{
-		reader->string = zstrdup(name);
+		self->string = self->string - (s32)name;
 	}
-	else
+	else if (self->type == ZRDR_ARRAY)
 	{
-		idx = 1;
-
-		if (reader->type == ZRDR_ARRAY)
+		for (u32 i = 1; self->array->integer; i++)
 		{
-			rdridx = 8;
+			_zrdr* node = &self->array[i];
 
-			while (true)
+			if (node->type == ZRDR_STRING)
 			{
-				
+				node->string = node->string - (s32)name;
+			}
+			else if (node->type == ZRDR_ARRAY)
+			{
+				for (u32 j = 1; j < node->array->integer; j++)
+				{
+					_zrdr* node_child = &node->array[j];
+					_resolveA(node_child, root, name);
+				}
+
+				node->string = self->string - (s32)name;
 			}
 		}
+
+		self->string = self->string - (s32)name;
 	}
 }
 
 void _resolveB(_zrdr* self, _zrdr* root, char* name)
 {
-	if (GetGame() == game_SOCOM1 || GetGame() == game_SOCOM1_BETA)
+	if (self->type == ZRDR_STRING)
 	{
-		if (self->type == ZRDR_STRING)
-		{
-			// Assign string pointer to point at the entry in the string table
-			self->string += (s32)name;
-		}
-		else if (self->type == ZRDR_ARRAY)
-		{
-			self->string += (s32)root;
+		// Assign string pointer to point at the entry in the string table
+		self->string += (s32)name;
+	}
+	else if (self->type == ZRDR_ARRAY)
+	{
+		self->string += (s32)root;
                 
-			for (u32 i = 1; i < self->array->integer; i++)
-			{
-				_zrdr* child = &self->array[i];
+		for (u32 i = 1; i < self->array->integer; i++)
+		{
+			_zrdr* child = &self->array[i];
                 		
-				if (child->type == ZRDR_STRING)
+			if (child->type == ZRDR_STRING)
+			{
+				child->string += (s32)name;
+			}
+			else if (child->type == ZRDR_ARRAY)
+			{
+				child->string += (s32)root;
+				for (u32 j = 1; j < child->array->integer; j++)
 				{
-					child->string += (s32)name;
-				}
-				else if (child->type == ZRDR_ARRAY)
-				{
-					child->string += (s32)root;
-					for (u32 j = 1; j < child->array->integer; j++)
-					{
-						_resolveB(&child->array[j], root, name);
-					}
+					_resolveB(&child->array[j], root, name);
 				}
 			}
 		}
 	}
-	
 }
 
 CRdrFile* zrdr_read(const char* name, const char* path, s32 flags)

@@ -12,6 +12,8 @@
 #define pptoken_include 3
 #define pptoken_undef 4
 
+#define ZRDR_FLAG_ALLOC 0x4
+
 struct _zrdr;
 class CRdrFile;
 
@@ -28,7 +30,7 @@ extern s32 cur_zrdr_flags;
 extern char cur_zrdr_path[256];
 extern std::list<char*> zrdr_symbols;
 
-void _resolveA(_zrdr* reader, const _zrdr* other, char* tag);
+void _resolveA(_zrdr* self, _zrdr* root, char* tag);
 void _resolveB(_zrdr* self, _zrdr* root, char* tag);
 int _get_pptoken(char* token);
 bool _preproc_filter(char* token, bool param_2);
@@ -126,9 +128,9 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* tag, u32 startidx);
 /// Converts an output value into an integer.
 /// @param reader A zReader array node.
 /// @param output The output of the search, stored as a pointer.
-/// @param size The size of the element in bytes.
+/// @param startidx The size of the element in bytes.
 /// @return Whether or not the cast/search was successful.
-bool zrdr_toINT(_zrdr* reader, s32* output, s32 size);
+bool zrdr_toINT(_zrdr* reader, s32* output, s32 startidx);
 
 /// Converts an output value into a true or false value.
 /// @param reader A zReader array node.
@@ -148,11 +150,15 @@ struct _zrdr
 {
 	_zrdr();
 	_zrdr(_zrdr* reader, CSTable* stable);
-
-	bool IsArray() const;
+	
 	void Clone(const _zrdr* other, const CSTable* table);
-	int GetInt() const;
-	char* Get(int offset) const;
+	
+	_zrdr*    Get(s32 offset) const;
+	u32       GetLength()     const;
+	s32       GetInt()        const;
+	ZRDR_TYPE GetType()       const;
+	bool      IsArray()       const;
+	
 	bool Write(FILE* file);
 
 	u32 type : 8;
@@ -169,6 +175,8 @@ struct _zrdr
 		_zrdr* array;
 	};
 };
+
+extern ZRDR_TYPE zrdr_file_type;
 
 class CRdrFile : public _zrdr
 {
@@ -188,6 +196,7 @@ public:
 	CSTable m_strings;
 	char* m_buffer;
 	u32 m_size;
+	u32 m_flags;
 };
 
 class CRdrArchive : public zar::CZAR
@@ -195,13 +204,21 @@ class CRdrArchive : public zar::CZAR
 public:
 	static s32 version; 
 	
-	static std::list<zar::CZAR*> m_list;
+	static std::list<CZAR*> m_list;
 
-	static zar::CZAR* AddArchive(const char* name, const char* path);
+	static CZAR* AddArchive(const char* name, const char* path);
 	static bool RemoveArchive(const char* name, const char* path);
 
 	static CRdrFile* FindRdr(const char* reader);
 
 	static void OpenAll();
 	static void CloseAll();
+};
+
+class CRdrIO : public CBufferIO
+{
+public:
+	CRdrIO();
+
+	size_t fread(void* buf, size_t size);
 };

@@ -20,6 +20,7 @@ enum _zvid_mode
 
 void zVid_Init(_zvid_mode mode);
 void zVid_Uninit();
+void zVid_CreateWindow();
 void zVid_Open();
 void zVid_Swap(bool doSwap);
 void zVid_FrameRestore();
@@ -107,10 +108,4 @@ class CVideo
 public:
 	static void Clear(u8 r, u8 g, u8 b, u8 a) { }
 	static void RestoreImage(const char* img, bool raw = false);
-};
-
-class CMPEG
-{
-public:
-	void Uninit();
 };
