@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 
+#include "gamez/zAssetLib/zassetlib.h"
 #include "gamez/zRender/zrender.h"
 #include "gamez/zIntersect/zintersect.h"
 #include "gamez/zVisual/zvis.h"
@@ -184,6 +185,7 @@ namespace zdb
 		bool AddDI(CDI* di);
 		
 		void SetParentHasVisuals();
+		void SetDynamicLight(bool self_light, bool apply_to_children);
 
 		virtual s16 Release();
 		bool Rendered();
@@ -310,8 +312,8 @@ namespace zdb
 		static f32 m_invscale;
 
 		static s32 GetVersion();
-
 		static CModel* GetModel(const char* name);
+		static CTexHandle* GetTexHandle(char* name);
 		
 		static void Init() {}
 		static void Uninit() {}
@@ -340,7 +342,6 @@ namespace zdb
 
 		void ComputeLightIntensity(f32 intensity, const CPnt3D& point, f32* lightRef);
 
-		void GetTexHandle() const;
 		// undefined4 GetTextureByName(const char* name) const;
 
 		CCamera* m_camera;
@@ -425,7 +426,7 @@ namespace zdb
 		s32 m_variant;
 		bool m_bForceExport;
 		bool m_bbox_valid;
-		// CRefList m_list;
+		CRefList m_list;
 		CAssetLib* m_AssetLib;
 	};
 

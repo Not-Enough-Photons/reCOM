@@ -95,8 +95,8 @@ namespace zdb
 		u16 m_palID;
 		u16 m_htex_count;
 		u16 m_gsWords;
-		u64 m_dmaRef;
-		u64 m_dmaRefVu;
+		_word128 m_dmaRef;
+		_word128 m_dmaRefVu;
 		std::vector<CTexture*> m_reverse_miplist;
 		CLoadImage* m_loadimage;
 	};

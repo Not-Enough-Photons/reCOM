@@ -111,7 +111,7 @@ namespace zdb
 			MEDIUM,
 			HIGH
 		};
-	public:
+
 		static void AddLocalLight(CLight* light, CPnt3D* position);
 		static void AlphaEnable(bool enableAlpha) {}
 		static s32 ApplyDecal(u32 vertex, f32 opacity, CPnt3D* position, CMatrix* mat, CTexHandle* handle);
@@ -124,12 +124,14 @@ namespace zdb
 
 		void ApplyDecal(CDecal* decal);
 
-		void SetBuffer();
+		void SetBuffer(_word128* wvis, u32 size, CVisBase* visdata);
 		
 		bool DrawLOD(CLOD_band* lod, f32 range, f32* distance);
 		void Render();
 		void VuUpdate(f32 opacity);
 
+		CTexture* ResolveTextureName(_word128* wtexture, _word128* wname);
+		
 		u32 Release();
 
 		static std::deque<CVisual*> m_stack_vid;
@@ -171,6 +173,8 @@ namespace zdb
 
 		u32 m_instance_cnt;
 
+		_word128* m_dmaBuf;
+		
 		std::vector<CDecal*> m_decals;
 		s32 m_decal_idx;
 
@@ -185,6 +189,8 @@ namespace zdb
 	class CMesh : public CVisual
 	{
 	public:
+		void SetMeshTextureSelects(_word128* wtexture, _word128* wname);
+		
 		u32 m_mtx_count;
 	};
 

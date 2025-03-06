@@ -40,12 +40,84 @@ void hookupMesh(zar::CZAR* archive, zdb::CModel* model)
 
 void hookupVisuals(zar::CZAR* archive, zar::CKey* key, zdb::CNode* node, zdb::CModel* model, zdb::CVisBase* vis)
 {
-	if (node)
+	char node_name[1024];
+	char node_light_name[1024];
+	
+	if (!node)
 	{
-		if (node->m_hasMesh)
+		return;
+	}
+
+	if (node->m_hasMesh)
+	{
+		node->GetSubMesh();
+	}
+
+	if (!node->m_visual.empty())
+	{
+		node->m_hasVisuals = true;
+		node_index++;
+	}
+
+	u32 vis_id = 0;
+	u32 child_vis_id = 0;
+	
+	auto node_iterator = model->m_child.begin();
+	while (node_iterator != model->m_child.end())
+	{
+		zdb::CNode* node = *node_iterator;
+		zdb::CNode* child = node->FindChild(node->m_name, true);
+
+		if (!child)
 		{
-			
+			child = node;
 		}
+
+		child->m_vid = vis_id;
+
+		auto vis_iterator = child->m_visual.begin();
+		while (vis_iterator != child->m_visual.end())
+		{
+			zdb::CVisual* visual = *vis_iterator;
+
+			// TODO: Figure out what the visual vectors are storing
+			// visual->some_vector_1.insert(visual->some_vector_1.end(), lod);
+			// visual->some_vector_2.insert(visual->some_vector_2.end(), something);
+
+			sprintf(node_name, "N%03d_I%03d_V%02d", node_index, vis_id, child_vis_id);
+			strcpy(node_light_name, node_name);
+			strcat(node_light_name, "L");
+
+			u32 local24 = 0;
+			bool fetched = false;
+
+			fetched = archive->Fetch(node_light_name, &local24, sizeof(u32));
+			
+			if (!fetched)
+			{
+				fetched = archive->Fetch(node_name, &local24, sizeof(u32));
+			}
+			else
+			{
+				child->SetDynamicLight(true, false);
+			}
+
+			if (!fetched)
+			{
+				// TODO: More visual vector stuff needs to be figured out -
+				// And implemented!
+			}
+			else
+			{
+				// TODO: Add quadword parameters to this function -
+				// to target a MultiGen vertex buffer
+				// visual->SetBuffer();
+			}
+			
+			++vis_iterator;
+		}
+		
+		++node_iterator;
 	}
 }
 
@@ -199,6 +271,19 @@ namespace zdb
 		return inrange;
 	}
 
+	void CVisual::SetBuffer(_word128* wvis, u32 bufferidx, CVisBase* visdata)
+	{
+		visdata->m_buffer_count++;
+		void* vis_buffer = visdata->m_data_buffer;
+		m_dmaBuf->u128 = wvis->u128;
+
+		u32 type = m_dmaBuf->u32[bufferidx];
+
+		if (type == 0)
+		{
+			
+		}
+	}
 	
 	void CVisual::Render()
 	{
@@ -214,14 +299,50 @@ namespace zdb
 		glBindVertexArray(m_vao);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 	}
+
+	CTexture* CVisual::ResolveTextureName(_word128* wtexture, _word128* wname)
+	{
+		CTexture* texture = NULL;
+
+		CTexHandle* handle = CWorld::GetTexHandle((char*)(wtexture->u8 + wname->u32[1]));
+
+		if (!handle)
+		{
+			handle = CWorld::GetTexHandle("null_xmas.bmp");
+		}
+
+		if (handle)
+		{
+			texture = handle->m_texture;
+			// m_dynTexList.Add(handle, true);
+
+			if (texture->m_palette)
+			{
+				// m_dynTexList.Add(texture->m_palette, true);
+			}
+		}
+
+		if (texture)
+		{
+			f32 r = texture->m_dmaRefVu.f32[1];
+			f32 g = texture->m_dmaRefVu.f32[2];
+			f32 b = texture->m_dmaRefVu.f32[3];
+			wname->u128 = texture->m_dmaRefVu.u128;
+			wname->f32[1] = r;
+			wname->f32[2] = g;
+			wname->f32[3] = b;
+			wname->u8[2] = 5;
+		}
+
+		return texture;
+	}
 	
 	u32 CVisual::Release()
 	{
 		m_instance_cnt--;
 		return m_instance_cnt;
 	}
-
-
+	
 	bool CVisualVector::Exists(const CVisual* visual)
 	{
 		for (auto it = begin(); it != end(); it++)

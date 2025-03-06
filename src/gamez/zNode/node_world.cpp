@@ -269,6 +269,11 @@ namespace zdb
 		return 1;
 	}
 
+	CTexHandle* CWorld::GetTexHandle(char* name)
+	{
+		return CAssetMgr::m_assets.GetTexHandle(name);
+	}
+	
 	void CWorld::LandmarkList_Search(CNode* node, CStack& matstack, CNodeVector& landmarks)
 	{
 		
