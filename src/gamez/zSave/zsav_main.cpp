@@ -1,6 +1,7 @@
 ﻿#include "zsave.h"
 
 #include "gamez/zAssetLib/zassetlib.h"
+#include "gamez/zNode/znode.h"
 #include "gamez/zRender/zrender.h"
 
 namespace zdb

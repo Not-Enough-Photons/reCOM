@@ -1,5 +1,7 @@
 ﻿#include "zassetlib.h"
 
+#include "gamez/zNode/znode.h"
+
 void HookupLib(zdb::CAssetLib lib)
 {
     zdb::CGSTexBuffer texbuf;

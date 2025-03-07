@@ -24,6 +24,7 @@ namespace zdb
 	class CMesh;
 	class CDecal;
 	class CLight;
+	class CTexture;
 	class CTexHandle;
 
 	class CCamera;

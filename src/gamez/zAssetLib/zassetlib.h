@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <list>
 
 #include "gamez/zNode/znode.h"
@@ -28,7 +27,7 @@ namespace zdb
 		CAssetLib(const char* name);
 		
 		bool AddTexture(const char* name);
-		bool AddTexture(zdb::CTexture* texture);
+		bool AddTexture(CTexture* texture);
 		CModel* AddModel(CModel* model);
 		
 		bool IsNamed(const char* name) const;

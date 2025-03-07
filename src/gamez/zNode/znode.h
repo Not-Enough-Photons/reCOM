@@ -433,12 +433,14 @@ namespace zdb
 	class CModelVector : public std::vector<CModel*>
 	{
 	public:
+		CModelVector() {}
+		
 		CModel* GetModel(const char* name);
 	};
 
 	class CLight : public CNode
 	{
-	private:
+	public:
 		f32 m_maxRangeSq;
 		f32 m_maxRange;
 		f32 m_minRange;

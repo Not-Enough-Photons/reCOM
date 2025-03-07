@@ -4,9 +4,7 @@
 #include <SDL3_image/SDL_image.h>
 #include <stb/stb_image.h>
 
-#include "gamez/zAssetLib/zassetlib.h"
 #include "gamez/zIMGUI/zimgui.h"
-#include "gamez/zSave/zsave.h"
 #include "gamez/zVideo/zvid.h"
 
 CTestState::CTestState()
