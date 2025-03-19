@@ -190,6 +190,11 @@ CZSealBody::CZSealBody(zdb::CNode* node, CCharacterType* chartype) : CEntity(ENT
     zVid_Assert(false, LONG_MAX, __FILE__, __LINE__);
 }
 
+CCharacterType* CZSealBody::GetCharacter() const
+{
+    return m_charType;
+}
+
 void CZSealBody::StopAllHeartbeatSounds()
 {
     if (m_heartbeat_sndisnt)

@@ -153,3 +153,58 @@ namespace sealai
 		return str;
 	}
 }
+
+SEAL_VALVE CSealCtrlAi::get_valve(const char* valve)
+{
+	if (valve)
+	{
+		for (u32 i = 0; i < static_cast<u32>(SEAL_VALVE::VALVE_MAX); i++)
+		{
+			SEAL_VALVE seal_valve = static_cast<SEAL_VALVE>(i);
+			const char* name = "";
+
+			switch (seal_valve)
+			{
+			case SEAL_VALVE::VALVE_HOLDFIRE:
+				name = "valve_holdfire";
+			case SEAL_VALVE::VALVE_SHOTAT:
+				name = "valve_shotat";
+			case SEAL_VALVE::VALVE_ALIVE:
+				name = "valve_alive";
+			case SEAL_VALVE::VALVE_AWARE:
+				name = "valve_aware";
+			default:
+				name = "error";
+			}
+
+			if (!strcmp(name, valve))
+			{
+				return seal_valve;
+			}
+		}
+
+		if (!strcmp(valve, "valve_shot"))
+		{
+			return SEAL_VALVE::VALVE_SHOTAT;
+		}
+	}
+
+	return SEAL_VALVE::VALVE_ERROR;
+}
+
+const char* CSealCtrlAi::get_valve(SEAL_VALVE valve)
+{
+	switch (valve)
+	{
+	case SEAL_VALVE::VALVE_HOLDFIRE:
+		return "valve_holdfire";
+	case SEAL_VALVE::VALVE_SHOTAT:
+		return "valve_shotat";
+	case SEAL_VALVE::VALVE_ALIVE:
+		return "valve_alive";
+	case SEAL_VALVE::VALVE_AWARE:
+		return "valve_aware";
+	default:
+		return "error";
+	}
+}

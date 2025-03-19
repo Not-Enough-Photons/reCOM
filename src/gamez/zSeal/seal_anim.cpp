@@ -43,3 +43,34 @@ bool CSealCtrlAi::RegisterCommands()
 
     return true;
 }
+
+void CZSealBody::GetMaxZMotion(f32& min, f32& max)
+{
+	AnimSet* set = m_animset;
+
+	if (m_desiredState == SEAL_STATE::stateClimbLadder)
+	{
+		min = set->m_aparams.m_ladder_updn;
+		max = set->m_aparams.m_ladder_updn;
+	}
+	else if (m_desiredState == SEAL_STATE::stateProne)
+	{
+		min = set->m_aparams.m_prone_max_back;
+		max = set->m_aparams.m_prone_max_fwd;
+	}
+	else if (m_desiredState == SEAL_STATE::stateCrouch)
+	{
+		min = set->m_aparams.m_crouch_max_back;
+		max = set->m_aparams.m_crouch_max_fwd;
+	}
+	else if (m_desiredState == SEAL_STATE::stateStand)
+	{
+		min = set->m_aparams.m_stand_max_back;
+		max = set->m_aparams.m_stand_max_fwd;
+	}
+	else
+	{
+		min = 0.0f;
+		max = 0.0f;
+	}
+}

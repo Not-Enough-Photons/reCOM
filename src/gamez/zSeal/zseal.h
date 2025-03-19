@@ -118,6 +118,16 @@ enum class SEAL_DEATH_TYPE
 	DEATH_MAX
 };
 
+enum class SEAL_VALVE
+{
+	VALVE_HOLDFIRE,
+	VALVE_SHOTAT,
+	VALVE_ALIVE,
+	VALVE_AWARE,
+	VALVE_MAX,
+	VALVE_ERROR
+};
+
 enum class AiSig
 {
 	AISIG_UNKNOWN,
@@ -386,6 +396,11 @@ public:
 	void AdrenalineIncr(f32 increase);
 
 	/// -------------------------------------------
+	/// BODY
+	/// -------------------------------------------
+	void GetMaxZMotion(f32& min, f32& max);
+	
+	/// -------------------------------------------
 	/// STANCE
 	/// -------------------------------------------
 
@@ -422,6 +437,8 @@ public:
 	/// -------------------------------------------
 
 	static void StopAllHeartbeatSounds();
+
+	void SetWallHit(zdb::IntersectStruct* wallhit, CPnt3D* first, CPnt3D* second);
 	
 	void HandleBloodDrip(f32 delta);
 	void HandleBombDefuse() {}
@@ -925,6 +942,9 @@ class CSealCtrlAi : CSealCtrl
 {
 public:
 	static bool RegisterCommands();
+
+	static SEAL_VALVE get_valve(const char* valve);
+	static const char* get_valve(SEAL_VALVE valve);
 };
 
 class CSealCtrlSquirm : CSealCtrl
