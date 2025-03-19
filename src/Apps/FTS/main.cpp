@@ -13,8 +13,10 @@ int main(int argc, char** argv)
 	process_arguments(argc, argv);
 	zSysInit();
 	zSysPostInit();
-	
+
+#ifndef NOGAME
 	SDL_Log("%s selected for GameZ.", gamez_GameRunPath);
+#endif
 	
 	if (dumpLog)
 	{

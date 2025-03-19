@@ -11,6 +11,10 @@ GameZ_FTSGameInfo game_info;
 // TODO: Write a better way to get the game name
 GameZ_FTSGame GetGame()
 {
+#ifdef NOGAME
+    return game_SOCOM1;
+#endif
+    
     if (game_name != game_NONE)
     {
         return game_name;

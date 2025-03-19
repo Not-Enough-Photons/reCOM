@@ -63,6 +63,10 @@ CWindow::CWindow(CRdrFile* reader)
 		{
 			m_name = name_tag->array[1].string;
 		}
+		else
+		{
+			m_name = "GameZ";
+		}
 	}
 	
 	m_window = SDL_CreateWindow(m_name, m_width, m_height, window_flags);

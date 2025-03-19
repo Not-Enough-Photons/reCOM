@@ -124,8 +124,8 @@ _zrdr* zrdr_findtag_startidx(_zrdr* reader, const char* name, u32 startidx)
 	}
 
 	u32 length = 0;
-	
-	if (GetGame() == game_SOCOM1_BETA || GetGame() == game_SOCOM1)
+
+	if (GetGame() <= game_SOCOM1)
 	{
 		length = reader->array->integer;
 	}

@@ -103,6 +103,10 @@ size_t zsys_FullAllocAndFree()
 
 void zSysPostInit()
 {
+#ifdef NOGAME
+#else
+
+	
 	if (!postinited)
 	{
 		postinited = true;
@@ -178,6 +182,7 @@ void zSysPostInit()
 	}
 
 	GetGame();
+#endif
 }
 
 void zVid_Assert(bool condition, unsigned int mask, const char* file, int line)

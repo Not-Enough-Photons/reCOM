@@ -37,6 +37,9 @@ bool CGame::StartEngine()
 
 bool COurGame::StartEngine()
 {
+#ifdef NOGAME
+	return CGame::StartEngine();
+#else
 	if (CGame::StartEngine())
 	{
 		char img_dir[256];
@@ -64,4 +67,5 @@ bool COurGame::StartEngine()
 	}
 
 	return true;
+#endif
 }
