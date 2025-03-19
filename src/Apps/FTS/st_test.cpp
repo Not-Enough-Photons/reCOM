@@ -2,7 +2,6 @@
 #include "hud.h"
 
 #include <SDL3_image/SDL_image.h>
-#include <stb/stb_image.h>
 
 #include "gamez/zIMGUI/zimgui.h"
 #include "gamez/zVideo/zvid.h"
