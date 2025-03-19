@@ -14,7 +14,7 @@ void zMath_Init();
 extern bool tableInit;
 
 const f32 PI = 3.141593f;
-const f32 RAD_TO_DEG = 0.01745329;
+const f32 RAD_TO_DEG = 0.01745329f;
 
 extern f32* sintbl;
 extern f32* costbl;
