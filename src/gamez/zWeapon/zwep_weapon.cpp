@@ -5,7 +5,7 @@ CZWeapon::CZWeapon()
 	// AI parameter setup
 	m_ai_params.m_min_range = 50.0f;
 	m_ai_params.m_max_range = 1000.0f;
-	m_ai_params.m_version = CZWeapon::AI_PARAMS::version;
+	m_ai_params.m_version = AI_PARAMS::version;
 	m_ai_params.m_custom = false;
 	m_ai_params.m_hard_min = false;
 
@@ -75,6 +75,16 @@ void CZWeapon::AddLegalAmmo(CZAmmo* ammo)
 
 }
 
+bool CZWeapon::HasFireMode(s32 id) const
+{
+	if (id < 5)
+	{
+		return m_hasFiremodes[id];
+	}
+
+	return true;
+}
+
 void CZWeapon::ClearAnims()
 {
 	if (m_hitanim != NULL)
@@ -105,7 +115,7 @@ void CZWeapon::ClearTimer()
 
 void CZWeapon::Close()
 {
-
+	// m_flyout_machine->ReleaseAllActive()
 }
 
 void CZWeapon::Fire(CZProjectile& projectile)

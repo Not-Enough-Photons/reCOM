@@ -231,19 +231,41 @@ enum class GRENADE_STATE
 	REMOVE
 };
 
+inline EQUIP_ITEM operator&(EQUIP_ITEM lhs, EQUIP_ITEM rhs)
+{
+	return static_cast<EQUIP_ITEM>(static_cast<u32>(lhs) & static_cast<u32>(rhs));
+}
+
+inline EQUIP_ITEM operator|(EQUIP_ITEM lhs, EQUIP_ITEM rhs)
+{
+	return static_cast<EQUIP_ITEM>(static_cast<u32>(lhs) | static_cast<u32>(rhs));
+}
+
+inline EQUIP_ITEM operator^(EQUIP_ITEM lhs, EQUIP_ITEM rhs)
+{
+	return static_cast<EQUIP_ITEM>(static_cast<u32>(lhs) ^ static_cast<u32>(rhs));
+}
+
 namespace zwep
 {
 	extern u32 personMaterialId;
 }
 
+class ZWepReader
+{
+public:
+	ZWepReader() = delete;
+	ZWepReader(const ZWepReader&) = delete;
+
+	static bool Read(zar::CZAR& archive, CZWeaponList* weapons, void* ammo); // TODO: Consider adding the CZAmmoList class
+};
+
 class CZAmmo
 {
 public:
-	CZAmmo();
-	~CZAmmo();
-
-	void SetInternalName(const char* internalName);
-	void SetDisplayName(const char* displayName);
+	CZAmmo() {}
+	
+	void SetName(const char* name);
 	void SetDescription(const char* description);
 
 	void SetID(s32 id);
@@ -258,7 +280,7 @@ public:
 	void SetProximitySquared(f32 proximity);
 	void SetAccelerationFactor(f32 acceleration);
 	void SetIsVolatile(bool volitile);
-private:
+
 	char* m_internalName;
 	char* m_displayName;
 	char* m_description;
@@ -350,11 +372,11 @@ public:
 	static bool          IsPrimary(EQUIP_ITEM item);
 	static bool          IsSecondary(EQUIP_ITEM item);
 	static EQUIP_ITEM    GetIDType() { return EQUIP_ITEM::EQUIP_NONE; } // TODO: Implement this
-	static EQUIP_ITEM    GetIDType(EQUIP_ITEM id) { return EQUIP_ITEM::EQUIP_NONE; } // TODO: Implement this
+	static EQUIP_ITEM    GetIDType(EQUIP_ITEM id);
 	static EQUIP_ITEM    GetWeaponId(const char* name) { return EQUIP_ITEM::EQUIP_NONE; } // TODO: Implement this
 
-	void Open();
-	void Close();
+	static void          Open();
+	static void          Close();
 
 	void AddLegalAmmo(CZAmmo* ammo);
 	bool AllocateHitAnimMem();
@@ -368,6 +390,9 @@ public:
 	void ClearAnims();
 	void ClearTimer();
 
+	bool IsDirectFire() const;
+	bool HasFireMode(s32 id) const;
+	
 	void Fire(CZProjectile& projectile);
 	void Fire(zdb::CNode* firepoint,
 		CZWeapon* weapon,
@@ -384,40 +409,40 @@ public:
 	/// -------------------------------------------
 	/// GETTERS
 	/// -------------------------------------------
-	char* GetAssociatedGearName()         const;
-	char* GetDecalSetName()               const;
-	char* GetDescription()                const;
-	char* GetDefaultSpecialAnimName()     const;
-	char* GetFireAnimName()               const;
-	char* GetHitAnimName()                const;
-	char* GetIconTextureName()            const;
-	char* GetModelName()                  const;
-	char* GetName()                       const;
-	char* GetSpecialMaterialAnimName()    const;
-	char* GetWeaponName(EQUIP_ITEM id)    const;
-	char* GetWeaponUIName(EQUIP_ITEM id)  const;
-	char* GetWeaponVUIName(EQUIP_ITEM id) const;
+	char*        GetAssociatedGearName()         const { return m_associatedgearname; }
+	char*        GetDecalSetName()               const { return m_decalsetname; }
+	char*        GetDescription()                const { return m_description; }
+	char*        GetDefaultSpecialAnimName()     const { return m_defaultspecialanimname; }
+	char*        GetFireAnimName()               const { return m_fireanimname; }
+	char*        GetHitAnimName()                const { return m_hitanimname; }
+	char*        GetIconTextureName()            const { return m_icontexname; }
+	char*        GetModelName()                  const { return m_modelname; }
+	char*        GetName()                       const { return m_name; }
+	char*        GetSpecialMaterialAnimName()    const { return m_specialmaterialanimname; }
+	char*        GetWeaponName(EQUIP_ITEM id)    const;
+	char*        GetWeaponUIName(EQUIP_ITEM id)  const;
+	char*        GetWeaponVUIName(EQUIP_ITEM id) const;
 
-	s32          GetAmmoCapacity()               const;
-	s32          GetNumMags()                    const;
+	s32          GetAmmoCapacity()               const { return m_ammocap; }
+	s32          GetNumMags()                    const { return m_nummags; }
 
-	f32          GetEffectiveRange()             const;
-	f32          GetImpactRadius()               const;
-	f32          GetMaxRange()                   const;
-	f32          GetMuzzleVelocity()             const;
+	f32          GetEffectiveRange()             const { return m_effectiverange; }
+	f32          GetImpactRadius()               const { return m_impactradius; }
+	f32          GetMaxRange()                   const { return m_maxrange; }
+	f32          GetMuzzleVelocity()             const { return m_muzzlevel; }
 
-	CZAnim*      GetDefaultSpecialAnim()         const;
+	CZAnim*      GetDefaultSpecialAnim()         const { return m_defaultspecialanim; }
 	CZAnim*      GetFireAnim()                   const;
 	CZAnim*      GetHitAnim()                    const;
 	CZAnim*      GetSpecialMaterialAnim()        const;
 
-	CSnd*        GetBulletPassSound()            const;
+	CSnd*        GetBulletPassSound()            const { return m_bulletPassSound; }
 
 	CZAmmo*      GetDefaultAmmo()                const;
 
 	EQUIP_AMMO   GetDefaultAmmoID()              const;
 
-	ENCUMBRANCE  GetEncumbrance()                const;
+	ENCUMBRANCE  GetEncumbrance()                const { return m_encumb; }
 
 	/// -------------------------------------------
 	/// SETTERS
@@ -458,7 +483,8 @@ public:
 	/// -------------------------------------------
 	/// STATIC MEMBERS
 	/// -------------------------------------------
-public:
+	static bool m_weaponTickDisabled;
+	
 	static bool m_timer_bTimerRegistered;
 	static bool m_timer_bTimerCleared;
 	static bool m_timer_bIncrTimer;
@@ -473,7 +499,7 @@ public:
 	static CZProjectileList m_pProjectileList;
 
 	static CSnd* m_bulletPassSound;
-private:
+
 	char* m_name;
 	char* m_description;
 	char* m_texname;
@@ -530,14 +556,14 @@ private:
 class CZFTSWeapon : public CZWeapon
 {
 public:
-	CZFTSWeapon() : CZWeapon() {}
+	CZFTSWeapon() {}
 	~CZFTSWeapon();
 
 	void SetAccuracyBurstCountMin(s32 min);
 	void SetAccuracyBurstCountMax(s32 max);
 	void SetAccuracyScalarMin(f32 min);
 	void SetAccuracyScalarMax(f32 max);
-private:
+
 	s32 m_firstZoomLevel;
 	s32 m_secondZoomLevel;
 	s32 m_thirdZoomLevel;
@@ -557,12 +583,16 @@ private:
 class CZProjectile
 {
 public:
+	bool SetProjectile(zdb::CNode* owner, CZWeapon* weapon, CZAmmo* ammo,
+	                   const CPnt3D& startpos, CPnt3D& velscale, const CPnt3D& vel,
+	                   s32 id, zdb::CModel* model, f32 time, f32 removal_time);
+	
 	void Reset();
 
 	zdb::CNode* GetInstance() const;
 
 	void Detonate();
-private:
+
 	u32 m_done : 1;
 	u32 m_isfirsthit : 1;
 	u32 m_isplayer : 1;

@@ -61,3 +61,48 @@ zdb::CNode* CZProjectile::GetInstance() const
 {
 	return m_instance;
 }
+
+bool CZProjectile::SetProjectile(zdb::CNode* owner, CZWeapon* weapon, CZAmmo* ammo,
+	const CPnt3D& startpos, CPnt3D& velscale, const CPnt3D& vel,
+	s32 id, zdb::CModel* model, f32 time, f32 removal_time)
+{
+	m_weapon = weapon;
+
+	if (m_weapon)
+	{
+		m_currange = m_weapon->GetMaxRange();
+	}
+
+	if (m_weapon->m_ID < EQUIP_ITEM::EQUIP_SMG)
+	{
+		m_useflyout = false;
+	}
+	else
+	{
+		m_useflyout = true;
+	}
+
+	m_ammo = ammo;
+
+	m_framestartpos = startpos;
+	m_frameendpos = startpos;
+
+	m_intersecthandle = -1;
+
+	velscale.Scale(m_weapon->GetMuzzleVelocity(), &m_vel);
+	m_vel.Add(&vel, &m_vel);
+
+	if (model)
+	{
+		m_instance->SetModel(model);
+	}
+
+	m_owner = owner;
+	m_time = time;
+	m_removaltime = removal_time;
+	m_pickup = NULL;
+
+	m_done = false;
+
+	return true;
+}
