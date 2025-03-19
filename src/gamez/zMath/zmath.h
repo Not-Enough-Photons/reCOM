@@ -162,7 +162,7 @@ public:
 	void Normalize(CPnt3D* other);
 	void Add(const CPnt3D* other, CPnt3D* out);
 	void Sub(const CPnt3D* other, CPnt3D* out);
-	void Scale(CPnt3D* other, f32 scaleFactor);
+	void Scale(f32 scaleFactor, CPnt3D* out);
 	void Cross(const CPnt3D* a, CPnt3D* b, bool normalize);
 };
 

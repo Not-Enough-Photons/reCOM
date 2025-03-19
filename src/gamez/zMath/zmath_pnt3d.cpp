@@ -42,11 +42,11 @@ void CPnt3D::Sub(const CPnt3D* other, CPnt3D* out)
 	out->z = z - other->z;
 }
 
-void CPnt3D::Scale(CPnt3D* other, f32 scaleFactor)
+void CPnt3D::Scale(f32 scaleFactor, CPnt3D* out)
 {
-	other->x = x * scaleFactor;
-	other->y = y * scaleFactor;
-	other->z = z * scaleFactor;
+	out->x = x * scaleFactor;
+	out->y = y * scaleFactor;
+	out->z = z * scaleFactor;
 }
 
 void CPnt3D::Cross(const CPnt3D* a, CPnt3D* b, bool normalize)
