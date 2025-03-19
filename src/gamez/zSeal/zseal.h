@@ -386,6 +386,14 @@ public:
 	void AdrenalineIncr(f32 increase);
 
 	/// -------------------------------------------
+	/// STANCE
+	/// -------------------------------------------
+
+	SEAL_STANCE UpdateStance();	
+	SEAL_STANCE SetStance(SEAL_STANCE stance);
+	SEAL_STANCE GetStance(char flag) const;
+
+	/// -------------------------------------------
 	/// STATE CONDITIONS
 	/// -------------------------------------------
 
@@ -477,6 +485,8 @@ public:
 	CZSealBody* m_cachedReticuleSeal;
 	u32 m_useCachedReticuleSeal : 1;
 	u32 m_unused : 31;
+
+	SEAL_STANCE m_stance;
 
 	bool m_TriggerCount;
 	s32 m_RemoteRoundCount;

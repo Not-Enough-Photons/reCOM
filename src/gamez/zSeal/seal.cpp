@@ -15,6 +15,8 @@ CZSealBody::CZSealBody(zdb::CNode* node, CCharacterType* chartype) : CEntity(ENT
     m_desiredState = SEAL_STATE::stateStand;
     m_desiredPeek = SEAL_PEEK::PEEK_RIGHT;
     
+    m_stance = SEAL_STANCE::STANCE_STAND;
+    
     m_recoilParam = 0.0f;
     m_select = NULL;
 
