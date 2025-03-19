@@ -122,3 +122,20 @@ void CZWeapon::Fire(CZProjectile& projectile)
 {
 
 }
+
+// TODO: Reimplement the zoom function properly
+f32 CZFTSWeapon::GetZoomRange(u32 range) const
+{
+	f32 range = 0.0f;
+	
+	if (m_firstZoomLevel == 0 || range <= m_thirdZoomLevel)
+	{
+		range = 500.0f;
+	}
+	else
+	{
+
+	}
+
+	return range;
+}
