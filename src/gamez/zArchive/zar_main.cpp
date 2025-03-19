@@ -1,8 +1,7 @@
-#include <freebsd/strcasecmp.h>
-
 #include "zar.h"
 #include "Apps/FTS/gamever.h"
 #include "gamez/zUtil/zutil.h"
+#include "SDL3/SDL_stdinc.h"
 
 namespace zar
 {
@@ -41,7 +40,7 @@ namespace zar
 		{
 			CKey* current = *it;
 
-			if (current->m_size != -1 && strcasecmp(current->m_name, name) == 0)
+			if (current->m_size != -1 && SDL_strcasecmp(current->m_name, name) == 0)
 			{
 				break;
 			}

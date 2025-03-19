@@ -1,7 +1,5 @@
 #include "ztex.h"
 
-#include "freebsd/strcasecmp.h"
-
 #include "gamez/zArchive/zar.h"
 #include "gamez/zSave/zsave.h"
 #include "gamez/zVideo/zvid.h"
@@ -285,7 +283,7 @@ namespace zdb
 				continue;
 			}
 
-			if (strcasecmp(cur_handle->m_name, name) == 0)
+			if (SDL_strcasecmp(cur_handle->m_name, name) == 0)
 			{
 				handle = cur_handle;
 				break;

@@ -2,13 +2,12 @@
 
 #include <cstring>
 
-#include <freebsd/strcasecmp.h>
-
 #include "zrdr_local.h"
 #include "Apps/FTS/gamever.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zSystem/zsys.h"
 #include "gamez/zUtil/util_systemio.h"
+#include "SDL3/SDL_stdinc.h"
 
 bool zrdr_init = false;
 bool warnonce = false;
@@ -492,12 +491,12 @@ bool zrdr_tobool(_zrdr* reader, bool* output)
 		success = false;
 		if (reader->type == ZRDR_STRING)
 		{
-			if (strcasecmp(reader->string, "true") == 0 || strcasecmp(reader->string, "on"))
+			if (SDL_strcasecmp(reader->string, "true") == 0 || SDL_strcasecmp(reader->string, "on"))
 			{
 				*output = true;
 				success = true;
 			}
-			else if (strcasecmp(reader->string, "false") == 0 || strcasecmp(reader->string, "off"))
+			else if (SDL_strcasecmp(reader->string, "false") == 0 || SDL_strcasecmp(reader->string, "off"))
 			{
 				*output = false;
 				success = true;
