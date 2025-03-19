@@ -73,8 +73,10 @@ public:
 class CTextSpec : public CDlgObjSpec
 {
 public:
+	std::string m_caption;
+	std::string m_font;
+	bool m_hasFont;
 	f32 m_scale;
-	char* m_font;
 	bool m_hCentered;
 	PNT3D m_color;
 };
@@ -147,8 +149,15 @@ public:
 	void LoadFromRdr(_zrdr* reader);
 	void LoadModels(_zrdr* reader);
 
+	std::string m_filename;
+	std::string m_font;
+	
+	bool m_useMpeg;
+
+	std::vector<CSaferStr*> m_libs;
 	std::vector<CDlgDesignModel*> m_models;
 	std::vector<CDesignDlgObj*> m_dlgobjs;
+	std::vector<CSaferStr*> m_animations;
 };
 
 extern CUIVarManager theUIVarManager;
