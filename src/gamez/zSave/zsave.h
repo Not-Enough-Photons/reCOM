@@ -1,3 +1,4 @@
+#pragma once
 #include "gamez/zArchive/zar.h"
 #include "gamez/zSystem/zsys.h"
 

@@ -173,7 +173,7 @@ public:
 	f32 GetCurZoom() const;
 
 	void SetBody(const CZSealBody& body);
-private:
+
 	u32 m_first : 1;
 	u32 m_reticuletypeChanged : 1;
 	u32 m_weaponinfoChanged : 1;

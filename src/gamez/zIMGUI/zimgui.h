@@ -1,3 +1,4 @@
+#pragma once
 #include <imgui/imgui.h>
 
 #include "gamez/zSystem/zsys.h"

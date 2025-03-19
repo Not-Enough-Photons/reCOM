@@ -1,4 +1,5 @@
-﻿#include "gamez/zCamera/zcam.h"
+﻿#pragma once
+#include "gamez/zCamera/zcam.h"
 #include "gamez/zMath/zmath.h"
 #include "gamez/zReader/zrdr.h"
 #include "gamez/zRender/zrender.h"

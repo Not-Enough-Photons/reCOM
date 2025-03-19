@@ -1,4 +1,5 @@
-﻿#include "util_systemio.h"
+﻿#pragma once
+#include "util_systemio.h"
 
 class CFileStack;
 

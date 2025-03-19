@@ -1,4 +1,5 @@
-﻿class CVehicleRdr
+﻿#pragma once
+class CVehicleRdr
 {
 
 };
