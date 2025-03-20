@@ -70,7 +70,7 @@ class CMenuState : public CGameState
 {
 public:
 	CMenuState();
-public:
+
 	void PreInit() {}
 	bool Init();
 	void PreUnInit() {}

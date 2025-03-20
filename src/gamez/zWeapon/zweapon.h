@@ -559,7 +559,7 @@ public:
 	CZFTSWeapon() {}
 	~CZFTSWeapon();
 
-	f32 GetZoomRange(u32 range) const;
+	f32 GetZoomRange(u32 range_level) const;
 	
 	void SetAccuracyBurstCountMin(s32 min);
 	void SetAccuracyBurstCountMax(s32 max);

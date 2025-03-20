@@ -1,9 +1,12 @@
 #include "gamez/zGame/zgame.h"
 #include "gamez/zSound/zsnd.h"
 #include "gamez/zSystem/zsys.h"
-#include "gamez/zVideo/zvid.h"
 
 #include "SDL3/SDL_log.h"
+
+// Uncomment to not use a game directory
+// Useful for external testing
+// #define NOGAME
 
 bool LoadWorld(const char* name);
 char* SetDatabase(const char* db);

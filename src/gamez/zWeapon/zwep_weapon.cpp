@@ -124,7 +124,7 @@ void CZWeapon::Fire(CZProjectile& projectile)
 }
 
 // TODO: Reimplement the zoom function properly
-f32 CZFTSWeapon::GetZoomRange(u32 range) const
+f32 CZFTSWeapon::GetZoomRange(u32 range_level) const
 {
 	f32 range = 0.0f;
 	
