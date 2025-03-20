@@ -43,6 +43,11 @@ struct tag_ObjectHeader
 	
 };
 
+struct tag_VIS_VERTEX
+{
+	
+};
+
 namespace zdb
 {
 	enum class tag_ZVIS_FOV
@@ -98,6 +103,10 @@ namespace zdb
 		void NextVertex(u32 vertex);
 		void SearchVertex();
 		void SelectVertex(CVisual* vis, u32 vertex);
+
+		u32 m_vertex_start;
+		u32 m_vertex_count;
+		u8* m_cur_vertex;
 	};
 	
 	/// <summary>

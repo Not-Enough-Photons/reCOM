@@ -180,7 +180,7 @@ namespace zdb
 		m_data_buffer = NULL;
 		m_buffer_count = 0;
 		m_data_size = size;
-		CVisBase::m_instance_count++;
+		m_instance_count++;
 		m_active = true;
 	}
 	
@@ -354,5 +354,10 @@ namespace zdb
 		}
 
 		return false;
+	}
+
+	void CVisData::NextVertex(u32 stride)
+	{
+		m_vertex_start 
 	}
 }
