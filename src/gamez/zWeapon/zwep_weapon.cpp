@@ -75,14 +75,10 @@ void CZWeapon::AddLegalAmmo(CZAmmo* ammo)
 
 }
 
+// 	RVA: 0x339A60 -> SCUS_971.34
 bool CZWeapon::HasFireMode(s32 id) const
 {
-	if (id < 5)
-	{
-		return m_hasFiremodes[id];
-	}
-
-	return true;
+	return id >= 5 || m_hasFiremodes[id];
 }
 
 void CZWeapon::ClearAnims()
@@ -121,6 +117,15 @@ void CZWeapon::Close()
 void CZWeapon::Fire(CZProjectile& projectile)
 {
 
+}
+
+//	RVA: 0x339A30 -> SCUS_971.34
+void CZWeapon::SetHasFireMode(FIREMODE newMode)
+{
+	m_hasFiremodes[newMode] = true;
+	
+	if (m_maxfiremode < newMode)
+		m_maxfiremode = newMode;
 }
 
 // TODO: Reimplement the zoom function properly
