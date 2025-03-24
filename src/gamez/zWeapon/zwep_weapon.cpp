@@ -120,9 +120,10 @@ void CZWeapon::Fire(CZProjectile& projectile)
 }
 
 //	RVA: 0x339A30 -> SCUS_971.34
+//  RVA: 0x31EEB0 -> SCUS_972.05
 void CZWeapon::SetHasFireMode(FIREMODE newMode)
 {
-	m_hasFiremodes[newMode] = true;
+	m_hasFiremodes[static_cast<s32>(newMode)] = true;
 	
 	if (m_maxfiremode < newMode)
 		m_maxfiremode = newMode;
