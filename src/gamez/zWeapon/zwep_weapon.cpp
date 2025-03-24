@@ -116,7 +116,19 @@ void CZWeapon::Close()
 
 void CZWeapon::Fire(CZProjectile& projectile)
 {
+	zdb::CNode* instance = projectile.GetInstance();
 
+	if (instance && instance->m_parent != zdb::CWorld::m_world)
+		zdb::CWorld::m_world->AddChild(instance);
+
+	projectile.PreFireProjectile();
+
+	if (!projectile.FireValidityCheck())
+		m_pProjectileList.RemoveProjectile(projectile);
+	else
+	{
+		
+	}
 }
 
 //	RVA: 0x339A30 -> SCUS_971.34

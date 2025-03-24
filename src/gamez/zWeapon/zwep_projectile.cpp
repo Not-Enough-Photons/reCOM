@@ -1,4 +1,5 @@
 #include "zweapon.h"
+#include "gamez/zNetwork/znet.h"
 
 void CZProjectile::Reset()
 {
@@ -62,6 +63,35 @@ zdb::CNode* CZProjectile::GetInstance() const
 	return m_instance;
 }
 
+bool CZProjectile::FireValidityCheck()
+{
+	// Created projectiles are validated by the server only.
+	if (theNetwork.m_bNetwork)
+		return false;
+	
+	if (!m_weapon)
+		return false;
+
+	if (!m_weapon->IsDirectFire())
+		return false;
+
+	return true;
+}
+
+void CZProjectile::PreFireProjectile()
+{
+	if (m_shottype == PROJECTILE_TYPE::ONE_FRAME)
+	{
+		CZWeapon::m_pProjectileList.GetNextDirectFireDI(&m_di, &m_di_handle);
+		m_removeASAP = false;
+	}
+	else
+	{
+		CZWeapon::m_pProjectileList.GetNextIndirectFireDI(&m_di, &m_di_handle);
+		m_removeASAP = false;
+	}
+}
+
 bool CZProjectile::SetProjectile(zdb::CNode* owner, CZWeapon* weapon, CZAmmo* ammo,
 	const CPnt3D& startpos, CPnt3D& velscale, const CPnt3D& vel,
 	s32 id, zdb::CModel* model, f32 time, f32 removal_time)
@@ -105,4 +135,46 @@ bool CZProjectile::SetProjectile(zdb::CNode* owner, CZWeapon* weapon, CZAmmo* am
 	m_done = false;
 
 	return true;
+}
+
+bool CZProjectileList::GetNextDirectFireDI(zdb::DiIntersect** di, s32* free_handle)
+{
+	if (m_directFireDI[0])
+	{
+		if (m_direct_firstfree < 60)
+		{
+			*di = m_directFireDI[m_direct_firstfree];
+			*free_handle = m_direct_firstfree;
+
+			m_directFireDIUsed[m_direct_firstfree] = true;
+
+			while (m_direct_firstfree < 60 && m_directFireDIUsed[m_direct_firstfree])
+				m_direct_firstfree++;
+		}
+
+		return true;
+	}
+
+	return false;
+}
+
+bool CZProjectileList::GetNextIndirectFireDI(zdb::DiIntersect** di, s32* free_handle)
+{
+	if (m_indirectFireDI[0])
+	{
+		if (m_indirect_firstfree < 60)
+		{
+			*di = m_indirectFireDI[m_indirect_firstfree];
+			*free_handle = m_indirect_firstfree;
+
+			m_indirectFireDIUsed[m_indirect_firstfree] = true;
+
+			while (m_indirect_firstfree < 60 && m_indirectFireDIUsed[m_indirect_firstfree])
+				m_indirect_firstfree++;
+		}
+
+		return true;
+	}
+
+	return false;
 }
